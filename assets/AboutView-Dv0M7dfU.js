@@ -1,1 +1,0 @@
-import{_ as o,c as t,a as s,o as a}from"./index-1R2s1egm.js";const c={},n={class:"about"};function r(_,e){return a(),t("div",n,e[0]||(e[0]=[s("h1",null,"About",-1)]))}const u=o(c,[["render",r]]);export{u as default};
