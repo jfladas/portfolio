@@ -10,25 +10,24 @@ const router = createRouter({
       redirect: { name: 'about' }
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About
+      path: '/portfolio/',
+      redirect: { name: 'about' }
     },
     {
-      path: '/portfolio/',
+      path: '/about',
       name: 'about',
-      component: About
+      component: About,
+      props: true
     },
     {
       path: '/projects',
       name: 'projects',
-      component: Projects
+      component: Projects,
+      props: true
     },
     {
-      path: '/portfolio/:queryParams(.*)',
-      name: 'Result',
-      component: Result,
-      props: true
+      path: '/:pathMatch(.*)*',
+      redirect: { name: 'about' }
     }
   ],
 })
