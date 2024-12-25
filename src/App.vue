@@ -9,8 +9,8 @@ import { RouterLink, RouterView } from 'vue-router'
       <font-awesome-icon icon="fa-user-secret" size="5x" bounce class="icon" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/projects">Projects</RouterLink>
       </nav>
     </div>
   </header>
