@@ -1,6 +1,6 @@
 <template>
     <div>
-        <router-link to="/projects">
+        <router-link to="/projects" class="hoverable">
             <font-awesome-icon icon="arrow-left-long" size="3x" class="icon" />
         </router-link>
         <h1>{{ project.name }}</h1>
@@ -17,7 +17,7 @@
             <h3>Links</h3>
             <ul>
                 <li v-for="link in project.links" :key="link.url">
-                    <a :href="link.url" target="_blank">{{ link.name }}</a>
+                    <a :href="link.url" target="_blank" class="hoverable">{{ link.name }}</a>
                 </li>
             </ul>
         </div>
@@ -25,7 +25,7 @@
             <h3>Downloads</h3>
             <ul>
                 <li v-for="download in project.downloads" :key="download.url">
-                    <a :href="download.url" target="_blank">{{ download.name }}</a>
+                    <a :href="download.url" target="_blank" class="hoverable">{{ download.name }}</a>
                 </li>
             </ul>
         </div>

@@ -1,47 +1,35 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Funnel+Display:wght@800&family=Funnel+Sans:wght@300..800&display=swap');
 
-.funnel-sans, * {
-  font-family: "Funnel Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.funnel-sans-bold {
-  font-family: "Funnel Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.funnel-display {
-  font-family: "Funnel Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.dotgothic16 {
-  font-family: "DotGothic16", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
 /* Colors */
 :root {
-  --white: #ffffff;
   --aqua: #b9fff3;
   --mint: #5dfbff;
   --sky: #15abff;
   --deep: #2e00c0;
   --navy: #050028;
-  --pink: #ff57eb;
   --purple: #a200ea;
+  --pink: #ff57eb;
+
+  --aqua-rgb: 185, 255, 243;
+  --mint-rgb: 93, 251, 255;
+  --sky-rgb: 21, 171, 255;
+  --deep-rgb: 46, 0, 192;
+  --navy-rgb: 5, 0, 40;
+  --purple-rgb: 162, 0, 234;
+  --pink-rgb: 255, 87, 235;
 }
 
 /* Base */
+* {
+  cursor: none !important;
+}
+
 body {
+  font-family: "Funnel Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
   font-size: 1rem;
   color: var(--aqua);
   background-color: var(--navy);
@@ -49,26 +37,33 @@ body {
 
 ::selection {
   background-color: var(--deep);
-  color: var(--white);
+  color: white;
 }
 
 h1 {
-  font-family: "Funnel Display", serif;
-  font-weight: 800;
+  font-family: "Funnel Display", sans-serif;
   font-size: 4rem;
-  color: var(--white);
+  line-height: 4rem;
+  color: white;
+  margin-bottom: 0;
 }
 h2 {
-  font-family: "Funnel Sans", serif;
   font-weight: 700;
   font-size: 2.5rem;
+  line-height: 2.5rem;
   color: var(--aqua);
+  margin-top: 0;
+  margin-bottom: -0.5rem;
 }
 h3 {
-  font-family: "Funnel Sans", serif;
   font-weight: 700;
   font-size: 2.5rem;
+  line-height: 2.5rem;
   color: var(--sky);
+}
+
+p {
+  margin: 0;
 }
 
 a {
@@ -76,8 +71,12 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: var(--white);
+  color: white;
 }
 a:active {
   color: var(--purple);
+}
+
+.jap {
+  font-family: "DotGothic16", sans-serif;
 }

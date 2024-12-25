@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>Projects</h1>
+    <h1>projects</h1>
     <div v-for="project in projects" :key="project.id">
-      <ProjectItem :project="project" />
+      <ProjectItem :project="project" class="hoverable" />
     </div>
   </div>
 </template>
