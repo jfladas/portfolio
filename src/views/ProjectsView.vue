@@ -3,6 +3,7 @@
 
 <template>
   <main>
-    <h1>Home</h1>
+    <h1>Projects</h1>
+    <p>milo's forest adventure</p>
   </main>
 </template>
