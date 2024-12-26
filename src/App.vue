@@ -13,7 +13,7 @@
   <RouterView />
   <div class="fade-out"></div>
   <footer>
-    <p>made with <font-awesome-icon icon="heart" /> by jfladas</p>
+    <p>made with <font-awesome-icon icon="heart" style="color: var(--pink);" /> by jfladas</p>
   </footer>
   <div ref="cursor" class="custom-cursor"></div>
 </template>
@@ -86,10 +86,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-body {
-  cursor: none;
-}
-
 header {
   background-color: rgba(var(--navy-rgb), 0.5);
   backdrop-filter: blur(1rem);
@@ -109,7 +105,7 @@ nav {
 .nav-item {
   width: 50vw;
   font-family: 'Funnel Display', sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--sky);
   text-align: center;
   padding: 1.5rem;
@@ -187,7 +183,7 @@ footer {
   left: 0;
   width: 100%;
   text-align: center;
-  color: var(--aqua);
+  color: var(--mint);
   background: var(--deep);
   margin-top: 6rem;
   padding-top: 1rem;
@@ -198,7 +194,7 @@ footer {
   position: fixed;
   width: 3rem;
   height: 3rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(var(--aqua-rgb), 0.1);
   backdrop-filter: blur(0.1rem);
   box-shadow: 0 0 1rem 1rem rgba(var(--navy-rgb), 0.5);
   border-radius: 50%;
