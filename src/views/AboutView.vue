@@ -25,7 +25,7 @@
           My focus mainly lies in web development, but other aspects I can explore with my studies also intrigue me,
           ranging from game design & development to digital art.
           After I've attained my bachelor of science, I aim to work in the field of
-          <span class="bold hoverable">frontend development</span>,
+          <span class="bold hoverable">frontend web development</span>,
           creating unique and interactive user experiences.
           But who knows what the future may hold?
         </p>
@@ -222,33 +222,6 @@ export default {
 </script>
 
 <style scoped>
-.content {
-  position: relative;
-  width: 80vw;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 4rem;
-  margin-top: 6rem;
-  left: 10vw;
-}
-
-.content-left,
-.content-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.content-left {
-  width: 50vw;
-  margin-top: 6rem;
-}
-
-.content-right {
-  width: 30vw;
-}
-
 .subtitle {
   margin-bottom: 3rem;
 }
@@ -358,7 +331,6 @@ export default {
 .me-container {
   position: relative;
   width: 100%;
-  margin-top: 10rem;
   margin-bottom: 2rem;
 }
 

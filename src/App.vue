@@ -15,12 +15,21 @@
   <footer>
     <p>made with <font-awesome-icon icon="heart" class="heart hoverable" /> by jfladas</p>
   </footer>
-  <div ref="cursor" class="custom-cursor"></div>
+  <div ref="cursor" class="custom-cursor">
+    <span class="tooltip"></span>
+  </div>
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
+const route = useRoute()
+
+watch(() => route.path, (to, from) => {
+  removeCursorHover();
+  removeTooltip();
+})
 
 const cursor = ref(null)
 
@@ -43,17 +52,55 @@ const removeCursorHover = () => {
   }
 }
 
+let tooltipTimeout = null;
+
+const addTooltip = (text) => {
+  tooltipTimeout = setTimeout(() => {
+    const tooltip = cursor.value.querySelector('.tooltip')
+    if (tooltip) {
+      tooltip.textContent = text
+      tooltip.style.opacity = 1
+    }
+  }, 500);
+}
+
+const removeTooltip = () => {
+  clearTimeout(tooltipTimeout);
+  const tooltip = cursor.value.querySelector('.tooltip')
+  if (tooltip) {
+    tooltip.style.opacity = 0
+  }
+}
+
 const addHoverListeners = (elements) => {
   elements.forEach(el => {
-    el.addEventListener('mouseenter', addCursorHover)
-    el.addEventListener('mouseleave', removeCursorHover)
+    el.addEventListener('mouseenter', () => {
+      addCursorHover();
+    })
+    el.addEventListener('mouseleave', () => {
+      removeCursorHover();
+    })
+  })
+}
+
+const addTooltipListeners = (elements) => {
+  elements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      addTooltip(el.getAttribute('tooltip'));
+    })
+    el.addEventListener('mouseleave', () => {
+      removeTooltip();
+    })
   })
 }
 
 onMounted(() => {
   window.addEventListener('mousemove', updateCursor)
-  const initialElements = document.querySelectorAll('.hoverable')
-  addHoverListeners(initialElements)
+  const hoverElements = document.querySelectorAll('.hoverable')
+  addHoverListeners(hoverElements)
+
+  const tooltipElements = document.querySelectorAll('.tooltip')
+  addTooltipListeners(tooltipElements)
 
   const observer = new MutationObserver((mutations) => {
     mutations.forEach(mutation => {
@@ -66,6 +113,12 @@ onMounted(() => {
               const nestedElements = node.querySelectorAll('.hoverable')
               addHoverListeners(nestedElements)
             }
+            if (node.classList.contains('tooltip')) {
+              addTooltipListeners([node])
+            } else {
+              const nestedElements = node.querySelectorAll('.tooltip')
+              addTooltipListeners(nestedElements)
+            }
           }
         })
       }
@@ -76,9 +129,13 @@ onMounted(() => {
 
   onUnmounted(() => {
     window.removeEventListener('mousemove', updateCursor)
-    initialElements.forEach(el => {
+    hoverElements.forEach(el => {
       el.removeEventListener('mouseenter', addCursorHover)
       el.removeEventListener('mouseleave', removeCursorHover)
+    })
+    tooltipElements.forEach(el => {
+      el.removeEventListener('mouseenter', () => { })
+      el.removeEventListener('mouseleave', () => { })
     })
     observer.disconnect()
   })
@@ -136,15 +193,45 @@ nav {
 }
 
 .nav-item.left.selected {
-  background: linear-gradient(to right, var(--aqua) 0%, var(--mint) 10%, var(--sky) 20%, var(--deep) 35%, rgba(var(--navy-rgb), 0) 100%);
+  background: linear-gradient(to right,
+      var(--aqua) 0%,
+      var(--mint) 10%,
+      var(--sky) 20%,
+      var(--deep) 35%,
+      rgba(var(--navy-rgb), 0));
 }
 
 .nav-item.right.selected {
-  background: linear-gradient(to left, var(--aqua) 0%, var(--mint) 10%, var(--sky) 20%, var(--deep) 35%, rgba(var(--navy-rgb), 0) 100%);
+  background: linear-gradient(to left,
+      var(--aqua) 0%,
+      var(--mint) 10%,
+      var(--sky) 20%,
+      var(--deep) 35%,
+      rgba(var(--navy-rgb), 0) 100%);
 }
 
 .nav-item:active {
   color: white;
+}
+
+.nav-item.left:active {
+  background: linear-gradient(to right,
+      white,
+      var(--aqua) 10%,
+      var(--mint) 20%,
+      var(--sky) 30%,
+      var(--deep) 45%,
+      rgba(var(--navy-rgb), 0));
+}
+
+.nav-item.right:active {
+  background: linear-gradient(to left,
+      white,
+      var(--aqua) 10%,
+      var(--mint) 20%,
+      var(--sky) 30%,
+      var(--deep) 45%,
+      rgba(var(--navy-rgb), 0) 100%);
 }
 
 .logo {
@@ -224,12 +311,39 @@ footer {
 }
 
 .custom-cursor.hover::before {
-  background-color: rgba(var(--deep-rgb), 0.1);
-  mask: radial-gradient(circle, transparent 20%, rgba(255, 255, 255, 0.5) 40%, white);
+  background-color: rgba(var(--deep-rgb), 0.2);
+  mask: radial-gradient(circle, transparent 20%, white);
 }
 
 .custom-cursor.hover {
   transform: translate(-50%, -50%) scale(1.5);
   box-shadow: 0 0 1rem 0.5rem rgba(var(--navy-rgb), 0.5);
+}
+
+.tooltip {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  padding-top: 1.7rem;
+  text-align: center;
+  font-size: 0.65rem;
+  color: white;
+  text-shadow: 0 0 0.5rem var(--navy);
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  border-radius: 50%;
+  background: radial-gradient(circle at center bottom,
+      rgba(var(--navy-rgb), 0.5),
+      rgba(var(--navy-rgb), 0) 75%),
+    radial-gradient(circle at center top,
+      rgba(var(--navy-rgb), 0) 75%,
+      rgba(255, 255, 255, 0.8));
 }
 </style>
