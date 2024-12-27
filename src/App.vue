@@ -2,18 +2,18 @@
   <header class="hoverable">
     <div class="logo" :class="{ reverse: $route.path !== '/about' }">jfladas</div>
     <nav>
-      <RouterLink to="/about" class="nav-item left" :class="{ selected: $route.path === '/about' }">
+      <router-link to="/about" class="nav-item left" :class="{ selected: $route.path === '/about' }">
         about
-      </RouterLink>
-      <RouterLink to="/projects" class="nav-item right" :class="{ selected: $route.path.startsWith('/projects') }">
+      </router-link>
+      <router-link to="/projects" class="nav-item right" :class="{ selected: $route.path.startsWith('/projects') }">
         projects
-      </RouterLink>
+      </router-link>
     </nav>
   </header>
-  <RouterView />
+  <router-view />
   <div class="fade-out"></div>
   <footer>
-    <p>made with <font-awesome-icon icon="heart" style="color: var(--pink);" /> by jfladas</p>
+    <p>made with <font-awesome-icon icon="heart" class="heart hoverable" /> by jfladas</p>
   </footer>
   <div ref="cursor" class="custom-cursor"></div>
 </template>
@@ -174,7 +174,7 @@ nav {
   height: 6rem;
   pointer-events: none;
   backdrop-filter: blur(1rem);
-  mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  mask: linear-gradient(to bottom, transparent, white);
   z-index: 10;
 }
 
@@ -190,23 +190,46 @@ footer {
   padding-bottom: 6rem;
 }
 
+.heart {
+  color: var(--pink);
+  transition: color 0.5s ease;
+}
+
+.heart:hover {
+  color: white;
+}
+
 .custom-cursor {
   position: fixed;
   width: 3rem;
   height: 3rem;
-  background-color: rgba(var(--aqua-rgb), 0.1);
-  backdrop-filter: blur(0.1rem);
-  box-shadow: 0 0 1rem 1rem rgba(var(--navy-rgb), 0.5);
+  background-color: transparent;
+  box-shadow: 0 0 1rem 0.5rem rgba(var(--deep-rgb), 0.1);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  z-index: 1000;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 100;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-cursor::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(var(--aqua-rgb), 0.1);
+  backdrop-filter: blur(0.2rem);
+  mask: radial-gradient(circle, white, white);
+  border-radius: 50%;
+  transition: background-color 0.2s ease, mask 0.2s ease;
+}
+
+.custom-cursor.hover::before {
+  background-color: rgba(var(--deep-rgb), 0.1);
+  mask: radial-gradient(circle, transparent 20%, rgba(255, 255, 255, 0.5) 40%, white);
 }
 
 .custom-cursor.hover {
   transform: translate(-50%, -50%) scale(1.5);
-  background-color: rgba(var(--deep-rgb), 0.1);
-  backdrop-filter: blur(0);
+  box-shadow: 0 0 1rem 0.5rem rgba(var(--navy-rgb), 0.5);
 }
 </style>

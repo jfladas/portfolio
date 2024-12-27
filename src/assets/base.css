@@ -61,10 +61,64 @@ h3 {
   font-size: 2.5rem;
   line-height: 2.5rem;
   color: var(--sky);
+  margin-bottom: 1rem;
 }
 
 p {
   margin: 0;
+}
+
+.text {
+  text-align: justify;
+}
+
+.text-title {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.text-icon {
+  color: var(--mint);
+}
+
+.bold {
+  font-weight: 700;
+  color: var(--mint);
+  text-shadow: none;
+  transition: color 0.5s, text-shadow 0.5s;
+}
+.bold:hover {
+  color: white;
+  text-shadow: var(--mint) 0 0 1rem;
+}
+
+.quoted-container {
+  display: flex;
+}
+
+.quoted {
+  height: auto;
+}
+
+.quote-left {
+  font-size: 2.5rem;
+  color: var(--sky);
+  margin: 0 0.5rem 0 -0.5rem;
+  float: left;
+}
+
+.quote-right {
+  font-size: 2.5rem;
+  color: var(--sky);
+  margin: 0 -0.5rem 0 0.5rem;
+}
+
+.bottom-corner {
+  float: right;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  shape-outside: inset(calc(100% - 2.5rem) 0 0);
 }
 
 a {
@@ -77,6 +131,100 @@ a:hover {
 a:active {
   color: var(--purple);
 }
+
+button {
+  font-family: "Funnel Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--navy);
+  border: none;
+  padding: 0.5rem 1rem;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  height: 2.5rem;
+}
+
+.button-primary {
+  background: var(--aqua);
+}
+.button-primary:hover {
+  background: linear-gradient(to right, var(--mint), var(--aqua));
+}
+.button-primary:active {
+  background: linear-gradient(to right, var(--aqua), white);
+}
+
+.button-secondary {
+  background: var(--mint);
+}
+.button-secondary:hover {
+  background: linear-gradient(to right, var(--sky), var(--mint));
+}
+.button-secondary:active {
+  background: linear-gradient(to right, var(--mint), var(--aqua));
+}
+
+.button-tertiary {
+  background: var(--pink);
+}
+.button-tertiary:hover {
+  background: linear-gradient(to right, var(--purple), var(--pink));
+}
+.button-tertiary:active {
+  background: linear-gradient(to right, var(--pink), white);
+}
+
+.button-container {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  pointer-events: none
+}
+.button-container:hover {
+  background: linear-gradient(to top, var(--navy), var(--deep) 66%);
+}
+.button-container:active {
+  background: linear-gradient(to top, var(--navy), var(--deep) 33%);
+}
+
+.link, .download {
+  position: relative;
+  font-size: 1.2rem;
+  color: white;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: font-weight 1s;
+}
+
+.link:hover, .download:hover {
+  font-weight: 700;
+}
+
+.link::before, .download::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: linear-gradient(to right, var(--sky), var(--deep), var(--navy));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.download::before {
+  background-image: linear-gradient(to right, rgba(var(--pink-rgb), 0.8), rgba(var(--purple-rgb), 0.8), var(--navy));
+}
+
+.link:hover::before, .download:hover::before {
+  opacity: 1;
+}
+
+
 
 .jap {
   font-family: "DotGothic16", sans-serif;
