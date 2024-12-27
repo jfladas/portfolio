@@ -2,59 +2,50 @@
   <div class="content">
     <div class="content-left">
       <h1 class="title hoverable">
-
         <p class="jap thatsme" ref="typedtext2">
-
         </p>
         Lukas Bucher
       </h1>
       <h2 class="subtitle"></h2>
-      <p class="text">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-        takimata sanctus est Lorem ipsum dolor sit amet.
-      </p>
-      <br>
-      <p class="text">
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-        justo duo diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-        sea takimata sanctus est Lorem ipsum dolor sit amet.
-      </p>
-      <h2 class="text-title">sub title</h2>
-      <p class="text">
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-        justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum, sed diam
-        voluptua. At vero eos et accusam et dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-        Lorem ipsum dolor sit amet. eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-        Lorem ipsum dolor justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-        ipsum dolor sit amet. eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-        takimata sanctus est Lorem ipsum dolor sit amet.
-      </p>
-      <p class="text">
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-        justo duo diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-        sea takimata sanctus est Lorem ipsum dolor sit amet.
-      </p>
-      <br>
-      <p class="text">
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-        justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum, sed diam
-        voluptua. At vero eos et accusam et dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-        Lorem ipsum dolor sit amet. eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-        Lorem ipsum dolor justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-        ipsum dolor sit amet. eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-      </p>
-      <font-awesome-icon icon="person" size="3x" class="icon" />
+      <h3>
+        Hi there!
+      </h3>
+      <div class="quoted-container">
+        <p class="text quoted">
+          <font-awesome-icon icon="quote-left" class="quote-left" />
+          <span class="bottom-corner">
+            <font-awesome-icon icon="quote-right" class="quote-right" />
+          </span>
+          I'm currently studying
+          <span class="bold hoverable">Digital Ideation</span>
+          at the Lucerne University of Applied Sciences and Arts.
+          I love exploring all of the possibilities of how
+          <span class="bold hoverable">technology and creativity</span>
+          can be combined.
+          My focus mainly lies in web development, but other aspects I can explore with my studies also intrigue me,
+          ranging from game design & development to digital art.
+          After I've attained my bachelor of science, I aim to work in the field of
+          <span class="bold hoverable">frontend development</span>,
+          creating unique and interactive user experiences.
+          But who knows what the future may hold?
+        </p>
+      </div>
+      <h3>
+        Intrigued?
+      </h3>
+      <div class="buttons">
+        <a class="button-container" href="mailto:lukas.bucherr@gmail.com">
+          <button class="button-secondary hoverable">
+            <font-awesome-icon icon="envelope" class="button-icon" />
+          </button>
+        </a>
+        <div class="button-container">
+          <button class="button-primary hoverable" @click="$router.push('/projects')">
+            my projects
+            <font-awesome-icon icon="arrow-right" class="button-icon" />
+          </button>
+        </div>
+      </div>
     </div>
     <div class="content-right">
       <div class="me-container hoverable">
@@ -63,6 +54,31 @@
         <img src="/src/assets/me_glitch.png" alt="me" class="me-glitch" />
         <img src="/src/assets/me_dark.png" alt="me" class="me-dark" />
       </div>
+      <h3>further links</h3>
+      <a href="https://github.com/jfladas/" class="link hoverable" target="_blank">
+        <font-awesome-icon icon="fa-brands fa-github-alt" />
+        GitHub
+      </a>
+      <a href="https://jfladas.itch.io/" class="link hoverable" target="_blank">
+        <font-awesome-icon icon="fa-brands fa-itch-io" />
+        Itch.io
+      </a>
+      <a href="https://www.linkedin.com/in/lukas-bucher-0926bb282/" class="link hoverable" target="_blank">
+        <font-awesome-icon icon="fa-brands fa-linkedin" />
+        LinkedIn
+      </a>
+      <a href="https://www.instagram.com/jfla.das/" class="link hoverable" target="_blank">
+        <font-awesome-icon icon="fa-brands fa-instagram" />
+        Instagram
+      </a>
+      <a href="https://youtube.com/@jfladas/" class="link hoverable" target="_blank">
+        <font-awesome-icon icon="fa-brands fa-youtube" />
+        YouTube
+      </a>
+      <a href="" class="download hoverable" target="_blank">
+        <font-awesome-icon icon="circle-arrow-down" />
+        Resume
+      </a>
     </div>
   </div>
 
@@ -233,21 +249,11 @@ export default {
   width: 30vw;
 }
 
-.text {
-  text-align: justify;
-  text-indent: 1rem;
-}
-
-.text-title {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
 .subtitle {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
-.subtitle:before {
+.subtitle::before {
   font-weight: 700;
   font-size: 2.5rem;
   color: var(--aqua);
@@ -344,9 +350,16 @@ export default {
   }
 }
 
+.buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
 .me-container {
+  position: relative;
   width: 100%;
   margin-top: 10rem;
+  margin-bottom: 2rem;
 }
 
 .me-container:hover .me-dark {
@@ -354,7 +367,7 @@ export default {
 }
 
 .me {
-  position: absolute;
+  position: relative;
   width: 30vw;
   height: auto;
   opacity: 1;
@@ -368,12 +381,14 @@ export default {
 
 .me-glitch {
   position: absolute;
+  left: 0;
   width: 30vw;
   z-index: 2;
 }
 
 .me-dark {
   position: absolute;
+  left: 0;
   width: 30vw;
   height: auto;
   z-index: 1;
@@ -387,7 +402,7 @@ export default {
   }
 
   50% {
-    transform: translate(50%, 0) scale(0.5, 1);
+    transform: translate(50%, 0) scale(0.75, 1);
   }
 
   100% {
@@ -411,9 +426,37 @@ export default {
   pointer-events: none;
 }
 
+.title {
+  position: relative;
+  background: linear-gradient(to right, white, var(--aqua));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 1s;
+}
+
+.title:hover {
+  transform: translate(-5vw, 0);
+}
+
+.title::before {
+  position: absolute;
+  content: "Lukas Bucher";
+  inset: 0;
+  color: white;
+  background-color: var(--navy);
+  opacity: 1;
+  z-index: 1;
+  transition: opacity 1s;
+}
+
+.title:hover::before {
+  opacity: 0;
+}
+
 .title:hover .thatsme {
   opacity: 1;
-  transform: translate(-5vw, -5vw);
+  transform: translate(-1vw, -5vw);
 }
 
 .me-container:hover .overlay {
