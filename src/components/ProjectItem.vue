@@ -71,11 +71,13 @@ defineProps({
 
     h2 {
         font-size: 2.5rem;
+        max-width: 60vw;
     }
 
     p {
         font-size: 1.5rem;
         opacity: 1;
+        max-width: 50vw;
     }
 
     .project-icons {
@@ -83,6 +85,7 @@ defineProps({
         color: var(--deep);
         margin-top: 1rem;
         gap: 1rem;
+        max-width: 50vw;
     }
 }
 

@@ -35,15 +35,17 @@
       </h3>
       <div class="buttons">
         <a class="button-container" href="mailto:lukas.bucherr@gmail.com">
-          <button class="button-secondary hoverable">
+          <button class="button-secondary hoverable tooltip" tooltip="e-mail">
             <font-awesome-icon icon="envelope" class="button-icon" />
           </button>
         </a>
         <div class="button-container">
-          <button class="button-primary hoverable" @click="$router.push('/projects')">
-            my projects
-            <font-awesome-icon icon="arrow-right" class="button-icon" />
-          </button>
+          <router-link to="/projects">
+            <button class="button-primary hoverable">
+              my projects
+              <font-awesome-icon icon="arrow-right" class="button-icon" />
+            </button>
+          </router-link>
         </div>
       </div>
     </div>
@@ -75,7 +77,7 @@
         <font-awesome-icon icon="fa-brands fa-youtube" />
         YouTube
       </a>
-      <a href="" class="download hoverable" target="_blank">
+      <a href="src/assets/Resume.pdf" class="download hoverable" target="_blank">
         <font-awesome-icon icon="circle-arrow-down" />
         Resume
       </a>
@@ -321,11 +323,6 @@ export default {
   80% {
     content: "powerpoint enthusiast";
   }
-}
-
-.buttons {
-  display: flex;
-  gap: 1.5rem;
 }
 
 .me-container {
