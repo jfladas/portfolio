@@ -13,10 +13,10 @@
   <router-view />
   <div class="fade-out"></div>
   <footer>
-    <p>made with <font-awesome-icon icon="heart" class="heart hoverable" /> by jfladas</p>
+    <p>made with <font-awesome-icon icon="heart" class="heart hoverable tooltip" tooltip="love" /> by jfladas</p>
   </footer>
   <div ref="cursor" class="custom-cursor">
-    <span class="tooltip"></span>
+    <span class="tooltip-container"></span>
   </div>
 </template>
 
@@ -56,7 +56,7 @@ let tooltipTimeout = null;
 
 const addTooltip = (text) => {
   tooltipTimeout = setTimeout(() => {
-    const tooltip = cursor.value.querySelector('.tooltip')
+    const tooltip = cursor.value.querySelector('.tooltip-container')
     if (tooltip) {
       tooltip.textContent = text
       tooltip.style.opacity = 1
@@ -66,7 +66,7 @@ const addTooltip = (text) => {
 
 const removeTooltip = () => {
   clearTimeout(tooltipTimeout);
-  const tooltip = cursor.value.querySelector('.tooltip')
+  const tooltip = cursor.value.querySelector('.tooltip-container')
   if (tooltip) {
     tooltip.style.opacity = 0
   }
@@ -320,7 +320,7 @@ footer {
   box-shadow: 0 0 1rem 0.5rem rgba(var(--navy-rgb), 0.5);
 }
 
-.tooltip {
+.tooltip-container {
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -333,7 +333,7 @@ footer {
   transition: opacity 0.2s ease;
 }
 
-.tooltip::before {
+.tooltip-container::before {
   content: '';
   position: absolute;
   inset: 0;
