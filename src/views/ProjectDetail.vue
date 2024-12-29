@@ -2,7 +2,7 @@
     <div class="content">
         <div class="content-left">
             <router-link to="/projects" class="back hoverable">
-                <font-awesome-icon icon="arrow-left-long" size="3x" class="icon" />
+                <font-awesome-icon icon="arrow-left-long" />
             </router-link>
             <h1 class="title">{{ project.name }}</h1>
             <h2 class="subtitle">{{ project.description }}</h2>
@@ -43,8 +43,10 @@
                         </button>
                     </div>
                 </div>
-                <div v-if="section.type === 'images'" class="images">
-                    <img v-for="image in section.images" :src="image.url" :alt="image.alt" class="project-image" />
+                <div v-if="section.type === 'images'">
+                    <ImageCarousel :images="project.images" :currentIndex="currentIndex"
+                        :isOverlayVisible="isOverlayVisible" @toggle-overlay="toggleOverlay" @next-slide="nextSlide"
+                        @prev-slide="prevSlide" />
                 </div>
             </div>
         </div>
@@ -60,21 +62,46 @@
             </a>
         </div>
     </div>
+    <div v-if="isOverlayVisible" class="overlay">
+        <div class="overlay-content">
+            <ImageCarousel :images="project.images" :currentIndex="currentIndex" :isOverlayVisible="isOverlayVisible"
+                @toggle-overlay="toggleOverlay" @next-slide="nextSlide" @prev-slide="prevSlide" />
+        </div>
+    </div>
 </template>
 
 <script setup>
+import ImageCarousel from '@/components/ImageCarousel.vue'
 import { categories } from '@/data/projects.js'
-import { computed } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { projects } from '@/data/projects.js'
 
-const route = useRoute()
-const project = computed(() => projects.find(p => p.id === route.params.id))
+const props = defineProps(['id'])
+
+const isOverlayVisible = ref(false)
+const currentIndex = ref(0)
+const project = computed(() => projects.find(p => p.id === props.id))
+const imgLength = computed(() => project.value.images.length)
+
+const nextSlide = () => {
+    currentIndex.value = (currentIndex.value + 1) % imgLength.value
+}
+
+const prevSlide = () => {
+    currentIndex.value = (currentIndex.value - 1 + imgLength.value) % imgLength.value
+}
+
+const toggleOverlay = () => {
+    isOverlayVisible.value = !isOverlayVisible.value
+}
+
 </script>
 
 <style scoped>
 .back {
     position: absolute;
+    font-size: 3rem;
     transform: translate(-2rem, 1rem);
     color: var(--deep);
     transition: all 0.5s;
@@ -123,15 +150,51 @@ const project = computed(() => projects.find(p => p.id === route.params.id))
 }
 
 .bullet {
-    margin: 0.15rem 0.75rem 0 1rem;
+    margin: 0.15rem 0.5rem 0 1rem;
+    color: var(--aqua);
 }
 
 .iconed {
-    margin: 0.1rem 0.2rem 0 0;
+    margin: 0.1rem 0.5rem 0 0;
 }
 
-.links,
-.downloads {
-    margin-top: 2rem;
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--navy-rgb), 0.5);
+    backdrop-filter: blur(1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.overlay-content {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    background-color: var(--navy);
+    overflow: auto;
+    display: flex;
+    align-items: stretch;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.full-screen-image {
+    width: 100%;
+    height: auto;
 }
 </style>
