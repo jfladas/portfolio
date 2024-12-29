@@ -1,15 +1,25 @@
-import { icon, text } from "@fortawesome/fontawesome-svg-core"
+import { icon } from "@fortawesome/fontawesome-svg-core";
+
+const miloFiles = import.meta.glob('../projects/milo/*', { eager: true });
+const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 
 export const projects = [
     {
         id: 'milo',
         name: "milo's forest adventure",
         description: 'web-based scroll & click game',
-        context: [
-            '2024 @ HSLU, Rotkreuz',
-            'Module DEWEB - Web Development'
-        ],
+        context:
+        {
+            lines: [
+                '2024 @ HSLU, Rotkreuz',
+                'Module DEWEB - Development for Web & Mobile'
+            ],
+            url: 'https://maps.app.goo.gl/xoW3RUbiR5C3L5Rg9',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
         categories: [
+            'school',
             'solo',
             'coding',
             'design',
@@ -34,13 +44,13 @@ export const projects = [
                 buttons: [
                     {
                         text: 'play demo',
-                        action: '',
+                        action: 'https://jfladas.github.io/milo/client/',
                         icon: 'play',
                         color: 'primary'
                     },
                     {
                         text: 'download zip',
-                        action: 'milo.zip',
+                        action: miloFiles['../projects/milo/milo.zip'].default,
                         icon: 'circle-arrow-down',
                         color: 'secondary'
                     }
@@ -141,7 +151,7 @@ export const projects = [
         downloads: [
             {
                 text: 'milo.zip',
-                url: '../src/projects/milo/milo.zip',
+                url: miloFiles['../projects/milo/milo.zip'].default,
                 icon: 'file-archive'
             }
         ]
@@ -150,11 +160,17 @@ export const projects = [
         id: 'pa',
         name: 'developing a google chrome extension',
         description: 'extension for team management structure',
-        context: [
-            '2022 @ Suva, Lucerne',
-            'QV PA - final practical project of software developer apprenticeship'
-        ],
+        context: {
+            lines: [
+                '2022 @ Suva, Lucerne',
+                'QV PA - final practical project of software developer apprenticeship'
+            ],
+            url: 'https://maps.app.goo.gl/GFD4pCKEamtQGqVC6',
+            icon: 'briefcase',
+            tooltip: 'work'
+        },
         categories: [
+            'work',
             'solo',
             'coding',
             'design',
@@ -162,27 +178,27 @@ export const projects = [
         ],
         images: [
             {
-                src: '../src/projects/pa/pa_big_picture.png',
+                src: paFiles['../projects/pa/pa_big_picture.png'].default,
                 caption: 'Big Picture'
             },
             {
-                src: '../src/projects/pa/pa_gui_home.png',
+                src: paFiles['../projects/pa/pa_gui_home.png'].default,
                 caption: 'Main Page with additional Info-Apps'
             },
             {
-                src: '../src/projects/pa/pa_gui_safe.png',
+                src: paFiles['../projects/pa/pa_gui_safe.png'].default,
                 caption: 'Hierarchical & Detail View'
             },
             {
-                src: '../src/projects/pa/pa_gui_options.png',
+                src: paFiles['../projects/pa/pa_gui_options.png'].default,
                 caption: 'Options'
             },
             {
-                src: '../src/projects/pa/pa_gui_dark.png',
+                src: paFiles['../projects/pa/pa_gui_dark.png'].default,
                 caption: 'Dark Mode'
             },
             {
-                src: '../src/projects/pa/pa_gui_safe_dark.png',
+                src: paFiles['../projects/pa/pa_gui_safe_dark.png'].default,
                 caption: 'Hierarchical & Detail View in Dark Mode'
             }
         ],
@@ -343,12 +359,12 @@ export const projects = [
         downloads: [
             {
                 text: 'Documentation.pdf',
-                url: '../src/projects/pa/BUL_PA_Chrome_Extension_Documentation_Redacted.pdf',
+                url: paFiles['../projects/pa/BUL_PA_Chrome_Extension_Documentation_Redacted.pdf'].default,
                 icon: 'file-pdf'
             },
             {
                 text: 'Presentation.pdf',
-                url: '../src/projects/pa/BUL_PA_Chrome_Extension_Presentation.pdf',
+                url: paFiles['../projects/pa/BUL_PA_Chrome_Extension_Presentation.pdf'].default,
                 icon: 'file-pdf'
             }
         ]
@@ -356,6 +372,9 @@ export const projects = [
 ]
 
 export const categories = {
+    'work': 'briefcase',
+    'school': 'graduation-cap',
+    'me': 'house-chimney-user',
     'solo': 'user',
     'team': 'users',
     'coding': 'code',
@@ -365,5 +384,5 @@ export const categories = {
     'ux': 'circle-user',
     'story': 'scroll',
     '3d': 'cube',
-    'video': 'video',
-}
+    'video': 'video'
+};
