@@ -110,8 +110,8 @@ const filteredProjects = computed(() => {
 }
 
 .filters.expanded {
-  min-width: 36rem;
-  width: 36rem;
+  min-width: calc(4rem * 13);
+  width: calc(4rem * 13);
   opacity: 1;
 }
 

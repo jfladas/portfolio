@@ -77,7 +77,7 @@
         <font-awesome-icon icon="fa-brands fa-youtube" />
         YouTube
       </a>
-      <a href="src/assets/Resume.pdf" class="download hoverable" target="_blank">
+      <a :href="aboutFiles['../assets/about/Resume.pdf'].default" class="download hoverable" target="_blank">
         <font-awesome-icon icon="circle-arrow-down" />
         Resume
       </a>
@@ -87,6 +87,8 @@
 </template>
 
 <script>
+import { ref } from 'vue'
+
 export default {
   data() {
     return {
@@ -120,6 +122,10 @@ export default {
       blinkTimeout2: null,
       isBlinking2: false
     };
+  },
+  setup() {
+    const aboutFiles = ref(import.meta.glob('../assets/about/*', { eager: true }));
+    return { aboutFiles };
   },
   mounted() {
     this.length = this.text[0].length;

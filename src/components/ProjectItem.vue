@@ -3,7 +3,7 @@
         <router-link :to="`/projects/${project.id}`">
             <h2>{{ project.name }}</h2>
             <p>{{ project.description }}</p>
-            <p v-for="c in project.context">{{ c }}</p>
+            <p v-for="c in project.context.lines">{{ c }}</p>
             <div class="project-icons">
                 <div v-for="category in project.categories" class="tooltip" :tooltip="category" :key="category">
                     <font-awesome-icon :icon="categories[category]" />

@@ -7,13 +7,21 @@
             <h1 class="title">{{ project.name }}</h1>
             <h2 class="subtitle">{{ project.description }}</h2>
             <div class="categories hoverable">
-                <font-awesome-icon v-for="category in project.categories" :icon="categories[category]" :key="category"
+                <font-awesome-icon v-for="category in project.categories"
+                    v-show="!['work', 'school'].includes(category)" :icon="categories[category]" :key="category"
                     class="category tooltip" :tooltip="category" />
+            </div>
+            <div class="context hoverable">
+                <font-awesome-icon :icon="project.context.icon" class="context-icon tooltip"
+                    :tooltip="project.context.tooltip" />
+                <a :href="project.context.url" class="bold" target="_blank">
+                    <p v-for="c in project.context.lines">{{ c }}</p>
+                </a>
             </div>
             <div v-for="section in project.sections" :key="section.title" class="section">
                 <p v-if="section.type === 'paragraph'" class="paragraph text">{{ section.text }}</p>
-                <h3 v-if="section.type === 'heading'">{{ section.text }}</h3>
-                <h4 v-if="section.type === 'subheading'">{{ section.text }}</h4>
+                <h3 v-if="section.type === 'heading'" class="heading">{{ section.text }}</h3>
+                <h4 v-if="section.type === 'subheading'" class="subheading">{{ section.text }}</h4>
                 <div v-if="section.type === 'bullet'" class="bullet-container">
                     <font-awesome-icon icon="minus" class="text-icon bullet" />
                     <p>
@@ -36,12 +44,13 @@
                     </p>
                 </div>
                 <div v-if="section.type === 'buttons'" class="buttons">
-                    <div v-for="button in section.buttons" :key="button.text" class="button-container">
-                        <button class="hoverable" :class="'button-' + button.color" @click="button.action">
+                    <a v-for="button in section.buttons" :key="button.text" :href="button.action"
+                        class="button-container" target="_blank">
+                        <button class="hoverable" :class="'button-' + button.color">
                             {{ button.text }}
                             <font-awesome-icon :icon="button.icon" class="button-icon" />
                         </button>
-                    </div>
+                    </a>
                 </div>
                 <div v-if="section.type === 'images'">
                     <ImageCarousel :images="project.images" :currentIndex="currentIndex"
@@ -131,7 +140,19 @@ const toggleOverlay = () => {
     gap: 1rem;
     list-style: none;
     padding: 1rem 0;
+}
+
+.context {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     margin-bottom: 3rem;
+}
+
+.context-icon {
+    font-size: 1.5rem;
+    color: var(--mint);
+    margin-right: 0.75rem;
 }
 
 .paragraph {
@@ -156,6 +177,15 @@ const toggleOverlay = () => {
 
 .iconed {
     margin: 0.1rem 0.5rem 0 0;
+}
+
+.paragraph,
+.subheading,
+.bullet-container,
+.iconed-container,
+.quoted-container,
+.buttons {
+    margin-left: 2rem;
 }
 
 .overlay {
