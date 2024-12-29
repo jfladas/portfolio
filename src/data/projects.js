@@ -149,7 +149,7 @@ export const projects = [
     {
         id: 'pa',
         name: 'developing a google chrome extension',
-        description: 'Chrome extension for Suva team management',
+        description: 'extension for team management structure',
         context: [
             '2022 @ Suva, Lucerne',
             'QV PA - final practical project of software developer apprenticeship'
@@ -160,7 +160,32 @@ export const projects = [
             'design',
             'web'
         ],
-        images: [],
+        images: [
+            {
+                src: '../src/projects/pa/pa_big_picture.png',
+                caption: 'Big Picture'
+            },
+            {
+                src: '../src/projects/pa/pa_gui_home.png',
+                caption: 'Main Page with additional Info-Apps'
+            },
+            {
+                src: '../src/projects/pa/pa_gui_safe.png',
+                caption: 'Hierarchical & Detail View'
+            },
+            {
+                src: '../src/projects/pa/pa_gui_options.png',
+                caption: 'Options'
+            },
+            {
+                src: '../src/projects/pa/pa_gui_dark.png',
+                caption: 'Dark Mode'
+            },
+            {
+                src: '../src/projects/pa/pa_gui_safe_dark.png',
+                caption: 'Hierarchical & Detail View in Dark Mode'
+            }
+        ],
         sections: [
             {
                 type: 'quoted',
@@ -284,6 +309,10 @@ export const projects = [
             },
             {
                 type: 'bullet',
+                text: 'Combined two different REST APIs to ensure complete employee data coverage.'
+            },
+            {
+                type: 'bullet',
                 text: 'Built a dynamic, hierarchical structure that supports effortless navigation.'
             },
             {
@@ -296,18 +325,6 @@ export const projects = [
             },
             {
                 type: 'subheading',
-                text: 'Challenges and Solutions'
-            },
-            {
-                type: 'bullet',
-                text: 'Data Integration: Combined two different REST APIs to ensure complete employee data coverage.'
-            },
-            {
-                type: 'bullet',
-                text: 'Design Consistency: Aligned the UI with Suva\'s existing visual standards.'
-            },
-            {
-                type: 'subheading',
                 text: 'Conclusion'
             },
             {
@@ -316,44 +333,17 @@ export const projects = [
             },
             {
                 type: 'heading',
-                text: 'Read the Documentation'
+                text: 'Pictures'
             },
             {
-                type: 'images',
-                images: [
-                    {
-                        src: '/src/projects/pa/BUL_PA_Chrome_Extension_Documentation.pdf',
-                        alt: 'Documentation.pdf'
-                    },
-                    {
-                        src: '/src/projects/pa/BUL_PA_Chrome_Extension_Presentation.pdf',
-                        alt: 'Presentation.pdf'
-                    }
-                ]
-            },
-            {
-                type: 'buttons',
-                buttons: [
-                    {
-                        text: 'Documentation.pdf',
-                        action: '/src/projects/pa/BUL_PA_Chrome_Extension_Documentation.pdf',
-                        icon: 'file-pdf',
-                        color: 'primary'
-                    },
-                    {
-                        text: 'Presentation.pdf',
-                        action: '/src/projects/pa/BUL_PA_Chrome_Extension_Presentation.pdf',
-                        icon: 'file-pdf',
-                        color: 'secondary'
-                    }
-                ]
+                type: 'images'
             }
         ],
         links: [],
         downloads: [
             {
                 text: 'Documentation.pdf',
-                url: '../src/projects/pa/BUL_PA_Chrome_Extension_Documentation.pdf',
+                url: '../src/projects/pa/BUL_PA_Chrome_Extension_Documentation_Redacted.pdf',
                 icon: 'file-pdf'
             },
             {
@@ -362,8 +352,7 @@ export const projects = [
                 icon: 'file-pdf'
             }
         ]
-    },
-    // Add more projects here
+    }
 ]
 
 export const categories = {

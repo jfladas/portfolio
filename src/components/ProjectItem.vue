@@ -1,6 +1,6 @@
 <template>
     <div class="project-item hoverable">
-        <RouterLink :to="`/projects/${project.id}`">
+        <router-link :to="`/projects/${project.id}`">
             <h2>{{ project.name }}</h2>
             <p>{{ project.description }}</p>
             <p v-for="c in project.context">{{ c }}</p>
@@ -9,7 +9,7 @@
                     <font-awesome-icon :icon="categories[category]" />
                 </div>
             </div>
-        </RouterLink>
+        </router-link>
     </div>
 </template>
 
