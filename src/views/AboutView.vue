@@ -17,16 +17,15 @@
             <font-awesome-icon icon="quote-right" class="quote-right" />
           </span>
           I'm currently studying
-          <span class="bold hoverable">Digital Ideation</span>
-          at the Lucerne University of Applied Sciences and Arts.
-          I love exploring all of the possibilities of how
-          <span class="bold hoverable">technology and creativity</span>
-          can be combined.
+          <a href="https://www.hslu.ch/en/lucerne-school-of-information-technology/degree-programs/bachelor/digital-ideation/"
+            class="bold hoverable" target="_blank">Digital Ideation</a>
+          at the Lucerne University of Applied Sciences and Arts, an interdisciplinary program combining design and
+          computer science to create digital solutions.
+          I love exploring all of the possibilities of how technology and creativity can be combined.
           My focus mainly lies in web development, but other aspects I can explore with my studies also intrigue me,
           ranging from game design & development to digital art.
           After I've attained my bachelor of science, I aim to work in the field of
-          <span class="bold hoverable">frontend web development</span>,
-          creating unique and interactive user experiences.
+          frontend web development, creating unique and interactive user experiences.
           But who knows what the future may hold?
         </p>
       </div>
@@ -36,13 +35,14 @@
       <div class="buttons">
         <a class="button-container" href="mailto:lukas.bucherr@gmail.com">
           <button class="button-secondary hoverable tooltip" tooltip="e-mail">
+            E-Mail Me
             <font-awesome-icon icon="envelope" class="button-icon" />
           </button>
         </a>
         <div class="button-container">
           <router-link to="/projects">
             <button class="button-primary hoverable">
-              my projects
+              Explore My Projects
               <font-awesome-icon icon="arrow-right" class="button-icon" />
             </button>
           </router-link>
@@ -56,7 +56,7 @@
         <img src="/src/assets/me_glitch.png" alt="me" class="me-glitch" />
         <img src="/src/assets/me_dark.png" alt="me" class="me-dark" />
       </div>
-      <h3>further links</h3>
+      <h3>Links & Downloads</h3>
       <a href="https://github.com/jfladas/" class="link hoverable" target="_blank">
         <font-awesome-icon icon="fa-brands fa-github-alt" />
         GitHub

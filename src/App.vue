@@ -271,7 +271,7 @@ footer {
   width: 100%;
   text-align: center;
   color: var(--mint);
-  background: var(--deep);
+  background: linear-gradient(to bottom, var(--deep), rgba(var(--navy-rgb), 0));
   margin-top: 6rem;
   padding-top: 1rem;
   padding-bottom: 6rem;

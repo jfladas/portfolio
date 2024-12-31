@@ -2,8 +2,8 @@
   <div class="content">
     <h1>projects</h1>
     <div class="filter-container hoverable" :class="{ expanded: filterMode }">
-      <p class="filter" @click="toggleFilter('all')" :class="{ selected: allSelected }">all</p>
-      <font-awesome-icon icon="filter" class="filter-toggle filter" :class="{ selected: filterMode }"
+      <p class="filter toggle" @click="toggleFilter('all')" :class="{ selected: allSelected && !filterMode }">all</p>
+      <font-awesome-icon icon="filter" class="filter toggle" :class="{ selected: filterMode }"
         @click="toggleFilter('filter')" />
       <div class="filters" :class="{ expanded: filterMode }">
         <font-awesome-icon v-for="(icon, key) in categories" :icon="icon" :key="key" class="filter tooltip"
@@ -97,6 +97,7 @@ const filteredProjects = computed(() => {
 .filter-container {
   display: flex;
   flex-wrap: nowrap;
+  width: 0;
 }
 
 .filters {
@@ -110,8 +111,8 @@ const filteredProjects = computed(() => {
 }
 
 .filters.expanded {
-  min-width: calc(4rem * 13);
-  width: calc(4rem * 13);
+  min-width: calc(4rem * 10);
+  width: calc(4rem * 10);
   opacity: 1;
 }
 
@@ -132,6 +133,10 @@ const filteredProjects = computed(() => {
 .filter.selected {
   color: var(--aqua);
   background: linear-gradient(to top, var(--deep), rgba(var(--navy-rgb), 0));
+}
+
+.filter.toggle.selected {
+  background: linear-gradient(to top, var(--sky), var(--deep), rgba(var(--navy-rgb), 0));
 }
 
 .filter:hover {

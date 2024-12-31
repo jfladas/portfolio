@@ -1,25 +1,23 @@
-import { icon } from "@fortawesome/fontawesome-svg-core";
-
 const miloFiles = import.meta.glob('../projects/milo/*', { eager: true });
+const solarsystemFiles = import.meta.glob('../projects/solarsystem/*', { eager: true });
 const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 
 export const projects = [
     {
         id: 'milo',
         name: "milo's forest adventure",
-        description: 'web-based scroll & click game',
+        description: 'web-based scroll & click adventure',
         context:
         {
             lines: [
                 '2024 @ HSLU, Rotkreuz',
                 'Module DEWEB - Development for Web & Mobile'
             ],
-            url: 'https://maps.app.goo.gl/xoW3RUbiR5C3L5Rg9',
+            url: 'https://www.hslu.ch/de-ch/informatik/',
             icon: 'graduation-cap',
             tooltip: 'school'
         },
         categories: [
-            'school',
             'solo',
             'coding',
             'design',
@@ -27,7 +25,6 @@ export const projects = [
             'game',
             'story'
         ],
-        images: [],
         sections: [
             {
                 type: 'quoted',
@@ -55,6 +52,10 @@ export const projects = [
                         color: 'secondary'
                     }
                 ]
+            },
+            {
+                type: 'paragraph',
+                text: `Online demo lacks backend features like the leaderboard at the end. To play the game locally, download the zip file and follow the instructions below.`
             },
             {
                 type: 'heading',
@@ -157,50 +158,176 @@ export const projects = [
         ]
     },
     {
+        id: 'solarsystem',
+        name: 'solarsystem',
+        description: `3d rendered asteroid video`,
+        context: {
+            lines: [
+                '2023 @ HSLU, Rotkreuz',
+                'Module 4DAUT - Cinema 4D Authoring'
+            ],
+            url: 'https://www.hslu.ch/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'team',
+            'design',
+            '3d',
+            'video'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `This was my first encounter with 3D design and rendering. 
+                        As a final project we were tasked to create a video, applying everything we learned within the course.
+                        We decided to animate an asteroid soaring past the planets of our solar system, 
+                        ending in a dramatic collision with Earth. It was created using Cinema 4D with Chaos Corona.
+                        The project was executed as a team effort between myself and Silvan Parodi.`
+            },
+            {
+                type: 'heading',
+                text: 'Video'
+            },
+            {
+                type: 'video',
+                video: solarsystemFiles['../projects/solarsystem/solarsystemc4d.mp4'].default
+            },
+            {
+                type: 'heading',
+                text: 'Other Renders'
+            },
+            {
+                type: 'paragraph',
+                text: 'Through the C4D Authoring module, some renders were created as part of the learning process. Here are a few examples:'
+            },
+            {
+                type: 'subheading',
+                text: 'Homework 1: Chaos'
+            },
+            {
+                type: 'bullet',
+                text: 'A chaotic yet aesthetic assembly of shapes and objects. This render emphasizes randomness and texture experimentation.'
+            },
+            {
+                type: 'subheading',
+                text: 'Homework 2: Vodka Bottle'
+            },
+            {
+                type: 'bullet',
+                text: 'Three variants of vodka bottles with unique, self-designed labels'
+            },
+            {
+                type: 'bullet',
+                text: 'Bottle and glass 3D assets imported from Cinema 4D library'
+            },
+            {
+                type: 'bullet',
+                text: 'Composition & ice cubes and lime created from scratch'
+            },
+            {
+                type: 'heading',
+                text: 'Pictures'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: solarsystemFiles['../projects/solarsystem/1_chaos.jpg'].default,
+                        caption: 'Chaos'
+                    },
+                    {
+                        src: solarsystemFiles['../projects/solarsystem/2_label_classic.jpg'].default,
+                        caption: 'Label: Classic'
+                    },
+                    {
+                        src: solarsystemFiles['../projects/solarsystem/2_vodka_classic.jpg'].default,
+                        caption: 'Vodka Bottle: Classic'
+                    },
+                    {
+                        src: solarsystemFiles['../projects/solarsystem/2_label_limemint.jpg'].default,
+                        caption: 'Label: Lime Mint'
+                    },
+                    {
+                        src: solarsystemFiles['../projects/solarsystem/2_vodka_limemint.jpg'].default,
+                        caption: 'Vodka Bottle: Lime Mint'
+                    },
+                    {
+                        src: solarsystemFiles['../projects/solarsystem/2_label_strawberry.jpg'].default,
+                        caption: 'Label: Strawberry'
+                    },
+                    {
+                        src: solarsystemFiles['../projects/solarsystem/2_vodka_strawberry.jpg'].default,
+                        caption: 'Vodka Bottle: Strawberry'
+                    },
+                ],
+            },
+        ],
+        links: [],
+        downloads: [
+            {
+                text: 'Solarsystem.mp4',
+                url: solarsystemFiles['../projects/solarsystem/solarsystemc4d.mp4'].default,
+                icon: 'file-video'
+            },
+            {
+                text: 'Chaos.jpg',
+                url: solarsystemFiles['../projects/solarsystem/1_chaos.jpg'].default,
+                icon: 'file-image'
+            },
+            {
+                text: 'Vodka_Classic.jpg',
+                url: solarsystemFiles['../projects/solarsystem/2_vodka_classic.jpg'].default,
+                icon: 'file-image'
+            },
+            {
+                text: 'Vodka_LimeMint.jpg',
+                url: solarsystemFiles['../projects/solarsystem/2_vodka_limemint.jpg'].default,
+                icon: 'file-image'
+            },
+            {
+                text: 'Vodka_Strawberry.jpg',
+                url: solarsystemFiles['../projects/solarsystem/2_vodka_strawberry.jpg'].default,
+                icon: 'file-image'
+            }
+        ]
+    },
+    {
         id: 'pa',
         name: 'developing a google chrome extension',
-        description: 'extension for team management structure',
+        description: 'internal organization structure & employee information',
         context: {
             lines: [
                 '2022 @ Suva, Lucerne',
                 'QV PA - final practical project of software developer apprenticeship'
             ],
-            url: 'https://maps.app.goo.gl/GFD4pCKEamtQGqVC6',
+            url: 'https://www.suva.ch/',
             icon: 'briefcase',
             tooltip: 'work'
         },
         categories: [
-            'work',
             'solo',
             'coding',
             'design',
             'web'
         ],
-        images: [
+        links: [],
+        downloads: [
             {
-                src: paFiles['../projects/pa/pa_big_picture.png'].default,
-                caption: 'Big Picture'
+                text: 'Documentation.pdf',
+                url: paFiles['../projects/pa/BUL_PA_Chrome_Extension_Documentation_Redacted.pdf'].default,
+                icon: 'file-pdf'
             },
             {
-                src: paFiles['../projects/pa/pa_gui_home.png'].default,
-                caption: 'Main Page with additional Info-Apps'
+                text: 'Presentation.pdf',
+                url: paFiles['../projects/pa/BUL_PA_Chrome_Extension_Presentation.pdf'].default,
+                icon: 'file-pdf'
             },
             {
-                src: paFiles['../projects/pa/pa_gui_safe.png'].default,
-                caption: 'Hierarchical & Detail View'
+                text: 'Presentation.ppsx',
+                url: paFiles['../projects/pa/BUL_PA_Chrome_Extension_Presentation.ppsx'].default,
+                icon: 'file-powerpoint'
             },
-            {
-                src: paFiles['../projects/pa/pa_gui_options.png'].default,
-                caption: 'Options'
-            },
-            {
-                src: paFiles['../projects/pa/pa_gui_dark.png'].default,
-                caption: 'Dark Mode'
-            },
-            {
-                src: paFiles['../projects/pa/pa_gui_safe_dark.png'].default,
-                caption: 'Hierarchical & Detail View in Dark Mode'
-            }
         ],
         sections: [
             {
@@ -208,6 +335,39 @@ export const projects = [
                 text: `This project aimed to explore the potential of browser-based solutions for internal organizational tools 
                         by creating a functional Chrome extension. It represents Suva's SAFe team structures and offers easy access 
                         to hierarchical data, catering to both administrative and operational needs.`
+            },
+            {
+                type: 'heading',
+                text: 'Pictures'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: paFiles['../projects/pa/pa_big_picture.png'].default,
+                        caption: 'Project Structure (Big Picture)'
+                    },
+                    {
+                        src: paFiles['../projects/pa/pa_gui_home.png'].default,
+                        caption: 'Main Page with additional Info-Apps'
+                    },
+                    {
+                        src: paFiles['../projects/pa/pa_gui_safe.png'].default,
+                        caption: 'Hierarchical & Detail View'
+                    },
+                    {
+                        src: paFiles['../projects/pa/pa_gui_options.png'].default,
+                        caption: 'Options Page'
+                    },
+                    {
+                        src: paFiles['../projects/pa/pa_gui_dark.png'].default,
+                        caption: 'Dark Mode'
+                    },
+                    {
+                        src: paFiles['../projects/pa/pa_gui_safe_dark.png'].default,
+                        caption: 'Hierarchical & Detail View in Dark Mode'
+                    }
+                ],
             },
             {
                 type: 'heading',
@@ -346,35 +506,12 @@ export const projects = [
             {
                 type: 'paragraph',
                 text: 'This project showcases the viability of browser extensions as an internal organizational tool, providing a scalable and accessible platform for team and member information. It also serves as a foundation for future modules and functionalities.'
-            },
-            {
-                type: 'heading',
-                text: 'Pictures'
-            },
-            {
-                type: 'images'
-            }
-        ],
-        links: [],
-        downloads: [
-            {
-                text: 'Documentation.pdf',
-                url: paFiles['../projects/pa/BUL_PA_Chrome_Extension_Documentation_Redacted.pdf'].default,
-                icon: 'file-pdf'
-            },
-            {
-                text: 'Presentation.pdf',
-                url: paFiles['../projects/pa/BUL_PA_Chrome_Extension_Presentation.pdf'].default,
-                icon: 'file-pdf'
             }
         ]
     }
 ]
 
 export const categories = {
-    'work': 'briefcase',
-    'school': 'graduation-cap',
-    'me': 'house-chimney-user',
     'solo': 'user',
     'team': 'users',
     'coding': 'code',

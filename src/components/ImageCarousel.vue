@@ -1,32 +1,34 @@
 <template>
-    <div class="carousel hoverable">
-        <div class="carousel-inner" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
-            <div class="carousel-item" v-for="(image, index) in images" :key="index">
-                <img :src="image.src" :alt="image.caption" />
-                <div class="fade-bottom">
-                    <p>{{ image.caption }}</p>
+    <teleport to="#images-teleport" :disabled="!isOverlayVisible">
+        <div class="carousel hoverable">
+            <div class="carousel-inner" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
+                <div class="carousel-item" v-for="(image, index) in images" :key="index"
+                    :class="{ small: !isOverlayVisible }">
+                    <img :src="image.src" :alt="image.caption" />
+                    <div class="fade-bottom" :class="{ small: !isOverlayVisible }">
+                        <p>{{ image.caption }}</p>
+                    </div>
                 </div>
             </div>
+            <div class="carousel-fade prev"></div>
+            <div class="carousel-fade next"></div>
+            <button class="carousel-control prev" @click="prevSlide">
+                <font-awesome-icon icon="chevron-left" />
+            </button>
+            <button class="carousel-control next" @click="nextSlide">
+                <font-awesome-icon icon="chevron-right" />
+            </button>
+            <button v-if="!isOverlayVisible" class="expand-button" @click="$emit('toggle-overlay')">
+                <font-awesome-icon icon="up-right-and-down-left-from-center" />
+            </button>
+            <button v-if="isOverlayVisible" class="unexpand-button" @click="$emit('toggle-overlay')">
+                <font-awesome-icon icon="down-left-and-up-right-to-center" />
+            </button>
         </div>
-        <div class="carousel-fade prev"></div>
-        <div class="carousel-fade next"></div>
-        <button class="carousel-control prev" @click="prevSlide">
-            <font-awesome-icon icon="chevron-left" />
-        </button>
-        <button class="carousel-control next" @click="nextSlide">
-            <font-awesome-icon icon="chevron-right" />
-        </button>
-        <button v-if="!isOverlayVisible" class="expand-button" @click="$emit('toggle-overlay')">
-            <font-awesome-icon icon="up-right-and-down-left-from-center" />
-        </button>
-        <button v-if="isOverlayVisible" class="unexpand-button" @click="$emit('toggle-overlay')">
-            <font-awesome-icon icon="down-left-and-up-right-to-center" />
-        </button>
-    </div>
+    </teleport>
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue';
 export default {
     props: {
         images: {
@@ -47,6 +49,7 @@ export default {
             slideTimeout: null
         };
     },
+    emits: ['toggle-overlay', 'next-slide', 'prev-slide'],
     methods: {
         nextSlide() {
             this.$emit('next-slide');
@@ -89,8 +92,7 @@ export default {
 
 .carousel-item {
     min-width: 100%;
-
-    box-sizing: border-box;
+    max-height: 90vh;
     background: linear-gradient(to top, rgba(var(--navy-rgb), 0), var(--deep), rgba(var(--navy-rgb), 0));
     background: transparent;
     display: flex;
@@ -98,8 +100,16 @@ export default {
     justify-content: center;
 }
 
+.carousel-item.small {
+    max-height: 30rem;
+}
+
 .carousel img {
     width: 100%;
+    height: auto;
+    max-height: calc(100% - 2.5rem);
+    margin-top: 0.5rem;
+    object-fit: contain;
     transform: scale(0.99);
     display: block;
 }
@@ -117,11 +127,10 @@ export default {
 
 .fade-bottom {
     position: relative;
-    width: 100%;
     height: 2rem;
     background-color: rgba(var(--navy-rgb), 0);
     backdrop-filter: blur(1rem);
-    transform: translate(0, -15%);
+    transform: translate(0, -30%);
 }
 
 .carousel-fade {
@@ -181,14 +190,6 @@ export default {
     background-color: rgba(var(--deep-rgb), 0.9);
 }
 
-.carousel:hover .carousel-control {
-    opacity: 1;
-}
-
-.carousel:hover .carousel-fade {
-    opacity: 1;
-}
-
 .expand-button,
 .unexpand-button {
     position: absolute;
@@ -225,6 +226,8 @@ export default {
     background-color: rgba(var(--deep-rgb), 0.9);
 }
 
+.carousel:hover .carousel-control,
+.carousel:hover .carousel-fade,
 .carousel:hover .expand-button,
 .carousel:hover .unexpand-button {
     opacity: 1;

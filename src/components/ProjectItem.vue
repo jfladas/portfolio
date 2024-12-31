@@ -29,6 +29,7 @@ defineProps({
 .project-item {
     padding: 0.5rem 1rem;
     background: linear-gradient(to right,
+            var(--sky),
             var(--deep),
             rgba(var(--navy-rgb), 0));
 }
