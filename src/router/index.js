@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Projects from '@/views/ProjectsView.vue'
 import About from '@/views/AboutView.vue'
+import Projects from '@/views/ProjectsView.vue'
 import ProjectDetail from '@/views/ProjectDetail.vue'
+import Achievements from '@/views/AchievementsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,6 +31,12 @@ const router = createRouter({
       path: '/projects/:id',
       name: 'project-detail',
       component: ProjectDetail,
+      props: true
+    },
+    {
+      path: '/achievements',
+      name: 'achievements',
+      component: Achievements,
       props: true
     },
     {

@@ -128,6 +128,7 @@ const filteredProjects = computed(() => {
   align-items: center;
   justify-content: center;
   user-select: none;
+  cursor: pointer;
 }
 
 .filter.selected {

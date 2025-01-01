@@ -1,6 +1,8 @@
 <template>
   <header class="hoverable">
-    <div class="logo" :class="{ reverse: $route.path !== '/about' }">jfladas</div>
+    <router-link to="/about">
+      <div class="logo" :class="{ reverse: $route.path !== '/about' }">jfladas</div>
+    </router-link>
     <nav>
       <router-link to="/about" class="nav-item left" :class="{ selected: $route.path === '/about' }">
         about
@@ -10,7 +12,24 @@
       </router-link>
     </nav>
   </header>
+  <div class="more hoverable" :class="{ open: moreVisible }">
+    <font-awesome-icon icon="caret-left" class="more-icon tooltip" tooltip="more" @click="moreVisible = !moreVisible" />
+    <div class="more-items">
+      <div class="more-item tooltip" tooltip="en/de" @click="toggleLanguage">
+        <font-awesome-icon icon="language" fixed-width />
+      </div>
+      <div class="more-item tooltip" tooltip="cursor" @click="toggleCursor">
+        <font-awesome-icon icon="arrow-pointer" fixed-width />
+      </div>
+      <div class="more-item tooltip" tooltip="earned">
+        <router-link to="/achievements" @click="moreVisible = !moreVisible">
+          <font-awesome-icon icon="trophy" fixed-width />
+        </router-link>
+      </div>
+    </div>
+  </div>
   <router-view />
+  <div id="toast"></div>
   <div class="fade-out"></div>
   <footer>
     <p>made with <font-awesome-icon icon="heart" class="heart hoverable tooltip" tooltip="love" /> by jfladas</p>
@@ -21,10 +40,13 @@
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
+
+const moreVisible = ref(false)
+const isCursorVisible = ref(true)
+const currentLanguage = ref('en')
 
 watch(() => route.path, (to, from) => {
   removeCursorHover();
@@ -94,6 +116,45 @@ const addTooltipListeners = (elements) => {
   })
 }
 
+const toggleLanguage = () => {
+  currentLanguage.value = currentLanguage.value === 'en' ? 'de' : 'en';
+  // TODO: Implement language change logic here
+
+  showToast(currentLanguage.value === 'en' ? 'Language set to English' : 'Sprache auf Deutsch gesetzt');
+  moreVisible.value = false;
+}
+
+const toggleCursor = () => {
+  removeTooltip();
+  isCursorVisible.value = !isCursorVisible.value;
+  const existingLink = document.getElementById('cursor-style');
+  if (existingLink) {
+    existingLink.remove();
+  }
+  const link = document.createElement('link');
+  link.id = 'cursor-style';
+  link.rel = 'stylesheet';
+  link.href = new URL(isCursorVisible.value ? './assets/custom-cursor.css' : './assets/default-cursor.css', import.meta.url).href;
+  document.head.appendChild(link);
+
+  showToast(isCursorVisible.value ? 'Custom cursor enabled' : 'Default cursor enabled');
+  moreVisible.value = false;
+}
+
+const showToast = (message) => {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  setTimeout(() => {
+    toast.classList.add('visible');
+  }, 100);
+  setTimeout(() => {
+    toast.classList.remove('visible');
+    setTimeout(() => {
+
+    }, 500);
+  }, 3000);
+};
+
 onMounted(() => {
   window.addEventListener('mousemove', updateCursor)
   const hoverElements = document.querySelectorAll('.hoverable')
@@ -126,6 +187,12 @@ onMounted(() => {
   })
 
   observer.observe(document.body, { childList: true, subtree: true })
+
+  const link = document.createElement('link');
+  link.id = 'cursor-style';
+  link.rel = 'stylesheet';
+  link.href = new URL('./assets/custom-cursor.css', import.meta.url).href;
+  document.head.appendChild(link);
 
   onUnmounted(() => {
     window.removeEventListener('mousemove', updateCursor)
@@ -253,6 +320,103 @@ nav {
   -webkit-background-clip: text;
 }
 
+.more {
+  position: fixed;
+  bottom: 2rem;
+  right: 0;
+  width: 4rem;
+  height: 2.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  transform: translate(0, -50%);
+  font-size: 2rem;
+  background-color: rgba(var(--deep-rgb), 0.2);
+  backdrop-filter: blur(1rem);
+  color: var(--sky);
+  z-index: 10;
+  transition: all 0.5s;
+}
+
+.more:hover {
+  background-color: rgba(var(--deep-rgb), 0.5);
+}
+
+.more:active {
+  background-color: rgba(var(--deep-rgb), 0.7);
+}
+
+.more-icon {
+  padding: 0.5rem 1rem;
+  transform: rotate(0);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.more.open {
+  width: 16rem;
+}
+
+.more.open .more-icon {
+  transform: rotate(-180deg);
+}
+
+.more:has(.more-icon:nth-of-type(1):hover) {
+  width: 5rem;
+}
+
+.more.open:has(.more-icon:nth-of-type(1):hover) {
+  width: 15rem;
+}
+
+.more-items {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.more-item {
+  font-size: 1.5rem;
+  color: var(--sky);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.more-icon:hover,
+.more-item:hover {
+  color: var(--aqua);
+}
+
+.more-icon:active,
+.more-item:active {
+  color: var(--mint);
+}
+
+.more.open .more-item {
+  opacity: 1;
+}
+
+#toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 1rem 2rem;
+  background: rgba(var(--navy-rgb), 0.5);
+  backdrop-filter: blur(1rem);
+  color: white;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+#toast.visible {
+  opacity: 1;
+}
+
 .fade-out {
   position: fixed;
   bottom: 0;
@@ -284,66 +448,5 @@ footer {
 
 .heart:hover {
   color: white;
-}
-
-.custom-cursor {
-  position: fixed;
-  width: 3rem;
-  height: 3rem;
-  background-color: transparent;
-  box-shadow: 0 0 1rem 0.5rem rgba(var(--deep-rgb), 0.1);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.custom-cursor::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(var(--aqua-rgb), 0.1);
-  backdrop-filter: blur(0.2rem);
-  mask: radial-gradient(circle, white, white);
-  border-radius: 50%;
-  transition: background-color 0.2s ease, mask 0.2s ease;
-}
-
-.custom-cursor.hover::before {
-  background-color: rgba(var(--deep-rgb), 0.2);
-  mask: radial-gradient(circle, transparent 20%, white);
-}
-
-.custom-cursor.hover {
-  transform: translate(-50%, -50%) scale(1.5);
-  box-shadow: 0 0 1rem 0.5rem rgba(var(--navy-rgb), 0.5);
-}
-
-.tooltip-container {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  padding-top: 1.7rem;
-  text-align: center;
-  font-size: 0.65rem;
-  color: white;
-  text-shadow: 0 0 0.5rem var(--navy);
-  opacity: 1;
-  transition: opacity 0.2s ease;
-}
-
-.tooltip-container::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  border-radius: 50%;
-  background: radial-gradient(circle at center bottom,
-      rgba(var(--navy-rgb), 0.5),
-      rgba(var(--navy-rgb), 0) 75%),
-    radial-gradient(circle at center top,
-      rgba(var(--navy-rgb), 0) 75%,
-      rgba(255, 255, 255, 0.8));
 }
 </style>

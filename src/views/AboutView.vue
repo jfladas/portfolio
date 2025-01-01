@@ -30,24 +30,40 @@
         </p>
       </div>
       <h3>
-        Intrigued?
+        Explore my work! Get in touch!
       </h3>
       <div class="buttons">
-        <a class="button-container" href="mailto:lukas.bucherr@gmail.com">
-          <button class="button-secondary hoverable tooltip" tooltip="e-mail">
-            E-Mail Me
-            <font-awesome-icon icon="envelope" class="button-icon" />
-          </button>
-        </a>
         <div class="button-container">
           <router-link to="/projects">
             <button class="button-primary hoverable">
-              Explore My Projects
-              <font-awesome-icon icon="arrow-right" class="button-icon" />
+              My Projects
+              <font-awesome-icon icon="rocket" />
             </button>
           </router-link>
         </div>
+        <a class="button-container" href="mailto:lukas.bucherr@gmail.com">
+          <button class="button-secondary hoverable">
+            E-Mail
+            <font-awesome-icon icon="paper-plane" />
+          </button>
+        </a>
       </div>
+      <h3>
+        More about me...
+      </h3>
+      <p class="text">
+        Beyond my passion for technology and design, music plays a big role in my life. I play the saxophone in the
+        local orchestra
+        '<a href="https://www.musikvereinbuochs.ch/" class="bold hoverable" target="_blank">Musikverein Buochs</a>',
+        which has been an amazing way to connect with others and immerse myself in the joy of
+        creating music. My love for music doesn't stop there. I'm also a fan of K-pop and enjoy attending concerts
+        whenever I can.
+      </p>
+      <p class="text">
+        Learning Japanese has been another fulfilling journey, deepening my interest in East Asian culture. Through
+        self-study, school courses, and visiting different parts of Japan, I have developed quite an appreciation of its
+        many facets and it has become my favorite travel destination.
+      </p>
     </div>
     <div class="content-right">
       <div class="me-container hoverable">
@@ -431,10 +447,19 @@ export default {
 
 .title:hover .thatsme {
   opacity: 1;
-  transform: translate(-1vw, -5vw);
+  transform: translate(-1vw, calc(-2.5rem - 2vw));
 }
 
 .me-container:hover .overlay {
   opacity: 1;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+p,
+.buttons {
+  margin-left: 2rem;
 }
 </style>

@@ -1,0 +1,64 @@
+* {
+    cursor: none !important;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    box-shadow: 0 0 1rem 0.5rem rgba(var(--deep-rgb), 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-cursor::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(var(--aqua-rgb), 0.1);
+    backdrop-filter: blur(0.2rem);
+    mask: radial-gradient(circle, white, white);
+    border-radius: 50%;
+    transition: background-color 0.2s ease, mask 0.2s ease;
+}
+
+.custom-cursor.hover::before {
+    background-color: rgba(var(--deep-rgb), 0.2);
+    mask: radial-gradient(circle, transparent 20%, white);
+}
+
+.custom-cursor.hover {
+    transform: translate(-50%, -50%) scale(1.5);
+    box-shadow: 0 0 1rem 0.5rem rgba(var(--navy-rgb), 0.5);
+}
+
+.tooltip-container {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    padding-top: 1.7rem;
+    text-align: center;
+    font-size: 0.65rem;
+    color: white;
+    text-shadow: 0 0 0.5rem var(--navy);
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.tooltip-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    border-radius: 50%;
+    background: radial-gradient(circle at center bottom,
+            rgba(var(--navy-rgb), 0.5),
+            rgba(var(--navy-rgb), 0) 75%),
+        radial-gradient(circle at center top,
+            rgba(var(--navy-rgb), 0) 75%,
+            rgba(255, 255, 255, 0.8));
+}
