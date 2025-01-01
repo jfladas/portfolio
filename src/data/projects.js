@@ -1,4 +1,7 @@
+import { text } from "@fortawesome/fontawesome-svg-core";
+
 const miloFiles = import.meta.glob('../projects/milo/*', { eager: true });
+const rodinaFiles = import.meta.glob('../projects/rodina/*', { eager: true });
 const solarsystemFiles = import.meta.glob('../projects/solarsystem/*', { eager: true });
 const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 
@@ -158,6 +161,213 @@ export const projects = [
         ]
     },
     {
+        id: 'rodina',
+        name: 'the rodina',
+        description: `3d rendered video inspired by the rodina's visual style`,
+        context: {
+            lines: [
+                '2023 @ HSLU, Rotkreuz',
+                'Module KIVIS - Kickstart Visual Design'
+            ],
+            url: 'https://www.hslu.ch/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'solo',
+            'design',
+            '3d',
+            'video'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `In the Kickstart Visual Design course, we were taught design fundamentals and principles.
+                        We learned about many influential designers and design studios, one of which we were tasked to focus on for a presentation and final project.
+                        The final project I developed is inpired by the distinct visual style of the dutch design studio 'The Rodina'.
+
+                        For animating and editing a scanned 3D modeling of my head I used Cinema 4D, video editing, sound design and color correction was done in Adobe Premiere Pro.
+                        The project integrates feedback and experimentation to achieve a polished visual result.`
+            },
+            {
+                type: 'heading',
+                text: 'Video'
+            },
+            {
+                type: 'video',
+                video: rodinaFiles['../projects/rodina/The_Rodina.mp4'].default
+            },
+            {
+                type: 'heading',
+                text: 'Process'
+            },
+            {
+                type: 'iconed',
+                text: 'Conceptualization',
+                icon: '1'
+            },
+            {
+                type: 'paragraph',
+                text: `The project was inspired primarily by two works of The Rodina. 
+                        The idea was to scan my head and design a piece that reflects their aesthetic style, 
+                        incorporating vibrant visuals and motion.`
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: rodinaFiles['../projects/rodina/inspiration1.jpg'].default,
+                        caption: 'Inspiration 1: You and Me'
+                    },
+                    {
+                        src: rodinaFiles['../projects/rodina/inspiration2.jpg'].default,
+                        caption: 'Inspiration 2: Sweet Datapoint'
+                    }
+                ]
+            },
+            {
+                type: 'iconed',
+                text: 'Initial 3D Scan',
+                icon: '2'
+            },
+            {
+                type: 'paragraph',
+                text: `A 3D scan of my head was taken as the base, using the mobile app Polycam. 
+                        This raw scan was refined in Cinema4D, including modifications such as 
+                        distorting the eye area for an abstract effect.`
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: rodinaFiles['../projects/rodina/scans.gif'].default,
+                        caption: 'Raw Scan & Edit'
+                    },
+                    {
+                        src: rodinaFiles['../projects/rodina/scan_c4d.jpg'].default,
+                        caption: 'Scan in Cinema4D'
+                    }
+                ]
+            },
+            {
+                type: 'iconed',
+                text: 'Visual Variations',
+                icon: '3'
+            },
+            {
+                type: 'paragraph',
+                text: `I experimented with static poster designs and animated video concepts. 
+                        In the end, I settled on the latter for a more dynamic presentation.`
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: rodinaFiles['../projects/rodina/variant1.jpg'].default,
+                        caption: 'Poster Variant 1'
+                    },
+                    {
+                        src: rodinaFiles['../projects/rodina/variant2.jpg'].default,
+                        caption: 'Poster Variant 2'
+                    }
+                ]
+            },
+            {
+                type: 'iconed',
+                text: 'Feedback',
+                icon: '4'
+            },
+            {
+                type: 'paragraph',
+                text: `Some feedback I got in the first round was, that the colors were too bright, and the head rotation too fast.`
+            },
+            {
+                type: 'subheading',
+                text: 'First Version'
+            },
+            {
+                type: 'video',
+                video: rodinaFiles['../projects/rodina/rodina_v1.mp4'].default
+            },
+            {
+                type: 'iconed',
+                text: 'Experimentation',
+                icon: '5'
+            },
+            {
+                type: 'bullet',
+                text: 'Adjusted colors for better balance & refined animation to slow down the rotation'
+            },
+            {
+                type: 'bullet',
+                text: 'Played with object placement, shadows and text design'
+            },
+            {
+                type: 'bullet',
+                text: 'Integrated audio to enhance the final video'
+            },
+            {
+                type: 'bullet',
+                text: 'A total of 8 iterations resulted in the final video.'
+            },
+            {
+                type: 'iconed',
+                text: 'Final Result',
+                icon: '6'
+            },
+            {
+                type: 'paragraph',
+                text: `The final animation combines the best elements of previous iterations, 
+                        blending balanced colors, smooth animations, and thoughtful object placement. 
+                        It reflects The Rodina's essence while incorporating unique personal elements.`
+            },
+            {
+                type: 'heading',
+                text: 'Presentation'
+            },
+            {
+                type: 'paragraph',
+                text: `Prior to the final project, a short presentation was held to introduce The Rodina and their work. 
+                        It can be found under the downloads section.`
+            },
+            {
+                type: 'heading',
+                text: 'Further Work'
+            },
+            {
+                type: 'paragraph',
+                text: `Throughout the Kickstart Visual Design module, we did various other exercises and projects.
+                        With these, we explored typography, color theory, and visual hierarchy, among other topics.
+                        A documentation of the module with my work can be found under the downloads section.`
+            }
+        ],
+        links: [
+            {
+                name: 'the rodina',
+                url: 'https://www.therodina.com/',
+                icon: 'external-link-alt',
+                text: 'The Rodina'
+            }
+        ],
+        downloads: [
+            {
+                text: 'The_Rodina.mp4',
+                url: rodinaFiles['../projects/rodina/The_Rodina.mp4'].default,
+                icon: 'file-video'
+            },
+            {
+                text: 'The_Rodina_Presentation.ppsx',
+                url: rodinaFiles['../projects/rodina/The_Rodina_Presentation.ppsx'].default,
+                icon: 'file-powerpoint'
+            },
+            {
+                text: 'KIVIS_Documentation.ppsx',
+                url: rodinaFiles['../projects/rodina/KIVIS_Documentation.ppsx'].default,
+                icon: 'file-powerpoint'
+            }
+        ]
+    },
+    {
         id: 'solarsystem',
         name: 'solarsystem',
         description: `3d rendered asteroid video`,
@@ -172,7 +382,6 @@ export const projects = [
         },
         categories: [
             'team',
-            'design',
             '3d',
             'video'
         ],
@@ -207,7 +416,11 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'A chaotic yet aesthetic assembly of shapes and objects. This render emphasizes randomness and texture experimentation.'
+                text: 'A chaotic yet aesthetic assembly of shapes and objects'
+            },
+            {
+                type: 'bullet',
+                text: 'render emphasizes randomness and texture experimentation'
             },
             {
                 type: 'subheading',
@@ -308,7 +521,6 @@ export const projects = [
         categories: [
             'solo',
             'coding',
-            'design',
             'web'
         ],
         links: [],
@@ -408,7 +620,7 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Lists available modules, starting with the "Suva SAFe" Info-App.'
+                text: 'Lists available modules, starting with the "Suva SAFe" Info-App'
             },
             {
                 type: 'iconed',
@@ -417,7 +629,7 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Displays SAFe ARTs (Agile Release Trains), Products, Teams, and individual team members in a collapsible tree format.'
+                text: 'Displays SAFe ARTs (Agile Release Trains), Products, Teams, and individual team members in a collapsible tree format'
             },
             {
                 type: 'iconed',
@@ -426,7 +638,7 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Provides role-specific information, such as emails, phone numbers, and descriptions, with interactive links for actionable insights.'
+                text: 'Provides role-specific information, such as emails, phone numbers, and descriptions, with interactive links for actionable insights'
             },
             {
                 type: 'iconed',
@@ -435,7 +647,7 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Allows users to toggle between dark and light modes.'
+                text: 'Allows users to toggle between dark and light modes'
             },
             {
                 type: 'subheading',
@@ -447,33 +659,57 @@ export const projects = [
             },
             {
                 type: 'iconed',
-                text: 'Inform: Research on Chrome Extension API and RESTful data integration.',
+                text: 'Inform',
                 icon: 'i'
             },
             {
+                type: 'bullet',
+                text: 'Research on Chrome Extension API and RESTful data integration'
+            },
+            {
                 type: 'iconed',
-                text: 'Plan: Define milestones and use user stories to prioritize functionalities.',
+                text: 'Plan',
                 icon: 'p'
             },
             {
+                type: 'bullet',
+                text: 'Define milestones and use user stories to prioritize functionalities'
+            },
+            {
                 type: 'iconed',
-                text: 'Decide: Evaluate and finalize the requirements for the application to meet project goals.',
+                text: 'Decide',
                 icon: 'e'
             },
             {
+                type: 'bullet',
+                text: 'Evaluate and finalize the requirements for the application to meet project goals'
+            },
+            {
                 type: 'iconed',
-                text: 'Execute: Implement features iteratively, focusing on modularity and user experience.',
+                text: 'Execute',
                 icon: 'r'
             },
             {
-                type: 'iconed',
-                text: 'Control: Test against user story acceptance criteria.',
-                icon: 'k'
+                type: 'bullet',
+                text: 'Implement features iteratively, focusing on modularity and user experience'
             },
             {
                 type: 'iconed',
-                text: 'Evaluate: Document outcomes and lessons learned.',
+                text: 'Control',
+                icon: 'k'
+            },
+            {
+                type: 'bullet',
+                text: 'Test against user story acceptance criteria'
+            },
+            {
+                type: 'iconed',
+                text: 'Evaluate',
                 icon: 'a'
+            },
+            {
+                type: 'bullet',
+                text: 'Document outcomes and lessons learned'
             },
             {
                 type: 'subheading',
@@ -481,23 +717,23 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Successfully integrated REST APIs to fetch organizational data.'
+                text: 'Successfully integrated REST APIs to fetch organizational data'
             },
             {
                 type: 'bullet',
-                text: 'Combined two different REST APIs to ensure complete employee data coverage.'
+                text: 'Combined two different REST APIs to ensure complete employee data coverage'
             },
             {
                 type: 'bullet',
-                text: 'Built a dynamic, hierarchical structure that supports effortless navigation.'
+                text: 'Built a dynamic, hierarchical structure that supports effortless navigation'
             },
             {
                 type: 'bullet',
-                text: 'Implemented a user-friendly interface with a focus on simplicity and adaptability.'
+                text: 'Implemented a user-friendly interface with a focus on simplicity and adaptability'
             },
             {
                 type: 'bullet',
-                text: 'Delivered thorough documentation covering installation, testing, and technical details.'
+                text: 'Delivered thorough documentation covering installation, testing, and technical details'
             },
             {
                 type: 'subheading',
