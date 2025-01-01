@@ -12,10 +12,10 @@
             </div>
             <div class="carousel-fade prev"></div>
             <div class="carousel-fade next"></div>
-            <button class="carousel-control prev" @click="prevSlide">
+            <button class="carousel-control prev" @click="$emit('prev-slide')">
                 <font-awesome-icon icon="chevron-left" />
             </button>
-            <button class="carousel-control next" @click="nextSlide">
+            <button class="carousel-control next" @click="$emit('next-slide')">
                 <font-awesome-icon icon="chevron-right" />
             </button>
             <button v-if="!isOverlayVisible" class="expand-button" @click="$emit('toggle-overlay')">
@@ -44,36 +44,7 @@ export default {
             default: false
         }
     },
-    data() {
-        return {
-            slideTimeout: null
-        };
-    },
-    emits: ['toggle-overlay', 'next-slide', 'prev-slide'],
-    methods: {
-        nextSlide() {
-            this.$emit('next-slide');
-            this.resetTimeout();
-        },
-        prevSlide() {
-            this.$emit('prev-slide');
-            this.resetTimeout();
-        },
-        resetTimeout() {
-            clearTimeout(this.slideTimeout);
-            this.slideTimeout = setTimeout(() => {
-                if (!this.isOverlayVisible) {
-                    this.nextSlide();
-                }
-            }, 5000);
-        },
-    },
-    mounted() {
-        this.resetTimeout();
-    },
-    unmounted() {
-        clearTimeout(this.slideTimeout);
-    }
+    emits: ['toggle-overlay', 'next-slide', 'prev-slide']
 };
 </script>
 

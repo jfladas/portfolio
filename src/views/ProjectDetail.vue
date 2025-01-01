@@ -77,11 +77,11 @@
             <div class="right-container">
                 <h3>Links & Downloads</h3>
                 <a v-for="link in project.links" :href="link.url" class="link hoverable" target="_blank">
-                    <font-awesome-icon :icon="link.icon" />
+                    <font-awesome-icon :icon="link.icon" fixed-width />
                     {{ link.text }}
                 </a>
                 <a v-for="download in project.downloads" :href="download.url" class="download hoverable" download>
-                    <font-awesome-icon :icon="download.icon" />
+                    <font-awesome-icon :icon="download.icon" fixed-width />
                     {{ download.text }}
                 </a>
             </div>
@@ -176,6 +176,11 @@ const scrollToTop = () => {
 .iconed-container {
     display: flex;
     margin-top: 0.5rem;
+}
+
+.iconed-container .text {
+    font-weight: 700;
+    color: var(--mint);
 }
 
 .bullet {
