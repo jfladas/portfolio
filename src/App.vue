@@ -134,7 +134,7 @@ const toggleCursor = () => {
   const link = document.createElement('link');
   link.id = 'cursor-style';
   link.rel = 'stylesheet';
-  link.href = new URL(isCursorVisible.value ? './assets/custom-cursor.css' : './assets/default-cursor.css', import.meta.url).href;
+  link.href = new URL(`/src/assets/${isCursorVisible.value ? 'custom-cursor.css' : 'default-cursor.css'}`, import.meta.url).href;
   document.head.appendChild(link);
 
   showToast(isCursorVisible.value ? 'Custom cursor enabled' : 'Default cursor enabled');
@@ -191,7 +191,7 @@ onMounted(() => {
   const link = document.createElement('link');
   link.id = 'cursor-style';
   link.rel = 'stylesheet';
-  link.href = new URL('./assets/custom-cursor.css', import.meta.url).href;
+  link.href = new URL('/src/assets/custom-cursor.css', import.meta.url).href;
   document.head.appendChild(link);
 
   onUnmounted(() => {

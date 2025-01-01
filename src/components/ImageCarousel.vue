@@ -5,7 +5,7 @@
                 <div class="carousel-item" v-for="(image, index) in images" :key="index"
                     :class="{ small: !isOverlayVisible }">
                     <img :src="image.src" :alt="image.caption" />
-                    <div class="fade-bottom" :class="{ small: !isOverlayVisible }">
+                    <div class="fade-bottom">
                         <p>{{ image.caption }}</p>
                     </div>
                 </div>
@@ -128,7 +128,7 @@ export default {
 .fade-bottom {
     position: relative;
     height: 2rem;
-    background-color: rgba(var(--navy-rgb), 0);
+    background-color: rgba(var(--navy-rgb), 0.5);
     backdrop-filter: blur(1rem);
     transform: translate(0, -30%);
 }
@@ -137,7 +137,7 @@ export default {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(var(--deep-rgb), 0.2);
+    background-color: rgba(var(--navy-rgb), 0.5);
     height: 100%;
     width: 2rem;
     backdrop-filter: blur(1rem);
@@ -166,28 +166,24 @@ export default {
     color: white;
     opacity: 0;
     transition: opacity 0.5s;
-    background-color: rgba(var(--deep-rgb), 0.5);
+    background-color: rgba(var(--navy-rgb), 0.5);
     backdrop-filter: blur(1rem);
 }
 
 .carousel-control.prev {
-    justify-content: left;
-    mask: linear-gradient(to left, transparent, white);
     left: 0;
 }
 
 .carousel-control.next {
-    justify-content: right;
-    mask: linear-gradient(to right, transparent, white);
     right: 0;
 }
 
 .carousel-control:hover {
-    background-color: rgba(var(--deep-rgb), 0.7);
+    background-color: rgba(var(--deep-rgb), 0.2);
 }
 
 .carousel-control:active {
-    background-color: rgba(var(--deep-rgb), 0.9);
+    background-color: rgba(var(--deep-rgb), 0.5);
 }
 
 .expand-button,
@@ -195,35 +191,31 @@ export default {
     position: absolute;
     bottom: 0;
     right: 0;
-    height: 5rem;
-    width: 5rem;
+    height: 2.5rem;
+    width: 2.5rem;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding-right: 0.5rem;
+    justify-content: center;
+    align-items: center;
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(var(--deep-rgb), 0.5);
+    background-color: rgba(var(--navy-rgb), 0.5);
     backdrop-filter: blur(1rem);
-    mask: radial-gradient(circle at 75% 75%, white 0, transparent 40%);
     opacity: 0;
     transition: opacity 0.5s;
 }
 
 .unexpand-button {
     top: 0;
-    align-items: flex-start;
-    mask: radial-gradient(circle at 75% 25%, white 0, transparent 40%);
 }
 
 .expand-button:hover,
 .unexpand-button:hover {
-    background-color: rgba(var(--deep-rgb), 0.7);
+    background-color: rgba(var(--deep-rgb), 0.2);
 }
 
 .expand-button:active,
 .unexpand-button:active {
-    background-color: rgba(var(--deep-rgb), 0.9);
+    background-color: rgba(var(--deep-rgb), 0.5);
 }
 
 .carousel:hover .carousel-control,

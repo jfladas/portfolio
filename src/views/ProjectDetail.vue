@@ -219,12 +219,15 @@ const scrollToTop = () => {
 
 .overlay-content {
     position: relative;
-    width: 90vw;
+    width: fit-content;
+    max-width: 90vw;
     height: fit-content;
+    max-height: 90vh;
     background-color: var(--navy);
     overflow: auto;
     display: flex;
     align-items: stretch;
+    justify-content: center;
 }
 
 #video-teleport {
