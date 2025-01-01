@@ -49,7 +49,7 @@
                         class="button-container" target="_blank">
                         <button class="hoverable" :class="'button-' + button.color">
                             {{ button.text }}
-                            <font-awesome-icon :icon="button.icon" class="button-icon" />
+                            <font-awesome-icon :icon="button.icon" />
                         </button>
                     </a>
                 </div>
