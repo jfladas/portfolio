@@ -303,4 +303,26 @@ const scrollToTop = () => {
     position: sticky;
     top: 6rem;
 }
+
+@media (max-width: 1200px) {
+
+    .paragraph,
+    .subheading,
+    .bullet-container,
+    .iconed-container,
+    .quoted-container,
+    .buttons,
+    .images,
+    .video {
+        margin-left: 0;
+    }
+
+    .to-top {
+        transform: translate(-50%, -4rem);
+    }
+
+    .to-top:hover {
+        transform: translate(-50%, -5rem);
+    }
+}
 </style>

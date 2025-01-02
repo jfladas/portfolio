@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "cd dist && copy index.html 404.html && cd .. && gh-pages -d dist"
+    "deploy": "cd dist && copy index.html 404.html && echo www.jfladas.com > CNAME && cd .. && gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",

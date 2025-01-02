@@ -62,3 +62,14 @@
             rgba(var(--navy-rgb), 0) 75%,
             rgba(255, 255, 255, 0.8));
 }
+
+@media (max-width: 1200px) {
+    .custom-cursor,
+    .custom-cursor.hover {
+        display: none;
+    }
+
+    .tooltip-container {
+        transition: none;
+    }
+}

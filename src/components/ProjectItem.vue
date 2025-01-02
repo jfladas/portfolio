@@ -99,4 +99,15 @@ defineProps({
             var(--deep),
             rgba(var(--navy-rgb), 0));
 }
+
+@media (max-width: 1200px) {
+    .project-item h2 {
+        line-height: 1.5rem;
+        margin: 0.2rem 2rem 0.5rem 0;
+    }
+
+    .project-item h2:hover {
+        line-height: 2.5rem;
+    }
+}
 </style>

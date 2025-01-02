@@ -247,6 +247,7 @@ export default {
 
 <style scoped>
 .subtitle {
+  height: 2rem;
   margin-bottom: 3rem;
 }
 
@@ -461,5 +462,30 @@ p {
 p,
 .buttons {
   margin-left: 2rem;
+}
+
+@media (max-width: 1200px) {
+
+  p,
+  .buttons {
+    margin-left: 0;
+  }
+
+  .me-container {
+    width: 85vw;
+    overflow-x: hidden;
+  }
+
+  .me,
+  .me-glitch,
+  .me-dark {
+    width: 75vw;
+  }
+
+  .overlay,
+  .thatsme {
+    width: 100%;
+    font-size: 5vw;
+  }
 }
 </style>

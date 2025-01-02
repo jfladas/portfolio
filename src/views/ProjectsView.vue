@@ -112,7 +112,6 @@ const filteredProjects = computed(() => {
 
 .filters.expanded {
   min-width: calc(4rem * 10);
-  width: calc(4rem * 10);
   opacity: 1;
 }
 
@@ -163,5 +162,16 @@ const filteredProjects = computed(() => {
 
 .a:active {
   color: white;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    padding-top: 0;
+  }
+
+  .filters.expanded {
+    flex-wrap: wrap;
+    min-width: 12rem;
+  }
 }
 </style>

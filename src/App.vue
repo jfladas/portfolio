@@ -57,6 +57,7 @@ const cursor = ref(null)
 
 const updateCursor = (e) => {
   if (cursor.value) {
+    cursor.value.style.display = 'block'
     cursor.value.style.left = `${e.clientX}px`
     cursor.value.style.top = `${e.clientY}px`
   }
@@ -108,6 +109,7 @@ const addHoverListeners = (elements) => {
 const addTooltipListeners = (elements) => {
   elements.forEach(el => {
     el.addEventListener('mouseenter', () => {
+      removeTooltip();
       addTooltip(el.getAttribute('tooltip'));
     })
     el.addEventListener('mouseleave', () => {
@@ -116,10 +118,10 @@ const addTooltipListeners = (elements) => {
   })
 }
 
+
 const toggleLanguage = () => {
   currentLanguage.value = currentLanguage.value === 'en' ? 'de' : 'en';
   // TODO: Implement language change logic here
-
   showToast(currentLanguage.value === 'en' ? 'Language set to English' : 'Sprache auf Deutsch gesetzt');
   moreVisible.value = false;
 }
@@ -155,8 +157,17 @@ const showToast = (message) => {
   }, 3000);
 };
 
+const handleTouchMove = (e) => {
+  if (cursor.value) {
+    cursor.value.style.display = 'none';
+  }
+}
+
 onMounted(() => {
-  window.addEventListener('mousemove', updateCursor)
+  // TODO: fix tooltip transition on mobile
+  window.addEventListener('mousemove', updateCursor);
+  window.addEventListener('touchmove', handleTouchMove, { passive: false });
+
   const hoverElements = document.querySelectorAll('.hoverable')
   addHoverListeners(hoverElements)
 
@@ -195,6 +206,9 @@ onMounted(() => {
   document.head.appendChild(link);
 
   onUnmounted(() => {
+    window.removeEventListener('touchstart', handleTouchStart)
+    window.removeEventListener('touchend', handleTouchEnd)
+    window.removeEventListener('touchmove', handleTouchMove)
     window.removeEventListener('mousemove', updateCursor)
     hoverElements.forEach(el => {
       el.removeEventListener('mouseenter', addCursorHover)
