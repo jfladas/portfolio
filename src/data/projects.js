@@ -6,6 +6,8 @@ const solarsystemFiles = import.meta.glob('../projects/solarsystem/*', { eager: 
 const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 
 export const projects = [
+    // men3
+    // spütify
     {
         id: 'milo',
         name: "milo's forest adventure",
@@ -160,6 +162,14 @@ export const projects = [
             }
         ]
     },
+    // matbf
+    // comgi
+    // stuin
+    // stupro?
+    // animation
+    // spark?
+    // ux
+    // game
     {
         id: 'rodina',
         name: 'the rodina',

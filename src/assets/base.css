@@ -287,3 +287,53 @@ button {
   font-family: "DotGothic16", sans-serif;
   font-weight: 400;
 }
+
+@media (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+    width: 75vw;
+    left: 10vw;
+    gap: 2rem;
+  }
+
+  .content-left,
+  .content-right {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    line-height: 3.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  .buttons {
+    gap: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+    height: 2rem;
+  }
+
+  .link, .download {
+    font-size: 1.2rem;
+    width: 75vw;
+  }
+}
