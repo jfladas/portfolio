@@ -23,47 +23,9 @@
                     <p v-for="c in project.context.lines">{{ c }}</p>
                 </a>
             </div>
-            <div v-for="(section, index) in project.sections" :key="index" class="section">
-                <p v-if="section.type === 'paragraph'" class="paragraph text">{{ section.text }}</p>
-                <h3 v-if="section.type === 'heading'" class="heading">{{ section.text }}</h3>
-                <h4 v-if="section.type === 'subheading'" class="subheading">{{ section.text }}</h4>
-                <div v-if="section.type === 'bullet'" class="bullet-container">
-                    <font-awesome-icon icon="minus" class="text-icon bullet" />
-                    <p>{{ section.text }}</p>
-                </div>
-                <div v-if="section.type === 'iconed'" class="iconed-container">
-                    <font-awesome-icon :icon="section.icon" fixed-width class="text-icon iconed" />
-                    <p class="text">{{ section.text }}</p>
-                </div>
-                <div v-if="section.type === 'quoted'" class="quoted-container">
-                    <p class="text quoted">
-                        <font-awesome-icon icon="quote-left" class="quote-left" />
-                        <span class="bottom-corner">
-                            <font-awesome-icon icon="quote-right" class="quote-right" />
-                        </span>
-                        {{ section.text }}
-                    </p>
-                </div>
-                <div v-if="section.type === 'buttons'" class="buttons">
-                    <a v-for="button in section.buttons" :key="button.text" :href="button.action"
-                        class="button-container" target="_blank">
-                        <button class="hoverable" :class="'button-' + button.color">
-                            {{ button.text }}
-                            <font-awesome-icon :icon="button.icon" />
-                        </button>
-                    </a>
-                </div>
-                <div v-if="section.type === 'images'" class="images">
-                    <ImageCarousel :images="section.images" :currentIndex="currentIndexes[index]"
-                        :isOverlayVisible="isOverlayVisible && overlayIndex === index"
-                        @toggle-overlay="toggleOverlay('images', index)" @next-slide="nextSlide(index)"
-                        @prev-slide="prevSlide(index)" />
-                </div>
-                <div v-if="section.type === 'video'" class="video">
-                    <VideoPlayer :video="section.video" :isOverlayVisible="isOverlayVisible && overlayIndex === index"
-                        @toggle-overlay="toggleOverlay('video', index)" />
-                </div>
-            </div>
+            <ContentSections :sections="project.sections" :currentIndexes="currentIndexes"
+                :isOverlayVisible="isOverlayVisible" :overlayIndex="overlayIndex" @toggle-overlay="toggleOverlay"
+                @next-slide="nextSlide" @prev-slide="prevSlide" />
             <div class="left-bottom">
                 <router-link to="/projects" class="back hoverable tooltip" tooltip="back">
                     <font-awesome-icon icon="arrow-left-long" />
@@ -75,26 +37,17 @@
         </div>
         <div class="content-right">
             <div class="right-container">
-                <h3>Links & Downloads</h3>
-                <a v-for="link in project.links" :href="link.url" class="link hoverable" target="_blank">
-                    <font-awesome-icon :icon="link.icon" fixed-width />
-                    {{ link.text }}
-                </a>
-                <a v-for="download in project.downloads" :href="download.url" class="download hoverable" download>
-                    <font-awesome-icon :icon="download.icon" fixed-width />
-                    {{ download.text }}
-                </a>
+                <LinksDownloads :links="project.links" :downloads="project.downloads" />
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import ImageCarousel from '@/components/ImageCarousel.vue'
-import VideoPlayer from '@/components/VideoPlayer.vue'
-import { categories } from '@/data/projects.js'
 import { computed, ref, onMounted } from 'vue'
-import { projects } from '@/data/projects.js'
+import { projects, categories } from '@/data/projects.js'
+import ContentSections from '@/components/ContentSections.vue'
+import LinksDownloads from '@/components/LinksDownloads.vue'
 
 const props = defineProps(['id'])
 
@@ -161,51 +114,6 @@ const scrollToTop = () => {
     font-size: 1.5rem;
     color: var(--mint);
     margin-right: 0.75rem;
-}
-
-.paragraph {
-    margin-top: 0.5rem;
-}
-
-.bullet-container {
-    display: flex;
-    margin-top: 0.5rem;
-    text-align: left;
-}
-
-.iconed-container {
-    display: flex;
-    margin-top: 0.5rem;
-}
-
-.iconed-container .text {
-    font-weight: 700;
-    color: var(--mint);
-}
-
-.bullet {
-    margin: 0.15rem 0.5rem 0 1rem;
-    color: var(--aqua);
-}
-
-.iconed {
-    margin: 0.1rem 0.5rem 0 0;
-}
-
-.paragraph,
-.subheading,
-.bullet-container,
-.iconed-container,
-.quoted-container,
-.buttons,
-.images,
-.video {
-    margin-left: 2rem;
-}
-
-.images,
-.video {
-    margin-top: 1rem;
 }
 
 .overlay {
@@ -306,15 +214,9 @@ const scrollToTop = () => {
 
 @media (max-width: 1200px) {
 
-    .paragraph,
-    .subheading,
-    .bullet-container,
-    .iconed-container,
-    .quoted-container,
-    .buttons,
-    .images,
-    .video {
-        margin-left: 0;
+    .categories {
+        font-size: 1.2rem;
+        gap: 0.7rem;
     }
 
     .to-top {

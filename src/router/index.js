@@ -44,6 +44,14 @@ const router = createRouter({
       redirect: { name: 'about' }
     }
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (
+      (to.name === 'projects' && from.name === 'project-detail')
+    ) {
+      return savedPosition || { top: 0, behavior: 'smooth' }
+    }
+    return { top: 0, behavior: 'smooth' }
+  }
 })
 
 export default router

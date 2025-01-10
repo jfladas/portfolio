@@ -106,7 +106,7 @@ defineProps({
         margin: 0.2rem 2rem 0.5rem 0;
     }
 
-    .project-item h2:hover {
+    .project-item:hover h2 {
         line-height: 2.5rem;
     }
 }

@@ -18,7 +18,7 @@
       <div class="more-item tooltip" tooltip="en/de" @click="toggleLanguage">
         <font-awesome-icon icon="language" fixed-width />
       </div>
-      <div class="more-item tooltip" tooltip="cursor" @click="toggleCursor">
+      <div v-if="!isMobile" class="more-item tooltip" tooltip="cursor" @click="toggleCursor">
         <font-awesome-icon icon="arrow-pointer" fixed-width />
       </div>
       <div class="more-item tooltip" tooltip="earned">
@@ -43,6 +43,13 @@
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
+
+const isMobile = ref(false)
+
+const checkIsMobile = () => {
+  const userAgent = navigator.userAgent || window.opera
+  isMobile.value = /android|iPad|iPhone|iPod/i.test(userAgent) && !window.MSStream
+}
 
 const moreVisible = ref(false)
 const isCursorVisible = ref(true)
@@ -164,7 +171,9 @@ const handleTouchMove = (e) => {
 }
 
 onMounted(() => {
-  // TODO: fix tooltip transition on mobile
+
+  checkIsMobile()
+
   window.addEventListener('mousemove', updateCursor);
   window.addEventListener('touchmove', handleTouchMove, { passive: false });
 
@@ -338,14 +347,14 @@ nav {
   position: fixed;
   bottom: 2rem;
   right: 0;
-  width: 4rem;
+  width: fit-content;
+  transform: translate(calc(100% - 4rem), 0);
   height: 2.5rem;
   overflow: hidden;
   display: flex;
   align-items: center;
   gap: 2rem;
-  padding: 0.5rem 0 0.5rem 0.5rem;
-  transform: translate(0, -50%);
+  padding: 0.5rem 5rem 0.5rem 0.5rem;
   font-size: 2rem;
   background-color: rgba(var(--deep-rgb), 0.2);
   backdrop-filter: blur(1rem);
@@ -370,7 +379,7 @@ nav {
 }
 
 .more.open {
-  width: 16rem;
+  transform: translate(2rem, 0);
 }
 
 .more.open .more-icon {
@@ -378,11 +387,11 @@ nav {
 }
 
 .more:has(.more-icon:nth-of-type(1):hover) {
-  width: 5rem;
+  transform: translate(calc(100% - 5rem), 0);
 }
 
 .more.open:has(.more-icon:nth-of-type(1):hover) {
-  width: 15rem;
+  transform: translate(3rem, 0);
 }
 
 .more-items {
