@@ -30,6 +30,7 @@ body {
   color: var(--aqua);
   background-color: var(--navy);
   overflow-x: hidden;
+  margin: 0;
 }
 
 ::selection {
@@ -183,11 +184,11 @@ button {
 /* Layout */
 .content {
   position: relative;
-  width: 80vw;
+  width: 80%;
   display: flex;
   flex-direction: row;
   margin-top: 6rem;
-  left: 10vw;
+  margin-left: 10%;
   gap: 4rem;
 }
 
@@ -217,8 +218,8 @@ button {
 @media (max-width: 1200px) {
   .content {
     flex-direction: column;
-    width: 80vw;
-    left: 10vw;
+    width: 84%;
+    margin-left: 8%;
     gap: 2rem;
   }
 

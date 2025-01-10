@@ -23,12 +23,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { aboutContent } from '@/data/projects.js'
 import ContentSections from '@/components/ContentSections.vue'
 import LinksDownloads from '@/components/LinksDownloads.vue'
 
 const isOverlayVisible = ref(false)
+const typedtext = ref(null)
+const typedtext2 = ref(null)
 const overlayIndex = ref(null)
 const currentIndexes = ref([])
 
@@ -44,6 +46,140 @@ const nextSlide = (index) => {
 const prevSlide = (index) => {
   currentIndexes.value[index] = (currentIndexes.value[index] - 1 + aboutContent.sections[index].images.length) % aboutContent.sections[index].images.length
 }
+
+const speed = ref(100);
+
+const text = ref([
+  "東京にいる私",
+  "雨上がりの光が踊る街",
+  "静かな夜に漂うネオンの輝き",
+  "見知らぬ道を歩く私",
+  "ビルの隙間にのぞく赤い灯",
+  "透明な傘に映る街の色",
+  "光と影が交差する夜",
+  "ひとりの旅が描く物語",
+  "足元で流れる雨のリズム",
+  "",
+  ""
+]);
+
+const index = ref(0);
+const length = ref(text.value[0].length);
+const pos = ref(0);
+const content = ref('');
+const row = ref(0);
+const timeout = ref(null);
+const blinkTimeout = ref(null);
+const isBlinking = ref(false);
+
+const text2 = ref("それが私の名前です！");
+const pos2 = ref(0);
+const timeout2 = ref(null);
+const blinkTimeout2 = ref(null);
+const isBlinking2 = ref(false);
+
+const resetTypewriter = () => {
+  if (timeout.value) {
+    clearTimeout(timeout.value);
+  }
+  if (blinkTimeout.value) {
+    clearTimeout(blinkTimeout.value);
+  }
+  content.value = '';
+  index.value = 0;
+  pos.value = 0;
+  length.value = text.value[0].length;
+  isBlinking.value = false;
+};
+const typewriter = () => {
+  content.value = '';
+  row.value = 0;
+  const destination = typedtext.value;
+  row.value = 0;
+
+  while (row.value < index.value) {
+    content.value += text.value[row.value++] + '<br />';
+  }
+  if (index.value < text.value.length - 1) {
+    destination.innerHTML = content.value + text.value[index.value].substring(0, pos.value) + "★";
+  }
+  if (pos.value++ === length.value) {
+    pos.value = 0;
+    index.value++;
+    if (index.value !== text.value.length - 1) {
+      if (text.value[index.value]) {
+        length.value = text.value[index.value].length;
+      }
+      timeout.value = setTimeout(typewriter, speed.value * 4);
+    } else {
+      blinkStar();
+    }
+  } else {
+    timeout.value = setTimeout(typewriter, speed.value);
+  }
+};
+const blinkStar = () => {
+  const destination = typedtext.value;
+  if (isBlinking.value) {
+    destination.innerHTML = content.value + "★";
+  } else {
+    destination.innerHTML = content.value;
+  }
+  isBlinking.value = !isBlinking.value;
+  blinkTimeout.value = setTimeout(blinkStar, speed.value * 4);
+};
+
+const resetTypewriter2 = () => {
+  if (timeout2.value) {
+    clearTimeout(timeout2.value);
+  }
+  if (blinkTimeout2.value) {
+    clearTimeout(blinkTimeout2.value);
+  }
+  pos2.value = 0;
+  isBlinking2.value = false;
+};
+
+const blinkHand = () => {
+  const destination = typedtext2.value;
+  if (isBlinking2.value) {
+    destination.innerHTML = text2.value;
+  } else {
+    destination.innerHTML = "☞" + text2.value;
+  }
+  isBlinking2.value = !isBlinking2.value;
+  blinkTimeout2.value = setTimeout(blinkHand, speed.value * 4);
+};
+
+const typewriter2 = () => {
+  const destination = typedtext2.value;
+
+  pos2.value++;
+  if (pos2.value < text2.value.length + 1) {
+    destination.innerHTML = "☞" + text2.value.substring(0, pos2.value);
+  } else {
+    blinkHand();
+    return;
+  }
+  timeout2.value = setTimeout(typewriter2, speed.value);
+};
+
+onMounted(() => {
+  length.value = text.value[0].length;
+  const meContainer = document.querySelector('.me-container');
+  meContainer.addEventListener('mouseover', () => {
+    resetTypewriter();
+    typewriter();
+  });
+  meContainer.addEventListener('mouseleave', resetTypewriter);
+
+  const title = document.querySelector('.title');
+  title.addEventListener('mouseover', () => {
+    resetTypewriter2();
+    typewriter2();
+  });
+  title.addEventListener('mouseleave', resetTypewriter2);
+});
 </script>
 
 <style scoped>
@@ -260,8 +396,28 @@ const prevSlide = (index) => {
 
   .me-container {
     width: 85vw;
-    overflow-x: hidden;
+    overflow: hidden;
   }
+
+  .me,
+  .me-glitch,
+  .me-dark {
+    width: 40vw;
+  }
+
+  .overlay,
+  .thatsme {
+    width: 100%;
+    font-size: 3vw;
+  }
+
+  .overlay {
+    margin-left: 40vw;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
 
   .me,
   .me-glitch,
@@ -271,8 +427,12 @@ const prevSlide = (index) => {
 
   .overlay,
   .thatsme {
-    width: 100%;
     font-size: 5vw;
   }
+
+  .overlay {
+    margin-left: 0;
+  }
+
 }
 </style>
