@@ -25,6 +25,10 @@
       </h3>
       <p>try adjusting the filters</p>
     </div>
+    <router-link v-else to="#" class="to-top hoverable tooltip" tooltip="to top" @click.prevent="scrollToTop">
+      <font-awesome-icon icon="angle-up" />
+    </router-link>
+    <div class="bottom-spacer"></div>
   </div>
 </template>
 
@@ -86,6 +90,10 @@ const filteredProjects = computed(() => {
     return hasSelectedCategory && hasOtherFilter && !isExcluded
   })
 })
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 </script>
 
 <style scoped>
@@ -166,6 +174,25 @@ const filteredProjects = computed(() => {
   color: white;
 }
 
+.bottom-spacer {
+  height: 6rem;
+}
+
+.to-top {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -4rem);
+  color: var(--deep);
+  transition: all 0.5s;
+  font-size: 3rem;
+}
+
+.to-top:hover {
+  transform: translate(-50%, -5rem);
+  color: var(--sky);
+}
+
 @media (max-width: 1200px) {
   .content {
     padding-top: 0;
@@ -183,6 +210,18 @@ const filteredProjects = computed(() => {
     min-width: calc(100% - 4rem);
     flex-wrap: wrap;
     transition: opacity 1s;
+  }
+
+  .bottom-spacer {
+    height: 50vh;
+  }
+
+  .to-top {
+    transform: translate(-50%, -40vh);
+  }
+
+  .to-top:hover {
+    transform: translate(-50%, calc(-40vh - 1rem));
   }
 }
 

@@ -754,7 +754,259 @@ export const projects = [
                 text: 'This project showcases the viability of browser extensions as an internal organizational tool, providing a scalable and accessible platform for team and member information. It also serves as a foundation for future modules and functionalities.'
             }
         ]
-    }
+    },
+    /* {
+        id: 'mock1',
+        name: 'Mock Project 1',
+        description: 'This is a mock project for testing purposes.',
+        context: {
+            lines: [
+                '2023 @ Mock University',
+                'Module MOCK101 - Introduction to Mocking'
+            ],
+            url: 'https://www.mockuniversity.com/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'solo',
+            'coding',
+            'web'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: 'This mock project is designed to test the integration of new projects into the portfolio.'
+            },
+            {
+                type: 'heading',
+                text: 'Overview'
+            },
+            {
+                type: 'paragraph',
+                text: 'The project involves creating a simple web application to demonstrate basic web development skills.'
+            }
+        ],
+        links: [
+            {
+                name: 'github',
+                url: 'https://github.com/mockuser/mockproject1',
+                icon: 'fa-brands fa-github-alt',
+                text: 'GitHub Repository'
+            }
+        ],
+        downloads: []
+    },
+    {
+        id: 'mock2',
+        name: 'Mock Project 2',
+        description: 'Another mock project for testing purposes.',
+        context: {
+            lines: [
+                '2023 @ Mock University',
+                'Module MOCK102 - Advanced Mocking'
+            ],
+            url: 'https://www.mockuniversity.com/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'team',
+            'design',
+            '3d'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: 'This mock project is designed to test the integration of new projects into the portfolio.'
+            },
+            {
+                type: 'heading',
+                text: 'Overview'
+            },
+            {
+                type: 'paragraph',
+                text: 'The project involves creating a 3D model to demonstrate advanced design skills.'
+            }
+        ],
+        links: [
+            {
+                name: 'github',
+                url: 'https://github.com/mockuser/mockproject2',
+                icon: 'fa-brands fa-github-alt',
+                text: 'GitHub Repository'
+            }
+        ],
+        downloads: []
+    },
+    {
+        id: 'mock1',
+        name: 'Mock Project 1',
+        description: 'This is a mock project for testing purposes.',
+        context: {
+            lines: [
+                '2023 @ Mock University',
+                'Module MOCK101 - Introduction to Mocking'
+            ],
+            url: 'https://www.mockuniversity.com/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'solo',
+            'coding',
+            'web'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: 'This mock project is designed to test the integration of new projects into the portfolio.'
+            },
+            {
+                type: 'heading',
+                text: 'Overview'
+            },
+            {
+                type: 'paragraph',
+                text: 'The project involves creating a simple web application to demonstrate basic web development skills.'
+            }
+        ],
+        links: [
+            {
+                name: 'github',
+                url: 'https://github.com/mockuser/mockproject1',
+                icon: 'fa-brands fa-github-alt',
+                text: 'GitHub Repository'
+            }
+        ],
+        downloads: []
+    },
+    {
+        id: 'mock2',
+        name: 'Mock Project 2',
+        description: 'Another mock project for testing purposes.',
+        context: {
+            lines: [
+                '2023 @ Mock University',
+                'Module MOCK102 - Advanced Mocking'
+            ],
+            url: 'https://www.mockuniversity.com/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'team',
+            'design',
+            '3d'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: 'This mock project is designed to test the integration of new projects into the portfolio.'
+            },
+            {
+                type: 'heading',
+                text: 'Overview'
+            },
+            {
+                type: 'paragraph',
+                text: 'The project involves creating a 3D model to demonstrate advanced design skills.'
+            }
+        ],
+        links: [
+            {
+                name: 'github',
+                url: 'https://github.com/mockuser/mockproject2',
+                icon: 'fa-brands fa-github-alt',
+                text: 'GitHub Repository'
+            }
+        ],
+        downloads: []
+    },
+    {
+        id: 'mock1',
+        name: 'Mock Project 1',
+        description: 'This is a mock project for testing purposes.',
+        context: {
+            lines: [
+                '2023 @ Mock University',
+                'Module MOCK101 - Introduction to Mocking'
+            ],
+            url: 'https://www.mockuniversity.com/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'solo',
+            'coding',
+            'web'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: 'This mock project is designed to test the integration of new projects into the portfolio.'
+            },
+            {
+                type: 'heading',
+                text: 'Overview'
+            },
+            {
+                type: 'paragraph',
+                text: 'The project involves creating a simple web application to demonstrate basic web development skills.'
+            }
+        ],
+        links: [
+            {
+                name: 'github',
+                url: 'https://github.com/mockuser/mockproject1',
+                icon: 'fa-brands fa-github-alt',
+                text: 'GitHub Repository'
+            }
+        ],
+        downloads: []
+    },
+    {
+        id: 'mock2',
+        name: 'Mock Project 2',
+        description: 'Another mock project for testing purposes.',
+        context: {
+            lines: [
+                '2023 @ Mock University',
+                'Module MOCK102 - Advanced Mocking'
+            ],
+            url: 'https://www.mockuniversity.com/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'team',
+            'design',
+            '3d'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: 'This mock project is designed to test the integration of new projects into the portfolio.'
+            },
+            {
+                type: 'heading',
+                text: 'Overview'
+            },
+            {
+                type: 'paragraph',
+                text: 'The project involves creating a 3D model to demonstrate advanced design skills.'
+            }
+        ],
+        links: [
+            {
+                name: 'github',
+                url: 'https://github.com/mockuser/mockproject2',
+                icon: 'fa-brands fa-github-alt',
+                text: 'GitHub Repository'
+            }
+        ],
+        downloads: []
+    } */
 ]
 
 export const categories = {
