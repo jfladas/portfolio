@@ -219,6 +219,14 @@ const scrollToTop = () => {
         gap: 0.7rem;
     }
 
+    .back {
+        transform: translate(-1.5rem, 0.5rem);
+    }
+
+    .back:hover {
+        transform: translate(-1.5rem, 0.5rem);
+    }
+
     .to-top {
         transform: translate(-50%, -4rem);
     }

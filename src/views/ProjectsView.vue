@@ -99,7 +99,7 @@ const filteredProjects = computed(() => {
 .filter-container {
   display: flex;
   flex-wrap: nowrap;
-  width: 0;
+  width: 100%;
 }
 
 .filters {
@@ -171,9 +171,26 @@ const filteredProjects = computed(() => {
     padding-top: 0;
   }
 
+  .filter {
+    padding: 0.6rem 1rem;
+  }
+
+  .filters {
+    transition: min-width 1s, width 1s, opacity 1s;
+  }
+
   .filters.expanded {
+    min-width: calc(100% - 4rem);
     flex-wrap: wrap;
-    min-width: 12rem;
+    transition: opacity 1s;
+  }
+}
+
+@media (max-width: 600px) {
+  .filter {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.4rem;
+    height: 1.2rem;
   }
 }
 </style>

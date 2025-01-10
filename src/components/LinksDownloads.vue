@@ -82,6 +82,14 @@ const props = defineProps({
     .link,
     .download {
         font-size: 1.2rem;
+        width: 40vw;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .link,
+    .download {
         width: 75vw;
     }
 }
