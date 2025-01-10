@@ -35,7 +35,7 @@
     <p>made with <font-awesome-icon icon="heart" class="heart hoverable tooltip" tooltip="love" /> by jfladas</p>
   </footer>
   <div ref="cursor" class="custom-cursor">
-    <span class="tooltip-container"></span>
+    <span ref="tooltip" class="tooltip-container"></span>
   </div>
 </template>
 
@@ -61,6 +61,7 @@ watch(() => route.path, (to, from) => {
 })
 
 const cursor = ref(null)
+const tooltip = ref(null)
 
 const updateCursor = (e) => {
   if (cursor.value) {
@@ -85,20 +86,16 @@ const removeCursorHover = () => {
 let tooltipTimeout = null;
 
 const addTooltip = (text) => {
-  tooltipTimeout = setTimeout(() => {
-    const tooltip = cursor.value.querySelector('.tooltip-container')
-    if (tooltip) {
-      tooltip.textContent = text
-      tooltip.style.opacity = 1
-    }
-  }, 500);
+  if (tooltip.value) {
+    tooltip.value.textContent = text
+    tooltip.value.style.opacity = 1
+  }
 }
 
 const removeTooltip = () => {
   clearTimeout(tooltipTimeout);
-  const tooltip = cursor.value.querySelector('.tooltip-container')
-  if (tooltip) {
-    tooltip.style.opacity = 0
+  if (tooltip.value) {
+    tooltip.value.style.opacity = 0
   }
 }
 
@@ -117,7 +114,10 @@ const addTooltipListeners = (elements) => {
   elements.forEach(el => {
     el.addEventListener('mouseenter', () => {
       removeTooltip();
-      addTooltip(el.getAttribute('tooltip'));
+      console.log(isMobile.value)
+      tooltipTimeout = setTimeout(() => {
+        addTooltip(el.getAttribute('tooltip'));
+      }, isMobile.value ? 0 : 500);
     })
     el.addEventListener('mouseleave', () => {
       removeTooltip();
@@ -170,12 +170,34 @@ const handleTouchMove = (e) => {
   }
 }
 
+let cursorTimeout = null;
+
+const handleTouchStart = (e) => {
+  clearTimeout(cursorTimeout);
+  removeTooltip();
+  if (cursor.value) {
+    cursor.value.style.animation = '';
+    cursor.value.style.opacity = 1;
+  }
+}
+
+const handleTouchEnd = (e) => {
+  if (cursor.value) {
+    cursorTimeout = setTimeout(() => {
+      removeTooltip();
+      cursor.value.style.animation = 'fadeout 0.5s forwards';
+    }, 1000);
+  }
+}
+
 onMounted(() => {
 
   checkIsMobile()
 
   window.addEventListener('mousemove', updateCursor);
   window.addEventListener('touchmove', handleTouchMove, { passive: false });
+  window.addEventListener('touchstart', handleTouchStart, { passive: false });
+  window.addEventListener('touchend', handleTouchEnd, { passive: false });
 
   const hoverElements = document.querySelectorAll('.hoverable')
   addHoverListeners(hoverElements)

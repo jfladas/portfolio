@@ -1048,7 +1048,7 @@ export const aboutContent = {
                 },
                 {
                     text: 'E-Mail',
-                    action: 'contact',
+                    action: 'mailto:lukas.bucherr@gmail.com',
                     icon: 'paper-plane',
                     color: 'secondary'
                 }

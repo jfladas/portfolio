@@ -63,13 +63,18 @@
             rgba(255, 255, 255, 0.8));
 }
 
-@media (max-width: 1200px) {
-    .custom-cursor,
-    .custom-cursor.hover {
-        display: none;
+@keyframes fadeout {
+    0% {
+        opacity: 1;
     }
+    100% {
+        opacity: 0;
+    }
+}
 
-    .tooltip-container {
-        transition: none;
+@media (max-width: 600px) {
+
+    .custom-cursor.hover {
+        transform: translate(-50%, -50%) scale(1.2);
     }
 }

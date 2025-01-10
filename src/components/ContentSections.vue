@@ -45,7 +45,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import ImageCarousel from '@/components/ImageCarousel.vue'
 import VideoPlayer from '@/components/VideoPlayer.vue'
 
