@@ -94,35 +94,6 @@ p {
   text-shadow: var(--mint) 0 0 1rem;
 }
 
-.quoted-container {
-  display: flex;
-}
-
-.quoted {
-  height: auto;
-}
-
-.quote-left {
-  font-size: 2.5rem;
-  color: var(--sky);
-  margin: 0 0.5rem 0 -0.5rem;
-  float: left;
-}
-
-.quote-right {
-  font-size: 2.5rem;
-  color: var(--sky);
-  margin: 0 -0.5rem 0 0.5rem;
-}
-
-.bottom-corner {
-  float: right;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  shape-outside: inset(calc(100% - 2.5rem) 0 0);
-}
-
 a {
   color: unset;
   cursor: pointer;
@@ -209,51 +180,6 @@ button {
   gap: 1.5rem;
 }
 
-.link, .download {
-  position: relative;
-  font-size: 1.2rem;
-  color: white;
-  background: transparent;
-  padding: 0.5rem 1rem;
-  margin-bottom: 0.5rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  transition: font-weight 1s;
-}
-
-.link:hover, .download:hover {
-  color: white;
-  font-weight: 700;
-}
-
-.link::before, .download::before {
-  position: absolute;
-  content: "";
-  inset: 0;
-  background: linear-gradient(to right, var(--deep), var(--navy));
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 1s;
-}
-.download::before {
-  background: linear-gradient(to right, rgba(var(--purple-rgb), 0.8), var(--navy));
-}
-
-.link:hover::before, .download:hover::before {
-  opacity: 1;
-}
-
-.link:active, .download:active {
-  color: white;
-  background: linear-gradient(to right, var(--sky), var(--deep), var(--navy));
-}
-
-.download:active {
-  background: linear-gradient(to right, rgba(var(--pink-rgb), 0.8), rgba(var(--purple-rgb), 0.8), var(--navy));
-}
-
 /* Layout */
 .content {
   position: relative;
@@ -291,7 +217,7 @@ button {
 @media (max-width: 1200px) {
   .content {
     flex-direction: column;
-    width: 75vw;
+    width: 80vw;
     left: 10vw;
     gap: 2rem;
   }
@@ -314,8 +240,8 @@ button {
   }
 
   h3 {
-    font-size: 1.8rem;
-    line-height: 1.8rem;
+    font-size: 2rem;
+    line-height: 2rem;
     margin-bottom: 0.8rem;
   }
 
@@ -330,10 +256,5 @@ button {
   button {
     font-size: 1rem;
     height: 2rem;
-  }
-
-  .link, .download {
-    font-size: 1.2rem;
-    width: 75vw;
   }
 }

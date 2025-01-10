@@ -1,9 +1,9 @@
-import { text } from "@fortawesome/fontawesome-svg-core";
-
 const miloFiles = import.meta.glob('../projects/milo/*', { eager: true });
 const rodinaFiles = import.meta.glob('../projects/rodina/*', { eager: true });
 const solarsystemFiles = import.meta.glob('../projects/solarsystem/*', { eager: true });
 const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
+
+const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 
 export const projects = [
     // men3
@@ -46,7 +46,7 @@ export const projects = [
                 buttons: [
                     {
                         text: 'play demo',
-                        action: 'https://jfladas.github.io/milo/client/',
+                        action: 'https://milo.jfladas.com',
                         icon: 'play',
                         color: 'primary'
                     },
@@ -149,7 +149,7 @@ export const projects = [
             },
             {
                 name: 'demo',
-                url: 'https://jfladas.github.io/milo/client/',
+                url: 'https://milo.jfladas.com',
                 icon: 'external-link-alt',
                 text: 'Demo'
             }
@@ -766,6 +766,92 @@ export const categories = {
     'game': 'gamepad',
     'ux': 'circle-user',
     'story': 'scroll',
-    '3d': 'cube',
+    '3d': 'dice-d6',
     'video': 'video'
+};
+
+export const aboutContent = {
+    title: "Lukas Bucher",
+    sections: [
+        {
+            type: 'heading',
+            text: 'Hi there!'
+        },
+        {
+            type: 'quoted',
+            text: `I'm currently studying <a href="https://www.hslu.ch/en/lucerne-school-of-information-technology/degree-programs/bachelor/digital-ideation/" class="bold hoverable" target="_blank">Digital Ideation</a> at the Lucerne University of Applied Sciences and Arts, an interdisciplinary program combining design and computer science to create digital solutions. I love exploring all of the possibilities of how technology and creativity can be combined. My focus mainly lies in web development, but other aspects I can explore with my studies also intrigue me, ranging from game design & development to digital art. After I've attained my bachelor of science, I aim to work in the field of frontend web development, creating unique and interactive user experiences. But who knows what the future may hold?`
+        },
+        {
+            type: 'heading',
+            text: 'Explore my work! Get in touch!'
+        },
+        {
+            type: 'buttons',
+            buttons: [
+                {
+                    text: 'My Projects',
+                    action: 'projects',
+                    icon: 'rocket',
+                    color: 'primary'
+                },
+                {
+                    text: 'E-Mail',
+                    action: 'contact',
+                    icon: 'paper-plane',
+                    color: 'secondary'
+                }
+            ]
+        },
+        {
+            type: 'heading',
+            text: 'More about me...'
+        },
+        {
+            type: 'paragraph',
+            text: `Beyond my passion for technology and design, music plays a big role in my life. I play the saxophone in the local orchestra '<a href="https://www.musikvereinbuochs.ch/" class="bold hoverable" target="_blank">Musikverein Buochs</a>', which has been an amazing way to connect with others and immerse myself in the joy of creating music. My love for music doesn't stop there. I'm also a fan of K-pop and enjoy attending concerts whenever I can.`
+        },
+        {
+            type: 'paragraph',
+            text: `Learning Japanese has been another fulfilling journey, deepening my interest in East Asian culture. Through self-study, school courses, and visiting different parts of Japan, I have developed quite an appreciation of its many facets and it has become my favorite travel destination.`
+        }
+    ],
+    links: [
+        {
+            name: 'github',
+            url: 'https://github.com/jfladas/',
+            icon: 'fa-brands fa-github-alt',
+            text: 'GitHub'
+        },
+        {
+            name: 'itch.io',
+            url: 'https://jfladas.itch.io/',
+            icon: 'fa-brands fa-itch-io',
+            text: 'Itch.io'
+        },
+        {
+            name: 'linkedin',
+            url: 'https://www.linkedin.com/in/lukas-bucher-0926bb282/',
+            icon: 'fa-brands fa-linkedin',
+            text: 'LinkedIn'
+        },
+        {
+            name: 'instagram',
+            url: 'https://www.instagram.com/jfla.das/',
+            icon: 'fa-brands fa-instagram',
+            text: 'Instagram'
+        },
+        {
+            name: 'youtube',
+            url: 'https://youtube.com/@jfladas/',
+            icon: 'fa-brands fa-youtube',
+            text: 'YouTube'
+        }
+    ],
+    downloads: [
+        {
+            text: 'Resume',
+            url: aboutFiles['../assets/about/Resume.pdf'].default,
+            icon: 'circle-arrow-down'
+        }
+    ]
 };
