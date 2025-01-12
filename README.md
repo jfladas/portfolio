@@ -14,3 +14,5 @@ storytelling, 3d, animation and other creative experiences sprinkled in. Enjoy!
 ---
 
 [<img src="https://github.com/jfladas/portfolio/blob/main/src/assets/gotosite.png" alt="portfolio jfladas" width="200"/>](https://www.jfladas.com)
+
+www.jfladas.com
