@@ -114,7 +114,6 @@ const addTooltipListeners = (elements) => {
   elements.forEach(el => {
     el.addEventListener('mouseenter', () => {
       removeTooltip();
-      console.log(isMobile.value)
       tooltipTimeout = setTimeout(() => {
         addTooltip(el.getAttribute('tooltip'));
       }, isMobile.value ? 0 : 500);
@@ -125,6 +124,13 @@ const addTooltipListeners = (elements) => {
   })
 }
 
+const addCopyListeners = (elements) => {
+  elements.forEach(el => {
+    el.addEventListener('click', () => {
+      toClipboard(el.textContent);
+    });
+  });
+}
 
 const toggleLanguage = () => {
   currentLanguage.value = currentLanguage.value === 'en' ? 'de' : 'en';
@@ -163,6 +169,11 @@ const showToast = (message) => {
     }, 500);
   }, 3000);
 };
+
+const toClipboard = (text) => {
+  navigator.clipboard.writeText(text);
+  showToast('copied to clipboard');
+}
 
 const handleTouchMove = (e) => {
   if (cursor.value) {
@@ -205,6 +216,9 @@ onMounted(() => {
   const tooltipElements = document.querySelectorAll('.tooltip')
   addTooltipListeners(tooltipElements)
 
+  const copyElements = document.querySelectorAll('.copy')
+  addCopyListeners(copyElements)
+
   const observer = new MutationObserver((mutations) => {
     mutations.forEach(mutation => {
       if (mutation.type === 'childList') {
@@ -221,6 +235,12 @@ onMounted(() => {
             } else {
               const nestedElements = node.querySelectorAll('.tooltip')
               addTooltipListeners(nestedElements)
+            }
+            if (node.classList.contains('copy')) {
+              addCopyListeners([node])
+            } else {
+              const nestedElements = node.querySelectorAll('.copy')
+              addCopyListeners(nestedElements)
             }
           }
         })
@@ -248,6 +268,9 @@ onMounted(() => {
     tooltipElements.forEach(el => {
       el.removeEventListener('mouseenter', () => { })
       el.removeEventListener('mouseleave', () => { })
+    })
+    copyElements.forEach(el => {
+      el.removeEventListener('click', () => { })
     })
     observer.disconnect()
   })
@@ -449,7 +472,7 @@ nav {
   left: 50%;
   transform: translate(-50%, 0);
   padding: 1rem 2rem;
-  background: rgba(var(--navy-rgb), 0.5);
+  background: rgba(var(--deep-rgb), 0.2);
   backdrop-filter: blur(1rem);
   color: white;
   z-index: 10;

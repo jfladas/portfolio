@@ -1,45 +1,43 @@
 <template>
-    <div>
-        <div v-for="(section, index) in sections" :key="index" class="section">
-            <p v-if="section.type === 'paragraph'" class="paragraph text" v-html="section.text"></p>
-            <h3 v-if="section.type === 'heading'" class="heading">{{ section.text }}</h3>
-            <h4 v-if="section.type === 'subheading'" class="subheading">{{ section.text }}</h4>
-            <div v-if="section.type === 'bullet'" class="bullet-container">
-                <font-awesome-icon icon="minus" class="text-icon bullet" />
-                <p v-html="section.text"></p>
-            </div>
-            <div v-if="section.type === 'iconed'" class="iconed-container">
-                <font-awesome-icon :icon="section.icon" fixed-width class="text-icon iconed" />
-                <p class="text" v-html="section.text"></p>
-            </div>
-            <div v-if="section.type === 'quoted'" class="quoted-container">
-                <p class="text quoted">
-                    <font-awesome-icon icon="quote-left" class="quote-left" />
-                    <span class="bottom-corner">
-                        <font-awesome-icon icon="quote-right" class="quote-right" />
-                    </span>
-                <div v-html="section.text"></div>
-                </p>
-            </div>
-            <div v-if="section.type === 'buttons'" class="buttons">
-                <a v-for="button in section.buttons" :key="button.text" :href="button.action" class="button-container"
-                    target="_blank">
-                    <button class="hoverable" :class="'button-' + button.color">
-                        {{ button.text }}
-                        <font-awesome-icon :icon="button.icon" />
-                    </button>
-                </a>
-            </div>
-            <div v-if="section.type === 'images'" class="images">
-                <ImageCarousel :images="section.images" :currentIndex="currentIndexes[index]"
-                    :isOverlayVisible="isOverlayVisible && overlayIndex === index"
-                    @toggle-overlay="toggleOverlay('images', index)" @next-slide="nextSlide(index)"
-                    @prev-slide="prevSlide(index)" />
-            </div>
-            <div v-if="section.type === 'video'" class="video">
-                <VideoPlayer :video="section.video" :isOverlayVisible="isOverlayVisible && overlayIndex === index"
-                    @toggle-overlay="toggleOverlay('video', index)" />
-            </div>
+    <div v-for="(section, index) in sections" :key="index" class="section">
+        <p v-if="section.type === 'paragraph'" class="paragraph text" v-html="section.text"></p>
+        <h3 v-if="section.type === 'heading'" class="heading">{{ section.text }}</h3>
+        <h4 v-if="section.type === 'subheading'" class="subheading">{{ section.text }}</h4>
+        <div v-if="section.type === 'bullet'" class="bullet-container">
+            <font-awesome-icon icon="minus" class="text-icon bullet" />
+            <p v-html="section.text"></p>
+        </div>
+        <div v-if="section.type === 'iconed'" class="iconed-container">
+            <font-awesome-icon :icon="section.icon" fixed-width class="text-icon iconed" />
+            <p class="text" v-html="section.text"></p>
+        </div>
+        <div v-if="section.type === 'quoted'" class="quoted-container">
+            <p class="text quoted">
+                <font-awesome-icon icon="quote-left" class="quote-left" />
+                <span class="bottom-corner">
+                    <font-awesome-icon icon="quote-right" class="quote-right" />
+                </span>
+            <div v-html="section.text"></div>
+            </p>
+        </div>
+        <div v-if="section.type === 'buttons'" class="buttons">
+            <a v-for="button in section.buttons" :key="button.text" :href="button.action" class="button-container"
+                target="_blank">
+                <button class="hoverable" :class="'button-' + button.color">
+                    {{ button.text }}
+                    <font-awesome-icon :icon="button.icon" />
+                </button>
+            </a>
+        </div>
+        <div v-if="section.type === 'images'" class="images">
+            <ImageCarousel :images="section.images" :currentIndex="currentIndexes[index]"
+                :isOverlayVisible="isOverlayVisible && overlayIndex === index"
+                @toggle-overlay="toggleOverlay('images', index)" @next-slide="nextSlide(index)"
+                @prev-slide="prevSlide(index)" />
+        </div>
+        <div v-if="section.type === 'video'" class="video">
+            <VideoPlayer :video="section.video" :isOverlayVisible="isOverlayVisible && overlayIndex === index"
+                @toggle-overlay="toggleOverlay('video', index)" />
         </div>
     </div>
 </template>
