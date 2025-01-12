@@ -15,7 +15,7 @@
       <p>
         <font-awesome-icon icon="filter" />
         showing {{ filteredProjects.length }} of {{ projects.length }} projects |
-        <span class="a hoverable" @click="toggleFilter('all')">see all</span>
+        <span class="a hoverable" @click="() => { toggleFilter('all'); scrollToTop() }">see all</span>
       </p>
     </div>
     <div v-if="filteredProjects.length === 0" class="disclaimer">
@@ -155,10 +155,6 @@ const scrollToTop = () => {
 
 .filter:active {
   color: var(--mint);
-}
-
-.disclaimer {
-  color: var(--sky);
 }
 
 .a {

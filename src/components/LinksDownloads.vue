@@ -30,6 +30,7 @@ const props = defineProps({
 .download {
     position: relative;
     font-size: 1.2rem;
+    font-weight: 400;
     color: white;
     background: transparent;
     padding: 0.5rem 1rem;

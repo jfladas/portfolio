@@ -90,8 +90,8 @@ export default {
     align-items: center;
     font-size: 2rem;
     color: white;
-    background-color: rgba(var(--navy-rgb), 0.5);
-    backdrop-filter: blur(1rem);
+    background-color: rgba(var(--navy-rgb), 0.3);
+    backdrop-filter: blur(0.5rem);
     opacity: 0;
 }
 
@@ -115,8 +115,8 @@ export default {
     align-items: center;
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(var(--navy-rgb), 0.5);
-    backdrop-filter: blur(1rem);
+    background-color: rgba(var(--navy-rgb), 0.3);
+    backdrop-filter: blur(0.5rem);
     opacity: 0;
     transition: opacity 0.5s;
 }

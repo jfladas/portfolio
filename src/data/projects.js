@@ -1,4 +1,7 @@
+import { icon } from "@fortawesome/fontawesome-svg-core";
+
 const miloFiles = import.meta.glob('../projects/milo/*', { eager: true });
+const sweetFiles = import.meta.glob('../projects/sweet/*', { eager: true });
 const rodinaFiles = import.meta.glob('../projects/rodina/*', { eager: true });
 const solarsystemFiles = import.meta.glob('../projects/solarsystem/*', { eager: true });
 const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
@@ -33,9 +36,9 @@ export const projects = [
         sections: [
             {
                 type: 'quoted',
-                text: `Milo\'s Forest Adventure is an interactive storybook or scroll-and-click adventure
-                        in which the player accompanies a friendly and curious fox named Milo on his journey through the forest.
-                        The player controls Milo by scrolling and can explore the environment and interact with Milo by clicking.`
+                text: `With Milo\'s Forest Adventure I aimed to combine web development, pixel art, and interactive storytelling 
+                        in a cute scroll-and-click adventure game. By scrolling and clicking, players can explore the environment, 
+                        interact with Milo, and uncover secrets of the enchanting forest.`
             },
             {
                 type: 'heading',
@@ -45,13 +48,13 @@ export const projects = [
                 type: 'buttons',
                 buttons: [
                     {
-                        text: 'play demo',
+                        text: 'Play Demo',
                         action: 'https://milo.jfladas.com',
                         icon: 'play',
                         color: 'primary'
                     },
                     {
-                        text: 'download zip',
+                        text: 'Download',
                         action: miloFiles['../projects/milo/milo.zip'].default,
                         icon: 'circle-arrow-down',
                         color: 'secondary'
@@ -60,7 +63,7 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: `Online demo lacks backend features like the leaderboard at the end. To play the game locally, download the zip file and follow the instructions below.`
+                text: `Online demo lacks backend features like the leaderboard at the end. To play the game locally, follow the instructions below.`
             },
             {
                 type: 'heading',
@@ -106,11 +109,13 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Navigate to the /server directory'
+                text: 'Navigate to the <span class="snippet">/server</span> directory'
             },
             {
                 type: 'bullet',
-                text: 'Start the Node.js server with the command node server.mjs in the terminal'
+                text: `Start the Node.js server with the command 
+                        <span class="snippet hoverable tooltip copy" tooltip="copy">node server.mjs</span>
+                        in the terminal`
             },
             {
                 type: 'iconed',
@@ -119,7 +124,7 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Navigate to the /client directory and open it in Visual Studio Code'
+                text: 'Navigate to the <span class="snippet">/client</span> directory and open it in Visual Studio Code'
             },
             {
                 type: 'bullet',
@@ -127,38 +132,170 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'The project should automatically open in the browser (if not, open http://127.0.0.1:5500/ in the browser and adjust Live Server settings accordingly)'
+                text: `The project should automatically open in the browser (if not, open 
+                        <span class="snippet hoverable tooltip copy" tooltip="copy">http://127.0.0.1:5500/</span>
+                        in the browser and adjust Live Server settings accordingly)`
             },
             {
                 type: 'subheading',
                 text: "Enjoy milo's forest adventure!"
+            },
+            {
+                type: 'heading',
+                text: 'Project Description'
+            },
+            {
+                type: 'subheading',
+                text: 'Scenes'
+            },
+            {
+                type: 'bullet',
+                text: 'Intro Dialogue: Milo welcomes the player.'
+            },
+            {
+                type: 'bullet',
+                text: 'Day Scene: Navigate Milo through the forest during the day.'
+            },
+            {
+                type: 'bullet',
+                text: 'River Dialogue: Engage in a conversation with Milo by the Rami River.'
+            },
+            {
+                type: 'bullet',
+                text: 'Night Scene: Guide Milo through the forest at night.'
+            },
+            {
+                type: 'bullet',
+                text: 'Cliff Dialogue: A reflective conclusion at a cliff edge.'
+            },
+            {
+                type: 'bullet',
+                text: `End Screen: Displays the player's score and a leaderboard of the top 10 players.`
+            },
+            {
+                type: 'subheading',
+                text: 'Tools & Resources'
+            },
+            {
+                type: 'bullet',
+                text: 'Development: HTML, CSS, JavaScript, Node.js, Express, Visual Studio Code, Live Server, Chrome DevTools, GitHub'
+            },
+            {
+                type: 'bullet',
+                text: 'Graphics: Piskel, Adobe Firefly, PowerPoint, Photoshop, FontStruct'
+            },
+            {
+                type: 'bullet',
+                text: 'Audio: Suno, Freesound, Adobe Audition'
+            },
+            {
+                type: 'bullet',
+                text: 'AI Assistance: ChatGPT, Gemini'
+            },
+            {
+                type: 'subheading',
+                text: 'Development Process'
+            },
+            {
+                type: 'bullet',
+                text: 'Motivation: High motivation throughout the project drove significant investment of time and energy.'
+            },
+            {
+                type: 'bullet',
+                text: 'Challenges: Overcame moments of uncertainty with structured to-do lists, improving focus and task management.'
+            },
+            {
+                type: 'bullet',
+                text: 'Programming Techniques: Factory functions, dynamic HTML generation, POST requests, cookie implementation.'
+            },
+            {
+                type: 'subheading',
+                text: 'Key Features'
+            },
+            {
+                type: 'bullet',
+                text: 'Interactive scrolling and clicking mechanics for intuitive gameplay.'
+            },
+            {
+                type: 'bullet',
+                text: 'Dynamic score tracking with leaderboard functionality.'
+            },
+            {
+                type: 'bullet',
+                text: 'Charming pixel art and audio design enhance the immersive experience.'
+            },
+            {
+                type: 'subheading',
+                text: 'Conclusion'
+            },
+            {
+                type: 'paragraph',
+                text: `Milo's Forest Adventure provided valuable experience in web development, graphic design, and audio editing. 
+                        By utilising diverse tools and AI assistance, the project showcases technical and creative skills.`
+            },
+            {
+                type: 'heading',
+                text: 'Screenshots'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: miloFiles['../projects/milo/milo_forest.png'].default,
+                        caption: 'Day Scene'
+                    },
+                    {
+                        src: miloFiles['../projects/milo/milo_river.png'].default,
+                        caption: 'River Dialogue'
+                    },
+                    {
+                        src: miloFiles['../projects/milo/milo_night.png'].default,
+                        caption: 'Night Scene'
+                    },
+                    {
+                        src: miloFiles['../projects/milo/milo_endscreen.png'].default,
+                        caption: 'End Screen & Leaderboard'
+                    }
+                ],
             }
         ],
         links: [
             {
-                name: 'github',
+                text: 'GitHub Repository',
                 url: 'https://github.com/jfladas/milo',
-                icon: 'fa-brands fa-github-alt',
-                text: 'GitHub Repository'
+                icon: 'fa-brands fa-github-alt'
             },
             {
-                name: 'itch.io',
+                text: 'itch.io Page',
                 url: 'https://jfladas.itch.io/milos-forest-adventure',
-                icon: 'fa-brands fa-itch-io',
-                text: 'itch.io Page'
+                icon: 'fa-brands fa-itch-io'
             },
             {
-                name: 'demo',
+                text: 'Play Demo',
                 url: 'https://milo.jfladas.com',
-                icon: 'external-link-alt',
-                text: 'Demo'
+                icon: 'external-link-alt'
+            },
+            {
+                text: 'Playthrough Video',
+                url: 'https://youtu.be/_kuLURwhBGY',
+                icon: 'fa-brands fa-youtube'
             }
         ],
         downloads: [
             {
-                text: 'milo.zip',
+                text: 'Milo.zip',
                 url: miloFiles['../projects/milo/milo.zip'].default,
                 icon: 'file-archive'
+            },
+            {
+                text: 'Documentation.pdf',
+                url: miloFiles['../projects/milo/milo_documentation.pdf'].default,
+                icon: 'file-pdf'
+            },
+            {
+                text: 'Presentation.pdf',
+                url: miloFiles['../projects/milo/milo_presentation.pdf'].default,
+                icon: 'file-pdf'
             }
         ]
     },
@@ -169,7 +306,268 @@ export const projects = [
     // animation
     // spark?
     // ux
-    // game
+    {
+        id: 'sweet',
+        name: 'sweet teeth',
+        description: `2d auto-runner game`,
+        context: {
+            lines: [
+                '2023 @ HSLU, Rotkreuz',
+                'Module IGAME - Game Design & Engineering'
+            ],
+            url: 'https://www.hslu.ch/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'team',
+            'coding',
+            'game',
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `Sweet Teeth was the product of our first game module. Players control a mischievous bacterium,
+                        that teleports automatically in intervals. The Goal is to rot as many teeth as possible while avoiding the evil oral hygiene products.
+                        It was created during the IGAME module by Team HDL (Chiara Tremml, Michelle Studtmann, Dario Stocker, Lukas Bucher).`
+            },
+            {
+                type: 'heading',
+                text: 'Play the Game'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Play in Browser',
+                        action: 'https://itch.io/embed-upload/9224978?color=FA98E0',
+                        icon: 'play',
+                        color: 'primary'
+                    },
+                    {
+                        text: 'Download',
+                        action: '',
+                        icon: 'circle-arrow-down',
+                        color: 'secondary'
+                    }
+                ]
+            },
+            {
+                type: 'paragraph',
+                text: `The game can be played in the browser or downloaded for Windows. To play the game locally, 
+                        download the zip file, extract it, and run <span class="snippet">IGAME_HDL.exe</span>.`
+            },
+            {
+                type: 'heading',
+                text: 'Project Description'
+            },
+            {
+                type: 'paragraph',
+                text: `In Sweet Teeth players take on the role of an adventurous bacterium with a teleportation power, 
+                        trying to rot as many teeth as possible. Set inside a mouth, 
+                        the game challenges players to avoid obstacles and survive from a furious toothbrush chasing them.`
+            },
+            {
+                type: 'subheading',
+                text: 'Gameplay Mechanics'
+            },
+            {
+                type: 'bullet',
+                text: `Teleportation: This is the main mechanic our team was assigned to implement.
+                        The bacterium automatically teleports every 1.5 seconds within a radius 
+                        controlled by the player's mouse movement. Mastering this mechanic is key to survival and success.`
+            },
+            {
+                type: 'bullet',
+                text: 'Obstacles: Players must avoid deadly toothbrush, mouthwash, and toothpaste while navigating the rows of teeth.'
+            },
+            {
+                type: 'bullet',
+                text: `Power-Up: Collect enough candies to activate the "Super Rot" ability, 
+                        instantly rotting all teeth within the teleportation radius for a limited time.`
+            },
+            {
+                type: 'bullet',
+                text: `Score System: Players earn points by rotting teeth and can track their score with the in-game counter.
+                        Try setting a new high score!`
+            },
+            {
+                type: 'bullet',
+                text: 'Win Condition: The game concludes at the finish line, where players see their score and can restart the game.'
+            },
+            {
+                type: 'subheading',
+                text: 'Art Style'
+            },
+            {
+                type: 'paragraph',
+                text: `The game features a colorful comic-style aesthetic. The main character is a green bacterium, 
+                        and the environment includes pink and blue vein textures as well as rows of teeth that turn black when decayed.`
+            },
+            {
+                type: 'paragraph',
+                text: `Enemies like toothpaste and mouthwash feature blue tones, contrasting against the colorful collectable candies.`
+            },
+            {
+                type: 'paragraph',
+                text: `All sprites were hand-drawn in Adobe Illustrator, emphasizing bold outlines and highlights.`
+            },
+            {
+                type: 'subheading',
+                text: 'Development Process'
+            },
+            {
+                type: 'paragraph',
+                text: `When developing the initial concept, the team brainstormed and prototyped the teleportation mechanic, 
+                        focusing on simplicity and fun.`
+            },
+            {
+                type: 'paragraph',
+                text: `Regular testing and feedback refined the gameplay loop, balancing the difficulty and pacing of the game.
+                        Iterative development allowed for continuous improvement and polish.`
+            },
+            {
+                type: 'paragraph',
+                text: `Custom sounds were added for teleportation, candy collection, and win/lose conditions.`
+            },
+            {
+                type: 'subheading',
+                text: 'Team Roles'
+            },
+            {
+                type: 'iconed',
+                text: 'Team HDL (all team members)',
+                icon: 'users'
+            },
+            {
+                type: 'bullet',
+                text: 'Conceptualized the game idea and mechanics'
+            },
+            {
+                type: 'bullet',
+                text: 'Discussed and iterated on the game design and art style'
+            },
+            {
+                type: 'bullet',
+                text: 'Wrote DevDiary entries to document the development process'
+            },
+            {
+                type: 'iconed',
+                text: 'Designers (Chiara & Michelle)',
+                icon: 'pen-nib'
+            },
+            {
+                type: 'bullet',
+                text: 'Established the art style and user interface design'
+            },
+            {
+                type: 'bullet',
+                text: 'Hand-drew all sprites and backgrounds'
+            },
+            {
+                type: 'bullet',
+                text: 'Designed the game\'s visual identity'
+            },
+            {
+                type: 'iconed',
+                text: 'Programmers (Lukas & Dario)',
+                icon: 'code'
+            },
+            {
+                type: 'bullet',
+                text: 'Created an engaging level design'
+            },
+            {
+                type: 'bullet',
+                text: 'Developed the game mechanics and interactions'
+            },
+            {
+                type: 'bullet',
+                text: 'Implemented asset integration and sound effects'
+            },
+            {
+                type: 'subheading',
+                text: 'Challenges'
+            },
+            {
+                type: 'bullet',
+                text: 'Balancing teleportation mechanics to ensure intuitive and responsive gameplay.'
+            },
+            {
+                type: 'bullet',
+                text: 'Designing a visually cohesive world within strict sprite limitations (10 sprites, 3 animations per sprite).'
+            },
+            {
+                type: 'heading',
+                text: 'Screenshots'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: sweetFiles['../projects/sweet/SweetTeeth_Start.png'].default,
+                        caption: 'Start Screen'
+                    },
+                    {
+                        src: sweetFiles['../projects/sweet/SweetTeeth_Super.png'].default,
+                        caption: 'Super Rot Power-Up'
+                    },
+                    {
+                        src: sweetFiles['../projects/sweet/SweetTeeth_Oops.png'].default,
+                        caption: 'Game Over Screen'
+                    },
+                    {
+                        src: sweetFiles['../projects/sweet/SweetTeeth_WellDone.png'].default,
+                        caption: 'Win Screen'
+                    }
+                ],
+            }
+        ],
+        links: [
+            {
+                text: 'GitHub Repository',
+                url: 'https://github.com/jfladas/SweetTeeth',
+                icon: 'fa-brands fa-github-alt'
+            },
+            {
+                text: 'itch.io Page',
+                url: 'https://jfladas.itch.io/sweet-teeth',
+                icon: 'fa-brands fa-itch-io'
+            },
+            {
+                text: 'Play the Game',
+                url: 'https://itch.io/embed-upload/9224978?color=FA98E0',
+                icon: 'external-link-alt'
+            },
+            {
+                text: 'Gameplay Video',
+                url: 'https://youtu.be/04TWBzgvl34',
+                icon: 'fa-brands fa-youtube'
+            }
+        ],
+        downloads: [
+            {
+                text: 'SweetTeeth.zip (Windows)',
+                url: sweetFiles['../projects/sweet/SweetTeeth.zip'].default,
+                icon: 'file-archive'
+            },
+            {
+                text: 'Description.pdf',
+                url: sweetFiles['../projects/sweet/SweetTeeth_Description.pdf'].default,
+                icon: 'file-pdf'
+            },
+            {
+                text: 'ControlScheme.pdf',
+                url: sweetFiles['../projects/sweet/SweetTeeth_ControlScheme.pdf'].default,
+                icon: 'file-pdf'
+            },
+            {
+                text: 'Presentation.pdf',
+                url: sweetFiles['../projects/sweet/SweetTeeth_Presentation.pdf'].default,
+                icon: 'file-pdf'
+            }
+        ]
+    },
     {
         id: 'rodina',
         name: 'the rodina',
@@ -353,10 +751,9 @@ export const projects = [
         ],
         links: [
             {
-                name: 'the rodina',
+                text: 'The Rodina',
                 url: 'https://www.therodina.com/',
-                icon: 'external-link-alt',
-                text: 'The Rodina'
+                icon: 'external-link-alt'
             }
         ],
         downloads: [

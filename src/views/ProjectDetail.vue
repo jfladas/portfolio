@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="content">
-        <div class="content-left">
+        <div v-if="project" class="content-left">
             <router-link to="/projects" class="back hoverable tooltip" tooltip="back">
                 <font-awesome-icon icon="arrow-left-long" />
             </router-link>
@@ -35,7 +35,19 @@
                 </router-link>
             </div>
         </div>
-        <div class="content-right">
+        <div v-else class="disclaimer">
+            <h3>
+                Project not found
+                <font-awesome-icon icon="face-frown-open" />
+            </h3>
+            <p>Please check the project ID or try again later.</p>
+            <div class="left-bottom">
+                <router-link to="/projects" class="back hoverable tooltip" tooltip="back">
+                    <font-awesome-icon icon="arrow-left-long" />
+                </router-link>
+            </div>
+        </div>
+        <div v-if="project" class="content-right">
             <div class="right-container">
                 <LinksDownloads :links="project.links" :downloads="project.downloads" />
             </div>
@@ -59,11 +71,13 @@ const currentIndexes = ref([])
 const project = computed(() => projects.find(p => p.id === props.id))
 
 onMounted(() => {
-    project.value.sections.forEach((section, index) => {
-        if (section.type === 'images') {
-            currentIndexes.value[index] = 0
-        }
-    })
+    if (project.value) {
+        project.value.sections.forEach((section, index) => {
+            if (section.type === 'images') {
+                currentIndexes.value[index] = 0
+            }
+        })
+    }
 })
 
 const nextSlide = (index) => {
@@ -196,14 +210,14 @@ const scrollToTop = () => {
     position: absolute;
     left: 50%;
     top: 100%;
-    transform: translate(0, 0);
+    transform: translate(-50%, 0);
     color: var(--deep);
     transition: all 0.5s;
     font-size: 3rem;
 }
 
 .to-top:hover {
-    transform: translate(0, -1rem);
+    transform: translate(-50%, -1rem);
     color: var(--sky);
 }
 
