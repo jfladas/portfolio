@@ -1,6 +1,5 @@
-import { icon } from "@fortawesome/fontawesome-svg-core";
-
 const miloFiles = import.meta.glob('../projects/milo/*', { eager: true });
+const hsclFiles = import.meta.glob('../projects/hscl/*', { eager: true });
 const sweetFiles = import.meta.glob('../projects/sweet/*', { eager: true });
 const rodinaFiles = import.meta.glob('../projects/rodina/*', { eager: true });
 const solarsystemFiles = import.meta.glob('../projects/solarsystem/*', { eager: true });
@@ -9,8 +8,84 @@ const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 
 export const projects = [
-    // men3
-    // spütify
+    // TODO: men3 - hearts across dimensions
+    /*
+    {
+        id: 'had',
+        name: 'hearts across dimensions',
+        description: 'visual novel / dating sim game',
+        context: {
+            lines: [
+                '2024 @ HSLU, Rotkreuz & Emmenbrücke',
+                'Module MEN3 - Mentorate Semester 3'
+            ],
+            url: 'https://www.hslu.ch/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'team',
+            'coding',
+            'game',
+            'story'
+        ],
+        sections: [],
+        links: [],
+        downloads: []
+    },
+    */
+    // TODO: stuwe1 - spütify
+    /*
+    {
+        id: 'sputify',
+        name: 'spütify',
+        description: 'music journey & visualisation website',
+        context: {
+            lines: [
+                '2024 @ HSLU, Emmenbrücke',
+                'Module STUWE1 - Studio Web & Mobile 1'
+            ],
+            url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'team',
+            'coding',
+            'web'
+        ],
+        sections: [],
+        links: [],
+        downloads: []
+    },
+    */
+    // TODO: sumschool (serious games) - ecohome
+    /*
+    {
+        id: 'ecohome',
+        name: 'ecohome',
+        description: 'serious game for sustainable living',
+        context: {
+            lines: [
+                '2024 @ HSLU, Rotkreuz',
+                'International Summer School on Designing Serious Games'
+            ],
+            url: 'https://www.hslu.ch/it',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'team',
+            'coding',
+            'game',
+            'story'
+        ],
+        sections: [],
+        links: [],
+        downloads: []
+    },
+    */
+    //milo
     {
         id: 'milo',
         name: "milo's forest adventure",
@@ -67,7 +142,7 @@ export const projects = [
             },
             {
                 type: 'heading',
-                text: 'Instructions to Start the Project'
+                text: 'Installation Instructions'
             },
             {
                 type: 'subheading',
@@ -299,13 +374,313 @@ export const projects = [
             }
         ]
     },
-    // matbf
-    // comgi
-    // stuin
-    // stupro?
-    // animation
-    // spark?
-    // ux
+    // TODO: matbf
+    /*
+    {
+        id: 'matbf',
+        name: 'beautiful mathematics',
+        description: 'collection of mathematical explorations',
+        context: {
+            lines: [
+                '2024 @ HSLU, Rotkreuz',
+                'Module MATBF - Beautiful Mathematics'
+            ],
+            url: 'https://www.hslu.ch/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'solo',
+            'coding',
+            'design'
+        ],
+        sections: [],
+        links: [],
+        downloads: []
+    },
+    */
+    // TODO: stuin - 4g europe
+    /*
+    {
+        id: '4g',
+        name: 'rise of 4g in europe',
+        description: 'data visualization poster of 4g network expansion',
+        context: {
+            lines: [
+                '2024 @ HSLU, Rotkreuz',
+                'Module STUIN - Studio Information Aesthetics & Engineering'
+            ],
+            url: 'https://www.hslu.ch/it',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'solo',
+            'design'
+        ],
+        sections: [],
+        links: [],
+        downloads: []
+    },
+    */
+    // TODO: isa anim - salad ninja
+    /*
+    {
+        id: 'salad',
+        name: 'salad ninja',
+        description: '2d animated video of a fruit ninja parody',
+        context: {
+            lines: [
+                '2024 @ HSLU, Emmenbrücke',
+                'Module ISA ANIM - Animation'
+            ],
+            url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'team',
+            'video'
+        ],
+        sections: [],
+        links: [],
+        downloads: []
+    },
+    */
+    // iux - hscl
+    {
+        id: 'hscl',
+        name: 'ux hscl',
+        description: `user experience design for school sports organization`,
+        context: {
+            lines: [
+                '2023 @ HSLU, Rotkreuz',
+                'Module IUX - Introduction to User Experience'
+            ],
+            url: 'https://www.hslu.ch/de-ch/informatik/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'team',
+            'design',
+            'ux',
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `This UX redesign project focused on improving the usability of the HSCL website. 
+                        Conducted through extensive user research, prototyping, and testing, the project aimed to optimize navigation, 
+                        structure, and personalization for a better user experience. Created by Üx-Grüp (Yanis Deplazes, Jan Schwegler, 
+                        Lukas Bucher, Dominika Degtyareva, Stefan Vögeli) as part of the Introduction to UX module.`
+            },
+            {
+                type: 'heading',
+                text: 'Screencast'
+            },
+            {
+                type: 'video',
+                video: hsclFiles['../projects/hscl/IUX_Screencast.mov'].default
+            },
+            {
+                type: 'heading',
+                text: 'Project Overview'
+            },
+            {
+                type: 'paragraph',
+                text: `The goal of this project was to enhance the HSCL website by addressing key usability pain points. 
+                       Through a structured UX design process, the team defined user needs, created prototypes, 
+                       and refined them based on extensive user feedback.`
+            },
+            {
+                type: 'heading',
+                text: 'Research & Problem Identification'
+            },
+            {
+                type: 'subheading',
+                text: 'User Research Methods'
+            },
+            {
+                type: 'bullet',
+                text: 'User surveys'
+            },
+            {
+                type: 'bullet',
+                text: 'Empathy maps'
+            },
+            {
+                type: 'bullet',
+                text: 'Personas (primary, secondary, and negative personas)'
+            },
+            {
+                type: 'bullet',
+                text: 'Direct user testing'
+            },
+            {
+                type: 'subheading',
+                text: 'Key Issues Identified'
+            },
+            {
+                type: 'bullet',
+                text: 'Inefficient filtering options'
+            },
+            {
+                type: 'bullet',
+                text: 'Confusing registration process'
+            },
+            {
+                type: 'bullet',
+                text: 'Lack of a location-based training search'
+            },
+            {
+                type: 'bullet',
+                text: 'Content overload and poor structure'
+            },
+            {
+                type: 'bullet',
+                text: 'Absence of multilingual support'
+            },
+            {
+                type: 'bullet',
+                text: 'Navigation inefficiencies'
+            },
+            {
+                type: 'heading',
+                text: 'Solution Implementation'
+            },
+            {
+                type: 'subheading',
+                text: 'Prototyping Process'
+            },
+            {
+                type: 'bullet',
+                text: 'Created initial paper prototypes and tested them through hallway usability tests.'
+            },
+            {
+                type: 'bullet',
+                text: 'Developed digital prototypes in Figma, iterating based on feedback.'
+            },
+            {
+                type: 'subheading',
+                text: 'Tested Solutions & Enhancements'
+            },
+            {
+                type: 'bullet',
+                text: 'New search function with an integrated map view.'
+            },
+            {
+                type: 'bullet',
+                text: 'Streamlined filtering system, including location-based filtering.'
+            },
+            {
+                type: 'bullet',
+                text: 'Chronological event listing.'
+            },
+            {
+                type: 'bullet',
+                text: 'Improved homepage with direct access to key sections.'
+            },
+            {
+                type: 'bullet',
+                text: 'Clearer naming conventions for better navigation.'
+            },
+            {
+                type: 'bullet',
+                text: 'Optimized content layout for clarity.'
+            },
+            {
+                type: 'bullet',
+                text: 'Implementation of a language switcher.'
+            },
+            {
+                type: 'bullet',
+                text: 'Enhanced training information structure.'
+            },
+            {
+                type: 'bullet',
+                text: 'Personalized features such as account-based favorites.'
+            },
+            {
+                type: 'heading',
+                text: 'User Testing & Insights'
+            },
+            {
+                type: 'paragraph',
+                text: `Conducted two rounds of UX testing in real environments (HSLU campus hallways and higher semester students).`
+            },
+            {
+                type: 'subheading',
+                text: 'Key findings led to'
+            },
+            {
+                type: 'bullet',
+                text: 'Emphasizing tab-based navigation.'
+            },
+            {
+                type: 'bullet',
+                text: 'Redesigning the login process for better usability.'
+            },
+            {
+                type: 'bullet',
+                text: 'Relocating the favorites icon to improve visibility.'
+            },
+            {
+                type: 'bullet',
+                text: 'Adding a dark mode for a better user experience.'
+            },
+            {
+                type: 'bullet',
+                text: 'Refining the date selection process.'
+            },
+            {
+                type: 'heading',
+                text: 'Final Outcomes'
+            },
+            {
+                type: 'paragraph',
+                text: `The revised website prototype significantly improved user engagement and navigation efficiency. 
+                       The project provided valuable insights into real-world UX research and iterative design. 
+                       While a mobile app was suggested by users, it was deemed impractical within the given timeframe.`
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: hsclFiles['../projects/hscl/IUX_Screens.png'].default,
+                        caption: 'Final Website Screens'
+                    },
+                    {
+                        src: hsclFiles['../projects/hscl/IUX_Screenshots.png'].default,
+                        caption: 'Final Prototype Screenshots'
+                    },
+                    {
+                        src: hsclFiles['../projects/hscl/IUX_Figma_Design.png'].default,
+                        caption: 'Figma Design'
+                    }
+                ],
+            }
+        ],
+        links: [
+            {
+                text: 'Behance Project',
+                url: 'https://www.behance.net/gallery/194721225/HSCL-UX',
+                icon: 'fa-brands fa-behance'
+            }
+        ],
+        downloads: [
+            {
+                text: 'Presentation.ppsx',
+                url: hsclFiles['../projects/hscl/IUX_Presentation.ppsx'].default,
+                icon: 'file-powerpoint'
+            },
+            {
+                text: 'Documentation.pdf',
+                url: hsclFiles['../projects/hscl/IUX_Documentation.pdf'].default,
+                icon: 'file-pdf'
+            }
+        ]
+    },
+    // sweet teeth
     {
         id: 'sweet',
         name: 'sweet teeth',
@@ -568,6 +943,7 @@ export const projects = [
             }
         ]
     },
+    // the rodina
     {
         id: 'rodina',
         name: 'the rodina',
@@ -774,6 +1150,7 @@ export const projects = [
             }
         ]
     },
+    // solarsystem
     {
         id: 'solarsystem',
         name: 'solarsystem',
@@ -912,6 +1289,7 @@ export const projects = [
             }
         ]
     },
+    // chrome extension
     {
         id: 'pa',
         name: 'developing a google chrome extension',
@@ -1151,259 +1529,7 @@ export const projects = [
                 text: 'This project showcases the viability of browser extensions as an internal organizational tool, providing a scalable and accessible platform for team and member information. It also serves as a foundation for future modules and functionalities.'
             }
         ]
-    },
-    /* {
-        id: 'mock1',
-        name: 'Mock Project 1',
-        description: 'This is a mock project for testing purposes.',
-        context: {
-            lines: [
-                '2023 @ Mock University',
-                'Module MOCK101 - Introduction to Mocking'
-            ],
-            url: 'https://www.mockuniversity.com/',
-            icon: 'graduation-cap',
-            tooltip: 'school'
-        },
-        categories: [
-            'solo',
-            'coding',
-            'web'
-        ],
-        sections: [
-            {
-                type: 'quoted',
-                text: 'This mock project is designed to test the integration of new projects into the portfolio.'
-            },
-            {
-                type: 'heading',
-                text: 'Overview'
-            },
-            {
-                type: 'paragraph',
-                text: 'The project involves creating a simple web application to demonstrate basic web development skills.'
-            }
-        ],
-        links: [
-            {
-                name: 'github',
-                url: 'https://github.com/mockuser/mockproject1',
-                icon: 'fa-brands fa-github-alt',
-                text: 'GitHub Repository'
-            }
-        ],
-        downloads: []
-    },
-    {
-        id: 'mock2',
-        name: 'Mock Project 2',
-        description: 'Another mock project for testing purposes.',
-        context: {
-            lines: [
-                '2023 @ Mock University',
-                'Module MOCK102 - Advanced Mocking'
-            ],
-            url: 'https://www.mockuniversity.com/',
-            icon: 'graduation-cap',
-            tooltip: 'school'
-        },
-        categories: [
-            'team',
-            'design',
-            '3d'
-        ],
-        sections: [
-            {
-                type: 'quoted',
-                text: 'This mock project is designed to test the integration of new projects into the portfolio.'
-            },
-            {
-                type: 'heading',
-                text: 'Overview'
-            },
-            {
-                type: 'paragraph',
-                text: 'The project involves creating a 3D model to demonstrate advanced design skills.'
-            }
-        ],
-        links: [
-            {
-                name: 'github',
-                url: 'https://github.com/mockuser/mockproject2',
-                icon: 'fa-brands fa-github-alt',
-                text: 'GitHub Repository'
-            }
-        ],
-        downloads: []
-    },
-    {
-        id: 'mock1',
-        name: 'Mock Project 1',
-        description: 'This is a mock project for testing purposes.',
-        context: {
-            lines: [
-                '2023 @ Mock University',
-                'Module MOCK101 - Introduction to Mocking'
-            ],
-            url: 'https://www.mockuniversity.com/',
-            icon: 'graduation-cap',
-            tooltip: 'school'
-        },
-        categories: [
-            'solo',
-            'coding',
-            'web'
-        ],
-        sections: [
-            {
-                type: 'quoted',
-                text: 'This mock project is designed to test the integration of new projects into the portfolio.'
-            },
-            {
-                type: 'heading',
-                text: 'Overview'
-            },
-            {
-                type: 'paragraph',
-                text: 'The project involves creating a simple web application to demonstrate basic web development skills.'
-            }
-        ],
-        links: [
-            {
-                name: 'github',
-                url: 'https://github.com/mockuser/mockproject1',
-                icon: 'fa-brands fa-github-alt',
-                text: 'GitHub Repository'
-            }
-        ],
-        downloads: []
-    },
-    {
-        id: 'mock2',
-        name: 'Mock Project 2',
-        description: 'Another mock project for testing purposes.',
-        context: {
-            lines: [
-                '2023 @ Mock University',
-                'Module MOCK102 - Advanced Mocking'
-            ],
-            url: 'https://www.mockuniversity.com/',
-            icon: 'graduation-cap',
-            tooltip: 'school'
-        },
-        categories: [
-            'team',
-            'design',
-            '3d'
-        ],
-        sections: [
-            {
-                type: 'quoted',
-                text: 'This mock project is designed to test the integration of new projects into the portfolio.'
-            },
-            {
-                type: 'heading',
-                text: 'Overview'
-            },
-            {
-                type: 'paragraph',
-                text: 'The project involves creating a 3D model to demonstrate advanced design skills.'
-            }
-        ],
-        links: [
-            {
-                name: 'github',
-                url: 'https://github.com/mockuser/mockproject2',
-                icon: 'fa-brands fa-github-alt',
-                text: 'GitHub Repository'
-            }
-        ],
-        downloads: []
-    },
-    {
-        id: 'mock1',
-        name: 'Mock Project 1',
-        description: 'This is a mock project for testing purposes.',
-        context: {
-            lines: [
-                '2023 @ Mock University',
-                'Module MOCK101 - Introduction to Mocking'
-            ],
-            url: 'https://www.mockuniversity.com/',
-            icon: 'graduation-cap',
-            tooltip: 'school'
-        },
-        categories: [
-            'solo',
-            'coding',
-            'web'
-        ],
-        sections: [
-            {
-                type: 'quoted',
-                text: 'This mock project is designed to test the integration of new projects into the portfolio.'
-            },
-            {
-                type: 'heading',
-                text: 'Overview'
-            },
-            {
-                type: 'paragraph',
-                text: 'The project involves creating a simple web application to demonstrate basic web development skills.'
-            }
-        ],
-        links: [
-            {
-                name: 'github',
-                url: 'https://github.com/mockuser/mockproject1',
-                icon: 'fa-brands fa-github-alt',
-                text: 'GitHub Repository'
-            }
-        ],
-        downloads: []
-    },
-    {
-        id: 'mock2',
-        name: 'Mock Project 2',
-        description: 'Another mock project for testing purposes.',
-        context: {
-            lines: [
-                '2023 @ Mock University',
-                'Module MOCK102 - Advanced Mocking'
-            ],
-            url: 'https://www.mockuniversity.com/',
-            icon: 'graduation-cap',
-            tooltip: 'school'
-        },
-        categories: [
-            'team',
-            'design',
-            '3d'
-        ],
-        sections: [
-            {
-                type: 'quoted',
-                text: 'This mock project is designed to test the integration of new projects into the portfolio.'
-            },
-            {
-                type: 'heading',
-                text: 'Overview'
-            },
-            {
-                type: 'paragraph',
-                text: 'The project involves creating a 3D model to demonstrate advanced design skills.'
-            }
-        ],
-        links: [
-            {
-                name: 'github',
-                url: 'https://github.com/mockuser/mockproject2',
-                icon: 'fa-brands fa-github-alt',
-                text: 'GitHub Repository'
-            }
-        ],
-        downloads: []
-    } */
+    }
 ]
 
 export const categories = {
@@ -1466,34 +1592,29 @@ export const aboutContent = {
     ],
     links: [
         {
-            name: 'github',
+            text: 'GitHub',
             url: 'https://github.com/jfladas/',
-            icon: 'fa-brands fa-github-alt',
-            text: 'GitHub'
+            icon: 'fa-brands fa-github-alt'
         },
         {
-            name: 'itch.io',
+            text: 'itch.io',
             url: 'https://jfladas.itch.io/',
-            icon: 'fa-brands fa-itch-io',
-            text: 'Itch.io'
+            icon: 'fa-brands fa-itch-io'
         },
         {
-            name: 'linkedin',
+            text: 'LinkedIn',
             url: 'https://www.linkedin.com/in/lukas-bucher-0926bb282/',
-            icon: 'fa-brands fa-linkedin',
-            text: 'LinkedIn'
+            icon: 'fa-brands fa-linkedin'
         },
         {
-            name: 'instagram',
+            text: 'Instagram',
             url: 'https://www.instagram.com/jfla.das/',
-            icon: 'fa-brands fa-instagram',
-            text: 'Instagram'
+            icon: 'fa-brands fa-instagram'
         },
         {
-            name: 'youtube',
+            text: 'YouTube',
             url: 'https://youtube.com/@jfladas/',
-            icon: 'fa-brands fa-youtube',
-            text: 'YouTube'
+            icon: 'fa-brands fa-youtube'
         }
     ],
     downloads: [

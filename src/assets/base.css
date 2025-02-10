@@ -73,10 +73,6 @@ p {
   margin: 0;
 }
 
-.text {
-  text-align: justify;
-}
-
 .text-title {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
@@ -169,15 +165,17 @@ button {
 }
 
 .button-secondary {
-  background: var(--mint);
+  background: var(--deep);
+  color: var(--aqua);
 }
 
 .button-secondary:hover {
-  background: linear-gradient(to right, var(--sky), var(--mint));
+  background: linear-gradient(to right, var(--deep), var(--sky) 150%);
 }
 
 .button-secondary:active {
-  background: linear-gradient(to right, var(--mint), var(--aqua));
+  background: linear-gradient(to right, var(--deep) -50%, var(--sky));
+  color: white;
 }
 
 .button-tertiary {
