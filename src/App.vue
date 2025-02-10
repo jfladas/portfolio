@@ -15,17 +15,23 @@
   <div class="more hoverable" :class="{ open: moreVisible }">
     <font-awesome-icon icon="caret-left" class="more-icon tooltip" tooltip="more" @click="moreVisible = !moreVisible" />
     <div class="more-items">
+      <!--
+      //TODO: language change
       <div class="more-item tooltip" tooltip="en/de" @click="toggleLanguage">
         <font-awesome-icon icon="language" fixed-width />
       </div>
+      -->
       <div v-if="!isMobile" class="more-item tooltip" tooltip="cursor" @click="toggleCursor">
         <font-awesome-icon icon="arrow-pointer" fixed-width />
       </div>
+      <!--
+      //TODO: achievements
       <div class="more-item tooltip" tooltip="earned">
         <router-link to="/achievements" @click="moreVisible = !moreVisible">
           <font-awesome-icon icon="trophy" fixed-width />
         </router-link>
       </div>
+      -->
     </div>
   </div>
   <router-view />
@@ -134,7 +140,7 @@ const addCopyListeners = (elements) => {
 
 const toggleLanguage = () => {
   currentLanguage.value = currentLanguage.value === 'en' ? 'de' : 'en';
-  // TODO: Implement language change logic here
+  // TODO: language change
   showToast(currentLanguage.value === 'en' ? 'Language set to English' : 'Sprache auf Deutsch gesetzt');
   moreVisible.value = false;
 }
@@ -300,15 +306,15 @@ nav {
   font-size: 1.2rem;
   color: var(--sky);
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.5rem 0;
 }
 
 .nav-item.left {
-  padding-right: 6rem;
+  margin-right: 6rem;
 }
 
 .nav-item.right {
-  padding-left: 6rem;
+  margin-left: 6rem;
 }
 
 .nav-item:hover {
@@ -516,5 +522,24 @@ footer {
 
 .heart:hover {
   color: white;
+}
+
+@media (max-width: 600px) {
+  .nav-item {
+    font-size: 1rem;
+    padding: 1.2rem 0;
+  }
+
+  .nav-item.left {
+    margin-right: 2rem;
+  }
+
+  .nav-item.right {
+    margin-left: 2rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
 }
 </style>

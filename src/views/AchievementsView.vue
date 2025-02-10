@@ -1,7 +1,6 @@
 <template>
     <div class="content">
         <h1>achievements</h1>
-
     </div>
 </template>
 

@@ -12,13 +12,13 @@
             <p class="text" v-html="section.text"></p>
         </div>
         <div v-if="section.type === 'quoted'" class="quoted-container">
-            <p class="text quoted">
+            <div class="text quoted">
                 <font-awesome-icon icon="quote-left" class="quote-left" />
                 <span class="bottom-corner">
                     <font-awesome-icon icon="quote-right" class="quote-right" />
                 </span>
-            <div v-html="section.text"></div>
-            </p>
+                <p v-html="section.text"></p>
+            </div>
         </div>
         <div v-if="section.type === 'buttons'" class="buttons">
             <a v-for="button in section.buttons" :key="button.text" :href="button.action" class="button-container"
@@ -112,6 +112,7 @@ const prevSlide = (index) => {
 
 .quoted-container {
     display: flex;
+    text-align: justify;
 }
 
 .quoted {
