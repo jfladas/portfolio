@@ -1,4 +1,7 @@
+import { icon } from "@fortawesome/fontawesome-svg-core";
+
 const miloFiles = import.meta.glob('../projects/milo/*', { eager: true });
+const saladFiles = import.meta.glob('../projects/salad/*', { eager: true });
 const hsclFiles = import.meta.glob('../projects/hscl/*', { eager: true });
 const sweetFiles = import.meta.glob('../projects/sweet/*', { eager: true });
 const rodinaFiles = import.meta.glob('../projects/rodina/*', { eager: true });
@@ -423,16 +426,15 @@ export const projects = [
         downloads: []
     },
     */
-    // TODO: isa anim - salad ninja
-    /*
+    // isa anim - salad ninja
     {
         id: 'salad',
         name: 'salad ninja',
-        description: '2d animated video of a fruit ninja parody',
+        description: '2d animated video inspired by fruit ninja',
         context: {
             lines: [
                 '2024 @ HSLU, Emmenbrücke',
-                'Module ISA ANIM - Animation'
+                'Module ISA ANIM - Introduction to Animation'
             ],
             url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
             icon: 'graduation-cap',
@@ -442,11 +444,156 @@ export const projects = [
             'team',
             'video'
         ],
-        sections: [],
+        sections: [
+            {
+                type: 'quoted',
+                text: `Salad Ninja is a 2D animated video inspired by the popular mobile game Fruit Ninja.
+                        The video shows the preparation of a salad by slicing various ingredients.
+                        It uses a combination of stop motion and frame-by-frame paper animation and 
+                        was developed in a team of two with Remo Hösli as part of the ISA Animation Introduction module.`
+            },
+            {
+                type: 'heading',
+                text: 'Video'
+            },
+            {
+                type: 'video',
+                video: saladFiles['../projects/salad/SaladNinja.mp4'].default
+            },
+            {
+                type: 'heading',
+                text: 'Project Description'
+            },
+            {
+                type: 'subheading',
+                text: 'Concept & Execution'
+            },
+            {
+                type: 'paragraph',
+                text: `The animation follows the playful destruction of various ingredients, blending two animation techniques:
+                        Stop motion for animating all of the ingredients spinning and being sliced.
+                        Frame-by-frame paper animation for slices, splashes, visual effects like fire, and text.
+                        The final animation was edited and enriched by sound in After Effects, combining both techniques seamlessly.`
+            },
+            {
+                type: 'subheading',
+                text: 'Process Insights'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: saladFiles['../projects/salad/Inspo.gif'].default,
+                        caption: 'Inspiration: Fruit Ninja Game'
+                    },
+                    {
+                        src: saladFiles['../projects/salad/Storyboard.jpg'].default,
+                        caption: 'Storyboard'
+                    },
+                    {
+                        src: saladFiles['../projects/salad/Setup.gif'].default,
+                        caption: 'Stop Motion Animation'
+                    },
+                    {
+                        src: saladFiles['../projects/salad/POC.gif'].default,
+                        caption: 'Proof of Concept'
+                    },
+                    {
+                        src: saladFiles['../projects/salad/Salad.jpg'].default,
+                        caption: 'The Salad'
+                    },
+                ]
+            },
+            {
+                type: 'subheading',
+                text: 'Team Roles'
+            },
+            {
+                type: 'iconed',
+                text: 'Animation concept - Both',
+                icon: 'lightbulb'
+            },
+            {
+                type: 'iconed',
+                text: 'On-paper animation - Lukas Bucher',
+                icon: 'pencil'
+            },
+            {
+                type: 'iconed',
+                text: 'Stop motion animation - Both',
+                icon: 'apple-whole'
+            },
+            {
+                type: 'iconed',
+                text: 'Editing in After Effects - Remo Hösli',
+                icon: 'film'
+            },
+            {
+                type: 'iconed',
+                text: 'Sound design - Both',
+                icon: 'music'
+            },
+            {
+                type: 'iconed',
+                text: 'Salad eating - Both',
+                icon: 'utensils'
+            },
+            {
+                type: 'heading',
+                text: 'Other Projects in the Module'
+            },
+            {
+                type: 'paragraph',
+                text: `Alongside Salad Ninja, we worked on additional animation exercises exploring different techniques and approaches.
+                        Some examples:`
+            },
+            {
+                type: 'subheading',
+                text: 'Transition Animation'
+            },
+            {
+                type: 'video',
+                video: saladFiles['../projects/salad/Stir.mp4'].default
+            },
+            {
+                type: 'paragraph',
+                text: `This exercise focused on creating a smooth transition between two objects.
+                        The individual animation segments of all students were then combined into a single video, creating a seamless transition chain.
+                        Here, only my part of the animation is shown, depicting the transition from a cup to a pencil.`
+            },
+            {
+                type: 'subheading',
+                text: 'Stop Motion Claymation'
+            },
+            {
+                type: 'video',
+                video: saladFiles['../projects/salad/Frog.mp4'].default
+            },
+            {
+                type: 'paragraph',
+                text: `In this exercise, I tried out claymation using stop motion techniques together with Remo.
+                        We created a short video with sound of a frog emerging and catching a fly.`
+            }
+        ],
         links: [],
-        downloads: []
+        downloads: [
+            {
+                text: 'SaladNinja.mp4',
+                url: saladFiles['../projects/salad/SaladNinja.mp4'].default,
+                icon: 'file-video'
+            },
+            {
+                text: 'Transition.mp4',
+                url: saladFiles['../projects/salad/Stir.mp4'].default,
+                icon: 'file-video'
+            },
+            {
+                text: 'Claymation.mp4',
+                url: saladFiles['../projects/salad/Frog.mp4'].default,
+                icon: 'file-video'
+            }
+        ]
     },
-    */
     // iux - hscl
     {
         id: 'hscl',

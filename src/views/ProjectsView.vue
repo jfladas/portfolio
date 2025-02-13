@@ -127,6 +127,7 @@ const scrollToTop = () => {
 
 .filter {
   font-family: "Funnel Display", sans-serif;
+  font-weight: 800;
   font-size: 1.5rem;
   color: var(--deep);
   margin: 0;

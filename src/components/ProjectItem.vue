@@ -73,6 +73,7 @@ onUnmounted(() => {
 
 .project-item h2 {
     font-family: "Funnel Display", sans-serif;
+    font-weight: 800;
     font-size: 1.5rem;
     margin-bottom: 0.25rem;
     color: var(--navy);
