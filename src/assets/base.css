@@ -1,5 +1,5 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Funnel+Display:wght@800&family=Funnel+Sans:wght@300..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Funnel+Display:wght@300..800&family=Funnel+Sans:wght@300..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 /* Colors */
 :root {
@@ -40,6 +40,7 @@ body {
 
 h1 {
   font-family: "Funnel Display", sans-serif;
+  font-weight: 800;
   font-size: 4rem;
   line-height: 4rem;
   color: white;
