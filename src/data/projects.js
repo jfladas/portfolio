@@ -1,6 +1,5 @@
-import { icon } from "@fortawesome/fontawesome-svg-core";
-
 const miloFiles = import.meta.glob('../projects/milo/*', { eager: true });
+const europeFiles = import.meta.glob('../projects/4g/*', { eager: true });
 const saladFiles = import.meta.glob('../projects/salad/*', { eager: true });
 const hsclFiles = import.meta.glob('../projects/hscl/*', { eager: true });
 const sweetFiles = import.meta.glob('../projects/sweet/*', { eager: true });
@@ -402,11 +401,10 @@ export const projects = [
         downloads: []
     },
     */
-    // TODO: stuin - 4g europe
-    /*
+    // 4g europe
     {
         id: '4g',
-        name: 'rise of 4g in europe',
+        name: 'connected europe',
         description: 'data visualization poster of 4g network expansion',
         context: {
             lines: [
@@ -421,12 +419,186 @@ export const projects = [
             'solo',
             'design'
         ],
-        sections: [],
-        links: [],
-        downloads: []
+        sections: [
+            {
+                type: 'quoted',
+                text: `Between 2012 and 2016, Europe experienced a rapid expansion of 4G mobile network coverage, marking a turning point in digital connectivity.
+                        This data visualization project explores the speed and scale of 4G deployment across Europe, highlighting its impact on society.`
+            },
+            {
+                type: 'heading',
+                text: 'Poster'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: europeFiles['../projects/4g/ConnectedEurope.jpg'].default,
+                        caption: 'Connected Europe'
+                    }
+                ],
+            },
+            {
+                type: 'heading',
+                text: 'Data Source & Analysis'
+            },
+            {
+                type: 'paragraph',
+                text: `The dataset from the United Nations Sustainable Development Goals (SDG) Data Portal provided a comprehensive overview of 4G network coverage across Europe.
+                        It was analyzed using Microsoft Excel, applying filtering, pivot tables, and conditional formatting to extract key insights. The structured data allowed for comparisons across countries and time periods, revealing trends in connectivity expansion.`
+            },
+            {
+                type: 'iconed',
+                text: 'Dataset',
+                icon: 'database'
+            },
+            {
+                type: 'bullet',
+                text: 'UN SDG Data Portal - Indicator 9.c.1 (Mobile Network Coverage)'
+            },
+            {
+                type: 'iconed',
+                text: 'Timeframe',
+                icon: 'calendar-alt'
+            },
+            {
+                type: 'bullet',
+                text: '2012-2022'
+            },
+            {
+                type: 'iconed',
+                text: 'Countries',
+                icon: 'globe-europe'
+            },
+            {
+                type: 'bullet',
+                text: '16 European countries divided into 4 regions of Europe'
+            },
+            {
+                type: 'iconed',
+                text: 'Focus Question',
+                icon: 'question'
+            },
+            {
+                type: 'bullet',
+                text: 'How quickly was 4G technology adopted across Europe?'
+            },
+            {
+                type: 'iconed',
+                text: 'Software',
+                icon: 'arrow-pointer'
+            },
+            {
+                type: 'bullet',
+                text: 'Microsoft Excel for data analysis'
+            },
+            {
+                type: 'bullet',
+                text: 'Adobe InDesign for layout and poster design'
+            },
+            {
+                type: 'bullet',
+                text: 'Adobe Illustrator for data visualization'
+            },
+            {
+                type: 'heading',
+                text: 'Sketches'
+            },
+            {
+                type: 'paragraph',
+                text: `The sketching process focuses on the three data dimensions:`
+            },
+            {
+                type: 'iconed',
+                text: 'Diagrammatical Dimensions',
+                icon: '1'
+            },
+            {
+                type: 'bullet',
+                text: 'Focuses on the basic diagram types and their application.'
+            },
+            {
+                type: 'iconed',
+                text: 'Visual Dimensions',
+                icon: '2'
+            },
+            {
+                type: 'bullet',
+                text: 'Destinguishes between different content by using various design principles.'
+            },
+            {
+                type: 'iconed',
+                text: 'Structuring Dimensions',
+                icon: '3'
+            },
+            {
+                type: 'bullet',
+                text: 'Deals with the organization and arrangement of the objects in the space.'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: europeFiles['../projects/4g/Sketches1.jpg'].default,
+                        caption: 'Sketch 1'
+                    },
+                    {
+                        src: europeFiles['../projects/4g/Sketches2.jpg'].default,
+                        caption: 'Diagrammatical Dimensions 1'
+                    },
+                    {
+                        src: europeFiles['../projects/4g/Sketches3.jpg'].default,
+                        caption: 'Sketch 2'
+                    },
+                    {
+                        src: europeFiles['../projects/4g/Sketches4.jpg'].default,
+                        caption: 'Diagrammatical Dimensions 2'
+                    },
+                    {
+                        src: europeFiles['../projects/4g/Sketches5.jpg'].default,
+                        caption: 'Diagrammatical, Visual & Structuring Dimensions 3'
+                    },
+                    {
+                        src: europeFiles['../projects/4g/Sketches6.jpg'].default,
+                        caption: 'Visual Dimensions 1'
+                    },
+                    {
+                        src: europeFiles['../projects/4g/Sketches7.jpg'].default,
+                        caption: 'Sketch 3'
+                    },
+                    {
+                        src: europeFiles['../projects/4g/Sketches8.jpg'].default,
+                        caption: 'Sketch 4'
+                    }
+                ],
+            },
+        ],
+        links: [
+            {
+                text: 'UN SDG Goal 9',
+                url: 'https://www.un.org/sustainabledevelopment/infrastructure-industrialization/',
+                icon: 'external-link-alt'
+            },
+            {
+                text: 'UN SDG Data Portal',
+                url: 'https://unstats.un.org/sdgs/dataportal/database',
+                icon: 'external-link-alt'
+            }
+        ],
+        downloads: [
+            {
+                text: 'ConnectedEurope.pdf',
+                url: europeFiles['../projects/4g/ConnectedEurope.pdf'].default,
+                icon: 'file-pdf'
+            },
+            {
+                text: 'Sketches.pdf',
+                url: europeFiles['../projects/4g/Sketches.pdf'].default,
+                icon: 'file-pdf'
+            }
+        ]
     },
-    */
-    // isa anim - salad ninja
+    // salad ninja
     {
         id: 'salad',
         name: 'salad ninja',
@@ -594,7 +766,7 @@ export const projects = [
             }
         ]
     },
-    // iux - hscl
+    // hscl
     {
         id: 'hscl',
         name: 'ux hscl',

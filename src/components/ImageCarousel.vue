@@ -12,10 +12,10 @@
             </div>
             <div class="carousel-fade prev"></div>
             <div class="carousel-fade next"></div>
-            <button class="carousel-control prev" @click="$emit('prev-slide')">
+            <button v-if="images.length != 1" class="carousel-control prev" @click="$emit('prev-slide')">
                 <font-awesome-icon icon="chevron-left" />
             </button>
-            <button class="carousel-control next" @click="$emit('next-slide')">
+            <button v-if="images.length != 1" class="carousel-control next" @click="$emit('next-slide')">
                 <font-awesome-icon icon="chevron-right" />
             </button>
             <button v-if="!isOverlayVisible" class="expand-button" @click="$emit('toggle-overlay')">
