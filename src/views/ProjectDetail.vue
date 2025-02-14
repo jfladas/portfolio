@@ -7,7 +7,7 @@
     </div>
     <div class="content">
         <div v-if="project" class="content-left">
-            <router-link to="/projects" class="back hoverable tooltip" tooltip="back">
+            <router-link :to="`/projects#${project.id}`" class="back hoverable tooltip" tooltip="back">
                 <font-awesome-icon icon="arrow-left-long" />
             </router-link>
             <h1 class="title">{{ project.name }}</h1>
@@ -27,7 +27,7 @@
                 :isOverlayVisible="isOverlayVisible" :overlayIndex="overlayIndex" @toggle-overlay="toggleOverlay"
                 @next-slide="nextSlide" @prev-slide="prevSlide" />
             <div class="left-bottom">
-                <router-link to="/projects" class="back hoverable tooltip" tooltip="back">
+                <router-link :to="`/projects#${project.id}`" class="back hoverable tooltip" tooltip="back">
                     <font-awesome-icon icon="arrow-left-long" />
                 </router-link>
                 <router-link to="#" class="to-top hoverable tooltip" tooltip="to top" @click.prevent="scrollToTop">
@@ -37,12 +37,12 @@
         </div>
         <div v-else class="disclaimer">
             <h3>
-                Project not found
+                project not found
                 <font-awesome-icon icon="face-frown-open" />
             </h3>
-            <p>Please check the project ID or try again later.</p>
+            <p>please check the project id or try again later</p>
             <div class="left-bottom">
-                <router-link to="/projects" class="back hoverable tooltip" tooltip="back">
+                <router-link :to="`/projects`" class="back hoverable tooltip" tooltip="back">
                     <font-awesome-icon icon="arrow-left-long" />
                 </router-link>
             </div>
