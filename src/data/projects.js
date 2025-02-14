@@ -1,4 +1,5 @@
 const miloFiles = import.meta.glob('../projects/milo/*', { eager: true });
+const matbfFiles = import.meta.glob('../projects/matbf/*', { eager: true });
 const europeFiles = import.meta.glob('../projects/4g/*', { eager: true });
 const saladFiles = import.meta.glob('../projects/salad/*', { eager: true });
 const hsclFiles = import.meta.glob('../projects/hscl/*', { eager: true });
@@ -369,8 +370,7 @@ export const projects = [
             }
         ]
     },
-    // TODO: matbf
-    /*
+    // beautiful mathematics
     {
         id: 'matbf',
         name: 'beautiful mathematics',
@@ -380,20 +380,194 @@ export const projects = [
                 '2024 @ HSLU, Rotkreuz',
                 'Module MATBF - Beautiful Mathematics'
             ],
-            url: 'https://www.hslu.ch/',
+            url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
             tooltip: 'school'
         },
         categories: [
             'solo',
             'coding',
-            'design'
+            'web'
         ],
-        sections: [],
-        links: [],
-        downloads: []
+        sections: [
+            {
+                type: 'quoted',
+                text: `The Module explores the beauty of mathematics through generative art and algorithmic design, using p5.js, HTML, CSS, and JavaScript. 
+                        This page showcases a collection of weekly tasks completed during weeks 1 to 6 of the module and an exam project. 
+                        Each task implements mathematical and computational principles to create visually engaging patterns, simulations, and interactive experiences.`
+            },
+            {
+                type: 'heading',
+                text: 'View Collection'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Go to Page',
+                        action: 'https://matbf.jfladas.com',
+                        icon: 'arrow-right',
+                        color: 'primary'
+                    },
+                    {
+                        text: 'Documentation',
+                        action: matbfFiles['../projects/matbf/MATBF.pdf'].default,
+                        icon: 'circle-arrow-down',
+                        color: 'secondary'
+
+                    }
+                ]
+            },
+            {
+                type: 'heading',
+                text: 'Weekly Projects'
+            },
+            {
+                type: 'iconed',
+                text: 'W1 | Spiral',
+                icon: 'spinner'
+            },
+            {
+                type: 'paragraph',
+                text: 'Spiral of circles increasing in size made by implementing Bresenham Midpoint Circle Algorithm'
+            },
+            {
+                type: 'iconed',
+                text: 'W2 | 3D Mesh',
+                icon: 'circle-nodes'
+            },
+            {
+                type: 'paragraph',
+                text: 'Attempt at a 3D snail shape using WebGL'
+            },
+            {
+                type: 'iconed',
+                text: 'W3 | Matrix',
+                icon: 'font'
+            },
+            {
+                type: 'paragraph',
+                text: 'Markov Chain with Japanese Hiragana'
+            },
+            {
+                type: 'iconed',
+                text: 'W4 | Life',
+                icon: 'border-all'
+            },
+            {
+                type: 'paragraph',
+                text: "Interactive Conway's Game of Life with more States/Colors"
+            },
+            {
+                type: 'iconed',
+                text: 'W5 | Mountains',
+                icon: 'mountain'
+            },
+            {
+                type: 'paragraph',
+                text: 'Layered mountain range made with 2D Fractal Noise and Smoothstep-Interpolation'
+            },
+            {
+                type: 'iconed',
+                text: 'W6 | Trees',
+                icon: 'tree'
+            },
+            {
+                type: 'paragraph',
+                text: 'Different Trees using 2D L-Systems'
+            },
+            {
+                type: 'iconed',
+                text: 'EXAM | Breathing',
+                icon: 'genderless'
+            },
+            {
+                type: 'paragraph',
+                text: 'Pulsating Circles for Mindful Breathing'
+            },
+            {
+                type: 'heading',
+                text: 'Key Learnings'
+            },
+            {
+                type: 'bullet',
+                text: 'Applying mathematical algorithms to creative coding.'
+            },
+            {
+                type: 'bullet',
+                text: 'Exploring generative art with p5.js and WebGL.'
+            },
+            {
+                type: 'bullet',
+                text: 'Enhancing interactivity through Markov Chains, Cellular Automata, and L-Systems.'
+            },
+            {
+                type: 'bullet',
+                text: 'Using fractal noise and procedural techniques for natural-looking landscapes.'
+            },
+            {
+                type: 'heading',
+                text: 'Screenshots'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: matbfFiles['../projects/matbf/W1.jpg'].default,
+                        caption: 'W1 | Spiral'
+                    },
+                    {
+                        src: matbfFiles['../projects/matbf/W2.gif'].default,
+                        caption: 'W2 | 3D Mesh'
+                    },
+                    {
+                        src: matbfFiles['../projects/matbf/W3.gif'].default,
+                        caption: 'W3 | Matrix'
+                    },
+                    {
+                        src: matbfFiles['../projects/matbf/W4.gif'].default,
+                        caption: 'W4 | Life'
+                    },
+                    {
+                        src: matbfFiles['../projects/matbf/W5.gif'].default,
+                        caption: 'W5 | Mountains'
+                    },
+                    {
+                        src: matbfFiles['../projects/matbf/W6.jpg'].default,
+                        caption: 'W6 | Trees'
+                    },
+                    {
+                        src: matbfFiles['../projects/matbf/EXAM.gif'].default,
+                        caption: 'EXAM | Breathing'
+                    }
+                ],
+            }
+        ],
+        links: [
+            {
+                text: 'Go to Page',
+                url: 'https://matbf.jfladas.com',
+                icon: 'external-link-alt'
+            },
+            {
+                text: 'GitHub Repository',
+                url: 'https://github.com/jfladas/matbf',
+                icon: 'fa-brands fa-github-alt'
+            },
+            {
+                text: 'Beautiful Mathematics',
+                url: 'https://learning.kahlina.ch/Beautiful%20Mathematics/beautiful_mathematics_start.html',
+                icon: 'external-link-alt'
+            }
+        ],
+        downloads: [
+            {
+                text: 'Documentation.pdf',
+                url: matbfFiles['../projects/matbf/MATBF.pdf'].default,
+                icon: 'file-pdf'
+            },
+        ]
     },
-    */
     // connected europe
     {
         id: '4g',
@@ -779,7 +953,7 @@ export const projects = [
             }
         ]
     },
-    // hscl
+    // ux hscl
     {
         id: 'hscl',
         name: 'ux hscl',

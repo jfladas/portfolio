@@ -181,6 +181,7 @@ onMounted(() => {
 .a {
   color: var(--aqua);
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .a:hover {
