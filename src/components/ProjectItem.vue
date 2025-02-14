@@ -88,12 +88,12 @@ onUnmounted(() => {
 
 .project-item p {
     font-size: 0;
-    color: var(--deep);
+    color: transparent;
     margin-bottom: 0;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s;
 }
 
 .project-item p:first-of-type {
@@ -123,6 +123,7 @@ onUnmounted(() => {
 
     p {
         font-size: 1.5rem;
+        color: var(--deep);
         opacity: 1;
         max-width: 50vw;
         max-height: 10rem;
