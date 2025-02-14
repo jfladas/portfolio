@@ -33,7 +33,8 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
+import { onBeforeRouteLeave } from 'vue-router'
 import ProjectItem from '@/components/ProjectItem.vue'
 import { projects, categories } from '@/data/projects.js'
 
@@ -48,7 +49,7 @@ const toggleFilter = (filter) => {
   } else {
     if (selectedFilters.value.includes(filter)) {
       selectedFilters.value = selectedFilters.value.filter(f => f !== filter)
-      if (filter === 'solo' || filter === 'team') {
+      if (filter === 'solo' || 'team') {
         const otherFilter = filter === 'solo' ? 'team' : 'solo'
         if (!selectedFilters.value.includes(otherFilter)) {
           selectedFilters.value.push(otherFilter)
@@ -94,6 +95,25 @@ const filteredProjects = computed(() => {
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+onBeforeRouteLeave((to, from, next) => {
+  localStorage.setItem('selectedFilters', JSON.stringify(selectedFilters.value))
+  localStorage.setItem('filterMode', JSON.stringify(filterMode.value))
+  next()
+})
+
+onMounted(() => {
+  const savedFilters = JSON.parse(localStorage.getItem('selectedFilters'))
+  const savedFilterMode = JSON.parse(localStorage.getItem('filterMode'))
+  if (savedFilters) {
+    selectedFilters.value = savedFilters
+  }
+  if (savedFilterMode) {
+    filterMode.value = savedFilterMode
+  }
+})
+
+
 </script>
 
 <style scoped>

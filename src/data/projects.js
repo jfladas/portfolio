@@ -54,7 +54,9 @@ export const projects = [
         categories: [
             'team',
             'coding',
-            'web'
+            'design',
+            'web',
+            'ux',
         ],
         sections: [],
         links: [],
@@ -302,15 +304,6 @@ export const projects = [
                 text: 'Charming pixel art and audio design enhance the immersive experience.'
             },
             {
-                type: 'subheading',
-                text: 'Conclusion'
-            },
-            {
-                type: 'paragraph',
-                text: `Milo's Forest Adventure provided valuable experience in web development, graphic design, and audio editing. 
-                        By utilising diverse tools and AI assistance, the project showcases technical and creative skills.`
-            },
-            {
                 type: 'heading',
                 text: 'Screenshots'
             },
@@ -401,7 +394,7 @@ export const projects = [
         downloads: []
     },
     */
-    // 4g europe
+    // connected europe
     {
         id: '4g',
         name: 'connected europe',
@@ -682,33 +675,53 @@ export const projects = [
             },
             {
                 type: 'iconed',
-                text: 'Animation concept - Both',
-                icon: 'lightbulb'
+                text: 'Lukas Bucher',
+                icon: 'user'
+            },
+            {
+                type: 'bullet',
+                text: 'Animation concept'
+            },
+            {
+                type: 'bullet',
+                text: 'On-paper animation'
+            },
+            {
+                type: 'bullet',
+                text: 'Stop motion animation'
+            },
+            {
+                type: 'bullet',
+                text: 'Sound design'
+            },
+            {
+                type: 'bullet',
+                text: 'Salad eating'
             },
             {
                 type: 'iconed',
-                text: 'On-paper animation - Lukas Bucher',
-                icon: 'pencil'
+                text: 'Remo Hösli',
+                icon: 'user-ninja'
             },
             {
-                type: 'iconed',
-                text: 'Stop motion animation - Both',
-                icon: 'apple-whole'
+                type: 'bullet',
+                text: 'Animation concept'
             },
             {
-                type: 'iconed',
-                text: 'Editing in After Effects - Remo Hösli',
-                icon: 'film'
+                type: 'bullet',
+                text: 'Stop motion animation'
             },
             {
-                type: 'iconed',
-                text: 'Sound design - Both',
-                icon: 'music'
+                type: 'bullet',
+                text: 'Editing in After Effects'
             },
             {
-                type: 'iconed',
-                text: 'Salad eating - Both',
-                icon: 'utensils'
+                type: 'bullet',
+                text: 'Sound design'
+            },
+            {
+                type: 'bullet',
+                text: 'Salad eating'
             },
             {
                 type: 'heading',
@@ -1229,14 +1242,14 @@ export const projects = [
                 icon: 'fa-brands fa-itch-io'
             },
             {
-                text: 'Play the Game',
-                url: 'https://itch.io/embed-upload/9224978?color=FA98E0',
-                icon: 'external-link-alt'
-            },
-            {
                 text: 'Gameplay Video',
                 url: 'https://youtu.be/04TWBzgvl34',
                 icon: 'fa-brands fa-youtube'
+            },
+            {
+                text: 'Dev Blog Entries',
+                url: 'https://blog.hslu.ch/games/?s=HDL+Week',
+                icon: 'external-link-alt'
             }
         ],
         downloads: [
@@ -1608,10 +1621,10 @@ export const projects = [
             }
         ]
     },
-    // chrome extension
+    // google chrome extension
     {
         id: 'pa',
-        name: 'developing a google chrome extension',
+        name: 'google chrome extension',
         description: 'internal organization structure & employee information',
         context: {
             lines: [

@@ -1,5 +1,6 @@
 <template>
     <div ref="projectItem" class="project-item hoverable">
+        <div :id="project.id" class="anchor"></div>
         <router-link :to="`/projects/${project.id}`">
             <h2>{{ project.name }}</h2>
             <p>{{ project.description }}</p>
@@ -62,6 +63,11 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+.anchor {
+    position: relative;
+    transform: translate(0, -12rem);
+}
+
 .project-item {
     padding: 0.5rem 1rem;
     background: linear-gradient(to right,

@@ -4,11 +4,11 @@
         <h3 v-if="section.type === 'heading'" class="heading">{{ section.text }}</h3>
         <h4 v-if="section.type === 'subheading'" class="subheading">{{ section.text }}</h4>
         <div v-if="section.type === 'bullet'" class="bullet-container">
-            <font-awesome-icon icon="minus" class="text-icon bullet" />
+            <font-awesome-icon icon="minus" class="bullet" />
             <p v-html="section.text"></p>
         </div>
         <div v-if="section.type === 'iconed'" class="iconed-container">
-            <font-awesome-icon :icon="section.icon" fixed-width class="text-icon iconed" />
+            <font-awesome-icon :icon="section.icon" fixed-width class="iconed" />
             <p class="text" v-html="section.text"></p>
         </div>
         <div v-if="section.type === 'quoted'" class="quoted-container">
@@ -94,11 +94,11 @@ const prevSlide = (index) => {
 .iconed-container {
     display: flex;
     margin-top: 0.5rem;
+    color: var(--sky);
 }
 
 .iconed-container .text {
     font-weight: 700;
-    color: var(--mint);
 }
 
 .bullet {

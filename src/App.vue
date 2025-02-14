@@ -38,7 +38,11 @@
   <div id="toast"></div>
   <div class="fade-out"></div>
   <footer>
-    <p>made with <font-awesome-icon icon="heart" class="heart hoverable tooltip" tooltip="love" /> by jfladas</p>
+    <p>
+      made with
+      <font-awesome-icon icon="heart" class="heart hoverable tooltip" tooltip="love" />
+      by jfladas
+    </p>
     <p>
       <a href="https://github.com/jfladas/" target="_blank" class="social hoverable tooltip" tooltip="GitHub">
         <font-awesome-icon icon="fa-brands fa-github-alt" />
@@ -50,14 +54,27 @@
         tooltip="LinkedIn">
         <font-awesome-icon icon="fa-brands fa-linkedin" />
       </a>
-      <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip"
-        tooltip="Instagram">
+      <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip" tooltip="Insta">
         <font-awesome-icon icon="fa-brands fa-instagram" />
       </a>
       <a href="https://youtube.com/@jfladas/" target="_blank" class="social hoverable tooltip" tooltip="YouTube">
         <font-awesome-icon icon="fa-brands fa-youtube" />
       </a>
+      <a href="mailto:lukas.bucherr@gmail.com" class="social hoverable tooltip" tooltip="Email">
+        <font-awesome-icon icon="fa-solid fa-envelope" />
+      </a>
     </p>
+    <p>
+      <router-link to="/about" class="bold hoverable">
+        about
+      </router-link>
+      <font-awesome-icon icon="minus" rotation="90" />
+      <router-link to="/projects" class="bold hoverable">
+        projects
+      </router-link>
+    </p>
+    <br>
+    <p class="copyright">&copy; 2025 jfladas</p>
   </footer>
   <div ref="cursor" class="custom-cursor">
     <span ref="tooltip" class="tooltip-container"></span>
@@ -530,13 +547,13 @@ footer {
   width: 100%;
   text-align: center;
   color: var(--mint);
-  background: linear-gradient(to bottom, var(--deep), rgba(var(--navy-rgb), 0));
+  background: linear-gradient(to bottom, var(--deep), transparent 75%);
   margin-top: 6rem;
-  padding-top: 1rem;
-  padding-bottom: 6rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.2rem;
 }
 
 .heart {
@@ -550,13 +567,18 @@ footer {
 
 .social {
   font-size: 1.2rem;
-  color: var(--purple);
+  color: var(--mint);
   margin: 1rem 0.5rem;
   transition: color 0.5s ease;
 }
 
 .social:hover {
   color: var(--pink);
+}
+
+.copyright {
+  font-weight: 700;
+  color: var(--deep);
 }
 
 @media (max-width: 600px) {
