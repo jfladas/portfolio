@@ -357,7 +357,7 @@ onMounted(() => {
 
 .title {
   position: relative;
-  background: linear-gradient(to right, white, var(--aqua));
+  background: linear-gradient(to left, white 50%, var(--aqua));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
