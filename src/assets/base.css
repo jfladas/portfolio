@@ -240,6 +240,10 @@ button {
   margin-top: 10rem;
 }
 
+.right-container {
+  position: sticky;
+  top: 6rem;
+}
 
 .jap {
   font-family: "DotGothic16", sans-serif;

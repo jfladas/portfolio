@@ -1,4 +1,5 @@
 <template>
+  <FullOverlay :isOverlayVisible="isOverlayVisible" :overlayType="overlayType" />
   <div class="content">
     <div class="content-left">
       <h1 class="title hoverable">
@@ -12,12 +13,14 @@
     </div>
     <div class="content-right">
       <div class="me-container hoverable">
-        <p class="jap overlay" ref="typedtext"></p>
+        <p class="jap overtext" ref="typedtext"></p>
         <img src="/src/assets/me.png" alt="me" class="me" />
         <img src="/src/assets/me_glitch.png" alt="me" class="me-glitch" />
         <img src="/src/assets/me_dark.png" alt="me" class="me-dark" />
       </div>
-      <LinksDownloads :links="aboutContent.links" :downloads="aboutContent.downloads" />
+      <div class="right-container">
+        <LinksDownloads :links="aboutContent.links" :downloads="aboutContent.downloads" />
+      </div>
     </div>
   </div>
 </template>
@@ -27,17 +30,12 @@ import { ref, onMounted } from 'vue'
 import { aboutContent } from '@/data/projects.js'
 import ContentSections from '@/components/ContentSections.vue'
 import LinksDownloads from '@/components/LinksDownloads.vue'
+import FullOverlay from '@/components/FullOverlay.vue'
 
 const isOverlayVisible = ref(false)
-const typedtext = ref(null)
-const typedtext2 = ref(null)
+const overlayType = ref('')
 const overlayIndex = ref(null)
 const currentIndexes = ref([])
-
-const toggleOverlay = (type, index) => {
-  overlayIndex.value = index
-  isOverlayVisible.value = !isOverlayVisible.value
-}
 
 const nextSlide = (index) => {
   currentIndexes.value[index] = (currentIndexes.value[index] + 1) % aboutContent.sections[index].images.length
@@ -47,6 +45,15 @@ const prevSlide = (index) => {
   currentIndexes.value[index] = (currentIndexes.value[index] - 1 + aboutContent.sections[index].images.length) % aboutContent.sections[index].images.length
 }
 
+const toggleOverlay = (type, index) => {
+  overlayType.value = type
+  overlayIndex.value = index
+  isOverlayVisible.value = !isOverlayVisible.value
+}
+
+
+const typedtext = ref(null)
+const typedtext2 = ref(null)
 const speed = ref(100);
 
 const text = ref([
@@ -165,6 +172,13 @@ const typewriter2 = () => {
 };
 
 onMounted(() => {
+  if (aboutContent) {
+    aboutContent.sections.forEach((section, index) => {
+      if (section.type === 'images') {
+        currentIndexes.value[index] = 0
+      }
+    })
+  }
   length.value = text.value[0].length;
   const meContainer = document.querySelector('.me-container');
   meContainer.addEventListener('mouseover', () => {
@@ -339,7 +353,7 @@ onMounted(() => {
   }
 }
 
-.overlay,
+.overtext,
 .thatsme {
   position: absolute;
   padding: 1rem;
@@ -388,7 +402,7 @@ onMounted(() => {
   transform: translate(-1vw, calc(-2.5rem - 2vw));
 }
 
-.me-container:hover .overlay {
+.me-container:hover .overtext {
   opacity: 1;
 }
 
@@ -405,13 +419,13 @@ onMounted(() => {
     width: 40vw;
   }
 
-  .overlay,
+  .overtext,
   .thatsme {
     width: 100%;
     font-size: 3vw;
   }
 
-  .overlay {
+  .overtext {
     margin-left: 40vw;
     padding-top: 0;
   }
@@ -425,12 +439,12 @@ onMounted(() => {
     width: 75vw;
   }
 
-  .overlay,
+  .overtext,
   .thatsme {
     font-size: 5vw;
   }
 
-  .overlay {
+  .overtext {
     margin-left: 0;
   }
 

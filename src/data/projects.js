@@ -1,5 +1,3 @@
-import { text } from "@fortawesome/fontawesome-svg-core";
-
 const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
 const sputifyFiles = import.meta.glob('../projects/sputify/*', { eager: true });
 const ecohomeFiles = import.meta.glob('../projects/ecohome/*', { eager: true });
@@ -2355,12 +2353,119 @@ export const aboutContent = {
             text: 'More about me...'
         },
         {
+            type: 'subheading',
+            text: 'Music'
+        },
+        {
             type: 'paragraph',
             text: `Beyond my passion for technology and design, music plays a big role in my life. I play the saxophone in the local orchestra '<a href="https://www.musikvereinbuochs.ch/" class="bold hoverable" target="_blank">Musikverein Buochs</a>', which has been an amazing way to connect with others and immerse myself in the joy of creating music. My love for music doesn't stop there. I'm also a fan of K-pop and enjoy attending concerts whenever I can.`
         },
         {
             type: 'paragraph',
+            text: 'Latest K-pop concerts attended:'
+        },
+        {
+            type: 'iconed',
+            text: 'ATEEZ @ Zurich 2025',
+            icon: 'skull-crossbones'
+        },
+        {
+            type: 'iconed',
+            text: 'Billlie @ Munich 2024',
+            icon: 'spa'
+        },
+        {
+            type: 'iconed',
+            text: 'IVE @ Barcelona 2024',
+            icon: 'plane'
+        },
+        {
+            type: 'iconed',
+            text: 'P1Harmony @ Zurich 2023',
+            icon: 'atom'
+        },
+        {
+            type: 'iconed',
+            text: 'aespa @ Paris 2023',
+            icon: 'fire-flame-curved'
+        },
+        {
+            type: 'iconed',
+            text: 'NCT @ Incheon 2023',
+            icon: 'globe'
+        },
+        {
+            type: 'subheading',
+            text: 'Japan'
+        },
+        {
+            type: 'paragraph',
             text: `Learning Japanese has been another fulfilling journey, deepening my interest in East Asian culture. Through self-study, school courses, and visiting different parts of Japan, I have developed quite an appreciation of its many facets and it has become my favorite travel destination.`
+        },
+        {
+            type: 'images',
+            images: [
+                {
+                    src: aboutFiles['../assets/about/Slide4.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide5.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide6.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide7.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide8.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide9.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide10.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide11.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide12.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide13.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide14.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide15.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide16.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide17.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide18.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide19.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide20.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide21.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide22.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/Slide23.jpg'].default
+                }
+            ]
         }
     ],
     links: [

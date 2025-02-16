@@ -5,7 +5,7 @@
                 <div class="carousel-item" v-for="(image, index) in images" :key="index"
                     :class="{ small: !isOverlayVisible }">
                     <img :src="image.src" :alt="image.caption" />
-                    <div class="fade-bottom">
+                    <div v-if="image.caption" class="fade-bottom">
                         <p>{{ image.caption }}</p>
                     </div>
                 </div>

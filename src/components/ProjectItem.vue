@@ -177,6 +177,7 @@ onUnmounted(() => {
 
         p {
             font-size: 1.2rem;
+            color: var(--deep);
             opacity: 1;
             max-width: 60vw;
             max-height: 10rem;

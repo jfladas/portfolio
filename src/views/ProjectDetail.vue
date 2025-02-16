@@ -1,10 +1,5 @@
 <template>
-    <div v-show="isOverlayVisible" class="overlay">
-        <div class="overlay-content">
-            <div v-show="overlayType === 'images'" id="images-teleport"></div>
-            <div v-show="overlayType === 'video'" id="video-teleport"></div>
-        </div>
-    </div>
+    <FullOverlay :isOverlayVisible="isOverlayVisible" :overlayType="overlayType" />
     <div class="content">
         <div v-if="project" class="content-left">
             <router-link :to="`/projects#${project.id}`" class="back hoverable tooltip" tooltip="back">
@@ -60,6 +55,7 @@ import { computed, ref, onMounted } from 'vue'
 import { projects, categories } from '@/data/projects.js'
 import ContentSections from '@/components/ContentSections.vue'
 import LinksDownloads from '@/components/LinksDownloads.vue'
+import FullOverlay from '@/components/FullOverlay.vue'
 
 const props = defineProps(['id'])
 
@@ -97,7 +93,6 @@ const toggleOverlay = (type, index) => {
 const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
 </script>
 
 <style scoped>
@@ -128,54 +123,6 @@ const scrollToTop = () => {
     font-size: 1.5rem;
     color: var(--mint);
     margin-right: 0.75rem;
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(var(--navy-rgb), 0.5);
-    backdrop-filter: blur(1rem);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
-
-.overlay-content {
-    position: relative;
-    width: fit-content;
-    max-width: 90vw;
-    height: fit-content;
-    max-height: 90vh;
-    background-color: var(--navy);
-    overflow: auto;
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-}
-
-#video-teleport {
-    display: flex;
-    align-items: stretch;
-}
-
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.full-screen-image {
-    width: 100%;
-    height: auto;
 }
 
 .left-bottom {
@@ -219,11 +166,6 @@ const scrollToTop = () => {
 .to-top:hover {
     transform: translate(-50%, -1rem);
     color: var(--sky);
-}
-
-.right-container {
-    position: sticky;
-    top: 6rem;
 }
 
 @media (max-width: 1200px) {
