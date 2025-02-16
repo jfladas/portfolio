@@ -81,6 +81,10 @@ const prevSlide = (index) => {
 </script>
 
 <style scoped>
+.heading {
+    margin-bottom: 0.2rem;
+}
+
 .paragraph {
     margin-top: 0.5rem;
 }

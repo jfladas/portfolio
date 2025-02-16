@@ -1,3 +1,8 @@
+import { text } from "@fortawesome/fontawesome-svg-core";
+
+const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
+const sputifyFiles = import.meta.glob('../projects/sputify/*', { eager: true });
+const ecohomeFiles = import.meta.glob('../projects/ecohome/*', { eager: true });
 const miloFiles = import.meta.glob('../projects/milo/*', { eager: true });
 const matbfFiles = import.meta.glob('../projects/matbf/*', { eager: true });
 const europeFiles = import.meta.glob('../projects/4g/*', { eager: true });
@@ -64,12 +69,11 @@ export const projects = [
         downloads: []
     },
     */
-    // TODO: sumschool (serious games) - ecohome
-    /*
+    // ecohome
     {
         id: 'ecohome',
         name: 'ecohome',
-        description: 'serious game for sustainable living',
+        description: 'serious game about waste management',
         context: {
             lines: [
                 '2024 @ HSLU, Rotkreuz',
@@ -81,15 +85,278 @@ export const projects = [
         },
         categories: [
             'team',
-            'coding',
-            'game',
-            'story'
+            'game'
         ],
-        sections: [],
+        sections: [
+            {
+                type: 'quoted',
+                text: `EcoHome is a strategic tabletop game centered around waste management and sustainability in modern Swiss households. 
+                        Players take on different personas and must balance daily actions to reduce trash while maintaining or increasing their happiness score. 
+                        The game spans one week, with each turn representing a day. Players receive immediate feedback on their choices, allowing them to adjust strategies.
+                        As the final project of the International Summer School on Designing Serious Games this game was developed in a team of three with Lisa Landolt and Julian Schwarz.`
+            },
+            {
+                type: 'heading',
+                text: 'Gameplay Overview'
+            },
+            {
+                type: 'subheading',
+                text: 'Objective'
+            },
+            {
+                type: 'iconed',
+                text: 'Minimize Waste, Maximize Happiness',
+                icon: 'smile'
+            },
+            {
+                type: 'paragraph',
+                text: `At the end of the week, the player with the least amount of trash bags wins.`
+            },
+            {
+                type: 'subheading',
+                text: 'Challenges'
+            },
+            {
+                type: 'bullet',
+                text: 'Managing resources efficiently.'
+            },
+            {
+                type: 'bullet',
+                text: 'Adapting to random events that affect daily life.'
+            },
+            {
+                type: 'bullet',
+                text: 'Making smart buying choices to minimize waste.'
+            },
+            {
+                type: 'subheading',
+                text: 'Player Actions'
+            },
+            {
+                type: 'iconed',
+                text: 'Grocery Shopping',
+                icon: 'shopping-cart'
+            },
+            {
+                type: 'paragraph',
+                text: 'Buy food and reusable items to manage resources effectively and minimize waste.'
+            },
+            {
+                type: 'iconed',
+                text: 'Day Planning',
+                icon: 'calendar-alt'
+            },
+            {
+                type: 'paragraph',
+                text: 'Allocate time for daily activities to balance tasks and optimize efficiency.'
+            },
+            {
+                type: 'iconed',
+                text: 'Cooking',
+                icon: 'utensils'
+            },
+            {
+                type: 'paragraph',
+                text: 'Prepare meals without wasting ingredients to maintain a low waste footprint.'
+            },
+            {
+                type: 'iconed',
+                text: 'Cleaning',
+                icon: 'broom'
+            },
+            {
+                type: 'paragraph',
+                text: 'Maintain living spaces and optimize waste disposal to keep the environment clean.'
+            },
+            {
+                type: 'iconed',
+                text: 'Recycling',
+                icon: 'recycle'
+            },
+            {
+                type: 'paragraph',
+                text: 'Reduce waste by properly sorting trash and recycling materials.'
+            },
+            {
+                type: 'subheading',
+                text: 'Setting'
+            },
+            {
+                type: 'paragraph',
+                text: 'Modern Swiss households, featuring shared apartments, family homes, and single-person residences.'
+            },
+            {
+                type: 'subheading',
+                text: 'Technology'
+            },
+            {
+                type: 'paragraph',
+                text: 'The game relies on physical cards for actions, events, and resources, with minimal bookkeeping to easily keep track of scores and states.'
+            },
+            {
+                type: 'heading',
+                text: 'Game Rules'
+            },
+            {
+                type: 'subheading',
+                text: 'Setup'
+            },
+            {
+                type: 'paragraph',
+                text: 'Each player adopts a persona that determines their conditions and weekly schedule:'
+            },
+            {
+                type: 'iconed',
+                text: 'Single-person household',
+                icon: 'user'
+            },
+            {
+                type: 'bullet',
+                text: 'Has 2 free time slots on weekdays and 5 on weekends'
+            },
+            {
+                type: 'bullet',
+                text: 'Generates 0 extra trash per day'
+            },
+            {
+                type: 'iconed',
+                text: 'Family household',
+                icon: 'users'
+            },
+            {
+                type: 'bullet',
+                text: 'Has 4 free time slots on weekdays and 2 on weekends'
+            },
+            {
+                type: 'bullet',
+                text: 'Generates 1 extra trash per day'
+            },
+            {
+                type: 'iconed',
+                text: 'Shared flat',
+                icon: 'house-chimney-window'
+            },
+            {
+                type: 'bullet',
+                text: 'Has 3 free time slots on weekdays and 3 on weekends'
+            },
+            {
+                type: 'bullet',
+                text: 'Generates 2 extra trash per day'
+            },
+            {
+                type: 'paragraph',
+                text: 'Players start with:'
+            },
+            {
+                type: 'bullet',
+                text: '5 Happiness'
+            },
+            {
+                type: 'bullet',
+                text: '5 Action Cards'
+            },
+            {
+                type: 'bullet',
+                text: '1 Reusable Shop Card'
+            },
+            {
+                type: 'subheading',
+                text: 'Daily Turn Sequence'
+            },
+            {
+                type: 'iconed',
+                text: 'Draw a Random Event Card',
+                icon: '1'
+            },
+            {
+                type: 'paragraph',
+                text: 'This introduces new challenges or benefits.'
+            },
+            {
+                type: 'iconed',
+                text: 'Plan Your Day',
+                icon: '2'
+            },
+            {
+                type: 'paragraph',
+                text: 'Players choose actions based on available time and resources.'
+            },
+            {
+                type: 'iconed',
+                text: 'Execute Actions',
+                icon: '3'
+            },
+            {
+                type: 'paragraph',
+                text: 'Players may shop, use items, or carry out planned tasks.'
+            },
+            {
+                type: 'iconed',
+                text: 'Refill to 5 Action Cards',
+                icon: '4'
+            },
+            {
+                type: 'paragraph',
+                text: 'Ensure players have balanced choices each turn.'
+            },
+            {
+                type: 'subheading',
+                text: 'Happiness Consequences'
+            },
+            {
+                type: 'bullet',
+                text: 'If Happiness falls below 3, the player cannot cook, clean, or recycle.'
+            },
+            {
+                type: 'bullet',
+                text: 'If Happiness reaches 0, the player automatically generates 2 trash bags per day.'
+            },
+            {
+                type: 'bullet',
+                text: 'Skipping meals results in -3 Happiness per day.'
+            },
+            {
+                type: 'subheading',
+                text: 'End of the Week'
+            },
+            {
+                type: 'paragraph',
+                text: `Unused fresh ingredients generate 1 trash bag. 
+                        At the end of the week, the player with the least trash wins.
+                        If there is a tie, the player with more Happiness wins.`
+            },
+            {
+                type: 'heading',
+                text: 'Process Insights'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: ecohomeFiles['../projects/ecohome/Conceptualizing.jpg'].default,
+                        caption: 'Conceptualizing the Game'
+                    },
+                    {
+                        src: ecohomeFiles['../projects/ecohome/Testing.jpg'].default,
+                        caption: 'Testing the Game'
+                    },
+                    {
+                        src: ecohomeFiles['../projects/ecohome/Playing.jpg'].default,
+                        caption: 'Playing the Game'
+                    },
+                ]
+            }
+        ],
         links: [],
-        downloads: []
+        downloads: [
+            {
+                text: 'Certificate.pdf',
+                url: ecohomeFiles['../projects/ecohome/Certificate.pdf'].default,
+                icon: 'file-pdf'
+            }
+        ]
     },
-    */
     //milo
     {
         id: 'milo',
@@ -2124,10 +2391,10 @@ export const aboutContent = {
         }
     ],
     downloads: [
-        {
+        /* {
             text: 'Resume',
             url: aboutFiles['../assets/about/Resume.pdf'].default,
             icon: 'circle-arrow-down'
-        }
+        } */
     ]
 };

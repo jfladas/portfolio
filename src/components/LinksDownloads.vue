@@ -1,6 +1,10 @@
 <template>
     <div>
-        <h3>Links & Downloads</h3>
+        <h3>
+            <span v-if="links.length != 0">Links</span>
+            <span v-if="links.length != 0 && downloads.length != 0"> & </span>
+            <span v-if="downloads.length != 0">Downloads</span>
+        </h3>
         <a v-for="link in links" :href="link.url" class="link hoverable" target="_blank" :key="link.text">
             <font-awesome-icon :icon="link.icon" fixed-width />
             {{ link.text }}
