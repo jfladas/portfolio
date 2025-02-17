@@ -67,6 +67,7 @@ export default {
     overflow: hidden;
     width: 100%;
     display: flex;
+    background: linear-gradient(to top, rgba(var(--deep-rgb), 0.2), rgba(var(--deep-rgb), 0));
 }
 
 .video-player video {

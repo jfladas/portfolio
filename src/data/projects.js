@@ -40,8 +40,7 @@ export const projects = [
         downloads: []
     },
     */
-    // TODO: stuwe1 - spütify
-    /*
+    // spütify
     {
         id: 'sputify',
         name: 'spütify',
@@ -62,11 +61,353 @@ export const projects = [
             'web',
             'ux',
         ],
-        sections: [],
-        links: [],
-        downloads: []
+        sections: [
+            {
+                type: 'quoted',
+                text: `A web application that visualizes a user's Spotify music taste through an interactive time-travel experience. Developed using Spotify API and Google Gemini API by Laura Giaimo, Lisa Landolt, Lukas Bucher, and Marin Hirschi, the app allows users to explore their listening history dynamically. The project integrates real-time data visualization and interactive elements to create a personalized music journey.`
+            },
+            {
+                type: 'heading',
+                text: 'Screencast Desktop'
+            },
+            {
+                type: 'video',
+                video: sputifyFiles['../projects/sputify/Desktop.mp4'].default
+            },
+            {
+                type: 'heading',
+                text: 'Project Description'
+            },
+            {
+                type: 'subheading',
+                text: 'Research Question'
+            },
+            {
+                type: 'paragraph',
+                text: 'How can visualizing music taste as an interactive timeline enhance the personal music experience?'
+            },
+            {
+                type: 'subheading',
+                text: 'Core Idea'
+            },
+            {
+                type: 'paragraph',
+                text: `The "Music Journey" is a scrollable timeline that records the user's music taste evolution. Users can navigate through different time periods, including:`
+            },
+            {
+                type: 'bullet',
+                text: 'Last 4 weeks'
+            },
+            {
+                type: 'bullet',
+                text: 'Last 6 months'
+            },
+            {
+                type: 'bullet',
+                text: 'Last year'
+            },
+            {
+                type: 'bullet',
+                text: 'Past three years (2023-2021)'
+            },
+            {
+                type: 'paragraph',
+                text: 'Each section dynamically visualizes:'
+            },
+            {
+                type: 'bullet',
+                text: 'Top Songs'
+            },
+            {
+                type: 'bullet',
+                text: 'Top Artists'
+            },
+            {
+                type: 'bullet',
+                text: 'Top Genres'
+            },
+            {
+                type: 'paragraph',
+                text: 'Additionally, users collect badges based on listening habits. At the end of the journey, they can generate and share personalized images summarizing their music history.'
+            },
+            {
+                type: 'subheading',
+                text: 'Target Audience'
+            },
+            {
+                type: 'bullet',
+                text: 'Premium Spotify users who want to explore their listening trends.'
+            },
+            {
+                type: 'bullet',
+                text: 'Younger generations interested in music history and data visualization.'
+            },
+            {
+                type: 'bullet',
+                text: 'Long-term Spotify users seeking an engaging retrospective of their music taste.'
+            },
+            {
+                type: 'subheading',
+                text: 'Project Setup'
+            },
+            {
+                type: 'iconed',
+                text: 'Clone the project',
+                icon: '1'
+            },
+            {
+                type: 'bullet',
+                text: 'Clone the project repository into a local directory'
+            },
+            {
+                type: 'iconed',
+                text: 'Install dependencies',
+                icon: '2'
+            },
+            {
+                type: 'bullet',
+                text: 'Run <span class="snippet hoverable tooltip copy" tooltip="copy">npm install</span> to install all necessary dependencies'
+            },
+            {
+                type: 'iconed',
+                text: 'Start the development server',
+                icon: '3'
+            },
+            {
+                type: 'bullet',
+                text: 'Run <span class="snippet hoverable tooltip copy" tooltip="copy">npm run dev</span> to start the development server with hot-reload'
+            },
+            {
+                type: 'iconed',
+                text: 'Access the application',
+                icon: '4'
+            },
+            {
+                type: 'bullet',
+                text: 'Open <span class="snippet hoverable tooltip copy" tooltip="copy">http://localhost:5173/</span> in your browser to view the application'
+            },
+            {
+                type: 'bullet',
+                text: 'Log in with your registered Spotify account to start exploring your music journey'
+            },
+            {
+                type: 'iconed',
+                text: 'For testing, a manual registration of your Spotify email address is required.<br><a href="/about#contact" class="bold hoverable">Contact me</a> for access.',
+                icon: 'exclamation-triangle'
+            },
+            {
+                type: 'subheading',
+                text: 'Team Responsibilities'
+            },
+            {
+                type: 'iconed',
+                text: 'Laura Giaimo',
+                icon: 'user'
+            },
+            {
+                type: 'bullet',
+                text: 'UX/UI Design'
+            },
+            {
+                type: 'iconed',
+                text: 'Lisa Landolt',
+                icon: 'user'
+            },
+            {
+                type: 'bullet',
+                text: 'Frontend Development'
+            },
+            {
+                type: 'bullet',
+                text: 'Testing'
+            },
+            {
+                type: 'iconed',
+                text: 'Lukas Bucher',
+                icon: 'user'
+            },
+            {
+                type: 'bullet',
+                text: 'Frontend Development'
+            },
+            {
+                type: 'bullet',
+                text: 'Backend Development'
+            },
+            {
+                type: 'iconed',
+                text: 'Marin Hirschi',
+                icon: 'user'
+            },
+            {
+                type: 'bullet',
+                text: 'Frontend Development'
+            },
+            {
+                type: 'bullet',
+                text: 'Backend Development'
+            },
+            {
+                type: 'subheading',
+                text: 'UX Testing Insights'
+            },
+            {
+                type: 'bullet',
+                text: 'Disclaimer: "For the best experience, ensure sound is turned on"'
+            },
+            {
+                type: 'bullet',
+                text: 'Bubble should start with lower intensity and no color'
+            },
+            {
+                type: 'bullet',
+                text: 'The first song should play immediately & display the currently playing song'
+            },
+            {
+                type: 'bullet',
+                text: 'Add a heading before the share section'
+            },
+            {
+                type: 'bullet',
+                text: 'Make the arrow down clickable or add a small text saying "please scroll"'
+            },
+            {
+                type: 'bullet',
+                text: 'Include expandable accordions for Top Artists to add variety to Top Songs'
+            },
+            {
+                type: 'subheading',
+                text: 'Challenges & Solutions'
+            },
+            {
+                type: 'iconed',
+                text: 'API Endpoints Shutdown',
+                icon: 'ban'
+            },
+            {
+                type: 'paragraph',
+                text: `Many crucial Spotify API endpoints were shut down without notice while we were working on the project, requiring a new approach to data retrieval. 
+                        We experimented with the Google Gemini API to gather missing track data and implemented an alternative solution for the wrapped data fetching.
+                        This allowed us to continue and complete the project successfully, retaining the core functionality.`
+            },
+            {
+                type: 'iconed',
+                text: 'API Integration',
+                icon: 'cogs'
+            },
+            {
+                type: 'paragraph',
+                text: `Integrating the Spotify API and Google Gemini API was challenging since it was the first time we worked with these technologies.
+                        We overcame this by researching the APIs thoroughly, experimenting with different endpoints, and collaborating closely.
+                        Through trial and error and the valuable support of our lecturers, we managed to implement the desired features.`
+            },
+            {
+                type: 'iconed',
+                text: 'Bubble Visualization',
+                icon: 'splotch'
+            },
+            {
+                type: 'paragraph',
+                text: `Creating the bubble visualization was complex due to the dynamic data and the need for smooth transitions.
+                        We solved this by experimenting a lot in D3.js with different bubble layouts and scales, adjusting the bubble size and color based on the data.
+                        This resulted in an engaging and interactive visualization that represents the song's mood and energy.`
+            },
+            {
+                type: 'iconed',
+                text: 'Scroll Animation',
+                icon: 'mouse-pointer'
+            },
+            {
+                type: 'paragraph',
+                text: `Implementing scroll functionalities was challenging due to the usage of different scroll libraries.
+                        We solved this by using GSAP and Lenis to create a smooth and interactive scroll experience.
+                        Testing and adjusting the scroll speed and animations helped us achieve the desired effect after several iterations.`
+            },
+            {
+                type: 'heading',
+                text: 'Screenshots'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: sputifyFiles['../projects/sputify/Login.jpg'].default,
+                        caption: 'Login Page Mobile'
+                    },
+                    {
+                        src: sputifyFiles['../projects/sputify/Journey.jpg'].default,
+                        caption: 'Music Journey'
+                    },
+                    {
+                        src: sputifyFiles['../projects/sputify/TopSongs.jpg'].default,
+                        caption: 'Top Songs Section Mobile'
+                    },
+                    {
+                        src: sputifyFiles['../projects/sputify/TopArtists.jpg'].default,
+                        caption: 'Top Artists Section'
+                    },
+                    {
+                        src: sputifyFiles['../projects/sputify/Focus.jpg'].default,
+                        caption: 'Focus  Mode Mobile'
+                    },
+                    {
+                        src: sputifyFiles['../projects/sputify/Badges.jpg'].default,
+                        caption: 'Badges Collection'
+                    },
+                    {
+                        src: sputifyFiles['../projects/sputify/Menu.jpg'].default,
+                        caption: 'Menu Mobile'
+                    },
+                    {
+                        src: sputifyFiles['../projects/sputify/Share.jpg'].default,
+                        caption: 'Share Page'
+                    },
+                ],
+            },
+            {
+                type: 'heading',
+                text: 'Screencast Mobile'
+            },
+            {
+                type: 'video',
+                video: sputifyFiles['../projects/sputify/Mobile.mp4'].default
+            },
+        ],
+        links: [
+            {
+                text: 'GitHub Repository',
+                url: 'https://github.com/iahirsch/sputify',
+                icon: 'fa-brands fa-github-alt'
+            },
+            {
+                text: 'Figma Prototype Desktop',
+                url: 'https://www.figma.com/proto/pS7n7HHNk0weXyXnUbWt2r/Design-Library?page-id=694%3A5979&node-id=694-7596&p=f&viewport=-336%2C352%2C0.08&t=icFqiCaQGxwdGQyL-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=694%3A7596',
+                icon: 'fa-brands fa-figma'
+            },
+            {
+                text: 'Figma Prototype Mobile',
+                url: 'https://www.figma.com/proto/pS7n7HHNk0weXyXnUbWt2r/Design-Library?page-id=838%3A8681&node-id=838-9683&p=f&viewport=-781%2C374%2C0.08&t=I6fzqdYEK93WZXZn-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=838%3A9683',
+                icon: 'fa-brands fa-figma'
+            }
+        ],
+        downloads: [
+            {
+                text: 'Documentation.pdf',
+                url: sputifyFiles['../projects/sputify/Documentation.pdf'].default,
+                icon: 'file-pdf'
+            },
+            {
+                text: 'ScreencastDesktop.mp4',
+                url: sputifyFiles['../projects/sputify/Desktop.mp4'].default,
+                icon: 'file-video'
+            },
+            {
+                text: 'ScreencastMobile.mp4',
+                url: sputifyFiles['../projects/sputify/Mobile.mp4'].default,
+                icon: 'file-video'
+            }
+        ]
     },
-    */
     // ecohome
     {
         id: 'ecohome',
@@ -90,7 +431,7 @@ export const projects = [
                 type: 'quoted',
                 text: `EcoHome is a strategic tabletop game centered around waste management and sustainability in modern Swiss households. 
                         Players take on different personas and must balance daily actions to reduce trash while maintaining or increasing their happiness score. 
-                        The game spans one week, with each turn representing a day. Players receive immediate feedback on their choices, allowing them to adjust strategies.
+                        The game spans one week, with each turn representing a day.Players receive immediate feedback on their choices, allowing them to adjust strategies.
                         As the final project of the International Summer School on Designing Serious Games this game was developed in a team of three with Lisa Landolt and Julian Schwarz.`
             },
             {
@@ -382,8 +723,8 @@ export const projects = [
             {
                 type: 'quoted',
                 text: `With Milo\'s Forest Adventure I aimed to combine web development, pixel art, and interactive storytelling 
-                        in a cute scroll-and-click adventure game. By scrolling and clicking, players can explore the environment, 
-                        interact with Milo, and uncover secrets of the enchanting forest.`
+                        in a cute scroll- and - click adventure game.By scrolling and clicking, players can explore the environment,
+            interact with Milo, and uncover secrets of the enchanting forest.`
             },
             {
                 type: 'heading',
@@ -408,7 +749,7 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: `Online demo lacks backend features like the leaderboard at the end. To play the game locally, follow the instructions below.`
+                text: `Online demo lacks backend features like the leaderboard at the end.To play the game locally, follow the instructions below.`
             },
             {
                 type: 'heading',
@@ -458,8 +799,8 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: `Start the Node.js server with the command 
-                        <span class="snippet hoverable tooltip copy" tooltip="copy">node server.mjs</span>
+                text: `Start the Node.js server with the command
+            <span class= "snippet hoverable tooltip copy" tooltip="copy" > node server.mjs</span>
                         in the terminal`
             },
             {
@@ -477,8 +818,8 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: `The project should automatically open in the browser (if not, open 
-                        <span class="snippet hoverable tooltip copy" tooltip="copy">http://127.0.0.1:5500/</span>
+                text: `The project should automatically open in the browser(if not, open
+    < span class="snippet hoverable tooltip copy" tooltip = "copy" > http://127.0.0.1:5500/</span>
                         in the browser and adjust Live Server settings accordingly)`
             },
             {
@@ -1436,6 +1777,11 @@ export const projects = [
                 text: 'Behance Project',
                 url: 'https://www.behance.net/gallery/194721225/HSCL-UX',
                 icon: 'fa-brands fa-behance'
+            },
+            {
+                text: 'Figma Prototype',
+                url: 'https://www.figma.com/proto/ZQ7E5M9gXRIQyZ30bm113Q/HSCL?page-id=210%3A203&node-id=351-1042&p=f&viewport=151%2C580%2C0.11&t=rBFIgp854gtlzYAE-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=351%3A1042',
+                icon: 'fa-brands fa-figma'
             }
         ],
         downloads: [

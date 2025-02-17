@@ -162,6 +162,10 @@ const prevSlide = (index) => {
     margin-top: 1rem;
 }
 
+.section:has(.video) {
+    width: 100%;
+}
+
 @media (max-width: 1200px) {
 
     .paragraph,

@@ -83,6 +83,7 @@ export default {
     object-fit: contain;
     transform: scale(0.99);
     display: block;
+    background: linear-gradient(to top, rgba(var(--deep-rgb), 0.2), rgba(var(--deep-rgb), 0));
 }
 
 .carousel p {
