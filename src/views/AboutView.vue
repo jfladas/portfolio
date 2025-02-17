@@ -7,6 +7,7 @@
         {{ aboutContent.title }}
       </h1>
       <h2 class="subtitle"></h2>
+      <div id="contact"></div>
       <ContentSections :sections="aboutContent.sections" :currentIndexes="currentIndexes"
         :isOverlayVisible="isOverlayVisible" :overlayIndex="overlayIndex" @toggle-overlay="toggleOverlay"
         @next-slide="nextSlide" @prev-slide="prevSlide" />
@@ -197,6 +198,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
+#contact {
+  position: relative;
+  transform: translate(0, 6rem);
+}
+
 .subtitle {
   height: 2rem;
   margin-bottom: 3rem;
