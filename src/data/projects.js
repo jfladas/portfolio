@@ -1,4 +1,4 @@
-import { text } from "@fortawesome/fontawesome-svg-core";
+import { icon } from "@fortawesome/fontawesome-svg-core";
 
 const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
 const sputifyFiles = import.meta.glob('../projects/sputify/*', { eager: true });
@@ -16,8 +16,7 @@ const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 
 export const projects = [
-    // TODO: men3 - hearts across dimensions
-    /*
+    // hearts across dimensions
     {
         id: 'had',
         name: 'hearts across dimensions',
@@ -37,11 +36,223 @@ export const projects = [
             'game',
             'story'
         ],
-        sections: [],
-        links: [],
-        downloads: []
+        sections: [
+            {
+                type: 'quoted',
+                text: `Hearts across Dimesions is visual novel-style dating sim where players explore the stories of five unique characters.
+                        It builds on the previous Mentorate Semester 2 project by Angelika Gort, where she created the character designs.
+                        The Demo was developed by Angelika Gort and myself under the mentorship of Zoe Röllin as part of the Mentorate Semester 3.
+                        Currently, the game features character introductions, with future expansions planned.
+                        We will continue to develop the game in the Mentorate Semester 4 with a focus on expanding the storylines and character art.`
+            },
+            {
+                type: 'heading',
+                text: 'Play the Demo'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Play in Browser / Download',
+                        action: 'https://jfladas.itch.io/hearts-across-dimensions',
+                        icon: 'play',
+                        color: 'primary'
+                    }
+                ]
+            },
+            {
+                type: 'subheading',
+                text: 'Installation & Play Instructions'
+            },
+            {
+                type: 'paragraph',
+                text: `Note that the game is designed primarily for mobile/portrait layout but is also playable on desktop and landscape mode.`
+            },
+            {
+                type: 'iconed',
+                text: 'Web (Mobile/Desktop)',
+                icon: 'globe'
+            },
+            {
+                type: 'bullet',
+                text: 'Play directly in the browser by clicking the <span class="snippet">Run Game</span> button on the itch.io page.'
+            },
+            {
+                type: 'bullet',
+                text: 'Some issues may occur depending on device or browser compatibility.'
+            },
+            {
+                type: 'iconed',
+                text: 'Android',
+                icon: 'fa-brands fa-android'
+            },
+            {
+                type: 'bullet',
+                text: 'Download the Android build from the itch.io page.'
+            },
+            {
+                type: 'bullet',
+                text: 'Execute <span class="snippet">HaD.apk</span> to install and open the game.'
+            },
+            {
+                type: 'bullet',
+                text: 'The game will be accessible as an app on your device.'
+            },
+            {
+                type: 'iconed',
+                text: 'Windows',
+                icon: 'fa-brands fa-windows'
+            },
+            {
+                type: 'bullet',
+                text: 'Download the Windows build from the itch.io page.'
+            },
+            {
+                type: 'bullet',
+                text: 'Execute <span class="snippet">HaD (Demo).exe</span> to launch the game.'
+            },
+            {
+                type: 'subheading',
+                text: 'Player Feedback'
+            },
+            {
+                type: 'paragraph',
+                text: 'We appreciate any feedback to improve the experience. Please fill out our survey after playing:'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Fill out the survey',
+                        action: 'https://forms.gle/PsgVsrwjZVm16WpdA',
+                        icon: 'arrow-right',
+                        color: 'secondary'
+                    }
+                ]
+            },
+            {
+                type: 'heading',
+                text: 'Project Description'
+            },
+            {
+                type: 'subheading',
+                text: 'Characters'
+            },
+            {
+                type: 'paragraph',
+                text: `The game features five characters with unique personalities and storylines. Players can choose which character to interact with, leading to different outcomes and dialogues.`
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: hadFiles['../projects/had/Characters.jpg'].default,
+                        caption: 'Characters'
+                    }
+                ]
+            },
+            {
+                type: 'subheading',
+                text: 'Story'
+            },
+            {
+                type: 'paragraph',
+                text: `A mysterious woman fails to protect her dimension from interdimensional beings. Before dying, she sends a blood-stained letter across dimensions to warn her successor.
+                        The protagonist, unaware of their fate, starts a new job at a wedding planning company. Soon, strange events unfold, like an ever-changing building, a time loop, and a... horse?
+                        An earthquake forces them into a bunker, where they meet some familiar faces. Their choice of whom to trust sets the stage for the next chapter.`
+            },
+            {
+                type: 'subheading',
+                text: 'Plans for MEN4'
+            },
+            {
+                type: 'bullet',
+                text: 'Drawing backgrounds'
+            },
+            {
+                type: 'bullet',
+                text: 'Characters with shading'
+            },
+            {
+                type: 'bullet',
+                text: 'Illustrations'
+            },
+            {
+                type: 'bullet',
+                text: 'Story of at least one character to the end'
+            },
+            {
+                type: 'bullet',
+                text: 'Minigame'
+            },
+            {
+                type: 'bullet',
+                text: 'Menu with chapter overview and gallery'
+            },
+            {
+                type: 'heading',
+                text: 'Screenshots'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: hadFiles['../projects/had/Screenshot_Ash.jpg'].default,
+                        caption: 'Ash'
+                    },
+                    {
+                        src: hadFiles['../projects/had/Screenshot_Scarlet.jpg'].default,
+                        caption: 'Scarlet'
+                    },
+                    {
+                        src: hadFiles['../projects/had/Screenshot_MrHorse.jpg'].default,
+                        caption: 'Mr. Horse'
+                    },
+                    {
+                        src: hadFiles['../projects/had/Screenshot_Aleph.jpg'].default,
+                        caption: 'Aleph'
+                    },
+                    {
+                        src: hadFiles['../projects/had/Screenshot_Ethan.jpg'].default,
+                        caption: 'Ethan'
+                    },
+                    {
+                        src: hadFiles['../projects/had/Screenshot_EndChoice.jpg'].default,
+                        caption: 'End Choice'
+                    }
+                ]
+            }
+        ],
+        links: [
+            {
+                text: 'GitHub Repository',
+                url: 'https://github.com/jfladas/had',
+                icon: 'fa-brands fa-github-alt'
+            },
+            {
+                text: 'itch.io Page',
+                url: 'https://jfladas.itch.io/hearts-across-dimensions',
+                icon: 'fa-brands fa-itch-io'
+            },
+            {
+                text: 'Player Survey',
+                url: 'https://forms.gle/PsgVsrwjZVm16WpdA',
+                icon: 'external-link-alt'
+            },
+            {
+                text: 'Playthrough Video',
+                url: 'https://youtu.be/HwepdSLpjcE',
+                icon: 'fa-brands fa-youtube'
+            }
+        ],
+        downloads: [
+            {
+                text: 'Presentation.ppsx',
+                url: hadFiles['../projects/had/MEN3.ppsx'].default,
+                icon: 'file-powerpoint'
+            }
+        ]
     },
-    */
     // spütify
     {
         id: 'sputify',
@@ -804,8 +1015,8 @@ export const projects = [
             {
                 type: 'quoted',
                 text: `With Milo\'s Forest Adventure I aimed to combine web development, pixel art, and interactive storytelling 
-                        in a cute scroll- and - click adventure game.By scrolling and clicking, players can explore the environment,
-            interact with Milo, and uncover secrets of the enchanting forest.`
+                        in a cute scroll-and-click adventure game.By scrolling and clicking, players can explore the environment,
+                        interact with Milo, and uncover secrets of the enchanting forest.`
             },
             {
                 type: 'heading',
@@ -830,7 +1041,7 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: `Online demo lacks backend features like the leaderboard at the end.To play the game locally, follow the instructions below.`
+                text: `Online demo lacks backend features like the leaderboard at the end. To play the game locally, follow the instructions below.`
             },
             {
                 type: 'heading',
@@ -2765,7 +2976,8 @@ export const aboutContent = {
                     text: 'My Projects',
                     action: 'projects',
                     icon: 'rocket',
-                    color: 'primary'
+                    color: 'primary',
+                    same: true
                 },
                 {
                     text: 'E-Mail',
@@ -2828,7 +3040,8 @@ export const aboutContent = {
             type: 'images',
             images: [
                 {
-                    src: aboutFiles['../assets/about/Slide3.jpg'].default
+                    src: aboutFiles['../assets/about/Slide3.jpg'].default,
+                    caption: 'Japan 2023'
                 },
                 {
                     src: aboutFiles['../assets/about/Slide4.jpg'].default

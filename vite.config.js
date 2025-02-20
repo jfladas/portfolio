@@ -16,7 +16,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  assetsInclude: ['**/*.zip', '**/*.ppsx'],
+  assetsInclude: ['**/*.zip', '**/*.ppsx', '**/*.apk'],
   build: {
     rollupOptions: {
       output: {
