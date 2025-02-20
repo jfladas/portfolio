@@ -44,23 +44,20 @@
       by jfladas
     </p>
     <p>
-      <a href="https://github.com/jfladas/" target="_blank" class="social hoverable tooltip" tooltip="GitHub">
+      <a href="https://github.com/jfladas/" target="_blank" class="social hoverable tooltip" tooltip="github">
         <font-awesome-icon icon="fa-brands fa-github-alt" />
       </a>
       <a href="https://jfladas.itch.io/" target="_blank" class="social hoverable tooltip" tooltip="itch.io">
         <font-awesome-icon icon="fa-brands fa-itch-io" />
       </a>
       <a href="https://www.linkedin.com/in/lukas-bucher-0926bb282/" target="_blank" class="social hoverable tooltip"
-        tooltip="LinkedIn">
+        tooltip="linkedin">
         <font-awesome-icon icon="fa-brands fa-linkedin" />
       </a>
-      <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip" tooltip="Insta">
+      <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip" tooltip="insta">
         <font-awesome-icon icon="fa-brands fa-instagram" />
       </a>
-      <a href="https://youtube.com/@jfladas/" target="_blank" class="social hoverable tooltip" tooltip="YouTube">
-        <font-awesome-icon icon="fa-brands fa-youtube" />
-      </a>
-      <a href="mailto:lukas.bucherr@gmail.com" class="social hoverable tooltip" tooltip="Email">
+      <a href="mailto:lukas.bucherr@gmail.com" class="social hoverable tooltip" tooltip="email">
         <font-awesome-icon icon="fa-solid fa-envelope" />
       </a>
     </p>

@@ -1,6 +1,6 @@
 <template>
     <teleport to="#video-teleport" :disabled="!isOverlayVisible">
-        <div class="video-player hoverable">
+        <div class="video-player hoverable" :class="{ notplaying: !isPlaying }">
             <video ref="video" :src="video" @ended="handleVideoEnded" :class="{ small: !isOverlayVisible }"></video>
             <button class="play-pause-button" @click="togglePlayPause">
                 <font-awesome-icon :icon="isEnded ? 'rotate-left' : (isPlaying ? 'pause' : 'play')" />
@@ -59,6 +59,8 @@ export default {
         }
     }
 };
+
+//TODO: improve video player mobile ux
 </script>
 
 <style scoped>
@@ -139,7 +141,10 @@ export default {
 
 .video-player:hover .expand-button,
 .video-player:hover .unexpand-button,
-.video-player:hover .play-pause-button {
+.video-player:hover .play-pause-button,
+.video-player.notplaying .play-pause-button,
+.video-player.notplaying .expand-button,
+.video-player.notplaying .unexpand-button {
     opacity: 1;
 }
 </style>
