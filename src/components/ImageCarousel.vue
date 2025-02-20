@@ -10,8 +10,8 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-fade prev"></div>
-            <div class="carousel-fade next"></div>
+            <div v-if="images.length != 1" class="carousel-fade prev"></div>
+            <div v-if="images.length != 1" class="carousel-fade next"></div>
             <button v-if="images.length != 1" class="carousel-control prev" @click="$emit('prev-slide')">
                 <font-awesome-icon icon="chevron-left" />
             </button>
@@ -46,6 +46,8 @@ export default {
     },
     emits: ['toggle-overlay', 'next-slide', 'prev-slide']
 };
+
+//TODO: improve image carousel mobile ux
 </script>
 
 <style scoped>

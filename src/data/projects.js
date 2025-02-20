@@ -1,3 +1,5 @@
+import { text } from "@fortawesome/fontawesome-svg-core";
+
 const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
 const sputifyFiles = import.meta.glob('../projects/sputify/*', { eager: true });
 const ecohomeFiles = import.meta.glob('../projects/ecohome/*', { eager: true });
@@ -131,69 +133,8 @@ export const projects = [
                 text: 'Additionally, users collect badges based on listening habits. At the end of the journey, they can generate and share personalized images summarizing their music history.'
             },
             {
-                type: 'subheading',
-                text: 'Target Audience'
-            },
-            {
-                type: 'bullet',
-                text: 'Premium Spotify users who want to explore their listening trends.'
-            },
-            {
-                type: 'bullet',
-                text: 'Younger generations interested in music history and data visualization.'
-            },
-            {
-                type: 'bullet',
-                text: 'Long-term Spotify users seeking an engaging retrospective of their music taste.'
-            },
-            {
-                type: 'subheading',
-                text: 'Project Setup'
-            },
-            {
-                type: 'iconed',
-                text: 'Clone the project',
-                icon: '1'
-            },
-            {
-                type: 'bullet',
-                text: 'Clone the project repository into a local directory'
-            },
-            {
-                type: 'iconed',
-                text: 'Install dependencies',
-                icon: '2'
-            },
-            {
-                type: 'bullet',
-                text: 'Run <span class="snippet hoverable tooltip copy" tooltip="copy">npm install</span> to install all necessary dependencies'
-            },
-            {
-                type: 'iconed',
-                text: 'Start the development server',
-                icon: '3'
-            },
-            {
-                type: 'bullet',
-                text: 'Run <span class="snippet hoverable tooltip copy" tooltip="copy">npm run dev</span> to start the development server with hot-reload'
-            },
-            {
-                type: 'iconed',
-                text: 'Access the application',
-                icon: '4'
-            },
-            {
-                type: 'bullet',
-                text: 'Open <span class="snippet hoverable tooltip copy" tooltip="copy">http://localhost:5173/</span> in your browser to view the application'
-            },
-            {
-                type: 'bullet',
-                text: 'Log in with your registered Spotify account to start exploring your music journey'
-            },
-            {
-                type: 'iconed',
-                text: 'For testing, a manual registration of your Spotify email address is required.<br><a href="/about#contact" class="bold hoverable">Contact me</a> for access.',
-                icon: 'exclamation-triangle'
+                type: 'paragraph',
+                text: 'The target audience is premium Spotify users of the younger generations, especially long-term Spotify users seeking an engaging retrospective of their music taste.'
             },
             {
                 type: 'subheading',
@@ -246,6 +187,96 @@ export const projects = [
             {
                 type: 'bullet',
                 text: 'Backend Development'
+            },
+            {
+                type: 'subheading',
+                text: 'Technologies'
+            },
+            {
+                type: 'iconed',
+                text: 'Frontend',
+                icon: 'desktop'
+            },
+            {
+                type: 'bullet',
+                text: 'Vue.js for frontend development'
+            },
+            {
+                type: 'bullet',
+                text: 'D3.js for dynamic data visualization'
+            },
+            {
+                type: 'bullet',
+                text: 'GSAP for scroll animations'
+            },
+            {
+                type: 'bullet',
+                text: 'Lenis for smooth scroll experience'
+            },
+            {
+                type: 'iconed',
+                text: 'Backend',
+                icon: 'server'
+            },
+            {
+                type: 'bullet',
+                text: 'Node.js for backend server'
+            },
+            {
+                type: 'bullet',
+                text: 'Express for backend routing'
+            },
+            {
+                type: 'iconed',
+                text: 'APIs',
+                icon: 'cloud'
+            },
+            {
+                type: 'bullet',
+                text: 'Spotify API for user data retrieval'
+            },
+            {
+                type: 'bullet',
+                text: 'Spotify Web Playback SDK for music playback'
+            },
+            {
+                type: 'bullet',
+                text: 'Google Gemini API for missing track data'
+            },
+            {
+                type: 'iconed',
+                text: 'Design & Prototyping',
+                icon: 'palette'
+            },
+            {
+                type: 'bullet',
+                text: 'Figma for design & prototyping'
+            },
+            {
+                type: 'bullet',
+                text: 'PowerPoint for design & prototyping'
+            },
+            {
+                type: 'iconed',
+                text: 'Testing',
+                icon: 'vial'
+            },
+            {
+                type: 'bullet',
+                text: 'Vitest for unit testing'
+            },
+            {
+                type: 'bullet',
+                text: 'Cypress for end-to-end testing'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: sputifyFiles['../projects/sputify/ProjectArchitecture.jpg'].default,
+                        caption: 'Project Architecture'
+                    }
+                ]
             },
             {
                 type: 'subheading',
@@ -323,6 +354,7 @@ export const projects = [
                         We solved this by using GSAP and Lenis to create a smooth and interactive scroll experience.
                         Testing and adjusting the scroll speed and animations helped us achieve the desired effect after several iterations.`
             },
+            //TODO: add project diagram (process insights)
             {
                 type: 'heading',
                 text: 'Screenshots'
@@ -372,6 +404,55 @@ export const projects = [
                 type: 'video',
                 video: sputifyFiles['../projects/sputify/Mobile.mp4'].default
             },
+            {
+                type: 'heading',
+                text: 'Project Setup'
+            },
+            {
+                type: 'iconed',
+                text: 'Clone the project',
+                icon: '1'
+            },
+            {
+                type: 'bullet',
+                text: 'Clone the project repository into a local directory'
+            },
+            {
+                type: 'iconed',
+                text: 'Install dependencies',
+                icon: '2'
+            },
+            {
+                type: 'bullet',
+                text: 'Run <span class="snippet hoverable tooltip copy" tooltip="copy">npm install</span> to install all necessary dependencies'
+            },
+            {
+                type: 'iconed',
+                text: 'Start the development server',
+                icon: '3'
+            },
+            {
+                type: 'bullet',
+                text: 'Run <span class="snippet hoverable tooltip copy" tooltip="copy">npm run dev</span> to start the development server with hot-reload'
+            },
+            {
+                type: 'iconed',
+                text: 'Access the application',
+                icon: '4'
+            },
+            {
+                type: 'bullet',
+                text: 'Open <span class="snippet hoverable tooltip copy" tooltip="copy">http://localhost:5173/</span> in your browser to view the application'
+            },
+            {
+                type: 'bullet',
+                text: 'Log in with your registered Spotify account to start exploring your music journey'
+            },
+            {
+                type: 'iconed',
+                text: 'For testing, a manual registration of your Spotify email address is required.<br><a href="/about#contact" class="bold hoverable">Contact me</a> for access.',
+                icon: 'exclamation-triangle'
+            }
         ],
         links: [
             {
@@ -2708,27 +2789,12 @@ export const aboutContent = {
         },
         {
             type: 'paragraph',
-            text: 'Latest K-pop concerts attended:'
-        },
-        {
-            type: 'iconed',
-            text: 'ATEEZ @ Zurich 2025',
-            icon: 'skull-crossbones'
+            text: 'Favorite K-pop concerts attended:'
         },
         {
             type: 'iconed',
             text: 'Billlie @ Munich 2024',
             icon: 'spa'
-        },
-        {
-            type: 'iconed',
-            text: 'IVE @ Barcelona 2024',
-            icon: 'plane'
-        },
-        {
-            type: 'iconed',
-            text: 'P1Harmony @ Zurich 2023',
-            icon: 'atom'
         },
         {
             type: 'iconed',
@@ -2741,6 +2807,16 @@ export const aboutContent = {
             icon: 'globe'
         },
         {
+            type: 'iconed',
+            text: 'Music Bank @ Paris 2023',
+            icon: 'music'
+        },
+        {
+            type: 'iconed',
+            text: 'MCND @ Lausanne 2022',
+            icon: 'bolt'
+        },
+        {
             type: 'subheading',
             text: 'Japan'
         },
@@ -2751,6 +2827,9 @@ export const aboutContent = {
         {
             type: 'images',
             images: [
+                {
+                    src: aboutFiles['../assets/about/Slide3.jpg'].default
+                },
                 {
                     src: aboutFiles['../assets/about/Slide4.jpg'].default
                 },
@@ -2839,7 +2918,18 @@ export const aboutContent = {
             text: 'YouTube',
             url: 'https://youtube.com/@jfladas/',
             icon: 'fa-brands fa-youtube'
+        },
+        {
+            text: 'Spotify',
+            url: 'https://open.spotify.com/user/rn16ees9l59zxvg9zzptiuwb7?si=86fff52ccafd4d0d',
+            icon: 'fa-brands fa-spotify'
+        },
+        {
+            text: 'Duolingo',
+            url: 'https://www.duolingo.com/profile/jfladas',
+            icon: 'feather'
         }
+
     ],
     downloads: [
         /* {
