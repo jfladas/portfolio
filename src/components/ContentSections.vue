@@ -22,7 +22,7 @@
         </div>
         <div v-if="section.type === 'buttons'" class="buttons">
             <a v-for="button in section.buttons" :key="button.text" :href="button.action" class="button-container"
-                target="_blank">
+                :target="button.same ? '_self' : '_blank'">
                 <button class="hoverable" :class="'button-' + button.color">
                     {{ button.text }}
                     <font-awesome-icon :icon="button.icon" />
