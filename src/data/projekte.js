@@ -13,45 +13,45 @@ const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 
 const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 
-export const projects = [
-    // hearts across dimensions
+export const projekte = [
+    // heart across dimensions
     {
         id: 'had',
         name: 'hearts across dimensions',
-        description: 'visual novel / dating sim game',
+        description: 'visual novel / dating sim spiel',
         context: {
             lines: [
                 '2024 @ HSLU, Rotkreuz & Emmenbrücke',
-                'Module MEN3 - Mentorate Semester 3'
+                'Modul MEN3 - Mentorate Semester 3'
             ],
             url: 'https://www.hslu.ch/',
             icon: 'graduation-cap',
-            tooltip: 'school'
+            tooltip: 'schule'
         },
         categories: [
             'team',
-            'coding',
-            'game',
-            'story'
+            'programmierung',
+            'spiel',
+            'geschichte'
         ],
         sections: [
             {
                 type: 'quoted',
-                text: `Hearts across Dimesions is visual novel-style dating sim where players explore the stories of five unique characters.
-                        It builds on the previous Mentorate Semester 2 project by Angelika Gort, where she created the character designs.
-                        The Demo was developed by Angelika Gort and myself under the mentorship of Zoe Röllin as part of the Mentorate Semester 3.
-                        Currently, the game features character introductions, with future expansions planned.
-                        We will continue to develop the game in the Mentorate Semester 4 with a focus on expanding the storylines and character art.`
+                text: `Hearts across Dimensions ist ein Visual Novel-Dating-Sim, bei dem die Spieler die Geschichten von fünf einzigartigen Charakteren erkunden.
+                        Es baut auf dem vorherigen Mentorate Semester 2 Projekt von Angelika Gort auf, bei dem sie die Charakterdesigns erstellt hat.
+                        Die Demo wurde von Angelika Gort und mir unter der Mentorschaft von Zoe Röllin im Rahmen des Mentorate Semester 3 entwickelt.
+                        Derzeit bietet das Spiel Charaktereinführungen, mit geplanten zukünftigen Erweiterungen.
+                        Wir werden das Spiel im Mentorate Semester 4 weiterentwickeln, mit einem Fokus auf die Erweiterung der Handlungsstränge und Charakterkunst.`
             },
             {
                 type: 'heading',
-                text: 'Play the Demo'
+                text: 'Spiele die Demo'
             },
             {
                 type: 'buttons',
                 buttons: [
                     {
-                        text: 'Play in Browser / Download',
+                        text: 'Im Browser spielen / Herunterladen',
                         action: 'https://jfladas.itch.io/hearts-across-dimensions',
                         icon: 'play',
                         color: 'primary'
@@ -60,24 +60,24 @@ export const projects = [
             },
             {
                 type: 'subheading',
-                text: 'Installation & Play Instructions'
+                text: 'Installations- & Spielanweisungen'
             },
             {
                 type: 'paragraph',
-                text: `Note that the game is designed primarily for mobile/portrait layout but is also playable on desktop and landscape mode.`
+                text: `Beachten Sie, dass das Spiel hauptsächlich für mobile/Porträt-Layout entwickelt wurde, aber auch auf Desktop und im Querformat spielbar ist.`
             },
             {
                 type: 'iconed',
-                text: 'Web (Mobile/Desktop)',
+                text: 'Web (Mobil/Desktop)',
                 icon: 'globe'
             },
             {
                 type: 'bullet',
-                text: 'Play directly in the browser by clicking the <span class="snippet">Run Game</span> button on the itch.io page.'
+                text: 'Spielen Sie direkt im Browser, indem Sie auf der itch.io-Seite auf die Schaltfläche <span class="snippet">Spiel starten</span> klicken.'
             },
             {
                 type: 'bullet',
-                text: 'Some issues may occur depending on device or browser compatibility.'
+                text: 'Je nach Gerät oder Browserkompatibilität können Probleme auftreten.'
             },
             {
                 type: 'iconed',
@@ -86,15 +86,15 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Download the Android build from the itch.io page.'
+                text: 'Laden Sie den Android-Build von der itch.io-Seite herunter.'
             },
             {
                 type: 'bullet',
-                text: 'Execute <span class="snippet">HaD.apk</span> to install and open the game.'
+                text: 'Führen Sie <span class="snippet">HaD.apk</span> aus, um das Spiel zu installieren und zu öffnen.'
             },
             {
                 type: 'bullet',
-                text: 'The game will be accessible as an app on your device.'
+                text: 'Das Spiel wird als App auf Ihrem Gerät zugänglich sein.'
             },
             {
                 type: 'iconed',
@@ -103,25 +103,25 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Download the Windows build from the itch.io page.'
+                text: 'Laden Sie den Windows-Build von der itch.io-Seite herunter.'
             },
             {
                 type: 'bullet',
-                text: 'Execute <span class="snippet">HaD (Demo).exe</span> to launch the game.'
+                text: 'Führen Sie <span class="snippet">HaD (Demo).exe</span> aus, um das Spiel zu starten.'
             },
             {
                 type: 'subheading',
-                text: 'Player Feedback'
+                text: 'Spieler-Feedback'
             },
             {
                 type: 'paragraph',
-                text: 'We appreciate any feedback to improve the experience. Please fill out our survey after playing:'
+                text: 'Wir schätzen jedes Feedback, um das Erlebnis zu verbessern. Bitte füllen Sie nach dem Spielen unsere Umfrage aus:'
             },
             {
                 type: 'buttons',
                 buttons: [
                     {
-                        text: 'Fill out the survey',
+                        text: 'Umfrage ausfüllen',
                         action: 'https://forms.gle/PsgVsrwjZVm16WpdA',
                         icon: 'arrow-right',
                         color: 'secondary'
@@ -130,62 +130,62 @@ export const projects = [
             },
             {
                 type: 'heading',
-                text: 'Project Description'
+                text: 'Projektbeschreibung'
             },
             {
                 type: 'subheading',
-                text: 'Characters'
+                text: 'Charaktere'
             },
             {
                 type: 'paragraph',
-                text: `The game features five characters with unique personalities and storylines. Players can choose which character to interact with, leading to different outcomes and dialogues.`
+                text: `Das Spiel bietet fünf Charaktere mit einzigartigen Persönlichkeiten und Handlungssträngen. Die Spieler können wählen, mit welchem Charakter sie interagieren möchten, was zu unterschiedlichen Ergebnissen und Dialogen führt.`
             },
             {
                 type: 'images',
                 images: [
                     {
                         src: hadFiles['../projects/had/Characters.jpg'].default,
-                        caption: 'Characters'
+                        caption: 'Charaktere'
                     }
                 ]
             },
             {
                 type: 'subheading',
-                text: 'Story'
+                text: 'Geschichte'
             },
             {
                 type: 'paragraph',
-                text: `A mysterious woman fails to protect her dimension from interdimensional beings. Before dying, she sends a blood-stained letter across dimensions to warn her successor.
-                        The protagonist, unaware of their fate, starts a new job at a wedding planning company. Soon, strange events unfold, like an ever-changing building, a time loop, and a... horse?
-                        An earthquake forces them into a bunker, where they meet some familiar faces. Their choice of whom to trust sets the stage for the next chapter.`
+                text: `Eine mysteriöse Frau scheitert daran, ihre Dimension vor interdimensionalen Wesen zu schützen. Bevor sie stirbt, sendet sie einen blutbefleckten Brief über Dimensionen hinweg, um ihren Nachfolger zu warnen.
+                        Der Protagonist, der sich seines Schicksals nicht bewusst ist, beginnt einen neuen Job bei einer Hochzeitsplanungsfirma. Bald ereignen sich seltsame Ereignisse, wie ein sich ständig veränderndes Gebäude, eine Zeitschleife und ein... Pferd?
+                        Ein Erdbeben zwingt sie in einen Bunker, wo sie auf einige bekannte Gesichter treffen. Ihre Wahl, wem sie vertrauen, legt den Grundstein für das nächste Kapitel.`
             },
             {
                 type: 'subheading',
-                text: 'Plans for MEN4'
+                text: 'Pläne für MEN4'
             },
             {
                 type: 'bullet',
-                text: 'Drawing backgrounds'
+                text: 'Hintergründe zeichnen'
             },
             {
                 type: 'bullet',
-                text: 'Characters with shading'
+                text: 'Charaktere mit Schattierungen'
             },
             {
                 type: 'bullet',
-                text: 'Illustrations'
+                text: 'Illustrationen'
             },
             {
                 type: 'bullet',
-                text: 'Story of at least one character to the end'
+                text: 'Geschichte von mindestens einem Charakter bis zum Ende'
             },
             {
                 type: 'bullet',
-                text: 'Minigame'
+                text: 'Minispiel'
             },
             {
                 type: 'bullet',
-                text: 'Menu with chapter overview and gallery'
+                text: 'Menü mit Kapitelübersicht und Galerie'
             },
             {
                 type: 'heading',
@@ -216,7 +216,7 @@ export const projects = [
                     },
                     {
                         src: hadFiles['../projects/had/Screenshot_EndChoice.jpg'].default,
-                        caption: 'End Choice'
+                        caption: 'Endwahl'
                     }
                 ]
             }
@@ -228,12 +228,12 @@ export const projects = [
                 icon: 'fa-brands fa-github-alt'
             },
             {
-                text: 'itch.io Page',
+                text: 'itch.io Seite',
                 url: 'https://jfladas.itch.io/hearts-across-dimensions',
                 icon: 'fa-brands fa-itch-io'
             },
             {
-                text: 'Player Survey',
+                text: 'Spieler-Umfrage',
                 url: 'https://forms.gle/PsgVsrwjZVm16WpdA',
                 icon: 'external-link-alt'
             },
@@ -245,7 +245,7 @@ export const projects = [
         ],
         downloads: [
             {
-                text: 'Presentation.ppsx',
+                text: 'Präsentation.ppsx',
                 url: hadFiles['../projects/had/MEN3.ppsx'].default,
                 icon: 'file-powerpoint'
             }
@@ -255,19 +255,19 @@ export const projects = [
     {
         id: 'sputify',
         name: 'spütify',
-        description: 'music journey & visualisation website',
+        description: 'musikreise & visualisierungswebsite',
         context: {
             lines: [
                 '2024 @ HSLU, Emmenbrücke',
-                'Module STUWE1 - Studio Web & Mobile 1'
+                'Modul STUWE1 - Studio Web & Mobile 1'
             ],
             url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
             icon: 'graduation-cap',
-            tooltip: 'school'
+            tooltip: 'schule'
         },
         categories: [
             'team',
-            'coding',
+            'programmierung',
             'design',
             'web',
             'ux',
@@ -275,7 +275,7 @@ export const projects = [
         sections: [
             {
                 type: 'quoted',
-                text: `A web application that visualizes a user's Spotify music taste through an interactive time-travel experience. Developed using Spotify API and Google Gemini API by Laura Giaimo, Lisa Landolt, Lukas Bucher, and Marin Hirschi, the app allows users to explore their listening history dynamically. The project integrates real-time data visualization and interactive elements to create a personalized music journey.`
+                text: `Eine Webanwendung, die den Musikgeschmack eines Benutzers durch eine interaktive Zeitreise visualisiert. Entwickelt mit der Spotify API und der Google Gemini API von Laura Giaimo, Lisa Landolt, Lukas Bucher und Marin Hirschi, ermöglicht die App den Benutzern, ihre Hörgeschichte dynamisch zu erkunden. Das Projekt integriert Echtzeit-Datenvisualisierung und interaktive Elemente, um eine personalisierte Musikreise zu schaffen.`
             },
             {
                 type: 'heading',
@@ -287,43 +287,43 @@ export const projects = [
             },
             {
                 type: 'heading',
-                text: 'Project Description'
+                text: 'Projektbeschreibung'
             },
             {
                 type: 'subheading',
-                text: 'Research Question'
+                text: 'Forschungsfrage'
             },
             {
                 type: 'paragraph',
-                text: 'How can visualizing music taste as an interactive timeline enhance the personal music experience?'
+                text: 'Wie kann die Visualisierung des Musikgeschmacks als interaktive Zeitleiste das persönliche Musikerlebnis verbessern?'
             },
             {
                 type: 'subheading',
-                text: 'Core Idea'
+                text: 'Kernidee'
             },
             {
                 type: 'paragraph',
-                text: `The "Music Journey" is a scrollable timeline that records the user's music taste evolution. Users can navigate through different time periods, including:`
+                text: `Die "Musikreise" ist eine scrollbare Zeitleiste, die die Entwicklung des Musikgeschmacks des Benutzers aufzeichnet. Benutzer können durch verschiedene Zeiträume navigieren, einschließlich:`
             },
             {
                 type: 'bullet',
-                text: 'Last 4 weeks'
+                text: 'Letzte 4 Wochen'
             },
             {
                 type: 'bullet',
-                text: 'Last 6 months'
+                text: 'Letzte 6 Monate'
             },
             {
                 type: 'bullet',
-                text: 'Last year'
+                text: 'Letztes Jahr'
             },
             {
                 type: 'bullet',
-                text: 'Past three years (2023-2021)'
+                text: 'Vergangene drei Jahre (2023-2021)'
             },
             {
                 type: 'paragraph',
-                text: 'Each section dynamically visualizes:'
+                text: 'Jeder Abschnitt visualisiert dynamisch:'
             },
             {
                 type: 'bullet',
@@ -331,7 +331,7 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Top Artists'
+                text: 'Top Künstler'
             },
             {
                 type: 'bullet',
@@ -339,15 +339,15 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: 'Additionally, users collect badges based on listening habits. At the end of the journey, they can generate and share personalized images summarizing their music history.'
+                text: 'Zusätzlich sammeln Benutzer Abzeichen basierend auf ihren Hörgewohnheiten. Am Ende der Reise können sie personalisierte Bilder generieren und teilen, die ihre Musikhistorie zusammenfassen.'
             },
             {
                 type: 'paragraph',
-                text: 'The target audience is premium Spotify users of the younger generations, especially long-term Spotify users seeking an engaging retrospective of their music taste.'
+                text: 'Die Zielgruppe sind Premium-Spotify-Nutzer der jüngeren Generationen, insbesondere langjährige Spotify-Nutzer, die eine ansprechende Retrospektive ihres Musikgeschmacks suchen.'
             },
             {
                 type: 'subheading',
-                text: 'Team Responsibilities'
+                text: 'Teamverantwortlichkeiten'
             },
             {
                 type: 'iconed',
@@ -365,7 +365,7 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Frontend Development'
+                text: 'Frontend-Entwicklung'
             },
             {
                 type: 'bullet',
@@ -378,11 +378,11 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Frontend Development'
+                text: 'Frontend-Entwicklung'
             },
             {
                 type: 'bullet',
-                text: 'Backend Development'
+                text: 'Backend-Entwicklung'
             },
             {
                 type: 'iconed',
@@ -391,15 +391,15 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Frontend Development'
+                text: 'Frontend-Entwicklung'
             },
             {
                 type: 'bullet',
-                text: 'Backend Development'
+                text: 'Backend-Entwicklung'
             },
             {
                 type: 'subheading',
-                text: 'Technologies'
+                text: 'Technologien'
             },
             {
                 type: 'iconed',
@@ -408,19 +408,19 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Vue.js for frontend development'
+                text: 'Vue.js für die Frontend-Entwicklung'
             },
             {
                 type: 'bullet',
-                text: 'D3.js for dynamic data visualization'
+                text: 'D3.js für dynamische Datenvisualisierung'
             },
             {
                 type: 'bullet',
-                text: 'GSAP for scroll animations'
+                text: 'GSAP für Scroll-Animationen'
             },
             {
                 type: 'bullet',
-                text: 'Lenis for smooth scroll experience'
+                text: 'Lenis für ein flüssiges Scroll-Erlebnis'
             },
             {
                 type: 'iconed',
@@ -429,11 +429,11 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Node.js for backend server'
+                text: 'Node.js für den Backend-Server'
             },
             {
                 type: 'bullet',
-                text: 'Express for backend routing'
+                text: 'Express für Backend-Routing'
             },
             {
                 type: 'iconed',
@@ -442,15 +442,15 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Spotify API for user data retrieval'
+                text: 'Spotify API für die Benutzer-Datenabfrage'
             },
             {
                 type: 'bullet',
-                text: 'Spotify Web Playback SDK for music playback'
+                text: 'Spotify Web Playback SDK für die Musikwiedergabe'
             },
             {
                 type: 'bullet',
-                text: 'Google Gemini API for missing track data'
+                text: 'Google Gemini API für fehlende Track-Daten'
             },
             {
                 type: 'iconed',
@@ -459,11 +459,11 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Figma for design & prototyping'
+                text: 'Figma für Design & Prototyping'
             },
             {
                 type: 'bullet',
-                text: 'PowerPoint for design & prototyping'
+                text: 'PowerPoint für Design & Prototyping'
             },
             {
                 type: 'iconed',
@@ -472,96 +472,96 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Vitest for unit testing'
+                text: 'Vitest für Unit-Tests'
             },
             {
                 type: 'bullet',
-                text: 'Cypress for end-to-end testing'
+                text: 'Cypress für End-to-End-Tests'
             },
             {
                 type: 'images',
                 images: [
                     {
                         src: sputifyFiles['../projects/sputify/ProjectArchitecture.jpg'].default,
-                        caption: 'Project Architecture'
+                        caption: 'Projektarchitektur'
                     }
                 ]
             },
             {
                 type: 'subheading',
-                text: 'UX Testing Insights'
+                text: 'UX-Testeinblicke'
             },
             {
                 type: 'bullet',
-                text: 'Disclaimer: "For the best experience, ensure sound is turned on"'
+                text: 'Hinweis: "Für das beste Erlebnis, stellen Sie sicher, dass der Ton eingeschaltet ist"'
             },
             {
                 type: 'bullet',
-                text: 'Bubble should start with lower intensity and no color'
+                text: 'Die Blase sollte mit geringer Intensität und ohne Farbe beginnen'
             },
             {
                 type: 'bullet',
-                text: 'The first song should play immediately & display the currently playing song'
+                text: 'Der erste Song sollte sofort abgespielt werden und den aktuell spielenden Song anzeigen'
             },
             {
                 type: 'bullet',
-                text: 'Add a heading before the share section'
+                text: 'Fügen Sie eine Überschrift vor dem Teilen-Abschnitt hinzu'
             },
             {
                 type: 'bullet',
-                text: 'Make the arrow down clickable or add a small text saying "please scroll"'
+                text: 'Machen Sie den Pfeil nach unten anklickbar oder fügen Sie einen kleinen Text hinzu, der "bitte scrollen" sagt'
             },
             {
                 type: 'bullet',
-                text: 'Include expandable accordions for Top Artists to add variety to Top Songs'
+                text: 'Erweiterbare Akkordeons für Top-Künstler hinzufügen, um Abwechslung zu den Top-Songs zu bieten'
             },
             {
                 type: 'subheading',
-                text: 'Challenges & Solutions'
+                text: 'Herausforderungen & Lösungen'
             },
             {
                 type: 'iconed',
-                text: 'API Endpoints Shutdown',
+                text: 'API-Endpunkte abgeschaltet',
                 icon: 'ban'
             },
             {
                 type: 'paragraph',
-                text: `Many crucial Spotify API endpoints were shut down without notice while we were working on the project, requiring a new approach to data retrieval. 
-                        We experimented with the Google Gemini API to gather missing track data and implemented an alternative solution for the wrapped data fetching.
-                        This allowed us to continue and complete the project successfully, retaining the core functionality.`
+                text: `Viele wichtige Spotify API-Endpunkte wurden ohne Vorankündigung abgeschaltet, während wir am Projekt arbeiteten, was einen neuen Ansatz zur Datenabfrage erforderte. 
+                            Wir experimentierten mit der Google Gemini API, um fehlende Track-Daten zu sammeln, und implementierten eine alternative Lösung für das Abrufen der Wrapped-Daten.
+                            Dies ermöglichte es uns, das Projekt erfolgreich fortzusetzen und abzuschließen, wobei die Kernfunktionalität erhalten blieb.`
             },
             {
                 type: 'iconed',
-                text: 'API Integration',
+                text: 'API-Integration',
                 icon: 'cogs'
             },
             {
                 type: 'paragraph',
-                text: `Integrating the Spotify API and Google Gemini API was challenging since it was the first time we worked with these technologies.
-                        We overcame this by researching the APIs thoroughly, experimenting with different endpoints, and collaborating closely.
-                        Through trial and error and the valuable support of our lecturers, we managed to implement the desired features.`
+                text: `Die Integration der Spotify API und der Google Gemini API war herausfordernd, da es das erste Mal war, dass wir mit diesen Technologien arbeiteten.
+                            Wir überwanden dies, indem wir die APIs gründlich recherchierten, mit verschiedenen Endpunkten experimentierten und eng zusammenarbeiteten.
+                            Durch Versuch und Irrtum und die wertvolle Unterstützung unserer Dozenten gelang es uns, die gewünschten Funktionen zu implementieren.`
             },
             {
                 type: 'iconed',
-                text: 'Bubble Visualization',
+                text: 'Blasenvisualisierung',
                 icon: 'splotch'
             },
             {
                 type: 'paragraph',
-                text: `Creating the bubble visualization was complex due to the dynamic data and the need for smooth transitions.
-                        We solved this by experimenting a lot in D3.js with different bubble layouts and scales, adjusting the bubble size and color based on the data.
-                        This resulted in an engaging and interactive visualization that represents the song's mood and energy.`
+                text: `Die Erstellung der Blasenvisualisierung war aufgrund der dynamischen Daten und der Notwendigkeit für flüssige Übergänge komplex.
+                            Wir lösten dies, indem wir viel in D3.js mit verschiedenen Blasenlayouts und -skalen experimentierten und die Blasengröße und -farbe basierend auf den Daten anpassten.
+                            Dies führte zu einer ansprechenden und interaktiven Visualisierung, die die Stimmung und Energie des Songs darstellt.`
             },
             {
                 type: 'iconed',
-                text: 'Scroll Animation',
+                text: 'Scroll-Animation',
                 icon: 'mouse-pointer'
             },
             {
                 type: 'paragraph',
-                text: `Implementing scroll functionalities was challenging due to the usage of different scroll libraries.
-                        We solved this by using GSAP and Lenis to create a smooth and interactive scroll experience.
-                        Testing and adjusting the scroll speed and animations helped us achieve the desired effect after several iterations.`
+                text: `Die Implementierung von Scroll-Funktionalitäten war aufgrund der Verwendung verschiedener Scroll-Bibliotheken herausfordernd.
+                            Wir lösten dies, indem wir GSAP und Lenis verwendeten, um ein flüssiges und interaktives Scroll-Erlebnis zu schaffen.
+                            Durch Testen und Anpassen der Scroll-Geschwindigkeit und -Animationen konnten wir nach mehreren Iterationen den gewünschten Effekt erzielen.`
             },
             {
                 type: 'heading',
@@ -572,41 +572,41 @@ export const projects = [
                 images: [
                     {
                         src: sputifyFiles['../projects/sputify/Login.jpg'].default,
-                        caption: 'Login Page Mobile'
+                        caption: 'Login-Seite Mobil'
                     },
                     {
                         src: sputifyFiles['../projects/sputify/Journey.jpg'].default,
-                        caption: 'Music Journey'
+                        caption: 'Musikreise'
                     },
                     {
                         src: sputifyFiles['../projects/sputify/TopSongs.jpg'].default,
-                        caption: 'Top Songs Section Mobile'
+                        caption: 'Top-Songs-Bereich Mobil'
                     },
                     {
                         src: sputifyFiles['../projects/sputify/TopArtists.jpg'].default,
-                        caption: 'Top Artists Section'
+                        caption: 'Top-Künstler-Bereich'
                     },
                     {
                         src: sputifyFiles['../projects/sputify/Focus.jpg'].default,
-                        caption: 'Focus  Mode Mobile'
+                        caption: 'Fokus-Modus Mobil'
                     },
                     {
                         src: sputifyFiles['../projects/sputify/Badges.jpg'].default,
-                        caption: 'Badges Collection'
+                        caption: 'Abzeichensammlung'
                     },
                     {
                         src: sputifyFiles['../projects/sputify/Menu.jpg'].default,
-                        caption: 'Menu Mobile'
+                        caption: 'Menü Mobil'
                     },
                     {
                         src: sputifyFiles['../projects/sputify/Share.jpg'].default,
-                        caption: 'Share Page'
+                        caption: 'Teilen-Seite'
                     },
                 ],
             },
             {
                 type: 'heading',
-                text: 'Screencast Mobile'
+                text: 'Screencast Mobil'
             },
             {
                 type: 'video',
@@ -614,51 +614,51 @@ export const projects = [
             },
             {
                 type: 'heading',
-                text: 'Project Setup'
+                text: 'Projektsetup'
             },
             {
                 type: 'iconed',
-                text: 'Clone the project',
+                text: 'Projekt klonen',
                 icon: '1'
             },
             {
                 type: 'bullet',
-                text: 'Clone the project repository into a local directory'
+                text: 'Klonen Sie das Projekt-Repository in ein lokales Verzeichnis'
             },
             {
                 type: 'iconed',
-                text: 'Install dependencies',
+                text: 'Abhängigkeiten installieren',
                 icon: '2'
             },
             {
                 type: 'bullet',
-                text: 'Run <span class="snippet hoverable tooltip copy" tooltip="copy">npm install</span> to install all necessary dependencies'
+                text: 'Führen Sie <span class="snippet hoverable tooltip copy" tooltip="copy">npm install</span> aus, um alle notwendigen Abhängigkeiten zu installieren'
             },
             {
                 type: 'iconed',
-                text: 'Start the development server',
+                text: 'Entwicklungsserver starten',
                 icon: '3'
             },
             {
                 type: 'bullet',
-                text: 'Run <span class="snippet hoverable tooltip copy" tooltip="copy">npm run dev</span> to start the development server with hot-reload'
+                text: 'Führen Sie <span class="snippet hoverable tooltip copy" tooltip="copy">npm run dev</span> aus, um den Entwicklungsserver mit Hot-Reload zu starten'
             },
             {
                 type: 'iconed',
-                text: 'Access the application',
+                text: 'Anwendung aufrufen',
                 icon: '4'
             },
             {
                 type: 'bullet',
-                text: 'Open <span class="snippet hoverable tooltip copy" tooltip="copy">http://localhost:5173/</span> in your browser to view the application'
+                text: 'Öffnen Sie <span class="snippet hoverable tooltip copy" tooltip="copy">http://localhost:5173/</span> in Ihrem Browser, um die Anwendung anzuzeigen'
             },
             {
                 type: 'bullet',
-                text: 'Log in with your registered Spotify account to start exploring your music journey'
+                text: 'Melden Sie sich mit Ihrem registrierten Spotify-Konto an, um Ihre Musikreise zu erkunden'
             },
             {
                 type: 'iconed',
-                text: 'For testing, a manual registration of your Spotify email address is required.<br><a href="/about#contact" class="bold hoverable">Contact me</a> for access.',
+                text: 'Für Tests ist eine manuelle Registrierung Ihrer Spotify-E-Mail-Adresse erforderlich.<br><a href="/about#contact" class="bold hoverable">Kontaktieren Sie mich</a> für den Zugang.',
                 icon: 'exclamation-triangle'
             }
         ],
@@ -669,19 +669,19 @@ export const projects = [
                 icon: 'fa-brands fa-github-alt'
             },
             {
-                text: 'Figma Prototype Desktop',
+                text: 'Figma Prototyp Desktop',
                 url: 'https://www.figma.com/proto/pS7n7HHNk0weXyXnUbWt2r/Design-Library?page-id=694%3A5979&node-id=694-7596&p=f&viewport=-336%2C352%2C0.08&t=icFqiCaQGxwdGQyL-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=694%3A7596',
                 icon: 'fa-brands fa-figma'
             },
             {
-                text: 'Figma Prototype Mobile',
+                text: 'Figma Prototyp Mobil',
                 url: 'https://www.figma.com/proto/pS7n7HHNk0weXyXnUbWt2r/Design-Library?page-id=838%3A8681&node-id=838-9683&p=f&viewport=-781%2C374%2C0.08&t=I6fzqdYEK93WZXZn-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=838%3A9683',
                 icon: 'fa-brands fa-figma'
             }
         ],
         downloads: [
             {
-                text: 'Documentation.pdf',
+                text: 'Dokumentation.pdf',
                 url: sputifyFiles['../projects/sputify/Documentation.pdf'].default,
                 icon: 'file-pdf'
             },
@@ -701,7 +701,7 @@ export const projects = [
     {
         id: 'ecohome',
         name: 'ecohome',
-        description: 'serious game about waste management',
+        description: 'serious game über abfallwirtschaft',
         context: {
             lines: [
                 '2024 @ HSLU, Rotkreuz',
@@ -709,92 +709,92 @@ export const projects = [
             ],
             url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
-            tooltip: 'school'
+            tooltip: 'schule'
         },
         categories: [
             'team',
-            'game'
+            'spiel'
         ],
         sections: [
             {
                 type: 'quoted',
-                text: `EcoHome is a strategic tabletop game centered around waste management and sustainability in modern Swiss households. 
-                        Players take on different personas and must balance daily actions to reduce trash while maintaining or increasing their happiness score. 
-                        The game spans one week, with each turn representing a day.Players receive immediate feedback on their choices, allowing them to adjust strategies.
-                        As the final project of the International Summer School on Designing Serious Games this game was developed in a team of three with Lisa Landolt and Julian Schwarz.`
+                text: `EcoHome ist ein strategisches Brettspiel, das sich auf Abfallwirtschaft und Nachhaltigkeit in modernen Schweizer Haushalten konzentriert. 
+                            Die Spieler übernehmen verschiedene Rollen und müssen tägliche Aktionen ausbalancieren, um Müll zu reduzieren und gleichzeitig ihre Glückspunkte zu erhalten oder zu erhöhen. 
+                            Das Spiel erstreckt sich über eine Woche, wobei jeder Zug einen Tag darstellt. Die Spieler erhalten sofortiges Feedback zu ihren Entscheidungen, was ihnen ermöglicht, ihre Strategien anzupassen.
+                            Als Abschlussprojekt der International Summer School on Designing Serious Games wurde dieses Spiel in einem Team von drei Personen mit Lisa Landolt und Julian Schwarz entwickelt.`
             },
             {
                 type: 'heading',
-                text: 'Gameplay Overview'
+                text: 'Spielübersicht'
             },
             {
                 type: 'subheading',
-                text: 'Objective'
+                text: 'Ziel'
             },
             {
                 type: 'iconed',
-                text: 'Minimize Waste, Maximize Happiness',
+                text: 'Müll minimieren, Glück maximieren',
                 icon: 'smile'
             },
             {
                 type: 'paragraph',
-                text: `At the end of the week, the player with the least amount of trash bags wins.`
+                text: `Am Ende der Woche gewinnt der Spieler mit den wenigsten Müllsäcken.`
             },
             {
                 type: 'subheading',
-                text: 'Challenges'
+                text: 'Herausforderungen'
             },
             {
                 type: 'bullet',
-                text: 'Managing resources efficiently.'
+                text: 'Ressourcen effizient verwalten.'
             },
             {
                 type: 'bullet',
-                text: 'Adapting to random events that affect daily life.'
+                text: 'Sich an zufällige Ereignisse anpassen, die das tägliche Leben beeinflussen.'
             },
             {
                 type: 'bullet',
-                text: 'Making smart buying choices to minimize waste.'
+                text: 'Kluge Kaufentscheidungen treffen, um Müll zu minimieren.'
             },
             {
                 type: 'subheading',
-                text: 'Player Actions'
+                text: 'Spieleraktionen'
             },
             {
                 type: 'iconed',
-                text: 'Grocery Shopping',
+                text: 'Lebensmitteleinkauf',
                 icon: 'shopping-cart'
             },
             {
                 type: 'paragraph',
-                text: 'Buy food and reusable items to manage resources effectively and minimize waste.'
+                text: 'Kaufe Lebensmittel und wiederverwendbare Gegenstände, um Ressourcen effektiv zu verwalten und Müll zu minimieren.'
             },
             {
                 type: 'iconed',
-                text: 'Day Planning',
+                text: 'Tagesplanung',
                 icon: 'calendar-alt'
             },
             {
                 type: 'paragraph',
-                text: 'Allocate time for daily activities to balance tasks and optimize efficiency.'
+                text: 'Plane die Zeit für tägliche Aktivitäten, um Aufgaben zu balancieren und die Effizienz zu optimieren.'
             },
             {
                 type: 'iconed',
-                text: 'Cooking',
+                text: 'Kochen',
                 icon: 'utensils'
             },
             {
                 type: 'paragraph',
-                text: 'Prepare meals without wasting ingredients to maintain a low waste footprint.'
+                text: 'Bereite Mahlzeiten zu, ohne Zutaten zu verschwenden, um einen niedrigen Müll-Fußabdruck zu erhalten.'
             },
             {
                 type: 'iconed',
-                text: 'Cleaning',
+                text: 'Reinigung',
                 icon: 'broom'
             },
             {
                 type: 'paragraph',
-                text: 'Maintain living spaces and optimize waste disposal to keep the environment clean.'
+                text: 'Halte die Wohnräume sauber und optimiere die Müllentsorgung, um die Umgebung sauber zu halten.'
             },
             {
                 type: 'iconed',
@@ -803,7 +803,7 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: 'Reduce waste by properly sorting trash and recycling materials.'
+                text: 'Reduziere Müll, indem du Abfall richtig sortierst und Materialien recycelst.'
             },
             {
                 type: 'subheading',
@@ -811,19 +811,19 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: 'Modern Swiss households, featuring shared apartments, family homes, and single-person residences.'
+                text: 'Moderne Schweizer Haushalte, darunter Wohngemeinschaften, Familienhäuser und Einpersonenhaushalte.'
             },
             {
                 type: 'subheading',
-                text: 'Technology'
+                text: 'Technologie'
             },
             {
                 type: 'paragraph',
-                text: 'The game relies on physical cards for actions, events, and resources, with minimal bookkeeping to easily keep track of scores and states.'
+                text: 'Das Spiel verwendet physische Karten für Aktionen, Ereignisse und Ressourcen, mit minimalem Buchhaltungsaufwand, um Punkte und Zustände leicht im Auge zu behalten.'
             },
             {
                 type: 'heading',
-                text: 'Game Rules'
+                text: 'Spielregeln'
             },
             {
                 type: 'subheading',
@@ -831,147 +831,147 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: 'Each player adopts a persona that determines their conditions and weekly schedule:'
+                text: 'Jeder Spieler übernimmt eine Rolle, die seine Bedingungen und den Wochenplan bestimmt:'
             },
             {
                 type: 'iconed',
-                text: 'Single-person household',
+                text: 'Einpersonenhaushalt',
                 icon: 'user'
             },
             {
                 type: 'bullet',
-                text: 'Has 2 free time slots on weekdays and 5 on weekends'
+                text: 'Hat 2 freie Zeitfenster an Wochentagen und 5 am Wochenende'
             },
             {
                 type: 'bullet',
-                text: 'Generates 0 extra trash per day'
+                text: 'Erzeugt 0 zusätzlichen Müll pro Tag'
             },
             {
                 type: 'iconed',
-                text: 'Family household',
+                text: 'Familienhaushalt',
                 icon: 'users'
             },
             {
                 type: 'bullet',
-                text: 'Has 4 free time slots on weekdays and 2 on weekends'
+                text: 'Hat 4 freie Zeitfenster an Wochentagen und 2 am Wochenende'
             },
             {
                 type: 'bullet',
-                text: 'Generates 1 extra trash per day'
+                text: 'Erzeugt 1 zusätzlichen Müll pro Tag'
             },
             {
                 type: 'iconed',
-                text: 'Shared flat',
+                text: 'Wohngemeinschaft',
                 icon: 'house-chimney-window'
             },
             {
                 type: 'bullet',
-                text: 'Has 3 free time slots on weekdays and 3 on weekends'
+                text: 'Hat 3 freie Zeitfenster an Wochentagen und 3 am Wochenende'
             },
             {
                 type: 'bullet',
-                text: 'Generates 2 extra trash per day'
+                text: 'Erzeugt 2 zusätzlichen Müll pro Tag'
             },
             {
                 type: 'paragraph',
-                text: 'Players start with:'
+                text: 'Die Spieler starten mit:'
             },
             {
                 type: 'bullet',
-                text: '5 Happiness'
+                text: '5 Glückspunkten'
             },
             {
                 type: 'bullet',
-                text: '5 Action Cards'
+                text: '5 Aktionskarten'
             },
             {
                 type: 'bullet',
-                text: '1 Reusable Shop Card'
+                text: '1 wiederverwendbaren Einkaufskarte'
             },
             {
                 type: 'subheading',
-                text: 'Daily Turn Sequence'
+                text: 'Tägliche Zugfolge'
             },
             {
                 type: 'iconed',
-                text: 'Draw a Random Event Card',
+                text: 'Ziehe eine Zufallskarte',
                 icon: '1'
             },
             {
                 type: 'paragraph',
-                text: 'This introduces new challenges or benefits.'
+                text: 'Dies führt neue Herausforderungen oder Vorteile ein.'
             },
             {
                 type: 'iconed',
-                text: 'Plan Your Day',
+                text: 'Plane deinen Tag',
                 icon: '2'
             },
             {
                 type: 'paragraph',
-                text: 'Players choose actions based on available time and resources.'
+                text: 'Die Spieler wählen Aktionen basierend auf verfügbarer Zeit und Ressourcen.'
             },
             {
                 type: 'iconed',
-                text: 'Execute Actions',
+                text: 'Führe Aktionen aus',
                 icon: '3'
             },
             {
                 type: 'paragraph',
-                text: 'Players may shop, use items, or carry out planned tasks.'
+                text: 'Die Spieler können einkaufen, Gegenstände verwenden oder geplante Aufgaben ausführen.'
             },
             {
                 type: 'iconed',
-                text: 'Refill to 5 Action Cards',
+                text: 'Fülle auf 5 Aktionskarten auf',
                 icon: '4'
             },
             {
                 type: 'paragraph',
-                text: 'Ensure players have balanced choices each turn.'
+                text: 'Stelle sicher, dass die Spieler jede Runde ausgewogene Wahlmöglichkeiten haben.'
             },
             {
                 type: 'subheading',
-                text: 'Happiness Consequences'
+                text: 'Glückskonsequenzen'
             },
             {
                 type: 'bullet',
-                text: 'If Happiness falls below 3, the player cannot cook, clean, or recycle.'
+                text: 'Wenn das Glück unter 3 fällt, kann der Spieler nicht kochen, reinigen oder recyceln.'
             },
             {
                 type: 'bullet',
-                text: 'If Happiness reaches 0, the player automatically generates 2 trash bags per day.'
+                text: 'Wenn das Glück 0 erreicht, erzeugt der Spieler automatisch 2 Müllsäcke pro Tag.'
             },
             {
                 type: 'bullet',
-                text: 'Skipping meals results in -3 Happiness per day.'
+                text: 'Das Auslassen von Mahlzeiten führt zu -3 Glück pro Tag.'
             },
             {
                 type: 'subheading',
-                text: 'End of the Week'
+                text: 'Ende der Woche'
             },
             {
                 type: 'paragraph',
-                text: `Unused fresh ingredients generate 1 trash bag. 
-                        At the end of the week, the player with the least trash wins.
-                        If there is a tie, the player with more Happiness wins.`
+                text: `Unbenutzte frische Zutaten erzeugen 1 Müllsack. 
+                            Am Ende der Woche gewinnt der Spieler mit dem wenigsten Müll.
+                            Bei Gleichstand gewinnt der Spieler mit mehr Glück.`
             },
             {
                 type: 'heading',
-                text: 'Process Insights'
+                text: 'Prozess Einblicke'
             },
             {
                 type: 'images',
                 images: [
                     {
                         src: ecohomeFiles['../projects/ecohome/Conceptualizing.jpg'].default,
-                        caption: 'Conceptualizing the Game'
+                        caption: 'Konzeptualisierung des Spiels'
                     },
                     {
                         src: ecohomeFiles['../projects/ecohome/Testing.jpg'].default,
-                        caption: 'Testing the Game'
+                        caption: 'Testen des Spiels'
                     },
                     {
                         src: ecohomeFiles['../projects/ecohome/Playing.jpg'].default,
-                        caption: 'Playing the Game'
+                        caption: 'Spielen des Spiels'
                     },
                 ]
             }
@@ -979,7 +979,7 @@ export const projects = [
         links: [],
         downloads: [
             {
-                text: 'Certificate.pdf',
+                text: 'Zertifikat.pdf',
                 url: ecohomeFiles['../projects/ecohome/Certificate.pdf'].default,
                 icon: 'file-pdf'
             }
@@ -989,41 +989,41 @@ export const projects = [
     {
         id: 'milo',
         name: "milo's forest adventure",
-        description: 'web-based scroll & click adventure',
+        description: 'web-basiertes scroll- und klick-abenteuer',
         context:
         {
             lines: [
                 '2024 @ HSLU, Rotkreuz',
-                'Module DEWEB - Development for Web & Mobile'
+                'Modul DEWEB - Entwicklung für Web & Mobile'
             ],
             url: 'https://www.hslu.ch/de-ch/informatik/',
             icon: 'graduation-cap',
-            tooltip: 'school'
+            tooltip: 'schule'
         },
         categories: [
             'solo',
             'coding',
             'design',
             'web',
-            'game',
+            'spiel',
             'story'
         ],
         sections: [
             {
                 type: 'quoted',
-                text: `With Milo\'s Forest Adventure I aimed to combine web development, pixel art, and interactive storytelling 
-                        in a cute scroll-and-click adventure game.By scrolling and clicking, players can explore the environment,
-                        interact with Milo, and uncover secrets of the enchanting forest.`
+                text: `Mit Milo's Forest Adventure wollte ich Webentwicklung, Pixelkunst und interaktive Erzählungen 
+                            in einem niedlichen Scroll- und Klick-Abenteuerspiel kombinieren. Durch Scrollen und Klicken können die Spieler die Umgebung erkunden,
+                            mit Milo interagieren und Geheimnisse des verzauberten Waldes entdecken.`
             },
             {
                 type: 'heading',
-                text: 'Play the Game'
+                text: 'Spiel spielen'
             },
             {
                 type: 'buttons',
                 buttons: [
                     {
-                        text: 'Play Demo',
+                        text: 'Demo spielen',
                         action: 'https://milo.jfladas.com',
                         icon: 'play',
                         color: 'primary'
@@ -1038,126 +1038,126 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: `Online demo lacks backend features like the leaderboard at the end. To play the game locally, follow the instructions below.`
+                text: `Die Online-Demo fehlt Backend-Funktionen wie die Bestenliste am Ende. Um das Spiel lokal zu spielen, folge den untenstehenden Anweisungen.`
             },
             {
                 type: 'heading',
-                text: 'Installation Instructions'
+                text: 'Installationsanweisungen'
             },
             {
                 type: 'subheading',
-                text: 'Prerequisites'
+                text: 'Voraussetzungen'
             },
             {
                 type: 'bullet',
-                text: 'Node.js installed'
+                text: 'Node.js installiert'
             },
             {
                 type: 'bullet',
-                text: 'Visual Studio Code installed'
+                text: 'Visual Studio Code installiert'
             },
             {
                 type: 'bullet',
-                text: 'Live Server extension installed & activated in Visual Studio Code'
+                text: 'Live Server-Erweiterung in Visual Studio Code installiert und aktiviert'
             },
             {
                 type: 'subheading',
-                text: 'Steps'
+                text: 'Schritte'
             },
             {
                 type: 'iconed',
-                text: 'Clone or download the project',
+                text: 'Projekt klonen oder herunterladen',
                 icon: '1'
             },
             {
                 type: 'bullet',
-                text: 'Clone the project repository into a local directory'
+                text: 'Klonen Sie das Projekt-Repository in ein lokales Verzeichnis'
             },
             {
                 type: 'bullet',
-                text: 'Alternatively, download the project zip file and extract it into a local directory'
+                text: 'Alternativ können Sie die Projekt-Zip-Datei herunterladen und in ein lokales Verzeichnis extrahieren'
             },
             {
                 type: 'iconed',
-                text: 'Start the backend',
+                text: 'Backend starten',
                 icon: '2'
             },
             {
                 type: 'bullet',
-                text: 'Navigate to the <span class="snippet">/server</span> directory'
+                text: 'Navigieren Sie zum <span class="snippet">/server</span> Verzeichnis'
             },
             {
                 type: 'bullet',
-                text: `Start the Node.js server with the command
-            <span class= "snippet hoverable tooltip copy" tooltip="copy" > node server.mjs</span>
-                        in the terminal`
+                text: `Starten Sie den Node.js-Server mit dem Befehl
+                <span class= "snippet hoverable tooltip copy" tooltip="copy" > node server.mjs</span>
+                            im Terminal`
             },
             {
                 type: 'iconed',
-                text: 'Start the frontend',
+                text: 'Frontend starten',
                 icon: '3'
             },
             {
                 type: 'bullet',
-                text: 'Navigate to the <span class="snippet">/client</span> directory and open it in Visual Studio Code'
+                text: 'Navigieren Sie zum <span class="snippet">/client</span> Verzeichnis und öffnen Sie es in Visual Studio Code'
             },
             {
                 type: 'bullet',
-                text: 'Click on Go Live at the bottom right to start the Live Server'
+                text: 'Klicken Sie unten rechts auf "Go Live", um den Live Server zu starten'
             },
             {
                 type: 'bullet',
-                text: `The project should automatically open in the browser(if not, open
-    < span class="snippet hoverable tooltip copy" tooltip = "copy" > http://127.0.0.1:5500/</span>
-                        in the browser and adjust Live Server settings accordingly)`
+                text: `Das Projekt sollte automatisch im Browser geöffnet werden (falls nicht, öffnen Sie
+        < span class="snippet hoverable tooltip copy" tooltip = "copy" > http://127.0.0.1:5500/</span>
+                            im Browser und passen Sie die Live Server-Einstellungen entsprechend an)`
             },
             {
                 type: 'subheading',
-                text: "Enjoy milo's forest adventure!"
+                text: "Viel Spaß bei Milo's Forest Adventure!"
             },
             {
                 type: 'heading',
-                text: 'Project Description'
+                text: 'Projektbeschreibung'
             },
             {
                 type: 'subheading',
-                text: 'Scenes'
+                text: 'Szenen'
             },
             {
                 type: 'bullet',
-                text: 'Intro Dialogue: Milo welcomes the player.'
+                text: 'Intro-Dialog: Milo begrüßt den Spieler.'
             },
             {
                 type: 'bullet',
-                text: 'Day Scene: Navigate Milo through the forest during the day.'
+                text: 'Tag-Szene: Navigiere Milo tagsüber durch den Wald.'
             },
             {
                 type: 'bullet',
-                text: 'River Dialogue: Engage in a conversation with Milo by the Rami River.'
+                text: 'Fluss-Dialog: Führe ein Gespräch mit Milo am Rami-Fluss.'
             },
             {
                 type: 'bullet',
-                text: 'Night Scene: Guide Milo through the forest at night.'
+                text: 'Nacht-Szene: Führe Milo nachts durch den Wald.'
             },
             {
                 type: 'bullet',
-                text: 'Cliff Dialogue: A reflective conclusion at a cliff edge.'
+                text: 'Kliff-Dialog: Ein reflektierender Abschluss an einer Klippe.'
             },
             {
                 type: 'bullet',
-                text: `End Screen: Displays the player's score and a leaderboard of the top 10 players.`
+                text: `Endbildschirm: Zeigt die Punktzahl des Spielers und eine Bestenliste der Top 10 Spieler an.`
             },
             {
                 type: 'subheading',
-                text: 'Tools & Resources'
+                text: 'Werkzeuge & Ressourcen'
             },
             {
                 type: 'bullet',
-                text: 'Development: HTML, CSS, JavaScript, Node.js, Express, Visual Studio Code, Live Server, Chrome DevTools, GitHub'
+                text: 'Entwicklung: HTML, CSS, JavaScript, Node.js, Express, Visual Studio Code, Live Server, Chrome DevTools, GitHub'
             },
             {
                 type: 'bullet',
-                text: 'Graphics: Piskel, Adobe Firefly, PowerPoint, Photoshop, FontStruct'
+                text: 'Grafiken: Piskel, Adobe Firefly, PowerPoint, Photoshop, FontStruct'
             },
             {
                 type: 'bullet',
@@ -1165,39 +1165,39 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'AI Assistance: ChatGPT, Gemini'
+                text: 'KI-Unterstützung: ChatGPT, Gemini'
             },
             {
                 type: 'subheading',
-                text: 'Development Process'
+                text: 'Entwicklungsprozess'
             },
             {
                 type: 'bullet',
-                text: 'Motivation: High motivation throughout the project drove significant investment of time and energy.'
+                text: 'Motivation: Hohe Motivation während des gesamten Projekts führte zu einem erheblichen Zeit- und Energieaufwand.'
             },
             {
                 type: 'bullet',
-                text: 'Challenges: Overcame moments of uncertainty with structured to-do lists, improving focus and task management.'
+                text: 'Herausforderungen: Überwand Momente der Unsicherheit mit strukturierten To-Do-Listen, die den Fokus und das Aufgabenmanagement verbesserten.'
             },
             {
                 type: 'bullet',
-                text: 'Programming Techniques: Factory functions, dynamic HTML generation, POST requests, cookie implementation.'
+                text: 'Programmiertechniken: Factory-Funktionen, dynamische HTML-Generierung, POST-Anfragen, Cookie-Implementierung.'
             },
             {
                 type: 'subheading',
-                text: 'Key Features'
+                text: 'Hauptmerkmale'
             },
             {
                 type: 'bullet',
-                text: 'Interactive scrolling and clicking mechanics for intuitive gameplay.'
+                text: 'Interaktive Scroll- und Klick-Mechaniken für intuitives Gameplay.'
             },
             {
                 type: 'bullet',
-                text: 'Dynamic score tracking with leaderboard functionality.'
+                text: 'Dynamische Punktverfolgung mit Bestenlistenfunktion.'
             },
             {
                 type: 'bullet',
-                text: 'Charming pixel art and audio design enhance the immersive experience.'
+                text: 'Charmante Pixelkunst und Audiodesign verbessern das immersive Erlebnis.'
             },
             {
                 type: 'heading',
@@ -1208,19 +1208,19 @@ export const projects = [
                 images: [
                     {
                         src: miloFiles['../projects/milo/milo_forest.png'].default,
-                        caption: 'Day Scene'
+                        caption: 'Tag-Szene'
                     },
                     {
                         src: miloFiles['../projects/milo/milo_river.png'].default,
-                        caption: 'River Dialogue'
+                        caption: 'Fluss-Dialog'
                     },
                     {
                         src: miloFiles['../projects/milo/milo_night.png'].default,
-                        caption: 'Night Scene'
+                        caption: 'Nacht-Szene'
                     },
                     {
                         src: miloFiles['../projects/milo/milo_endscreen.png'].default,
-                        caption: 'End Screen & Leaderboard'
+                        caption: 'Endbildschirm & Bestenliste'
                     }
                 ],
             }
@@ -1232,12 +1232,12 @@ export const projects = [
                 icon: 'fa-brands fa-github-alt'
             },
             {
-                text: 'itch.io Page',
+                text: 'itch.io Seite',
                 url: 'https://jfladas.itch.io/milos-forest-adventure',
                 icon: 'fa-brands fa-itch-io'
             },
             {
-                text: 'Play Demo',
+                text: 'Demo spielen',
                 url: 'https://milo.jfladas.com',
                 icon: 'external-link-alt'
             },
@@ -1254,12 +1254,12 @@ export const projects = [
                 icon: 'file-archive'
             },
             {
-                text: 'Documentation.pdf',
+                text: 'Dokumentation.pdf',
                 url: miloFiles['../projects/milo/milo_documentation.pdf'].default,
                 icon: 'file-pdf'
             },
             {
-                text: 'Presentation.pdf',
+                text: 'Präsentation.pdf',
                 url: miloFiles['../projects/milo/milo_presentation.pdf'].default,
                 icon: 'file-pdf'
             }
@@ -1269,15 +1269,15 @@ export const projects = [
     {
         id: 'matbf',
         name: 'beautiful mathematics',
-        description: 'collection of mathematical explorations',
+        description: 'sammlung mathematischer erkundungen',
         context: {
             lines: [
                 '2024 @ HSLU, Rotkreuz',
-                'Module MATBF - Beautiful Mathematics'
+                'Modul MATBF - Beautiful Mathematics'
             ],
             url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
-            tooltip: 'school'
+            tooltip: 'schule'
         },
         categories: [
             'solo',
@@ -1287,25 +1287,25 @@ export const projects = [
         sections: [
             {
                 type: 'quoted',
-                text: `The Module explores the beauty of mathematics through generative art and algorithmic design, using p5.js, HTML, CSS, and JavaScript. 
-                        This page showcases a collection of weekly tasks completed during weeks 1 to 6 of the module and an exam project. 
-                        Each task implements mathematical and computational principles to create visually engaging patterns, simulations, and interactive experiences.`
+                text: `Das Modul erforscht die Schönheit der Mathematik durch generative Kunst und algorithmisches Design unter Verwendung von p5.js, HTML, CSS und JavaScript. 
+                            Diese Seite zeigt eine Sammlung wöchentlicher Aufgaben, die während der Wochen 1 bis 6 des Moduls und eines Prüfungsprojekts abgeschlossen wurden. 
+                            Jede Aufgabe implementiert mathematische und rechnerische Prinzipien, um visuell ansprechende Muster, Simulationen und interaktive Erlebnisse zu schaffen.`
             },
             {
                 type: 'heading',
-                text: 'View Collection'
+                text: 'Sammlung ansehen'
             },
             {
                 type: 'buttons',
                 buttons: [
                     {
-                        text: 'Go to Page',
+                        text: 'Zur Seite',
                         action: 'https://matbf.jfladas.com',
                         icon: 'arrow-right',
                         color: 'primary'
                     },
                     {
-                        text: 'Documentation',
+                        text: 'Dokumentation',
                         action: matbfFiles['../projects/matbf/MATBF.pdf'].default,
                         icon: 'circle-arrow-down',
                         color: 'secondary'
@@ -1315,16 +1315,16 @@ export const projects = [
             },
             {
                 type: 'heading',
-                text: 'Weekly Projects'
+                text: 'Wöchentliche Projekte'
             },
             {
                 type: 'iconed',
-                text: 'W1 | Spiral',
+                text: 'W1 | Spirale',
                 icon: 'spinner'
             },
             {
                 type: 'paragraph',
-                text: 'Spiral of circles increasing in size made by implementing Bresenham Midpoint Circle Algorithm'
+                text: 'Spirale von Kreisen, die durch die Implementierung des Bresenham-Mittelpunkt-Kreisalgorithmus in der Größe zunehmen'
             },
             {
                 type: 'iconed',
@@ -1333,7 +1333,7 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: 'Attempt at a 3D snail shape using WebGL'
+                text: 'Versuch einer 3D-Schneckenform mit WebGL'
             },
             {
                 type: 'iconed',
@@ -1342,63 +1342,63 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: 'Markov Chain with Japanese Hiragana'
+                text: 'Markov-Kette mit japanischen Hiragana'
             },
             {
                 type: 'iconed',
-                text: 'W4 | Life',
+                text: 'W4 | Leben',
                 icon: 'border-all'
             },
             {
                 type: 'paragraph',
-                text: "Interactive Conway's Game of Life with more States/Colors"
+                text: "Interaktives Conway's Game of Life mit mehr Zuständen/Farben"
             },
             {
                 type: 'iconed',
-                text: 'W5 | Mountains',
+                text: 'W5 | Berge',
                 icon: 'mountain'
             },
             {
                 type: 'paragraph',
-                text: 'Layered mountain range made with 2D Fractal Noise and Smoothstep-Interpolation'
+                text: 'Geschichtete Bergkette mit 2D-Fraktalrauschen und Smoothstep-Interpolation'
             },
             {
                 type: 'iconed',
-                text: 'W6 | Trees',
+                text: 'W6 | Bäume',
                 icon: 'tree'
             },
             {
                 type: 'paragraph',
-                text: 'Different Trees using 2D L-Systems'
+                text: 'Verschiedene Bäume mit 2D-L-Systemen'
             },
             {
                 type: 'iconed',
-                text: 'EXAM | Breathing',
+                text: 'PRÜFUNG | Atmung',
                 icon: 'genderless'
             },
             {
                 type: 'paragraph',
-                text: 'Pulsating Circles for Mindful Breathing'
+                text: 'Pulsierende Kreise für achtsames Atmen'
             },
             {
                 type: 'heading',
-                text: 'Key Learnings'
+                text: 'Wichtige Erkenntnisse'
             },
             {
                 type: 'bullet',
-                text: 'Applying mathematical algorithms to creative coding.'
+                text: 'Anwendung mathematischer Algorithmen auf kreatives Programmieren.'
             },
             {
                 type: 'bullet',
-                text: 'Exploring generative art with p5.js and WebGL.'
+                text: 'Erforschung generativer Kunst mit p5.js und WebGL.'
             },
             {
                 type: 'bullet',
-                text: 'Enhancing interactivity through Markov Chains, Cellular Automata, and L-Systems.'
+                text: 'Verbesserung der Interaktivität durch Markov-Ketten, zelluläre Automaten und L-Systeme.'
             },
             {
                 type: 'bullet',
-                text: 'Using fractal noise and procedural techniques for natural-looking landscapes.'
+                text: 'Verwendung von Fraktalrauschen und prozeduralen Techniken für natürlich aussehende Landschaften.'
             },
             {
                 type: 'heading',
@@ -1409,7 +1409,7 @@ export const projects = [
                 images: [
                     {
                         src: matbfFiles['../projects/matbf/W1.jpg'].default,
-                        caption: 'W1 | Spiral'
+                        caption: 'W1 | Spirale'
                     },
                     {
                         src: matbfFiles['../projects/matbf/W2.gif'].default,
@@ -1421,26 +1421,26 @@ export const projects = [
                     },
                     {
                         src: matbfFiles['../projects/matbf/W4.gif'].default,
-                        caption: 'W4 | Life'
+                        caption: 'W4 | Leben'
                     },
                     {
                         src: matbfFiles['../projects/matbf/W5.gif'].default,
-                        caption: 'W5 | Mountains'
+                        caption: 'W5 | Berge'
                     },
                     {
                         src: matbfFiles['../projects/matbf/W6.jpg'].default,
-                        caption: 'W6 | Trees'
+                        caption: 'W6 | Bäume'
                     },
                     {
                         src: matbfFiles['../projects/matbf/EXAM.gif'].default,
-                        caption: 'EXAM | Breathing'
+                        caption: 'PRÜFUNG | Atmung'
                     }
                 ],
             }
         ],
         links: [
             {
-                text: 'Go to Page',
+                text: 'Zur Seite',
                 url: 'https://matbf.jfladas.com',
                 icon: 'external-link-alt'
             },
@@ -1457,7 +1457,7 @@ export const projects = [
         ],
         downloads: [
             {
-                text: 'Documentation.pdf',
+                text: 'Dokumentation.pdf',
                 url: matbfFiles['../projects/matbf/MATBF.pdf'].default,
                 icon: 'file-pdf'
             },
@@ -1467,15 +1467,15 @@ export const projects = [
     {
         id: '4g',
         name: 'connected europe',
-        description: 'data visualization poster of 4g network expansion',
+        description: 'datenvisualisierungsplakat zur 4g-netzwerkerweiterung',
         context: {
             lines: [
                 '2024 @ HSLU, Rotkreuz',
-                'Module STUIN - Studio Information Aesthetics & Engineering'
+                'Modul STUIN - Studio Information Aesthetics & Engineering'
             ],
             url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
-            tooltip: 'school'
+            tooltip: 'schule'
         },
         categories: [
             'solo',
@@ -1484,12 +1484,12 @@ export const projects = [
         sections: [
             {
                 type: 'quoted',
-                text: `Between 2012 and 2016, Europe experienced a rapid expansion of 4G mobile network coverage, marking a turning point in digital connectivity.
-                        This data visualization project explores the speed and scale of 4G deployment across Europe, highlighting its impact on society.`
+                text: `Zwischen 2012 und 2016 erlebte Europa eine rasante Ausweitung der 4G-Mobilfunknetzabdeckung, was einen Wendepunkt in der digitalen Konnektivität markierte.
+                            Dieses Datenvisualisierungsprojekt untersucht die Geschwindigkeit und das Ausmaß der 4G-Einführung in Europa und hebt deren Auswirkungen auf die Gesellschaft hervor.`
             },
             {
                 type: 'heading',
-                text: 'Poster'
+                text: 'Plakat'
             },
             {
                 type: 'images',
@@ -1502,25 +1502,25 @@ export const projects = [
             },
             {
                 type: 'heading',
-                text: 'Data Source & Analysis'
+                text: 'Datenquelle & Analyse'
             },
             {
                 type: 'paragraph',
-                text: `The dataset from the United Nations Sustainable Development Goals (SDG) Data Portal provided a comprehensive overview of 4G network coverage across Europe.
-                        It was analyzed using Microsoft Excel, applying filtering, pivot tables, and conditional formatting to extract key insights. The structured data allowed for comparisons across countries and time periods, revealing trends in connectivity expansion.`
+                text: `Der Datensatz des Datenportals der Vereinten Nationen für nachhaltige Entwicklungsziele (SDG) bot einen umfassenden Überblick über die 4G-Netzabdeckung in Europa.
+                            Er wurde mit Microsoft Excel analysiert, wobei Filter, Pivot-Tabellen und bedingte Formatierungen angewendet wurden, um wichtige Erkenntnisse zu extrahieren. Die strukturierten Daten ermöglichten Vergleiche zwischen Ländern und Zeiträumen und zeigten Trends in der Konnektivitätserweiterung auf.`
             },
             {
                 type: 'iconed',
-                text: 'Dataset',
+                text: 'Datensatz',
                 icon: 'database'
             },
             {
                 type: 'bullet',
-                text: 'UN SDG Data Portal - Indicator 9.c.1 (Mobile Network Coverage)'
+                text: 'UN SDG Datenportal - Indikator 9.c.1 (Mobilfunknetzabdeckung)'
             },
             {
                 type: 'iconed',
-                text: 'Timeframe',
+                text: 'Zeitraum',
                 icon: 'calendar-alt'
             },
             {
@@ -1529,21 +1529,21 @@ export const projects = [
             },
             {
                 type: 'iconed',
-                text: 'Countries',
+                text: 'Länder',
                 icon: 'globe-europe'
             },
             {
                 type: 'bullet',
-                text: '16 European countries divided into 4 regions of Europe'
+                text: '16 europäische Länder, aufgeteilt in 4 Regionen Europas'
             },
             {
                 type: 'iconed',
-                text: 'Focus Question',
+                text: 'Fokusfrage',
                 icon: 'question'
             },
             {
                 type: 'bullet',
-                text: 'How quickly was 4G technology adopted across Europe?'
+                text: 'Wie schnell wurde die 4G-Technologie in Europa eingeführt?'
             },
             {
                 type: 'iconed',
@@ -1552,97 +1552,97 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Microsoft Excel for data analysis'
+                text: 'Microsoft Excel zur Datenanalyse'
             },
             {
                 type: 'bullet',
-                text: 'Adobe InDesign for layout and poster design'
+                text: 'Adobe InDesign für Layout und Plakatdesign'
             },
             {
                 type: 'bullet',
-                text: 'Adobe Illustrator for data visualization'
+                text: 'Adobe Illustrator zur Datenvisualisierung'
             },
             {
                 type: 'heading',
-                text: 'Sketches'
+                text: 'Skizzen'
             },
             {
                 type: 'paragraph',
-                text: `The sketching process focuses on the three data dimensions:`
+                text: `Der Skizzierungsprozess konzentriert sich auf die drei Daten-Dimensionen:`
             },
             {
                 type: 'iconed',
-                text: 'Diagrammatical Dimensions',
+                text: 'Diagrammatische Dimensionen',
                 icon: '1'
             },
             {
                 type: 'bullet',
-                text: 'Focuses on the basic diagram types and their application.'
+                text: 'Konzentriert sich auf die grundlegenden Diagrammtypen und deren Anwendung.'
             },
             {
                 type: 'iconed',
-                text: 'Visual Dimensions',
+                text: 'Visuelle Dimensionen',
                 icon: '2'
             },
             {
                 type: 'bullet',
-                text: 'Destinguishes between different content by using various design principles.'
+                text: 'Unterscheidet zwischen verschiedenen Inhalten durch die Anwendung verschiedener Designprinzipien.'
             },
             {
                 type: 'iconed',
-                text: 'Structuring Dimensions',
+                text: 'Strukturierende Dimensionen',
                 icon: '3'
             },
             {
                 type: 'bullet',
-                text: 'Deals with the organization and arrangement of the objects in the space.'
+                text: 'Befasst sich mit der Organisation und Anordnung der Objekte im Raum.'
             },
             {
                 type: 'images',
                 images: [
                     {
                         src: europeFiles['../projects/4g/Sketches1.jpg'].default,
-                        caption: 'Sketch 1'
+                        caption: 'Skizze 1'
                     },
                     {
                         src: europeFiles['../projects/4g/Sketches2.jpg'].default,
-                        caption: 'Diagrammatical Dimensions 1'
+                        caption: 'Diagrammatische Dimensionen 1'
                     },
                     {
                         src: europeFiles['../projects/4g/Sketches3.jpg'].default,
-                        caption: 'Sketch 2'
+                        caption: 'Skizze 2'
                     },
                     {
                         src: europeFiles['../projects/4g/Sketches4.jpg'].default,
-                        caption: 'Diagrammatical Dimensions 2'
+                        caption: 'Diagrammatische Dimensionen 2'
                     },
                     {
                         src: europeFiles['../projects/4g/Sketches5.jpg'].default,
-                        caption: 'Diagrammatical, Visual & Structuring Dimensions 3'
+                        caption: 'Diagrammatische, visuelle & strukturierende Dimensionen 3'
                     },
                     {
                         src: europeFiles['../projects/4g/Sketches6.jpg'].default,
-                        caption: 'Visual Dimensions 1'
+                        caption: 'Visuelle Dimensionen 1'
                     },
                     {
                         src: europeFiles['../projects/4g/Sketches7.jpg'].default,
-                        caption: 'Sketch 3'
+                        caption: 'Skizze 3'
                     },
                     {
                         src: europeFiles['../projects/4g/Sketches8.jpg'].default,
-                        caption: 'Sketch 4'
+                        caption: 'Skizze 4'
                     }
                 ],
             },
         ],
         links: [
             {
-                text: 'UN SDG Goal 9',
+                text: 'UN SDG Ziel 9',
                 url: 'https://www.un.org/sustainabledevelopment/infrastructure-industrialization/',
                 icon: 'external-link-alt'
             },
             {
-                text: 'UN SDG Data Portal',
+                text: 'UN SDG Datenportal',
                 url: 'https://unstats.un.org/sdgs/dataportal/database',
                 icon: 'external-link-alt'
             }
@@ -1664,15 +1664,15 @@ export const projects = [
     {
         id: 'salad',
         name: 'salad ninja',
-        description: '2d animated video inspired by fruit ninja',
+        description: '2D-animiertes Video inspiriert von Fruit Ninja',
         context: {
             lines: [
                 '2024 @ HSLU, Emmenbrücke',
-                'Module ISA ANIM - Introduction to Animation'
+                'Modul ISA ANIM - Einführung in die Animation'
             ],
             url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
             icon: 'graduation-cap',
-            tooltip: 'school'
+            tooltip: 'schule'
         },
         categories: [
             'team',
@@ -1681,10 +1681,10 @@ export const projects = [
         sections: [
             {
                 type: 'quoted',
-                text: `Salad Ninja is a 2D animated video inspired by the popular mobile game Fruit Ninja.
-                        The video shows the preparation of a salad by slicing various ingredients.
-                        It uses a combination of stop motion and frame-by-frame paper animation and 
-                        was developed in a team of two with Remo Hösli as part of the ISA Animation Introduction module.`
+                text: `Salad Ninja ist ein 2D-animiertes Video, inspiriert vom beliebten Mobile Game Fruit Ninja.
+                        Das Video zeigt die Zubereitung eines Salats durch das Schneiden verschiedener Zutaten.
+                        Es kombiniert Stop-Motion und frame-by-frame Papieranimation und 
+                        wurde in einem Zweierteam mit Remo Hösli im Rahmen des ISA Animations-Einführungsmoduls entwickelt.`
             },
             {
                 type: 'heading',
@@ -1696,22 +1696,22 @@ export const projects = [
             },
             {
                 type: 'heading',
-                text: 'Project Description'
+                text: 'Projektbeschreibung'
             },
             {
                 type: 'subheading',
-                text: 'Concept & Execution'
+                text: 'Konzept & Umsetzung'
             },
             {
                 type: 'paragraph',
-                text: `The animation follows the playful destruction of various ingredients, blending two animation techniques:
-                        Stop motion for animating all of the ingredients spinning and being sliced.
-                        Frame-by-frame paper animation for slices, splashes, visual effects like fire, and text.
-                        The final animation was edited and enriched by sound in After Effects, combining both techniques seamlessly.`
+                text: `Die Animation zeigt die spielerische Zerstörung verschiedener Zutaten und verbindet zwei Animationstechniken:
+                        Stop-Motion zur Animation aller drehenden und geschnittenen Zutaten.
+                        Frame-by-frame Papieranimation für Scheiben, Spritzer, visuelle Effekte wie Feuer und Text.
+                        Die finale Animation wurde in After Effects bearbeitet und mit Sound angereichert, um beide Techniken nahtlos zu kombinieren.`
             },
             {
                 type: 'subheading',
-                text: 'Process Insights'
+                text: 'Prozess & Einblicke'
             },
             {
                 type: 'images',
@@ -1726,7 +1726,7 @@ export const projects = [
                     },
                     {
                         src: saladFiles['../projects/salad/Setup.gif'].default,
-                        caption: 'Stop Motion Animation'
+                        caption: 'Stop-Motion-Animation'
                     },
                     {
                         src: saladFiles['../projects/salad/POC.gif'].default,
@@ -1734,13 +1734,13 @@ export const projects = [
                     },
                     {
                         src: saladFiles['../projects/salad/Salad.jpg'].default,
-                        caption: 'The Salad'
+                        caption: 'Der Salat'
                     },
                 ]
             },
             {
                 type: 'subheading',
-                text: 'Team Roles'
+                text: 'Teamrollen'
             },
             {
                 type: 'iconed',
@@ -1749,23 +1749,23 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Animation concept'
+                text: 'Animationskonzept'
             },
             {
                 type: 'bullet',
-                text: 'On-paper animation'
+                text: 'Papieranimation'
             },
             {
                 type: 'bullet',
-                text: 'Stop motion animation'
+                text: 'Stop-Motion-Animation'
             },
             {
                 type: 'bullet',
-                text: 'Sound design'
+                text: 'Sounddesign'
             },
             {
                 type: 'bullet',
-                text: 'Salad eating'
+                text: 'Salat essen'
             },
             {
                 type: 'iconed',
@@ -1774,11 +1774,11 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Animation concept'
+                text: 'Animationskonzept'
             },
             {
                 type: 'bullet',
-                text: 'Stop motion animation'
+                text: 'Stop-Motion-Animation'
             },
             {
                 type: 'bullet',
@@ -1786,24 +1786,24 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Sound design'
+                text: 'Sounddesign'
             },
             {
                 type: 'bullet',
-                text: 'Salad eating'
+                text: 'Salat essen'
             },
             {
                 type: 'heading',
-                text: 'Other Projects in the Module'
+                text: 'Weitere Projekte im Modul'
             },
             {
                 type: 'paragraph',
-                text: `Alongside Salad Ninja, we worked on additional animation exercises exploring different techniques and approaches.
-                        Some examples:`
+                text: `Neben Salad Ninja haben wir zusätzliche Animationsübungen durchgeführt, um verschiedene Techniken und Ansätze zu erkunden.
+                        Einige Beispiele:`
             },
             {
                 type: 'subheading',
-                text: 'Transition Animation'
+                text: 'Übergangsanimation'
             },
             {
                 type: 'video',
@@ -1811,13 +1811,13 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: `This exercise focused on creating a smooth transition between two objects.
-                        The individual animation segments of all students were then combined into a single video, creating a seamless transition chain.
-                        Here, only my part of the animation is shown, depicting the transition from a cup to a pencil.`
+                text: `Diese Übung konzentrierte sich auf die Erstellung eines nahtlosen Übergangs zwischen zwei Objekten.
+                        Die einzelnen Animationssegmente aller Studierenden wurden dann zu einem einzigen Video kombiniert, um eine durchgehende Übergangskette zu erstellen.
+                        Hier ist nur mein Teil der Animation zu sehen, der den Übergang von einer Tasse zu einem Bleistift darstellt.`
             },
             {
                 type: 'subheading',
-                text: 'Stop Motion Claymation'
+                text: 'Stop-Motion-Claymation'
             },
             {
                 type: 'video',
@@ -1825,8 +1825,8 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: `In this exercise, I tried out claymation using stop motion techniques together with Remo.
-                        We created a short video with sound of a frog emerging and catching a fly.`
+                text: `In dieser Übung haben Remo und ich Claymation mit Stop-Motion-Techniken ausprobiert.
+                        Wir haben ein kurzes Video mit Sound erstellt, in dem ein Frosch auftaucht und eine Fliege fängt.`
             }
         ],
         links: [],
@@ -1852,15 +1852,15 @@ export const projects = [
     {
         id: 'hscl',
         name: 'ux hscl',
-        description: `user experience design for school sports organization`,
+        description: `user experience design für eine schulische sportorganisation`,
         context: {
             lines: [
                 '2023 @ HSLU, Rotkreuz',
-                'Module IUX - Introduction to User Experience'
+                'Modul IUX - Einführung in User Experience'
             ],
             url: 'https://www.hslu.ch/de-ch/informatik/',
             icon: 'graduation-cap',
-            tooltip: 'school'
+            tooltip: 'schule'
         },
         categories: [
             'team',
@@ -1870,10 +1870,8 @@ export const projects = [
         sections: [
             {
                 type: 'quoted',
-                text: `This UX redesign project focused on improving the usability of the HSCL website. 
-                        Conducted through extensive user research, prototyping, and testing, the project aimed to optimize navigation, 
-                        structure, and personalization for a better user experience. Created by Üx-Grüp (Yanis Deplazes, Jan Schwegler, 
-                        Lukas Bucher, Dominika Degtyareva, Stefan Vögeli) as part of the Introduction to UX module.`
+                text: `Dieses UX-Redesign-Projekt konzentrierte sich auf die Verbesserung der Benutzerfreundlichkeit der HSCL-Website.
+                            Durch umfangreiche Nutzerforschung, Prototyping und Tests zielte das Projekt darauf ab, Navigation, Struktur und Personalisierung für ein besseres Benutzererlebnis zu optimieren. Erstellt von Üx-Grüp (Yanis Deplazes, Jan Schwegler, Lukas Bucher, Dominika Degtyareva, Stefan Vögeli) im Rahmen des Moduls Einführung in User Experience.`
             },
             {
                 type: 'heading',
@@ -1885,190 +1883,189 @@ export const projects = [
             },
             {
                 type: 'heading',
-                text: 'Project Overview'
+                text: 'Projektübersicht'
             },
             {
                 type: 'paragraph',
-                text: `The goal of this project was to enhance the HSCL website by addressing key usability pain points. 
-                       Through a structured UX design process, the team defined user needs, created prototypes, 
-                       and refined them based on extensive user feedback.`
+                text: `Das Ziel dieses Projekts war es, die HSCL-Website zu verbessern, indem wichtige Usability-Probleme angegangen wurden.
+                           Durch einen strukturierten UX-Design-Prozess definierte das Team die Bedürfnisse der Nutzer, erstellte Prototypen und verfeinerte diese basierend auf umfangreichem Nutzerfeedback.`
             },
             {
                 type: 'heading',
-                text: 'Research & Problem Identification'
+                text: 'Forschung & Problemidentifikation'
             },
             {
                 type: 'subheading',
-                text: 'User Research Methods'
+                text: 'Nutzerforschungsmethoden'
             },
             {
                 type: 'bullet',
-                text: 'User surveys'
+                text: 'Nutzerumfragen'
             },
             {
                 type: 'bullet',
-                text: 'Empathy maps'
+                text: 'Empathiekarten'
             },
             {
                 type: 'bullet',
-                text: 'Personas (primary, secondary, and negative personas)'
+                text: 'Personas (primäre, sekundäre und negative Personas)'
             },
             {
                 type: 'bullet',
-                text: 'Direct user testing'
+                text: 'Direkte Nutzertests'
             },
             {
                 type: 'subheading',
-                text: 'Key Issues Identified'
+                text: 'Identifizierte Hauptprobleme'
             },
             {
                 type: 'bullet',
-                text: 'Inefficient filtering options'
+                text: 'Ineffiziente Filteroptionen'
             },
             {
                 type: 'bullet',
-                text: 'Confusing registration process'
+                text: 'Verwirrender Registrierungsprozess'
             },
             {
                 type: 'bullet',
-                text: 'Lack of a location-based training search'
+                text: 'Fehlende standortbasierte Trainingssuche'
             },
             {
                 type: 'bullet',
-                text: 'Content overload and poor structure'
+                text: 'Überladung von Inhalten und schlechte Struktur'
             },
             {
                 type: 'bullet',
-                text: 'Absence of multilingual support'
+                text: 'Fehlende Mehrsprachigkeitsunterstützung'
             },
             {
                 type: 'bullet',
-                text: 'Navigation inefficiencies'
+                text: 'Navigationsineffizienzen'
             },
             {
                 type: 'heading',
-                text: 'Solution Implementation'
+                text: 'Lösungsimplementierung'
             },
             {
                 type: 'subheading',
-                text: 'Prototyping Process'
+                text: 'Prototyping-Prozess'
             },
             {
                 type: 'bullet',
-                text: 'Created initial paper prototypes and tested them through hallway usability tests.'
+                text: 'Erstellung erster Papierprototypen und Tests durch Hallway-Usability-Tests.'
             },
             {
                 type: 'bullet',
-                text: 'Developed digital prototypes in Figma, iterating based on feedback.'
+                text: 'Entwicklung digitaler Prototypen in Figma, Iteration basierend auf Feedback.'
             },
             {
                 type: 'subheading',
-                text: 'Tested Solutions & Enhancements'
+                text: 'Getestete Lösungen & Verbesserungen'
             },
             {
                 type: 'bullet',
-                text: 'New search function with an integrated map view.'
+                text: 'Neue Suchfunktion mit integrierter Kartenansicht.'
             },
             {
                 type: 'bullet',
-                text: 'Streamlined filtering system, including location-based filtering.'
+                text: 'Vereinfachtes Filtersystem, einschließlich standortbasierter Filterung.'
             },
             {
                 type: 'bullet',
-                text: 'Chronological event listing.'
+                text: 'Chronologische Ereignisauflistung.'
             },
             {
                 type: 'bullet',
-                text: 'Improved homepage with direct access to key sections.'
+                text: 'Verbesserte Startseite mit direktem Zugang zu wichtigen Bereichen.'
             },
             {
                 type: 'bullet',
-                text: 'Clearer naming conventions for better navigation.'
+                text: 'Klarere Benennungskonventionen für bessere Navigation.'
             },
             {
                 type: 'bullet',
-                text: 'Optimized content layout for clarity.'
+                text: 'Optimiertes Inhaltslayout für Klarheit.'
             },
             {
                 type: 'bullet',
-                text: 'Implementation of a language switcher.'
+                text: 'Implementierung eines Sprachumschalters.'
             },
             {
                 type: 'bullet',
-                text: 'Enhanced training information structure.'
+                text: 'Verbesserte Strukturierung der Trainingsinformationen.'
             },
             {
                 type: 'bullet',
-                text: 'Personalized features such as account-based favorites.'
+                text: 'Personalisierte Funktionen wie kontobasierte Favoriten.'
             },
             {
                 type: 'heading',
-                text: 'User Testing & Insights'
+                text: 'Nutzertests & Erkenntnisse'
             },
             {
                 type: 'paragraph',
-                text: `Conducted two rounds of UX testing in real environments (HSLU campus hallways and higher semester students).`
+                text: `Durchführung von zwei Runden UX-Tests in realen Umgebungen (HSLU-Campusflure und höhere Semesterstudenten).`
             },
             {
                 type: 'subheading',
-                text: 'Key findings led to'
+                text: 'Wichtige Erkenntnisse führten zu'
             },
             {
                 type: 'bullet',
-                text: 'Emphasizing tab-based navigation.'
+                text: 'Betonung der tab-basierten Navigation.'
             },
             {
                 type: 'bullet',
-                text: 'Redesigning the login process for better usability.'
+                text: 'Neugestaltung des Login-Prozesses für bessere Benutzerfreundlichkeit.'
             },
             {
                 type: 'bullet',
-                text: 'Relocating the favorites icon to improve visibility.'
+                text: 'Verlagerung des Favoriten-Icons zur Verbesserung der Sichtbarkeit.'
             },
             {
                 type: 'bullet',
-                text: 'Adding a dark mode for a better user experience.'
+                text: 'Hinzufügen eines Dunkelmodus für ein besseres Benutzererlebnis.'
             },
             {
                 type: 'bullet',
-                text: 'Refining the date selection process.'
+                text: 'Verfeinerung des Datumauswahlprozesses.'
             },
             {
                 type: 'heading',
-                text: 'Final Outcomes'
+                text: 'Endergebnisse'
             },
             {
                 type: 'paragraph',
-                text: `The revised website prototype significantly improved user engagement and navigation efficiency. 
-                       The project provided valuable insights into real-world UX research and iterative design. 
-                       While a mobile app was suggested by users, it was deemed impractical within the given timeframe.`
+                text: `Der überarbeitete Website-Prototyp verbesserte die Benutzerbindung und Navigationseffizienz erheblich.
+                           Das Projekt lieferte wertvolle Einblicke in die reale UX-Forschung und das iterative Design.
+                           Während eine mobile App von den Nutzern vorgeschlagen wurde, wurde sie innerhalb des gegebenen Zeitrahmens als unpraktisch erachtet.`
             },
             {
                 type: 'images',
                 images: [
                     {
                         src: hsclFiles['../projects/hscl/IUX_Screens.png'].default,
-                        caption: 'Final Website Screens'
+                        caption: 'Endgültige Website-Bildschirme'
                     },
                     {
                         src: hsclFiles['../projects/hscl/IUX_Screenshots.png'].default,
-                        caption: 'Final Prototype Screenshots'
+                        caption: 'Endgültige Prototyp-Bildschirme'
                     },
                     {
                         src: hsclFiles['../projects/hscl/IUX_Figma_Design.png'].default,
-                        caption: 'Figma Design'
+                        caption: 'Figma-Design'
                     }
                 ],
             }
         ],
         links: [
             {
-                text: 'Behance Project',
+                text: 'Behance Projekt',
                 url: 'https://www.behance.net/gallery/194721225/HSCL-UX',
                 icon: 'fa-brands fa-behance'
             },
             {
-                text: 'Figma Prototype',
+                text: 'Figma Prototyp',
                 url: 'https://www.figma.com/proto/ZQ7E5M9gXRIQyZ30bm113Q/HSCL?page-id=210%3A203&node-id=351-1042&p=f&viewport=151%2C580%2C0.11&t=rBFIgp854gtlzYAE-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=351%3A1042',
                 icon: 'fa-brands fa-figma'
             }
@@ -2094,11 +2091,11 @@ export const projects = [
         context: {
             lines: [
                 '2023 @ HSLU, Rotkreuz',
-                'Module IGAME - Game Design & Engineering'
+                'Modul IGAME - Game Design & Engineering'
             ],
             url: 'https://www.hslu.ch/',
             icon: 'graduation-cap',
-            tooltip: 'school'
+            tooltip: 'schule'
         },
         categories: [
             'team',
@@ -2108,25 +2105,25 @@ export const projects = [
         sections: [
             {
                 type: 'quoted',
-                text: `Sweet Teeth was the product of our first game module. Players control a mischievous bacterium,
-                        that teleports automatically in intervals. The Goal is to rot as many teeth as possible while avoiding the evil oral hygiene products.
-                        It was created during the IGAME module by Team HDL (Chiara Tremml, Michelle Studtmann, Dario Stocker, Lukas Bucher).`
+                text: `Sweet Teeth war das Produkt unseres ersten Spielmoduls. Die Spieler steuern ein schelmisches Bakterium,
+                            das sich automatisch in Intervallen teleportiert. Das Ziel ist es, so viele Zähne wie möglich zu verrotten und dabei den bösen Mundhygieneprodukten auszuweichen.
+                            Es wurde während des IGAME-Moduls von Team HDL (Chiara Tremml, Michelle Studtmann, Dario Stocker, Lukas Bucher) erstellt.`
             },
             {
                 type: 'heading',
-                text: 'Play the Game'
+                text: 'Spiel spielen'
             },
             {
                 type: 'buttons',
                 buttons: [
                     {
-                        text: 'Play in Browser',
+                        text: 'Im Browser spielen',
                         action: 'https://itch.io/embed-upload/9224978?color=FA98E0',
                         icon: 'play',
                         color: 'primary'
                     },
                     {
-                        text: 'Download',
+                        text: 'Herunterladen',
                         action: '',
                         icon: 'circle-arrow-down',
                         color: 'secondary'
@@ -2135,148 +2132,148 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: `The game can be played in the browser or downloaded for Windows. To play the game locally, 
-                        download the zip file, extract it, and run <span class="snippet">IGAME_HDL.exe</span>.`
+                text: `Das Spiel kann im Browser gespielt oder für Windows heruntergeladen werden. Um das Spiel lokal zu spielen,
+                            laden Sie die Zip-Datei herunter, entpacken Sie sie und führen Sie <span class="snippet">IGAME_HDL.exe</span> aus.`
             },
             {
                 type: 'heading',
-                text: 'Project Description'
+                text: 'Projektbeschreibung'
             },
             {
                 type: 'paragraph',
-                text: `In Sweet Teeth players take on the role of an adventurous bacterium with a teleportation power, 
-                        trying to rot as many teeth as possible. Set inside a mouth, 
-                        the game challenges players to avoid obstacles and survive from a furious toothbrush chasing them.`
+                text: `In Sweet Teeth übernehmen die Spieler die Rolle eines abenteuerlustigen Bakteriums mit einer Teleportationskraft,
+                            das versucht, so viele Zähne wie möglich zu verrotten. Das Spiel spielt sich in einem Mund ab,
+                            und die Spieler müssen Hindernissen ausweichen und vor einer wütenden Zahnbürste fliehen.`
             },
             {
                 type: 'subheading',
-                text: 'Gameplay Mechanics'
+                text: 'Spielmechaniken'
             },
             {
                 type: 'bullet',
-                text: `Teleportation: This is the main mechanic our team was assigned to implement.
-                        The bacterium automatically teleports every 1.5 seconds within a radius 
-                        controlled by the player's mouse movement. Mastering this mechanic is key to survival and success.`
+                text: `Teleportation: Dies ist die Hauptmechanik, die unser Team implementieren sollte.
+                            Das Bakterium teleportiert sich automatisch alle 1,5 Sekunden innerhalb eines Radius,
+                            der durch die Mausbewegung des Spielers gesteuert wird. Das Beherrschen dieser Mechanik ist der Schlüssel zum Überleben und Erfolg.`
             },
             {
                 type: 'bullet',
-                text: 'Obstacles: Players must avoid deadly toothbrush, mouthwash, and toothpaste while navigating the rows of teeth.'
+                text: 'Hindernisse: Die Spieler müssen tödlichen Zahnbürsten, Mundwasser und Zahnpasta ausweichen, während sie die Zahnreihen navigieren.'
             },
             {
                 type: 'bullet',
-                text: `Power-Up: Collect enough candies to activate the "Super Rot" ability, 
-                        instantly rotting all teeth within the teleportation radius for a limited time.`
+                text: `Power-Up: Sammeln Sie genügend Süßigkeiten, um die "Super Rot"-Fähigkeit zu aktivieren,
+                            die alle Zähne innerhalb des Teleportationsradius für eine begrenzte Zeit sofort verrottet.`
             },
             {
                 type: 'bullet',
-                text: `Score System: Players earn points by rotting teeth and can track their score with the in-game counter.
-                        Try setting a new high score!`
+                text: `Punktesystem: Die Spieler verdienen Punkte, indem sie Zähne verrotten, und können ihre Punktzahl mit dem In-Game-Zähler verfolgen.
+                            Versuchen Sie, eine neue Höchstpunktzahl zu erreichen!`
             },
             {
                 type: 'bullet',
-                text: 'Win Condition: The game concludes at the finish line, where players see their score and can restart the game.'
+                text: 'Gewinnbedingung: Das Spiel endet an der Ziellinie, wo die Spieler ihre Punktzahl sehen und das Spiel neu starten können.'
             },
             {
                 type: 'subheading',
-                text: 'Art Style'
+                text: 'Kunststil'
             },
             {
                 type: 'paragraph',
-                text: `The game features a colorful comic-style aesthetic. The main character is a green bacterium, 
-                        and the environment includes pink and blue vein textures as well as rows of teeth that turn black when decayed.`
+                text: `Das Spiel zeichnet sich durch eine farbenfrohe Comic-Ästhetik aus. Der Hauptcharakter ist ein grünes Bakterium,
+                            und die Umgebung umfasst rosa und blaue Adertexturen sowie Zahnreihen, die schwarz werden, wenn sie verrottet sind.`
             },
             {
                 type: 'paragraph',
-                text: `Enemies like toothpaste and mouthwash feature blue tones, contrasting against the colorful collectable candies.`
+                text: `Feinde wie Zahnpasta und Mundwasser haben blaue Töne, die im Kontrast zu den bunten sammelbaren Süßigkeiten stehen.`
             },
             {
                 type: 'paragraph',
-                text: `All sprites were hand-drawn in Adobe Illustrator, emphasizing bold outlines and highlights.`
+                text: `Alle Sprites wurden von Hand in Adobe Illustrator gezeichnet, wobei die Betonung auf kräftigen Umrissen und Highlights lag.`
             },
             {
                 type: 'subheading',
-                text: 'Development Process'
+                text: 'Entwicklungsprozess'
             },
             {
                 type: 'paragraph',
-                text: `When developing the initial concept, the team brainstormed and prototyped the teleportation mechanic, 
-                        focusing on simplicity and fun.`
+                text: `Bei der Entwicklung des ersten Konzepts brainstormte das Team und prototypisierte die Teleportationsmechanik,
+                            wobei der Fokus auf Einfachheit und Spaß lag.`
             },
             {
                 type: 'paragraph',
-                text: `Regular testing and feedback refined the gameplay loop, balancing the difficulty and pacing of the game.
-                        Iterative development allowed for continuous improvement and polish.`
+                text: `Regelmäßige Tests und Feedback verfeinerten die Gameplay-Schleife, um die Schwierigkeit und das Tempo des Spiels auszugleichen.
+                            Iterative Entwicklung ermöglichte kontinuierliche Verbesserung und Politur.`
             },
             {
                 type: 'paragraph',
-                text: `Custom sounds were added for teleportation, candy collection, and win/lose conditions.`
+                text: `Benutzerdefinierte Sounds wurden für Teleportation, Süßigkeitensammlung und Gewinn-/Verlustbedingungen hinzugefügt.`
             },
             {
                 type: 'subheading',
-                text: 'Team Roles'
+                text: 'Teamrollen'
             },
             {
                 type: 'iconed',
-                text: 'Team HDL (all team members)',
+                text: 'Team HDL (alle Teammitglieder)',
                 icon: 'users'
             },
             {
                 type: 'bullet',
-                text: 'Conceptualized the game idea and mechanics'
+                text: 'Konzeptualisierung der Spielidee und Mechaniken'
             },
             {
                 type: 'bullet',
-                text: 'Discussed and iterated on the game design and art style'
+                text: 'Diskussion und Iteration des Spieldesigns und Kunststils'
             },
             {
                 type: 'bullet',
-                text: 'Wrote DevDiary entries to document the development process'
+                text: 'Schreiben von DevDiary-Einträgen zur Dokumentation des Entwicklungsprozesses'
             },
             {
                 type: 'iconed',
-                text: 'Designers (Chiara & Michelle)',
+                text: 'Designer (Chiara & Michelle)',
                 icon: 'pen-nib'
             },
             {
                 type: 'bullet',
-                text: 'Established the art style and user interface design'
+                text: 'Festlegung des Kunststils und des Designs der Benutzeroberfläche'
             },
             {
                 type: 'bullet',
-                text: 'Hand-drew all sprites and backgrounds'
+                text: 'Handzeichnung aller Sprites und Hintergründe'
             },
             {
                 type: 'bullet',
-                text: 'Designed the game\'s visual identity'
+                text: 'Design der visuellen Identität des Spiels'
             },
             {
                 type: 'iconed',
-                text: 'Programmers (Lukas & Dario)',
+                text: 'Programmierer (Lukas & Dario)',
                 icon: 'code'
             },
             {
                 type: 'bullet',
-                text: 'Created an engaging level design'
+                text: 'Erstellung eines ansprechenden Leveldesigns'
             },
             {
                 type: 'bullet',
-                text: 'Developed the game mechanics and interactions'
+                text: 'Entwicklung der Spielmechaniken und Interaktionen'
             },
             {
                 type: 'bullet',
-                text: 'Implemented asset integration and sound effects'
+                text: 'Implementierung der Asset-Integration und Soundeffekte'
             },
             {
                 type: 'subheading',
-                text: 'Challenges'
+                text: 'Herausforderungen'
             },
             {
                 type: 'bullet',
-                text: 'Balancing teleportation mechanics to ensure intuitive and responsive gameplay.'
+                text: 'Ausbalancieren der Teleportationsmechanik, um ein intuitives und reaktionsschnelles Gameplay zu gewährleisten.'
             },
             {
                 type: 'bullet',
-                text: 'Designing a visually cohesive world within strict sprite limitations (10 sprites, 3 animations per sprite).'
+                text: 'Entwurf einer visuell kohärenten Welt innerhalb strenger Sprite-Beschränkungen (10 Sprites, 3 Animationen pro Sprite).'
             },
             {
                 type: 'heading',
@@ -2287,7 +2284,7 @@ export const projects = [
                 images: [
                     {
                         src: sweetFiles['../projects/sweet/SweetTeeth_Start.png'].default,
-                        caption: 'Start Screen'
+                        caption: 'Startbildschirm'
                     },
                     {
                         src: sweetFiles['../projects/sweet/SweetTeeth_Super.png'].default,
@@ -2295,11 +2292,11 @@ export const projects = [
                     },
                     {
                         src: sweetFiles['../projects/sweet/SweetTeeth_Oops.png'].default,
-                        caption: 'Game Over Screen'
+                        caption: 'Game Over Bildschirm'
                     },
                     {
                         src: sweetFiles['../projects/sweet/SweetTeeth_WellDone.png'].default,
-                        caption: 'Win Screen'
+                        caption: 'Gewonnen Bildschirm'
                     }
                 ],
             }
@@ -2311,7 +2308,7 @@ export const projects = [
                 icon: 'fa-brands fa-github-alt'
             },
             {
-                text: 'itch.io Page',
+                text: 'itch.io Seite',
                 url: 'https://jfladas.itch.io/sweet-teeth',
                 icon: 'fa-brands fa-itch-io'
             },
@@ -2321,7 +2318,7 @@ export const projects = [
                 icon: 'fa-brands fa-youtube'
             },
             {
-                text: 'Dev Blog Entries',
+                text: 'Dev Blog Einträge',
                 url: 'https://blog.hslu.ch/games/?s=HDL+Week',
                 icon: 'external-link-alt'
             }
@@ -2333,17 +2330,17 @@ export const projects = [
                 icon: 'file-archive'
             },
             {
-                text: 'Description.pdf',
+                text: 'Beschreibung.pdf',
                 url: sweetFiles['../projects/sweet/SweetTeeth_Description.pdf'].default,
                 icon: 'file-pdf'
             },
             {
-                text: 'ControlScheme.pdf',
+                text: 'Steuerungsschema.pdf',
                 url: sweetFiles['../projects/sweet/SweetTeeth_ControlScheme.pdf'].default,
                 icon: 'file-pdf'
             },
             {
-                text: 'Presentation.pdf',
+                text: 'Präsentation.pdf',
                 url: sweetFiles['../projects/sweet/SweetTeeth_Presentation.pdf'].default,
                 icon: 'file-pdf'
             }
@@ -2353,15 +2350,15 @@ export const projects = [
     {
         id: 'rodina',
         name: 'the rodina',
-        description: `3d rendered video inspired by the rodina's visual style`,
+        description: `3d gerendertes Video inspiriert vom visuellen Stil von The Rodina`,
         context: {
             lines: [
                 '2023 @ HSLU, Rotkreuz',
-                'Module KIVIS - Kickstart Visual Design'
+                'Modul KIVIS - Kickstart Visual Design'
             ],
             url: 'https://www.hslu.ch/',
             icon: 'graduation-cap',
-            tooltip: 'school'
+            tooltip: 'schule'
         },
         categories: [
             'solo',
@@ -2372,12 +2369,12 @@ export const projects = [
         sections: [
             {
                 type: 'quoted',
-                text: `In the Kickstart Visual Design course, we were taught design fundamentals and principles.
-                        We learned about many influential designers and design studios, one of which we were tasked to focus on for a presentation and final project.
-                        The final project I developed is inpired by the distinct visual style of the dutch design studio 'The Rodina'.
-
-                        For animating and editing a scanned 3D modeling of my head I used Cinema 4D, video editing, sound design and color correction was done in Adobe Premiere Pro.
-                        The project integrates feedback and experimentation to achieve a polished visual result.`
+                text: `Im Kickstart Visual Design Kurs wurden uns die Grundlagen und Prinzipien des Designs beigebracht.
+                            Wir lernten viele einflussreiche Designer und Designstudios kennen, von denen wir uns eines für eine Präsentation und ein Abschlussprojekt aussuchen mussten.
+                            Das Abschlussprojekt, das ich entwickelt habe, ist inspiriert vom unverwechselbaren visuellen Stil des niederländischen Designstudios 'The Rodina'.
+    
+                            Für die Animation und Bearbeitung eines gescannten 3D-Modells meines Kopfes habe ich Cinema 4D verwendet, die Videobearbeitung, das Sounddesign und die Farbkorrektur wurden in Adobe Premiere Pro durchgeführt.
+                            Das Projekt integriert Feedback und Experimente, um ein poliertes visuelles Ergebnis zu erzielen.`
             },
             {
                 type: 'heading',
@@ -2389,18 +2386,18 @@ export const projects = [
             },
             {
                 type: 'heading',
-                text: 'Process'
+                text: 'Prozess'
             },
             {
                 type: 'iconed',
-                text: 'Conceptualization',
+                text: 'Konzeptualisierung',
                 icon: '1'
             },
             {
                 type: 'paragraph',
-                text: `The project was inspired primarily by two works of The Rodina. 
-                        The idea was to scan my head and design a piece that reflects their aesthetic style, 
-                        incorporating vibrant visuals and motion.`
+                text: `Das Projekt wurde hauptsächlich von zwei Werken von The Rodina inspiriert.
+                            Die Idee war, meinen Kopf zu scannen und ein Stück zu entwerfen, das ihren ästhetischen Stil widerspiegelt,
+                            indem lebendige Visuals und Bewegung integriert werden.`
             },
             {
                 type: 'images',
@@ -2417,21 +2414,21 @@ export const projects = [
             },
             {
                 type: 'iconed',
-                text: 'Initial 3D Scan',
+                text: 'Erster 3D-Scan',
                 icon: '2'
             },
             {
                 type: 'paragraph',
-                text: `A 3D scan of my head was taken as the base, using the mobile app Polycam. 
-                        This raw scan was refined in Cinema4D, including modifications such as 
-                        distorting the eye area for an abstract effect.`
+                text: `Ein 3D-Scan meines Kopfes wurde als Basis mit der mobilen App Polycam erstellt.
+                            Dieser Rohscan wurde in Cinema4D verfeinert, einschließlich Modifikationen wie
+                            der Verzerrung des Augenbereichs für einen abstrakten Effekt.`
             },
             {
                 type: 'images',
                 images: [
                     {
                         src: rodinaFiles['../projects/rodina/scans.gif'].default,
-                        caption: 'Raw Scan & Edit'
+                        caption: 'Rohscan & Bearbeitung'
                     },
                     {
                         src: rodinaFiles['../projects/rodina/scan_c4d.jpg'].default,
@@ -2441,24 +2438,24 @@ export const projects = [
             },
             {
                 type: 'iconed',
-                text: 'Visual Variations',
+                text: 'Visuelle Variationen',
                 icon: '3'
             },
             {
                 type: 'paragraph',
-                text: `I experimented with static poster designs and animated video concepts. 
-                        In the end, I settled on the latter for a more dynamic presentation.`
+                text: `Ich experimentierte mit statischen Posterdesigns und animierten Videokonzepten.
+                            Am Ende entschied ich mich für Letzteres für eine dynamischere Präsentation.`
             },
             {
                 type: 'images',
                 images: [
                     {
                         src: rodinaFiles['../projects/rodina/variant1.jpg'].default,
-                        caption: 'Poster Variant 1'
+                        caption: 'Poster Variante 1'
                     },
                     {
                         src: rodinaFiles['../projects/rodina/variant2.jpg'].default,
-                        caption: 'Poster Variant 2'
+                        caption: 'Poster Variante 2'
                     }
                 ]
             },
@@ -2469,11 +2466,11 @@ export const projects = [
             },
             {
                 type: 'paragraph',
-                text: `Some feedback I got in the first round was, that the colors were too bright, and the head rotation too fast.`
+                text: `Einige Rückmeldungen, die ich in der ersten Runde erhielt, waren, dass die Farben zu hell und die Kopfrotation zu schnell waren.`
             },
             {
                 type: 'subheading',
-                text: 'First Version'
+                text: 'Erste Version'
             },
             {
                 type: 'video',
@@ -2486,49 +2483,49 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Adjusted colors for better balance & refined animation to slow down the rotation'
+                text: 'Farben für bessere Balance angepasst & Animation verfeinert, um die Rotation zu verlangsamen'
             },
             {
                 type: 'bullet',
-                text: 'Played with object placement, shadows and text design'
+                text: 'Mit Objektplatzierung, Schatten und Textdesign gespielt'
             },
             {
                 type: 'bullet',
-                text: 'Integrated audio to enhance the final video'
+                text: 'Audio integriert, um das endgültige Video zu verbessern'
             },
             {
                 type: 'bullet',
-                text: 'A total of 8 iterations resulted in the final video.'
+                text: 'Insgesamt 8 Iterationen führten zum endgültigen Video.'
             },
             {
                 type: 'iconed',
-                text: 'Final Result',
+                text: 'Endergebnis',
                 icon: '6'
             },
             {
                 type: 'paragraph',
-                text: `The final animation combines the best elements of previous iterations, 
-                        blending balanced colors, smooth animations, and thoughtful object placement. 
-                        It reflects The Rodina's essence while incorporating unique personal elements.`
+                text: `Die endgültige Animation kombiniert die besten Elemente der vorherigen Iterationen,
+                            indem ausgewogene Farben, flüssige Animationen und durchdachte Objektplatzierung miteinander verschmelzen.
+                            Es reflektiert das Wesen von The Rodina und integriert gleichzeitig einzigartige persönliche Elemente.`
             },
             {
                 type: 'heading',
-                text: 'Presentation'
+                text: 'Präsentation'
             },
             {
                 type: 'paragraph',
-                text: `Prior to the final project, a short presentation was held to introduce The Rodina and their work. 
-                        It can be found under the downloads section.`
+                text: `Vor dem Abschlussprojekt wurde eine kurze Präsentation gehalten, um The Rodina und ihre Arbeit vorzustellen.
+                            Sie kann im Download-Bereich gefunden werden.`
             },
             {
                 type: 'heading',
-                text: 'Further Work'
+                text: 'Weitere Arbeiten'
             },
             {
                 type: 'paragraph',
-                text: `Throughout the Kickstart Visual Design module, we did various other exercises and projects.
-                        With these, we explored typography, color theory, and visual hierarchy, among other topics.
-                        A documentation of the module with my work can be found under the downloads section.`
+                text: `Im Laufe des Kickstart Visual Design Moduls haben wir verschiedene andere Übungen und Projekte durchgeführt.
+                            Mit diesen haben wir Typografie, Farbtheorie und visuelle Hierarchie unter anderem erkundet.
+                            Eine Dokumentation des Moduls mit meinen Arbeiten kann im Download-Bereich gefunden werden.`
             }
         ],
         links: [
@@ -2560,15 +2557,15 @@ export const projects = [
     {
         id: 'solarsystem',
         name: 'solarsystem',
-        description: `3d rendered asteroid video`,
+        description: `3d gerendertes Asteroiden-Video`,
         context: {
             lines: [
                 '2023 @ HSLU, Rotkreuz',
-                'Module 4DAUT - Cinema 4D Authoring'
+                'Modul 4DAUT - Cinema 4D Authoring'
             ],
             url: 'https://www.hslu.ch/',
             icon: 'graduation-cap',
-            tooltip: 'school'
+            tooltip: 'schule'
         },
         categories: [
             'team',
@@ -2578,11 +2575,11 @@ export const projects = [
         sections: [
             {
                 type: 'quoted',
-                text: `This was my first encounter with 3D design and rendering. 
-                        As a final project we were tasked to create a video, applying everything we learned within the course.
-                        We decided to animate an asteroid soaring past the planets of our solar system, 
-                        ending in a dramatic collision with Earth. It was created using Cinema 4D with Chaos Corona.
-                        The project was executed as a team effort between myself and Silvan Parodi.`
+                text: `Dies war meine erste Begegnung mit 3D-Design und Rendering.
+                            Als Abschlussprojekt wurden wir beauftragt, ein Video zu erstellen, in dem wir alles anwenden, was wir im Kurs gelernt haben.
+                            Wir entschieden uns, einen Asteroiden zu animieren, der an den Planeten unseres Sonnensystems vorbeifliegt
+                            und in einer dramatischen Kollision mit der Erde endet. Es wurde mit Cinema 4D und Chaos Corona erstellt.
+                            Das Projekt wurde als Teamarbeit zwischen mir und Silvan Parodi ausgeführt.`
             },
             {
                 type: 'heading',
@@ -2594,43 +2591,43 @@ export const projects = [
             },
             {
                 type: 'heading',
-                text: 'Other Renders'
+                text: 'Weitere Renderings'
             },
             {
                 type: 'paragraph',
-                text: 'Through the C4D Authoring module, some renders were created as part of the learning process. Here are a few examples:'
+                text: 'Im Rahmen des C4D Authoring Moduls wurden einige Renderings als Teil des Lernprozesses erstellt. Hier sind einige Beispiele:'
             },
             {
                 type: 'subheading',
-                text: 'Homework 1: Chaos'
+                text: 'Hausaufgabe 1: Chaos'
             },
             {
                 type: 'bullet',
-                text: 'A chaotic yet aesthetic assembly of shapes and objects'
+                text: 'Eine chaotische, aber ästhetische Anordnung von Formen und Objekten'
             },
             {
                 type: 'bullet',
-                text: 'render emphasizes randomness and texture experimentation'
+                text: 'Das Rendering betont Zufälligkeit und Textur-Experimente'
             },
             {
                 type: 'subheading',
-                text: 'Homework 2: Vodka Bottle'
+                text: 'Hausaufgabe 2: Wodkaflasche'
             },
             {
                 type: 'bullet',
-                text: 'Three variants of vodka bottles with unique, self-designed labels'
+                text: 'Drei Varianten von Wodkaflaschen mit einzigartigen, selbst gestalteten Etiketten'
             },
             {
                 type: 'bullet',
-                text: 'Bottle and glass 3D assets imported from Cinema 4D library'
+                text: 'Flaschen- und Glas-3D-Assets aus der Cinema 4D-Bibliothek importiert'
             },
             {
                 type: 'bullet',
-                text: 'Composition & ice cubes and lime created from scratch'
+                text: 'Komposition & Eiswürfel und Limette von Grund auf neu erstellt'
             },
             {
                 type: 'heading',
-                text: 'Pictures'
+                text: 'Bilder'
             },
             {
                 type: 'images',
@@ -2641,27 +2638,27 @@ export const projects = [
                     },
                     {
                         src: solarsystemFiles['../projects/solarsystem/2_label_classic.jpg'].default,
-                        caption: 'Label: Classic'
+                        caption: 'Etikett: Klassisch'
                     },
                     {
                         src: solarsystemFiles['../projects/solarsystem/2_vodka_classic.jpg'].default,
-                        caption: 'Vodka Bottle: Classic'
+                        caption: 'Wodkaflasche: Klassisch'
                     },
                     {
                         src: solarsystemFiles['../projects/solarsystem/2_label_limemint.jpg'].default,
-                        caption: 'Label: Lime Mint'
+                        caption: 'Etikett: Limette Minze'
                     },
                     {
                         src: solarsystemFiles['../projects/solarsystem/2_vodka_limemint.jpg'].default,
-                        caption: 'Vodka Bottle: Lime Mint'
+                        caption: 'Wodkaflasche: Limette Minze'
                     },
                     {
                         src: solarsystemFiles['../projects/solarsystem/2_label_strawberry.jpg'].default,
-                        caption: 'Label: Strawberry'
+                        caption: 'Etikett: Erdbeere'
                     },
                     {
                         src: solarsystemFiles['../projects/solarsystem/2_vodka_strawberry.jpg'].default,
-                        caption: 'Vodka Bottle: Strawberry'
+                        caption: 'Wodkaflasche: Erdbeere'
                     },
                 ],
             },
@@ -2699,15 +2696,15 @@ export const projects = [
     {
         id: 'pa',
         name: 'google chrome extension',
-        description: 'internal organization structure & employee information',
+        description: 'interne Organisationsstruktur & Mitarbeiterinformationen',
         context: {
             lines: [
-                '2022 @ Suva, Lucerne',
-                'QV PA - final practical project of software developer apprenticeship'
+                '2022 @ Suva, Luzern',
+                'QV PA - Abschlussprojekt der Informatiker-Lehre'
             ],
             url: 'https://www.suva.ch/',
             icon: 'briefcase',
-            tooltip: 'work'
+            tooltip: 'arbeit'
         },
         categories: [
             'solo',
@@ -2735,242 +2732,229 @@ export const projects = [
         sections: [
             {
                 type: 'quoted',
-                text: `This project aimed to explore the potential of browser-based solutions for internal organizational tools 
-                        by creating a functional Chrome extension. It represents Suva's SAFe team structures and offers easy access 
-                        to hierarchical data, catering to both administrative and operational needs.`
+                text: `Dieses Projekt zielte darauf ab, das Potenzial von browserbasierten Lösungen für interne Organisationstools zu erkunden,
+                            indem eine funktionale Chrome-Erweiterung erstellt wurde. Sie repräsentiert die SAFe-Teamstrukturen von Suva und bietet einfachen Zugang
+                            zu hierarchischen Daten, die sowohl administrative als auch operative Bedürfnisse abdecken.`
             },
             {
                 type: 'heading',
-                text: 'Pictures'
+                text: 'Bilder'
             },
             {
                 type: 'images',
                 images: [
                     {
                         src: paFiles['../projects/pa/pa_big_picture.png'].default,
-                        caption: 'Project Structure (Big Picture)'
+                        caption: 'Projektstruktur (Big Picture)'
                     },
                     {
                         src: paFiles['../projects/pa/pa_gui_home.png'].default,
-                        caption: 'Main Page with additional Info-Apps'
+                        caption: 'Hauptseite mit zusätzlichen Info-Apps'
                     },
                     {
                         src: paFiles['../projects/pa/pa_gui_safe.png'].default,
-                        caption: 'Hierarchical & Detail View'
+                        caption: 'Hierarchische & Detailansicht'
                     },
                     {
                         src: paFiles['../projects/pa/pa_gui_options.png'].default,
-                        caption: 'Options Page'
+                        caption: 'Optionsseite'
                     },
                     {
                         src: paFiles['../projects/pa/pa_gui_dark.png'].default,
-                        caption: 'Dark Mode'
+                        caption: 'Dunkelmodus'
                     },
                     {
                         src: paFiles['../projects/pa/pa_gui_safe_dark.png'].default,
-                        caption: 'Hierarchical & Detail View in Dark Mode'
+                        caption: 'Hierarchische & Detailansicht im Dunkelmodus'
                     }
                 ],
             },
             {
                 type: 'heading',
-                text: 'Project Description'
+                text: 'Projektbeschreibung'
             },
             {
                 type: 'subheading',
-                text: 'Objectives'
+                text: 'Ziele'
             },
             {
                 type: 'bullet',
-                text: 'Develop a modular framework for the Chrome extension'
+                text: 'Entwicklung eines modularen Frameworks für die Chrome-Erweiterung'
             },
             {
                 type: 'bullet',
-                text: 'Create a main page listing available modules ("Info-Apps")'
+                text: 'Erstellung einer Hauptseite, die verfügbare Module ("Info-Apps") auflistet'
             },
             {
                 type: 'bullet',
-                text: 'Implement the "Suva SAFe" app as the first module'
+                text: 'Implementierung der "Suva SAFe"-App als erstes Modul'
             },
             {
                 type: 'bullet',
-                text: 'Provide hierarchical navigation within the "Suva SAFe" app'
+                text: 'Bereitstellung einer hierarchischen Navigation innerhalb der "Suva SAFe"-App'
             },
             {
                 type: 'bullet',
-                text: 'Add user personalization options such as dark/light themes'
+                text: 'Hinzufügen von Benutzeranpassungsoptionen wie Dunkel-/Hellmodus'
             },
             {
                 type: 'subheading',
-                text: 'Features'
+                text: 'Funktionen'
             },
             {
                 type: 'iconed',
-                text: 'Main Page',
+                text: 'Hauptseite',
                 icon: 'home'
             },
             {
                 type: 'bullet',
-                text: 'Lists available modules, starting with the "Suva SAFe" Info-App'
+                text: 'Listet verfügbare Module auf, beginnend mit der "Suva SAFe"-Info-App'
             },
             {
                 type: 'iconed',
-                text: 'Hierarchical View',
+                text: 'Hierarchische Ansicht',
                 icon: 'sitemap'
             },
             {
                 type: 'bullet',
-                text: 'Displays SAFe ARTs (Agile Release Trains), Products, Teams, and individual team members in a collapsible tree format'
+                text: 'Zeigt SAFe ARTs (Agile Release Trains), Produkte, Teams und einzelne Teammitglieder in einem aufklappbaren Baumformat an'
             },
             {
                 type: 'iconed',
-                text: 'Detail View',
+                text: 'Detailansicht',
                 icon: 'magnifying-glass'
             },
             {
                 type: 'bullet',
-                text: 'Provides role-specific information, such as emails, phone numbers, and descriptions, with interactive links for actionable insights'
+                text: 'Bietet rollenbezogene Informationen wie E-Mails, Telefonnummern und Beschreibungen mit interaktiven Links für umsetzbare Einblicke'
             },
             {
                 type: 'iconed',
-                text: 'Customization',
+                text: 'Anpassung',
                 icon: 'paint-brush'
             },
             {
                 type: 'bullet',
-                text: 'Allows users to toggle between dark and light modes'
+                text: 'Ermöglicht Benutzern das Umschalten zwischen Dunkel- und Hellmodus'
             },
             {
                 type: 'subheading',
-                text: 'Methodology'
+                text: 'Methodik'
             },
             {
                 type: 'paragraph',
-                text: 'The project followed the IPERKA method (Inform, Plan, Decide, Execute, Control, Evaluate):'
+                text: 'Das Projekt folgte der IPERKA-Methode (Informieren, Planen, Entscheiden, Realisieren, Kontrollieren, Auswerten):'
             },
             {
                 type: 'iconed',
-                text: 'Inform',
+                text: 'Informieren',
                 icon: 'i'
             },
             {
                 type: 'bullet',
-                text: 'Research on Chrome Extension API and RESTful data integration'
+                text: 'Recherche zur Chrome Extension API und RESTful-Datenintegration'
             },
             {
                 type: 'iconed',
-                text: 'Plan',
+                text: 'Planen',
                 icon: 'p'
             },
             {
                 type: 'bullet',
-                text: 'Define milestones and use user stories to prioritize functionalities'
+                text: 'Definition von Meilensteinen und Nutzung von User Stories zur Priorisierung von Funktionen'
             },
             {
                 type: 'iconed',
-                text: 'Decide',
+                text: 'Entscheiden',
                 icon: 'e'
             },
             {
                 type: 'bullet',
-                text: 'Evaluate and finalize the requirements for the application to meet project goals'
+                text: 'Bewertung und Finalisierung der Anforderungen an die Anwendung zur Erreichung der Projektziele'
             },
             {
                 type: 'iconed',
-                text: 'Execute',
+                text: 'Realisieren',
                 icon: 'r'
             },
             {
                 type: 'bullet',
-                text: 'Implement features iteratively, focusing on modularity and user experience'
+                text: 'Iterative Implementierung von Funktionen mit Fokus auf Modularität und Benutzerfreundlichkeit'
             },
             {
                 type: 'iconed',
-                text: 'Control',
+                text: 'Kontrollieren',
                 icon: 'k'
             },
             {
                 type: 'bullet',
-                text: 'Test against user story acceptance criteria'
+                text: 'Testen gegen die Akzeptanzkriterien der User Stories'
             },
             {
                 type: 'iconed',
-                text: 'Evaluate',
+                text: 'Auswerten',
                 icon: 'a'
             },
             {
                 type: 'bullet',
-                text: 'Document outcomes and lessons learned'
+                text: 'Dokumentation der Ergebnisse und Erkenntnisse'
             },
             {
                 type: 'subheading',
-                text: 'Key Achievements'
+                text: 'Wichtige Erfolge'
             },
             {
                 type: 'bullet',
-                text: 'Successfully integrated REST APIs to fetch organizational data'
+                text: 'Erfolgreiche Integration von REST-APIs zur Abrufung von Organisationsdaten'
             },
             {
                 type: 'bullet',
-                text: 'Combined two different REST APIs to ensure complete employee data coverage'
+                text: 'Kombination von zwei verschiedenen REST-APIs zur Sicherstellung vollständiger Mitarbeiterdaten'
             },
             {
                 type: 'bullet',
-                text: 'Built a dynamic, hierarchical structure that supports effortless navigation'
+                text: 'Erstellung einer dynamischen, hierarchischen Struktur, die eine mühelose Navigation unterstützt'
             },
             {
                 type: 'bullet',
-                text: 'Implemented a user-friendly interface with a focus on simplicity and adaptability'
+                text: 'Implementierung einer benutzerfreundlichen Oberfläche mit Fokus auf Einfachheit und Anpassungsfähigkeit'
             },
             {
                 type: 'bullet',
-                text: 'Delivered thorough documentation covering installation, testing, and technical details'
+                text: 'Bereitstellung einer umfassenden Dokumentation, die Installation, Tests und technische Details abdeckt'
             },
             {
                 type: 'subheading',
-                text: 'Conclusion'
+                text: 'Fazit'
             },
             {
                 type: 'paragraph',
-                text: 'This project showcases the viability of browser extensions as an internal organizational tool, providing a scalable and accessible platform for team and member information. It also serves as a foundation for future modules and functionalities.'
+                text: 'Dieses Projekt zeigt die Machbarkeit von Browser-Erweiterungen als internes Organisationstool und bietet eine skalierbare und zugängliche Plattform für Team- und Mitarbeiterinformationen. Es dient auch als Grundlage für zukünftige Module und Funktionen.'
             }
         ]
     }
 ]
 
-export const categories = {
-    'solo': 'user',
-    'team': 'users',
-    'coding': 'code',
-    'design': 'pen-nib',
-    'web': 'globe',
-    'game': 'gamepad',
-    'ux': 'circle-user',
-    'story': 'scroll',
-    '3d': 'dice-d6',
-    'video': 'video'
-};
-
-export const aboutContent = {
+export const ueberContent = {
     title: "Lukas Bucher",
     sections: [
         {
             type: 'heading',
-            text: 'Hi there!'
+            text: 'Hallo zusammen!'
         },
         {
             type: 'quoted',
-            text: `I'm currently studying <a href="https://www.hslu.ch/en/lucerne-school-of-information-technology/degree-programs/bachelor/digital-ideation/" class="bold hoverable" target="_blank">Digital Ideation</a> at the Lucerne University of Applied Sciences and Arts, an interdisciplinary program combining design and computer science to create digital solutions. I love exploring all of the possibilities of how technology and creativity can be combined. My focus mainly lies in web development, but other aspects I can explore with my studies also intrigue me, ranging from game design & development to digital art. After I've attained my bachelor of science, I aim to work in the field of frontend web development, creating unique and interactive user experiences. But who knows what the future may hold?`
+            text: `Ich studiere derzeit <a href="https://www.hslu.ch/en/lucerne-school-of-information-technology/degree-programs/bachelor/digital-ideation/" class="bold hoverable" target="_blank">Digital Ideation</a> an der Hochschule Luzern, ein interdisziplinäres Programm, das Design und Informatik kombiniert, um digitale Lösungen zu schaffen. Ich liebe es, alle Möglichkeiten zu erkunden, wie Technologie und Kreativität kombiniert werden können. Mein Fokus liegt hauptsächlich auf der Webentwicklung, aber andere Aspekte, die ich mit meinem Studium erkunden kann, faszinieren mich ebenfalls, von Game Design & Entwicklung bis hin zu digitaler Kunst. Nachdem ich meinen Bachelor of Science erworben habe, möchte ich im Bereich Frontend-Webentwicklung arbeiten und einzigartige und interaktive Benutzererlebnisse schaffen. Aber wer weiss, was die Zukunft bringt?`
         },
         {
             type: 'heading',
-            text: 'Explore my work! Get in touch!'
+            text: 'Entdecke meine Arbeit! Kontaktiere mich!'
         },
         {
             type: 'buttons',
             buttons: [
                 {
-                    text: 'My Projects',
+                    text: 'Meine Projekte',
                     action: 'projects',
                     icon: 'rocket',
                     color: 'primary',
@@ -2986,23 +2970,23 @@ export const aboutContent = {
         },
         {
             type: 'heading',
-            text: 'More about me...'
+            text: 'Mehr über mich...'
         },
         {
             type: 'subheading',
-            text: 'Music'
+            text: 'Musik'
         },
         {
             type: 'paragraph',
-            text: `Beyond my passion for technology and design, music plays a big role in my life. I play the saxophone in the local orchestra '<a href="https://www.musikvereinbuochs.ch/" class="bold hoverable" target="_blank">Musikverein Buochs</a>', which has been an amazing way to connect with others and immerse myself in the joy of creating music. My love for music doesn't stop there. I'm also a fan of K-pop and enjoy attending concerts whenever I can.`
+            text: `Neben meiner Leidenschaft für Technologie und Design spielt Musik eine grosse Rolle in meinem Leben. Ich spiele Saxophon im lokalen Orchester '<a href="https://www.musikvereinbuochs.ch/" class="bold hoverable" target="_blank">Musikverein Buochs</a>', was eine tolle Möglichkeit war, mit anderen in Kontakt zu treten und die Freude am Musizieren zu erleben. Meine Liebe zur Musik hört hier nicht auf. Ich bin auch ein Fan von K-Pop und besuche gerne Konzerte, wann immer ich kann.`
         },
         {
             type: 'paragraph',
-            text: 'Favorite K-pop concerts attended:'
+            text: 'Lieblings-K-Pop-Konzerte, die ich besucht habe:'
         },
         {
             type: 'iconed',
-            text: 'Billlie @ Munich 2024',
+            text: 'Billlie @ München 2024',
             icon: 'spa'
         },
         {
@@ -3031,7 +3015,7 @@ export const aboutContent = {
         },
         {
             type: 'paragraph',
-            text: `Learning Japanese has been another fulfilling journey, deepening my interest in East Asian culture. Through self-study, school courses, and visiting different parts of Japan, I have developed quite an appreciation of its many facets and it has become my favorite travel destination.`
+            text: `Japanisch zu lernen war eine weitere erfüllende Reise, die mein Interesse an der ostasiatischen Kultur vertieft hat. Durch Selbststudium, Schulkurse und Besuche in verschiedenen Teilen Japans habe ich eine grosse Wertschätzung für seine vielen Facetten entwickelt, und es ist zu meinem Lieblingsreiseziel geworden.`
         },
         {
             type: 'images',
