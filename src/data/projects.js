@@ -1,5 +1,3 @@
-import { icon } from "@fortawesome/fontawesome-svg-core";
-
 const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
 const sputifyFiles = import.meta.glob('../projects/sputify/*', { eager: true });
 const ecohomeFiles = import.meta.glob('../projects/ecohome/*', { eager: true });
@@ -565,7 +563,6 @@ export const projects = [
                         We solved this by using GSAP and Lenis to create a smooth and interactive scroll experience.
                         Testing and adjusting the scroll speed and animations helped us achieve the desired effect after several iterations.`
             },
-            //TODO: add project diagram (process insights)
             {
                 type: 'heading',
                 text: 'Screenshots'
