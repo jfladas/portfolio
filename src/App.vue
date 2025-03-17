@@ -5,22 +5,20 @@
     </router-link>
     <nav>
       <router-link to="/about" class="nav-item left" :class="{ selected: $route.path === '/about' }">
-        about
+        {{ currentLanguage === 'en' ? 'about' : 'über' }}
       </router-link>
       <router-link to="/projects" class="nav-item right" :class="{ selected: $route.path.startsWith('/projects') }">
-        projects
+        {{ currentLanguage === 'en' ? 'projects' : 'projekte' }}
       </router-link>
     </nav>
   </header>
   <div class="more hoverable" :class="{ open: moreVisible }">
-    <font-awesome-icon icon="caret-left" class="more-icon tooltip" tooltip="more" @click="moreVisible = !moreVisible" />
+    <font-awesome-icon icon="caret-left" class="more-icon tooltip" :tooltip="currentLanguage === 'en' ? 'more' : 'mehr'"
+      @click="moreVisible = !moreVisible" />
     <div class="more-items">
-      <!--
-      //TODO: language change
       <div class="more-item tooltip" tooltip="en/de" @click="toggleLanguage">
         <font-awesome-icon icon="language" fixed-width />
       </div>
-      -->
       <div v-if="!isMobile" class="more-item tooltip" tooltip="cursor" @click="toggleCursor">
         <font-awesome-icon icon="arrow-pointer" fixed-width />
       </div>
@@ -39,9 +37,10 @@
   <div class="fade-out"></div>
   <footer>
     <p>
-      made with
-      <font-awesome-icon icon="heart" class="heart hoverable tooltip" tooltip="love" />
-      by jfladas
+      {{ currentLanguage === 'en' ? 'made with ' : 'gemacht mit ' }}
+      <font-awesome-icon icon="heart" class="heart hoverable tooltip"
+        :tooltip="currentLanguage === 'en' ? 'love' : 'liebe'" />
+      {{ currentLanguage === 'en' ? ' by jfladas' : ' von jfladas' }}
     </p>
     <p>
       <a href="https://github.com/jfladas/" target="_blank" class="social hoverable tooltip" tooltip="github">
@@ -63,11 +62,11 @@
     </p>
     <p>
       <router-link to="/about" class="bold hoverable">
-        about
+        {{ currentLanguage === 'en' ? 'about' : 'über' }}
       </router-link>
       <font-awesome-icon icon="minus" rotation="90" />
       <router-link to="/projects" class="bold hoverable">
-        projects
+        {{ currentLanguage === 'en' ? 'projects' : 'projekte' }}
       </router-link>
     </p>
     <br>
@@ -79,7 +78,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, onMounted, onUnmounted, watch, provide } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
 
@@ -91,8 +90,10 @@ const checkIsMobile = () => {
 }
 
 const moreVisible = ref(false)
-const isCursorVisible = ref(true)
-const currentLanguage = ref('en')
+const isCustomCursor = ref(localStorage.getItem('isCustomCursor') === 'true' || false)
+const currentLanguage = ref(localStorage.getItem('language') || 'en')
+
+provide('currentLanguage', currentLanguage)
 
 watch(() => route.path, (to, from) => {
   removeCursorHover();
@@ -173,14 +174,15 @@ const addCopyListeners = (elements) => {
 
 const toggleLanguage = () => {
   currentLanguage.value = currentLanguage.value === 'en' ? 'de' : 'en';
-  // TODO: language change
+  localStorage.setItem('language', currentLanguage.value);
   showToast(currentLanguage.value === 'en' ? 'Language set to English' : 'Sprache auf Deutsch gesetzt');
   moreVisible.value = false;
 }
 
 const toggleCursor = () => {
   removeTooltip();
-  isCursorVisible.value = !isCursorVisible.value;
+  isCustomCursor.value = !isCustomCursor.value;
+  localStorage.setItem('isCustomCursor', isCustomCursor.value);
   const existingLink = document.getElementById('cursor-style');
   if (existingLink) {
     existingLink.remove();
@@ -188,10 +190,10 @@ const toggleCursor = () => {
   const link = document.createElement('link');
   link.id = 'cursor-style';
   link.rel = 'stylesheet';
-  link.href = new URL(`/src/assets/${isCursorVisible.value ? 'custom-cursor.css' : 'default-cursor.css'}`, import.meta.url).href;
+  link.href = new URL(`/src/assets/${isCustomCursor.value ? 'custom-cursor.css' : 'default-cursor.css'}`, import.meta.url).href;
   document.head.appendChild(link);
 
-  showToast(isCursorVisible.value ? 'Custom cursor enabled' : 'Default cursor enabled');
+  showToast(isCustomCursor.value ? 'Custom cursor enabled' : 'Default cursor enabled');
   moreVisible.value = false;
 }
 
@@ -203,9 +205,6 @@ const showToast = (message) => {
   }, 100);
   setTimeout(() => {
     toast.classList.remove('visible');
-    setTimeout(() => {
-
-    }, 500);
   }, 3000);
 };
 
@@ -292,7 +291,7 @@ onMounted(() => {
   const link = document.createElement('link');
   link.id = 'cursor-style';
   link.rel = 'stylesheet';
-  link.href = new URL('/src/assets/custom-cursor.css', import.meta.url).href;
+  link.href = new URL(`/src/assets/${isCustomCursor.value ? 'custom-cursor.css' : 'default-cursor.css'}`, import.meta.url).href;
   document.head.appendChild(link);
 
   onUnmounted(() => {

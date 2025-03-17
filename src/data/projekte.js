@@ -14,15 +14,15 @@ const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 
 export const projekte = [
-    // heart across dimensions
+    // hearts across dimensions
     {
         id: 'had',
         name: 'hearts across dimensions',
-        description: 'visual novel / dating sim spiel',
+        description: 'visual novel / dating sim game',
         context: {
             lines: [
                 '2024 @ HSLU, Rotkreuz & Emmenbrücke',
-                'Modul MEN3 - Mentorate Semester 3'
+                'Modul MEN3 - Mentorat Semester 3'
             ],
             url: 'https://www.hslu.ch/',
             icon: 'graduation-cap',
@@ -30,18 +30,18 @@ export const projekte = [
         },
         categories: [
             'team',
-            'programmierung',
-            'spiel',
-            'geschichte'
+            'coding',
+            'game',
+            'story',
         ],
         sections: [
             {
                 type: 'quoted',
                 text: `Hearts across Dimensions ist ein Visual Novel-Dating-Sim, bei dem die Spieler die Geschichten von fünf einzigartigen Charakteren erkunden.
-                        Es baut auf dem vorherigen Mentorate Semester 2 Projekt von Angelika Gort auf, bei dem sie die Charakterdesigns erstellt hat.
+                        Es baut auf dem vorherigen Mentorat Semester 2 Projekt von Angelika Gort auf, bei dem sie die Charakterdesigns erstellt hat.
                         Die Demo wurde von Angelika Gort und mir unter der Mentorschaft von Zoe Röllin im Rahmen des Mentorate Semester 3 entwickelt.
                         Derzeit bietet das Spiel Charaktereinführungen, mit geplanten zukünftigen Erweiterungen.
-                        Wir werden das Spiel im Mentorate Semester 4 weiterentwickeln, mit einem Fokus auf die Erweiterung der Handlungsstränge und Charakterkunst.`
+                        Wir werden das Spiel im Mentorat Semester 4 weiterentwickeln, mit einem Fokus auf die Erweiterung von Story und Character Art.`
             },
             {
                 type: 'heading',
@@ -64,20 +64,20 @@ export const projekte = [
             },
             {
                 type: 'paragraph',
-                text: `Beachten Sie, dass das Spiel hauptsächlich für mobile/Porträt-Layout entwickelt wurde, aber auch auf Desktop und im Querformat spielbar ist.`
+                text: `Das Spiel wurde hauptsächlich für Mobile im Porträt-Layout entwickelt, ist aber auch auf Desktop und im Querformat spielbar.`
             },
             {
                 type: 'iconed',
-                text: 'Web (Mobil/Desktop)',
+                text: 'Web (Mobile/Desktop)',
                 icon: 'globe'
             },
             {
                 type: 'bullet',
-                text: 'Spielen Sie direkt im Browser, indem Sie auf der itch.io-Seite auf die Schaltfläche <span class="snippet">Spiel starten</span> klicken.'
+                text: 'Um direkt im Browser zu spielen auf der itch.io-Seite auf <span class="snippet">Spiel starten</span> klicken'
             },
             {
                 type: 'bullet',
-                text: 'Je nach Gerät oder Browserkompatibilität können Probleme auftreten.'
+                text: 'Je nach Gerät oder Browserkompatibilität können Probleme auftreten'
             },
             {
                 type: 'iconed',
@@ -86,15 +86,15 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Laden Sie den Android-Build von der itch.io-Seite herunter.'
+                text: 'Android-Build von der itch.io-Seite herunterladen'
             },
             {
                 type: 'bullet',
-                text: 'Führen Sie <span class="snippet">HaD.apk</span> aus, um das Spiel zu installieren und zu öffnen.'
+                text: '<span class="snippet">HaD.apk</span> ausführen, um das Spiel zu installieren und zu öffnen'
             },
             {
                 type: 'bullet',
-                text: 'Das Spiel wird als App auf Ihrem Gerät zugänglich sein.'
+                text: 'Das Spiel wird danach als App auf dem Gerät zugänglich sein'
             },
             {
                 type: 'iconed',
@@ -103,11 +103,11 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Laden Sie den Windows-Build von der itch.io-Seite herunter.'
+                text: 'Windows-Build von der itch.io-Seite herunterladen'
             },
             {
                 type: 'bullet',
-                text: 'Führen Sie <span class="snippet">HaD (Demo).exe</span> aus, um das Spiel zu starten.'
+                text: '<span class="snippet">HaD (Demo).exe</span> ausführen, um das Spiel zu starten'
             },
             {
                 type: 'subheading',
@@ -115,7 +115,7 @@ export const projekte = [
             },
             {
                 type: 'paragraph',
-                text: 'Wir schätzen jedes Feedback, um das Erlebnis zu verbessern. Bitte füllen Sie nach dem Spielen unsere Umfrage aus:'
+                text: 'Wir schätzen jedes Feedback, um das Erlebnis zu verbessern. Meinungen und Rückmeldungen können über die Umfrage gegeben werden:'
             },
             {
                 type: 'buttons',
@@ -156,8 +156,8 @@ export const projekte = [
             {
                 type: 'paragraph',
                 text: `Eine mysteriöse Frau scheitert daran, ihre Dimension vor interdimensionalen Wesen zu schützen. Bevor sie stirbt, sendet sie einen blutbefleckten Brief über Dimensionen hinweg, um ihren Nachfolger zu warnen.
-                        Der Protagonist, der sich seines Schicksals nicht bewusst ist, beginnt einen neuen Job bei einer Hochzeitsplanungsfirma. Bald ereignen sich seltsame Ereignisse, wie ein sich ständig veränderndes Gebäude, eine Zeitschleife und ein... Pferd?
-                        Ein Erdbeben zwingt sie in einen Bunker, wo sie auf einige bekannte Gesichter treffen. Ihre Wahl, wem sie vertrauen, legt den Grundstein für das nächste Kapitel.`
+                        Der/Die Protagonist:in beginnt einen neuen Job bei einer Hochzeitsplanungsfirma. Bald ereignen sich seltsame Ereignisse, wie ein sich ständig veränderndes Gebäude, eine Zeitschleife und ein... Pferd?
+                        Von einem Erdbeben in einen Bunker gezwungen trifft man auf einige bekannte Gesichter. Die Wahl, wem Vertrauen geschenkt wird, legt den Grundstein für die nächsten Kapitel.`
             },
             {
                 type: 'subheading',
@@ -216,7 +216,7 @@ export const projekte = [
                     },
                     {
                         src: hadFiles['../projects/had/Screenshot_EndChoice.jpg'].default,
-                        caption: 'Endwahl'
+                        caption: 'End Choice'
                     }
                 ]
             }
@@ -255,19 +255,19 @@ export const projekte = [
     {
         id: 'sputify',
         name: 'spütify',
-        description: 'musikreise & visualisierungswebsite',
+        description: 'webseite zur interaktiven musikvisualisierung',
         context: {
             lines: [
                 '2024 @ HSLU, Emmenbrücke',
                 'Modul STUWE1 - Studio Web & Mobile 1'
             ],
-            url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
+            url: 'https://www.hslu.ch/de-ch/design-film-kunst/',
             icon: 'graduation-cap',
             tooltip: 'schule'
         },
         categories: [
             'team',
-            'programmierung',
+            'coding',
             'design',
             'web',
             'ux',
@@ -275,7 +275,7 @@ export const projekte = [
         sections: [
             {
                 type: 'quoted',
-                text: `Eine Webanwendung, die den Musikgeschmack eines Benutzers durch eine interaktive Zeitreise visualisiert. Entwickelt mit der Spotify API und der Google Gemini API von Laura Giaimo, Lisa Landolt, Lukas Bucher und Marin Hirschi, ermöglicht die App den Benutzern, ihre Hörgeschichte dynamisch zu erkunden. Das Projekt integriert Echtzeit-Datenvisualisierung und interaktive Elemente, um eine personalisierte Musikreise zu schaffen.`
+                text: `Eine Webanwendung, die den Musikgeschmack eines Benutzers durch eine interaktive Zeitreise visualisiert. Entwickelt mit der Spotify API und der Google Gemini API von Laura Giaimo, Lisa Landolt, Lukas Bucher und Marin Hirschi, ermöglicht die App den Benutzern, die Veränderung ihres Musikgeschmacks über die Jahre dynamisch zu erkunden. Das Projekt integriert Echtzeit-Datenvisualisierung und interaktive Elemente, um eine personalisierte Musikreise zu schaffen.`
             },
             {
                 type: 'heading',
@@ -295,7 +295,7 @@ export const projekte = [
             },
             {
                 type: 'paragraph',
-                text: 'Wie kann die Visualisierung des Musikgeschmacks als interaktive Zeitleiste das persönliche Musikerlebnis verbessern?'
+                text: 'Wie kann die Visualisierung des Musikgeschmacks in Form einer interaktiven Zeitreise das persönliche Musikerlebnis vertiefen?'
             },
             {
                 type: 'subheading',
@@ -303,7 +303,7 @@ export const projekte = [
             },
             {
                 type: 'paragraph',
-                text: `Die "Musikreise" ist eine scrollbare Zeitleiste, die die Entwicklung des Musikgeschmacks des Benutzers aufzeichnet. Benutzer können durch verschiedene Zeiträume navigieren, einschließlich:`
+                text: `Die "Musikreise" ist eine scrollbare Zeitleiste, die die Entwicklung des Musikgeschmacks des Benutzers aufzeichnet. Benutzer können durch verschiedene Zeiträume navigieren, einschliesslich:`
             },
             {
                 type: 'bullet',
@@ -505,11 +505,11 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Fügen Sie eine Überschrift vor dem Teilen-Abschnitt hinzu'
+                text: 'Es sollte eine Überschrift vor dem Teilen-Abschnitt hinzugefügt werden'
             },
             {
                 type: 'bullet',
-                text: 'Machen Sie den Pfeil nach unten anklickbar oder fügen Sie einen kleinen Text hinzu, der "bitte scrollen" sagt'
+                text: 'Der Pfeil nach unten anklickbar machen oder einen kleinen Text hinzufügen, der "bitte scrollen" sagt'
             },
             {
                 type: 'bullet',
@@ -528,7 +528,7 @@ export const projekte = [
                 type: 'paragraph',
                 text: `Viele wichtige Spotify API-Endpunkte wurden ohne Vorankündigung abgeschaltet, während wir am Projekt arbeiteten, was einen neuen Ansatz zur Datenabfrage erforderte. 
                             Wir experimentierten mit der Google Gemini API, um fehlende Track-Daten zu sammeln, und implementierten eine alternative Lösung für das Abrufen der Wrapped-Daten.
-                            Dies ermöglichte es uns, das Projekt erfolgreich fortzusetzen und abzuschließen, wobei die Kernfunktionalität erhalten blieb.`
+                            Dies ermöglichte es uns, das Projekt erfolgreich fortzusetzen und abzuschliessen, wobei die Kernfunktionalität erhalten blieb.`
             },
             {
                 type: 'iconed',
@@ -539,7 +539,7 @@ export const projekte = [
                 type: 'paragraph',
                 text: `Die Integration der Spotify API und der Google Gemini API war herausfordernd, da es das erste Mal war, dass wir mit diesen Technologien arbeiteten.
                             Wir überwanden dies, indem wir die APIs gründlich recherchierten, mit verschiedenen Endpunkten experimentierten und eng zusammenarbeiteten.
-                            Durch Versuch und Irrtum und die wertvolle Unterstützung unserer Dozenten gelang es uns, die gewünschten Funktionen zu implementieren.`
+                            Durch Versuch und Irrtum und die wertvolle Unterstützung unserer Dozierenden gelang es uns, die gewünschten Funktionen zu implementieren.`
             },
             {
                 type: 'iconed',
@@ -549,7 +549,7 @@ export const projekte = [
             {
                 type: 'paragraph',
                 text: `Die Erstellung der Blasenvisualisierung war aufgrund der dynamischen Daten und der Notwendigkeit für flüssige Übergänge komplex.
-                            Wir lösten dies, indem wir viel in D3.js mit verschiedenen Blasenlayouts und -skalen experimentierten und die Blasengröße und -farbe basierend auf den Daten anpassten.
+                            Wir lösten dies, indem wir viel in D3.js mit verschiedenen Blasenlayouts und -skalen experimentierten und die Blasengrösse und -farbe basierend auf den Daten anpassten.
                             Dies führte zu einer ansprechenden und interaktiven Visualisierung, die die Stimmung und Energie des Songs darstellt.`
             },
             {
@@ -606,7 +606,7 @@ export const projekte = [
             },
             {
                 type: 'heading',
-                text: 'Screencast Mobil'
+                text: 'Screencast Mobile'
             },
             {
                 type: 'video',
@@ -623,7 +623,7 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Klonen Sie das Projekt-Repository in ein lokales Verzeichnis'
+                text: 'Das Projekt-Repository in ein lokales Verzeichnis klonen'
             },
             {
                 type: 'iconed',
@@ -632,7 +632,7 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Führen Sie <span class="snippet hoverable tooltip copy" tooltip="copy">npm install</span> aus, um alle notwendigen Abhängigkeiten zu installieren'
+                text: '<span class="snippet hoverable tooltip copy" tooltip="copy">npm install</span> ausführen, um alle notwendigen Abhängigkeiten zu installieren'
             },
             {
                 type: 'iconed',
@@ -641,7 +641,7 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Führen Sie <span class="snippet hoverable tooltip copy" tooltip="copy">npm run dev</span> aus, um den Entwicklungsserver mit Hot-Reload zu starten'
+                text: '<span class="snippet hoverable tooltip copy" tooltip="copy">npm run dev</span> ausführen, um den Entwicklungsserver mit Hot-Reload zu starten'
             },
             {
                 type: 'iconed',
@@ -650,15 +650,15 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Öffnen Sie <span class="snippet hoverable tooltip copy" tooltip="copy">http://localhost:5173/</span> in Ihrem Browser, um die Anwendung anzuzeigen'
+                text: '<span class="snippet hoverable tooltip copy" tooltip="copy">http://localhost:5173/</span> im Browser öffnen, um die Anwendung anzuzeigen'
             },
             {
                 type: 'bullet',
-                text: 'Melden Sie sich mit Ihrem registrierten Spotify-Konto an, um Ihre Musikreise zu erkunden'
+                text: 'Mit einem registrierten Spotify-Konto anmelden, um die Musikreise zu erkunden'
             },
             {
                 type: 'iconed',
-                text: 'Für Tests ist eine manuelle Registrierung Ihrer Spotify-E-Mail-Adresse erforderlich.<br><a href="/about#contact" class="bold hoverable">Kontaktieren Sie mich</a> für den Zugang.',
+                text: 'Für Tests ist eine manuelle Registrierung der Spotify-E-Mail-Adresse erforderlich.<br>Für den Zugang bitte <a href="/about#contact" class="bold hoverable">mich kontaktieren</a>.',
                 icon: 'exclamation-triangle'
             }
         ],
@@ -701,25 +701,25 @@ export const projekte = [
     {
         id: 'ecohome',
         name: 'ecohome',
-        description: 'serious game über abfallwirtschaft',
+        description: 'serious game über nachhaltigkeit und abfall',
         context: {
             lines: [
                 '2024 @ HSLU, Rotkreuz',
                 'International Summer School on Designing Serious Games'
             ],
-            url: 'https://www.hslu.ch/it',
+            url: 'https://www.hslu.ch/de-ch/informatik/',
             icon: 'graduation-cap',
             tooltip: 'schule'
         },
         categories: [
             'team',
-            'spiel'
+            'game'
         ],
         sections: [
             {
                 type: 'quoted',
-                text: `EcoHome ist ein strategisches Brettspiel, das sich auf Abfallwirtschaft und Nachhaltigkeit in modernen Schweizer Haushalten konzentriert. 
-                            Die Spieler übernehmen verschiedene Rollen und müssen tägliche Aktionen ausbalancieren, um Müll zu reduzieren und gleichzeitig ihre Glückspunkte zu erhalten oder zu erhöhen. 
+                text: `EcoHome ist ein strategisches Brettspiel, das sich auf Abfall und Nachhaltigkeit in modernen Schweizer Haushalten konzentriert. 
+                            Die Spieler übernehmen verschiedene Rollen und müssen tägliche Aktionen ausbalancieren, um Müll zu reduzieren und gleichzeitig ihre Zufriedenheit beizubehalten oder zu erhöhen. 
                             Das Spiel erstreckt sich über eine Woche, wobei jeder Zug einen Tag darstellt. Die Spieler erhalten sofortiges Feedback zu ihren Entscheidungen, was ihnen ermöglicht, ihre Strategien anzupassen.
                             Als Abschlussprojekt der International Summer School on Designing Serious Games wurde dieses Spiel in einem Team von drei Personen mit Lisa Landolt und Julian Schwarz entwickelt.`
             },
@@ -733,7 +733,7 @@ export const projekte = [
             },
             {
                 type: 'iconed',
-                text: 'Müll minimieren, Glück maximieren',
+                text: 'Müll minimieren, Glücklichsein maximieren',
                 icon: 'smile'
             },
             {
@@ -746,15 +746,15 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Ressourcen effizient verwalten.'
+                text: 'Ressourcen effizient verwalten'
             },
             {
                 type: 'bullet',
-                text: 'Sich an zufällige Ereignisse anpassen, die das tägliche Leben beeinflussen.'
+                text: 'Sich an zufällige Ereignisse anpassen, die das tägliche Leben beeinflussen'
             },
             {
                 type: 'bullet',
-                text: 'Kluge Kaufentscheidungen treffen, um Müll zu minimieren.'
+                text: 'Kluge Kaufentscheidungen treffen, um Müll zu minimieren'
             },
             {
                 type: 'subheading',
@@ -785,7 +785,7 @@ export const projekte = [
             },
             {
                 type: 'paragraph',
-                text: 'Bereite Mahlzeiten zu, ohne Zutaten zu verschwenden, um einen niedrigen Müll-Fußabdruck zu erhalten.'
+                text: 'Bereite Mahlzeiten zu, ohne Zutaten zu verschwenden, um einen niedrigen Müll-Fussabdruck zu erhalten.'
             },
             {
                 type: 'iconed',
@@ -926,23 +926,23 @@ export const projekte = [
             },
             {
                 type: 'paragraph',
-                text: 'Stelle sicher, dass die Spieler jede Runde ausgewogene Wahlmöglichkeiten haben.'
+                text: 'Stellt sicher, dass die Spieler jede Runde ausgewogene Wahlmöglichkeiten haben.'
             },
             {
                 type: 'subheading',
-                text: 'Glückskonsequenzen'
+                text: 'Konsquenzen & Glück'
             },
             {
                 type: 'bullet',
-                text: 'Wenn das Glück unter 3 fällt, kann der Spieler nicht kochen, reinigen oder recyceln.'
+                text: 'Wenn das Glück unter 3 fällt, kann der Spieler nicht kochen, reinigen oder recyceln'
             },
             {
                 type: 'bullet',
-                text: 'Wenn das Glück 0 erreicht, erzeugt der Spieler automatisch 2 Müllsäcke pro Tag.'
+                text: 'Wenn das Glück 0 erreicht, erzeugt der Spieler automatisch 2 Müllsäcke pro Tag'
             },
             {
                 type: 'bullet',
-                text: 'Das Auslassen von Mahlzeiten führt zu -3 Glück pro Tag.'
+                text: 'Das Auslassen von Mahlzeiten führt zu -3 Glück pro Tag'
             },
             {
                 type: 'subheading',
@@ -994,7 +994,7 @@ export const projekte = [
         {
             lines: [
                 '2024 @ HSLU, Rotkreuz',
-                'Modul DEWEB - Entwicklung für Web & Mobile'
+                'Modul DEWEB - Development for Web & Mobile'
             ],
             url: 'https://www.hslu.ch/de-ch/informatik/',
             icon: 'graduation-cap',
@@ -1005,15 +1005,16 @@ export const projekte = [
             'coding',
             'design',
             'web',
-            'spiel',
+            'game',
             'story'
         ],
         sections: [
             {
                 type: 'quoted',
-                text: `Mit Milo's Forest Adventure wollte ich Webentwicklung, Pixelkunst und interaktive Erzählungen 
+                text: `Mit Milo's Forest Adventure wollte ich Webentwicklung, Pixelart und interaktive Erzählungen 
                             in einem niedlichen Scroll- und Klick-Abenteuerspiel kombinieren. Durch Scrollen und Klicken können die Spieler die Umgebung erkunden,
-                            mit Milo interagieren und Geheimnisse des verzauberten Waldes entdecken.`
+                            mit Milo interagieren und Geheimnisse des verzauberten Waldes entdecken. 
+                            Das Spiel wurde im Rahmen des Moduls Development for Web & Mobile entwickelt, wo wir die Aufgabe hatten, ein webbasiertes interaktives Bilderbuch mit HTML, CSS und JavaScript zu erstellen.`
             },
             {
                 type: 'heading',
@@ -1038,7 +1039,7 @@ export const projekte = [
             },
             {
                 type: 'paragraph',
-                text: `Die Online-Demo fehlt Backend-Funktionen wie die Bestenliste am Ende. Um das Spiel lokal zu spielen, folge den untenstehenden Anweisungen.`
+                text: `Der Online-Demo fehlen Backend-Funktionen wie die Bestenliste am Ende. Um das Spiel lokal zu spielen, folge den untenstehenden Anweisungen.`
             },
             {
                 type: 'heading',
@@ -1071,11 +1072,11 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Klonen Sie das Projekt-Repository in ein lokales Verzeichnis'
+                text: 'Das Projekt-Repository in ein lokales Verzeichnis klonen'
             },
             {
                 type: 'bullet',
-                text: 'Alternativ können Sie die Projekt-Zip-Datei herunterladen und in ein lokales Verzeichnis extrahieren'
+                text: 'Alternativ die Projekt-Zip-Datei herunterladen und in ein lokales Verzeichnis extrahieren'
             },
             {
                 type: 'iconed',
@@ -1084,13 +1085,13 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Navigieren Sie zum <span class="snippet">/server</span> Verzeichnis'
+                text: 'Zum Verzeichnis <span class="snippet">/server</span> navigieren'
             },
             {
                 type: 'bullet',
-                text: `Starten Sie den Node.js-Server mit dem Befehl
-                <span class= "snippet hoverable tooltip copy" tooltip="copy" > node server.mjs</span>
-                            im Terminal`
+                text: `Den Node.js-Server mit dem Befehl
+                            <span class= "snippet hoverable tooltip copy" tooltip="copy" > node server.mjs</span>
+                            im Terminal starten`
             },
             {
                 type: 'iconed',
@@ -1099,21 +1100,21 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Navigieren Sie zum <span class="snippet">/client</span> Verzeichnis und öffnen Sie es in Visual Studio Code'
+                text: 'Zum Verzeichnis <span class="snippet">/client</span> navigieren und es in Visual Studio Code öffnen'
             },
             {
                 type: 'bullet',
-                text: 'Klicken Sie unten rechts auf "Go Live", um den Live Server zu starten'
+                text: 'Unten rechts auf "Go Live" klicken, um den Live Server zu starten'
             },
             {
                 type: 'bullet',
-                text: `Das Projekt sollte automatisch im Browser geöffnet werden (falls nicht, öffnen Sie
-        < span class="snippet hoverable tooltip copy" tooltip = "copy" > http://127.0.0.1:5500/</span>
-                            im Browser und passen Sie die Live Server-Einstellungen entsprechend an)`
+                text: `Das Projekt sollte automatisch im Browser geöffnet werden (falls nicht, die URL
+                            <span class="snippet hoverable tooltip copy" tooltip = "copy" > http://127.0.0.1:5500/</span>
+                            im Browser öffnen und die Live Server-Einstellungen entsprechend anpassen)`
             },
             {
                 type: 'subheading',
-                text: "Viel Spaß bei Milo's Forest Adventure!"
+                text: "Viel Spass bei Milo's Forest Adventure!"
             },
             {
                 type: 'heading',
@@ -1125,7 +1126,7 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Intro-Dialog: Milo begrüßt den Spieler.'
+                text: 'Intro-Dialog: Milo begrüsst den Spieler.'
             },
             {
                 type: 'bullet',
@@ -1149,55 +1150,88 @@ export const projekte = [
             },
             {
                 type: 'subheading',
-                text: 'Werkzeuge & Ressourcen'
+                text: 'Tools & Ressourcen'
             },
             {
-                type: 'bullet',
-                text: 'Entwicklung: HTML, CSS, JavaScript, Node.js, Express, Visual Studio Code, Live Server, Chrome DevTools, GitHub'
+                type: 'iconed',
+                text: 'Entwicklung',
+                icon: 'code'
             },
             {
-                type: 'bullet',
-                text: 'Grafiken: Piskel, Adobe Firefly, PowerPoint, Photoshop, FontStruct'
+                type: 'paragraph',
+                text: 'HTML, CSS, JavaScript, Node.js, Express, Visual Studio Code, GitHub'
             },
             {
-                type: 'bullet',
-                text: 'Audio: Suno, Freesound, Adobe Audition'
+                type: 'iconed',
+                text: 'Grafik',
+                icon: 'palette'
             },
             {
-                type: 'bullet',
-                text: 'KI-Unterstützung: ChatGPT, Gemini'
+                type: 'paragraph',
+                text: 'Piskel, Adobe Firefly, PowerPoint, Photoshop, FontStruct'
+            },
+            {
+                type: 'iconed',
+                text: 'Audio',
+                icon: 'music'
+            },
+            {
+                type: 'paragraph',
+                text: 'Suno, Freesound, Adobe Audition'
+            },
+            {
+                type: 'iconed',
+                text: 'KI Assistenz',
+                icon: 'robot'
+            },
+            {
+                type: 'paragraph',
+                text: 'ChatGPT, Gemini, Adobe Firefly, Suno'
             },
             {
                 type: 'subheading',
-                text: 'Entwicklungsprozess'
+                text: 'Reflexion'
             },
             {
-                type: 'bullet',
-                text: 'Motivation: Hohe Motivation während des gesamten Projekts führte zu einem erheblichen Zeit- und Energieaufwand.'
+                type: 'iconed',
+                text: 'Motivation',
+                icon: 'face-smile-beam'
             },
             {
-                type: 'bullet',
-                text: 'Herausforderungen: Überwand Momente der Unsicherheit mit strukturierten To-Do-Listen, die den Fokus und das Aufgabenmanagement verbesserten.'
+                type: 'paragraph',
+                text: `Ich hatte über das gesamte Projekt hinweg viel Motivation und Freude, was mich dazu antrieb,
+                        viel Zeit und Energie in das Projekt zu investieren.`
             },
             {
-                type: 'bullet',
-                text: 'Programmiertechniken: Factory-Funktionen, dynamische HTML-Generierung, POST-Anfragen, Cookie-Implementierung.'
+                type: 'iconed',
+                text: 'Herausforderungen',
+                icon: 'exclamation-triangle'
+            },
+            {
+                type: 'paragraph',
+                text: `Manchmal habe ich mich in den Aufgaben verloren oder wusste nicht genau, was als nächstes
+                        zu tun ist. Gegen Ende habe ich mir eine To-Do-Liste eingerichtet, was mir sehr half, den
+                        Überblick zu behalten.`
             },
             {
                 type: 'subheading',
-                text: 'Hauptmerkmale'
+                text: 'Programmiertechniken'
             },
             {
                 type: 'bullet',
-                text: 'Interaktive Scroll- und Klick-Mechaniken für intuitives Gameplay.'
+                text: 'Einsatz von Factory Functions, jedoch nicht voll objektorientiert'
             },
             {
                 type: 'bullet',
-                text: 'Dynamische Punktverfolgung mit Bestenlistenfunktion.'
+                text: 'Dynamische Erstellung von HTML durch JavaScript'
             },
             {
                 type: 'bullet',
-                text: 'Charmante Pixelkunst und Audiodesign verbessern das immersive Erlebnis.'
+                text: 'Verwendung von POST-Requests für den Server und Speicherung der Spielerdaten als JSON auf der Serverseite'
+            },
+            {
+                type: 'bullet',
+                text: 'Implementierung einer Cookie-Funktion, sodass die Spieler-ID im Browser gespeichert wird'
             },
             {
                 type: 'heading',
@@ -1275,7 +1309,7 @@ export const projekte = [
                 '2024 @ HSLU, Rotkreuz',
                 'Modul MATBF - Beautiful Mathematics'
             ],
-            url: 'https://www.hslu.ch/it',
+            url: 'https://www.hslu.ch/de-ch/informatik/',
             icon: 'graduation-cap',
             tooltip: 'schule'
         },
@@ -1324,7 +1358,7 @@ export const projekte = [
             },
             {
                 type: 'paragraph',
-                text: 'Spirale von Kreisen, die durch die Implementierung des Bresenham-Mittelpunkt-Kreisalgorithmus in der Größe zunehmen'
+                text: 'Spirale von Kreisen, die durch die Implementierung des Bresenham-Mittelpunkt-Kreisalgorithmus in der Grösse zunehmen'
             },
             {
                 type: 'iconed',
@@ -1473,7 +1507,7 @@ export const projekte = [
                 '2024 @ HSLU, Rotkreuz',
                 'Modul STUIN - Studio Information Aesthetics & Engineering'
             ],
-            url: 'https://www.hslu.ch/it',
+            url: 'https://www.hslu.ch/de-ch/informatik/',
             icon: 'graduation-cap',
             tooltip: 'schule'
         },
@@ -1485,7 +1519,7 @@ export const projekte = [
             {
                 type: 'quoted',
                 text: `Zwischen 2012 und 2016 erlebte Europa eine rasante Ausweitung der 4G-Mobilfunknetzabdeckung, was einen Wendepunkt in der digitalen Konnektivität markierte.
-                            Dieses Datenvisualisierungsprojekt untersucht die Geschwindigkeit und das Ausmaß der 4G-Einführung in Europa und hebt deren Auswirkungen auf die Gesellschaft hervor.`
+                            Dieses Datenvisualisierungsprojekt untersucht die Geschwindigkeit und das Ausmass der 4G-Einführung in Europa und hebt deren Auswirkungen auf die Gesellschaft hervor.`
             },
             {
                 type: 'heading',
@@ -1670,7 +1704,7 @@ export const projekte = [
                 '2024 @ HSLU, Emmenbrücke',
                 'Modul ISA ANIM - Einführung in die Animation'
             ],
-            url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
+            url: 'https://www.hslu.ch/de-ch/design-film-kunst/',
             icon: 'graduation-cap',
             tooltip: 'schule'
         },
@@ -1952,11 +1986,11 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Erstellung erster Papierprototypen und Tests durch Hallway-Usability-Tests.'
+                text: 'Erstellung erster Papierprototypen und Tests durch Hallway-Usability-Tests'
             },
             {
                 type: 'bullet',
-                text: 'Entwicklung digitaler Prototypen in Figma, Iteration basierend auf Feedback.'
+                text: 'Entwicklung digitaler Prototypen in Figma, Iteration basierend auf Feedback'
             },
             {
                 type: 'subheading',
@@ -1964,39 +1998,39 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Neue Suchfunktion mit integrierter Kartenansicht.'
+                text: 'Neue Suchfunktion mit integrierter Kartenansicht'
             },
             {
                 type: 'bullet',
-                text: 'Vereinfachtes Filtersystem, einschließlich standortbasierter Filterung.'
+                text: 'Vereinfachtes Filtersystem, einschliesslich standortbasierter Filterung'
             },
             {
                 type: 'bullet',
-                text: 'Chronologische Ereignisauflistung.'
+                text: 'Chronologische Ereignisauflistung'
             },
             {
                 type: 'bullet',
-                text: 'Verbesserte Startseite mit direktem Zugang zu wichtigen Bereichen.'
+                text: 'Verbesserte Startseite mit direktem Zugang zu wichtigen Bereichen'
             },
             {
                 type: 'bullet',
-                text: 'Klarere Benennungskonventionen für bessere Navigation.'
+                text: 'Klarere Benennungskonventionen für bessere Navigation'
             },
             {
                 type: 'bullet',
-                text: 'Optimiertes Inhaltslayout für Klarheit.'
+                text: 'Optimiertes Inhaltslayout für Klarheit'
             },
             {
                 type: 'bullet',
-                text: 'Implementierung eines Sprachumschalters.'
+                text: 'Implementierung eines Sprachumschalters'
             },
             {
                 type: 'bullet',
-                text: 'Verbesserte Strukturierung der Trainingsinformationen.'
+                text: 'Verbesserte Strukturierung der Trainingsinformationen'
             },
             {
                 type: 'bullet',
-                text: 'Personalisierte Funktionen wie kontobasierte Favoriten.'
+                text: 'Personalisierte Funktionen wie kontobasierte Favoriten'
             },
             {
                 type: 'heading',
@@ -2012,23 +2046,23 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Betonung der tab-basierten Navigation.'
+                text: 'Betonung der tab-basierten Navigation'
             },
             {
                 type: 'bullet',
-                text: 'Neugestaltung des Login-Prozesses für bessere Benutzerfreundlichkeit.'
+                text: 'Neugestaltung des Login-Prozesses für bessere Benutzerfreundlichkeit'
             },
             {
                 type: 'bullet',
-                text: 'Verlagerung des Favoriten-Icons zur Verbesserung der Sichtbarkeit.'
+                text: 'Verlagerung des Favoriten-Icons zur Verbesserung der Sichtbarkeit'
             },
             {
                 type: 'bullet',
-                text: 'Hinzufügen eines Dunkelmodus für ein besseres Benutzererlebnis.'
+                text: 'Hinzufügen eines Dunkelmodus für ein besseres Benutzererlebnis'
             },
             {
                 type: 'bullet',
-                text: 'Verfeinerung des Datumauswahlprozesses.'
+                text: 'Verfeinerung des Datumauswahlprozesses'
             },
             {
                 type: 'heading',
@@ -2093,7 +2127,7 @@ export const projekte = [
                 '2023 @ HSLU, Rotkreuz',
                 'Modul IGAME - Game Design & Engineering'
             ],
-            url: 'https://www.hslu.ch/',
+            url: 'https://www.hslu.ch/de-ch/informatik/',
             icon: 'graduation-cap',
             tooltip: 'schule'
         },
@@ -2105,7 +2139,7 @@ export const projekte = [
         sections: [
             {
                 type: 'quoted',
-                text: `Sweet Teeth war das Produkt unseres ersten Spielmoduls. Die Spieler steuern ein schelmisches Bakterium,
+                text: `Sweet Teeth war das Produkt unseres ersten Spielmoduls. Die Spieler steuern ein schelmisches Karies-Bakterium,
                             das sich automatisch in Intervallen teleportiert. Das Ziel ist es, so viele Zähne wie möglich zu verrotten und dabei den bösen Mundhygieneprodukten auszuweichen.
                             Es wurde während des IGAME-Moduls von Team HDL (Chiara Tremml, Michelle Studtmann, Dario Stocker, Lukas Bucher) erstellt.`
             },
@@ -2133,7 +2167,7 @@ export const projekte = [
             {
                 type: 'paragraph',
                 text: `Das Spiel kann im Browser gespielt oder für Windows heruntergeladen werden. Um das Spiel lokal zu spielen,
-                            laden Sie die Zip-Datei herunter, entpacken Sie sie und führen Sie <span class="snippet">IGAME_HDL.exe</span> aus.`
+                            die Zip-Datei herunterladen, sie entpacken und anschliessend <span class="snippet">IGAME_HDL.exe</span> ausführen.`
             },
             {
                 type: 'heading',
@@ -2150,28 +2184,53 @@ export const projekte = [
                 text: 'Spielmechaniken'
             },
             {
-                type: 'bullet',
-                text: `Teleportation: Dies ist die Hauptmechanik, die unser Team implementieren sollte.
+                type: 'iconed',
+                text: 'Teleportation',
+                icon: 'ghost'
+            },
+            {
+                type: 'paragraph',
+                text: `Dies ist die Hauptmechanik, die unser Team implementieren sollte.
                             Das Bakterium teleportiert sich automatisch alle 1,5 Sekunden innerhalb eines Radius,
                             der durch die Mausbewegung des Spielers gesteuert wird. Das Beherrschen dieser Mechanik ist der Schlüssel zum Überleben und Erfolg.`
             },
             {
-                type: 'bullet',
-                text: 'Hindernisse: Die Spieler müssen tödlichen Zahnbürsten, Mundwasser und Zahnpasta ausweichen, während sie die Zahnreihen navigieren.'
+                type: 'iconed',
+                text: 'Hindernisse',
+                icon: 'tooth'
             },
             {
-                type: 'bullet',
-                text: `Power-Up: Sammeln Sie genügend Süßigkeiten, um die "Super Rot"-Fähigkeit zu aktivieren,
+                type: 'paragraph',
+                text: `Die Spieler müssen tödlichen Zahnbürsten, Mundwasser und Zahnpasta ausweichen, während sie die Zahnreihen navigieren.`
+            },
+            {
+                type: 'iconed',
+                text: 'Power-Up',
+                icon: 'star'
+            },
+            {
+                type: 'paragraph',
+                text: `Werden genügend Süssigkeiten gesammelt, kann die "Super Rot"-Fähigkeit zu aktiviert werden,
                             die alle Zähne innerhalb des Teleportationsradius für eine begrenzte Zeit sofort verrottet.`
             },
             {
-                type: 'bullet',
-                text: `Punktesystem: Die Spieler verdienen Punkte, indem sie Zähne verrotten, und können ihre Punktzahl mit dem In-Game-Zähler verfolgen.
+                type: 'iconed',
+                text: 'Punktesystem',
+                icon: 'trophy'
+            },
+            {
+                type: 'paragraph',
+                text: `Die Spieler verdienen Punkte, indem sie Zähne verrotten, und können ihre Punktzahl mit dem In-Game-Zähler verfolgen.
                             Versuchen Sie, eine neue Höchstpunktzahl zu erreichen!`
             },
             {
-                type: 'bullet',
-                text: 'Gewinnbedingung: Das Spiel endet an der Ziellinie, wo die Spieler ihre Punktzahl sehen und das Spiel neu starten können.'
+                type: 'iconed',
+                text: 'Win Condition',
+                icon: 'flag-checkered'
+            },
+            {
+                type: 'paragraph',
+                text: `Das Spiel endet an der Ziellinie, wo die Spieler ihre Punktzahl sehen und das Spiel neu starten können.`
             },
             {
                 type: 'subheading',
@@ -2184,7 +2243,7 @@ export const projekte = [
             },
             {
                 type: 'paragraph',
-                text: `Feinde wie Zahnpasta und Mundwasser haben blaue Töne, die im Kontrast zu den bunten sammelbaren Süßigkeiten stehen.`
+                text: `Feinde wie Zahnpasta und Mundwasser haben blaue Töne, die im Kontrast zu den bunten sammelbaren Süssigkeiten stehen.`
             },
             {
                 type: 'paragraph',
@@ -2197,16 +2256,16 @@ export const projekte = [
             {
                 type: 'paragraph',
                 text: `Bei der Entwicklung des ersten Konzepts brainstormte das Team und prototypisierte die Teleportationsmechanik,
-                            wobei der Fokus auf Einfachheit und Spaß lag.`
+                            wobei der Fokus auf Einfachheit und Spass lag.`
             },
             {
                 type: 'paragraph',
-                text: `Regelmäßige Tests und Feedback verfeinerten die Gameplay-Schleife, um die Schwierigkeit und das Tempo des Spiels auszugleichen.
+                text: `Regelmässige Tests und Feedback verfeinerten die Gameplay-Schleife, um die Schwierigkeit und das Tempo des Spiels auszugleichen.
                             Iterative Entwicklung ermöglichte kontinuierliche Verbesserung und Politur.`
             },
             {
                 type: 'paragraph',
-                text: `Benutzerdefinierte Sounds wurden für Teleportation, Süßigkeitensammlung und Gewinn-/Verlustbedingungen hinzugefügt.`
+                text: `Benutzerdefinierte Sounds wurden für Teleportation, Süssigkeitensammlung und Gewinn-/Verlustbedingungen hinzugefügt.`
             },
             {
                 type: 'subheading',
@@ -2273,7 +2332,7 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Entwurf einer visuell kohärenten Welt innerhalb strenger Sprite-Beschränkungen (10 Sprites, 3 Animationen pro Sprite).'
+                text: 'Entwurf einer visuell kohärenten Welt innerhalb strenger Sprite-Beschränkungen (10 Sprites, 3 Animationen pro Sprite)'
             },
             {
                 type: 'heading',
@@ -2350,13 +2409,13 @@ export const projekte = [
     {
         id: 'rodina',
         name: 'the rodina',
-        description: `3d gerendertes Video inspiriert vom visuellen Stil von The Rodina`,
+        description: `3d gerendertes video visuell inspiriert von the rodina`,
         context: {
             lines: [
                 '2023 @ HSLU, Rotkreuz',
                 'Modul KIVIS - Kickstart Visual Design'
             ],
-            url: 'https://www.hslu.ch/',
+            url: 'https://www.hslu.ch/de-ch/design-film-kunst/',
             icon: 'graduation-cap',
             tooltip: 'schule'
         },
@@ -2369,10 +2428,9 @@ export const projekte = [
         sections: [
             {
                 type: 'quoted',
-                text: `Im Kickstart Visual Design Kurs wurden uns die Grundlagen und Prinzipien des Designs beigebracht.
-                            Wir lernten viele einflussreiche Designer und Designstudios kennen, von denen wir uns eines für eine Präsentation und ein Abschlussprojekt aussuchen mussten.
+                text: `Im Modul Kickstart Visual Design wurden uns die Grundlagen und Prinzipien des Designs beigebracht.
+                            Wir lernten viele einflussreiche Designer:innen und Designstudios kennen, von denen wir uns eines für eine Präsentation und ein Abschlussprojekt aussuchen mussten.
                             Das Abschlussprojekt, das ich entwickelt habe, ist inspiriert vom unverwechselbaren visuellen Stil des niederländischen Designstudios 'The Rodina'.
-    
                             Für die Animation und Bearbeitung eines gescannten 3D-Modells meines Kopfes habe ich Cinema 4D verwendet, die Videobearbeitung, das Sounddesign und die Farbkorrektur wurden in Adobe Premiere Pro durchgeführt.
                             Das Projekt integriert Feedback und Experimente, um ein poliertes visuelles Ergebnis zu erzielen.`
             },
@@ -2420,7 +2478,7 @@ export const projekte = [
             {
                 type: 'paragraph',
                 text: `Ein 3D-Scan meines Kopfes wurde als Basis mit der mobilen App Polycam erstellt.
-                            Dieser Rohscan wurde in Cinema4D verfeinert, einschließlich Modifikationen wie
+                            Dieser Rohscan wurde in Cinema4D verfeinert, einschliesslich Modifikationen wie
                             der Verzerrung des Augenbereichs für einen abstrakten Effekt.`
             },
             {
@@ -2557,13 +2615,13 @@ export const projekte = [
     {
         id: 'solarsystem',
         name: 'solarsystem',
-        description: `3d gerendertes Asteroiden-Video`,
+        description: `3d gerendertes video eines asteroiden`,
         context: {
             lines: [
                 '2023 @ HSLU, Rotkreuz',
                 'Modul 4DAUT - Cinema 4D Authoring'
             ],
-            url: 'https://www.hslu.ch/',
+            url: 'https://www.hslu.ch/de-ch/informatik/',
             icon: 'graduation-cap',
             tooltip: 'schule'
         },
@@ -2696,7 +2754,7 @@ export const projekte = [
     {
         id: 'pa',
         name: 'google chrome extension',
-        description: 'interne Organisationsstruktur & Mitarbeiterinformationen',
+        description: 'internes tool zur darstellung von teamstrukturen & mitarbeiterinformationen der suva',
         context: {
             lines: [
                 '2022 @ Suva, Luzern',
@@ -2940,7 +2998,7 @@ export const ueberContent = {
     sections: [
         {
             type: 'heading',
-            text: 'Hallo zusammen!'
+            text: 'Hey!'
         },
         {
             type: 'quoted',
@@ -2978,7 +3036,7 @@ export const ueberContent = {
         },
         {
             type: 'paragraph',
-            text: `Neben meiner Leidenschaft für Technologie und Design spielt Musik eine grosse Rolle in meinem Leben. Ich spiele Saxophon im lokalen Orchester '<a href="https://www.musikvereinbuochs.ch/" class="bold hoverable" target="_blank">Musikverein Buochs</a>', was eine tolle Möglichkeit war, mit anderen in Kontakt zu treten und die Freude am Musizieren zu erleben. Meine Liebe zur Musik hört hier nicht auf. Ich bin auch ein Fan von K-Pop und besuche gerne Konzerte, wann immer ich kann.`
+            text: `Neben meiner Leidenschaft für Technologie und Design spielt Musik eine grosse Rolle in meinem Leben. Ich spiele Saxophon im lokalen '<a href="https://www.musikvereinbuochs.ch/" class="bold hoverable" target="_blank">Musikverein Buochs</a>', was eine tolle Möglichkeit ist, mit anderen in Kontakt zu treten und die Freude am Musizieren zu erleben. Meine Liebe zur Musik hört hier nicht auf. Ich bin auch ein Fan von K-Pop und besuche gerne Konzerte, wann immer ich kann.`
         },
         {
             type: 'paragraph',
@@ -3015,7 +3073,7 @@ export const ueberContent = {
         },
         {
             type: 'paragraph',
-            text: `Japanisch zu lernen war eine weitere erfüllende Reise, die mein Interesse an der ostasiatischen Kultur vertieft hat. Durch Selbststudium, Schulkurse und Besuche in verschiedenen Teilen Japans habe ich eine grosse Wertschätzung für seine vielen Facetten entwickelt, und es ist zu meinem Lieblingsreiseziel geworden.`
+            text: `Japanisch zu lernen ist eine weitere Beschäftigung, die mein Interesse an der ostasiatischen Kultur vertieft hat. Durch Selbststudium, Schulkurse und Besuche in verschiedenen Teilen Japans habe ich eine grosse Wertschätzung für seine vielen Facetten entwickelt, und es ist zu meinem Lieblingsreiseziel geworden.`
         },
         {
             type: 'images',

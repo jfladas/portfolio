@@ -73,11 +73,11 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Play directly in the browser by clicking the <span class="snippet">Run Game</span> button on the itch.io page.'
+                text: 'Play directly in the browser by clicking the <span class="snippet">Run Game</span> button on the itch.io page'
             },
             {
                 type: 'bullet',
-                text: 'Some issues may occur depending on device or browser compatibility.'
+                text: 'Some issues may occur depending on device or browser compatibility'
             },
             {
                 type: 'iconed',
@@ -86,15 +86,15 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Download the Android build from the itch.io page.'
+                text: 'Download the Android build from the itch.io page'
             },
             {
                 type: 'bullet',
-                text: 'Execute <span class="snippet">HaD.apk</span> to install and open the game.'
+                text: 'Execute <span class="snippet">HaD.apk</span> to install and open the game'
             },
             {
                 type: 'bullet',
-                text: 'The game will be accessible as an app on your device.'
+                text: 'The game will be accessible as an app on your device'
             },
             {
                 type: 'iconed',
@@ -103,11 +103,11 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Download the Windows build from the itch.io page.'
+                text: 'Download the Windows build from the itch.io page'
             },
             {
                 type: 'bullet',
-                text: 'Execute <span class="snippet">HaD (Demo).exe</span> to launch the game.'
+                text: 'Execute <span class="snippet">HaD (Demo).exe</span> to launch the game'
             },
             {
                 type: 'subheading',
@@ -746,15 +746,15 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Managing resources efficiently.'
+                text: 'Managing resources efficiently'
             },
             {
                 type: 'bullet',
-                text: 'Adapting to random events that affect daily life.'
+                text: 'Adapting to random events that affect daily life'
             },
             {
                 type: 'bullet',
-                text: 'Making smart buying choices to minimize waste.'
+                text: 'Making smart buying choices to minimize waste'
             },
             {
                 type: 'subheading',
@@ -934,15 +934,15 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'If Happiness falls below 3, the player cannot cook, clean, or recycle.'
+                text: 'If Happiness falls below 3, the player cannot cook, clean, or recycle'
             },
             {
                 type: 'bullet',
-                text: 'If Happiness reaches 0, the player automatically generates 2 trash bags per day.'
+                text: 'If Happiness reaches 0, the player automatically generates 2 trash bags per day'
             },
             {
                 type: 'bullet',
-                text: 'Skipping meals results in -3 Happiness per day.'
+                text: 'Skipping meals results in -3 Happiness per day'
             },
             {
                 type: 'subheading',
@@ -996,7 +996,7 @@ export const projects = [
                 '2024 @ HSLU, Rotkreuz',
                 'Module DEWEB - Development for Web & Mobile'
             ],
-            url: 'https://www.hslu.ch/de-ch/informatik/',
+            url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
             tooltip: 'school'
         },
@@ -1012,8 +1012,10 @@ export const projects = [
             {
                 type: 'quoted',
                 text: `With Milo\'s Forest Adventure I aimed to combine web development, pixel art, and interactive storytelling 
-                        in a cute scroll-and-click adventure game.By scrolling and clicking, players can explore the environment,
-                        interact with Milo, and uncover secrets of the enchanting forest.`
+                        in a cute scroll-and-click adventure game. By scrolling and clicking, players can explore the environment,
+                        interact with Milo, and uncover secrets of the enchanting forest. The game was developed as part of the
+                        Development for Web & Mobile module, where we were tasked with creating a web-based interactive picture book
+                        using HTML, CSS, and JavaScript.`
             },
             {
                 type: 'heading',
@@ -1089,7 +1091,7 @@ export const projects = [
             {
                 type: 'bullet',
                 text: `Start the Node.js server with the command
-            <span class= "snippet hoverable tooltip copy" tooltip="copy" > node server.mjs</span>
+                        <span class= "snippet hoverable tooltip copy" tooltip="copy" > node server.mjs</span>
                         in the terminal`
             },
             {
@@ -1107,8 +1109,8 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: `The project should automatically open in the browser(if not, open
-    < span class="snippet hoverable tooltip copy" tooltip = "copy" > http://127.0.0.1:5500/</span>
+                text: `The project should automatically open in the browser (if not, open
+                        <span class="snippet hoverable tooltip copy" tooltip = "copy" > http://127.0.0.1:5500/</span>
                         in the browser and adjust Live Server settings accordingly)`
             },
             {
@@ -1125,79 +1127,109 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Intro Dialogue: Milo welcomes the player.'
+                text: 'Intro Dialogue: Milo welcomes the player'
             },
             {
                 type: 'bullet',
-                text: 'Day Scene: Navigate Milo through the forest during the day.'
+                text: 'Day Scene: Navigate Milo through the forest during the day'
             },
             {
                 type: 'bullet',
-                text: 'River Dialogue: Engage in a conversation with Milo by the Rami River.'
+                text: 'River Dialogue: Engage in a conversation with Milo by the Rami River'
             },
             {
                 type: 'bullet',
-                text: 'Night Scene: Guide Milo through the forest at night.'
+                text: 'Night Scene: Guide Milo through the forest at night'
             },
             {
                 type: 'bullet',
-                text: 'Cliff Dialogue: A reflective conclusion at a cliff edge.'
+                text: 'Cliff Dialogue: A reflective conclusion at a cliff edge'
             },
             {
                 type: 'bullet',
-                text: `End Screen: Displays the player's score and a leaderboard of the top 10 players.`
+                text: `End Screen: Displays the player's score and a leaderboard of the top 10 players`
             },
             {
                 type: 'subheading',
                 text: 'Tools & Resources'
             },
             {
-                type: 'bullet',
-                text: 'Development: HTML, CSS, JavaScript, Node.js, Express, Visual Studio Code, Live Server, Chrome DevTools, GitHub'
+                type: 'iconed',
+                text: 'Development',
+                icon: 'code'
             },
             {
-                type: 'bullet',
-                text: 'Graphics: Piskel, Adobe Firefly, PowerPoint, Photoshop, FontStruct'
+                type: 'paragraph',
+                text: 'HTML, CSS, JavaScript, Node.js, Express, Visual Studio Code, GitHub'
             },
             {
-                type: 'bullet',
-                text: 'Audio: Suno, Freesound, Adobe Audition'
+                type: 'iconed',
+                text: 'Graphics',
+                icon: 'palette'
             },
             {
-                type: 'bullet',
-                text: 'AI Assistance: ChatGPT, Gemini'
+                type: 'paragraph',
+                text: 'Piskel, Adobe Firefly, PowerPoint, Photoshop, FontStruct'
+            },
+            {
+                type: 'iconed',
+                text: 'Audio',
+                icon: 'music'
+            },
+            {
+                type: 'paragraph',
+                text: 'Suno, Freesound, Adobe Audition'
+            },
+            {
+                type: 'iconed',
+                text: 'AI Assistance',
+                icon: 'robot'
+            },
+            {
+                type: 'paragraph',
+                text: 'ChatGPT, Gemini, Adobe Firefly, Suno'
             },
             {
                 type: 'subheading',
-                text: 'Development Process'
+                text: 'Reflection'
             },
             {
-                type: 'bullet',
-                text: 'Motivation: High motivation throughout the project drove significant investment of time and energy.'
+                type: 'iconed',
+                text: 'Motivation',
+                icon: 'face-smile-beam'
             },
             {
-                type: 'bullet',
-                text: 'Challenges: Overcame moments of uncertainty with structured to-do lists, improving focus and task management.'
+                type: 'paragraph',
+                text: `Throughout the project, I had a lot of motivation and joy, which drove me to invest a lot of time and energy into the project.`
             },
             {
-                type: 'bullet',
-                text: 'Programming Techniques: Factory functions, dynamic HTML generation, POST requests, cookie implementation.'
+                type: 'iconed',
+                text: 'Challenges',
+                icon: 'exclamation-triangle'
+            },
+            {
+                type: 'paragraph',
+                text: `Sometimes I got lost in the tasks or didn't know exactly what to do next. Towards the end, I created a to-do list, which helped me a lot to keep track.`
             },
             {
                 type: 'subheading',
-                text: 'Key Features'
+                text: 'Programming Techniques'
             },
             {
                 type: 'bullet',
-                text: 'Interactive scrolling and clicking mechanics for intuitive gameplay.'
+                text: 'Use of Factory Functions, but not fully object-oriented'
             },
             {
                 type: 'bullet',
-                text: 'Dynamic score tracking with leaderboard functionality.'
+                text: 'Dynamic creation of HTML through JavaScript'
             },
             {
                 type: 'bullet',
-                text: 'Charming pixel art and audio design enhance the immersive experience.'
+                text: 'Use of POST requests for the server and storage of player data as JSON on the server side'
+            },
+            {
+                type: 'bullet',
+                text: 'Implementation of a cookie function so that the player ID is stored in the browser'
             },
             {
                 type: 'heading',
@@ -1386,19 +1418,19 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Applying mathematical algorithms to creative coding.'
+                text: 'Applying mathematical algorithms to creative coding'
             },
             {
                 type: 'bullet',
-                text: 'Exploring generative art with p5.js and WebGL.'
+                text: 'Exploring generative art with p5.js and WebGL'
             },
             {
                 type: 'bullet',
-                text: 'Enhancing interactivity through Markov Chains, Cellular Automata, and L-Systems.'
+                text: 'Enhancing interactivity through Markov Chains, Cellular Automata, and L-Systems'
             },
             {
                 type: 'bullet',
-                text: 'Using fractal noise and procedural techniques for natural-looking landscapes.'
+                text: 'Using fractal noise and procedural techniques for natural-looking landscapes'
             },
             {
                 type: 'heading',
@@ -1577,7 +1609,7 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Focuses on the basic diagram types and their application.'
+                text: 'Focuses on the basic diagram types and their application'
             },
             {
                 type: 'iconed',
@@ -1586,7 +1618,7 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Destinguishes between different content by using various design principles.'
+                text: 'Destinguishes between different content by using various design principles'
             },
             {
                 type: 'iconed',
@@ -1595,7 +1627,7 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Deals with the organization and arrangement of the objects in the space.'
+                text: 'Deals with the organization and arrangement of the objects in the space'
             },
             {
                 type: 'images',
@@ -1858,7 +1890,7 @@ export const projects = [
                 '2023 @ HSLU, Rotkreuz',
                 'Module IUX - Introduction to User Experience'
             ],
-            url: 'https://www.hslu.ch/de-ch/informatik/',
+            url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
             tooltip: 'school'
         },
@@ -1955,11 +1987,11 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Created initial paper prototypes and tested them through hallway usability tests.'
+                text: 'Created initial paper prototypes and tested them through hallway usability tests'
             },
             {
                 type: 'bullet',
-                text: 'Developed digital prototypes in Figma, iterating based on feedback.'
+                text: 'Developed digital prototypes in Figma, iterating based on feedback'
             },
             {
                 type: 'subheading',
@@ -1967,39 +1999,39 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'New search function with an integrated map view.'
+                text: 'New search function with an integrated map view'
             },
             {
                 type: 'bullet',
-                text: 'Streamlined filtering system, including location-based filtering.'
+                text: 'Streamlined filtering system, including location-based filtering'
             },
             {
                 type: 'bullet',
-                text: 'Chronological event listing.'
+                text: 'Chronological event listing'
             },
             {
                 type: 'bullet',
-                text: 'Improved homepage with direct access to key sections.'
+                text: 'Improved homepage with direct access to key sections'
             },
             {
                 type: 'bullet',
-                text: 'Clearer naming conventions for better navigation.'
+                text: 'Clearer naming conventions for better navigation'
             },
             {
                 type: 'bullet',
-                text: 'Optimized content layout for clarity.'
+                text: 'Optimized content layout for clarity'
             },
             {
                 type: 'bullet',
-                text: 'Implementation of a language switcher.'
+                text: 'Implementation of a language switcher'
             },
             {
                 type: 'bullet',
-                text: 'Enhanced training information structure.'
+                text: 'Enhanced training information structure'
             },
             {
                 type: 'bullet',
-                text: 'Personalized features such as account-based favorites.'
+                text: 'Personalized features such as account-based favorites'
             },
             {
                 type: 'heading',
@@ -2015,23 +2047,23 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Emphasizing tab-based navigation.'
+                text: 'Emphasizing tab-based navigation'
             },
             {
                 type: 'bullet',
-                text: 'Redesigning the login process for better usability.'
+                text: 'Redesigning the login process for better usability'
             },
             {
                 type: 'bullet',
-                text: 'Relocating the favorites icon to improve visibility.'
+                text: 'Relocating the favorites icon to improve visibility'
             },
             {
                 type: 'bullet',
-                text: 'Adding a dark mode for a better user experience.'
+                text: 'Adding a dark mode for a better user experience'
             },
             {
                 type: 'bullet',
-                text: 'Refining the date selection process.'
+                text: 'Refining the date selection process'
             },
             {
                 type: 'heading',
@@ -2096,7 +2128,7 @@ export const projects = [
                 '2023 @ HSLU, Rotkreuz',
                 'Module IGAME - Game Design & Engineering'
             ],
-            url: 'https://www.hslu.ch/',
+            url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
             tooltip: 'school'
         },
@@ -2153,28 +2185,53 @@ export const projects = [
                 text: 'Gameplay Mechanics'
             },
             {
-                type: 'bullet',
-                text: `Teleportation: This is the main mechanic our team was assigned to implement.
+                type: 'iconed',
+                text: 'Teleportation',
+                icon: 'ghost'
+            },
+            {
+                type: 'paragraph',
+                text: `This is the main mechanic our team was assigned to implement.
                         The bacterium automatically teleports every 1.5 seconds within a radius 
                         controlled by the player's mouse movement. Mastering this mechanic is key to survival and success.`
             },
             {
-                type: 'bullet',
-                text: 'Obstacles: Players must avoid deadly toothbrush, mouthwash, and toothpaste while navigating the rows of teeth.'
+                type: 'iconed',
+                text: 'Obstacles',
+                icon: 'tooth'
             },
             {
-                type: 'bullet',
-                text: `Power-Up: Collect enough candies to activate the "Super Rot" ability, 
+                type: 'paragraph',
+                text: `Players must avoid deadly toothbrush, mouthwash, and toothpaste while navigating the rows of teeth.`
+            },
+            {
+                type: 'iconed',
+                text: 'Power-Up',
+                icon: 'star'
+            },
+            {
+                type: 'paragraph',
+                text: `Collect enough candies to activate the "Super Rot" ability, 
                         instantly rotting all teeth within the teleportation radius for a limited time.`
             },
             {
-                type: 'bullet',
-                text: `Score System: Players earn points by rotting teeth and can track their score with the in-game counter.
+                type: 'iconed',
+                text: 'Score System',
+                icon: 'trophy'
+            },
+            {
+                type: 'paragraph',
+                text: `Players earn points by rotting teeth and can track their score with the in-game counter.
                         Try setting a new high score!`
             },
             {
-                type: 'bullet',
-                text: 'Win Condition: The game concludes at the finish line, where players see their score and can restart the game.'
+                type: 'iconed',
+                text: 'Win Condition',
+                icon: 'flag-checkered'
+            },
+            {
+                type: 'paragraph',
+                text: `The game concludes at the finish line, where players see their score and can restart the game.`
             },
             {
                 type: 'subheading',
@@ -2272,11 +2329,11 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Balancing teleportation mechanics to ensure intuitive and responsive gameplay.'
+                text: 'Balancing teleportation mechanics to ensure intuitive and responsive gameplay'
             },
             {
                 type: 'bullet',
-                text: 'Designing a visually cohesive world within strict sprite limitations (10 sprites, 3 animations per sprite).'
+                text: 'Designing a visually cohesive world within strict sprite limitations (10 sprites, 3 animations per sprite)'
             },
             {
                 type: 'heading',
@@ -2359,7 +2416,7 @@ export const projects = [
                 '2023 @ HSLU, Rotkreuz',
                 'Module KIVIS - Kickstart Visual Design'
             ],
-            url: 'https://www.hslu.ch/',
+            url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
             tooltip: 'school'
         },
@@ -2566,7 +2623,7 @@ export const projects = [
                 '2023 @ HSLU, Rotkreuz',
                 'Module 4DAUT - Cinema 4D Authoring'
             ],
-            url: 'https://www.hslu.ch/',
+            url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
             tooltip: 'school'
         },
@@ -2699,7 +2756,7 @@ export const projects = [
     {
         id: 'pa',
         name: 'google chrome extension',
-        description: 'internal organization structure & employee information',
+        description: 'internal organization structure & employee information tool for suva',
         context: {
             lines: [
                 '2022 @ Suva, Lucerne',
