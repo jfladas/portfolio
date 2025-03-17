@@ -27,11 +27,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { aboutContent } from '@/data/projects.js'
+import { ref, onMounted, computed, inject } from 'vue'
+import { aboutContent as enAbout } from '@/data/projects.js'
+import { ueberContent as deAbout } from '@/data/projekte.js'
 import ContentSections from '@/components/ContentSections.vue'
 import LinksDownloads from '@/components/LinksDownloads.vue'
 import FullOverlay from '@/components/FullOverlay.vue'
+
+const currentLanguage = inject('currentLanguage')
+const aboutContent = computed(() => currentLanguage.value === 'en' ? enAbout : deAbout)
 
 const isOverlayVisible = ref(false)
 const overlayType = ref('')
@@ -39,11 +43,11 @@ const overlayIndex = ref(null)
 const currentIndexes = ref([])
 
 const nextSlide = (index) => {
-  currentIndexes.value[index] = (currentIndexes.value[index] + 1) % aboutContent.sections[index].images.length
+  currentIndexes.value[index] = (currentIndexes.value[index] + 1) % aboutContent.value.sections[index].images.length
 }
 
 const prevSlide = (index) => {
-  currentIndexes.value[index] = (currentIndexes.value[index] - 1 + aboutContent.sections[index].images.length) % aboutContent.sections[index].images.length
+  currentIndexes.value[index] = (currentIndexes.value[index] - 1 + aboutContent.value.sections[index].images.length) % aboutContent.value.sections[index].images.length
 }
 
 const toggleOverlay = (type, index) => {
@@ -173,8 +177,8 @@ const typewriter2 = () => {
 };
 
 onMounted(() => {
-  if (aboutContent) {
-    aboutContent.sections.forEach((section, index) => {
+  if (aboutContent.value) {
+    aboutContent.value.sections.forEach((section, index) => {
       if (section.type === 'images') {
         currentIndexes.value[index] = 0
       }

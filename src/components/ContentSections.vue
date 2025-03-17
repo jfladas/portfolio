@@ -116,7 +116,6 @@ const prevSlide = (index) => {
 
 .quoted-container {
     display: flex;
-    text-align: justify;
     margin-top: 0.5rem;
 }
 

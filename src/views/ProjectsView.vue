@@ -1,8 +1,12 @@
 <template>
   <div class="content">
-    <h1>projects</h1>
+    <h1>
+      {{ currentLanguage === 'en' ? 'projects' : 'projekte' }}
+    </h1>
     <div class="filter-container hoverable" :class="{ expanded: filterMode }">
-      <p class="filter toggle" @click="toggleFilter('all')" :class="{ selected: allSelected && !filterMode }">all</p>
+      <p class="filter toggle" @click="toggleFilter('all')" :class="{ selected: allSelected && !filterMode }">
+        {{ currentLanguage === 'en' ? 'all' : 'alle' }}
+      </p>
       <font-awesome-icon icon="filter" class="filter toggle" :class="{ selected: filterMode }"
         @click="toggleFilter('filter')" />
       <div class="filters" :class="{ expanded: filterMode }">
@@ -14,18 +18,26 @@
     <div v-if="filteredProjects.length > 0 && filteredProjects.length < projects.length" class="disclaimer">
       <p>
         <font-awesome-icon icon="filter" />
-        showing {{ filteredProjects.length }} of {{ projects.length }} projects |
-        <span class="a hoverable" @click="() => { toggleFilter('all'); scrollToTop() }">see all</span>
+        {{ currentLanguage === 'en' ? 'showing' : 'zeige' }} {{ filteredProjects.length }} {{ currentLanguage === 'en' ?
+          'of' : 'von' }} {{ projects.length }} {{ currentLanguage === 'en' ? 'projects' : 'Projekte' }} |
+        <span class="a hoverable" @click="() => { toggleFilter('all'); scrollToTop() }">{{ currentLanguage === 'en' ?
+          'see all' : 'alle anzeigen' }}</span>
       </p>
     </div>
     <div v-if="filteredProjects.length === 0" class="disclaimer">
       <h3>
-        no matching projects found
+        {{ currentLanguage === 'en' ? 'no matching projects found' : 'keine passenden Projekte gefunden' }}
         <font-awesome-icon icon="face-frown-open" />
       </h3>
-      <p>try adjusting the filters</p>
+      <p>
+        {{ currentLanguage === 'en' ? 'try adjusting the filters or' : 'Versuche die Filter anzupassen oder' }}
+        <span class="a hoverable" @click="() => { toggleFilter('all'); scrollToTop() }">
+          {{ currentLanguage === 'en' ? 'see all' : 'alle anzeigen' }}
+        </span>
+      </p>
     </div>
-    <router-link v-else to="#" class="to-top hoverable tooltip" tooltip="to top" @click.prevent="scrollToTop">
+    <router-link v-else to="#" class="to-top hoverable tooltip" :tooltip="currentLanguage === 'en' ? 'to top' : 'rauf'"
+      @click.prevent="scrollToTop">
       <font-awesome-icon icon="angle-up" />
     </router-link>
     <div class="bottom-spacer"></div>
@@ -33,13 +45,15 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, computed, watch, onMounted, inject } from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import ProjectItem from '@/components/ProjectItem.vue'
-import { projects, categories } from '@/data/projects.js'
+import { projects as enProjects, categories } from '@/data/projects.js'
+import { projekte as deProjects } from '@/data/projekte.js'
 
 const selectedFilters = ref(['solo', 'team'])
 const filterMode = ref(false)
+const currentLanguage = inject('currentLanguage')
 
 const allSelected = computed(() => selectedFilters.value.length === Object.keys(categories).length || !filterMode.value)
 
@@ -59,6 +73,8 @@ const toggleFilter = (filter) => {
       selectedFilters.value.push(filter)
     }
   }
+  localStorage.setItem('selectedFilters', JSON.stringify(selectedFilters.value))
+  localStorage.setItem('filterMode', JSON.stringify(filterMode.value))
 }
 
 watch(selectedFilters, (newFilters) => {
@@ -67,22 +83,24 @@ watch(selectedFilters, (newFilters) => {
   }
 })
 
+const projects = computed(() => currentLanguage.value === 'en' ? enProjects : deProjects)
+
 const filteredProjects = computed(() => {
   if (
     selectedFilters.value.length === 0 ||
     allSelected.value
   ) {
-    return projects
+    return projects.value
   }
 
   const nonPersonFilters = selectedFilters.value.filter(filter => filter !== 'solo' && filter !== 'team')
-  const personFilters = selectedFilters.value.filter(filter => filter === 'solo' || filter === 'team')
+  const personFilters = selectedFilters.value.filter(filter => filter === 'solo' || 'team')
 
   if (nonPersonFilters.length === 0) {
     nonPersonFilters.push(...Object.keys(categories).filter(filter => filter !== 'solo' && filter !== 'team'))
   }
 
-  return projects.filter(project => {
+  return projects.value.filter(project => {
     const hasSelectedCategory = project.categories.some(category => nonPersonFilters.includes(category))
     const hasOtherFilter = nonPersonFilters.some(filter => project.categories.includes(filter))
     const isExcluded =
@@ -95,12 +113,6 @@ const filteredProjects = computed(() => {
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-onBeforeRouteLeave((to, from, next) => {
-  localStorage.setItem('selectedFilters', JSON.stringify(selectedFilters.value))
-  localStorage.setItem('filterMode', JSON.stringify(filterMode.value))
-  next()
-})
 
 onMounted(() => {
   const savedFilters = JSON.parse(localStorage.getItem('selectedFilters'))
