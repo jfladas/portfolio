@@ -3,6 +3,7 @@
 
 /* Colors */
 :root {
+  --white: #ffffff;
   --aqua: #b9fff3;
   --mint: #5dfbff;
   --sky: #15abff;
@@ -11,6 +12,7 @@
   --purple: #a200ea;
   --pink: #ff57eb;
 
+  --white-rgb: 255, 255, 255;
   --aqua-rgb: 185, 255, 243;
   --mint-rgb: 93, 251, 255;
   --sky-rgb: 21, 171, 255;
@@ -18,6 +20,66 @@
   --navy-rgb: 5, 0, 40;
   --purple-rgb: 162, 0, 234;
   --pink-rgb: 255, 87, 235;
+}
+
+[data-theme='had'] {
+  --white: #FFFFFF;
+  --aqua: #FFFFFF;
+  --mint: #E1A6B6;
+  --sky: #E16DA0;
+  --deep: #734555;
+  --navy: #1B1008;
+  --purple: #632f7b;
+  --pink: #E6E09A;
+
+  --white-rgb: 255, 255, 255;
+  --aqua-rgb: 255, 255, 255;
+  --mint-rgb: 225, 166, 182;
+  --sky-rgb: 225, 109, 160;
+  --deep-rgb: 115, 69, 85;
+  --navy-rgb: 27, 16, 8;
+  --purple-rgb: 99, 47, 123;
+  --pink-rgb: 230, 224, 154;
+}
+
+[data-theme='milo'] {
+  --white: #C5AE43;
+  --aqua: #D7CFCC;
+  --mint: #487178;
+  --sky: #354E57;
+  --deep: #141F28;
+  --navy: #000A12;
+  --purple: #292322;
+  --pink: #C04C09;
+
+  --white-rgb: 197, 174, 67;
+  --aqua-rgb: 215, 207, 204;
+  --mint-rgb: 72, 113, 120;
+  --sky-rgb: 53, 78, 87;
+  --deep-rgb: 20, 31, 40;
+  --navy-rgb: 0, 10, 18;
+  --purple-rgb: 41, 35, 34;
+  --pink-rgb: 192, 76, 9;
+}
+
+[data-theme='sweet'] {
+  --white: #A4FEFE;
+  --aqua: #E0E0E0;
+  --mint: #F59CDE;
+  --sky: #D343AB;
+  --deep: #632353;
+  --navy: #1D0115;
+  --purple: #293D35;
+  --pink: #37782A;
+  
+  --white-rgb: 164, 254, 254;
+  --aqua-rgb: 224, 224, 224;
+  --mint-rgb: 245, 156, 222;
+  --sky-rgb: 211, 67, 171;
+  --deep-rgb: 99, 35, 83;
+  --navy-rgb: 29, 1, 21;
+  --purple-rgb: 41, 61, 53;
+  --pink-rgb: 55, 120, 42;
 }
 
 /* Base */
@@ -35,7 +97,7 @@ body {
 
 ::selection {
   background-color: var(--deep);
-  color: white;
+  color: var(--white);
 }
 
 h1 {
@@ -43,7 +105,7 @@ h1 {
   font-weight: 800;
   font-size: 4rem;
   line-height: 4rem;
-  color: white;
+  color: var(--white);
   margin-bottom: 0;
 }
 
@@ -88,7 +150,7 @@ p {
 }
 
 .bold:hover {
-  color: white;
+  color: var(--white);
   text-shadow: var(--mint) 0 0 1rem;
 }
 
@@ -96,7 +158,7 @@ p {
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   font-size: 0.95rem;
-  color: white;
+  color: var(--white);
   background: linear-gradient(to top, rgba(var(--deep-rgb), 0.5), transparent);
   margin: 0;
   padding: 0 0.3rem;
@@ -158,7 +220,7 @@ button {
 }
 
 .button-primary:active {
-  background: linear-gradient(to right, var(--aqua), white);
+  background: linear-gradient(to right, var(--aqua), var(--white));
 }
 
 .button-secondary {
@@ -172,7 +234,7 @@ button {
 
 .button-secondary:active {
   background: linear-gradient(to right, var(--deep) -50%, var(--sky));
-  color: white;
+  color: var(--white);
 }
 
 .button-tertiary {
@@ -184,7 +246,7 @@ button {
 }
 
 .button-tertiary:active {
-  background: linear-gradient(to right, var(--pink), white);
+  background: linear-gradient(to right, var(--pink), var(--white));
 }
 
 .button-container {

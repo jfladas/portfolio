@@ -96,7 +96,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--white);
 }
 
 .fade-bottom {
@@ -121,12 +121,12 @@ export default {
 
 .carousel-fade.prev {
     left: 0;
-    mask: linear-gradient(to left, transparent, white);
+    mask: linear-gradient(to left, transparent, var(--white));
 }
 
 .carousel-fade.next {
     right: 0;
-    mask: linear-gradient(to right, transparent, white);
+    mask: linear-gradient(to right, transparent, var(--white));
 }
 
 .carousel-control {
@@ -137,7 +137,7 @@ export default {
     width: 2.5rem;
     padding: 0.5rem;
     font-size: 1.5rem;
-    color: white;
+    color: var(--white);
     opacity: 0;
     transition: opacity 0.5s;
     background-color: rgba(var(--navy-rgb), 0.3);
@@ -171,7 +171,7 @@ export default {
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(var(--white-rgb), 0.8);
     background-color: rgba(var(--navy-rgb), 0.3);
     backdrop-filter: blur(0.5rem);
     opacity: 0;

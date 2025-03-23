@@ -46,7 +46,6 @@
 
 <script setup>
 import { ref, computed, watch, onMounted, inject } from 'vue'
-import { onBeforeRouteLeave } from 'vue-router'
 import ProjectItem from '@/components/ProjectItem.vue'
 import { projects as enProjects, categories } from '@/data/projects.js'
 import { projekte as deProjects } from '@/data/projekte.js'
@@ -63,7 +62,7 @@ const toggleFilter = (filter) => {
   } else {
     if (selectedFilters.value.includes(filter)) {
       selectedFilters.value = selectedFilters.value.filter(f => f !== filter)
-      if (filter === 'solo' || 'team') {
+      if (filter === 'solo' || filter === 'team') {
         const otherFilter = filter === 'solo' ? 'team' : 'solo'
         if (!selectedFilters.value.includes(otherFilter)) {
           selectedFilters.value.push(otherFilter)
@@ -94,7 +93,7 @@ const filteredProjects = computed(() => {
   }
 
   const nonPersonFilters = selectedFilters.value.filter(filter => filter !== 'solo' && filter !== 'team')
-  const personFilters = selectedFilters.value.filter(filter => filter === 'solo' || 'team')
+  const personFilters = selectedFilters.value.filter(filter => filter === 'solo' || filter === 'team')
 
   if (nonPersonFilters.length === 0) {
     nonPersonFilters.push(...Object.keys(categories).filter(filter => filter !== 'solo' && filter !== 'team'))
@@ -201,7 +200,7 @@ onMounted(() => {
 }
 
 .a:active {
-  color: white;
+  color: var(--white);
 }
 
 .bottom-spacer {

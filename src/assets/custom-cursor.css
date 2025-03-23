@@ -21,14 +21,14 @@
     inset: 0;
     background-color: rgba(var(--aqua-rgb), 0.1);
     backdrop-filter: blur(0.2rem);
-    mask: radial-gradient(circle, white, white);
+    mask: radial-gradient(circle, var(--white), var(--white));
     border-radius: 50%;
     transition: background-color 0.2s ease, mask 0.2s ease;
 }
 
 .custom-cursor.hover::before {
     background-color: rgba(var(--deep-rgb), 0.2);
-    mask: radial-gradient(circle, transparent 20%, white);
+    mask: radial-gradient(circle, transparent 20%, var(--white));
 }
 
 .custom-cursor.hover {
@@ -43,7 +43,7 @@
     padding-top: 1.7rem;
     text-align: center;
     font-size: 0.65rem;
-    color: white;
+    color: var(--white);
     text-shadow: 0 0 0.5rem var(--navy);
     opacity: 1;
     transition: opacity 0.2s ease;
@@ -61,7 +61,7 @@
             rgba(var(--navy-rgb), 0) 75%),
             radial-gradient(circle at center top,
             rgba(var(--navy-rgb), 0) 75%,
-            rgba(255, 255, 255, 0.8));
+            rgba(var(--white-rgb), 0.8));
 }
 
 @keyframes fadeout {

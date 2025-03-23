@@ -29,6 +29,6 @@
 }
 
 .a:active {
-    color: white;
+    color: var(--white);
 }
 </style>

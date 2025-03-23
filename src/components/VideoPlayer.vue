@@ -92,7 +92,7 @@ export default {
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-    color: white;
+    color: var(--white);
     background-color: rgba(var(--navy-rgb), 0.3);
     backdrop-filter: blur(0.5rem);
     opacity: 0;
@@ -117,7 +117,7 @@ export default {
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(var(--white-rgb), 0.8);
     background-color: rgba(var(--navy-rgb), 0.3);
     backdrop-filter: blur(0.5rem);
     opacity: 0;

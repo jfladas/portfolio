@@ -133,7 +133,7 @@ const prevSlide = (index) => {
 .quote-right {
     font-size: 2.5rem;
     color: var(--sky);
-    margin: 0 -0.5rem 0 0.5rem;
+    margin: 0 0 0 0.5rem;
 }
 
 .bottom-corner {

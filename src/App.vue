@@ -22,6 +22,9 @@
       <div v-if="!isMobile" class="more-item tooltip" tooltip="cursor" @click="toggleCursor">
         <font-awesome-icon icon="arrow-pointer" fixed-width />
       </div>
+      <div class="more-item tooltip" tooltip="theme" @click="cycleTheme">
+        <font-awesome-icon icon="palette" fixed-width />
+      </div>
       <!--
       //TODO: achievements
       <div class="more-item tooltip" tooltip="earned">
@@ -95,6 +98,17 @@ const currentLanguage = ref(localStorage.getItem('language') || 'en')
 
 provide('currentLanguage', currentLanguage)
 
+const themes = ['default', 'had', 'milo', 'sweet'];
+const currentThemeIndex = ref(themes.indexOf(localStorage.getItem('theme')) || 0);
+document.documentElement.setAttribute('data-theme', themes[currentThemeIndex.value]);
+
+const cycleTheme = () => {
+  currentThemeIndex.value = (currentThemeIndex.value + 1) % themes.length;
+  document.documentElement.setAttribute('data-theme', themes[currentThemeIndex.value]);
+  localStorage.setItem('theme', themes[currentThemeIndex.value]);
+  showToast('Theme set to ' + themes[currentThemeIndex.value]);
+};
+
 watch(() => route.path, (to, from) => {
   removeCursorHover();
   removeTooltip();
@@ -124,6 +138,7 @@ const removeCursorHover = () => {
 }
 
 let tooltipTimeout = null;
+let toastTimeout = null;
 
 const addTooltip = (text) => {
   if (tooltip.value) {
@@ -200,10 +215,13 @@ const toggleCursor = () => {
 const showToast = (message) => {
   const toast = document.getElementById('toast');
   toast.textContent = message;
+  if (toastTimeout) {
+    clearTimeout(toastTimeout);
+  }
   setTimeout(() => {
     toast.classList.add('visible');
   }, 100);
-  setTimeout(() => {
+  toastTimeout = setTimeout(() => {
     toast.classList.remove('visible');
   }, 3000);
 };
@@ -363,7 +381,7 @@ nav {
 }
 
 .nav-item.selected {
-  color: white;
+  color: var(--white);
 }
 
 .nav-item.left.selected {
@@ -385,12 +403,12 @@ nav {
 }
 
 .nav-item:active {
-  color: white;
+  color: var(--white);
 }
 
 .nav-item.left:active {
   background: linear-gradient(to right,
-      white,
+      var(--white),
       var(--aqua) 10%,
       var(--mint) 20%,
       var(--sky) 30%,
@@ -400,7 +418,7 @@ nav {
 
 .nav-item.right:active {
   background: linear-gradient(to left,
-      white,
+      var(--white),
       var(--aqua) 10%,
       var(--mint) 20%,
       var(--sky) 30%,
@@ -420,12 +438,17 @@ nav {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all 0.5s;
 }
 
 .logo.reverse {
   background: linear-gradient(to left, var(--aqua), var(--mint), var(--sky), var(--deep));
   background-clip: text;
   -webkit-background-clip: text;
+}
+
+.logo:hover {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .more {
@@ -514,7 +537,7 @@ nav {
   padding: 1rem 2rem;
   background: rgba(var(--deep-rgb), 0.2);
   backdrop-filter: blur(1rem);
-  color: white;
+  color: var(--white);
   z-index: 10;
   pointer-events: none;
   opacity: 0;
@@ -533,7 +556,7 @@ nav {
   height: 6rem;
   pointer-events: none;
   backdrop-filter: blur(1rem);
-  mask: linear-gradient(to bottom, transparent, white);
+  mask: linear-gradient(to bottom, transparent, var(--white));
   z-index: 10;
 }
 
@@ -558,7 +581,7 @@ footer {
 }
 
 .heart:hover {
-  color: white;
+  color: var(--white);
 }
 
 .social {

@@ -369,7 +369,7 @@ onMounted(() => {
   padding: 1rem;
   width: 35vw;
   font-size: 2vw;
-  background: linear-gradient(to right, white, var(--pink), var(--purple) 80%);
+  background: linear-gradient(to right, var(--white), var(--pink), var(--purple) 80%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -381,7 +381,7 @@ onMounted(() => {
 
 .title {
   position: relative;
-  background: linear-gradient(to left, white 50%, var(--aqua));
+  background: linear-gradient(to left, var(--white) 50%, var(--aqua));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -396,7 +396,7 @@ onMounted(() => {
   position: absolute;
   content: "Lukas Bucher";
   inset: 0;
-  color: white;
+  color: var(--white);
   background-color: var(--navy);
   opacity: 1;
   z-index: 1;
