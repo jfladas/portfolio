@@ -141,7 +141,7 @@ onUnmounted(() => {
 
 .project-item:active {
     background: linear-gradient(to right,
-            white,
+            var(--white),
             var(--aqua),
             var(--mint),
             var(--sky),

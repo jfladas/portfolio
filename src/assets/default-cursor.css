@@ -35,7 +35,7 @@
     padding-top: 1.7rem;
     text-align: center;
     font-size: 0.65rem;
-    color: white;
+    color: var(--white);
     text-shadow: 0 0 0.5rem var(--navy);
     opacity: 1;
     transition: opacity 0.2s ease;
@@ -52,5 +52,5 @@
             rgba(var(--navy-rgb), 0) 75%),
         radial-gradient(circle at center top,
             rgba(var(--navy-rgb), 0) 75%,
-            rgba(255, 255, 255, 0.8));
+            rgba(var(--white-rgb), 0.8));
 }

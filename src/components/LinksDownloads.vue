@@ -35,7 +35,7 @@ const props = defineProps({
     position: relative;
     font-size: 1.2rem;
     font-weight: 400;
-    color: white;
+    color: var(--white);
     background: transparent;
     padding: 0.5rem 1rem;
     margin-bottom: 0.5rem;
@@ -48,7 +48,7 @@ const props = defineProps({
 
 .link:hover,
 .download:hover {
-    color: white;
+    color: var(--white);
     font-weight: 700;
 }
 
@@ -74,7 +74,7 @@ const props = defineProps({
 
 .link:active,
 .download:active {
-    color: white;
+    color: var(--white);
     background: linear-gradient(to right, var(--sky), var(--deep), var(--navy));
 }
 
