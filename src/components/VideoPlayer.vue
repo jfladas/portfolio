@@ -1,14 +1,16 @@
 <template>
     <teleport to="#video-teleport" :disabled="!isOverlayVisible">
-        <div class="video-player hoverable" :class="{ notplaying: !isPlaying }">
+        <div class="video-player hoverable" :class="{ notplaying: !isPlaying }" @mousemove="showControlsTemporarily">
             <video ref="video" :src="video" @ended="handleVideoEnded" :class="{ small: !isOverlayVisible }"></video>
-            <button class="play-pause-button" @click="togglePlayPause">
+            <button class="play-pause-button" @click="togglePlayPause" :style="{ opacity: showControls ? 1 : 0 }">
                 <font-awesome-icon :icon="isEnded ? 'rotate-left' : (isPlaying ? 'pause' : 'play')" />
             </button>
-            <button v-if="!isOverlayVisible" class="expand-button" @click="handleExpand">
+            <button v-if="!isOverlayVisible" class="expand-button" @click="handleExpand"
+                :style="{ opacity: showControls ? 1 : 0 }">
                 <font-awesome-icon icon="up-right-and-down-left-from-center" />
             </button>
-            <button v-if="isOverlayVisible" class="unexpand-button" @click="$emit('toggle-overlay')">
+            <button v-if="isOverlayVisible" class="unexpand-button" @click="$emit('toggle-overlay')"
+                :style="{ opacity: showControls ? 1 : 0 }">
                 <font-awesome-icon icon="down-left-and-up-right-to-center" />
             </button>
         </div>
@@ -34,7 +36,8 @@ export default {
     data() {
         return {
             isPlaying: false,
-            isEnded: false
+            isEnded: false,
+            showControls: true
         };
     },
     emits: ['toggle-overlay'],
@@ -45,22 +48,37 @@ export default {
                 video.play();
                 this.isPlaying = true;
                 this.isEnded = false;
+                this.hideControlsAfterDelay();
             } else {
                 video.pause();
                 this.isPlaying = false;
+                this.showControls = true;
             }
         },
         handleVideoEnded() {
             this.isPlaying = false;
             this.isEnded = true;
+            this.showControls = true;
         },
         handleExpand() {
             this.$emit('toggle-overlay');
+        },
+        hideControlsAfterDelay() {
+            this.showControls = true;
+            setTimeout(() => {
+                if (this.isPlaying) {
+                    this.showControls = false;
+                }
+            }, 1000);
+        },
+        showControlsTemporarily() {
+            this.showControls = true;
+            if (this.isPlaying) {
+                this.hideControlsAfterDelay();
+            }
         }
     }
 };
-
-//TODO: improve video player mobile ux
 </script>
 
 <style scoped>
@@ -95,7 +113,7 @@ export default {
     color: var(--white);
     background-color: rgba(var(--navy-rgb), 0.3);
     backdrop-filter: blur(0.5rem);
-    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 .play-pause-button:hover {
@@ -120,7 +138,6 @@ export default {
     color: rgba(var(--white-rgb), 0.8);
     background-color: rgba(var(--navy-rgb), 0.3);
     backdrop-filter: blur(0.5rem);
-    opacity: 0;
     transition: opacity 0.5s;
 }
 
