@@ -1,6 +1,6 @@
 <template>
     <teleport to="#images-teleport" :disabled="!isOverlayVisible">
-        <div class="carousel hoverable">
+        <div class="carousel hoverable" @touchstart="onTouchStart" @touchmove="onTouchMove" @touchend="onTouchEnd">
             <div class="carousel-inner" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
                 <div class="carousel-item" v-for="(image, index) in images" :key="index"
                     :class="{ small: !isOverlayVisible }">
@@ -44,10 +44,31 @@ export default {
             default: false
         }
     },
-    emits: ['toggle-overlay', 'next-slide', 'prev-slide']
+    emits: ['toggle-overlay', 'next-slide', 'prev-slide'],
+    data() {
+        return {
+            touchStartX: 0,
+            touchEndX: 0
+        };
+    },
+    methods: {
+        onTouchStart(event) {
+            this.touchStartX = event.changedTouches[0].screenX;
+            this.touchEndX = event.changedTouches[0].screenX;
+        },
+        onTouchMove(event) {
+            this.touchEndX = event.changedTouches[0].screenX;
+        },
+        onTouchEnd() {
+            if (this.touchEndX < this.touchStartX - 50) {
+                this.$emit('next-slide');
+            }
+            if (this.touchEndX > this.touchStartX + 50) {
+                this.$emit('prev-slide');
+            }
+        }
+    }
 };
-
-//TODO: improve image carousel mobile ux
 </script>
 
 <style scoped>
