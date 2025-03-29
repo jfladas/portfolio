@@ -83,6 +83,10 @@
 }
 
 /* Base */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   font-family: "Funnel Sans", sans-serif;
   font-optical-sizing: auto;
@@ -162,6 +166,10 @@ p {
   background: linear-gradient(to top, rgba(var(--deep-rgb), 0.5), transparent);
   margin: 0;
   padding: 0 0.3rem;
+}
+
+.snippet.copy {
+  cursor: pointer;
 }
 
 .snippet.copy:hover {
