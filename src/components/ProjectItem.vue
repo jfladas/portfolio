@@ -75,67 +75,35 @@ onUnmounted(() => {
             var(--deep),
             rgba(var(--navy-rgb), 0));
     transition: all 0.5s;
-}
-
-.project-item h2 {
-    font-family: "Funnel Display", sans-serif;
-    font-weight: 800;
-    font-size: 1.5rem;
-    margin-bottom: 0.25rem;
-    color: var(--navy);
-    transition: all 0.5s;
-}
-
-.project-item p {
-    font-size: 0;
-    color: transparent;
-    margin-bottom: 0;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.5s;
-}
-
-.project-item p:first-of-type {
-    font-weight: 700;
-}
-
-.project-icons {
-    color: var(--navy);
-    display: flex;
-    gap: 0.5rem;
-    transition: all 0.5s;
-}
-
-.project-item:hover {
-    padding: 1rem 1.5rem;
-    background: linear-gradient(to right,
-            var(--aqua),
-            var(--mint),
-            var(--sky),
-            var(--deep),
-            rgba(var(--navy-rgb), 0));
 
     h2 {
-        font-size: 2.5rem;
-        max-width: 60vw;
+        font-family: "Funnel Display", sans-serif;
+        font-weight: 800;
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+        color: var(--navy);
+        transition: all 0.5s;
     }
 
     p {
-        font-size: 1.5rem;
-        color: var(--deep);
-        opacity: 1;
-        max-width: 50vw;
-        max-height: 10rem;
-        height: fit-content;
+        font-size: 0;
+        color: transparent;
+        margin-bottom: 0;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s;
+    }
+
+    p:first-of-type {
+        font-weight: 700;
     }
 
     .project-icons {
-        font-size: 1.5rem;
-        color: var(--deep);
-        margin-top: 1rem;
-        gap: 1rem;
-        max-width: 50vw;
+        color: var(--navy);
+        display: flex;
+        gap: 0.5rem;
+        transition: all 0.5s;
     }
 }
 
@@ -159,7 +127,23 @@ onUnmounted(() => {
         margin: 0.2rem 2rem 0.5rem 0;
     }
 
-    .project-item:hover,
+    .project-item:hover {
+        background: linear-gradient(to right,
+                var(--sky),
+                var(--deep),
+                rgba(var(--navy-rgb), 0));
+    }
+
+    .project-item:active {
+        background: linear-gradient(to right,
+                var(--white),
+                var(--aqua),
+                var(--mint),
+                var(--sky),
+                var(--deep),
+                rgba(var(--navy-rgb), 0));
+    }
+
     .project-item.in-view {
         padding: 1rem 1.5rem;
         background: linear-gradient(to right,
@@ -191,6 +175,54 @@ onUnmounted(() => {
             gap: 0.8rem;
             max-width: 60vw;
         }
+    }
+}
+
+else {
+    .project-item:hover {
+        padding: 1rem 1.5rem;
+        background: linear-gradient(to right,
+                var(--aqua),
+                var(--mint),
+                var(--sky),
+                var(--deep),
+                rgba(var(--navy-rgb), 0));
+
+        h2 {
+            font-size: 2.5rem;
+            max-width: 60vw;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: var(--deep);
+            opacity: 1;
+            max-width: 50vw;
+            max-height: 10rem;
+            height: fit-content;
+        }
+
+        .project-icons {
+            font-size: 1.5rem;
+            color: var(--deep);
+            margin-top: 1rem;
+            gap: 1rem;
+            max-width: 50vw;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .project-item,
+    .project-item h2,
+    .project-item p,
+    .project-item .project-icons,
+    .project-icons,
+    .project-item:hover,
+    .project-item:active,
+    .project-item.in-view {
+        transition: none;
     }
 }
 </style>
