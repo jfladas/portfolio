@@ -99,13 +99,13 @@ const currentLanguage = ref(localStorage.getItem('language') || 'en')
 provide('currentLanguage', currentLanguage)
 
 const themes = ['default', 'had', 'milo', 'sweet'];
-const currentThemeIndex = ref(themes.indexOf(localStorage.getItem('theme')) || 0);
+const currentThemeIndex = ref(localStorage.getItem('themeIndex') || 0);
 document.documentElement.setAttribute('data-theme', themes[currentThemeIndex.value]);
 
 const cycleTheme = () => {
   currentThemeIndex.value = (currentThemeIndex.value + 1) % themes.length;
   document.documentElement.setAttribute('data-theme', themes[currentThemeIndex.value]);
-  localStorage.setItem('theme', themes[currentThemeIndex.value]);
+  localStorage.setItem('themeIndex', currentThemeIndex.value);
   showToast('Theme set to ' + themes[currentThemeIndex.value]);
 };
 
@@ -312,6 +312,15 @@ onMounted(() => {
   link.href = new URL(`/src/assets/${isCustomCursor.value ? 'custom-cursor.css' : 'default-cursor.css'}`, import.meta.url).href;
   document.head.appendChild(link);
 
+  const handleClickOutside = (event) => {
+    const moreMenu = document.querySelector('.more');
+    if (moreMenu && !moreMenu.contains(event.target)) {
+      moreVisible.value = false;
+    }
+  };
+
+  document.addEventListener('click', handleClickOutside);
+
   onUnmounted(() => {
     window.removeEventListener('touchstart', handleTouchStart)
     window.removeEventListener('touchend', handleTouchEnd)
@@ -329,6 +338,7 @@ onMounted(() => {
       el.removeEventListener('click', () => { })
     })
     observer.disconnect()
+    document.removeEventListener('click', handleClickOutside);
   })
 })
 </script>
