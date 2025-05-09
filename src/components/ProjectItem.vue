@@ -178,7 +178,7 @@ onUnmounted(() => {
     }
 }
 
-else {
+@media (min-width: 1200px) {
     .project-item:hover {
         padding: 1rem 1.5rem;
         background: linear-gradient(to right,
