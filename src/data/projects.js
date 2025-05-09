@@ -1,3 +1,4 @@
+const sweetFiles = import.meta.glob('../projects/sweet/*', { eager: true });
 const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
 const sputifyFiles = import.meta.glob('../projects/sputify/*', { eager: true });
 const ecohomeFiles = import.meta.glob('../projects/ecohome/*', { eager: true });
@@ -6,7 +7,7 @@ const matbfFiles = import.meta.glob('../projects/matbf/*', { eager: true });
 const europeFiles = import.meta.glob('../projects/4g/*', { eager: true });
 const saladFiles = import.meta.glob('../projects/salad/*', { eager: true });
 const hsclFiles = import.meta.glob('../projects/hscl/*', { eager: true });
-const sweetFiles = import.meta.glob('../projects/sweet/*', { eager: true });
+const sweetteethFiles = import.meta.glob('../projects/sweetteeth/*', { eager: true });
 const rodinaFiles = import.meta.glob('../projects/rodina/*', { eager: true });
 const solarsystemFiles = import.meta.glob('../projects/solarsystem/*', { eager: true });
 const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
@@ -14,6 +15,317 @@ const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 
 export const projects = [
+    // sweet
+    {
+        id: 'sweet',
+        name: 'sweet',
+        description: 'web event platform for digital ideation',
+        context: {
+            lines: [
+                '2024 @ HSLU, Emmenbrücke',
+                'Module STUW2 - Studio UX & Web 2'
+            ],
+            url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'team',
+            'coding',
+            'design',
+            'web',
+            'ux',
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `This web application is designed to bring together Digital Ideation students across Emmenbrücke and Rotkreuz. The platform provides a space to coordinate, share, and discover upcoming events.`
+            },
+            {
+                type: 'heading',
+                text: 'View the product'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Go to Page',
+                        action: 'https://jfladas.github.io/uxweb2/',
+                        icon: 'arrow-right',
+                        color: 'primary'
+                    },
+                    {
+                        text: '',
+                        action: 'https://www.figma.com/proto/H39FzuTJQZOMxcQzrEDcp0/UX-Web-Styleguide?node-id=0-1&t=4RZi44A5r09E112U-1',
+                        icon: 'fa-brands fa-figma',
+                        color: 'secondary'
+                    }
+                ]
+            },
+            {
+                type: 'heading',
+                text: 'Project Description'
+            },
+            {
+                type: 'subheading',
+                text: 'Problem Statement'
+            },
+            {
+                type: 'bullet',
+                text: 'Two campus locations create coordination challenges'
+            },
+            {
+                type: 'bullet',
+                text: 'New students struggle with local transit info'
+            },
+            {
+                type: 'bullet',
+                text: 'Transportation times vary significantly between users'
+            },
+            {
+                type: 'bullet',
+                text: 'Eco-friendly options like biking are underused'
+            },
+            {
+                type: 'bullet',
+                text: 'Staff often drive alone when transporting equipment'
+            },
+            {
+                type: 'bullet',
+                text: 'Missed chances for social connections due to lack of visibility on who is traveling where'
+            },
+            {
+                type: 'subheading',
+                text: 'Team Roles'
+            },
+            {
+                type: 'iconed',
+                text: 'UX Research',
+                icon: 'magnifying-glass'
+            },
+            {
+                type: 'bullet',
+                text: 'Dario Stocker'
+            },
+            {
+                type: 'iconed',
+                text: 'UI Design',
+                icon: 'palette'
+            },
+            {
+                type: 'bullet',
+                text: 'Michelle Studtmann'
+            },
+            {
+                type: 'bullet',
+                text: 'Laura Giaimo'
+            },
+            {
+                type: 'iconed',
+                text: 'Branding',
+                icon: 'tag'
+            },
+            {
+                type: 'bullet',
+                text: 'Dominika Degtyareva'
+            },
+            {
+                type: 'iconed',
+                text: 'Frontend Development',
+                icon: 'desktop'
+            },
+            {
+                type: 'bullet',
+                text: 'Lisa Landolt'
+            },
+            {
+                type: 'bullet',
+                text: 'Lukas Bucher'
+            },
+            {
+                type: 'iconed',
+                text: 'Backend Development',
+                icon: 'server'
+            },
+            {
+                type: 'bullet',
+                text: 'Arwen Bättig'
+            },
+            {
+                type: 'bullet',
+                text: 'Jennifer Beeler'
+            },
+            {
+                type: 'subheading',
+                text: 'Methodology'
+            },
+            {
+                type: 'paragraph',
+                text: 'The project followed the Scrum framework, ensuring an organized and iterative development process.'
+            },
+            {
+                type: 'iconed',
+                text: 'Scrum Framework',
+                icon: 'cogs'
+            },
+            {
+                type: 'bullet',
+                text: 'Product Owner: Dario Stocker'
+            },
+            {
+                type: 'bullet',
+                text: 'Scrum Master: Arwen Bättig'
+            },
+            {
+                type: 'bullet',
+                text: 'Team organized into Frontend, Backend, UX, UI, and Branding roles'
+            },
+            {
+                type: 'bullet',
+                text: 'Weekly sprints with daily stand-ups and bi-weekly retrospectives'
+            },
+            {
+                type: 'paragraph',
+                text: 'The project was divided into four sprints, each focusing on different aspects of development.'
+            },
+            {
+                type: 'subheading',
+                text: 'Sprint Breakdown'
+            },
+            {
+                type: 'iconed',
+                text: 'Setup & Ideation',
+                icon: '1'
+            },
+            {
+                type: 'bullet',
+                text: 'Repo & tooling setup'
+            },
+            {
+                type: 'bullet',
+                text: 'Ideation & concept development'
+            },
+            {
+                type: 'iconed',
+                text: 'Development',
+                icon: '2'
+            },
+            {
+                type: 'bullet',
+                text: 'Frontend & backend development'
+            },
+            {
+                type: 'bullet',
+                text: 'UI & UX design'
+            },
+            {
+                type: 'iconed',
+                text: 'Testing & Prototyping',
+                icon: '3'
+            },
+            {
+                type: 'bullet',
+                text: 'Paper prototyping'
+            },
+            {
+                type: 'bullet',
+                text: 'User testing'
+            },
+            {
+                type: 'iconed',
+                text: 'Evaluation',
+                icon: '4'
+            },
+            {
+                type: 'bullet',
+                text: 'Final feedback & adjustments'
+            },
+            {
+                type: 'bullet',
+                text: 'Project documentation'
+            },
+            {
+                type: 'bullet',
+                text: 'Presentation preparation'
+            },
+            {
+                type: 'subheading',
+                text: 'Technologies'
+            },
+            {
+                type: 'iconed',
+                text: 'Frontend',
+                icon: 'desktop'
+            },
+            {
+                type: 'bullet',
+                text: 'Angular'
+            },
+            {
+                type: 'bullet',
+                text: 'Github Pages'
+            },
+            {
+                type: 'bullet',
+                text: 'Nx for monorepo management'
+            },
+            {
+                type: 'iconed',
+                text: 'Backend',
+                icon: 'server'
+            },
+            {
+                type: 'bullet',
+                text: 'Node.js'
+            },
+            {
+                type: 'bullet',
+                text: 'NestJS'
+            },
+            {
+                type: 'bullet',
+                text: 'PostgreSQL'
+            },
+            {
+                type: 'bullet',
+                text: 'Heroku'
+            },
+        ],
+        links: [
+            {
+                text: 'Go to Page',
+                url: 'https://jfladas.github.io/uxweb2/',
+                icon: 'external-link-alt',
+            },
+            {
+                text: 'GitHub Repository',
+                url: 'https://github.com/jfladas/uxweb2',
+                icon: 'fa-brands fa-github-alt'
+            },
+            {
+                text: 'Figma Prototype',
+                url: 'https://www.figma.com/proto/H39FzuTJQZOMxcQzrEDcp0/UX-Web-Styleguide?node-id=0-1&t=4RZi44A5r09E112U-1',
+                icon: 'fa-brands fa-figma'
+            },
+            {
+                text: 'Miro Board',
+                url: 'https://miro.com/app/board/uXjVIZlez1M=/',
+                icon: 'external-link-alt'
+            }
+        ],
+        downloads: [
+            {
+                text: 'Presentation.ppsx',
+                url: sweetFiles['../projects/sweet/sweet.ppsx'].default,
+                icon: 'file-powerpoint'
+            },
+            {
+                text: 'Reflexion.pdf',
+                url: sweetFiles['../projects/sweet/Reflexion.pdf'].default,
+                icon: 'file-pdf'
+            },
+        ]
+    },
     // hearts across dimensions
     {
         id: 'had',
@@ -259,7 +571,7 @@ export const projects = [
         context: {
             lines: [
                 '2024 @ HSLU, Emmenbrücke',
-                'Module STUWE1 - Studio Web & Mobile 1'
+                'Module STUW1 - Studio Web & Mobile 1'
             ],
             url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
             icon: 'graduation-cap',
@@ -2120,7 +2432,7 @@ export const projects = [
     },
     // sweet teeth
     {
-        id: 'sweet',
+        id: 'sweetteeth',
         name: 'sweet teeth',
         description: `2d auto-runner game`,
         context: {
@@ -2343,19 +2655,19 @@ export const projects = [
                 type: 'images',
                 images: [
                     {
-                        src: sweetFiles['../projects/sweet/SweetTeeth_Start.png'].default,
+                        src: sweetteethFiles['../projects/sweetteeth/SweetTeeth_Start.png'].default,
                         caption: 'Start Screen'
                     },
                     {
-                        src: sweetFiles['../projects/sweet/SweetTeeth_Super.png'].default,
+                        src: sweetteethFiles['../projects/sweetteeth/SweetTeeth_Super.png'].default,
                         caption: 'Super Rot Power-Up'
                     },
                     {
-                        src: sweetFiles['../projects/sweet/SweetTeeth_Oops.png'].default,
+                        src: sweetteethFiles['../projects/sweetteeth/SweetTeeth_Oops.png'].default,
                         caption: 'Game Over Screen'
                     },
                     {
-                        src: sweetFiles['../projects/sweet/SweetTeeth_WellDone.png'].default,
+                        src: sweetteethFiles['../projects/sweetteeth/SweetTeeth_WellDone.png'].default,
                         caption: 'Win Screen'
                     }
                 ],
@@ -2386,22 +2698,22 @@ export const projects = [
         downloads: [
             {
                 text: 'SweetTeeth.zip (Windows)',
-                url: sweetFiles['../projects/sweet/SweetTeeth.zip'].default,
+                url: sweetteethFiles['../projects/sweetteeth/SweetTeeth.zip'].default,
                 icon: 'file-archive'
             },
             {
                 text: 'Description.pdf',
-                url: sweetFiles['../projects/sweet/SweetTeeth_Description.pdf'].default,
+                url: sweetteethFiles['../projects/sweetteeth/SweetTeeth_Description.pdf'].default,
                 icon: 'file-pdf'
             },
             {
                 text: 'ControlScheme.pdf',
-                url: sweetFiles['../projects/sweet/SweetTeeth_ControlScheme.pdf'].default,
+                url: sweetteethFiles['../projects/sweetteeth/SweetTeeth_ControlScheme.pdf'].default,
                 icon: 'file-pdf'
             },
             {
                 text: 'Presentation.pdf',
-                url: sweetFiles['../projects/sweet/SweetTeeth_Presentation.pdf'].default,
+                url: sweetteethFiles['../projects/sweetteeth/SweetTeeth_Presentation.pdf'].default,
                 icon: 'file-pdf'
             }
         ]

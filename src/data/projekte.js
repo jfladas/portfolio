@@ -1,3 +1,4 @@
+const sweetFiles = import.meta.glob('../projects/sweet/*', { eager: true });
 const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
 const sputifyFiles = import.meta.glob('../projects/sputify/*', { eager: true });
 const ecohomeFiles = import.meta.glob('../projects/ecohome/*', { eager: true });
@@ -6,7 +7,7 @@ const matbfFiles = import.meta.glob('../projects/matbf/*', { eager: true });
 const europeFiles = import.meta.glob('../projects/4g/*', { eager: true });
 const saladFiles = import.meta.glob('../projects/salad/*', { eager: true });
 const hsclFiles = import.meta.glob('../projects/hscl/*', { eager: true });
-const sweetFiles = import.meta.glob('../projects/sweet/*', { eager: true });
+const sweetteethFiles = import.meta.glob('../projects/sweetteeth/*', { eager: true });
 const rodinaFiles = import.meta.glob('../projects/rodina/*', { eager: true });
 const solarsystemFiles = import.meta.glob('../projects/solarsystem/*', { eager: true });
 const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
@@ -14,6 +15,8 @@ const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 
 export const projekte = [
+    // sweet
+
     // hearts across dimensions
     {
         id: 'had',
@@ -2119,7 +2122,7 @@ export const projekte = [
     },
     // sweet teeth
     {
-        id: 'sweet',
+        id: 'sweetteeth',
         name: 'sweet teeth',
         description: `2d auto-runner game`,
         context: {
@@ -2342,19 +2345,19 @@ export const projekte = [
                 type: 'images',
                 images: [
                     {
-                        src: sweetFiles['../projects/sweet/SweetTeeth_Start.png'].default,
+                        src: sweetteethFiles['../projects/sweetteeth/SweetTeeth_Start.png'].default,
                         caption: 'Startbildschirm'
                     },
                     {
-                        src: sweetFiles['../projects/sweet/SweetTeeth_Super.png'].default,
+                        src: sweetteethFiles['../projects/sweetteeth/SweetTeeth_Super.png'].default,
                         caption: 'Super Rot Power-Up'
                     },
                     {
-                        src: sweetFiles['../projects/sweet/SweetTeeth_Oops.png'].default,
+                        src: sweetteethFiles['../projects/sweetteeth/SweetTeeth_Oops.png'].default,
                         caption: 'Game Over Bildschirm'
                     },
                     {
-                        src: sweetFiles['../projects/sweet/SweetTeeth_WellDone.png'].default,
+                        src: sweetteethFiles['../projects/sweetteeth/SweetTeeth_WellDone.png'].default,
                         caption: 'Gewonnen Bildschirm'
                     }
                 ],
@@ -2385,22 +2388,22 @@ export const projekte = [
         downloads: [
             {
                 text: 'SweetTeeth.zip (Windows)',
-                url: sweetFiles['../projects/sweet/SweetTeeth.zip'].default,
+                url: sweetteethFiles['../projects/sweetteeth/SweetTeeth.zip'].default,
                 icon: 'file-archive'
             },
             {
                 text: 'Beschreibung.pdf',
-                url: sweetFiles['../projects/sweet/SweetTeeth_Description.pdf'].default,
+                url: sweetteethFiles['../projects/sweetteeth/SweetTeeth_Description.pdf'].default,
                 icon: 'file-pdf'
             },
             {
                 text: 'Steuerungsschema.pdf',
-                url: sweetFiles['../projects/sweet/SweetTeeth_ControlScheme.pdf'].default,
+                url: sweetteethFiles['../projects/sweetteeth/SweetTeeth_ControlScheme.pdf'].default,
                 icon: 'file-pdf'
             },
             {
                 text: 'Präsentation.pdf',
-                url: sweetFiles['../projects/sweet/SweetTeeth_Presentation.pdf'].default,
+                url: sweetteethFiles['../projects/sweetteeth/SweetTeeth_Presentation.pdf'].default,
                 icon: 'file-pdf'
             }
         ]
