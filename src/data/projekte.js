@@ -16,7 +16,316 @@ const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 
 export const projekte = [
     // sweet
-
+    {
+        id: 'sweet',
+        name: 'sweet',
+        description: 'web-eventplattform für digital ideation',
+        context: {
+            lines: [
+                '2024 @ HSLU, Emmenbrücke',
+                'Modul STUW2 - Studio UX & Web 2'
+            ],
+            url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'team',
+            'coding',
+            'design',
+            'web',
+            'ux',
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `Diese Webanwendung bringt Digital Ideation Studierende aus Emmenbrücke und Rotkreuz zusammen. Die Plattform bietet Raum zur Koordination, zum Teilen und Entdecken von anstehenden Events.`
+            },
+            {
+                type: 'heading',
+                text: 'Produkt ansehen'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Zur Seite',
+                        action: 'https://jfladas.github.io/uxweb2/',
+                        icon: 'arrow-right',
+                        color: 'primary'
+                    },
+                    {
+                        text: '',
+                        action: 'https://www.figma.com/proto/H39FzuTJQZOMxcQzrEDcp0/UX-Web-Styleguide?node-id=0-1&t=4RZi44A5r09E112U-1',
+                        icon: 'fa-brands fa-figma',
+                        color: 'secondary'
+                    }
+                ]
+            },
+            {
+                type: 'heading',
+                text: 'Projektbeschreibung'
+            },
+            {
+                type: 'subheading',
+                text: 'Problemstellung'
+            },
+            {
+                type: 'bullet',
+                text: 'Zwei Campus-Standorte erschweren die Koordination'
+            },
+            {
+                type: 'bullet',
+                text: 'Neue Studierende haben Mühe mit lokalen ÖV-Infos'
+            },
+            {
+                type: 'bullet',
+                text: 'Die Reisezeiten unterscheiden sich stark zwischen den Nutzenden'
+            },
+            {
+                type: 'bullet',
+                text: 'Umweltfreundliche Optionen wie Velofahren werden wenig genutzt'
+            },
+            {
+                type: 'bullet',
+                text: 'Dozierende transportieren Ausrüstung oft allein mit dem Auto'
+            },
+            {
+                type: 'bullet',
+                text: 'Verpasste soziale Chancen, da nicht sichtbar ist, wer wann wohin reist'
+            },
+            {
+                type: 'subheading',
+                text: 'Teamrollen'
+            },
+            {
+                type: 'iconed',
+                text: 'UX Research',
+                icon: 'magnifying-glass'
+            },
+            {
+                type: 'bullet',
+                text: 'Dario Stocker'
+            },
+            {
+                type: 'iconed',
+                text: 'UI Design',
+                icon: 'palette'
+            },
+            {
+                type: 'bullet',
+                text: 'Michelle Studtmann'
+            },
+            {
+                type: 'bullet',
+                text: 'Laura Giaimo'
+            },
+            {
+                type: 'iconed',
+                text: 'Branding',
+                icon: 'tag'
+            },
+            {
+                type: 'bullet',
+                text: 'Dominika Degtyareva'
+            },
+            {
+                type: 'iconed',
+                text: 'Frontend Entwicklung',
+                icon: 'desktop'
+            },
+            {
+                type: 'bullet',
+                text: 'Lisa Landolt'
+            },
+            {
+                type: 'bullet',
+                text: 'Lukas Bucher'
+            },
+            {
+                type: 'iconed',
+                text: 'Backend Entwicklung',
+                icon: 'server'
+            },
+            {
+                type: 'bullet',
+                text: 'Arwen Bättig'
+            },
+            {
+                type: 'bullet',
+                text: 'Jennifer Beeler'
+            },
+            {
+                type: 'subheading',
+                text: 'Methodik'
+            },
+            {
+                type: 'paragraph',
+                text: 'Das Projekt folgte dem Scrum-Framework und ermöglichte eine organisierte und iterative Entwicklung.'
+            },
+            {
+                type: 'iconed',
+                text: 'Scrum-Framework',
+                icon: 'cogs'
+            },
+            {
+                type: 'bullet',
+                text: 'Product Owner: Dario Stocker'
+            },
+            {
+                type: 'bullet',
+                text: 'Scrum Master: Arwen Bättig'
+            },
+            {
+                type: 'bullet',
+                text: 'Team war in Frontend, Backend, UX, UI und Branding aufgeteilt'
+            },
+            {
+                type: 'bullet',
+                text: 'Wöchentliche Sprints mit täglichen Stand-ups und zweiwöchentlichen Retrospektiven'
+            },
+            {
+                type: 'paragraph',
+                text: 'Das Projekt wurde in vier Sprints aufgeteilt, wobei jeder Sprint einen anderen Entwicklungsschwerpunkt hatte.'
+            },
+            {
+                type: 'subheading',
+                text: 'Sprint-Übersicht'
+            },
+            {
+                type: 'iconed',
+                text: 'Setup & Ideation',
+                icon: '1'
+            },
+            {
+                type: 'bullet',
+                text: 'Repo- und Tooling-Setup'
+            },
+            {
+                type: 'bullet',
+                text: 'Ideenfindung und Konzeptentwicklung'
+            },
+            {
+                type: 'iconed',
+                text: 'Entwicklung',
+                icon: '2'
+            },
+            {
+                type: 'bullet',
+                text: 'Frontend- und Backend-Entwicklung'
+            },
+            {
+                type: 'bullet',
+                text: 'UI- und UX-Design'
+            },
+            {
+                type: 'iconed',
+                text: 'Testing & Prototyping',
+                icon: '3'
+            },
+            {
+                type: 'bullet',
+                text: 'Papier-Prototyping'
+            },
+            {
+                type: 'bullet',
+                text: 'User-Tests'
+            },
+            {
+                type: 'iconed',
+                text: 'Evaluation',
+                icon: '4'
+            },
+            {
+                type: 'bullet',
+                text: 'Letztes Feedback & Anpassungen'
+            },
+            {
+                type: 'bullet',
+                text: 'Projektdokumentation'
+            },
+            {
+                type: 'bullet',
+                text: 'Vorbereitung der Präsentation'
+            },
+            {
+                type: 'subheading',
+                text: 'Technologien'
+            },
+            {
+                type: 'iconed',
+                text: 'Frontend',
+                icon: 'desktop'
+            },
+            {
+                type: 'bullet',
+                text: 'Angular'
+            },
+            {
+                type: 'bullet',
+                text: 'GitHub Pages'
+            },
+            {
+                type: 'bullet',
+                text: 'Nx für Monorepo-Verwaltung'
+            },
+            {
+                type: 'iconed',
+                text: 'Backend',
+                icon: 'server'
+            },
+            {
+                type: 'bullet',
+                text: 'Node.js'
+            },
+            {
+                type: 'bullet',
+                text: 'NestJS'
+            },
+            {
+                type: 'bullet',
+                text: 'PostgreSQL'
+            },
+            {
+                type: 'bullet',
+                text: 'Heroku'
+            },
+        ],
+        links: [
+            {
+                text: 'Zur Seite',
+                url: 'https://jfladas.github.io/uxweb2/',
+                icon: 'external-link-alt',
+            },
+            {
+                text: 'GitHub Repository',
+                url: 'https://github.com/jfladas/uxweb2',
+                icon: 'fa-brands fa-github-alt'
+            },
+            {
+                text: 'Figma-Prototyp',
+                url: 'https://www.figma.com/proto/H39FzuTJQZOMxcQzrEDcp0/UX-Web-Styleguide?node-id=0-1&t=4RZi44A5r09E112U-1',
+                icon: 'fa-brands fa-figma'
+            },
+            {
+                text: 'Miro Board',
+                url: 'https://miro.com/app/board/uXjVIZlez1M=/',
+                icon: 'external-link-alt'
+            }
+        ],
+        downloads: [
+            {
+                text: 'Präsentation.ppsx',
+                url: sweetFiles['../projects/sweet/sweet.ppsx'].default,
+                icon: 'file-powerpoint'
+            },
+            {
+                text: 'Reflexion.pdf',
+                url: sweetFiles['../projects/sweet/Reflexion.pdf'].default,
+                icon: 'file-pdf'
+            },
+        ]
+    },
     // hearts across dimensions
     {
         id: 'had',
@@ -262,7 +571,7 @@ export const projekte = [
         context: {
             lines: [
                 '2024 @ HSLU, Emmenbrücke',
-                'Modul STUWE1 - Studio Web & Mobile 1'
+                'Modul STUW1 - Studio Web & Mobile 1'
             ],
             url: 'https://www.hslu.ch/de-ch/design-film-kunst/',
             icon: 'graduation-cap',
