@@ -577,7 +577,6 @@ footer {
   text-align: center;
   color: var(--mint);
   background: linear-gradient(to bottom, var(--deep), transparent 75%);
-  margin-top: 6rem;
   padding-top: 1.2rem;
   padding-bottom: 1.5rem;
   display: flex;

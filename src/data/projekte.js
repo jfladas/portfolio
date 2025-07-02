@@ -15,6 +15,291 @@ const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 
 export const projekte = [
+    // hearts across dimensions
+    {
+        id: 'had',
+        name: 'hearts across dimensions',
+        description: 'visual novel / dating sim game',
+        context: {
+            lines: [
+                '2024 - 2025 @ HSLU, Rotkreuz & Emmenbrücke',
+                'Module MEN3 & MEN4 - Mentorat Semester 3 & 4'
+            ],
+            url: 'https://www.hslu.ch/',
+            icon: 'graduation-cap',
+            tooltip: 'schule'
+        },
+        categories: [
+            'team',
+            'coding',
+            'game',
+            'story',
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `Hearts across Dimensions ist eine Visual-Novel-Dating-Sim, in der die Spieler:innen die Geschichten von fünf einzigartigen Charakteren erkunden.
+                        Das Spiel baut auf dem vorherigen Mentoratsprojekt Semester 2 von Angelika Gort auf, in dem sie die Charakterdesigns erstellt hat.
+                        Die Demo wurde von Angelika Gort und mir unter der Betreuung von Zoe Röllin im Rahmen des Mentorats Semester 3 entwickelt.
+                        In MEN4 wurde eine Alpha-Version veröffentlicht, in der wir das Spiel mit Unterstützung von Zoe Röllin weiterentwickelt haben.
+                        In der Alpha ist eine komplette Route für Aleph Rei mit drei Enden spielbar. Es gibt exklusive Illustrationen, wenn du die richtigen Entscheidungen triffst.`
+            },
+            {
+                type: 'heading',
+                text: 'Spiele die Demo'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Im Browser spielen / Herunterladen',
+                        action: 'https://jfladas.itch.io/hearts-across-dimensions',
+                        icon: 'play',
+                        color: 'primary'
+                    }
+                ]
+            },
+            {
+                type: 'subheading',
+                text: 'Installations- & Spielanweisungen'
+            },
+            {
+                type: 'paragraph',
+                text: `Das Spiel wurde hauptsächlich für Mobile im Porträt-Layout entwickelt, ist aber auch auf Desktop und im Querformat spielbar.`
+            },
+            {
+                type: 'iconed',
+                text: 'Web (Mobile/Desktop)',
+                icon: 'globe'
+            },
+            {
+                type: 'bullet',
+                text: 'Um direkt im Browser zu spielen auf der itch.io-Seite auf <span class="snippet">Spiel starten</span> klicken'
+            },
+            {
+                type: 'bullet',
+                text: 'Je nach Gerät oder Browserkompatibilität können Probleme auftreten'
+            },
+            {
+                type: 'iconed',
+                text: 'Android',
+                icon: 'fa-brands fa-android'
+            },
+            {
+                type: 'bullet',
+                text: 'Android-Build von der itch.io-Seite herunterladen'
+            },
+            {
+                type: 'bullet',
+                text: '<span class="snippet">HaD.apk</span> ausführen, um das Spiel zu installieren und zu öffnen'
+            },
+            {
+                type: 'bullet',
+                text: 'Das Spiel wird danach als App auf dem Gerät zugänglich sein'
+            },
+            {
+                type: 'iconed',
+                text: 'Windows',
+                icon: 'fa-brands fa-windows'
+            },
+            {
+                type: 'bullet',
+                text: 'Windows-Build von der itch.io-Seite herunterladen'
+            },
+            {
+                type: 'bullet',
+                text: '<span class="snippet">HaD (Demo).exe</span> ausführen, um das Spiel zu starten'
+            },
+            {
+                type: 'subheading',
+                text: 'Feedback'
+            },
+            {
+                type: 'paragraph',
+                text: 'Wir schätzen jedes Feedback, um das Erlebnis zu verbessern. Meinungen und Rückmeldungen können über die Umfrage gegeben werden:'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Umfrage ausfüllen',
+                        action: 'https://forms.gle/HbSeV4yHSr4Eiaxk6',
+                        icon: 'arrow-right',
+                        color: 'secondary'
+                    }
+                ]
+            },
+            {
+                type: 'heading',
+                text: 'Projektbeschreibung'
+            },
+            {
+                type: 'subheading',
+                text: 'Charaktere'
+            },
+            {
+                type: 'paragraph',
+                text: `Das Spiel bietet fünf Charaktere mit einzigartigen Persönlichkeiten und Handlungssträngen. Die Spieler:innen können wählen, mit welchem Charakter sie interagieren möchten, was zu unterschiedlichen Ergebnissen und Dialogen führt.`
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: hadFiles['../projects/had/Characters.jpg'].default,
+                        caption: 'Charaktere'
+                    }
+                ]
+            },
+            {
+                type: 'subheading',
+                text: 'Geschichte'
+            },
+            {
+                type: 'paragraph',
+                text: `Eine mysteriöse Frau scheitert daran, ihre Dimension vor interdimensionalen Wesen zu schützen. Bevor sie stirbt, schickt sie einen blutbefleckten Brief durch die Dimensionen.
+                        Du beginnst einen neuen Job bei einer Hochzeitsplanungsfirma. Bald geschehen seltsame Dinge: ein sich ständig veränderndes Gebäude, eine Zeitschleife und ein ... Pferd?
+                        Ein Erdbeben zwingt dich in einen Bunker, wo du auf bekannte Gesichter triffst. Deine Entscheidung, wem du vertraust, bestimmt den Verlauf des nächsten Kapitels.`
+            },
+            {
+                type: 'paragraph',
+                text: `Du begegnest Aleph, einer charismatischen Figur mit Hinweisen auf andere Ursprünge.
+                        Während die seltsamen Ereignisse zunehmen und unerwartete Charaktere verborgene Wahrheiten enthüllen, wirst du in ein tieferes Mysterium um alternative Dimensionen, unsichtbare Kräfte und ein mächtiges Schicksal hineingezogen, das du nie gewollt hast.
+                        Auf dem Weg entstehen Bindungen, Geheimnisse werden gelüftet und die Grenze zwischen Realität und Übernatürlichem beginnt zu verschwimmen.`
+            },
+            {
+                type: 'subheading',
+                text: 'Pläne für MEN5'
+            },
+            {
+                type: 'bullet',
+                text: 'Hintergründe aktualisieren'
+            },
+            {
+                type: 'bullet',
+                text: 'Alle Charakter-Sprites'
+            },
+            {
+                type: 'bullet',
+                text: 'Alle Illustrationen'
+            },
+            {
+                type: 'bullet',
+                text: 'Komplette Story?'
+            },
+            {
+                type: 'bullet',
+                text: 'Polishing basierend auf Nutzerfeedback'
+            },
+            {
+                type: 'heading',
+                text: 'Screenshots MEN3'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: hadFiles['../projects/had/Screenshot_Ash.jpg'].default,
+                        caption: 'Ash'
+                    },
+                    {
+                        src: hadFiles['../projects/had/Screenshot_Scarlet.jpg'].default,
+                        caption: 'Scarlet'
+                    },
+                    {
+                        src: hadFiles['../projects/had/Screenshot_MrHorse.jpg'].default,
+                        caption: 'Mr. Horse'
+                    },
+                    {
+                        src: hadFiles['../projects/had/Screenshot_Aleph.jpg'].default,
+                        caption: 'Aleph'
+                    },
+                    {
+                        src: hadFiles['../projects/had/Screenshot_Ethan.jpg'].default,
+                        caption: 'Ethan'
+                    },
+                    {
+                        src: hadFiles['../projects/had/Screenshot_EndChoice.jpg'].default,
+                        caption: 'Entscheidung'
+                    }
+                ]
+            },
+            {
+                type: 'heading',
+                text: 'Screenshots MEN4'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: hadFiles['../projects/had/HaD_Screenshot1.jpg'].default,
+                        caption: 'Dialog'
+                    },
+                    {
+                        src: hadFiles['../projects/had/HaD_Screenshot2.jpg'].default,
+                        caption: 'Entscheidung'
+                    },
+                    {
+                        src: hadFiles['../projects/had/HaD_Screenshot3.jpg'].default,
+                        caption: 'Startbildschirm'
+                    },
+                    {
+                        src: hadFiles['../projects/had/HaD_Screenshot4.jpg'].default,
+                        caption: 'Illustration'
+                    },
+                    {
+                        src: hadFiles['../projects/had/HaD_Screenshot5.jpg'].default,
+                        caption: 'Menü'
+                    },
+                    {
+                        src: hadFiles['../projects/had/HaD_Screenshot6.jpg'].default,
+                        caption: 'Log'
+                    },
+                    {
+                        src: hadFiles['../projects/had/HaD_Screenshot7.jpg'].default,
+                        caption: 'Galerie'
+                    },
+                    {
+                        src: hadFiles['../projects/had/HaD_Screenshot8.jpg'].default,
+                        caption: 'Minispiel'
+                    }
+                ]
+            }
+        ],
+        links: [
+            {
+                text: 'GitHub Repository',
+                url: 'https://github.com/jfladas/had',
+                icon: 'fa-brands fa-github-alt'
+            },
+            {
+                text: 'itch.io Seite',
+                url: 'https://jfladas.itch.io/hearts-across-dimensions',
+                icon: 'fa-brands fa-itch-io'
+            },
+            {
+                text: 'Feedback-Umfrage',
+                url: 'https://forms.gle/HbSeV4yHSr4Eiaxk6',
+                icon: 'external-link-alt'
+            },
+            {
+                text: 'Demo Playthrough Video',
+                url: 'https://youtu.be/HwepdSLpjcE',
+                icon: 'fa-brands fa-youtube'
+            }
+        ],
+        downloads: [
+            {
+                text: 'Präsentation_MEN3.ppsx',
+                url: hadFiles['../projects/had/MEN3.ppsx'].default,
+                icon: 'file-powerpoint'
+            },
+            {
+                text: 'Präsentation_MEN4.ppsx',
+                url: hadFiles['../projects/had/MEN4.ppsx'].default,
+                icon: 'file-powerpoint'
+            }
+        ]
+    },
     // sweet
     {
         id: 'sweet',
@@ -324,243 +609,6 @@ export const projekte = [
                 url: sweetFiles['../projects/sweet/Reflexion.pdf'].default,
                 icon: 'file-pdf'
             },
-        ]
-    },
-    // hearts across dimensions
-    {
-        id: 'had',
-        name: 'hearts across dimensions',
-        description: 'visual novel / dating sim game',
-        context: {
-            lines: [
-                '2024 @ HSLU, Rotkreuz & Emmenbrücke',
-                'Modul MEN3 - Mentorat Semester 3'
-            ],
-            url: 'https://www.hslu.ch/',
-            icon: 'graduation-cap',
-            tooltip: 'schule'
-        },
-        categories: [
-            'team',
-            'coding',
-            'game',
-            'story',
-        ],
-        sections: [
-            {
-                type: 'quoted',
-                text: `Hearts across Dimensions ist ein Visual Novel-Dating-Sim, bei dem die Spieler die Geschichten von fünf einzigartigen Charakteren erkunden.
-                        Es baut auf dem vorherigen Mentorat Semester 2 Projekt von Angelika Gort auf, bei dem sie die Charakterdesigns erstellt hat.
-                        Die Demo wurde von Angelika Gort und mir unter der Mentorschaft von Zoe Röllin im Rahmen des Mentorate Semester 3 entwickelt.
-                        Derzeit bietet das Spiel Charaktereinführungen, mit geplanten zukünftigen Erweiterungen.
-                        Wir werden das Spiel im Mentorat Semester 4 weiterentwickeln, mit einem Fokus auf die Erweiterung von Story und Character Art.`
-            },
-            {
-                type: 'heading',
-                text: 'Spiele die Demo'
-            },
-            {
-                type: 'buttons',
-                buttons: [
-                    {
-                        text: 'Im Browser spielen / Herunterladen',
-                        action: 'https://jfladas.itch.io/hearts-across-dimensions',
-                        icon: 'play',
-                        color: 'primary'
-                    }
-                ]
-            },
-            {
-                type: 'subheading',
-                text: 'Installations- & Spielanweisungen'
-            },
-            {
-                type: 'paragraph',
-                text: `Das Spiel wurde hauptsächlich für Mobile im Porträt-Layout entwickelt, ist aber auch auf Desktop und im Querformat spielbar.`
-            },
-            {
-                type: 'iconed',
-                text: 'Web (Mobile/Desktop)',
-                icon: 'globe'
-            },
-            {
-                type: 'bullet',
-                text: 'Um direkt im Browser zu spielen auf der itch.io-Seite auf <span class="snippet">Spiel starten</span> klicken'
-            },
-            {
-                type: 'bullet',
-                text: 'Je nach Gerät oder Browserkompatibilität können Probleme auftreten'
-            },
-            {
-                type: 'iconed',
-                text: 'Android',
-                icon: 'fa-brands fa-android'
-            },
-            {
-                type: 'bullet',
-                text: 'Android-Build von der itch.io-Seite herunterladen'
-            },
-            {
-                type: 'bullet',
-                text: '<span class="snippet">HaD.apk</span> ausführen, um das Spiel zu installieren und zu öffnen'
-            },
-            {
-                type: 'bullet',
-                text: 'Das Spiel wird danach als App auf dem Gerät zugänglich sein'
-            },
-            {
-                type: 'iconed',
-                text: 'Windows',
-                icon: 'fa-brands fa-windows'
-            },
-            {
-                type: 'bullet',
-                text: 'Windows-Build von der itch.io-Seite herunterladen'
-            },
-            {
-                type: 'bullet',
-                text: '<span class="snippet">HaD (Demo).exe</span> ausführen, um das Spiel zu starten'
-            },
-            {
-                type: 'subheading',
-                text: 'Spieler-Feedback'
-            },
-            {
-                type: 'paragraph',
-                text: 'Wir schätzen jedes Feedback, um das Erlebnis zu verbessern. Meinungen und Rückmeldungen können über die Umfrage gegeben werden:'
-            },
-            {
-                type: 'buttons',
-                buttons: [
-                    {
-                        text: 'Umfrage ausfüllen',
-                        action: 'https://forms.gle/PsgVsrwjZVm16WpdA',
-                        icon: 'arrow-right',
-                        color: 'secondary'
-                    }
-                ]
-            },
-            {
-                type: 'heading',
-                text: 'Projektbeschreibung'
-            },
-            {
-                type: 'subheading',
-                text: 'Charaktere'
-            },
-            {
-                type: 'paragraph',
-                text: `Das Spiel bietet fünf Charaktere mit einzigartigen Persönlichkeiten und Handlungssträngen. Die Spieler können wählen, mit welchem Charakter sie interagieren möchten, was zu unterschiedlichen Ergebnissen und Dialogen führt.`
-            },
-            {
-                type: 'images',
-                images: [
-                    {
-                        src: hadFiles['../projects/had/Characters.jpg'].default,
-                        caption: 'Charaktere'
-                    }
-                ]
-            },
-            {
-                type: 'subheading',
-                text: 'Geschichte'
-            },
-            {
-                type: 'paragraph',
-                text: `Eine mysteriöse Frau scheitert daran, ihre Dimension vor interdimensionalen Wesen zu schützen. Bevor sie stirbt, sendet sie einen blutbefleckten Brief über Dimensionen hinweg, um ihren Nachfolger zu warnen.
-                        Der/Die Protagonist:in beginnt einen neuen Job bei einer Hochzeitsplanungsfirma. Bald ereignen sich seltsame Ereignisse, wie ein sich ständig veränderndes Gebäude, eine Zeitschleife und ein... Pferd?
-                        Von einem Erdbeben in einen Bunker gezwungen trifft man auf einige bekannte Gesichter. Die Wahl, wem Vertrauen geschenkt wird, legt den Grundstein für die nächsten Kapitel.`
-            },
-            {
-                type: 'subheading',
-                text: 'Pläne für MEN4'
-            },
-            {
-                type: 'bullet',
-                text: 'Hintergründe zeichnen'
-            },
-            {
-                type: 'bullet',
-                text: 'Charaktere mit Schattierungen'
-            },
-            {
-                type: 'bullet',
-                text: 'Illustrationen'
-            },
-            {
-                type: 'bullet',
-                text: 'Geschichte von mindestens einem Charakter bis zum Ende'
-            },
-            {
-                type: 'bullet',
-                text: 'Minispiel'
-            },
-            {
-                type: 'bullet',
-                text: 'Menü mit Kapitelübersicht und Galerie'
-            },
-            {
-                type: 'heading',
-                text: 'Screenshots'
-            },
-            {
-                type: 'images',
-                images: [
-                    {
-                        src: hadFiles['../projects/had/Screenshot_Ash.jpg'].default,
-                        caption: 'Ash'
-                    },
-                    {
-                        src: hadFiles['../projects/had/Screenshot_Scarlet.jpg'].default,
-                        caption: 'Scarlet'
-                    },
-                    {
-                        src: hadFiles['../projects/had/Screenshot_MrHorse.jpg'].default,
-                        caption: 'Mr. Horse'
-                    },
-                    {
-                        src: hadFiles['../projects/had/Screenshot_Aleph.jpg'].default,
-                        caption: 'Aleph'
-                    },
-                    {
-                        src: hadFiles['../projects/had/Screenshot_Ethan.jpg'].default,
-                        caption: 'Ethan'
-                    },
-                    {
-                        src: hadFiles['../projects/had/Screenshot_EndChoice.jpg'].default,
-                        caption: 'End Choice'
-                    }
-                ]
-            }
-        ],
-        links: [
-            {
-                text: 'GitHub Repository',
-                url: 'https://github.com/jfladas/had',
-                icon: 'fa-brands fa-github-alt'
-            },
-            {
-                text: 'itch.io Seite',
-                url: 'https://jfladas.itch.io/hearts-across-dimensions',
-                icon: 'fa-brands fa-itch-io'
-            },
-            {
-                text: 'Spieler-Umfrage',
-                url: 'https://forms.gle/PsgVsrwjZVm16WpdA',
-                icon: 'external-link-alt'
-            },
-            {
-                text: 'Playthrough Video',
-                url: 'https://youtu.be/HwepdSLpjcE',
-                icon: 'fa-brands fa-youtube'
-            }
-        ],
-        downloads: [
-            {
-                text: 'Präsentation.ppsx',
-                url: hadFiles['../projects/had/MEN3.ppsx'].default,
-                icon: 'file-powerpoint'
-            }
         ]
     },
     // spütify
