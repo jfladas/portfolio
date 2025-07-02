@@ -1,5 +1,6 @@
-const sweetFiles = import.meta.glob('../projects/sweet/*', { eager: true });
 const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
+const qrFiles = import.meta.glob('../projects/qr/*', { eager: true });
+const sweetFiles = import.meta.glob('../projects/sweet/*', { eager: true });
 const sputifyFiles = import.meta.glob('../projects/sputify/*', { eager: true });
 const ecohomeFiles = import.meta.glob('../projects/ecohome/*', { eager: true });
 const miloFiles = import.meta.glob('../projects/milo/*', { eager: true });
@@ -300,7 +301,118 @@ export const projects = [
             }
         ]
     },
-    // TODO: add +COLABOR
+    // quick response
+    {
+        id: 'qr',
+        name: 'quick response',
+        description: 'mobile interaction installation',
+        context: {
+            lines: [
+                '2025 @ HSLU, Emmenbrücke',
+                '+Colabor Module Creative Coding',
+            ],
+            url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'solo',
+            'coding',
+            'web'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `Quick Response is a playful mobile installation made up of 16 small interactive experiments, each accessible via a QR code.
+                   The project explores how minimal visuals and personal interaction can create unique micro-experiences using smartphone sensors like mic, camera, and motion.`
+            },
+            {
+                type: 'heading',
+                text: 'Try it yourself'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'QR',
+                        action: 'https://colabor.jfladas.com/qr/',
+                        icon: 'qrcode',
+                        color: 'primary'
+                    },
+                    {
+                        text: 'Documentation Website',
+                        action: 'https://colabor.jfladas.com/sprint3/',
+                        color: 'secondary'
+                    }
+                ]
+            },
+            {
+                type: 'subheading',
+                text: 'Exhibition Setup'
+            },
+            {
+                type: 'bullet',
+                text: '16 experiments are linked to individual QR codes arranged into a single larger animated image'
+            },
+            {
+                type: 'bullet',
+                text: 'Scan any part of the mosaic to begin the journey'
+            },
+            {
+                type: 'bullet',
+                text: 'Overview page tracks progress across all interactions'
+            },
+            {
+                type: 'bullet',
+                text: "A secret 16th page can be unlocked"
+            },
+            {
+                type: 'heading',
+                text: 'Project Context'
+            },
+            {
+                type: 'paragraph',
+                text: 'Quick Response builds upon techniques from earlier sprints in the +Colabor Module.'
+            },
+            {
+                type: 'subheading',
+                text: 'Best Of Video'
+            },
+            {
+                type: 'video',
+                video: qrFiles['../projects/qr/bestof.mp4'].default
+            },
+            {
+                type: 'paragraph',
+                text: 'More details about the projects and extension downloads can be found on my documentation website of the module:'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Documentation Website',
+                        action: 'https://colabor.jfladas.com/',
+                        icon: 'arrow-right',
+                        color: 'primary'
+                    }
+                ]
+            }
+        ],
+        links: [
+            {
+                text: 'GitHub Repository',
+                url: 'https://github.com/jfladas/colabor',
+                icon: 'fa-brands fa-github-alt'
+            },
+            {
+                text: 'Documentation Website',
+                url: 'https://colabor.jfladas.com/',
+                icon: 'external-link-alt'
+            }
+        ],
+        downloads: [
+        ]
+    },
     // sweet
     {
         id: 'sweet',
@@ -1346,7 +1458,7 @@ export const projects = [
             }
         ]
     },
-    //milo
+    // milo
     {
         id: 'milo',
         name: "milo's forest adventure",
