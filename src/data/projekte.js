@@ -1828,7 +1828,7 @@ export const projekte = [
             {
                 type: 'iconed',
                 text: 'W1 | Spirale',
-                icon: 'spinner'
+                icon: 'spiral'
             },
             {
                 type: 'paragraph',
@@ -3454,14 +3454,6 @@ export const projekte = [
             {
                 type: 'bullet',
                 text: 'Bereitstellung einer umfassenden Dokumentation, die Installation, Tests und technische Details abdeckt'
-            },
-            {
-                type: 'subheading',
-                text: 'Fazit'
-            },
-            {
-                type: 'paragraph',
-                text: 'Dieses Projekt zeigt die Machbarkeit von Browser-Erweiterungen als internes Organisationstool und bietet eine skalierbare und zugängliche Plattform für Team- und Mitarbeiterinformationen. Es dient auch als Grundlage für zukünftige Module und Funktionen.'
             }
         ]
     }
@@ -3653,7 +3645,7 @@ export const ueberContent = {
         {
             text: 'Duolingo',
             url: 'https://www.duolingo.com/profile/jfladas',
-            icon: 'feather'
+            icon: 'fa-brands fa-duolingo'
         }
 
     ],
