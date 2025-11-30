@@ -1825,7 +1825,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'W1 | Spiral',
-                icon: 'spinner'
+                icon: 'spiral'
             },
             {
                 type: 'paragraph',
@@ -3455,14 +3455,6 @@ export const projects = [
             {
                 type: 'bullet',
                 text: 'Delivered thorough documentation covering installation, testing, and technical details'
-            },
-            {
-                type: 'subheading',
-                text: 'Conclusion'
-            },
-            {
-                type: 'paragraph',
-                text: 'This project showcases the viability of browser extensions as an internal organizational tool, providing a scalable and accessible platform for team and member information. It also serves as a foundation for future modules and functionalities.'
             }
         ]
     }
@@ -3667,7 +3659,7 @@ export const aboutContent = {
         {
             text: 'Duolingo',
             url: 'https://www.duolingo.com/profile/jfladas',
-            icon: 'feather'
+            icon: 'fa-brands fa-duolingo'
         }
 
     ],
