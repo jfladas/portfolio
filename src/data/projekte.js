@@ -23,8 +23,8 @@ export const projekte = [
         description: 'visual novel / dating sim game',
         context: {
             lines: [
-                '2024 - 2025 @ HSLU, Rotkreuz & Emmenbrücke',
-                'Module MEN3 & MEN4 - Mentorat Semester 3 & 4'
+                '2024 - 2026 @ HSLU, Rotkreuz & Emmenbrücke',
+                'Module MEN3/4/5 - Mentorat Semester 3, 4 & 5'
             ],
             url: 'https://www.hslu.ch/',
             icon: 'graduation-cap',
@@ -39,15 +39,15 @@ export const projekte = [
         sections: [
             {
                 type: 'quoted',
-                text: `Hearts across Dimensions ist eine Visual-Novel-Dating-Sim, in der die Spieler:innen die Geschichten von fünf einzigartigen Charakteren erkunden.
+                text: `Hearts across Dimensions ist eine Visual-Novel-Dating-Sim mit fünf Love Interests.
                         Das Spiel baut auf dem vorherigen Mentoratsprojekt Semester 2 von Angelika Gort auf, in dem sie die Charakterdesigns erstellt hat.
-                        Die Demo wurde von Angelika Gort und mir unter der Betreuung von Zoe Röllin im Rahmen des Mentorats Semester 3 entwickelt.
+                        Die erste Demo wurde von Angelika Gort und Lukas Bucher unter der Betreuung von Zoe Röllin im Rahmen des Mentorats Semester 3 entwickelt.
                         In MEN4 wurde eine Alpha-Version veröffentlicht, in der wir das Spiel mit Unterstützung von Zoe Röllin weiterentwickelt haben.
-                        In der Alpha ist eine komplette Route für Aleph Rei mit drei Enden spielbar. Es gibt exklusive Illustrationen, wenn du die richtigen Entscheidungen triffst.`
+                        In MEN5 haben wir den spielbaren Content mit neuen Routen (Scarlet Moon und Mr. Horse), neuen Illustrationen und aktualisierten Hintergründen erweitert.`
             },
             {
                 type: 'heading',
-                text: 'Spiele die Demo'
+                text: 'Spiele die Alpha Version'
             },
             {
                 type: 'buttons',
@@ -109,26 +109,7 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: '<span class="snippet">HaD (Demo).exe</span> ausführen, um das Spiel zu starten'
-            },
-            {
-                type: 'subheading',
-                text: 'Feedback'
-            },
-            {
-                type: 'paragraph',
-                text: 'Wir schätzen jedes Feedback, um das Erlebnis zu verbessern. Meinungen und Rückmeldungen können über die Umfrage gegeben werden:'
-            },
-            {
-                type: 'buttons',
-                buttons: [
-                    {
-                        text: 'Umfrage ausfüllen',
-                        action: 'https://forms.gle/HbSeV4yHSr4Eiaxk6',
-                        icon: 'arrow-right',
-                        color: 'secondary'
-                    }
-                ]
+                text: '<span class="snippet">HaD (Alpha).exe</span> ausführen, um das Spiel zu starten'
             },
             {
                 type: 'heading',
@@ -162,34 +143,24 @@ export const projekte = [
                         Ein Erdbeben zwingt dich in einen Bunker, wo du auf bekannte Gesichter triffst. Deine Entscheidung, wem du vertraust, bestimmt den Verlauf des nächsten Kapitels.`
             },
             {
-                type: 'paragraph',
-                text: `Du begegnest Aleph, einer charismatischen Figur mit Hinweisen auf andere Ursprünge.
-                        Während die seltsamen Ereignisse zunehmen und unerwartete Charaktere verborgene Wahrheiten enthüllen, wirst du in ein tieferes Mysterium um alternative Dimensionen, unsichtbare Kräfte und ein mächtiges Schicksal hineingezogen, das du nie gewollt hast.
-                        Auf dem Weg entstehen Bindungen, Geheimnisse werden gelüftet und die Grenze zwischen Realität und Übernatürlichem beginnt zu verschwimmen.`
-            },
-            {
                 type: 'subheading',
-                text: 'Pläne für MEN5'
+                text: 'Pläne für die Zukunft'
             },
             {
                 type: 'bullet',
-                text: 'Hintergründe aktualisieren'
+                text: 'Mr. Horse Route fertigstellen'
             },
             {
                 type: 'bullet',
-                text: 'Alle Charakter-Sprites'
+                text: 'Illustrationen, Hintergründe und Charakter-Sprites finalisieren'
             },
             {
                 type: 'bullet',
-                text: 'Alle Illustrationen'
+                text: 'Die restlichen Routen hinzufügen (Ash & Ethan)'
             },
             {
                 type: 'bullet',
-                text: 'Komplette Story?'
-            },
-            {
-                type: 'bullet',
-                text: 'Polishing basierend auf Nutzerfeedback'
+                text: 'UI aktualisieren sowie passende Musik und Soundeffekte hinzufügen'
             },
             {
                 type: 'heading',
@@ -264,6 +235,31 @@ export const projekte = [
                         caption: 'Minispiel'
                     }
                 ]
+            },
+            {
+                type: 'heading',
+                text: 'Screenshots MEN5'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: hadFiles['../projects/had/HaD_Screenshot_Horse.png'].default,
+                        caption: 'Mr. Horse'
+                    },
+                    {
+                        src: hadFiles['../projects/had/HaD_Screenshot_Scarlet.png'].default,
+                        caption: 'Scarlet'
+                    },
+                    {
+                        src: hadFiles['../projects/had/IllustrationH2.png'].default,
+                        caption: 'Illustration'
+                    },
+                    {
+                        src: hadFiles['../projects/had/IllustrationS2.png'].default,
+                        caption: 'Illustration'
+                    },
+                ]
             }
         ],
         links: [
@@ -278,13 +274,13 @@ export const projekte = [
                 icon: 'fa-brands fa-itch-io'
             },
             {
-                text: 'Feedback-Umfrage',
-                url: 'https://forms.gle/HbSeV4yHSr4Eiaxk6',
-                icon: 'external-link-alt'
-            },
-            {
                 text: 'Demo Playthrough Video',
                 url: 'https://youtu.be/HwepdSLpjcE',
+                icon: 'fa-brands fa-youtube'
+            },
+            {
+                text: 'Mr. Horse Sneak Peek (Ch. 13)',
+                url: 'https://youtu.be/BE8KeC9lxp4?si=fmQz8nVdiz7C7HEE',
                 icon: 'fa-brands fa-youtube'
             }
         ],
@@ -297,6 +293,11 @@ export const projekte = [
             {
                 text: 'Präsentation_MEN4.ppsx',
                 url: hadFiles['../projects/had/MEN4.ppsx'].default,
+                icon: 'file-powerpoint'
+            },
+            {
+                text: 'Präsentation_MEN5.ppsx',
+                url: hadFiles['../projects/had/MEN5.ppsx'].default,
                 icon: 'file-powerpoint'
             }
         ]

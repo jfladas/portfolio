@@ -23,8 +23,8 @@ export const projects = [
         description: 'visual novel / dating sim game',
         context: {
             lines: [
-                '2024 - 2025 @ HSLU, Rotkreuz & Emmenbrücke',
-                'Modules MEN3 & MEN4 - Mentorate Semester 3 & 4'
+                '2024 - 2026 @ HSLU, Rotkreuz & Emmenbrücke',
+                'Modules MEN3/4/5 - Mentorate Semester 3, 4 & 5'
             ],
             url: 'https://www.hslu.ch/',
             icon: 'graduation-cap',
@@ -39,11 +39,11 @@ export const projects = [
         sections: [
             {
                 type: 'quoted',
-                text: `Hearts across Dimesions is visual novel-style dating sim where players explore the stories of five unique characters.
+                text: `Hearts across Dimensions is a visual novel dating sim with five love interests.
                         It builds on the previous Mentorate Semester 2 project by Angelika Gort, where she created the character designs.
-                        The Demo was developed by Angelika Gort and myself under the mentorship of Zoe Röllin as part of the Mentorate Semester 3.
+                        The first demo was developed by Angelika Gort and Lukas Bucher under the mentorship of Zoe Röllin as part of the Mentorate Semester 3.
                         An Alpha version was then released in MEN4, where we continued to work on the game with the help of Zoe Röllin.
-                        A complete route for Aleph Rei is playable in the Alpha version, with three endings. There are exclusive illustrations if you make the right choices.`
+                        In MEN5, we expanded the playable content with new routes (Scarlet Moon and Mr. Horse), new illustrations, and updated backgrounds.`
             },
             {
                 type: 'heading',
@@ -112,25 +112,6 @@ export const projects = [
                 text: 'Execute <span class="snippet">HaD (Alpha).exe</span> to launch the game'
             },
             {
-                type: 'subheading',
-                text: 'Player Feedback'
-            },
-            {
-                type: 'paragraph',
-                text: 'We appreciate any feedback to improve the experience. Please fill out our survey after playing:'
-            },
-            {
-                type: 'buttons',
-                buttons: [
-                    {
-                        text: 'Fill out the survey',
-                        action: 'https://forms.gle/HbSeV4yHSr4Eiaxk6',
-                        icon: 'arrow-right',
-                        color: 'secondary'
-                    }
-                ]
-            },
-            {
                 type: 'heading',
                 text: 'Project Description'
             },
@@ -159,37 +140,27 @@ export const projects = [
                 type: 'paragraph',
                 text: `A mysterious woman fails to protect her dimension from interdimensional beings. Before dying, she sends a blood-stained letter across dimensions.
                         You start a new job at a wedding planning company. Soon, strange events unfold, like an ever-changing building, a time loop, and a... horse?
-                        An earthquake forces you into a bunker, where you meet some familiar faces. Your choice of whom to trust sets the stage for the next chapter.`
-            },
-            {
-                type: 'paragraph',
-                text: `You meet Aleph, a charming figure who hints at otherworldly origins.
-                        As strange events escalate and unexpected characters reveal hidden truths, you are pulled into a deeper mystery involving alternate dimensions, unseen forces, and a powerful destiny you never asked for. 
-                        Along the way, bonds form, secrets unravel, and the line between reality and the extraordinary begins to blur.`
+                        An earthquake forces you into a bunker, where you meet some familiar faces. Your choice of whom to trust determines how your story unfolds.`
             },
             {
                 type: 'subheading',
-                text: 'Plans for MEN5'
+                text: 'Plans for the future'
             },
             {
                 type: 'bullet',
-                text: 'Update backgrounds'
+                text: 'Finish the Mr. Horse route'
             },
             {
                 type: 'bullet',
-                text: 'All character sprites'
+                text: 'Polish the illustrations, backgrounds and character sprites'
             },
             {
                 type: 'bullet',
-                text: 'All illustrations'
+                text: 'Add the remaining routes (Ash & Ethan)'
             },
             {
                 type: 'bullet',
-                text: 'Full story?'
-            },
-            {
-                type: 'bullet',
-                text: 'Polishing based on user feedback'
+                text: 'Update the UI and add fitting music and sound effects'
             },
             {
                 type: 'heading',
@@ -264,7 +235,32 @@ export const projects = [
                         caption: 'Minigame'
                     }
                 ]
-            }
+            },
+            {
+                type: 'heading',
+                text: 'Screenshots MEN5'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: hadFiles['../projects/had/HaD_Screenshot_Horse.png'].default,
+                        caption: 'Mr. Horse'
+                    },
+                    {
+                        src: hadFiles['../projects/had/HaD_Screenshot_Scarlet.png'].default,
+                        caption: 'Scarlet'
+                    },
+                    {
+                        src: hadFiles['../projects/had/IllustrationH2.png'].default,
+                        caption: 'Illustration'
+                    },
+                    {
+                        src: hadFiles['../projects/had/IllustrationS2.png'].default,
+                        caption: 'Illustration'
+                    },
+                ]
+            },
         ],
         links: [
             {
@@ -278,13 +274,13 @@ export const projects = [
                 icon: 'fa-brands fa-itch-io'
             },
             {
-                text: 'Player Survey',
-                url: 'https://forms.gle/HbSeV4yHSr4Eiaxk6',
-                icon: 'external-link-alt'
-            },
-            {
                 text: 'Demo Playthrough Video',
                 url: 'https://youtu.be/HwepdSLpjcE',
+                icon: 'fa-brands fa-youtube'
+            },
+            {
+                text: 'Mr. Horse Sneak Peek (Ch. 13)',
+                url: 'https://youtu.be/BE8KeC9lxp4?si=fmQz8nVdiz7C7HEE',
                 icon: 'fa-brands fa-youtube'
             }
         ],
@@ -298,9 +294,16 @@ export const projects = [
                 text: 'Presentation_MEN4.ppsx',
                 url: hadFiles['../projects/had/MEN4.ppsx'].default,
                 icon: 'file-powerpoint'
+            },
+            {
+                text: 'Presentation_MEN5.ppsx',
+                url: hadFiles['../projects/had/MEN5.ppsx'].default,
+                icon: 'file-powerpoint'
             }
         ]
     },
+    // artd
+    // apo11o
     // quick response
     {
         id: 'qr',
