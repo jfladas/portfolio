@@ -93,6 +93,10 @@ const prevSlide = (index) => {
     display: flex;
     margin-top: 0.5rem;
     text-align: left;
+
+    p {
+        width: 100%;
+    }
 }
 
 .iconed-container {
