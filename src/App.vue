@@ -490,7 +490,7 @@ nav {
 }
 
 .more-icon {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   transform: rotate(0);
   cursor: pointer;
   transition: transform 0.5s;

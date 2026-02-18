@@ -1,4 +1,6 @@
 const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
+const artdFiles = import.meta.glob('../projects/artd/*', { eager: true });
+const apo11oFiles = import.meta.glob('../projects/apo11o/*', { eager: true });
 const qrFiles = import.meta.glob('../projects/qr/*', { eager: true });
 const sweetFiles = import.meta.glob('../projects/sweet/*', { eager: true });
 const sputifyFiles = import.meta.glob('../projects/sputify/*', { eager: true });
@@ -299,6 +301,305 @@ export const projekte = [
                 text: 'Präsentation_MEN5.ppsx',
                 url: hadFiles['../projects/had/MEN5.ppsx'].default,
                 icon: 'file-powerpoint'
+            }
+        ]
+    },
+    // artd
+    {
+        id: 'artd',
+        name: 'ar tower defense',
+        description: 'marker-basiertes augmented-reality mobile game',
+        context: {
+            lines: [
+                '2025 - 2026 @ HSLU, Rotkreuz',
+                'Modul WEBXR (Intro to Immersive Browser Experiences)'
+            ],
+            url: 'https://www.hslu.ch/it',
+            icon: 'graduation-cap',
+            tooltip: 'schule'
+        },
+        categories: [
+            'solo',
+            'coding',
+            'web',
+            'game',
+            '3d'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `AR Tower Defense ist ein marker-basiertes AR-Game, in dem du deine Basis verteidigst, indem du gedruckte Tower-Marker physisch auf dem Tisch bewegst.
+                        Entwickelt im Rahmen des WebXR-Moduls an der HSLU, in dem ich mit A-Frame und MindAR zum ersten Mal immersive Browser-Experiences umgesetzt habe. Das Spiel bietet 10 Wellen an Gegnern sowie ein Upgrade-System, um deine Verteidigung zu verbessern.`
+            },
+            {
+                type: 'heading',
+                text: 'Spiel starten'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Spielen',
+                        action: 'https://webxr.jfladas.com/',
+                        icon: 'play',
+                        color: 'primary'
+                    },
+                    {
+                        text: 'Marker herunterladen',
+                        action: artdFiles['../projects/artd/markers.pdf'].default,
+                        icon: 'circle-arrow-down',
+                        color: 'secondary'
+                    }
+                ]
+            },
+            {
+                type: 'subheading',
+                text: 'Spielanleitung'
+            },
+            {
+                type: 'bullet',
+                text: 'Platziere die ausgedruckten Marker auf einer flachen Oberfläche.'
+            },
+            {
+                type: 'bullet',
+                text: 'Gegner spawnen und bewegen sich auf die Basis zu. Türme greifen automatisch Gegner in Reichweite an.'
+            },
+            {
+                type: 'bullet',
+                text: 'Verteidige deine Basis, indem du Tower-Marker auf dem Tisch verschiebst und Upgrades mit Energie kaufst, die du durch das Besiegen von Gegnern erhältst.'
+            },
+            {
+                type: 'bullet',
+                text: 'Schaffst du alle 10 Wellen?'
+            },
+            {
+                type: 'subheading',
+                text: 'Speicherstand'
+            },
+            {
+                type: 'paragraph',
+                text: `Deine Energie und Upgrades werden automatisch gespeichert. Falls es Probleme gibt, lade die Seite neu – dein Fortschritt wird wiederhergestellt.`
+            },
+            {
+                type: 'subheading',
+                text: 'Marker'
+            },
+            {
+                type: 'paragraph',
+                text: `Zum Spielen werden AR-Bildmarker benötigt. Lade das PDF im Download-Bereich herunter, drucke es aus und schneide die Marker aus – dann kann es losgehen!`
+            },
+            {
+                type: 'heading',
+                text: 'Screenshots'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: artdFiles['../projects/artd/Gameplay.jpg'].default,
+                        caption: 'Gameplay'
+                    },
+                    {
+                        src: artdFiles['../projects/artd/Upgrades.jpg'].default,
+                        caption: 'Upgrades'
+                    },
+                    {
+                        src: artdFiles['../projects/artd/Info.jpg'].default,
+                        caption: 'Info'
+                    },
+                ]
+            },
+        ],
+        links: [
+            {
+                text: 'GitHub-Repository',
+                url: 'https://github.com/jfladas/webxr',
+                icon: 'fa-brands fa-github-alt'
+            },
+            {
+                text: 'itch.io Seite',
+                url: 'https://jfladas.itch.io/artd',
+                icon: 'fa-brands fa-itch-io'
+            },
+            {
+                text: 'Spiel starten',
+                url: 'https://webxr.jfladas.com/',
+                icon: 'external-link-alt'
+            },
+        ],
+        downloads: [
+            {
+                text: 'Marker.pdf',
+                url: artdFiles['../projects/artd/markers.pdf'].default,
+                icon: 'file-pdf'
+            },
+            {
+                text: 'OnePager.pdf',
+                url: artdFiles['../projects/artd/OnePager.pdf'].default,
+                icon: 'file-pdf'
+            }
+        ]
+    },
+    // apo11o
+    {
+        id: 'apo11o',
+        name: 'apo11o',
+        description: 'web-experience basierend auf der apollo-11-mission',
+        context: {
+            lines: [
+                '2025 @ HSLU, Rotkreuz',
+                'Modul DIPRO (Digital Project), Supercluster !Daten (Spiel) & Zeit'
+            ],
+            url: 'https://www.hslu.ch/it',
+            icon: 'graduation-cap',
+            tooltip: 'schule'
+        },
+        categories: [
+            'solo',
+            'coding',
+            'web'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `In dieser webbasierten Experience im Stil eines Kommandomodul-Interfaces kannst du die Apollo-11-Mission nacherleben.
+                        Zentrale Abschnitte werden mit originalen Audios und Daten der NASA rekonstruiert und durch zusätzliche Effekte sowie Interaktionsmöglichkeiten erweitert.`
+            },
+            {
+                type: 'heading',
+                text: 'Projekt ansehen'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Projekt-Website',
+                        action: 'https://apo11o.jfladas.com',
+                        icon: 'arrow-right',
+                        color: 'primary'
+                    },
+                    {
+                        text: '',
+                        action: 'https://apo11o.jfladas.com/play',
+                        icon: 'rocket',
+                        color: 'secondary'
+                    }
+                ]
+            },
+            {
+                type: 'heading',
+                text: 'Screencast'
+            },
+            {
+                type: 'video',
+                video: apo11oFiles['../projects/apo11o/Screencast.mp4'].default
+            },
+            {
+                type: 'heading',
+                text: 'Iterativer Prozess'
+            },
+            {
+                type: 'paragraph',
+                text: `Das Projekt wurde iterativ über fünf Sprints entwickelt – von offener Recherche über Prototyping und Implementation bis zur Finalisierung.
+                        Die vollständige Prozess-Dokumentation findet sich im herunterladbaren Sprint-Dokumentations-PDF.`
+            },
+            {
+                type: 'subheading',
+                text: 'Sprint 1'
+            },
+            {
+                type: 'bullet',
+                text: 'Inspiration und Datenquellen recherchiert (Flight Journals, NASA APIs)'
+            },
+            {
+                type: 'bullet',
+                text: 'Kernfrage für die Experience definiert'
+            },
+            {
+                type: 'subheading',
+                text: 'Sprint 2'
+            },
+            {
+                type: 'bullet',
+                text: 'Recherche fortgesetzt und UI-/Interaktionsideen gesammelt'
+            },
+            {
+                type: 'bullet',
+                text: 'Tandem für Reviews und Retros gebildet.'
+            },
+            {
+                type: 'subheading',
+                text: 'Sprint 3'
+            },
+            {
+                type: 'bullet',
+                text: 'Fortschritt präsentiert'
+            },
+            {
+                type: 'bullet',
+                text: 'Für ein Vanilla-HTML/CSS/JS-Setup entschieden'
+            },
+            {
+                type: 'bullet',
+                text: 'Erstes Layout-Prototyping gebaut (Control Panel, Window, Timeline-Struktur)'
+            },
+            {
+                type: 'subheading',
+                text: 'Sprint 4'
+            },
+            {
+                type: 'bullet',
+                text: 'Reale Missions-Events/Audios mit Synchronisation, Controls, Visuals und Skip-Funktionalität integriert'
+            },
+            {
+                type: 'subheading',
+                text: 'Sprint 5'
+            },
+            {
+                type: 'bullet',
+                text: 'Experience finalisiert (Timeline + Mission Days)'
+            },
+            {
+                type: 'bullet',
+                text: 'Über GitHub Pages veröffentlicht'
+            },
+            {
+                type: 'bullet',
+                text: 'Präsentation und Dokumentationsmaterial vorbereitet'
+            }
+        ],
+        links: [
+            {
+                text: 'Projekt-Website',
+                url: 'https://apo11o.jfladas.com',
+                icon: 'external-link-alt'
+            },
+            {
+                text: 'GitHub-Repository',
+                url: 'https://github.com/jfladas/apo11o',
+                icon: 'fa-brands fa-github-alt'
+            },
+            {
+                text: 'Miro Board',
+                url: 'https://miro.com/app/board/uXjVJA4NGBs=/?share_link_id=129935269332',
+                icon: 'external-link-alt'
+            },
+            {
+                text: 'Raketen-Minigame',
+                url: 'https://apo11o.jfladas.com/play',
+                icon: 'external-link-alt'
+            }
+        ],
+        downloads: [
+            {
+                text: 'Projektmanagement-Bericht.pdf',
+                url: apo11oFiles['../projects/apo11o/DIPRO_LukasBucher_PJMBericht.pdf'].default,
+                icon: 'file-pdf'
+            },
+            {
+                text: 'Sprint_Dokumentation.pdf',
+                url: apo11oFiles['../projects/apo11o/DIPRO_LukasBucher_Sprintdokus.pdf'].default,
+                icon: 'file-pdf'
             }
         ]
     },
@@ -693,7 +994,7 @@ export const projekte = [
         ],
         links: [
             {
-                text: 'Zur Seite',
+                text: 'Website',
                 url: 'https://jfladas.github.io/uxweb2/',
                 icon: 'external-link-alt',
             },
@@ -1949,7 +2250,7 @@ export const projekte = [
         ],
         links: [
             {
-                text: 'Zur Seite',
+                text: 'Website',
                 url: 'https://matbf.jfladas.com',
                 icon: 'external-link-alt'
             },
@@ -2581,12 +2882,12 @@ export const projekte = [
         ],
         downloads: [
             {
-                text: 'Presentation.ppsx',
+                text: 'Präsentation.ppsx',
                 url: hsclFiles['../projects/hscl/IUX_Presentation.ppsx'].default,
                 icon: 'file-powerpoint'
             },
             {
-                text: 'Documentation.pdf',
+                text: 'Dokumentation.pdf',
                 url: hsclFiles['../projects/hscl/IUX_Documentation.pdf'].default,
                 icon: 'file-pdf'
             }
@@ -3070,17 +3371,17 @@ export const projekte = [
         ],
         downloads: [
             {
-                text: 'The_Rodina.mp4',
+                text: 'TheRodina.mp4',
                 url: rodinaFiles['../projects/rodina/The_Rodina.mp4'].default,
                 icon: 'file-video'
             },
             {
-                text: 'The_Rodina_Presentation.ppsx',
+                text: 'TheRodina_Präsentation.ppsx',
                 url: rodinaFiles['../projects/rodina/The_Rodina_Presentation.ppsx'].default,
                 icon: 'file-powerpoint'
             },
             {
-                text: 'KIVIS_Documentation.ppsx',
+                text: 'KIVIS_Dokumentation.ppsx',
                 url: rodinaFiles['../projects/rodina/KIVIS_Documentation.ppsx'].default,
                 icon: 'file-powerpoint'
             }
@@ -3247,17 +3548,17 @@ export const projekte = [
         links: [],
         downloads: [
             {
-                text: 'Documentation.pdf',
+                text: 'Dokumentation.pdf',
                 url: paFiles['../projects/pa/BUL_PA_Chrome_Extension_Documentation_Redacted.pdf'].default,
                 icon: 'file-pdf'
             },
             {
-                text: 'Presentation.pdf',
+                text: 'Präsentation.pdf',
                 url: paFiles['../projects/pa/BUL_PA_Chrome_Extension_Presentation.pdf'].default,
                 icon: 'file-pdf'
             },
             {
-                text: 'Presentation.ppsx',
+                text: 'Präsentation.ppsx',
                 url: paFiles['../projects/pa/BUL_PA_Chrome_Extension_Presentation.ppsx'].default,
                 icon: 'file-powerpoint'
             },
@@ -3546,68 +3847,143 @@ export const ueberContent = {
             type: 'images',
             images: [
                 {
-                    src: aboutFiles['../assets/about/Slide3.jpg'].default,
-                    caption: 'Japan 2023'
+                    src: aboutFiles['../assets/about/jpn0.jpg'].default,
+                    caption: 'Japan'
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide4.jpg'].default
+                    src: aboutFiles['../assets/about/jpn1.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide5.jpg'].default
+                    src: aboutFiles['../assets/about/jpn2.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide6.jpg'].default
+                    src: aboutFiles['../assets/about/jpn3.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide7.jpg'].default
+                    src: aboutFiles['../assets/about/jpn4.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide8.jpg'].default
+                    src: aboutFiles['../assets/about/jpn5.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide9.jpg'].default
+                    src: aboutFiles['../assets/about/jpn6.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide10.jpg'].default
+                    src: aboutFiles['../assets/about/jpn7.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide11.jpg'].default
+                    src: aboutFiles['../assets/about/jpn8.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide12.jpg'].default
+                    src: aboutFiles['../assets/about/jpn9.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide13.jpg'].default
+                    src: aboutFiles['../assets/about/jpn10.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide14.jpg'].default
+                    src: aboutFiles['../assets/about/jpn11.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide15.jpg'].default
+                    src: aboutFiles['../assets/about/jpn12.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide16.jpg'].default
+                    src: aboutFiles['../assets/about/jpn13.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide17.jpg'].default
+                    src: aboutFiles['../assets/about/jpn14.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide18.jpg'].default
+                    src: aboutFiles['../assets/about/jpn15.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide19.jpg'].default
+                    src: aboutFiles['../assets/about/jpn16.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide20.jpg'].default
+                    src: aboutFiles['../assets/about/jpn17.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide21.jpg'].default
+                    src: aboutFiles['../assets/about/jpn18.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide22.jpg'].default
+                    src: aboutFiles['../assets/about/jpn19.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide23.jpg'].default
+                    src: aboutFiles['../assets/about/jpn20.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn21.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn22.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn23.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn24.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn25.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn26.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn27.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn28.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn29.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn30.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn31.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn32.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn33.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn34.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn35.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn36.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn37.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn38.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn39.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn40.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn41.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn42.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn43.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn44.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn45.jpg'].default
                 }
             ]
         }

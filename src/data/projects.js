@@ -1,4 +1,6 @@
 const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
+const artdFiles = import.meta.glob('../projects/artd/*', { eager: true });
+const apo11oFiles = import.meta.glob('../projects/apo11o/*', { eager: true });
 const qrFiles = import.meta.glob('../projects/qr/*', { eager: true });
 const sweetFiles = import.meta.glob('../projects/sweet/*', { eager: true });
 const sputifyFiles = import.meta.glob('../projects/sputify/*', { eager: true });
@@ -24,7 +26,7 @@ export const projects = [
         context: {
             lines: [
                 '2024 - 2026 @ HSLU, Rotkreuz & Emmenbrücke',
-                'Modules MEN3/4/5 - Mentorate Semester 3, 4 & 5'
+                'Modules MEN3/4/5 (Mentorate Semester 3, 4 & 5)'
             ],
             url: 'https://www.hslu.ch/',
             icon: 'graduation-cap',
@@ -303,7 +305,304 @@ export const projects = [
         ]
     },
     // artd
+    {
+        id: 'artd',
+        name: 'ar tower defense',
+        description: 'marker-based augmented reality mobile game',
+        context: {
+            lines: [
+                '2025 - 2026 @ HSLU, Rotkreuz',
+                'Module WEBXR (Intro to Immersive Browser Experiences)'
+            ],
+            url: 'https://www.hslu.ch/it',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'solo',
+            'coding',
+            'web',
+            'game',
+            '3d'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `AR Tower Defense is a marker-based AR game where you defend your base by physically moving printed tower markers on your table.
+                        It was developed as part of the WebXR module at HSLU, where I explored immersive browser experiences for the first time using A-Frame and MindAR. The game features 10 waves of enemies and an upgrade system to enhance your defenses.`
+            },
+            {
+                type: 'heading',
+                text: 'Play the Game'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Play',
+                        action: 'https://webxr.jfladas.com/',
+                        icon: 'play',
+                        color: 'primary'
+                    },
+                    {
+                        text: 'Download Markers',
+                        action: artdFiles['../projects/artd/markers.pdf'].default,
+                        icon: 'circle-arrow-down',
+                        color: 'secondary'
+                    }
+                ]
+            },
+            {
+                type: 'subheading',
+                text: 'How to Play'
+            },
+            {
+                type: 'bullet',
+                text: 'Place the printed markers on a flat surface.'
+            },
+            {
+                type: 'bullet',
+                text: 'Enemies will spawn and move towards the base. Towers will automatically attack enemies within range.'
+            },
+            {
+                type: 'bullet',
+                text: 'Defend your base by moving tower markers on your table and purchasing upgrades using energy earned from defeating enemies.'
+            },
+            {
+                type: 'bullet',
+                text: 'Can you survive all 10 waves?'
+            },
+            {
+                type: 'subheading',
+                text: 'Save Data'
+            },
+            {
+                type: 'paragraph',
+                text: `Your energy and upgrades are automatically saved. If any issues occur, simply reload the page and your progress will be restored.`
+            },
+            {
+                type: 'subheading',
+                text: 'Markers'
+            },
+            {
+                type: 'paragraph',
+                text: `The game requires AR image markers to play. Download the PDF from the downloads section, then print and cut them out to get started!`
+            },
+            {
+                type: 'heading',
+                text: 'Screenshots'
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: artdFiles['../projects/artd/Gameplay.jpg'].default,
+                        caption: 'Gameplay'
+                    },
+                    {
+                        src: artdFiles['../projects/artd/Upgrades.jpg'].default,
+                        caption: 'Upgrades'
+                    },
+                    {
+                        src: artdFiles['../projects/artd/Info.jpg'].default,
+                        caption: 'Info'
+                    },
+                ]
+            },
+        ],
+        links: [
+            {
+                text: 'GitHub Repository',
+                url: 'https://github.com/jfladas/webxr',
+                icon: 'fa-brands fa-github-alt'
+            },
+            {
+                text: 'itch.io Page',
+                url: 'https://jfladas.itch.io/artd',
+                icon: 'fa-brands fa-itch-io'
+            },
+            {
+                text: 'Play Game',
+                url: 'https://webxr.jfladas.com/',
+                icon: 'external-link-alt'
+            },
+        ],
+        downloads: [
+            {
+                text: 'Markers.pdf',
+                url: artdFiles['../projects/artd/markers.pdf'].default,
+                icon: 'file-pdf'
+            },
+            {
+                text: 'OnePager.pdf',
+                url: artdFiles['../projects/artd/OnePager.pdf'].default,
+                icon: 'file-pdf'
+            }
+        ]
+    },
     // apo11o
+    {
+        id: 'apo11o',
+        name: 'apo11o',
+        description: 'web experience based on apollo 11 mission',
+        context: {
+            lines: [
+                '2025 @ HSLU, Rotkreuz',
+                'Module DIPRO (Digital Project), Supercluster !Daten (Spiel) & Zeit'
+            ],
+            url: 'https://www.hslu.ch/it',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'solo',
+            'coding',
+            'web'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `You can relive the Apollo 11 mission in this web-based command module interface experience.
+                        Key sections are replayed with real audio and data from NASA, enhanced with additional effects and interaction possibilities.`
+            },
+            {
+                type: 'heading',
+                text: 'Explore the project'
+            },
+            {
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Project Website',
+                        action: 'https://apo11o.jfladas.com',
+                        icon: 'arrow-right',
+                        color: 'primary'
+                    },
+                    {
+                        text: '',
+                        action: 'https://apo11o.jfladas.com/play',
+                        icon: 'rocket',
+                        color: 'secondary'
+                    }
+                ]
+            },
+            {
+                type: 'heading',
+                text: 'Screencast'
+            },
+            {
+                type: 'video',
+                video: apo11oFiles['../projects/apo11o/Screencast.mp4'].default
+            },
+            {
+                type: 'heading',
+                text: 'Iterative Process'
+            },
+            {
+                type: 'paragraph',
+                text: `The project was developed iteratively across five sprints, moving from open-ended research into prototyping, implementation, and finalization.
+                        Full documentation of the process can be found in the downloadable sprint documentation PDF.`
+            },
+            {
+                type: 'subheading',
+                text: 'Sprint 1'
+            },
+            {
+                type: 'bullet',
+                text: 'Explored inspiration + data sources (Flight Journals, NASA APIs)'
+            },
+            {
+                type: 'bullet',
+                text: 'Defined the core question for the experience'
+            },
+            {
+                type: 'subheading',
+                text: 'Sprint 2'
+            },
+            {
+                type: 'bullet',
+                text: 'Continued research and gathered UI/interaction ideas'
+            },
+            {
+                type: 'bullet',
+                text: 'Formed a tandem for reviews and retros.'
+            },
+            {
+                type: 'subheading',
+                text: 'Sprint 3'
+            },
+            {
+                type: 'bullet',
+                text: 'Presentation of progress'
+            },
+            {
+                type: 'bullet',
+                text: 'Decided on a vanilla HTML/CSS/JS setup'
+            },
+            {
+                type: 'bullet',
+                text: 'Built the first layout prototype (control panel, window, timeline structure)'
+            },
+            {
+                type: 'subheading',
+                text: 'Sprint 4'
+            },
+            {
+                type: 'bullet',
+                text: 'Integrated real mission events/audio with synchronization, controls, visuals, and skip functionality'
+            },
+            {
+                type: 'subheading',
+                text: 'Sprint 5'
+            },
+            {
+                type: 'bullet',
+                text: 'Finalized the experience (timeline + mission days)'
+            },
+            {
+                type: 'bullet',
+                text: 'Published via GitHub Pages'
+            },
+            {
+                type: 'bullet',
+                text: 'Prepared presentation and documentation materials'
+            }
+        ],
+        links: [
+            {
+                text: 'Project Website',
+                url: 'https://apo11o.jfladas.com',
+                icon: 'external-link-alt'
+            },
+            {
+                text: 'GitHub Repository',
+                url: 'https://github.com/jfladas/apo11o',
+                icon: 'fa-brands fa-github-alt'
+            },
+            {
+                text: 'Miro Board',
+                url: 'https://miro.com/app/board/uXjVJA4NGBs=/?share_link_id=129935269332',
+                icon: 'external-link-alt'
+            },
+            {
+                text: 'Rocket Minigame',
+                url: 'https://apo11o.jfladas.com/play',
+                icon: 'external-link-alt'
+            }
+        ],
+        downloads: [
+            {
+                text: 'ProjectManagement_Report.pdf',
+                url: apo11oFiles['../projects/apo11o/DIPRO_LukasBucher_PJMBericht.pdf'].default,
+                icon: 'file-pdf'
+            },
+            {
+                text: 'Sprint_Documentation.pdf',
+                url: apo11oFiles['../projects/apo11o/DIPRO_LukasBucher_Sprintdokus.pdf'].default,
+                icon: 'file-pdf'
+            }
+        ]
+    },
     // quick response
     {
         id: 'qr',
@@ -424,7 +723,7 @@ export const projects = [
         context: {
             lines: [
                 '2024 @ HSLU, Emmenbrücke',
-                'Module STUW2 - Studio UX & Web 2'
+                'Module STUW2 (Studio UX & Web 2)'
             ],
             url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
             icon: 'graduation-cap',
@@ -694,7 +993,7 @@ export const projects = [
         ],
         links: [
             {
-                text: 'Go to Page',
+                text: 'Website',
                 url: 'https://jfladas.github.io/uxweb2/',
                 icon: 'external-link-alt',
             },
@@ -735,7 +1034,7 @@ export const projects = [
         context: {
             lines: [
                 '2024 @ HSLU, Emmenbrücke',
-                'Module STUW1 - Studio Web & Mobile 1'
+                'Module STUW1 (Studio Web & Mobile 1)'
             ],
             url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
             icon: 'graduation-cap',
@@ -1470,7 +1769,7 @@ export const projects = [
         {
             lines: [
                 '2024 @ HSLU, Rotkreuz',
-                'Module DEWEB - Development for Web & Mobile'
+                'Module DEWEB (Development for Web & Mobile)'
             ],
             url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
@@ -1781,7 +2080,7 @@ export const projects = [
         context: {
             lines: [
                 '2024 @ HSLU, Rotkreuz',
-                'Module MATBF - Beautiful Mathematics'
+                'Module MATBF (Beautiful Mathematics)'
             ],
             url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
@@ -1948,7 +2247,7 @@ export const projects = [
         ],
         links: [
             {
-                text: 'Go to Page',
+                text: 'Website',
                 url: 'https://matbf.jfladas.com',
                 icon: 'external-link-alt'
             },
@@ -1979,7 +2278,7 @@ export const projects = [
         context: {
             lines: [
                 '2024 @ HSLU, Rotkreuz',
-                'Module STUIN - Studio Information Aesthetics & Engineering'
+                'Module STUIN (Studio Information Aesthetics & Engineering)'
             ],
             url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
@@ -2176,7 +2475,7 @@ export const projects = [
         context: {
             lines: [
                 '2024 @ HSLU, Emmenbrücke',
-                'Module ISA ANIM - Introduction to Animation'
+                'Module ISA ANIM (Introduction to Animation)'
             ],
             url: 'https://www.hslu.ch/en/lucerne-school-of-design-film-and-art/',
             icon: 'graduation-cap',
@@ -2364,7 +2663,7 @@ export const projects = [
         context: {
             lines: [
                 '2023 @ HSLU, Rotkreuz',
-                'Module IUX - Introduction to User Experience'
+                'Module IUX (Introduction to User Experience)'
             ],
             url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
@@ -2602,7 +2901,7 @@ export const projects = [
         context: {
             lines: [
                 '2023 @ HSLU, Rotkreuz',
-                'Module IGAME - Game Design & Engineering'
+                'Module IGAME (Game Design & Engineering)'
             ],
             url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
@@ -2635,7 +2934,7 @@ export const projects = [
                     },
                     {
                         text: 'Download',
-                        action: '',
+                        action: sweetteethFiles['../projects/sweetteeth/SweetTeeth.zip'].default,
                         icon: 'circle-arrow-down',
                         color: 'secondary'
                     }
@@ -2890,7 +3189,7 @@ export const projects = [
         context: {
             lines: [
                 '2023 @ HSLU, Rotkreuz',
-                'Module KIVIS - Kickstart Visual Design'
+                'Module KIVIS (Kickstart Visual Design)'
             ],
             url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
@@ -3073,12 +3372,12 @@ export const projects = [
         ],
         downloads: [
             {
-                text: 'The_Rodina.mp4',
+                text: 'TheRodina.mp4',
                 url: rodinaFiles['../projects/rodina/The_Rodina.mp4'].default,
                 icon: 'file-video'
             },
             {
-                text: 'The_Rodina_Presentation.ppsx',
+                text: 'TheRodina_Presentation.ppsx',
                 url: rodinaFiles['../projects/rodina/The_Rodina_Presentation.ppsx'].default,
                 icon: 'file-powerpoint'
             },
@@ -3097,7 +3396,7 @@ export const projects = [
         context: {
             lines: [
                 '2023 @ HSLU, Rotkreuz',
-                'Module 4DAUT - Cinema 4D Authoring'
+                'Module 4DAUT (Cinema 4D Authoring)'
             ],
             url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',
@@ -3236,7 +3535,7 @@ export const projects = [
         context: {
             lines: [
                 '2022 @ Suva, Lucerne',
-                'QV PA - final practical project of software developer apprenticeship'
+                'QV PA (final practical project of software developer apprenticeship)'
             ],
             url: 'https://www.suva.ch/',
             icon: 'briefcase',
@@ -3562,68 +3861,143 @@ export const aboutContent = {
             type: 'images',
             images: [
                 {
-                    src: aboutFiles['../assets/about/Slide3.jpg'].default,
-                    caption: 'Japan 2023'
+                    src: aboutFiles['../assets/about/jpn0.jpg'].default,
+                    caption: 'Japan'
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide4.jpg'].default
+                    src: aboutFiles['../assets/about/jpn1.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide5.jpg'].default
+                    src: aboutFiles['../assets/about/jpn2.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide6.jpg'].default
+                    src: aboutFiles['../assets/about/jpn3.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide7.jpg'].default
+                    src: aboutFiles['../assets/about/jpn4.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide8.jpg'].default
+                    src: aboutFiles['../assets/about/jpn5.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide9.jpg'].default
+                    src: aboutFiles['../assets/about/jpn6.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide10.jpg'].default
+                    src: aboutFiles['../assets/about/jpn7.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide11.jpg'].default
+                    src: aboutFiles['../assets/about/jpn8.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide12.jpg'].default
+                    src: aboutFiles['../assets/about/jpn9.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide13.jpg'].default
+                    src: aboutFiles['../assets/about/jpn10.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide14.jpg'].default
+                    src: aboutFiles['../assets/about/jpn11.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide15.jpg'].default
+                    src: aboutFiles['../assets/about/jpn12.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide16.jpg'].default
+                    src: aboutFiles['../assets/about/jpn13.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide17.jpg'].default
+                    src: aboutFiles['../assets/about/jpn14.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide18.jpg'].default
+                    src: aboutFiles['../assets/about/jpn15.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide19.jpg'].default
+                    src: aboutFiles['../assets/about/jpn16.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide20.jpg'].default
+                    src: aboutFiles['../assets/about/jpn17.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide21.jpg'].default
+                    src: aboutFiles['../assets/about/jpn18.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide22.jpg'].default
+                    src: aboutFiles['../assets/about/jpn19.jpg'].default
                 },
                 {
-                    src: aboutFiles['../assets/about/Slide23.jpg'].default
+                    src: aboutFiles['../assets/about/jpn20.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn21.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn22.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn23.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn24.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn25.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn26.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn27.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn28.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn29.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn30.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn31.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn32.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn33.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn34.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn35.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn36.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn37.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn38.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn39.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn40.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn41.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn42.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn43.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn44.jpg'].default
+                },
+                {
+                    src: aboutFiles['../assets/about/jpn45.jpg'].default
                 }
             ]
         }
@@ -3664,7 +4038,6 @@ export const aboutContent = {
             url: 'https://www.duolingo.com/profile/jfladas',
             icon: 'fa-brands fa-duolingo'
         }
-
     ],
     downloads: [
         /* {
