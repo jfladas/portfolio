@@ -293,19 +293,19 @@ onMounted(() => {
   }
 
   20% {
-    content: "creative coder";
-  }
-
-  40% {
     content: "digital ideation student";
   }
 
+  40% {
+    content: "creative coder";
+  }
+
   60% {
-    content: "gaymer";
+    content: "powerpoint enthusiast";
   }
 
   80% {
-    content: "powerpoint enthusiast";
+    content: "interaction designer";
   }
 }
 
@@ -313,6 +313,7 @@ onMounted(() => {
   position: relative;
   width: 100%;
   margin-bottom: 2rem;
+  height: 40vw;
 }
 
 .me-container:hover .me-dark {
@@ -322,7 +323,7 @@ onMounted(() => {
 .me {
   position: relative;
   width: 30vw;
-  height: auto;
+  height: 40vw;
   opacity: 1;
   transition: opacity 0.3s linear;
   z-index: 3;
@@ -421,12 +422,14 @@ onMounted(() => {
   .me-container {
     width: 85vw;
     overflow: hidden;
+    height: 53vw;
   }
 
   .me,
   .me-glitch,
   .me-dark {
     width: 40vw;
+    height: 53vw;
   }
 
   .overtext,
@@ -443,10 +446,16 @@ onMounted(() => {
 
 @media (max-width: 600px) {
 
+  .me-container {
+    width: 100vw;
+    height: 100vw;
+  }
+
   .me,
   .me-glitch,
   .me-dark {
     width: 75vw;
+    height: 100vw;
   }
 
   .overtext,

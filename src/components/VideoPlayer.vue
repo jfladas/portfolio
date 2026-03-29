@@ -1,15 +1,27 @@
 <template>
     <teleport to="#video-teleport" :disabled="!isOverlayVisible">
         <div class="video-player hoverable" :class="{ notplaying: !isPlaying }" @mousemove="showControlsTemporarily">
-            <video ref="video" :src="video" @ended="handleVideoEnded" :class="{ small: !isOverlayVisible }"></video>
-            <button class="play-pause-button" @click="togglePlayPause" :style="{ opacity: showControls ? 1 : 0 }">
-                <font-awesome-icon :icon="isEnded ? 'rotate-left' : (isPlaying ? 'pause' : 'play')" />
+            <video ref="video" :src="video" @ended="handleVideoEnded" @loadeddata="handleVideoLoaded"
+                @loadedmetadata="handleMetadataLoaded" @timeupdate="handleTimeUpdate"
+                :class="{ small: !isOverlayVisible }"></video>
+            <button class="play-pause-button" @click="togglePlayPause" @mouseenter="handleControlMouseEnter"
+                @mouseleave="handleControlMouseLeave" :style="{ opacity: showControls ? 1 : 0 }">
+                <font-awesome-icon
+                    :icon="isVideoLoaded ? (isEnded ? 'rotate-left' : (isPlaying ? 'pause' : 'play')) : 'spinner'"
+                    :spin="!isVideoLoaded" />
             </button>
+            <div class="progress" :class="{ withExpand: !isOverlayVisible }" @mouseenter="handleControlMouseEnter"
+                @mouseleave="handleControlMouseLeave" :style="{ opacity: showControls ? 1 : 0 }">
+                <input class="progress-bar" type="range" min="0" max="100" step="0.1" :value="progressPercent"
+                    :disabled="!isVideoLoaded || !duration" @input="handleSeek" />
+            </div>
             <button v-if="!isOverlayVisible" class="expand-button" @click="handleExpand"
+                @mouseenter="handleControlMouseEnter" @mouseleave="handleControlMouseLeave"
                 :style="{ opacity: showControls ? 1 : 0 }">
                 <font-awesome-icon icon="up-right-and-down-left-from-center" />
             </button>
             <button v-if="isOverlayVisible" class="unexpand-button" @click="$emit('toggle-overlay')"
+                @mouseenter="handleControlMouseEnter" @mouseleave="handleControlMouseLeave"
                 :style="{ opacity: showControls ? 1 : 0 }">
                 <font-awesome-icon icon="down-left-and-up-right-to-center" />
             </button>
@@ -37,12 +49,42 @@ export default {
         return {
             isPlaying: false,
             isEnded: false,
+            isVideoLoaded: false,
+            currentTime: 0,
+            duration: 0,
+            hideControlsTimer: null,
+            isHoveringControls: false,
             showControls: true
         };
     },
     emits: ['toggle-overlay'],
+    computed: {
+        progressPercent() {
+            if (!this.duration) {
+                return 0;
+            }
+
+            return (this.currentTime / this.duration) * 100;
+        }
+    },
+    watch: {
+        video() {
+            this.isVideoLoaded = false;
+            this.isPlaying = false;
+            this.isEnded = false;
+            this.currentTime = 0;
+            this.duration = 0;
+            this.clearHideControlsTimer();
+            this.isHoveringControls = false;
+            this.showControls = true;
+        }
+    },
     methods: {
         togglePlayPause() {
+            if (!this.isVideoLoaded) {
+                return;
+            }
+
             const video = this.$refs.video;
             if (video.paused) {
                 video.play();
@@ -58,25 +100,77 @@ export default {
         handleVideoEnded() {
             this.isPlaying = false;
             this.isEnded = true;
+            this.currentTime = this.duration;
             this.showControls = true;
+        },
+        handleVideoLoaded() {
+            this.isVideoLoaded = true;
+        },
+        handleMetadataLoaded() {
+            const video = this.$refs.video;
+            this.duration = Number.isFinite(video.duration) ? video.duration : 0;
+        },
+        handleTimeUpdate() {
+            const video = this.$refs.video;
+            this.currentTime = video.currentTime;
+            this.duration = Number.isFinite(video.duration) ? video.duration : this.duration;
+        },
+        handleSeek(event) {
+            if (!this.duration) {
+                return;
+            }
+
+            const newTime = (Number(event.target.value) / 100) * this.duration;
+            const video = this.$refs.video;
+
+            if (this.isEnded) {
+                this.isEnded = false;
+            }
+
+            video.currentTime = newTime;
+            this.currentTime = newTime;
+            this.showControlsTemporarily();
         },
         handleExpand() {
             this.$emit('toggle-overlay');
+            this.isHoveringControls = false;
         },
-        hideControlsAfterDelay() {
+        handleControlMouseEnter() {
+            this.isHoveringControls = true;
             this.showControls = true;
-            setTimeout(() => {
-                if (this.isPlaying) {
-                    this.showControls = false;
-                }
-            }, 1000);
+            this.clearHideControlsTimer();
         },
-        showControlsTemporarily() {
-            this.showControls = true;
+        handleControlMouseLeave() {
+            this.isHoveringControls = false;
             if (this.isPlaying) {
                 this.hideControlsAfterDelay();
             }
+        },
+        clearHideControlsTimer() {
+            if (this.hideControlsTimer) {
+                clearTimeout(this.hideControlsTimer);
+                this.hideControlsTimer = null;
+            }
+        },
+        hideControlsAfterDelay() {
+            this.clearHideControlsTimer();
+            this.showControls = true;
+            this.hideControlsTimer = setTimeout(() => {
+                if (this.isPlaying && !this.isHoveringControls) {
+                    this.showControls = false;
+                }
+                this.hideControlsTimer = null;
+            }, 2000);
+        },
+        showControlsTemporarily() {
+            this.showControls = true;
+            if (this.isPlaying && !this.isHoveringControls) {
+                this.hideControlsAfterDelay();
+            }
         }
+    },
+    beforeUnmount() {
+        this.clearHideControlsTimer();
     }
 };
 </script>
@@ -97,6 +191,55 @@ export default {
 
 .video-player video.small {
     max-height: 30rem;
+}
+
+.progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    background-color: rgba(var(--navy-rgb), 0.3);
+    backdrop-filter: blur(0.5rem);
+    transition: opacity 0.5s;
+}
+
+.progress.withExpand {
+    right: 2.5rem;
+}
+
+.progress-bar {
+    width: 100%;
+    margin: 0;
+    appearance: none;
+    -webkit-appearance: none !important;
+    background: transparent;
+    height: 100%;
+    cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none !important;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: rgba(var(--white-rgb), 0.8);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.progress-bar:hover {
+    background: rgba(var(--deep-rgb), 0.2);
+}
+
+.progress-bar::-webkit-slider-thumb:hover {
+    background: rgba(var(--white-rgb), 1);
+}
+
+.progress-bar:disabled {
+    cursor: default;
 }
 
 .play-pause-button {

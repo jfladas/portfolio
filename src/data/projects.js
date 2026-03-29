@@ -4024,11 +4024,6 @@ export const aboutContent = {
             icon: 'fa-brands fa-instagram'
         },
         {
-            text: 'YouTube',
-            url: 'https://youtube.com/@jfladas/',
-            icon: 'fa-brands fa-youtube'
-        },
-        {
             text: 'Spotify',
             url: 'https://open.spotify.com/user/rn16ees9l59zxvg9zzptiuwb7?si=86fff52ccafd4d0d',
             icon: 'fa-brands fa-spotify'
