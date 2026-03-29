@@ -1,6 +1,7 @@
 <template>
     <teleport to="#video-teleport" :disabled="!isOverlayVisible">
-        <div class="video-player hoverable" :class="{ notplaying: !isPlaying }" @mousemove="showControlsTemporarily">
+        <div class="video-player hoverable" :class="{ notplaying: !isPlaying }" @mousemove="showControlsTemporarily"
+            @touchstart="showControlsTemporarily">
             <video ref="video" :src="video" @ended="handleVideoEnded" @loadeddata="handleVideoLoaded"
                 @loadedmetadata="handleMetadataLoaded" @timeupdate="handleTimeUpdate"
                 :class="{ small: !isOverlayVisible }"></video>
@@ -54,6 +55,8 @@ export default {
             duration: 0,
             hideControlsTimer: null,
             isHoveringControls: false,
+            isMobileInteractionMode: false,
+            hoverMediaQuery: null,
             showControls: true
         };
     },
@@ -136,15 +139,26 @@ export default {
             this.isHoveringControls = false;
         },
         handleControlMouseEnter() {
+            if (this.isMobileInteractionMode) {
+                return;
+            }
+
             this.isHoveringControls = true;
             this.showControls = true;
             this.clearHideControlsTimer();
         },
         handleControlMouseLeave() {
+            if (this.isMobileInteractionMode) {
+                return;
+            }
+
             this.isHoveringControls = false;
-            if (this.isPlaying) {
+            if (this.isPlaying || this.isMobileInteractionMode) {
                 this.hideControlsAfterDelay();
             }
+        },
+        updateInteractionMode() {
+            this.isMobileInteractionMode = this.hoverMediaQuery ? this.hoverMediaQuery.matches : false;
         },
         clearHideControlsTimer() {
             if (this.hideControlsTimer) {
@@ -156,7 +170,8 @@ export default {
             this.clearHideControlsTimer();
             this.showControls = true;
             this.hideControlsTimer = setTimeout(() => {
-                if (this.isPlaying && !this.isHoveringControls) {
+                if ((this.isPlaying || this.isMobileInteractionMode) &&
+                    (this.isMobileInteractionMode || !this.isHoveringControls)) {
                     this.showControls = false;
                 }
                 this.hideControlsTimer = null;
@@ -164,12 +179,20 @@ export default {
         },
         showControlsTemporarily() {
             this.showControls = true;
-            if (this.isPlaying && !this.isHoveringControls) {
+            if (this.isMobileInteractionMode || (this.isPlaying && !this.isHoveringControls)) {
                 this.hideControlsAfterDelay();
             }
         }
     },
+    mounted() {
+        this.hoverMediaQuery = window.matchMedia('(hover: none), (pointer: coarse)');
+        this.updateInteractionMode();
+        this.hoverMediaQuery.addEventListener('change', this.updateInteractionMode);
+    },
     beforeUnmount() {
+        if (this.hoverMediaQuery) {
+            this.hoverMediaQuery.removeEventListener('change', this.updateInteractionMode);
+        }
         this.clearHideControlsTimer();
     }
 };
