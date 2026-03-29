@@ -447,7 +447,7 @@ onMounted(() => {
 @media (max-width: 600px) {
 
   .me-container {
-    width: 100vw;
+    width: 100%;
     height: 100vw;
   }
 
