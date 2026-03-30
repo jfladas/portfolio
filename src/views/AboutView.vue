@@ -15,9 +15,9 @@
     <div class="content-right">
       <div class="me-container hoverable">
         <p class="jap overtext" ref="typedtext"></p>
-        <img src="/src/assets/me.png" alt="me" class="me" />
-        <img src="/src/assets/me_glitch.png" alt="me" class="me-glitch" />
-        <img src="/src/assets/me_dark.png" alt="me" class="me-dark" />
+        <img src="/src/assets/me.jpg" alt="me" class="me" />
+        <img src="/src/assets/me_glitch.jpg" alt="me" class="me-glitch" />
+        <img src="/src/assets/me_dark.jpg" alt="me" class="me-dark" />
       </div>
       <div class="right-container">
         <LinksDownloads :links="aboutContent.links" :downloads="aboutContent.downloads" />
