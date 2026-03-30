@@ -1,3 +1,4 @@
+const bachelorFiles = import.meta.glob('../projects/bachelor/*', { eager: true });
 const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
 const artdFiles = import.meta.glob('../projects/artd/*', { eager: true });
 const apo11oFiles = import.meta.glob('../projects/apo11o/*', { eager: true });
@@ -18,6 +19,124 @@ const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 
 export const projekte = [
+    // my self companion
+    {
+        id: 'bachelor',
+        name: 'my self companion',
+        description: 'bachelorprojekt zu virtuellen companions',
+        context: {
+            lines: [
+                '2026 @ HSLU, Rotkreuz',
+                'Bachelorarbeit & Praxisprojekt'
+            ],
+            url: 'https://www.hslu.ch/it',
+            icon: 'graduation-cap',
+            tooltip: 'schule'
+        },
+        categories: [
+            'solo',
+            'coding',
+            'design',
+            'web',
+            'ux'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `My Self Companion verbindet eine abgeschlossene schriftliche Thesis mit einem praktischen Bachelorprojekt. Die Thesis legt die theoretische Grundlage zu virtuellen Companions, Projektion und ruhiger Interaktion, während das Projekt diese Erkenntnisse in einen ruhigen Desktop-Prototyp für den digitalen Alltag übersetzt.`
+            },
+            {
+                type: 'heading',
+                text: 'Abgeschlossene schriftliche Thesis'
+            },
+            {
+                type: 'iconed',
+                text: 'Forschungsfokus',
+                icon: 'book'
+            },
+            {
+                type: 'bullet',
+                text: 'Warum Companions sozial wirken und nicht nur funktional'
+            },
+            {
+                type: 'bullet',
+                text: 'Kompakter Analyse-Rahmen aus CASA, Mind Perception, parasozialer Interaktion, Ambiguität und Calm Technology'
+            },
+            {
+                type: 'iconed',
+                text: 'Zentrale Erkenntnis',
+                icon: 'lightbulb'
+            },
+            {
+                type: 'bullet',
+                text: 'Soziale Gegenüberhaftigkeit entsteht vor allem durch periphere Präsenz, Zweckfreiheit und Offenheit'
+            },
+            {
+                type: 'iconed',
+                text: 'Beitrag',
+                icon: 'pen-nib'
+            },
+            {
+                type: 'bullet',
+                text: 'Theoretische Grundlage für weitere Forschung und gestalterische Experimente'
+            },
+            {
+                type: 'heading',
+                text: 'Kurzplan praktische Umsetzung'
+            },
+            {
+                type: 'iconed',
+                text: 'Companion-Konzept',
+                icon: 'circle-user'
+            },
+            {
+                type: 'bullet',
+                text: 'Ruhiger Desktop-Begleiter aus kurzer nicht-diagnostischer Selbstreflexion im Onboarding'
+            },
+            {
+                type: 'bullet',
+                text: 'Symbolisches Gegenüber, dauerhaft präsent aber nicht aufdringlich'
+            },
+            {
+                type: 'iconed',
+                text: 'Interaktion im Alltag',
+                icon: 'desktop'
+            },
+            {
+                type: 'bullet',
+                text: 'Dezente Präsenz am unteren Bildschirmrand mit Reaktionen auf Anwesenheit und Zeit'
+            },
+            {
+                type: 'bullet',
+                text: 'Freiwillige Mikrointeraktionen wie antippen, streicheln, aufheben und loslassen'
+            },
+            {
+                type: 'bullet',
+                text: 'Reflexionsmomente nur auf Abruf, zum Beispiel als Mini-Journal'
+            },
+            {
+                type: 'iconed',
+                text: 'Rahmen und Umsetzung',
+                icon: 'code'
+            },
+            {
+                type: 'bullet',
+                text: 'Kein therapeutisches Ziel und kein Versprechen auf Verhaltensänderung'
+            },
+            {
+                type: 'bullet',
+                text: 'Lokaler Offline-Prototyp einer Desktop-App mit Electron und Vue, basierend auf der abgeschlossenen Thesis'
+            }
+        ],
+        links: [],
+        downloads: [
+            {
+                text: 'Pitch_Präsentation.ppsx',
+                url: bachelorFiles['../projects/bachelor/PITCH.ppsx'].default,
+                icon: 'file-powerpoint'
+            }
+        ]
+    },
     // hearts across dimensions
     {
         id: 'had',

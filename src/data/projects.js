@@ -1,3 +1,4 @@
+const bachelorFiles = import.meta.glob('../projects/bachelor/*', { eager: true });
 const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
 const artdFiles = import.meta.glob('../projects/artd/*', { eager: true });
 const apo11oFiles = import.meta.glob('../projects/apo11o/*', { eager: true });
@@ -18,6 +19,124 @@ const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 
 export const projects = [
+    // my self companion
+    {
+        id: 'bachelor',
+        name: 'my self companion',
+        description: 'bachelor project on virtual companions',
+        context: {
+            lines: [
+                '2026 @ HSLU, Rotkreuz',
+                'Bachelor Thesis & Project'
+            ],
+            url: 'https://www.hslu.ch/it',
+            icon: 'graduation-cap',
+            tooltip: 'school'
+        },
+        categories: [
+            'solo',
+            'coding',
+            'design',
+            'web',
+            'ux'
+        ],
+        sections: [
+            {
+                type: 'quoted',
+                text: `My Self Companion combines a completed written thesis with a practical bachelor project. The thesis builds the theoretical foundation on virtual companions, projection, and calm interaction, while the project translates these insights into a calm desktop prototype that can be experienced in everyday digital life.`
+            },
+            {
+                type: 'heading',
+                text: 'Completed Written Thesis'
+            },
+            {
+                type: 'iconed',
+                text: 'Research Focus',
+                icon: 'book'
+            },
+            {
+                type: 'bullet',
+                text: 'Why companions feel social beyond pure function'
+            },
+            {
+                type: 'bullet',
+                text: 'Compact framework based on CASA, mind perception, parasociality, ambiguity, and calm interaction'
+            },
+            {
+                type: 'iconed',
+                text: 'Key Finding',
+                icon: 'lightbulb'
+            },
+            {
+                type: 'bullet',
+                text: 'Perceived sociality comes mainly from peripheral presence, non-instrumentality, and openness'
+            },
+            {
+                type: 'iconed',
+                text: 'Why This Matters',
+                icon: 'pen-nib'
+            },
+            {
+                type: 'bullet',
+                text: 'Theoretical base for future companion research and design experiments'
+            },
+            {
+                type: 'heading',
+                text: 'Practical Project Plan (Brief)'
+            },
+            {
+                type: 'iconed',
+                text: 'Companion Concept',
+                icon: 'circle-user'
+            },
+            {
+                type: 'bullet',
+                text: 'Calm desktop companion shaped by a short non-diagnostic onboarding reflection'
+            },
+            {
+                type: 'bullet',
+                text: 'Symbolic counterpart for self-reference without intrusiveness'
+            },
+            {
+                type: 'iconed',
+                text: 'Everyday Interaction',
+                icon: 'desktop'
+            },
+            {
+                type: 'bullet',
+                text: 'Subtle bottom-screen presence reacting to time and presence'
+            },
+            {
+                type: 'bullet',
+                text: 'Optional micro-interactions: tap, pet, pick up, release'
+            },
+            {
+                type: 'bullet',
+                text: 'Reflection only on demand, for example via a mini journal'
+            },
+            {
+                type: 'iconed',
+                text: 'Scope and Implementation',
+                icon: 'code'
+            },
+            {
+                type: 'bullet',
+                text: 'No therapeutic claim and no behavior-change promise'
+            },
+            {
+                type: 'bullet',
+                text: 'Local offline desktop prototype with Electron and Vue, grounded in the completed thesis'
+            }
+        ],
+        links: [],
+        downloads: [
+            {
+                text: 'Pitch_Presentation.ppsx',
+                url: bachelorFiles['../projects/bachelor/PITCH.ppsx'].default,
+                icon: 'file-powerpoint'
+            }
+        ]
+    },
     // hearts across dimensions
     {
         id: 'had',

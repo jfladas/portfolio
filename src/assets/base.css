@@ -337,6 +337,10 @@ button {
     margin-top: 0;
   }
 
+  .content-left {
+    margin-top: 3.5rem;
+  }
+
   h1 {
     font-size: 3.5rem;
     line-height: 3.2rem;
@@ -366,5 +370,11 @@ button {
   button {
     font-size: 1rem;
     height: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .content-left {
+    margin-top: 2rem;
   }
 }
