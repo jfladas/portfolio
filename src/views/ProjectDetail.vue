@@ -190,6 +190,7 @@ const setupBannerTicker = async () => {
 
 <style scoped>
 .banner {
+    z-index: 10;
     position: fixed;
     top: 4.5rem;
     left: 0;
