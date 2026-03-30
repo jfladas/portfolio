@@ -11,7 +11,7 @@
                     :icon="isVideoLoaded ? (isEnded ? 'rotate-left' : (isPlaying ? 'pause' : 'play')) : 'spinner'"
                     :spin="!isVideoLoaded" />
             </button>
-            <div class="progress" :class="{ withExpand: !isOverlayVisible }" @mouseenter="handleControlMouseEnter"
+            <div class="progress" :class="{ unexpanded: !isOverlayVisible }" @mouseenter="handleControlMouseEnter"
                 @mouseleave="handleControlMouseLeave" :style="{ opacity: showControls ? 1 : 0 }">
                 <input class="progress-bar" type="range" min="0" max="100" step="0.1" :value="progressPercent"
                     :disabled="!isVideoLoaded || !duration" @input="handleSeek" />
@@ -229,7 +229,7 @@ export default {
     transition: opacity 0.5s;
 }
 
-.progress.withExpand {
+.progress.unexpanded {
     right: 2.5rem;
 }
 

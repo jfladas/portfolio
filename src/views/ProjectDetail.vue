@@ -6,6 +6,15 @@
                 :tooltip="currentLanguage === 'en' ? 'back' : 'zurück'">
                 <font-awesome-icon icon="arrow-left-long" />
             </router-link>
+            <div v-if="showWipBanner" class="banner">
+                <div ref="bannerViewportRef" class="banner-viewport">
+                    <div ref="bannerTrackRef" class="banner-track jap"
+                        :style="{ transform: `translateX(${bannerOffset}px)` }">
+                        <span v-for="(item, index) in renderedBannerItems" :key="`${item}-${index}`"
+                            class="banner-item">{{ item }}</span>
+                    </div>
+                </div>
+            </div>
             <h1 class="title">{{ project.name }}</h1>
             <h2 class="subtitle">{{ project.description }}</h2>
             <div class="categories hoverable">
@@ -55,7 +64,7 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted, inject } from 'vue'
+import { computed, ref, onMounted, onBeforeUnmount, nextTick, inject } from 'vue'
 import { projects as enProjects, categories } from '@/data/projects.js'
 import { projekte as deProjects } from '@/data/projekte.js'
 import ContentSections from '@/components/ContentSections.vue'
@@ -69,10 +78,23 @@ const isOverlayVisible = ref(false)
 const overlayType = ref('')
 const overlayIndex = ref(null)
 const currentIndexes = ref([])
+const bannerViewportRef = ref(null)
+const bannerTrackRef = ref(null)
+const cycleBannerItems = ref([])
+const bannerOffset = ref(0)
+
+const wipTranslations = ['work in progress', 'in Entwicklung', '作業中']
+const bannerSpeed = 75
+let bannerRafId = null
+let bannerLastTimestamp = 0
+let bannerCycleWidth = 0
+
+const renderedBannerItems = computed(() => [...cycleBannerItems.value, ...cycleBannerItems.value])
 
 const projects = computed(() => currentLanguage.value === 'en' ? enProjects : deProjects)
 
 const project = computed(() => projects.value.find(p => p.id === props.id))
+const showWipBanner = computed(() => project.value && ['bachelor', 'had'].includes(project.value.id))
 
 onMounted(() => {
     if (project.value) {
@@ -82,6 +104,16 @@ onMounted(() => {
             }
         })
     }
+
+    if (showWipBanner.value) {
+        setupBannerTicker()
+        window.addEventListener('resize', setupBannerTicker)
+    }
+})
+
+onBeforeUnmount(() => {
+    stopBannerTicker()
+    window.removeEventListener('resize', setupBannerTicker)
 })
 
 const nextSlide = (index) => {
@@ -101,9 +133,110 @@ const toggleOverlay = (type, index) => {
 const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+const stopBannerTicker = () => {
+    if (bannerRafId) {
+        cancelAnimationFrame(bannerRafId)
+        bannerRafId = null
+    }
+}
+
+const animateBanner = (timestamp) => {
+    if (!bannerCycleWidth) {
+        bannerRafId = requestAnimationFrame(animateBanner)
+        return
+    }
+
+    if (!bannerLastTimestamp) {
+        bannerLastTimestamp = timestamp
+    }
+
+    const deltaSeconds = (timestamp - bannerLastTimestamp) / 1000
+    bannerLastTimestamp = timestamp
+    bannerOffset.value -= bannerSpeed * deltaSeconds
+
+    if (Math.abs(bannerOffset.value) >= bannerCycleWidth) {
+        bannerOffset.value += bannerCycleWidth
+    }
+
+    bannerRafId = requestAnimationFrame(animateBanner)
+}
+
+const setupBannerTicker = async () => {
+    stopBannerTicker()
+    bannerLastTimestamp = 0
+    bannerOffset.value = 0
+
+    if (!bannerViewportRef.value || !showWipBanner.value) {
+        return
+    }
+
+    cycleBannerItems.value = [...wipTranslations]
+    await nextTick()
+
+    const viewportWidth = bannerViewportRef.value.clientWidth
+    let safety = 0
+
+    while (bannerTrackRef.value && bannerTrackRef.value.scrollWidth / 2 < viewportWidth && safety < 20) {
+        cycleBannerItems.value = [...cycleBannerItems.value, ...wipTranslations]
+        await nextTick()
+        safety += 1
+    }
+
+    bannerCycleWidth = bannerTrackRef.value ? bannerTrackRef.value.scrollWidth / 2 : 0
+    bannerRafId = requestAnimationFrame(animateBanner)
+}
 </script>
 
 <style scoped>
+.banner {
+    position: fixed;
+    top: 4.5rem;
+    left: 0;
+    right: 0;
+    user-select: none;
+    background: linear-gradient(60deg,
+            var(--purple) 30%,
+            var(--pink) 45%,
+            var(--white) 50%,
+            var(--pink) 55%,
+            var(--purple) 70%);
+    background-size: 400% 400%;
+    animation: shine 5s ease infinite;
+}
+
+@keyframes shine {
+
+    0%,
+    100% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.banner-viewport {
+    overflow: hidden;
+}
+
+.banner-track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    will-change: transform;
+}
+
+.banner-item {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    margin-right: 4rem;
+    font-size: 1.5rem;
+    color: var(--white);
+    padding: 0.1rem 0 0.2rem 0;
+}
+
 .subtitle {
     font-weight: 700;
     font-size: 2rem;
@@ -197,6 +330,17 @@ const scrollToTop = () => {
 
     .to-top:hover {
         transform: translate(-50%, -5rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .banner {
+        top: 3.5rem;
+    }
+
+    .banner-item {
+        font-size: 1.2rem;
+        padding: 0.1rem 0 0.1rem 0;
     }
 }
 </style>

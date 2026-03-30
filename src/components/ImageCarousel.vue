@@ -5,9 +5,6 @@
                 <div class="carousel-item" v-for="(image, index) in images" :key="index"
                     :class="{ small: !isOverlayVisible }">
                     <img :src="image.src" :alt="image.caption" />
-                    <div v-if="image.caption" class="fade-bottom">
-                        <p>{{ image.caption }}</p>
-                    </div>
                 </div>
             </div>
             <div v-if="images.length != 1" class="carousel-fade prev"></div>
@@ -18,6 +15,9 @@
             <button v-if="images.length != 1" class="carousel-control next" @click="$emit('next-slide')">
                 <font-awesome-icon icon="chevron-right" />
             </button>
+            <div v-if="currentCaption" class="caption" :class="{ unexpanded: !isOverlayVisible }">
+                <p>{{ currentCaption }}</p>
+            </div>
             <button v-if="!isOverlayVisible" class="expand-button" @click="$emit('toggle-overlay')">
                 <font-awesome-icon icon="up-right-and-down-left-from-center" />
             </button>
@@ -50,6 +50,12 @@ export default {
             touchStartX: 0,
             touchEndX: 0
         };
+    },
+    computed: {
+        currentCaption() {
+            const currentImage = this.images[this.currentIndex];
+            return currentImage && currentImage.caption ? currentImage.caption : '';
+        }
     },
     methods: {
         onTouchStart(event) {
@@ -101,7 +107,7 @@ export default {
 .carousel img {
     width: 100%;
     height: auto;
-    max-height: calc(100% - 2.5rem);
+    max-height: 100%;
     margin-top: 0.5rem;
     object-fit: contain;
     transform: scale(0.99);
@@ -109,23 +115,29 @@ export default {
     background: linear-gradient(to top, rgba(var(--deep-rgb), 0.2), rgba(var(--deep-rgb), 0));
 }
 
-.carousel p {
+.caption {
     position: absolute;
+    left: 0;
+    right: 0;
     bottom: 0;
-    width: 100%;
-    height: 2rem;
+    height: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--white);
+    background-color: rgba(var(--navy-rgb), 0.3);
+    backdrop-filter: blur(0.5rem);
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
-.fade-bottom {
-    position: relative;
-    height: 2rem;
-    background-color: rgba(var(--navy-rgb), 0.5);
-    backdrop-filter: blur(1rem);
-    transform: translate(0, -30%);
+.caption.unexpanded {
+    right: 2.5rem;
+}
+
+.caption p {
+    margin: 0;
+    padding: 0 0.75rem;
+    color: var(--white);
 }
 
 .carousel-fade {
@@ -215,6 +227,7 @@ export default {
 
 .carousel:hover .carousel-control,
 .carousel:hover .carousel-fade,
+.carousel:hover .caption,
 .carousel:hover .expand-button,
 .carousel:hover .unexpand-button {
     opacity: 1;
