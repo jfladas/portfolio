@@ -82,6 +82,26 @@
   --pink-rgb: 55, 120, 42;
 }
 
+[data-theme='light'] {
+  --white: #050028;
+  --aqua: #050028;
+  --mint: #2e00c0;
+  --sky: #2e00c0;
+  --deep: #15abff;
+  --navy: #ffffff;
+  --purple: #ff57eb;
+  --pink: #a200ea;
+
+  --white-rgb: 46, 0, 192;
+  --aqua-rgb: 5, 0, 40;
+  --mint-rgb: 46, 0, 192;
+  --sky-rgb: 21, 171, 255;
+  --deep-rgb: 93, 251, 255;
+  --navy-rgb: 255, 255, 255;
+  --purple-rgb: 255, 87, 235;
+  --pink-rgb: 162, 0, 234;
+}
+
 /* Base */
 * {
   -webkit-tap-highlight-color: transparent;
