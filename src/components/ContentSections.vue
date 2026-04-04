@@ -39,11 +39,17 @@
             <VideoPlayer :video="section.video" :isOverlayVisible="isOverlayVisible && overlayIndex === index"
                 @toggle-overlay="toggleOverlay('video', index)" />
         </div>
+        <div v-if="section.type === 'presentation'" class="presentation">
+            <PresentationPlayer :src="section.src" :title="section.title || 'PowerPoint Viewer'"
+                :isOverlayVisible="isOverlayVisible && overlayIndex === index"
+                @toggle-overlay="toggleOverlay('presentation', index)" />
+        </div>
     </div>
 </template>
 
 <script setup>
 import ImageCarousel from '@/components/ImageCarousel.vue'
+import PresentationPlayer from '@/components/PresentationPlayer.vue'
 import VideoPlayer from '@/components/VideoPlayer.vue'
 
 const props = defineProps({
@@ -155,17 +161,41 @@ const prevSlide = (index) => {
 .quoted-container,
 .buttons,
 .images,
-.video {
+.video,
+.presentation {
     margin-left: 2rem;
     margin-right: 2rem;
 }
 
 .images,
-.video {
+.video,
+.presentation {
     margin-top: 1rem;
 }
 
+.presentation {
+    position: relative;
+    width: calc(100% - 1.5rem);
+    transform: translateX(-1.5rem);
+    overflow: hidden;
+}
+
+.presentation:has(.presentation-player.overlayed) {
+    width: 100%;
+    transform: none;
+    overflow: visible;
+}
+
+.presentation:has(.pdf-image-frame) {
+    width: auto;
+    transform: none;
+}
+
 .section:has(.video) {
+    width: 100%;
+}
+
+.section:has(.presentation) {
     width: 100%;
 }
 
@@ -178,9 +208,19 @@ const prevSlide = (index) => {
     .quoted-container,
     .buttons,
     .images,
-    .video {
+    .video,
+    .presentation {
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .presentation {
+        width: calc(100% + 3rem);
+    }
+
+    .presentation:has(.presentation-player.overlayed),
+    .presentation:has(.pdf-image-frame) {
+        width: 100%;
     }
 }
 </style>

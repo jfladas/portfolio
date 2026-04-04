@@ -126,12 +126,20 @@ export const projekte = [
             {
                 type: 'bullet',
                 text: 'Lokaler Offline-Prototyp einer Desktop-App mit Electron und Vue, basierend auf der abgeschlossenen Thesis'
+            },
+            {
+                type: 'heading',
+                text: 'Pitch-Präsentation'
+            },
+            {
+                type: 'presentation',
+                src: bachelorFiles['../projects/bachelor/PITCH.pdf'].default,
             }
         ],
         links: [],
         downloads: [
             {
-                text: 'Pitch_Präsentation.ppsx',
+                text: 'Pitch-Präsentation.ppsx',
                 url: bachelorFiles['../projects/bachelor/PITCH.ppsx'].default,
                 icon: 'file-powerpoint'
             }
@@ -711,7 +719,7 @@ export const projekte = [
         ],
         downloads: [
             {
-                text: 'Projektmanagement-Bericht.pdf',
+                text: 'PJM-Bericht.pdf',
                 url: apo11oFiles['../projects/apo11o/DIPRO_LukasBucher_PJMBericht.pdf'].default,
                 icon: 'file-pdf'
             },
@@ -805,8 +813,12 @@ export const projekte = [
                 video: qrFiles['../projects/qr/bestof.mp4'].default
             },
             {
+                type: 'subheading',
+                text: 'Mehr zu +Colabor'
+            },
+            {
                 type: 'paragraph',
-                text: 'Weitere Details zu den Projekten und Extension-Downloads finden sich auf meiner Dokumentationsseite zum Modul:'
+                text: 'Details zu den Projekten und Extension-Downloads finden sich auf meiner Dokumentationsseite zum Modul:'
             },
             {
                 type: 'buttons',
@@ -821,6 +833,11 @@ export const projekte = [
             }
         ],
         links: [
+            {
+                text: 'Website',
+                url: 'https://colabor.jfladas.com/qr/',
+                icon: 'external-link-alt'
+            },
             {
                 text: 'GitHub-Repository',
                 url: 'https://github.com/jfladas/colabor',
@@ -869,18 +886,23 @@ export const projekte = [
                 type: 'buttons',
                 buttons: [
                     {
-                        text: 'Zur Seite',
+                        text: '',
                         action: 'https://jfladas.github.io/uxweb2/',
                         icon: 'arrow-right',
                         color: 'primary'
                     },
                     {
-                        text: '',
+                        text: 'Figma-Prototyp ansehen',
                         action: 'https://www.figma.com/proto/H39FzuTJQZOMxcQzrEDcp0/UX-Web-Styleguide?node-id=0-1&t=4RZi44A5r09E112U-1',
                         icon: 'fa-brands fa-figma',
                         color: 'secondary'
                     }
                 ]
+            },
+            {
+                type: 'iconed',
+                text: 'Die originale Website ist derzeit wegen Hosting-Limitationen offline, aber der Figma-Prototyp bietet einen umfassenden Überblick über Design und Funktionalität.',
+                icon: 'exclamation-triangle'
             },
             {
                 type: 'heading',
@@ -1109,6 +1131,14 @@ export const projekte = [
             {
                 type: 'bullet',
                 text: 'Heroku'
+            },
+            {
+                type: 'heading',
+                text: 'Präsentation'
+            },
+            {
+                type: 'presentation',
+                src: 'https://1drv.ms/p/c/8266699022344100/IQQhPb-Xvmx9QaRTJpKsN-7nAZkmUKc73-ibQVGZn47GRyg?em=2&wdAr=1.7777777777777777&wdEaaCheck=1'
             },
         ],
         links: [
@@ -1509,52 +1539,11 @@ export const projekte = [
             },
             {
                 type: 'heading',
-                text: 'Projektsetup'
+                text: 'Präsentation'
             },
             {
-                type: 'iconed',
-                text: 'Projekt klonen',
-                icon: '1'
-            },
-            {
-                type: 'bullet',
-                text: 'Das Projekt-Repository in ein lokales Verzeichnis klonen'
-            },
-            {
-                type: 'iconed',
-                text: 'Abhängigkeiten installieren',
-                icon: '2'
-            },
-            {
-                type: 'bullet',
-                text: '<span class="snippet hoverable tooltip copy" tooltip="copy">npm install</span> ausführen, um alle notwendigen Abhängigkeiten zu installieren'
-            },
-            {
-                type: 'iconed',
-                text: 'Entwicklungsserver starten',
-                icon: '3'
-            },
-            {
-                type: 'bullet',
-                text: '<span class="snippet hoverable tooltip copy" tooltip="copy">npm run dev</span> ausführen, um den Entwicklungsserver mit Hot-Reload zu starten'
-            },
-            {
-                type: 'iconed',
-                text: 'Anwendung aufrufen',
-                icon: '4'
-            },
-            {
-                type: 'bullet',
-                text: '<span class="snippet hoverable tooltip copy" tooltip="copy">http://localhost:5173/</span> im Browser öffnen, um die Anwendung anzuzeigen'
-            },
-            {
-                type: 'bullet',
-                text: 'Mit einem registrierten Spotify-Konto anmelden, um die Musikreise zu erkunden'
-            },
-            {
-                type: 'iconed',
-                text: 'Für Tests ist eine manuelle Registrierung der Spotify-E-Mail-Adresse erforderlich.<br>Für den Zugang bitte <a href="/about#contact" class="bold hoverable">mich kontaktieren</a>.',
-                icon: 'exclamation-triangle'
+                type: 'presentation',
+                src: sputifyFiles['../projects/sputify/Presentation.pdf'].default
             }
         ],
         links: [
@@ -2152,6 +2141,14 @@ export const projekte = [
                         caption: 'Endbildschirm & Bestenliste'
                     }
                 ],
+            },
+            {
+                type: 'heading',
+                text: 'Präsentation'
+            },
+            {
+                type: 'presentation',
+                src: miloFiles['../projects/milo/milo_presentation.pdf'].default
             }
         ],
         links: [
@@ -2365,6 +2362,14 @@ export const projekte = [
                         caption: 'PRÜFUNG | Atmung'
                     }
                 ],
+            },
+            {
+                type: 'heading',
+                text: 'Wöchentliche Dokumentation'
+            },
+            {
+                type: 'presentation',
+                src: matbfFiles['../projects/matbf/MATBF.pdf'].default
             }
         ],
         links: [
@@ -2985,6 +2990,14 @@ export const projekte = [
                         caption: 'Figma-Design'
                     }
                 ],
+            },
+            {
+                type: 'heading',
+                text: 'Präsentation'
+            },
+            {
+                type: 'presentation',
+                src: 'https://1drv.ms/p/c/8266699022344100/IQQAQTQikGlmIICCdgYBAAAAAYSwqXeYVx_lQUASqC_-YeI?em=2&wdAr=1.7777777777777777&wdEaaCheck=1'
             }
         ],
         links: [
@@ -3478,7 +3491,7 @@ export const projekte = [
                 type: 'paragraph',
                 text: `Im Laufe des Kickstart Visual Design Moduls haben wir verschiedene andere Übungen und Projekte durchgeführt.
                             Mit diesen haben wir Typografie, Farbtheorie und visuelle Hierarchie unter anderem erkundet.
-                            Eine Dokumentation des Moduls mit meinen Arbeiten kann im Download-Bereich gefunden werden.`
+                            Eine interaktive Dokumentation des Moduls mit meinen Arbeiten kann im Download-Bereich gefunden werden.`
             }
         ],
         links: [

@@ -545,6 +545,7 @@ nav {
   left: 50%;
   transform: translate(-50%, 0);
   padding: 1rem 2rem;
+  text-align: center;
   background: rgba(var(--deep-rgb), 0.2);
   backdrop-filter: blur(1rem);
   color: var(--white);

@@ -3,6 +3,7 @@
         <div class="overlay-content">
             <div v-show="overlayType === 'images'" id="images-teleport"></div>
             <div v-show="overlayType === 'video'" id="video-teleport"></div>
+            <div v-show="overlayType === 'presentation'" id="presentation-teleport"></div>
         </div>
     </div>
 </template>
@@ -51,6 +52,11 @@ export default {
 }
 
 #video-teleport {
+    display: flex;
+    align-items: stretch;
+}
+
+#presentation-teleport {
     display: flex;
     align-items: stretch;
 }
