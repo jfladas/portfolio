@@ -1,7 +1,7 @@
 <template>
     <teleport to="#video-teleport" :disabled="!isOverlayVisible">
-        <div class="video-player hoverable" :class="{ notplaying: !isPlaying }" @mousemove="showControlsTemporarily"
-            @touchstart="showControlsTemporarily">
+        <div class="video-player hoverable" :class="{ notplaying: !isPlaying, 'loading-placeholder': !isVideoLoaded }"
+            @mousemove="showControlsTemporarily" @touchstart="showControlsTemporarily">
             <video ref="video" :src="video" @ended="handleVideoEnded" @loadeddata="handleVideoLoaded"
                 @loadedmetadata="handleMetadataLoaded" @timeupdate="handleTimeUpdate"
                 :class="{ small: !isOverlayVisible }"></video>
@@ -207,9 +207,18 @@ export default {
     background: linear-gradient(to top, rgba(var(--deep-rgb), 0.2), rgba(var(--deep-rgb), 0));
 }
 
+.video-player.loading-placeholder {
+    aspect-ratio: 16 / 9;
+}
+
 .video-player video {
     width: 100%;
     height: auto;
+}
+
+.video-player.loading-placeholder video {
+    height: 100%;
+    object-fit: contain;
 }
 
 .video-player video.small {
@@ -309,7 +318,6 @@ export default {
 
 .unexpand-button {
     top: 0;
-    align-items: flex-start;
 }
 
 .expand-button:hover,

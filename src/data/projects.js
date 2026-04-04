@@ -82,7 +82,7 @@ export const projects = [
             },
             {
                 type: 'heading',
-                text: 'Practical Project Plan (Brief)'
+                text: 'Practical Project Plan'
             },
             {
                 type: 'iconed',
@@ -126,6 +126,14 @@ export const projects = [
             {
                 type: 'bullet',
                 text: 'Local offline desktop prototype with Electron and Vue, grounded in the completed thesis'
+            },
+            {
+                type: 'heading',
+                text: 'Pitch Presentation'
+            },
+            {
+                type: 'presentation',
+                src: bachelorFiles['../projects/bachelor/PITCH.pdf'].default,
             }
         ],
         links: [],
@@ -711,7 +719,7 @@ export const projects = [
         ],
         downloads: [
             {
-                text: 'ProjectManagement_Report.pdf',
+                text: 'PJM_Report.pdf',
                 url: apo11oFiles['../projects/apo11o/DIPRO_LukasBucher_PJMBericht.pdf'].default,
                 icon: 'file-pdf'
             },
@@ -804,8 +812,12 @@ export const projects = [
                 video: qrFiles['../projects/qr/bestof.mp4'].default
             },
             {
+                type: 'subheading',
+                text: 'More about +Colabor'
+            },
+            {
                 type: 'paragraph',
-                text: 'More details about the projects and extension downloads can be found on my documentation website of the module:'
+                text: 'Details about the projects and extension downloads can be found on my documentation website of the module:'
             },
             {
                 type: 'buttons',
@@ -821,6 +833,11 @@ export const projects = [
         ],
         links: [
             {
+                text: 'Website',
+                url: 'https://colabor.jfladas.com/qr/',
+                icon: 'external-link-alt'
+            },
+            {
                 text: 'GitHub Repository',
                 url: 'https://github.com/jfladas/colabor',
                 icon: 'fa-brands fa-github-alt'
@@ -832,6 +849,11 @@ export const projects = [
             }
         ],
         downloads: [
+            {
+                text: 'Process_Documentation.pdf',
+                url: qrFiles['../projects/qr/ProcessDocumentation_CCC.pdf'].default,
+                icon: 'file-pdf'
+            }
         ]
     },
     // sweet
@@ -868,18 +890,23 @@ export const projects = [
                 type: 'buttons',
                 buttons: [
                     {
-                        text: 'Go to Page',
+                        text: '',
                         action: 'https://jfladas.github.io/uxweb2/',
                         icon: 'arrow-right',
                         color: 'primary'
                     },
                     {
-                        text: '',
+                        text: 'View Figma Prototype',
                         action: 'https://www.figma.com/proto/H39FzuTJQZOMxcQzrEDcp0/UX-Web-Styleguide?node-id=0-1&t=4RZi44A5r09E112U-1',
                         icon: 'fa-brands fa-figma',
                         color: 'secondary'
                     }
                 ]
+            },
+            {
+                type: 'iconed',
+                text: 'The original website is currently offline due to hosting limitations, but the Figma prototype provides a comprehensive overview of the design and functionality.',
+                icon: 'exclamation-triangle'
             },
             {
                 type: 'heading',
@@ -1108,6 +1135,14 @@ export const projects = [
             {
                 type: 'bullet',
                 text: 'Heroku'
+            },
+            {
+                type: 'heading',
+                text: 'Presentation'
+            },
+            {
+                type: 'presentation',
+                src: 'https://1drv.ms/p/c/8266699022344100/IQQhPb-Xvmx9QaRTJpKsN-7nAZkmUKc73-ibQVGZn47GRyg?em=2&wdAr=1.7777777777777777&wdEaaCheck=1'
             },
         ],
         links: [
@@ -1391,14 +1426,6 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Bubble should start with lower intensity and no color'
-            },
-            {
-                type: 'bullet',
-                text: 'The first song should play immediately & display the currently playing song'
-            },
-            {
-                type: 'bullet',
                 text: 'Add a heading before the share section'
             },
             {
@@ -1508,52 +1535,11 @@ export const projects = [
             },
             {
                 type: 'heading',
-                text: 'Project Setup'
+                text: 'Presentation'
             },
             {
-                type: 'iconed',
-                text: 'Clone the project',
-                icon: '1'
-            },
-            {
-                type: 'bullet',
-                text: 'Clone the project repository into a local directory'
-            },
-            {
-                type: 'iconed',
-                text: 'Install dependencies',
-                icon: '2'
-            },
-            {
-                type: 'bullet',
-                text: 'Run <span class="snippet hoverable tooltip copy" tooltip="copy">npm install</span> to install all necessary dependencies'
-            },
-            {
-                type: 'iconed',
-                text: 'Start the development server',
-                icon: '3'
-            },
-            {
-                type: 'bullet',
-                text: 'Run <span class="snippet hoverable tooltip copy" tooltip="copy">npm run dev</span> to start the development server with hot-reload'
-            },
-            {
-                type: 'iconed',
-                text: 'Access the application',
-                icon: '4'
-            },
-            {
-                type: 'bullet',
-                text: 'Open <span class="snippet hoverable tooltip copy" tooltip="copy">http://localhost:5173/</span> in your browser to view the application'
-            },
-            {
-                type: 'bullet',
-                text: 'Log in with your registered Spotify account to start exploring your music journey'
-            },
-            {
-                type: 'iconed',
-                text: 'For testing, a manual registration of your Spotify email address is required.<br><a href="/about#contact" class="bold hoverable">Contact me</a> for access.',
-                icon: 'exclamation-triangle'
+                type: 'presentation',
+                src: sputifyFiles['../projects/sputify/Presentation.pdf'].default
             }
         ],
         links: [
@@ -1577,6 +1563,11 @@ export const projects = [
             {
                 text: 'Documentation.pdf',
                 url: sputifyFiles['../projects/sputify/Documentation.pdf'].default,
+                icon: 'file-pdf'
+            },
+            {
+                text: 'Presentation.pdf',
+                url: sputifyFiles['../projects/sputify/Presentation.pdf'].default,
                 icon: 'file-pdf'
             },
             {
@@ -2149,6 +2140,14 @@ export const projects = [
                         caption: 'End Screen & Leaderboard'
                     }
                 ],
+            },
+            {
+                type: 'heading',
+                text: 'Presentation'
+            },
+            {
+                type: 'presentation',
+                src: miloFiles['../projects/milo/milo_presentation.pdf'].default
             }
         ],
         links: [
@@ -2362,6 +2361,14 @@ export const projects = [
                         caption: 'EXAM | Breathing'
                     }
                 ],
+            },
+            {
+                type: 'heading',
+                text: 'Weekly Documentation'
+            },
+            {
+                type: 'presentation',
+                src: matbfFiles['../projects/matbf/MATBF.pdf'].default
             }
         ],
         links: [
@@ -2985,6 +2992,14 @@ export const projects = [
                         caption: 'Figma Design'
                     }
                 ],
+            },
+            {
+                type: 'heading',
+                text: 'Presentation'
+            },
+            {
+                type: 'presentation',
+                src: 'https://1drv.ms/p/c/8266699022344100/IQQAQTQikGlmIICCdgYBAAAAAYSwqXeYVx_lQUASqC_-YeI?em=2&wdAr=1.7777777777777777&wdEaaCheck=1'
             }
         ],
         links: [
@@ -3479,7 +3494,7 @@ export const projects = [
                 type: 'paragraph',
                 text: `Throughout the Kickstart Visual Design module, we did various other exercises and projects.
                         With these, we explored typography, color theory, and visual hierarchy, among other topics.
-                        A documentation of the module with my work can be found under the downloads section.`
+                        An interactive documentation of the module with my work can be found under the downloads section.`
             }
         ],
         links: [
