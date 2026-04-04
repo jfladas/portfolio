@@ -98,7 +98,7 @@ const currentLanguage = ref(localStorage.getItem('language') || 'en')
 
 provide('currentLanguage', currentLanguage)
 
-const themes = ['default', 'had', 'milo', 'sweet'];
+const themes = ['default', 'had', 'milo', 'sweet', 'light'];
 const currentThemeIndex = ref(localStorage.getItem('themeIndex') || 0);
 document.documentElement.setAttribute('data-theme', themes[currentThemeIndex.value]);
 
