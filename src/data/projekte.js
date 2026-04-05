@@ -345,7 +345,7 @@ export const projekte = [
                     },
                     {
                         src: hadFiles['../projects/had/HaD_Screenshot4.jpg'].default,
-                        caption: 'Illustration'
+                        caption: 'Illustration Aleph'
                     },
                     {
                         src: hadFiles['../projects/had/HaD_Screenshot5.jpg'].default,
@@ -382,11 +382,11 @@ export const projekte = [
                     },
                     {
                         src: hadFiles['../projects/had/IllustrationH2.png'].default,
-                        caption: 'Illustration'
+                        caption: 'Illustration Mr. Horse'
                     },
                     {
                         src: hadFiles['../projects/had/IllustrationS2.png'].default,
-                        caption: 'Illustration'
+                        caption: 'Illustration Scarlet'
                     },
                 ]
             }
@@ -1872,7 +1872,7 @@ export const projekte = [
     //milo
     {
         id: 'milo',
-        name: "milo's forest adventure",
+        name: "milo’s forest adventure",
         description: 'web-basiertes scroll- und klick-abenteuer',
         context:
         {
@@ -2598,7 +2598,7 @@ export const projekte = [
     {
         id: 'salad',
         name: 'salad ninja',
-        description: '2D-animiertes Video inspiriert von Fruit Ninja',
+        description: '2D-animiertes video inspiriert von fruit ninja',
         context: {
             lines: [
                 '2024 @ HSLU, Emmenbrücke',

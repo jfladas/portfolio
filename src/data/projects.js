@@ -345,7 +345,7 @@ export const projects = [
                     },
                     {
                         src: hadFiles['../projects/had/HaD_Screenshot4.jpg'].default,
-                        caption: 'Illustration'
+                        caption: 'Illustration Aleph'
                     },
                     {
                         src: hadFiles['../projects/had/HaD_Screenshot5.jpg'].default,
@@ -382,11 +382,11 @@ export const projects = [
                     },
                     {
                         src: hadFiles['../projects/had/IllustrationH2.png'].default,
-                        caption: 'Illustration'
+                        caption: 'Illustration Mr. Horse'
                     },
                     {
                         src: hadFiles['../projects/had/IllustrationS2.png'].default,
-                        caption: 'Illustration'
+                        caption: 'Illustration Scarlet'
                     },
                 ]
             },
@@ -514,6 +514,15 @@ export const projects = [
             {
                 type: 'paragraph',
                 text: `The game requires AR image markers to play. Download the PDF from the downloads section, then print and cut them out to get started!`
+            },
+            {
+                type: 'images',
+                images: [
+                    {
+                        src: artdFiles['../projects/artd/markers.jpg'].default,
+                        caption: 'AR Markers'
+                    }
+                ]
             },
             {
                 type: 'heading',
@@ -1873,7 +1882,7 @@ export const projects = [
     // milo
     {
         id: 'milo',
-        name: "milo's forest adventure",
+        name: "milo’s forest adventure",
         description: 'web-based scroll & click adventure',
         context:
         {

@@ -25,14 +25,11 @@
       <div class="more-item tooltip" tooltip="theme" @click="cycleTheme">
         <font-awesome-icon icon="palette" fixed-width />
       </div>
-      <!--
-      //TODO: achievements
       <div class="more-item tooltip" tooltip="earned">
         <router-link to="/achievements" @click="moreVisible = !moreVisible">
           <font-awesome-icon icon="trophy" fixed-width />
         </router-link>
       </div>
-      -->
     </div>
   </div>
   <router-view />
@@ -42,7 +39,7 @@
     <p>
       {{ currentLanguage === 'en' ? 'made with ' : 'gemacht mit ' }}
       <font-awesome-icon icon="heart" class="heart hoverable tooltip"
-        :tooltip="currentLanguage === 'en' ? 'love' : 'liebe'" />
+        :tooltip="currentLanguage === 'en' ? 'love' : 'liebe'" @click="handleHeartClick" />
       {{ currentLanguage === 'en' ? ' by jfladas' : ' von jfladas' }}
     </p>
     <p>
@@ -68,12 +65,16 @@
         {{ currentLanguage === 'en' ? 'about' : 'über' }}
       </router-link>
       <font-awesome-icon icon="minus" rotation="90" />
+      <router-link to="/achievements" class="bold hoverable">
+        {{'achievements'}}
+      </router-link>
+      <font-awesome-icon icon="minus" rotation="90" />
       <router-link to="/projects" class="bold hoverable">
         {{ currentLanguage === 'en' ? 'projects' : 'projekte' }}
       </router-link>
     </p>
     <br>
-    <p class="copyright">&copy; 2025 jfladas</p>
+    <p class="copyright">&copy; 2026 jfladas</p>
   </footer>
   <div ref="cursor" class="custom-cursor">
     <span ref="tooltip" class="tooltip-container"></span>
@@ -83,7 +84,17 @@
 <script setup>
 import { ref, onMounted, onUnmounted, watch, provide } from 'vue'
 import { useRoute } from 'vue-router'
+import { useAchievements, registerAchievementToast } from '@/composables/useAchievements.js'
 const route = useRoute()
+const {
+  unlockAchievement,
+  registerSiteVisit,
+  registerResponsiveView,
+  registerNocturnalVisit,
+  registerLanguageSwitch,
+  registerCursorTrial,
+  registerLinkClick
+} = useAchievements()
 
 const isMobile = ref(false)
 
@@ -99,7 +110,20 @@ const currentLanguage = ref(localStorage.getItem('language') || 'en')
 provide('currentLanguage', currentLanguage)
 
 const themes = ['default', 'had', 'milo', 'sweet', 'light'];
-const currentThemeIndex = ref(localStorage.getItem('themeIndex') || 0);
+const getInitialThemeIndex = () => {
+  const parsedIndex = Number.parseInt(localStorage.getItem('themeIndex') ?? '', 10)
+
+  if (Number.isInteger(parsedIndex) && parsedIndex >= 0 && parsedIndex < themes.length) {
+    return parsedIndex
+  }
+
+  const appliedTheme = document.documentElement.getAttribute('data-theme')
+  const appliedThemeIndex = themes.indexOf(appliedTheme)
+
+  return appliedThemeIndex >= 0 ? appliedThemeIndex : 0
+}
+
+const currentThemeIndex = ref(getInitialThemeIndex());
 document.documentElement.setAttribute('data-theme', themes[currentThemeIndex.value]);
 
 const cycleTheme = () => {
@@ -108,6 +132,10 @@ const cycleTheme = () => {
   localStorage.setItem('themeIndex', currentThemeIndex.value);
   showToast('Theme set to ' + themes[currentThemeIndex.value]);
 };
+
+const handleViewportAchievement = () => {
+  registerResponsiveView(window.innerWidth)
+}
 
 watch(() => route.path, (to, from) => {
   removeCursorHover();
@@ -190,6 +218,12 @@ const addCopyListeners = (elements) => {
 const toggleLanguage = () => {
   currentLanguage.value = currentLanguage.value === 'en' ? 'de' : 'en';
   localStorage.setItem('language', currentLanguage.value);
+  let newLanguage = currentLanguage.value;
+  setTimeout(() => {
+    if (currentLanguage.value === newLanguage) {
+      registerLanguageSwitch()
+    }
+  }, 5000);
   showToast(currentLanguage.value === 'en' ? 'Language set to English' : 'Sprache auf Deutsch gesetzt');
   moreVisible.value = false;
 }
@@ -207,6 +241,13 @@ const toggleCursor = () => {
   link.rel = 'stylesheet';
   link.href = new URL(`/src/assets/${isCustomCursor.value ? 'custom-cursor.css' : 'default-cursor.css'}`, import.meta.url).href;
   document.head.appendChild(link);
+
+  let newCursor = isCustomCursor.value;
+  setTimeout(() => {
+    if (isCustomCursor.value === newCursor) {
+      registerCursorTrial(isCustomCursor.value)
+    }
+  }, 5000);
 
   showToast(isCustomCursor.value ? 'Custom cursor enabled' : 'Default cursor enabled');
   moreVisible.value = false;
@@ -226,9 +267,34 @@ const showToast = (message) => {
   }, 3000);
 };
 
+registerAchievementToast((achievement) => {
+  if (achievement?.isReset) {
+    const message = currentLanguage.value === 'en' ? 'All achievements reset' : 'Alle Achievements zurückgesetzt'
+    showToast(message)
+  } else {
+    const prefix = currentLanguage.value === 'en' ? 'Achievement unlocked: ' : 'Achievement freigeschaltet: '
+    const title = achievement?.title || ''
+    showToast(prefix + title)
+  }
+})
+
 const toClipboard = (text) => {
   navigator.clipboard.writeText(text);
   showToast('copied to clipboard');
+}
+
+const handleAchievementLinkClick = (event) => {
+  const link = event.target.closest?.('a')
+
+  if (!link) {
+    return
+  }
+
+  registerLinkClick(link.getAttribute('href') || '')
+}
+
+const handleHeartClick = () => {
+  unlockAchievement('i-love-love')
 }
 
 const handleTouchMove = (e) => {
@@ -260,11 +326,15 @@ const handleTouchEnd = (e) => {
 onMounted(() => {
 
   checkIsMobile()
+  registerSiteVisit()
+  registerNocturnalVisit()
+  handleViewportAchievement()
 
   window.addEventListener('mousemove', updateCursor);
   window.addEventListener('touchmove', handleTouchMove, { passive: false });
   window.addEventListener('touchstart', handleTouchStart, { passive: false });
   window.addEventListener('touchend', handleTouchEnd, { passive: false });
+  window.addEventListener('resize', handleViewportAchievement);
 
   const hoverElements = document.querySelectorAll('.hoverable')
   addHoverListeners(hoverElements)
@@ -320,12 +390,14 @@ onMounted(() => {
   };
 
   document.addEventListener('click', handleClickOutside);
+  document.addEventListener('click', handleAchievementLinkClick);
 
   onUnmounted(() => {
     window.removeEventListener('touchstart', handleTouchStart)
     window.removeEventListener('touchend', handleTouchEnd)
     window.removeEventListener('touchmove', handleTouchMove)
     window.removeEventListener('mousemove', updateCursor)
+    window.removeEventListener('resize', handleViewportAchievement)
     hoverElements.forEach(el => {
       el.removeEventListener('mouseenter', addCursorHover)
       el.removeEventListener('mouseleave', removeCursorHover)
@@ -339,6 +411,7 @@ onMounted(() => {
     })
     observer.disconnect()
     document.removeEventListener('click', handleClickOutside);
+    document.removeEventListener('click', handleAchievementLinkClick);
   })
 })
 </script>
@@ -549,7 +622,7 @@ nav {
   background: rgba(var(--deep-rgb), 0.2);
   backdrop-filter: blur(1rem);
   color: var(--white);
-  z-index: 10;
+  z-index: 1000;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.5s;
@@ -588,6 +661,7 @@ footer {
 .heart {
   color: var(--pink);
   transition: color 0.5s ease;
+  cursor: pointer;
 }
 
 .heart:hover {
@@ -598,11 +672,13 @@ footer {
   font-size: 1.2rem;
   color: var(--mint);
   margin: 1rem 0.5rem;
-  transition: color 0.5s ease;
+  filter: drop-shadow(0 0 0 var(--navy));
+  transition: all 0.5s ease;
 }
 
 .social:hover {
-  color: var(--pink);
+  color: var(--white);
+  filter: drop-shadow(0 0 0.5rem var(--mint));
 }
 
 .copyright {

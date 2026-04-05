@@ -19,7 +19,7 @@
       <p>
         <font-awesome-icon icon="filter" />
         {{ currentLanguage === 'en' ? 'showing' : 'zeige' }} {{ filteredProjects.length }} {{ currentLanguage === 'en' ?
-          'of' : 'von' }} {{ projects.length }} {{ currentLanguage === 'en' ? 'projects' : 'Projekte' }} |
+        'of' : 'von' }} {{ projects.length }} {{ currentLanguage === 'en' ? 'projects' : 'Projekte' }} |
         <span class="a hoverable" @click="() => { toggleFilter('all'); scrollToTop() }">{{ currentLanguage === 'en' ?
           'see all' : 'alle anzeigen' }}</span>
       </p>
@@ -49,10 +49,12 @@ import { ref, computed, watch, onMounted, inject } from 'vue'
 import ProjectItem from '@/components/ProjectItem.vue'
 import { projects as enProjects, categories } from '@/data/projects.js'
 import { projekte as deProjects } from '@/data/projekte.js'
+import { useAchievements } from '@/composables/useAchievements.js'
 
 const selectedFilters = ref(['solo', 'team'])
 const filterMode = ref(false)
 const currentLanguage = inject('currentLanguage')
+const { registerGameFilter } = useAchievements()
 
 const allSelected = computed(() => selectedFilters.value.length === Object.keys(categories).length || !filterMode.value)
 
@@ -81,6 +83,16 @@ watch(selectedFilters, (newFilters) => {
     selectedFilters.value.push('solo')
   }
 })
+
+watch(
+  () => selectedFilters.value.includes('game') && filterMode.value,
+  (isFilteredByGame) => {
+    if (isFilteredByGame) {
+      registerGameFilter(selectedFilters.value)
+    }
+  },
+  { immediate: true }
+)
 
 const projects = computed(() => currentLanguage.value === 'en' ? enProjects : deProjects)
 
@@ -224,7 +236,7 @@ onMounted(() => {
 
 @media (max-width: 1200px) {
   .content {
-    padding-top: 0;
+    padding-top: 3.5rem;
   }
 
   .filter {
@@ -255,6 +267,10 @@ onMounted(() => {
 }
 
 @media (max-width: 600px) {
+  .content {
+    padding-top: 2rem;
+  }
+
   .filter {
     font-size: 1.2rem;
     padding: 0.4rem 0.4rem;
