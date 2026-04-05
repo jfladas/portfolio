@@ -8,15 +8,15 @@
             </router-link>
             <div v-if="showWipBanner" class="banner">
                 <div ref="bannerViewportRef" class="banner-viewport">
-                    <div ref="bannerTrackRef" class="banner-track jap"
+                    <div ref="bannerTrackRef" class="banner-track copy"
                         :style="{ transform: `translateX(${bannerOffset}px)` }">
                         <span v-for="(item, index) in renderedBannerItems" :key="`${item}-${index}`"
                             class="banner-item">{{ item }}</span>
                     </div>
                 </div>
             </div>
-            <h1 class="title">{{ project.name }}</h1>
-            <h2 class="subtitle">{{ project.description }}</h2>
+            <h1>{{ project.name }}</h1>
+            <h2>{{ project.description }}</h2>
             <div class="categories hoverable">
                 <font-awesome-icon v-for="category in project.categories" :icon="categories[category]" :key="category"
                     class="category tooltip" :tooltip="category" />
@@ -64,15 +64,17 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted, onBeforeUnmount, nextTick, inject } from 'vue'
+import { computed, ref, onMounted, onBeforeUnmount, nextTick, inject, watch } from 'vue'
 import { projects as enProjects, categories } from '@/data/projects.js'
 import { projekte as deProjects } from '@/data/projekte.js'
 import ContentSections from '@/components/ContentSections.vue'
 import LinksDownloads from '@/components/LinksDownloads.vue'
 import FullOverlay from '@/components/FullOverlay.vue'
+import { useAchievements } from '@/composables/useAchievements.js'
 
 const props = defineProps(['id'])
 const currentLanguage = inject('currentLanguage')
+const { unlockAchievement, registerProjectView, registerInvalidProject, registerHorseFan } = useAchievements()
 
 const isOverlayVisible = ref(false)
 const overlayType = ref('')
@@ -96,6 +98,19 @@ const projects = computed(() => currentLanguage.value === 'en' ? enProjects : de
 const project = computed(() => projects.value.find(p => p.id === props.id))
 const showWipBanner = computed(() => project.value && ['bachelor', 'had'].includes(project.value.id))
 
+watch(
+    () => project.value?.id,
+    (projectId) => {
+        if (projectId) {
+            unlockAchievement('curious')
+            registerProjectView(projectId, enProjects.length)
+        } else if (props.id) {
+            registerInvalidProject()
+        }
+    },
+    { immediate: true }
+)
+
 onMounted(() => {
     if (project.value) {
         project.value.sections.forEach((section, index) => {
@@ -118,16 +133,22 @@ onBeforeUnmount(() => {
 
 const nextSlide = (index) => {
     currentIndexes.value[index] = (currentIndexes.value[index] + 1) % project.value.sections[index].images.length
+
+    registerHorseFan(isOverlayVisible.value, overlayType.value, project.value?.sections[index]?.images?.[currentIndexes.value[index]]?.caption)
 }
 
 const prevSlide = (index) => {
     currentIndexes.value[index] = (currentIndexes.value[index] - 1 + project.value.sections[index].images.length) % project.value.sections[index].images.length
+
+    registerHorseFan(isOverlayVisible.value, overlayType.value, project.value?.sections[index]?.images?.[currentIndexes.value[index]]?.caption)
 }
 
 const toggleOverlay = (type, index) => {
     overlayType.value = type
     overlayIndex.value = index
     isOverlayVisible.value = !isOverlayVisible.value
+
+    registerHorseFan(isOverlayVisible.value, overlayType.value, project.value?.sections[index]?.images?.[currentIndexes.value[index]]?.caption)
 }
 
 const scrollToTop = () => {
@@ -238,12 +259,6 @@ const setupBannerTicker = async () => {
     padding: 0.1rem 0 0.2rem 0;
 }
 
-.subtitle {
-    font-weight: 700;
-    font-size: 2rem;
-    color: var(--aqua);
-}
-
 .categories {
     font-size: 1.5rem;
     color: var(--aqua);
@@ -342,6 +357,14 @@ const setupBannerTicker = async () => {
     .banner-item {
         font-size: 1.2rem;
         padding: 0.1rem 0 0.1rem 0;
+    }
+
+    .back {
+        transform: translate(-1.5rem, 0rem);
+    }
+
+    .back:hover {
+        transform: translate(-1.5rem, 0rem);
     }
 }
 </style>

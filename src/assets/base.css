@@ -346,7 +346,7 @@ button {
 @media (max-width: 1200px) {
   .content {
     flex-direction: column;
-    width: 84%;
+    width: 84vw;
     margin-left: 8%;
     gap: 2rem;
   }
@@ -365,7 +365,7 @@ button {
     font-size: 3.5rem;
     line-height: 3.2rem;
     margin-bottom: 0.5rem;
-    max-width: 90vw;
+    max-width: 84vw;
   }
 
   h2 {
@@ -374,8 +374,8 @@ button {
   }
 
   h3 {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
     margin-bottom: 0.8rem;
   }
 
@@ -396,5 +396,20 @@ button {
 @media (max-width: 600px) {
   .content-left {
     margin-top: 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
   }
 }

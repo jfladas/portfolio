@@ -33,9 +33,11 @@ import { ueberContent as deAbout } from '@/data/projekte.js'
 import ContentSections from '@/components/ContentSections.vue'
 import LinksDownloads from '@/components/LinksDownloads.vue'
 import FullOverlay from '@/components/FullOverlay.vue'
+import { useAchievements } from '@/composables/useAchievements.js'
 
 const currentLanguage = inject('currentLanguage')
 const aboutContent = computed(() => currentLanguage.value === 'en' ? enAbout : deAbout)
+const { registerTokyoReveal } = useAchievements()
 
 const isOverlayVisible = ref(false)
 const overlayType = ref('')
@@ -132,6 +134,7 @@ const typewriter = () => {
 };
 const blinkStar = () => {
   const destination = typedtext.value;
+  registerTokyoReveal()
   if (isBlinking.value) {
     destination.innerHTML = content.value + "★";
   } else {
@@ -213,8 +216,6 @@ onMounted(() => {
 }
 
 .subtitle::before {
-  font-weight: 700;
-  font-size: 2.5rem;
   color: var(--aqua);
   content: 'frontend web developer';
   animation-name: change;
@@ -441,6 +442,10 @@ onMounted(() => {
   .overtext {
     margin-left: 40vw;
     padding-top: 0;
+  }
+
+  .subtitle {
+    margin-bottom: 1.5rem;
   }
 }
 
