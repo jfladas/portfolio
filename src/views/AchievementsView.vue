@@ -14,7 +14,10 @@
         </div>
 
         <section class="achievement-grid">
-            <AchievementItem v-for="achievement in achievements" :key="achievement.id" :achievement="achievement" />
+            <AchievementItem v-for="achievement in achievements" :key="achievement.id" :achievement="achievement"
+                :reward-claimed="achievement.rewardThemeId ? isThemeClaimed(achievement.rewardThemeId) : false"
+                :can-claim-reward="Boolean(achievement.rewardThemeId && achievement.unlocked && !isThemeClaimed(achievement.rewardThemeId))"
+                @claim-theme="claimAchievementTheme(achievement.id)" />
         </section>
         <a class="button-container">
             <button class="hoverable button-secondary reset-button" @click.prevent="resetAchievements">
@@ -30,7 +33,7 @@ import { computed, inject, ref } from 'vue'
 import AchievementItem from '@/components/AchievementItem.vue'
 import { useAchievements } from '@/composables/useAchievements.js'
 
-const { achievements, unlockedCount, resetAchievements } = useAchievements()
+const { achievements, unlockedCount, resetAchievements, claimAchievementTheme, isThemeClaimed } = useAchievements()
 const currentLanguage = inject('currentLanguage')
 
 const progressPercent = computed(() => {

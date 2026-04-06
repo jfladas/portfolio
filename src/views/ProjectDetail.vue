@@ -8,7 +8,7 @@
             </router-link>
             <div v-if="showWipBanner" class="banner">
                 <div ref="bannerViewportRef" class="banner-viewport">
-                    <div ref="bannerTrackRef" class="banner-track copy"
+                    <div ref="bannerTrackRef" class="banner-track jap"
                         :style="{ transform: `translateX(${bannerOffset}px)` }">
                         <span v-for="(item, index) in renderedBannerItems" :key="`${item}-${index}`"
                             class="banner-item">{{ item }}</span>

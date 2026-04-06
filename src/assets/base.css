@@ -300,6 +300,18 @@ button {
   background: linear-gradient(to top, transparent, var(--deep), var(--sky) 50%);
 }
 
+.button-container.disabled {
+  pointer-events: none;
+  background: none;
+  transform: scale(1);
+
+  button {
+    background: var(--purple);
+    color: var(--white);
+    cursor: default;
+  }
+}
+
 .buttons {
   display: flex;
   gap: 1.5rem;

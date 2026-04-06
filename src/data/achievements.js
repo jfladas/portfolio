@@ -20,6 +20,7 @@ export const achievementDefinitions = [
         title: 'curious?',
         description: 'Checked out your first project.',
         descriptionDe: 'Auf dein erstes Projekt geklickt.',
+        rewardThemeId: 'light',
         svg: curiousSvg
     },
     {
@@ -34,6 +35,7 @@ export const achievementDefinitions = [
         title: 'completionist',
         description: 'Explored all projects in the portfolio.',
         descriptionDe: 'Alle Projekte im Portfolio erkundet.',
+        rewardThemeId: 'milo',
         svg: completionistSvg
     },
     {
@@ -83,6 +85,7 @@ export const achievementDefinitions = [
         title: 'gamer',
         description: 'Filtered by games.',
         descriptionDe: 'Nach Games gefiltert.',
+        rewardThemeId: 'sweet',
         svg: gamerSvg
     },
     {
@@ -90,6 +93,7 @@ export const achievementDefinitions = [
         title: 'horse fan',
         description: 'Took a closer look at shirtless Mr. Horse.',
         descriptionDe: 'Sich Mr. Horse oben ohne näher angesehen.',
+        rewardThemeId: 'had',
         svg: horseFanSvg
     },
     {

@@ -25,7 +25,7 @@
       <div class="more-item tooltip" tooltip="theme" @click="cycleTheme">
         <font-awesome-icon icon="palette" fixed-width />
       </div>
-      <div class="more-item tooltip" tooltip="earned">
+      <div class="more-item tooltip" tooltip="achiev.">
         <router-link to="/achievements" @click="moreVisible = !moreVisible">
           <font-awesome-icon icon="trophy" fixed-width />
         </router-link>
@@ -82,9 +82,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, watch, provide } from 'vue'
+import { computed, ref, onMounted, onUnmounted, watch, provide } from 'vue'
 import { useRoute } from 'vue-router'
 import { useAchievements, registerAchievementToast } from '@/composables/useAchievements.js'
+import { achievementDefinitions } from '@/data/achievements.js'
 const route = useRoute()
 const {
   unlockAchievement,
@@ -93,7 +94,8 @@ const {
   registerNocturnalVisit,
   registerLanguageSwitch,
   registerCursorTrial,
-  registerLinkClick
+  registerLinkClick,
+  isThemeClaimed
 } = useAchievements()
 
 const isMobile = ref(false)
@@ -109,29 +111,68 @@ const currentLanguage = ref(localStorage.getItem('language') || 'en')
 
 provide('currentLanguage', currentLanguage)
 
-const themes = ['default', 'had', 'milo', 'sweet', 'light'];
-const getInitialThemeIndex = () => {
-  const parsedIndex = Number.parseInt(localStorage.getItem('themeIndex') ?? '', 10)
+const themes = ['default', ...new Set(achievementDefinitions.map((achievement) => achievement.rewardThemeId).filter(Boolean))]
+const themeStorageKey = 'themeId'
+const themeIndexStorageKey = 'themeIndex'
 
-  if (Number.isInteger(parsedIndex) && parsedIndex >= 0 && parsedIndex < themes.length) {
-    return parsedIndex
+const availableThemes = computed(() => {
+  return themes.filter((themeId) => themeId === 'default' || isThemeClaimed(themeId))
+})
+
+const getInitialThemeId = () => {
+  const storedThemeId = localStorage.getItem(themeStorageKey)
+
+  if (storedThemeId && availableThemes.value.includes(storedThemeId)) {
+    return storedThemeId
   }
 
-  const appliedTheme = document.documentElement.getAttribute('data-theme')
-  const appliedThemeIndex = themes.indexOf(appliedTheme)
+  const legacyThemeIndex = Number.parseInt(localStorage.getItem(themeIndexStorageKey) ?? '', 10)
 
-  return appliedThemeIndex >= 0 ? appliedThemeIndex : 0
+  if (Number.isInteger(legacyThemeIndex) && legacyThemeIndex >= 0 && legacyThemeIndex < themes.length) {
+    const legacyThemeId = themes[legacyThemeIndex]
+
+    if (legacyThemeId && availableThemes.value.includes(legacyThemeId)) {
+      return legacyThemeId
+    }
+  }
+
+  return availableThemes.value[0] || 'default'
 }
 
-const currentThemeIndex = ref(getInitialThemeIndex());
-document.documentElement.setAttribute('data-theme', themes[currentThemeIndex.value]);
+const applyTheme = (themeId) => {
+  document.documentElement.setAttribute('data-theme', themeId)
+  localStorage.setItem(themeStorageKey, themeId)
+}
+
+const currentThemeId = ref(getInitialThemeId())
+applyTheme(currentThemeId.value)
+
+watch(
+  availableThemes,
+  () => {
+    if (!availableThemes.value.includes(currentThemeId.value)) {
+      currentThemeId.value = availableThemes.value[0] || 'default'
+      applyTheme(currentThemeId.value)
+    }
+  },
+  { immediate: true }
+)
 
 const cycleTheme = () => {
-  currentThemeIndex.value = (currentThemeIndex.value + 1) % themes.length;
-  document.documentElement.setAttribute('data-theme', themes[currentThemeIndex.value]);
-  localStorage.setItem('themeIndex', currentThemeIndex.value);
-  showToast('Theme set to ' + themes[currentThemeIndex.value]);
-};
+  const claimableThemes = availableThemes.value
+
+  if (!claimableThemes.length) {
+    return
+  }
+
+  const currentThemeIndex = claimableThemes.findIndex((themeId) => themeId === currentThemeId.value)
+  const nextThemeIndex = currentThemeIndex < 0 ? 0 : (currentThemeIndex + 1) % claimableThemes.length
+
+  currentThemeId.value = claimableThemes[nextThemeIndex]
+  applyTheme(currentThemeId.value)
+  localStorage.removeItem(themeIndexStorageKey)
+  showToast(currentLanguage.value === 'en' ? 'Theme set to ' + currentThemeId.value : 'Theme auf ' + currentThemeId.value + ' gesetzt')
+}
 
 const handleViewportAchievement = () => {
   registerResponsiveView(window.innerWidth)
@@ -249,7 +290,7 @@ const toggleCursor = () => {
     }
   }, 5000);
 
-  showToast(isCustomCursor.value ? 'Custom cursor enabled' : 'Default cursor enabled');
+  showToast(currentLanguage.value === 'en' ? isCustomCursor.value ? 'Custom cursor enabled' : 'Default cursor enabled' : isCustomCursor.value ? 'Custom Cursor aktiviert' : 'Standard-Cursor aktiviert');
   moreVisible.value = false;
 }
 
@@ -271,6 +312,9 @@ registerAchievementToast((achievement) => {
   if (achievement?.isReset) {
     const message = currentLanguage.value === 'en' ? 'All achievements reset' : 'Alle Achievements zurückgesetzt'
     showToast(message)
+  } else if (achievement?.isThemeClaimed) {
+    const prefix = currentLanguage.value === 'en' ? 'Theme unlocked: ' : 'Theme freigeschaltet: '
+    showToast(prefix + (achievement?.themeId || ''))
   } else {
     const prefix = currentLanguage.value === 'en' ? 'Achievement unlocked: ' : 'Achievement freigeschaltet: '
     const title = achievement?.title || ''
@@ -280,7 +324,7 @@ registerAchievementToast((achievement) => {
 
 const toClipboard = (text) => {
   navigator.clipboard.writeText(text);
-  showToast('copied to clipboard');
+  showToast(currentLanguage.value === 'en' ? 'Copied to clipboard' : 'In die Zwischenablage kopiert');
 }
 
 const handleAchievementLinkClick = (event) => {
