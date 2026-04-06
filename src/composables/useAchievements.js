@@ -5,6 +5,7 @@ const storageKey = 'achievements'
 const viewedProjectsKey = 'achievementViewedProjects'
 const siteVisitsKey = 'achievementSiteVisits'
 const responsiveStateKey = 'achievementResponsiveState'
+const claimedThemesKey = 'achievementClaimedThemes'
 let achievementToast = null
 
 export const registerAchievementToast = (callback) => {
@@ -30,6 +31,32 @@ const isAchievementUnlocked = (savedAchievement) => {
     }
 
     return false
+}
+
+const getAchievementRewardThemeId = (achievementId) => {
+    const achievement = achievementDefinitions.find((entry) => entry.id === achievementId)
+    return achievement?.rewardThemeId || null
+}
+
+const loadClaimedThemes = () => {
+    if (typeof window === 'undefined') {
+        return {}
+    }
+
+    try {
+        const savedState = JSON.parse(window.localStorage.getItem(claimedThemesKey))
+
+        if (!savedState || typeof savedState !== 'object') {
+            return {}
+        }
+
+        return Object.keys(savedState).reduce((state, themeId) => {
+            state[themeId] = Boolean(savedState[themeId])
+            return state
+        }, {})
+    } catch {
+        return {}
+    }
 }
 
 const normalizeSavedState = (savedState) => {
@@ -63,6 +90,7 @@ const loadAchievements = () => {
 }
 
 const achievementsState = reactive(loadAchievements())
+const claimedThemesState = reactive(loadClaimedThemes())
 
 const loadNumber = (key) => {
     if (typeof window === 'undefined') {
@@ -150,6 +178,14 @@ const saveResponsiveState = () => {
     window.localStorage.setItem(responsiveStateKey, JSON.stringify(responsiveState))
 }
 
+const saveClaimedThemes = () => {
+    if (typeof window === 'undefined') {
+        return
+    }
+
+    window.localStorage.setItem(claimedThemesKey, JSON.stringify(claimedThemesState))
+}
+
 const unlockAchievement = (achievementId) => {
     const achievement = achievementDefinitions.find((entry) => entry.id === achievementId)
 
@@ -189,9 +225,31 @@ const resetAchievements = () => {
     }
     saveResponsiveState()
 
+    Object.keys(claimedThemesState).forEach((themeId) => {
+        delete claimedThemesState[themeId]
+    })
+    saveClaimedThemes()
+
     if (achievementToast) {
         achievementToast({ isReset: true })
     }
+}
+
+const claimAchievementTheme = (achievementId) => {
+    const rewardThemeId = getAchievementRewardThemeId(achievementId)
+
+    if (!rewardThemeId || !achievementsState[achievementId]?.unlocked || claimedThemesState[rewardThemeId]) {
+        return false
+    }
+
+    claimedThemesState[rewardThemeId] = true
+    saveClaimedThemes()
+
+    if (typeof achievementToast === 'function') {
+        achievementToast({ isThemeClaimed: true, achievementId, themeId: rewardThemeId })
+    }
+
+    return true
 }
 
 const registerSiteVisit = () => {
@@ -296,6 +354,8 @@ const registerProjectView = (projectId, totalProjectCount) => {
     }
 }
 
+const isThemeClaimed = (themeId) => Boolean(claimedThemesState[themeId])
+
 export const useAchievements = () => {
     const achievements = computed(() => {
         return achievementDefinitions.map((achievement) => ({
@@ -327,6 +387,15 @@ export const useAchievements = () => {
         registerHorseFan,
         registerProjectView,
         resetAchievements,
+        claimAchievementTheme,
+        getAchievementRewardThemeId,
+        isThemeClaimed,
         isUnlocked
     }
+}
+
+export {
+    claimAchievementTheme,
+    getAchievementRewardThemeId,
+    isThemeClaimed
 }
