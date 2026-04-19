@@ -22,6 +22,7 @@ export const projekte = [
     // my self companion
     {
         id: 'bachelor',
+        cover: bachelorFiles['../projects/bachelor/cover.jpg']?.default,
         name: 'my self companion',
         description: 'bachelorprojekt zu virtuellen companions',
         context: {
@@ -91,7 +92,7 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Ruhiger Desktop-Begleiter aus kurzer nicht-diagnostischer Selbstreflexion im Onboarding'
+                text: 'Ruhiger Desktop-Begleiter aus kurzer Selbstreflexion im Onboarding'
             },
             {
                 type: 'bullet',
@@ -121,11 +122,11 @@ export const projekte = [
             },
             {
                 type: 'bullet',
-                text: 'Kein therapeutisches Ziel und kein Versprechen auf Verhaltensänderung'
+                text: 'Lokaler Offline-Prototyp einer Desktop-App mit Electron und Vue, basierend auf der abgeschlossenen Thesis'
             },
             {
                 type: 'bullet',
-                text: 'Lokaler Offline-Prototyp einer Desktop-App mit Electron und Vue, basierend auf der abgeschlossenen Thesis'
+                text: 'Iterativer Designprozess mit regelmässigen User-Tests und Feedback-Sessions'
             },
             {
                 type: 'heading',
@@ -148,6 +149,7 @@ export const projekte = [
     // hearts across dimensions
     {
         id: 'had',
+        cover: hadFiles['../projects/had/cover.jpg']?.default,
         name: 'hearts across dimensions',
         description: 'visual novel / dating sim game',
         context: {
@@ -434,6 +436,7 @@ export const projekte = [
     // artd
     {
         id: 'artd',
+        cover: artdFiles['../projects/artd/cover.jpg']?.default,
         name: 'ar tower defense',
         description: 'marker-basiertes augmented-reality mobile game',
         context: {
@@ -570,6 +573,7 @@ export const projekte = [
     // apo11o
     {
         id: 'apo11o',
+        cover: apo11oFiles['../projects/apo11o/cover.jpg']?.default,
         name: 'apo11o',
         description: 'web-experience basierend auf der apollo-11-mission',
         context: {
@@ -733,6 +737,7 @@ export const projekte = [
     // quick response
     {
         id: 'qr',
+        cover: qrFiles['../projects/qr/cover.jpg']?.default,
         name: 'quick response',
         description: 'interaktive mobile-installation',
         context: {
@@ -855,6 +860,7 @@ export const projekte = [
     // sweet
     {
         id: 'sweet',
+        cover: sweetFiles['../projects/sweet/cover.jpg']?.default,
         name: 'sweet',
         description: 'web-eventplattform für digital ideation',
         context: {
@@ -1179,6 +1185,7 @@ export const projekte = [
     // spütify
     {
         id: 'sputify',
+        cover: sputifyFiles['../projects/sputify/cover.jpg']?.default,
         name: 'spütify',
         description: 'webseite zur interaktiven musikvisualisierung',
         context: {
@@ -1584,6 +1591,7 @@ export const projekte = [
     // ecohome
     {
         id: 'ecohome',
+        cover: ecohomeFiles['../projects/ecohome/cover.jpg']?.default,
         name: 'ecohome',
         description: 'serious game über nachhaltigkeit und abfall',
         context: {
@@ -1872,6 +1880,7 @@ export const projekte = [
     //milo
     {
         id: 'milo',
+        cover: miloFiles['../projects/milo/cover.jpg']?.default,
         name: "milo’s forest adventure",
         description: 'web-basiertes scroll- und klick-abenteuer',
         context:
@@ -2194,6 +2203,7 @@ export const projekte = [
     // beautiful mathematics
     {
         id: 'matbf',
+        cover: matbfFiles['../projects/matbf/cover.jpg']?.default,
         name: 'beautiful mathematics',
         description: 'sammlung mathematischer erkundungen',
         context: {
@@ -2400,6 +2410,7 @@ export const projekte = [
     // connected europe
     {
         id: '4g',
+        cover: europeFiles['../projects/4g/cover.jpg']?.default,
         name: 'connected europe',
         description: 'datenvisualisierungsplakat zur 4g-netzwerkerweiterung',
         context: {
@@ -2597,6 +2608,7 @@ export const projekte = [
     // salad ninja
     {
         id: 'salad',
+        cover: saladFiles['../projects/salad/cover.jpg']?.default,
         name: 'salad ninja',
         description: '2D-animiertes video inspiriert von fruit ninja',
         context: {
@@ -2785,6 +2797,7 @@ export const projekte = [
     // ux hscl
     {
         id: 'hscl',
+        cover: hsclFiles['../projects/hscl/cover.jpg']?.default,
         name: 'ux hscl',
         description: `user experience design für eine schulische sportorganisation`,
         context: {
@@ -3028,6 +3041,7 @@ export const projekte = [
     // sweet teeth
     {
         id: 'sweetteeth',
+        cover: sweetteethFiles['../projects/sweetteeth/cover.jpg']?.default,
         name: 'sweet teeth',
         description: `2d auto-runner game`,
         context: {
@@ -3316,6 +3330,7 @@ export const projekte = [
     // the rodina
     {
         id: 'rodina',
+        cover: rodinaFiles['../projects/rodina/cover.jpg']?.default,
         name: 'the rodina',
         description: `3d gerendertes video visuell inspiriert von the rodina`,
         context: {
@@ -3522,6 +3537,7 @@ export const projekte = [
     // solarsystem
     {
         id: 'solarsystem',
+        cover: solarsystemFiles['../projects/solarsystem/cover.jpg']?.default,
         name: 'solarsystem',
         description: `3d gerendertes video eines asteroiden`,
         context: {
@@ -3661,6 +3677,7 @@ export const projekte = [
     // google chrome extension
     {
         id: 'pa',
+        cover: paFiles['../projects/pa/cover.jpg']?.default,
         name: 'google chrome extension',
         description: 'internes tool zur darstellung von teamstrukturen & mitarbeiterinformationen der suva',
         context: {
@@ -4161,3 +4178,4 @@ export const ueberContent = {
         } */
     ]
 };
+

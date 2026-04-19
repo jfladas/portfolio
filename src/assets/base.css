@@ -163,6 +163,32 @@ p {
   margin: 0;
 }
 
+@supports (animation-timeline: view()) {
+
+  .section,
+  .project-item,
+  h1,
+  .content-left h2 {
+    animation-timeline: view();
+    animation-name: scroll;
+    animation-duration: 1ms;
+    animation-timing-function: linear;
+  }
+
+  @keyframes scroll {
+
+    0%,
+    100% {
+      transform: scaleX(1.1);
+    }
+
+    10%,
+    90% {
+      transform: scaleX(1);
+    }
+  }
+}
+
 .text-title {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
