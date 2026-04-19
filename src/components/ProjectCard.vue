@@ -180,6 +180,9 @@ const props = defineProps({
 
         h2 {
             font-size: 1.5rem;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
 
         .description {
