@@ -3,18 +3,33 @@
     <h1>
       {{ currentLanguage === 'en' ? 'projects' : 'projekte' }}
     </h1>
-    <div class="filter-container hoverable" :class="{ expanded: filterMode }">
-      <p class="filter toggle" @click="toggleFilter('all')" :class="{ selected: allSelected && !filterMode }">
-        {{ currentLanguage === 'en' ? 'all' : 'alle' }}
-      </p>
-      <font-awesome-icon icon="filter" class="filter toggle" :class="{ selected: filterMode }"
-        @click="toggleFilter('filter')" />
-      <div class="filters" :class="{ expanded: filterMode }">
-        <font-awesome-icon v-for="(icon, key) in categories" :icon="icon" :key="key" class="filter tooltip"
-          :tooltip="key" :class="{ selected: selectedFilters.includes(key) }" @click="toggleFilter(key)" />
+    <div class="toggle-bar hoverable" :class="{ expanded: filterMode }">
+      <div class="filter-container">
+        <div class="toggle-container">
+          <p class="filter toggle" @click="toggleFilter('all')" :class="{ selected: allSelected && !filterMode }">
+            {{ currentLanguage === 'en' ? 'all' : 'alle' }}
+          </p>
+          <font-awesome-icon icon="filter" class="filter toggle" :class="{ selected: filterMode }"
+            @click="toggleFilter('filter')" />
+        </div>
+
+        <div class="filters" :class="{ expanded: filterMode }">
+          <font-awesome-icon v-for="(icon, key) in categories" :icon="icon" :key="key" class="filter tooltip"
+            :tooltip="key" :class="{ selected: selectedFilters.includes(key) }" @click="toggleFilter(key)" />
+        </div>
+      </div>
+      <div class="view-container toggle-container">
+        <font-awesome-icon icon="grip-lines" class="filter toggle" :class="{ selected: viewMode === 'list' }"
+          @click="toggleViewMode()" />
+        <font-awesome-icon icon="grip" class="filter toggle" :class="{ selected: viewMode === 'grid' }"
+          @click="toggleViewMode()" />
       </div>
     </div>
-    <ProjectItem v-for="project in filteredProjects" :key="project.id" :project="project" />
+    <div :class="viewMode === 'grid' ? 'projects-grid' : 'projects-list'">
+      <ProjectItem v-if="viewMode === 'list'" v-for="project in filteredProjects" :key="`list-${project.id}`"
+        :project="project" />
+      <ProjectCard v-else v-for="project in filteredProjects" :key="`grid-${project.id}`" :project="project" />
+    </div>
     <div v-if="filteredProjects.length > 0 && filteredProjects.length < projects.length" class="disclaimer">
       <p>
         <font-awesome-icon icon="filter" />
@@ -47,12 +62,14 @@
 <script setup>
 import { ref, computed, watch, onMounted, inject } from 'vue'
 import ProjectItem from '@/components/ProjectItem.vue'
+import ProjectCard from '@/components/ProjectCard.vue'
 import { projects as enProjects, categories } from '@/data/projects.js'
 import { projekte as deProjects } from '@/data/projekte.js'
 import { useAchievements } from '@/composables/useAchievements.js'
 
 const selectedFilters = ref(['solo', 'team'])
 const filterMode = ref(false)
+const viewMode = ref('list')
 const currentLanguage = inject('currentLanguage')
 const { registerGameFilter } = useAchievements()
 
@@ -76,6 +93,11 @@ const toggleFilter = (filter) => {
   }
   localStorage.setItem('selectedFilters', JSON.stringify(selectedFilters.value))
   localStorage.setItem('filterMode', JSON.stringify(filterMode.value))
+}
+
+const toggleViewMode = () => {
+  viewMode.value = viewMode.value === 'list' ? 'grid' : 'list'
+  localStorage.setItem('projectsViewMode', viewMode.value)
 }
 
 watch(selectedFilters, (newFilters) => {
@@ -128,11 +150,15 @@ const scrollToTop = () => {
 onMounted(() => {
   const savedFilters = JSON.parse(localStorage.getItem('selectedFilters'))
   const savedFilterMode = JSON.parse(localStorage.getItem('filterMode'))
+  const savedViewMode = localStorage.getItem('projectsViewMode')
   if (savedFilters) {
     selectedFilters.value = savedFilters
   }
   if (savedFilterMode) {
     filterMode.value = savedFilterMode
+  }
+  if (savedViewMode === 'list' || savedViewMode === 'grid') {
+    viewMode.value = savedViewMode
   }
 })
 
@@ -147,10 +173,20 @@ onMounted(() => {
   gap: 1rem;
 }
 
-.filter-container {
+.toggle-bar {
   display: flex;
+  justify-content: space-between;
   flex-wrap: nowrap;
   width: 100%;
+}
+
+.toggle-container {
+  display: flex;
+}
+
+.filter-container {
+  display: flex;
+  width: inherit;
 }
 
 .filters {
@@ -160,7 +196,7 @@ onMounted(() => {
   width: 0;
   overflow: hidden;
   opacity: 0;
-  transition: min-width 1s, width 1s, opacity 1s;
+  transition: min-width 0.5s, width 0.5s, opacity 0.5s;
 }
 
 .filters.expanded {
@@ -191,6 +227,18 @@ onMounted(() => {
 
 .filter.toggle.selected {
   background: linear-gradient(to top, var(--sky), var(--deep), rgba(var(--navy-rgb), 0));
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .filter:hover {
@@ -243,14 +291,15 @@ onMounted(() => {
     padding: 0.6rem 1rem;
   }
 
-  .filters {
-    transition: min-width 1s, width 1s, opacity 1s;
+  .filters.expanded {
+    min-width: calc(100% - 8rem);
+    flex-wrap: wrap;
+    transition: opacity 0.5s;
   }
 
-  .filters.expanded {
-    min-width: calc(100% - 4rem);
-    flex-wrap: wrap;
-    transition: opacity 1s;
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
   }
 
   .bottom-spacer {
@@ -275,6 +324,14 @@ onMounted(() => {
     font-size: 1.2rem;
     padding: 0.4rem 0.4rem;
     height: 1.2rem;
+  }
+
+  .filters.expanded {
+    min-width: calc(100% - 3rem);
+  }
+
+  .toggle-container {
+    flex-direction: column;
   }
 }
 </style>

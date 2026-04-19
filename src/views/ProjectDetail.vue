@@ -41,6 +41,13 @@
                     <font-awesome-icon icon="angle-up" />
                 </router-link>
             </div>
+            <section v-if="relatedProjects.length" class="related-section">
+                <h3 class="related-title">{{ currentLanguage === 'en' ? 'Similar Projects' : 'Ähnliche Projekte' }}</h3>
+                <div class="related-grid">
+                    <ProjectCard v-for="relatedProject in relatedProjects" :key="`related-${relatedProject.id}`"
+                        :project="relatedProject" />
+                </div>
+            </section>
         </div>
         <div v-else class="disclaimer">
             <h3>
@@ -68,6 +75,7 @@ import { computed, ref, onMounted, onBeforeUnmount, nextTick, inject, watch } fr
 import { projects as enProjects, categories } from '@/data/projects.js'
 import { projekte as deProjects } from '@/data/projekte.js'
 import ContentSections from '@/components/ContentSections.vue'
+import ProjectCard from '@/components/ProjectCard.vue'
 import LinksDownloads from '@/components/LinksDownloads.vue'
 import FullOverlay from '@/components/FullOverlay.vue'
 import { useAchievements } from '@/composables/useAchievements.js'
@@ -97,6 +105,30 @@ const projects = computed(() => currentLanguage.value === 'en' ? enProjects : de
 
 const project = computed(() => projects.value.find(p => p.id === props.id))
 const showWipBanner = computed(() => project.value && ['bachelor', 'had'].includes(project.value.id))
+
+const relatedProjects = computed(() => {
+    if (!project.value?.categories?.length) {
+        return []
+    }
+
+    const currentCategories = new Set(project.value.categories)
+
+    return projects.value
+        .filter((candidate) => candidate.id !== project.value.id)
+        .map((candidate) => {
+            const sharedCount = candidate.categories.filter((category) => currentCategories.has(category)).length
+            return { candidate, sharedCount }
+        })
+        .filter(({ sharedCount }) => sharedCount > 0)
+        .sort((a, b) => {
+            if (b.sharedCount !== a.sharedCount) {
+                return b.sharedCount - a.sharedCount
+            }
+            return a.candidate.name.localeCompare(b.candidate.name)
+        })
+        .slice(0, 2)
+        .map(({ candidate }) => candidate)
+})
 
 watch(
     () => project.value?.id,
@@ -280,6 +312,21 @@ const setupBannerTicker = async () => {
     font-size: 1.5rem;
     color: var(--mint);
     margin-right: 0.75rem;
+}
+
+.related-section {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.related-title {
+    margin-bottom: 1rem;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
 }
 
 .left-bottom {

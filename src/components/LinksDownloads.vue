@@ -43,7 +43,7 @@ const props = defineProps({
     display: flex;
     align-items: center;
     gap: 1rem;
-    transition: font-weight 1s;
+    transition: font-weight 0.5s;
 }
 
 .link:hover,
@@ -60,7 +60,7 @@ const props = defineProps({
     background: linear-gradient(to right, var(--deep), var(--navy));
     z-index: -1;
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 0.5s;
 }
 
 .download::before {

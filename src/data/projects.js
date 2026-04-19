@@ -22,6 +22,7 @@ export const projects = [
     // my self companion
     {
         id: 'bachelor',
+        cover: bachelorFiles['../projects/bachelor/cover.jpg']?.default,
         name: 'my self companion',
         description: 'bachelor project on virtual companions',
         context: {
@@ -91,7 +92,7 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Calm desktop companion shaped by a short non-diagnostic onboarding reflection'
+                text: 'Calm desktop companion shaped by a short onboarding reflection'
             },
             {
                 type: 'bullet',
@@ -121,11 +122,11 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'No therapeutic claim and no behavior-change promise'
+                text: 'Local offline desktop prototype with Electron and Vue, grounded in the completed thesis'
             },
             {
                 type: 'bullet',
-                text: 'Local offline desktop prototype with Electron and Vue, grounded in the completed thesis'
+                text: 'Iterative design process with regular user testing and feedback sessions'
             },
             {
                 type: 'heading',
@@ -148,6 +149,7 @@ export const projects = [
     // hearts across dimensions
     {
         id: 'had',
+        cover: hadFiles['../projects/had/cover.jpg']?.default,
         name: 'hearts across dimensions',
         description: 'visual novel / dating sim game',
         context: {
@@ -434,6 +436,7 @@ export const projects = [
     // artd
     {
         id: 'artd',
+        cover: artdFiles['../projects/artd/cover.jpg']?.default,
         name: 'ar tower defense',
         description: 'marker-based augmented reality mobile game',
         context: {
@@ -579,6 +582,7 @@ export const projects = [
     // apo11o
     {
         id: 'apo11o',
+        cover: apo11oFiles['../projects/apo11o/cover.jpg']?.default,
         name: 'apo11o',
         description: 'web experience based on apollo 11 mission',
         context: {
@@ -742,6 +746,7 @@ export const projects = [
     // quick response
     {
         id: 'qr',
+        cover: qrFiles['../projects/qr/cover.jpg']?.default,
         name: 'quick response',
         description: 'mobile interaction installation',
         context: {
@@ -868,6 +873,7 @@ export const projects = [
     // sweet
     {
         id: 'sweet',
+        cover: sweetFiles['../projects/sweet/cover.jpg']?.default,
         name: 'sweet',
         description: 'web event platform for digital ideation',
         context: {
@@ -1192,6 +1198,7 @@ export const projects = [
     // spütify
     {
         id: 'sputify',
+        cover: sputifyFiles['../projects/sputify/cover.jpg']?.default,
         name: 'spütify',
         description: 'music journey & visualisation website',
         context: {
@@ -1594,6 +1601,7 @@ export const projects = [
     // ecohome
     {
         id: 'ecohome',
+        cover: ecohomeFiles['../projects/ecohome/cover.jpg']?.default,
         name: 'ecohome',
         description: 'serious game about waste management',
         context: {
@@ -1882,6 +1890,7 @@ export const projects = [
     // milo
     {
         id: 'milo',
+        cover: miloFiles['../projects/milo/cover.jpg']?.default,
         name: "milo’s forest adventure",
         description: 'web-based scroll & click adventure',
         context:
@@ -2202,6 +2211,7 @@ export const projects = [
     // beautiful mathematics
     {
         id: 'matbf',
+        cover: matbfFiles['../projects/matbf/cover.jpg']?.default,
         name: 'beautiful mathematics',
         description: 'collection of mathematical explorations',
         context: {
@@ -2408,6 +2418,7 @@ export const projects = [
     // connected europe
     {
         id: '4g',
+        cover: europeFiles['../projects/4g/cover.jpg']?.default,
         name: 'connected europe',
         description: 'data visualization poster of 4g network expansion',
         context: {
@@ -2605,6 +2616,7 @@ export const projects = [
     // salad ninja
     {
         id: 'salad',
+        cover: saladFiles['../projects/salad/cover.jpg']?.default,
         name: 'salad ninja',
         description: '2d animated video inspired by fruit ninja',
         context: {
@@ -2793,6 +2805,7 @@ export const projects = [
     // ux hscl
     {
         id: 'hscl',
+        cover: hsclFiles['../projects/hscl/cover.jpg']?.default,
         name: 'ux hscl',
         description: `user experience design for school sports organization`,
         context: {
@@ -3039,6 +3052,7 @@ export const projects = [
     // sweet teeth
     {
         id: 'sweetteeth',
+        cover: sweetteethFiles['../projects/sweetteeth/cover.jpg']?.default,
         name: 'sweet teeth',
         description: `2d auto-runner game`,
         context: {
@@ -3327,6 +3341,7 @@ export const projects = [
     // the rodina
     {
         id: 'rodina',
+        cover: rodinaFiles['../projects/rodina/cover.jpg']?.default,
         name: 'the rodina',
         description: `3d rendered video inspired by the rodina's visual style`,
         context: {
@@ -3534,6 +3549,7 @@ export const projects = [
     // solarsystem
     {
         id: 'solarsystem',
+        cover: solarsystemFiles['../projects/solarsystem/cover.jpg']?.default,
         name: 'solarsystem',
         description: `3d rendered asteroid video`,
         context: {
@@ -3673,6 +3689,7 @@ export const projects = [
     // google chrome extension
     {
         id: 'pa',
+        cover: paFiles['../projects/pa/cover.jpg']?.default,
         name: 'google chrome extension',
         description: 'internal organization structure & employee information tool for suva',
         context: {
@@ -4185,3 +4202,5 @@ export const aboutContent = {
         } */
     ]
 };
+
+
