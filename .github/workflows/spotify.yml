@@ -1,0 +1,44 @@
+name: Update Spotify Data
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Get the script from your MAIN branch
+      - name: Checkout Source
+        uses: actions/checkout@v4
+        with:
+          path: source
+          ref: main 
+
+      # 2. Get the files from your GH-PAGES branch to update them
+      - name: Checkout Deployment
+        uses: actions/checkout@v4
+        with:
+          path: deployment
+          ref: gh-pages
+
+      - name: Run Fetch Script
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+        run: |
+          pip install requests
+          # Run the script from the 'source' folder but output to 'deployment'
+          python source/fetch_spotify.py 
+          mv spotify.json deployment/spotify.json
+
+      - name: Commit and Push
+        run: |
+          cd deployment
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add spotify.json
+          git commit -m "Update Spotify status [skip ci]" || exit 0
+          git push origin gh-pages
