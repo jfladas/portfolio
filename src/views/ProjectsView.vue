@@ -9,7 +9,7 @@
           <p class="filter toggle" @click="toggleFilter('all')" :class="{ selected: allSelected && !filterMode }">
             {{ currentLanguage === 'en' ? 'all' : 'alle' }}
           </p>
-          <font-awesome-icon icon="filter" class="filter toggle" :class="{ selected: filterMode }"
+          <font-awesome-icon icon="filter" class="filter toggle funnel" :class="{ selected: filterMode }"
             @click="toggleFilter('filter')" />
         </div>
 
@@ -19,9 +19,9 @@
         </div>
       </div>
       <div class="view-container toggle-container">
-        <font-awesome-icon icon="grip-lines" class="filter toggle" :class="{ selected: viewMode === 'list' }"
+        <font-awesome-icon icon="grip-lines" class="filter toggle view" :class="{ selected: viewMode === 'list' }"
           @click="toggleViewMode()" />
-        <font-awesome-icon icon="grip" class="filter toggle" :class="{ selected: viewMode === 'grid' }"
+        <font-awesome-icon icon="grip" class="filter toggle view" :class="{ selected: viewMode === 'grid' }"
           @click="toggleViewMode()" />
       </div>
     </div>
@@ -303,15 +303,15 @@ onMounted(() => {
   }
 
   .bottom-spacer {
-    height: 50vh;
+    height: 25vh;
   }
 
   .to-top {
-    transform: translate(-50%, -40vh);
+    transform: translate(-50%, -20vh);
   }
 
   .to-top:hover {
-    transform: translate(-50%, calc(-40vh - 1rem));
+    transform: translate(-50%, calc(-20vh - 1rem));
   }
 }
 
@@ -330,8 +330,16 @@ onMounted(() => {
     min-width: calc(100% - 3rem);
   }
 
-  .toggle-container {
-    flex-direction: column;
+  .funnel.selected {
+    display: none;
+  }
+
+  .view {
+    display: none;
+  }
+
+  .view.selected {
+    display: revert;
   }
 }
 </style>

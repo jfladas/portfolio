@@ -41,13 +41,7 @@
                     <font-awesome-icon icon="angle-up" />
                 </router-link>
             </div>
-            <section v-if="relatedProjects.length" class="related-section">
-                <h3 class="related-title">{{ currentLanguage === 'en' ? 'Similar Projects' : 'Ähnliche Projekte' }}</h3>
-                <div class="related-grid">
-                    <ProjectCard v-for="relatedProject in relatedProjects" :key="`related-${relatedProject.id}`"
-                        :project="relatedProject" />
-                </div>
-            </section>
+
         </div>
         <div v-else class="disclaimer">
             <h3>
@@ -67,7 +61,15 @@
                 <LinksDownloads :links="project.links" :downloads="project.downloads" />
             </div>
         </div>
+
     </div>
+    <section v-if="relatedProjects.length" class="related-section">
+        <h3 class="related-title">{{ currentLanguage === 'en' ? 'Similar Projects' : 'Ähnliche Projekte' }}</h3>
+        <div class="related-grid">
+            <ProjectCard v-for="relatedProject in relatedProjects" :key="`related-${relatedProject.id}`"
+                :project="relatedProject" />
+        </div>
+    </section>
 </template>
 
 <script setup>
@@ -315,8 +317,8 @@ const setupBannerTicker = async () => {
 }
 
 .related-section {
-    width: 100%;
-    margin-top: 3rem;
+    width: 80%;
+    margin: 4rem 0 4rem 10%;
 }
 
 .related-title {
@@ -393,6 +395,11 @@ const setupBannerTicker = async () => {
 
     .to-top:hover {
         transform: translate(-50%, -5rem);
+    }
+
+    .related-section {
+        width: 84vw;
+        margin-left: 8%;
     }
 }
 
