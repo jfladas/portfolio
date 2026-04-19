@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Never Gonna Give You Up",
-        "artist": "Rick Astley",
-        "link": "https://open.spotify.com/track/4PTG3Z6ehGkBFwjybzWkR8",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27315ebbedaacef61af244262a8"
+        "name": "r u ok?",
+        "artist": "ifeye",
+        "link": "https://open.spotify.com/track/7LwQfsJ7JzgfFr7ErvcTs6",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27384da99b02d1ed77eb1e764c8"
     }
 }
