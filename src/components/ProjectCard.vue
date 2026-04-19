@@ -69,6 +69,7 @@ const props = defineProps({
         margin-bottom: 0;
         opacity: 0;
         max-height: 0;
+        max-width: 0;
         overflow: hidden;
         transition: all 0.5s;
     }
