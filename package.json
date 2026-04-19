@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "cd dist && copy index.html 404.html && echo www.jfladas.com > CNAME && cd .. && gh-pages -d dist"
+    "preserve:spotify": "node scripts/preserve-spotify-json.mjs",
+    "deploy": "npm run preserve:spotify && cd dist && copy index.html 404.html && echo www.jfladas.com > CNAME && cd .. && gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",

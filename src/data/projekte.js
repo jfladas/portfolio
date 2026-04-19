@@ -3679,7 +3679,7 @@ export const projekte = [
         id: 'pa',
         cover: paFiles['../projects/pa/cover.jpg']?.default,
         name: 'google chrome extension',
-        description: 'internes tool zur darstellung von teamstrukturen & mitarbeiterinformationen der suva',
+        description: 'internes organisation information tool für die suva',
         context: {
             lines: [
                 '2022 @ Suva, Luzern',

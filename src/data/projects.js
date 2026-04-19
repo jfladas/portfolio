@@ -3691,7 +3691,7 @@ export const projects = [
         id: 'pa',
         cover: paFiles['../projects/pa/cover.jpg']?.default,
         name: 'google chrome extension',
-        description: 'internal organization structure & employee information tool for suva',
+        description: 'internal organization information tool for suva',
         context: {
             lines: [
                 '2022 @ Suva, Lucerne',

@@ -19,6 +19,7 @@
         <img src="/src/assets/me_glitch.jpg" alt="me" class="me-glitch" />
         <img src="/src/assets/me_dark.jpg" alt="me" class="me-dark" />
       </div>
+      <SpotifyStatus />
       <div class="right-container">
         <LinksDownloads :links="aboutContent.links" :downloads="aboutContent.downloads" />
       </div>
@@ -33,6 +34,7 @@ import { ueberContent as deAbout } from '@/data/projekte.js'
 import ContentSections from '@/components/ContentSections.vue'
 import LinksDownloads from '@/components/LinksDownloads.vue'
 import FullOverlay from '@/components/FullOverlay.vue'
+import SpotifyStatus from '@/components/SpotifyStatus.vue'
 import { useAchievements } from '@/composables/useAchievements.js'
 
 const currentLanguage = inject('currentLanguage')

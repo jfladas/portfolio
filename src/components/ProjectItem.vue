@@ -91,6 +91,7 @@ onUnmounted(() => {
         margin-bottom: 0;
         opacity: 0;
         max-height: 0;
+        max-width: 0vw;
         overflow: hidden;
         transition: all 0.5s;
     }
@@ -115,6 +116,10 @@ onUnmounted(() => {
             var(--sky),
             var(--deep),
             rgba(var(--navy-rgb), 0));
+
+    p {
+        max-width: 60vw;
+    }
 }
 
 @media (max-width: 1200px) {
