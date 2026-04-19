@@ -1,9 +1,9 @@
 {
     "status": "offline",
     "item": {
-        "name": "Never Gonna Give You Up",
-        "artist": "Rick Astley",
-        "link": "https://open.spotify.com/track/4PTG3Z6ehGkBFwjybzWkR8",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27315ebbedaacef61af244262a8"
+        "name": "Loading...",
+        "artist": "Spotify",
+        "link": "https://open.spotify.com",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736c4a726c271daf4a4b97e35b"
     }
 }
