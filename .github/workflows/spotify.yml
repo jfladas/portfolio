@@ -1,15 +1,20 @@
 name: Update Spotify Data
+
+# This ensures only one Spotify update runs at a time
 concurrency:
-  group: pages
-  cancel-in-progress: false # Do NOT cancel deployments, just queue them
+  group: spotify-data-sync
+  cancel-in-progress: true
+
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *' # Backup run once a day
   repository_dispatch:
-    types: [update_spotify]
-  workflow_dispatch:
+    types: [update_spotify] # The trigger from Cronitor
+  workflow_dispatch: # The manual button in GitHub
+
 permissions:
   contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -27,6 +32,12 @@ jobs:
         with:
           path: deployment
           ref: gh-pages
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
       - name: Run Fetch Script
         env:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
@@ -34,7 +45,7 @@ jobs:
           SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
         run: |
           pip install requests
-          # We tell the script exactly where to put the file:
+          # Direct the output to the deployment folder
           python source/fetch_spotify.py deployment/spotify.json
 
       - name: Commit and Push
@@ -43,5 +54,6 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add spotify.json
+          # [skip ci] is the magic string that stops the Page Build loop
           git commit -m "Update Spotify status [skip ci]" || exit 0
           git push origin gh-pages
