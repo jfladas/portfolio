@@ -1,4 +1,7 @@
 name: Update Spotify Data
+concurrency:
+  group: pages
+  cancel-in-progress: false # Do NOT cancel deployments, just queue them
 on:
   schedule:
     - cron: '0 0 * * *'
