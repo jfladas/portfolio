@@ -1,59 +1,54 @@
-name: Update Spotify Data
-
-# This ensures only one Spotify update runs at a time
-concurrency:
-  group: spotify-data-sync
-  cancel-in-progress: true
-
+name: Update Spotify and Deploy
 on:
   schedule:
-    - cron: '0 0 * * *' # Backup run once a day
+    - cron: '0 0 * * *'
   repository_dispatch:
-    types: [update_spotify] # The trigger from Cronitor
-  workflow_dispatch: # The manual button in GitHub
+    types: [update_spotify]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  update:
+  update-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      # 1. Get the script from your MAIN branch
-      - name: Checkout Source
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          path: source
-          ref: main 
-
-      # 2. Get the files from your GH-PAGES branch to update them
-      - name: Checkout Deployment
-        uses: actions/checkout@v4
-        with:
-          path: deployment
-          ref: gh-pages
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: Run Fetch Script
+      - name: Fetch Spotify Data
         env:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
           SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
         run: |
           pip install requests
-          # Direct the output to the deployment folder
-          python source/fetch_spotify.py deployment/spotify.json
+          # This runs your script and saves spotify.json in the current folder
+          python fetch_spotify.py spotify.json
 
-      - name: Commit and Push
-        run: |
-          cd deployment
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add spotify.json
-          # [skip ci] is the magic string that stops the Page Build loop
-          git commit -m "Update Spotify status [skip ci]" || exit 0
-          git push origin gh-pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload the entire repository (including the new spotify.json)
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
