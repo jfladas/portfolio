@@ -72,6 +72,24 @@ const filterMode = ref(false)
 const viewMode = ref('list')
 const currentLanguage = inject('currentLanguage')
 const { registerGameFilter } = useAchievements()
+const preloadedCovers = new Set()
+
+const preloadProjectCovers = (projectList) => {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  projectList.forEach(({ cover }) => {
+    if (!cover || preloadedCovers.has(cover)) {
+      return
+    }
+
+    preloadedCovers.add(cover)
+    const image = new Image()
+    image.decoding = 'async'
+    image.src = cover
+  })
+}
 
 const allSelected = computed(() => selectedFilters.value.length === Object.keys(categories).length || !filterMode.value)
 
@@ -148,6 +166,8 @@ const scrollToTop = () => {
 }
 
 onMounted(() => {
+  preloadProjectCovers([...enProjects, ...deProjects])
+
   const savedFilters = JSON.parse(localStorage.getItem('selectedFilters'))
   const savedFilterMode = JSON.parse(localStorage.getItem('filterMode'))
   const savedViewMode = localStorage.getItem('projectsViewMode')

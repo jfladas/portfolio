@@ -123,8 +123,8 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(var(--navy-rgb), 0.3);
-    backdrop-filter: blur(0.5rem);
+    background-color: rgba(var(--navy-rgb), 0.5);
+    backdrop-filter: blur(0.5rem) saturate(2);
     opacity: 0;
     transition: opacity 0.5s;
 }
@@ -143,21 +143,21 @@ export default {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(var(--navy-rgb), 0.5);
+    background-color: rgba(var(--navy-rgb), 0);
     height: 100%;
-    width: 2rem;
+    width: 3rem;
     backdrop-filter: blur(1rem);
     opacity: 0;
     transition: opacity 0.5s;
 }
 
 .carousel-fade.prev {
-    left: 0;
+    left: -1px;
     mask: linear-gradient(to left, transparent, var(--white));
 }
 
 .carousel-fade.next {
-    right: 0;
+    right: -1px;
     mask: linear-gradient(to right, transparent, var(--white));
 }
 
@@ -172,8 +172,8 @@ export default {
     color: var(--white);
     opacity: 0;
     transition: opacity 0.5s;
-    background-color: rgba(var(--navy-rgb), 0.3);
-    backdrop-filter: blur(0.5rem);
+    background-color: rgba(var(--navy-rgb), 0.5);
+    backdrop-filter: blur(0.5rem) saturate(2);
 }
 
 .carousel-control.prev {
@@ -185,7 +185,7 @@ export default {
 }
 
 .carousel-control:hover {
-    background-color: rgba(var(--deep-rgb), 0.2);
+    background-color: rgba(var(--deep-rgb), 0.3);
 }
 
 .carousel-control:active {
@@ -204,8 +204,8 @@ export default {
     align-items: center;
     font-size: 1.2rem;
     color: rgba(var(--white-rgb), 0.8);
-    background-color: rgba(var(--navy-rgb), 0.3);
-    backdrop-filter: blur(0.5rem);
+    background-color: rgba(var(--navy-rgb), 0.5);
+    backdrop-filter: blur(0.5rem) saturate(2);
     opacity: 0;
     transition: opacity 0.5s;
 }
@@ -216,7 +216,7 @@ export default {
 
 .expand-button:hover,
 .unexpand-button:hover {
-    background-color: rgba(var(--deep-rgb), 0.2);
+    background-color: rgba(var(--deep-rgb), 0.3);
 }
 
 .expand-button:active,

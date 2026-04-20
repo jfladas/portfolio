@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Loading...",
+        "name": "No data available",
         "artist": "Spotify",
         "link": "https://open.spotify.com",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736c4a726c271daf4a4b97e35b"
+        "album_art": ""
     }
 }

@@ -117,6 +117,7 @@ body {
   background-color: var(--navy);
   overflow-x: hidden;
   margin: 0;
+  transition: all 0.5s ease;
 }
 
 ::selection {

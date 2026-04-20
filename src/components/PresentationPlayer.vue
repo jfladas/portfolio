@@ -284,8 +284,8 @@ export default {
     align-items: center;
     font-size: 2rem;
     color: var(--white);
-    background-color: rgba(var(--navy-rgb), 0.3);
-    backdrop-filter: blur(0.5rem);
+    background-color: rgba(var(--navy-rgb), 0.5);
+    backdrop-filter: blur(0.5rem) saturate(2);
     cursor: default;
 }
 
@@ -301,12 +301,12 @@ export default {
 }
 
 .pdf-fade.prev {
-    left: 0;
+    left: -1px;
     mask: linear-gradient(to left, transparent, var(--white));
 }
 
 .pdf-fade.next {
-    right: 0;
+    right: -1px;
     mask: linear-gradient(to right, transparent, var(--white));
 }
 
@@ -321,8 +321,8 @@ export default {
     color: var(--white);
     opacity: 0;
     transition: opacity 0.5s;
-    background-color: rgba(var(--navy-rgb), 0.3);
-    backdrop-filter: blur(0.5rem);
+    background-color: rgba(var(--navy-rgb), 0.5);
+    backdrop-filter: blur(0.5rem) saturate(2);
 }
 
 .pdf-control.prev {
@@ -334,7 +334,7 @@ export default {
 }
 
 .pdf-control:hover {
-    background-color: rgba(var(--deep-rgb), 0.2);
+    background-color: rgba(var(--deep-rgb), 0.3);
 }
 
 .pdf-control:active {
@@ -354,8 +354,8 @@ export default {
     align-items: center;
     font-size: 1.2rem;
     color: rgba(var(--white-rgb), 0.8);
-    background-color: rgba(var(--navy-rgb), 0.3);
-    backdrop-filter: blur(0.5rem);
+    background-color: rgba(var(--navy-rgb), 0.5);
+    backdrop-filter: blur(0.5rem) saturate(2);
     opacity: 0;
     transition: opacity 0.5s;
 }
@@ -395,7 +395,7 @@ export default {
 .expand-button:hover,
 .replay-button:hover,
 .unexpand-button:hover {
-    background-color: rgba(var(--deep-rgb), 0.2);
+    background-color: rgba(var(--deep-rgb), 0.3);
 }
 
 .expand-button:active,

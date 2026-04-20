@@ -233,8 +233,8 @@ export default {
     height: 2.5rem;
     display: flex;
     align-items: center;
-    background-color: rgba(var(--navy-rgb), 0.3);
-    backdrop-filter: blur(0.5rem);
+    background-color: rgba(var(--navy-rgb), 0.5);
+    backdrop-filter: blur(0.5rem) saturate(2);
     transition: opacity 0.5s;
 }
 
@@ -263,7 +263,7 @@ export default {
 }
 
 .progress-bar:hover {
-    background: rgba(var(--deep-rgb), 0.2);
+    background: rgba(var(--deep-rgb), 0.3);
 }
 
 .progress-bar::-webkit-slider-thumb:hover {
@@ -286,13 +286,13 @@ export default {
     align-items: center;
     font-size: 2rem;
     color: var(--white);
-    background-color: rgba(var(--navy-rgb), 0.3);
-    backdrop-filter: blur(0.5rem);
+    background-color: rgba(var(--navy-rgb), 0.5);
+    backdrop-filter: blur(0.5rem) saturate(2);
     transition: opacity 0.5s;
 }
 
 .play-pause-button:hover {
-    background-color: rgba(var(--deep-rgb), 0.2);
+    background-color: rgba(var(--deep-rgb), 0.3);
 }
 
 .play-pause-button:active {
@@ -311,8 +311,8 @@ export default {
     align-items: center;
     font-size: 1.2rem;
     color: rgba(var(--white-rgb), 0.8);
-    background-color: rgba(var(--navy-rgb), 0.3);
-    backdrop-filter: blur(0.5rem);
+    background-color: rgba(var(--navy-rgb), 0.5);
+    backdrop-filter: blur(0.5rem) saturate(2);
     transition: opacity 0.5s;
 }
 
@@ -322,7 +322,7 @@ export default {
 
 .expand-button:hover,
 .unexpand-button:hover {
-    background-color: rgba(var(--deep-rgb), 0.2);
+    background-color: rgba(var(--deep-rgb), 0.3);
 }
 
 .expand-button:active,
