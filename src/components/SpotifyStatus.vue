@@ -58,7 +58,7 @@ const loadSpotifyData = async () => {
     error.value = false
 
     try {
-        const response = await fetch(`./spotify.json?t=${Date.now()}`)
+        const response = await fetch(`${import.meta.env.BASE_URL}spotify.json?t=${new Date().getTime()}`)
 
         if (!response.ok) {
             throw new Error('Spotify response was not ok')

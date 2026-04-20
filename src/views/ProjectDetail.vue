@@ -128,7 +128,7 @@ const relatedProjects = computed(() => {
             }
             return a.candidate.name.localeCompare(b.candidate.name)
         })
-        .slice(0, 2)
+        .slice(0, 3)
         .map(({ candidate }) => candidate)
 })
 
@@ -327,7 +327,7 @@ const setupBannerTicker = async () => {
 
 .related-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
 }
 
@@ -347,6 +347,7 @@ const setupBannerTicker = async () => {
     gap: 0.5rem;
     white-space: nowrap;
     font-size: 3rem;
+    z-index: 1;
 }
 
 .back:hover {
@@ -400,6 +401,10 @@ const setupBannerTicker = async () => {
     .related-section {
         width: 84vw;
         margin-left: 8%;
+    }
+
+    .related-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 

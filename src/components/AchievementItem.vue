@@ -130,8 +130,8 @@ const localizedDescription = computed(() => {
     }
 
     .achievement-title {
-        font-size: 2rem;
-        line-height: 2rem;
+        font-size: 2.5rem;
+        line-height: 2.5rem;
         color: var(--navy);
     }
 
@@ -153,8 +153,15 @@ const localizedDescription = computed(() => {
         font-size: 1.2rem;
     }
 
-    .achievement-item.unlocked .achievement-reward {
-        font-size: 1.2rem;
+    .achievement-item.unlocked {
+        .achievement-title {
+            font-size: 2rem;
+            line-height: 2rem;
+        }
+
+        .achievement-reward {
+            font-size: 1.2rem;
+        }
     }
 }
 

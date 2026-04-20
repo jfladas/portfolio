@@ -1,7 +1,10 @@
 <template>
   <header class="hoverable">
-    <router-link to="/about">
-      <div class="logo" :class="{ reverse: $route.path !== '/about' }">jfladas</div>
+    <router-link to="/">
+      <div class="logo"
+        :class="{ reverse: $route.path !== '/about', center: $route.path === '/achievements' || $route.path === '/' }">
+        jfladas
+      </div>
     </router-link>
     <nav>
       <router-link to="/about" class="nav-item left" :class="{ selected: $route.path === '/about' }">
@@ -462,8 +465,8 @@ onMounted(() => {
 
 <style scoped>
 header {
-  background-color: rgba(var(--navy-rgb), 0.5);
-  backdrop-filter: blur(1rem);
+  background-color: rgba(var(--navy-rgb), 0.7);
+  backdrop-filter: blur(1rem) saturate(2);
   position: fixed;
   top: 0;
   left: 0;
@@ -574,6 +577,12 @@ nav {
   -webkit-background-clip: text;
 }
 
+.logo.center {
+  background: linear-gradient(to left, var(--deep), var(--sky), var(--mint), var(--sky), var(--deep));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
 .logo:hover {
   transform: translate(-50%, -50%) scale(1.1);
 }
@@ -591,19 +600,11 @@ nav {
   gap: 2rem;
   padding: 0.5rem 5rem 0.5rem 0.5rem;
   font-size: 2rem;
-  background-color: rgba(var(--deep-rgb), 0.2);
-  backdrop-filter: blur(1rem);
+  background-color: rgba(var(--deep-rgb), 0.5);
+  backdrop-filter: blur(1rem) saturate(2);
   color: var(--sky);
   z-index: 10;
   transition: all 0.5s;
-}
-
-.more:hover {
-  background-color: rgba(var(--deep-rgb), 0.5);
-}
-
-.more:active {
-  background-color: rgba(var(--deep-rgb), 0.7);
 }
 
 .more-icon {
@@ -615,10 +616,15 @@ nav {
 
 .more.open {
   transform: translate(2rem, 0);
+  background-color: rgba(var(--deep-rgb), 0.5);
 }
 
 .more.open .more-icon {
   transform: rotate(-180deg);
+}
+
+.more:hover {
+  background-color: rgba(var(--deep-rgb), 0.7);
 }
 
 .more:has(.more-icon:nth-of-type(1):hover) {
@@ -660,20 +666,21 @@ nav {
   position: fixed;
   bottom: 2rem;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, 0) translateY(2rem);
   padding: 1rem 2rem;
   text-align: center;
-  background: rgba(var(--deep-rgb), 0.2);
-  backdrop-filter: blur(1rem);
+  background: rgba(var(--deep-rgb), 0.5);
+  backdrop-filter: blur(1rem) saturate(2);
   color: var(--white);
   z-index: 1000;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: all 0.5s ease;
 }
 
 #toast.visible {
   opacity: 1;
+  transform: translate(-50%, 0) translateY(0);
 }
 
 .fade-out {

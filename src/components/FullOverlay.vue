@@ -30,8 +30,8 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(var(--navy-rgb), 0.5);
-    backdrop-filter: blur(1rem);
+    background-color: rgba(var(--navy-rgb), 0.7);
+    backdrop-filter: blur(1rem) saturate(2);
     display: flex;
     justify-content: center;
     align-items: center;
