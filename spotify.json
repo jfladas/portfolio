@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "POSSE UP!",
-        "artist": "YOUNG POSSE",
-        "link": "https://open.spotify.com/track/65K8fTCJvBr0ImV24y9jOn",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732fbdd152d4c3fb131b704f70"
+        "name": "Tick Tick Boom",
+        "artist": "CLASS:y",
+        "link": "https://open.spotify.com/track/19WBBlTBTcgNGYBbY6HZB6",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736c18892d50c275430dead1bc"
     }
 }
