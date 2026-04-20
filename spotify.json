@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "PINKY UP",
-        "artist": "KATSEYE",
-        "link": "https://open.spotify.com/track/4KmkJjHTNlr1jFY56Lyz4E",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f995fcdb4d6f1c273a3bc56b"
+        "name": "2.0 (TWO POINT O)",
+        "artist": "NCT WISH",
+        "link": "https://open.spotify.com/track/2SYd2f0QpEelLsoMqQSXus",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273253a8ddc03c042c5fbc1d0a7"
     }
 }
