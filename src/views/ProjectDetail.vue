@@ -406,6 +406,10 @@ const setupBannerTicker = async () => {
     .related-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .related-grid> :nth-child(n + 3) {
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
