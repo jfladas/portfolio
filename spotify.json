@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Backtalk",
-        "artist": "EVNNE",
-        "link": "https://open.spotify.com/track/6dpeVATdc9mWs2Hafv95UJ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2738227b234dc24ae57daf2c949"
+        "name": "Mention Me - From The Movie \"GOAT\"",
+        "artist": "CORTIS",
+        "link": "https://open.spotify.com/track/3f0OEJd7mlPNhmH3fUOrqy",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27312fbc981d094ef600fd0cb42"
     }
 }
