@@ -139,10 +139,17 @@ def main():
         run_self_check()
         return
 
+    # Check if a specific output path was provided (like 'deployment/spotify.json')
+    # Otherwise, default to 'spotify.json'
+    output_file = sys.argv[1] if len(sys.argv) > 1 else "spotify.json"
+
     final_data = fetch_spotify_data()
-    with open("spotify.json", "w", encoding="utf-8") as f:
+    
+    with open(output_file, "w", encoding="utf-8") as f:
         json.dump(final_data, f, indent=4)
-    print("Success: spotify.json updated.")
+    
+    print(f"Success: {output_file} updated.")
+
 
 
 if __name__ == "__main__":
