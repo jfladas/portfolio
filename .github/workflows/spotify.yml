@@ -27,26 +27,15 @@ jobs:
         with:
           path: deployment
           ref: gh-pages
-
       - name: Run Fetch Script
         env:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
           SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
         run: |
-          set -eu
-          python - <<'PY'
-          import os, sys
-          required = ["SPOTIFY_CLIENT_ID", "SPOTIFY_CLIENT_SECRET", "SPOTIFY_REFRESH_TOKEN"]
-          missing = [name for name in required if not os.getenv(name)]
-          if missing:
-              print(f"Missing required secrets: {', '.join(missing)}", file=sys.stderr)
-              raise SystemExit(1)
-          PY
           pip install requests
-          # Run the script from the 'source' folder but output to 'deployment'
-          python source/fetch_spotify.py 
-          mv spotify.json deployment/spotify.json
+          # We tell the script exactly where to put the file:
+          python source/fetch_spotify.py deployment/spotify.json
 
       - name: Commit and Push
         run: |
