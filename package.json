@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "preserve:spotify": "node scripts/preserve-spotify-json.mjs",
-    "deploy": "npm run preserve:spotify && cd dist && copy index.html 404.html && echo www.jfladas.com > CNAME && cd .. && gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
@@ -21,7 +19,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
-    "gh-pages": "^6.2.0",
     "vite": "^6.0.1",
     "vite-plugin-vue-devtools": "^7.6.5"
   }
