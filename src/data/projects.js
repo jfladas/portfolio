@@ -19,12 +19,12 @@ const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 
 export const projects = [
-    // my self companion
+    // bachelor
     {
         id: 'bachelor',
         cover: bachelorFiles['../projects/bachelor/cover.jpg']?.default,
-        name: 'my self companion',
-        description: 'bachelor project on virtual companions',
+        name: 'bachelor',
+        description: 'bachelor project on desktop companions',
         context: {
             lines: [
                 '2026 @ HSLU, Rotkreuz',
@@ -44,7 +44,7 @@ export const projects = [
         sections: [
             {
                 type: 'quoted',
-                text: `My Self Companion combines a completed written thesis with a practical bachelor project. The thesis builds the theoretical foundation on virtual companions, projection, and calm interaction, while the project translates these insights into a calm desktop prototype that can be experienced in everyday digital life.`
+                text: `The bachelor project combines a completed written thesis with a practical bachelor project. The thesis builds the theoretical foundation on virtual companions, projection, and calm interaction, while the project translates these insights into a calm desktop prototype that can be experienced in everyday digital life.`
             },
             {
                 type: 'heading',
@@ -79,46 +79,43 @@ export const projects = [
             },
             {
                 type: 'bullet',
-                text: 'Theoretical base for future companion research and design experiments'
+                text: 'Theoretical base for future research and design experiments'
             },
             {
                 type: 'heading',
                 text: 'Practical Project Plan'
             },
             {
-                type: 'iconed',
-                text: 'Companion Concept',
-                icon: 'circle-user'
+                type: 'subheading',
+                text: 'Concept',
             },
             {
                 type: 'bullet',
-                text: 'Calm desktop companion shaped by a short onboarding reflection'
+                text: 'Blob shaped by a short onboarding reflection'
             },
             {
                 type: 'bullet',
                 text: 'Symbolic counterpart for self-reference without intrusiveness'
             },
             {
-                type: 'iconed',
+                type: 'subheading',
                 text: 'Everyday Interaction',
-                icon: 'desktop'
             },
             {
                 type: 'bullet',
-                text: 'Subtle bottom-screen presence reacting to time and presence'
+                text: 'Subtle bottom-screen presence reacting to time and interaction'
             },
             {
                 type: 'bullet',
-                text: 'Optional micro-interactions: tap, pet, pick up, release'
+                text: 'Micro-interactions: tap, pet, pick up, release'
             },
             {
                 type: 'bullet',
                 text: 'Reflection only on demand, for example via a mini journal'
             },
             {
-                type: 'iconed',
-                text: 'Scope and Implementation',
-                icon: 'code'
+                type: 'subheading',
+                text: 'Implementation',
             },
             {
                 type: 'bullet',
@@ -3920,7 +3917,7 @@ export const projects = [
             }
         ]
     }
-]
+];
 
 export const categories = {
     'solo': 'user',
@@ -3970,55 +3967,68 @@ export const aboutContent = {
         },
         {
             type: 'heading',
-            text: 'More about me...'
+            text: 'More about me...',
+            collapsible: true,
+            group: 'more-about-me'
         },
         {
             type: 'subheading',
-            text: 'Music'
+            text: 'Music',
+            group: 'more-about-me'
         },
         {
             type: 'paragraph',
-            text: `Beyond my passion for technology and design, music plays a big role in my life. I play the saxophone in the local orchestra '<a href="https://www.musikvereinbuochs.ch/" class="bold hoverable" target="_blank">Musikverein Buochs</a>', which has been an amazing way to connect with others and immerse myself in the joy of creating music. My love for music doesn't stop there. I'm also a fan of K-pop and enjoy attending concerts whenever I can.`
+            text: `Beyond my passion for technology and design, music plays a big role in my life. I play the saxophone in the local orchestra <a href="https://www.musikvereinbuochs.ch/" class="bold hoverable" target="_blank">Musikverein Buochs</a>, which has been an amazing way to connect with others and immerse myself in the joy of creating music. My love for music doesn't stop there. I'm also a fan of K-pop and enjoy attending concerts whenever I can.`,
+            group: 'more-about-me'
         },
         {
             type: 'paragraph',
-            text: 'Favorite K-pop concerts attended:'
+            text: 'Favorite K-pop concerts attended:',
+            group: 'more-about-me'
         },
         {
             type: 'iconed',
             text: 'Billlie @ Munich 2024',
-            icon: 'spa'
+            icon: 'spa',
+            group: 'more-about-me'
         },
         {
             type: 'iconed',
             text: 'aespa @ Paris 2023',
-            icon: 'fire-flame-curved'
+            icon: 'fire-flame-curved',
+            group: 'more-about-me'
         },
         {
             type: 'iconed',
             text: 'NCT @ Incheon 2023',
-            icon: 'globe'
+            icon: 'globe',
+            group: 'more-about-me'
         },
         {
             type: 'iconed',
             text: 'Music Bank @ Paris 2023',
-            icon: 'music'
+            icon: 'music',
+            group: 'more-about-me'
         },
         {
             type: 'iconed',
             text: 'MCND @ Lausanne 2022',
-            icon: 'bolt'
+            icon: 'bolt',
+            group: 'more-about-me'
         },
         {
             type: 'subheading',
-            text: 'Japan'
+            text: 'Japan',
+            group: 'more-about-me'
         },
         {
             type: 'paragraph',
-            text: `Learning Japanese has been another fulfilling journey, deepening my interest in East Asian culture. Through self-study, school courses, and visiting different parts of Japan, I have developed quite an appreciation of its many facets and it has become my favorite travel destination.`
+            text: `Learning Japanese has been another fulfilling journey, deepening my interest in East Asian culture. Through self-study, school courses, and visiting different parts of Japan, I have developed quite an appreciation of its many facets and it has become my favorite travel destination.`,
+            group: 'more-about-me'
         },
         {
             type: 'images',
+            group: 'more-about-me',
             images: [
                 {
                     src: aboutFiles['../assets/about/jpn0.jpg'].default,

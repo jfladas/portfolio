@@ -35,7 +35,7 @@ const props = defineProps({
     position: relative;
     font-size: 1.2rem;
     font-weight: 400;
-    color: var(--white);
+    color: var(--aqua);
     background: transparent;
     padding: 0.5rem 1rem;
     margin-bottom: 0.5rem;
@@ -43,7 +43,7 @@ const props = defineProps({
     display: flex;
     align-items: center;
     gap: 1rem;
-    transition: font-weight 0.5s;
+    transition: all 0.5s ease;
 }
 
 .link:hover,

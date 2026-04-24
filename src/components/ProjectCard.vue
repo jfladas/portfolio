@@ -140,6 +140,10 @@ const props = defineProps({
             height: calc(100% - 2rem);
             margin: 1rem;
         }
+
+        .description {
+            overflow: visible;
+        }
     }
 }
 
