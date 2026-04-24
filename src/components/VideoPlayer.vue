@@ -1,6 +1,7 @@
 <template>
     <teleport to="#video-teleport" :disabled="!isOverlayVisible">
-        <div class="video-player hoverable" :class="{ notplaying: !isPlaying, 'loading-placeholder': !isVideoLoaded }"
+        <div ref="videoPlayerRef" class="video-player hoverable"
+            :class="{ notplaying: !isPlaying, 'loading-placeholder': !isVideoLoaded }"
             @mousemove="showControlsTemporarily" @touchstart="showControlsTemporarily">
             <video ref="video" :src="video" @ended="handleVideoEnded" @loadeddata="handleVideoLoaded"
                 @loadedmetadata="handleMetadataLoaded" @timeupdate="handleTimeUpdate"
@@ -57,7 +58,8 @@ export default {
             isHoveringControls: false,
             isMobileInteractionMode: false,
             hoverMediaQuery: null,
-            showControls: true
+            showControls: true,
+            boundClickOutside: null
         };
     },
     emits: ['toggle-overlay'],
@@ -182,18 +184,31 @@ export default {
             if (this.isMobileInteractionMode || (this.isPlaying && !this.isHoveringControls)) {
                 this.hideControlsAfterDelay();
             }
+        },
+        handleClickOutside(event) {
+            if (this.$refs.videoPlayerRef && !this.$refs.videoPlayerRef.contains(event.target)) {
+                this.showControls = false;
+                this.clearHideControlsTimer();
+            }
         }
     },
     mounted() {
         this.hoverMediaQuery = window.matchMedia('(hover: none), (pointer: coarse)');
         this.updateInteractionMode();
         this.hoverMediaQuery.addEventListener('change', this.updateInteractionMode);
+
+        this.boundClickOutside = this.handleClickOutside.bind(this);
+        document.addEventListener('click', this.boundClickOutside);
     },
     beforeUnmount() {
         if (this.hoverMediaQuery) {
             this.hoverMediaQuery.removeEventListener('change', this.updateInteractionMode);
         }
         this.clearHideControlsTimer();
+
+        if (this.boundClickOutside) {
+            document.removeEventListener('click', this.boundClickOutside);
+        }
     }
 };
 </script>

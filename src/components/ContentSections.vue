@@ -1,53 +1,61 @@
 <template>
-    <div v-for="(section, index) in sections" :key="index" class="section">
-        <p v-if="section.type === 'paragraph'" class="paragraph text" v-html="section.text"></p>
-        <h3 v-if="section.type === 'heading'" class="heading">{{ section.text }}</h3>
-        <h4 v-if="section.type === 'subheading'" class="subheading">{{ section.text }}</h4>
-        <div v-if="section.type === 'bullet'" class="bullet-container">
-            <font-awesome-icon icon="minus" class="bullet" />
-            <p v-html="section.text"></p>
-        </div>
-        <div v-if="section.type === 'iconed'" class="iconed-container">
-            <font-awesome-icon :icon="section.icon" fixed-width class="iconed" />
-            <p class="text" v-html="section.text"></p>
-        </div>
-        <div v-if="section.type === 'quoted'" class="quoted-container">
-            <div class="text quoted">
-                <font-awesome-icon icon="quote-left" class="quote-left" />
-                <span class="bottom-corner">
-                    <font-awesome-icon icon="quote-right" class="quote-right" />
-                </span>
+    <template v-for="(section, index) in sections" :key="index">
+        <div v-if="isSectionVisible(section)" class="section">
+            <p v-if="section.type === 'paragraph'" class="paragraph text" v-html="section.text"></p>
+            <h3 v-if="section.type === 'heading' && !section.collapsible" class="heading">{{ section.text }}</h3>
+            <h3 v-if="section.type === 'heading' && section.collapsible" class="heading collapsible hoverable"
+                @click="toggleGroup(section.group)">
+                <span>{{ section.text }}</span>
+                <font-awesome-icon icon="angle-up" class="arrow" :class="{ 'rotated': isGroupOpen(section.group) }" />
+            </h3>
+            <h4 v-if="section.type === 'subheading'" class="subheading">{{ section.text }}</h4>
+            <div v-if="section.type === 'bullet'" class="bullet-container">
+                <font-awesome-icon icon="minus" class="bullet" />
                 <p v-html="section.text"></p>
             </div>
+            <div v-if="section.type === 'iconed'" class="iconed-container">
+                <font-awesome-icon :icon="section.icon" fixed-width class="iconed" />
+                <p class="text" v-html="section.text"></p>
+            </div>
+            <div v-if="section.type === 'quoted'" class="quoted-container">
+                <div class="text quoted">
+                    <font-awesome-icon icon="quote-left" class="quote-left" />
+                    <span class="bottom-corner">
+                        <font-awesome-icon icon="quote-right" class="quote-right" />
+                    </span>
+                    <p v-html="section.text"></p>
+                </div>
+            </div>
+            <div v-if="section.type === 'buttons'" class="buttons">
+                <a v-for="button in section.buttons" :key="button.text" :href="button.action" class="button-container"
+                    :target="button.same ? '_self' : '_blank'">
+                    <button class="hoverable" :class="'button-' + button.color">
+                        {{ button.text }}
+                        <font-awesome-icon :icon="button.icon" />
+                    </button>
+                </a>
+            </div>
+            <div v-if="section.type === 'images'" class="images">
+                <ImageCarousel :images="section.images" :currentIndex="currentIndexes[index]"
+                    :isOverlayVisible="isOverlayVisible && overlayIndex === index"
+                    @toggle-overlay="toggleOverlay('images', index)" @next-slide="nextSlide(index)"
+                    @prev-slide="prevSlide(index)" />
+            </div>
+            <div v-if="section.type === 'video'" class="video">
+                <VideoPlayer :video="section.video" :isOverlayVisible="isOverlayVisible && overlayIndex === index"
+                    @toggle-overlay="toggleOverlay('video', index)" />
+            </div>
+            <div v-if="section.type === 'presentation'" class="presentation">
+                <PresentationPlayer :src="section.src" :title="section.title || 'PowerPoint Viewer'"
+                    :isOverlayVisible="isOverlayVisible && overlayIndex === index"
+                    @toggle-overlay="toggleOverlay('presentation', index)" />
+            </div>
         </div>
-        <div v-if="section.type === 'buttons'" class="buttons">
-            <a v-for="button in section.buttons" :key="button.text" :href="button.action" class="button-container"
-                :target="button.same ? '_self' : '_blank'">
-                <button class="hoverable" :class="'button-' + button.color">
-                    {{ button.text }}
-                    <font-awesome-icon :icon="button.icon" />
-                </button>
-            </a>
-        </div>
-        <div v-if="section.type === 'images'" class="images">
-            <ImageCarousel :images="section.images" :currentIndex="currentIndexes[index]"
-                :isOverlayVisible="isOverlayVisible && overlayIndex === index"
-                @toggle-overlay="toggleOverlay('images', index)" @next-slide="nextSlide(index)"
-                @prev-slide="prevSlide(index)" />
-        </div>
-        <div v-if="section.type === 'video'" class="video">
-            <VideoPlayer :video="section.video" :isOverlayVisible="isOverlayVisible && overlayIndex === index"
-                @toggle-overlay="toggleOverlay('video', index)" />
-        </div>
-        <div v-if="section.type === 'presentation'" class="presentation">
-            <PresentationPlayer :src="section.src" :title="section.title || 'PowerPoint Viewer'"
-                :isOverlayVisible="isOverlayVisible && overlayIndex === index"
-                @toggle-overlay="toggleOverlay('presentation', index)" />
-        </div>
-    </div>
+    </template>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import ImageCarousel from '@/components/ImageCarousel.vue'
 import PresentationPlayer from '@/components/PresentationPlayer.vue'
 import VideoPlayer from '@/components/VideoPlayer.vue'
@@ -72,6 +80,15 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['toggle-overlay', 'next-slide', 'prev-slide'])
+const openGroups = ref({})
+
+const isGroupOpen = (group) => Boolean(openGroups.value[group])
+
+const isSectionVisible = (section) => !section.group || section.collapsible || isGroupOpen(section.group)
+
+const toggleGroup = (group) => {
+    openGroups.value[group] = !isGroupOpen(group)
+}
 
 const toggleOverlay = (type, index) => {
     emit('toggle-overlay', type, index)
@@ -90,6 +107,40 @@ const prevSlide = (index) => {
 .heading {
     margin-bottom: 0.2rem;
 }
+
+.collapsible {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .arrow {
+        color: var(--deep);
+        font-size: 3rem;
+        transform: rotate(90deg);
+        transition: all 0.3s ease;
+    }
+
+    .arrow.rotated {
+        transform: rotate(180deg);
+    }
+}
+
+
+.collapsible:hover {
+    .arrow {
+        color: var(--sky);
+        transform: rotate(110deg);
+    }
+
+    .arrow.rotated {
+        transform: rotate(180deg);
+    }
+}
+
+
+
+
 
 .paragraph {
     margin-top: 0.5rem;
@@ -117,7 +168,7 @@ const prevSlide = (index) => {
 
 .bullet {
     margin: 0.15rem 0.5rem 0 1rem;
-    color: var(--aqua);
+    color: var(--white);
 }
 
 .iconed {

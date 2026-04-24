@@ -25,21 +25,39 @@
       </div>
     </div>
   </div>
+  <section v-if="featuredProjects.length" class="related-section">
+    <h3 class="related-title">{{ featuredTitle }}</h3>
+    <div class="related-grid">
+      <ProjectCard v-for="project in featuredProjects" :key="`featured-${project.id}`" :project="project" />
+    </div>
+  </section>
 </template>
 
 <script setup>
 import { ref, onMounted, computed, inject } from 'vue'
-import { aboutContent as enAbout } from '@/data/projects.js'
-import { ueberContent as deAbout } from '@/data/projekte.js'
+import { aboutContent as enAbout, projects as enProjects } from '@/data/projects.js'
+import { ueberContent as deAbout, projekte as deProjects } from '@/data/projekte.js'
 import ContentSections from '@/components/ContentSections.vue'
 import LinksDownloads from '@/components/LinksDownloads.vue'
+import ProjectCard from '@/components/ProjectCard.vue'
 import FullOverlay from '@/components/FullOverlay.vue'
 import SpotifyStatus from '@/components/SpotifyStatus.vue'
 import { useAchievements } from '@/composables/useAchievements.js'
 
 const currentLanguage = inject('currentLanguage')
 const aboutContent = computed(() => currentLanguage.value === 'en' ? enAbout : deAbout)
+const projectCatalog = computed(() => currentLanguage.value === 'en' ? enProjects : deProjects)
 const { registerTokyoReveal } = useAchievements()
+
+const featuredProjectIds = ['sputify', 'bachelor', 'had']
+
+const featuredProjects = computed(() => {
+  return featuredProjectIds
+    .map((projectId) => projectCatalog.value.find((project) => project.id === projectId))
+    .filter(Boolean)
+})
+
+const featuredTitle = computed(() => currentLanguage.value === 'en' ? 'Featured Projects' : 'Ausgewählte Projekte')
 
 const isOverlayVisible = ref(false)
 const overlayType = ref('')
@@ -207,6 +225,21 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.related-section {
+  width: 80%;
+  margin: 4rem 0 4rem 10%;
+}
+
+.related-title {
+  margin-bottom: 1rem;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
 #contact {
   position: relative;
   transform: translate(0, 6rem);
@@ -448,6 +481,19 @@ onMounted(() => {
 
   .subtitle {
     margin-bottom: 1.5rem;
+  }
+
+  .related-section {
+    width: 84vw;
+    margin-left: 8%;
+  }
+
+  .related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .related-grid> :nth-child(n + 3) {
+    display: none;
   }
 }
 

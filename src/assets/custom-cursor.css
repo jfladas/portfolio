@@ -6,7 +6,7 @@
     box-shadow: 0 0 1rem 0.5rem rgba(var(--deep-rgb), 0.1);
     border-radius: 50%;
     pointer-events: none;
-    transform: translate(-50%, -50%);
+    transform: translate(-45%, -35%);
     z-index: 100;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -28,7 +28,7 @@
 }
 
 .custom-cursor.hover {
-    transform: translate(-50%, -50%) scale(1.5);
+    transform: translate(-45%, -25%) scale(1.5);
     box-shadow: 0 0 1rem 0.5rem rgba(var(--navy-rgb), 0.5);
 }
 
@@ -72,6 +72,6 @@
 @media (max-width: 600px) {
 
     .custom-cursor.hover {
-        transform: translate(-50%, -50%) scale(1.2);
+        transform: translate(-45%, -25%) scale(1.2);
     }
 }

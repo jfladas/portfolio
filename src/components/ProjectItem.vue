@@ -1,7 +1,7 @@
 <template>
-    <div ref="projectItem" class="project-item hoverable">
-        <div :id="project.id" class="anchor"></div>
-        <router-link :to="`/projects/${project.id}`">
+    <router-link :to="`/projects/${project.id}`">
+        <div ref="projectItem" class="project-item hoverable">
+            <div :id="project.id" class="anchor"></div>
             <h2>{{ project.name }}</h2>
             <p>{{ project.description }}</p>
             <p v-for="c in project.context.lines">{{ c }}</p>
@@ -10,8 +10,8 @@
                     <font-awesome-icon :icon="categories[category]" />
                 </div>
             </div>
-        </router-link>
-    </div>
+        </div>
+    </router-link>
 </template>
 
 <script setup>

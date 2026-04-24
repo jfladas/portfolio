@@ -19,12 +19,12 @@ const paFiles = import.meta.glob('../projects/pa/*', { eager: true });
 const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 
 export const projekte = [
-    // my self companion
+    // bachelor
     {
         id: 'bachelor',
         cover: bachelorFiles['../projects/bachelor/cover.jpg']?.default,
-        name: 'my self companion',
-        description: 'bachelorprojekt zu virtuellen companions',
+        name: 'bachelor',
+        description: 'bachelorprojekt zu desktop-companions',
         context: {
             lines: [
                 '2026 @ HSLU, Rotkreuz',
@@ -44,7 +44,7 @@ export const projekte = [
         sections: [
             {
                 type: 'quoted',
-                text: `My Self Companion verbindet eine abgeschlossene schriftliche Thesis mit einem praktischen Bachelorprojekt. Die Thesis legt die theoretische Grundlage zu virtuellen Companions, Projektion und ruhiger Interaktion, während das Projekt diese Erkenntnisse in einen ruhigen Desktop-Prototyp für den digitalen Alltag übersetzt.`
+                text: `Das Bachelorprojekt verbindet eine abgeschlossene schriftliche Thesis mit einem praktischen Bachelorprojekt. Die Thesis legt die theoretische Grundlage zu virtuellen Companions, Projektion und ruhiger Interaktion, während das Projekt diese Erkenntnisse in einen ruhigen Desktop-Prototyp für den digitalen Alltag übersetzt.`
             },
             {
                 type: 'heading',
@@ -83,46 +83,43 @@ export const projekte = [
             },
             {
                 type: 'heading',
-                text: 'Kurzplan praktische Umsetzung'
+                text: 'Projektplan'
             },
             {
-                type: 'iconed',
-                text: 'Companion-Konzept',
-                icon: 'circle-user'
+                type: 'subheading',
+                text: 'Konzept',
             },
             {
                 type: 'bullet',
-                text: 'Ruhiger Desktop-Begleiter aus kurzer Selbstreflexion im Onboarding'
+                text: 'Blob gestaltet durch kurze Selbstreflexion im Onboarding'
             },
             {
                 type: 'bullet',
                 text: 'Symbolisches Gegenüber, dauerhaft präsent aber nicht aufdringlich'
             },
             {
-                type: 'iconed',
+                type: 'subheading',
                 text: 'Interaktion im Alltag',
-                icon: 'desktop'
             },
             {
                 type: 'bullet',
-                text: 'Dezente Präsenz am unteren Bildschirmrand mit Reaktionen auf Anwesenheit und Zeit'
+                text: 'Dezente Präsenz am unteren Bildschirmrand mit Reaktionen auf Anwesenheit und Interaktion'
             },
             {
                 type: 'bullet',
-                text: 'Freiwillige Mikrointeraktionen wie antippen, streicheln, aufheben und loslassen'
+                text: 'Mikrointeraktionen: antippen, streicheln, aufheben, loslassen'
             },
             {
                 type: 'bullet',
                 text: 'Reflexionsmomente nur auf Abruf, zum Beispiel als Mini-Journal'
             },
             {
-                type: 'iconed',
-                text: 'Rahmen und Umsetzung',
-                icon: 'code'
+                type: 'subheading',
+                text: 'Implementierung',
             },
             {
                 type: 'bullet',
-                text: 'Lokaler Offline-Prototyp einer Desktop-App mit Electron und Vue, basierend auf der abgeschlossenen Thesis'
+                text: 'Lokaler Offline-Desktop-Prototyp mit Electron und Vue, basierend auf der abgeschlossenen Thesis'
             },
             {
                 type: 'bullet',
@@ -2412,7 +2409,7 @@ export const projekte = [
         id: '4g',
         cover: europeFiles['../projects/4g/cover.jpg']?.default,
         name: 'connected europe',
-        description: 'datenvisualisierungsplakat zur 4g-netzwerkerweiterung',
+        description: 'plakat zur datenvisualisierung von 4g-netz-erweiterung',
         context: {
             lines: [
                 '2024 @ HSLU, Rotkreuz',
@@ -3945,55 +3942,68 @@ export const ueberContent = {
         },
         {
             type: 'heading',
-            text: 'Mehr über mich...'
+            text: 'Mehr über mich...',
+            collapsible: true,
+            group: 'more-about-me'
         },
         {
             type: 'subheading',
-            text: 'Musik'
+            text: 'Musik',
+            group: 'more-about-me'
         },
         {
             type: 'paragraph',
-            text: `Neben meiner Leidenschaft für Technologie und Design spielt Musik eine grosse Rolle in meinem Leben. Ich spiele Saxophon im lokalen '<a href="https://www.musikvereinbuochs.ch/" class="bold hoverable" target="_blank">Musikverein Buochs</a>', was eine tolle Möglichkeit ist, mit anderen in Kontakt zu treten und die Freude am Musizieren zu erleben. Meine Liebe zur Musik hört hier nicht auf. Ich bin auch ein Fan von K-Pop und besuche gerne Konzerte, wann immer ich kann.`
+            text: `Neben meiner Leidenschaft für Technologie und Design spielt Musik eine grosse Rolle in meinem Leben. Ich spiele Saxophon im lokalen <a href="https://www.musikvereinbuochs.ch/" class="bold hoverable" target="_blank">Musikverein Buochs</a>, was eine tolle Möglichkeit ist, mit anderen in Kontakt zu treten und die Freude am Musizieren zu erleben. Meine Liebe zur Musik hört hier nicht auf. Ich bin auch ein Fan von K-Pop und besuche gerne Konzerte, wann immer ich kann.`,
+            group: 'more-about-me'
         },
         {
             type: 'paragraph',
-            text: 'Lieblings-K-Pop-Konzerte, die ich besucht habe:'
+            text: 'Lieblings-K-Pop-Konzerte, die ich besucht habe:',
+            group: 'more-about-me'
         },
         {
             type: 'iconed',
             text: 'Billlie @ München 2024',
-            icon: 'spa'
+            icon: 'spa',
+            group: 'more-about-me'
         },
         {
             type: 'iconed',
             text: 'aespa @ Paris 2023',
-            icon: 'fire-flame-curved'
+            icon: 'fire-flame-curved',
+            group: 'more-about-me'
         },
         {
             type: 'iconed',
             text: 'NCT @ Incheon 2023',
-            icon: 'globe'
+            icon: 'globe',
+            group: 'more-about-me'
         },
         {
             type: 'iconed',
             text: 'Music Bank @ Paris 2023',
-            icon: 'music'
+            icon: 'music',
+            group: 'more-about-me'
         },
         {
             type: 'iconed',
             text: 'MCND @ Lausanne 2022',
-            icon: 'bolt'
+            icon: 'bolt',
+            group: 'more-about-me'
         },
         {
             type: 'subheading',
-            text: 'Japan'
+            text: 'Japan',
+            group: 'more-about-me'
         },
         {
             type: 'paragraph',
-            text: `Japanisch zu lernen ist eine weitere Beschäftigung, die mein Interesse an der ostasiatischen Kultur vertieft hat. Durch Selbststudium, Schulkurse und Besuche in verschiedenen Teilen Japans habe ich eine grosse Wertschätzung für seine vielen Facetten entwickelt, und es ist zu meinem Lieblingsreiseziel geworden.`
+            text: `Japanisch zu lernen ist eine weitere Beschäftigung, die mein Interesse an der ostasiatischen Kultur vertieft hat. Durch Selbststudium, Schulkurse und Besuche in verschiedenen Teilen Japans habe ich eine grosse Wertschätzung für seine vielen Facetten entwickelt, und es ist zu meinem Lieblingsreiseziel geworden.`,
+            group: 'more-about-me'
         },
         {
             type: 'images',
+            group: 'more-about-me',
             images: [
                 {
                     src: aboutFiles['../assets/about/jpn0.jpg'].default,

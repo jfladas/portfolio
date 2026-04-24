@@ -5,7 +5,7 @@
     </h1>
     <div class="toggle-bar hoverable" :class="{ expanded: filterMode }">
       <div class="filter-container">
-        <div class="toggle-container">
+        <div class="toggle-container tooltip" tooltip="filter">
           <p class="filter toggle" @click="toggleFilter('all')" :class="{ selected: allSelected && !filterMode }">
             {{ currentLanguage === 'en' ? 'all' : 'alle' }}
           </p>
