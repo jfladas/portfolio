@@ -3916,7 +3916,7 @@ export const ueberContent = {
         },
         {
             type: 'quoted',
-            text: `Ich studiere derzeit <a href="https://www.hslu.ch/en/lucerne-school-of-information-technology/degree-programs/bachelor/digital-ideation/" class="bold hoverable" target="_blank">Digital Ideation</a> an der Hochschule Luzern, ein interdisziplinäres Programm, das Design und Informatik kombiniert, um digitale Lösungen zu schaffen. Ich liebe es, alle Möglichkeiten zu erkunden, wie Technologie und Kreativität kombiniert werden können. Mein Fokus liegt hauptsächlich auf der Webentwicklung, aber andere Aspekte, die ich mit meinem Studium erkunden kann, faszinieren mich ebenfalls, von Game Design & Entwicklung bis hin zu digitaler Kunst. Nachdem ich meinen Bachelor of Science erworben habe, möchte ich im Bereich Frontend-Webentwicklung arbeiten und einzigartige und interaktive Benutzererlebnisse schaffen. Aber wer weiss, was die Zukunft bringt?`
+            text: `Ich studiere derzeit <a href="https://www.hslu.ch/en/lucerne-school-of-information-technology/degree-programs/bachelor/digital-ideation/" class="bold hoverable" target="_blank">Digital Ideation</a> an der Hochschule Luzern, ein interdisziplinäres Studium, das Design und Informatik vereint, von Game Design & Development bis hin zu Media Arts. Mein Fokus liegt hauptsächlich in der Webentwicklung, wobei ich es liebe zu erkunden, wo Technologie und Kreativität aufeinandertreffen. Nach meinem Bachelor of Science möchte ich im Bereich Frontend-Entwicklung arbeiten und einzigartige, interaktive Nutzererlebnisse schaffen. Aber wer weiss, was die Zukunft bringt?`
         },
         {
             type: 'heading',

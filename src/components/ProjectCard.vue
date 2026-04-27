@@ -57,7 +57,8 @@ const props = defineProps({
         font-weight: 800;
         font-size: 1.8rem;
         line-height: 1;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0;
+        padding-bottom: 0.25rem;
         color: var(--navy);
         transition: all 0.5s;
     }
