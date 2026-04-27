@@ -138,10 +138,6 @@ const prevSlide = (index) => {
     }
 }
 
-
-
-
-
 .paragraph {
     margin-top: 0.5rem;
 }
@@ -177,7 +173,7 @@ const prevSlide = (index) => {
 
 .quoted-container {
     display: flex;
-    margin-top: 0.5rem;
+    margin: 0.5rem 0 0.5rem 0;
 }
 
 .quoted {
@@ -265,6 +261,11 @@ const prevSlide = (index) => {
         margin-right: 0;
     }
 
+    .quote-left,
+    .quote-right {
+        font-size: 2rem;
+    }
+
     .presentation {
         width: calc(100% + 3rem);
     }
@@ -272,6 +273,30 @@ const prevSlide = (index) => {
     .presentation:has(.presentation-player.overlayed),
     .presentation:has(.pdf-image-frame) {
         width: 100%;
+    }
+
+    .collapsible {
+        gap: 0.5rem;
+
+        .arrow {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+
+    .collapsible:hover {
+        .arrow {
+            color: var(--deep);
+            transform: rotate(90deg);
+        }
+    }
+
+    .collapsible:active {
+        .arrow {
+            color: var(--sky);
+        }
     }
 }
 </style>

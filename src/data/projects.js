@@ -3941,7 +3941,7 @@ export const aboutContent = {
         },
         {
             type: 'quoted',
-            text: `I'm currently studying <a href="https://www.hslu.ch/en/lucerne-school-of-information-technology/degree-programs/bachelor/digital-ideation/" class="bold hoverable" target="_blank">Digital Ideation</a> at the Lucerne University of Applied Sciences and Arts, an interdisciplinary program combining design and computer science to create digital solutions. I love exploring all of the possibilities of how technology and creativity can be combined. My focus mainly lies in web development, but other aspects I can explore with my studies also intrigue me, ranging from game design & development to digital art. After I've attained my bachelor of science, I aim to work in the field of frontend web development, creating unique and interactive user experiences. But who knows what the future may hold?`
+            text: `I'm currently studying <a href="https://www.hslu.ch/en/lucerne-school-of-information-technology/degree-programs/bachelor/digital-ideation/" class="bold hoverable" target="_blank">Digital Ideation</a> at the Lucerne University of Applied Sciences and Arts, an interdisciplinary program combining design and computer science, ranging from game design & development to media arts. My focus mainly lies in web development, though I love exploring wherever technology and creativity intersect. After attaining my bachelor of science, I aim to work in frontend development, creating unique and interactive user experiences. But who knows what the future may hold?`
         },
         {
             type: 'heading',
