@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "SNEAKERS",
-        "artist": "ITZY",
-        "link": "https://open.spotify.com/track/2WoluqyWzsgRmFCeHeGlnm",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273e61bca92e4a64e50ee44a009"
+        "name": "WDA (Whole Different Animal) (feat. G-DRAGON)",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/59QIYdXAL9XeNtM0j8vN0k",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736d0509aaf81419d11e269096"
     }
 }
