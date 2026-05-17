@@ -42,7 +42,9 @@ const trackName = ref('')
 const artistName = ref('')
 const trackLink = ref('')
 const albumCover = ref('')
-const spotifyDataUrl = 'https://raw.githubusercontent.com/jfladas/portfolio/main/public/spotify.json'
+const spotifyDataUrl =
+    import.meta.env.VITE_SPOTIFY_DATA_URL ??
+    'https://raw.githubusercontent.com/jfladas/portfolio/main/public/spotify.json'
 
 const applySpotifyData = (data) => {
     const item = data?.item ?? {}
@@ -61,6 +63,7 @@ const loadSpotifyData = async () => {
     try {
         let response = await fetch(spotifyDataUrl + '?t=' + Date.now(), { cache: 'no-store' })
         if (!response.ok) {
+            console.warn('Primary Spotify data fetch failed, using local fallback.')
             response = await fetch('./spotify.json?t=' + Date.now(), { cache: 'no-store' })
         }
 
