@@ -42,6 +42,7 @@ const trackName = ref('')
 const artistName = ref('')
 const trackLink = ref('')
 const albumCover = ref('')
+const spotifyDataUrl = 'https://raw.githubusercontent.com/jfladas/portfolio/main/public/spotify.json'
 
 const applySpotifyData = (data) => {
     const item = data?.item ?? {}
@@ -58,7 +59,10 @@ const loadSpotifyData = async () => {
     error.value = false
 
     try {
-        const response = await fetch('./spotify.json?t=' + Date.now())
+        let response = await fetch(spotifyDataUrl + '?t=' + Date.now(), { cache: 'no-store' })
+        if (!response.ok) {
+            response = await fetch('./spotify.json?t=' + Date.now(), { cache: 'no-store' })
+        }
 
         if (!response.ok) {
             throw new Error('Spotify response was not ok')
