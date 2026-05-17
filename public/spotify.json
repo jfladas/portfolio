@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Take Yourself Home",
-        "artist": "Troye Sivan",
-        "link": "https://open.spotify.com/track/21063p4OKSg1gQOx4Fzv77",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2731121a528557155240feb9273"
+        "name": "Beautiful Mess",
+        "artist": "Kristian Kostov",
+        "link": "https://open.spotify.com/track/5YCqzqb6yN6TsMOHb4FSVw",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ad2bd87b81016db8d546c02d"
     }
 }
