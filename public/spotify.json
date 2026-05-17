@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "SOUPASTA",
-        "artist": "Billlie",
-        "link": "https://open.spotify.com/track/3ILeLEGmBg8gDzw9UQwVP9",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ec9ffda683b158a31a83159a"
+        "name": "TA TA",
+        "artist": "KIIRAS",
+        "link": "https://open.spotify.com/track/6pW5jh7hSuv4rNdmmeovmp",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273aee83cc44c4470497ab8d5ac"
     }
 }
