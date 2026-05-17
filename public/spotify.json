@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "No data available",
-        "artist": "Spotify",
-        "link": "https://open.spotify.com",
-        "album_art": ""
+        "name": "Bangaranga - Eurovision",
+        "artist": "DARA",
+        "link": "https://open.spotify.com/track/3OPpCynaIrfUyBIBYRYIvC",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27349beddcf89922f18a4c47e88"
     }
 }
