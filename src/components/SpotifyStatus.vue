@@ -52,6 +52,7 @@ const buildCacheBustedUrl = (url) => {
         finalUrl.searchParams.set('t', Date.now().toString())
         return finalUrl.toString()
     } catch {
+        console.warn(`Unable to build URL via URL API for "${url}", using string fallback.`)
         const separator = url.includes('?') ? '&' : '?'
         return `${url}${separator}t=${Date.now()}`
     }
