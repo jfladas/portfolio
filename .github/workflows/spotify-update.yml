@@ -3,10 +3,8 @@ name: Build and Deploy Portfolio
 on:
   push:
     branches: [main]
-  schedule:
-    - cron: "0 0 * * *"
-  repository_dispatch:
-    types: [update_spotify]
+    paths-ignore:
+      - "public/spotify.json"
   workflow_dispatch:
 
 permissions:
@@ -45,15 +43,6 @@ jobs:
 
       - name: Build site
         run: npm run build
-
-      - name: Fetch Spotify data into build output
-        env:
-          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
-          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
-          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
-        run: |
-          pip install requests
-          python fetch_spotify.py dist/spotify.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
