@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "WDA (Whole Different Animal) (feat. G-DRAGON)",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/59QIYdXAL9XeNtM0j8vN0k",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736d0509aaf81419d11e269096"
+        "name": "LOUD",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/5rGrtds032AS35wDDyTNN4",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273d179b01c0b9baac10170d1ad"
     }
 }
