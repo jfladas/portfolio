@@ -42,6 +42,21 @@ const trackName = ref('')
 const artistName = ref('')
 const trackLink = ref('')
 const albumCover = ref('')
+const spotifyDataUrl =
+    import.meta.env.VITE_SPOTIFY_DATA_URL ??
+    'https://raw.githubusercontent.com/jfladas/portfolio/main/public/spotify.json'
+
+const buildCacheBustedUrl = (url) => {
+    try {
+        const finalUrl = new URL(url, window.location.href)
+        finalUrl.searchParams.set('t', Date.now().toString())
+        return finalUrl.toString()
+    } catch {
+        console.warn(`Unable to build URL via URL API for "${url}", using string fallback.`)
+        const separator = url.includes('?') ? '&' : '?'
+        return `${url}${separator}t=${Date.now()}`
+    }
+}
 
 const applySpotifyData = (data) => {
     const item = data?.item ?? {}
@@ -58,7 +73,13 @@ const loadSpotifyData = async () => {
     error.value = false
 
     try {
-        const response = await fetch('./spotify.json?t=' + Date.now())
+        let response = await fetch(buildCacheBustedUrl(spotifyDataUrl), { cache: 'no-store' })
+        if (!response.ok) {
+            console.warn(
+                `Primary Spotify data fetch failed (${response.status} ${response.statusText}), using local fallback.`
+            )
+            response = await fetch(buildCacheBustedUrl('./spotify.json'), { cache: 'no-store' })
+        }
 
         if (!response.ok) {
             throw new Error('Spotify response was not ok')
