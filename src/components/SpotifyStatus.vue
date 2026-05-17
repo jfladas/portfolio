@@ -47,9 +47,14 @@ const spotifyDataUrl =
     'https://raw.githubusercontent.com/jfladas/portfolio/main/public/spotify.json'
 
 const buildCacheBustedUrl = (url) => {
-    const finalUrl = new URL(url, window.location.href)
-    finalUrl.searchParams.set('t', Date.now().toString())
-    return finalUrl.toString()
+    try {
+        const finalUrl = new URL(url, window.location.href)
+        finalUrl.searchParams.set('t', Date.now().toString())
+        return finalUrl.toString()
+    } catch {
+        const separator = url.includes('?') ? '&' : '?'
+        return `${url}${separator}t=${Date.now()}`
+    }
 }
 
 const applySpotifyData = (data) => {
@@ -69,7 +74,9 @@ const loadSpotifyData = async () => {
     try {
         let response = await fetch(buildCacheBustedUrl(spotifyDataUrl), { cache: 'no-store' })
         if (!response.ok) {
-            console.warn('Primary Spotify data fetch failed, using local fallback.')
+            console.warn(
+                `Primary Spotify data fetch failed (${response.status} ${response.statusText}), using local fallback.`
+            )
             response = await fetch(buildCacheBustedUrl('./spotify.json'), { cache: 'no-store' })
         }
 
