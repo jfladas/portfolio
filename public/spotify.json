@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "LOUD",
+        "name": "Superior",
         "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/5rGrtds032AS35wDDyTNN4",
+        "link": "https://open.spotify.com/track/71OGZTOt5iS4G3jzBJCJwl",
         "album_art": "https://i.scdn.co/image/ab67616d0000b273d179b01c0b9baac10170d1ad"
     }
 }
