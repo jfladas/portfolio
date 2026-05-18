@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Andromeda",
-        "artist": "Elodie",
-        "link": "https://open.spotify.com/track/0enRz21WfeQKKV9StgrKv7",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273bad09f776b795f1adeac2744"
+        "name": "wish you were gay",
+        "artist": "Billie Eilish",
+        "link": "https://open.spotify.com/track/3Fj47GNK2kUF0uaEDgXLaD",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27350a3147b4edd7701a876c6ce"
     }
 }
