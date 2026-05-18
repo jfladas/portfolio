@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "ZARI",
-        "artist": "Marina Satti",
-        "link": "https://open.spotify.com/track/3wRgk5tGQzfNXtSawH8O3S",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733e02181cf7a28fdd9b175672"
+        "name": "TA TA",
+        "artist": "KIIRAS",
+        "link": "https://open.spotify.com/track/6pW5jh7hSuv4rNdmmeovmp",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273aee83cc44c4470497ab8d5ac"
     }
 }
