@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "\u50d5\u3092\u305d\u3093\u306a\u76ee\u3067\u898b\u306a\u3044\u3067",
-        "artist": "Kikuo",
-        "link": "https://open.spotify.com/track/2WVBoL2OaErNK6kEVK7Pjo",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2738fdb0c09eb333c24eb1bc53b"
+        "name": "Savage",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/3dbLT62Cvs46Ju7a8gpr36",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273d8cc2281fcd4519ca020926b"
     }
 }
