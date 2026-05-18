@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Heavy (feat. Kiiara)",
-        "artist": "Linkin Park",
-        "link": "https://open.spotify.com/track/104buTcnP2AsxqB7U1FIZ4",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273145e1cf12538f5666511237d"
+        "name": "Green Jewels",
+        "artist": "Kriill",
+        "link": "https://open.spotify.com/track/5J8RNKWk3CVyVixRF9dEah",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2734fcc6ee988a41794b69ee126"
     }
 }
