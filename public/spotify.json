@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Trick or Trick",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/3EI3OLBeM89B0o0UsIGCOx",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273593abd65e61c72196b887d71"
+        "name": "STARSTRUCK",
+        "artist": "FIFTY FIFTY",
+        "link": "https://open.spotify.com/track/25bsd4PQd6kFL0bE7xqY9M",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273cd70cb45fd957d32bdd4a9b8"
     }
 }
