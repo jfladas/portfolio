@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Bangaranga - Eurovision",
-        "artist": "DARA",
-        "link": "https://open.spotify.com/track/3OPpCynaIrfUyBIBYRYIvC",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27349beddcf89922f18a4c47e88"
+        "name": "ZARI",
+        "artist": "Marina Satti",
+        "link": "https://open.spotify.com/track/3wRgk5tGQzfNXtSawH8O3S",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733e02181cf7a28fdd9b175672"
     }
 }
