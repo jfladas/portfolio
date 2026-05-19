@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Fashion",
-        "artist": "IVE",
-        "link": "https://open.spotify.com/track/4VSNKUbDAxpuc5M3RDcr67",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273810cb03145da6ce2e68e8548"
+        "name": "Welcome To MY World (feat. n\u00e6vis)",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/6qVqWJxIpsabUKBILG7d6N",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27311019e3d50f5a6f7f9a56563"
     }
 }
