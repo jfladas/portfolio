@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Bangaranga - Eurovision",
-        "artist": "DARA",
-        "link": "https://open.spotify.com/track/3OPpCynaIrfUyBIBYRYIvC",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27349beddcf89922f18a4c47e88"
+        "name": "Doomsday Blue",
+        "artist": "Bambie Thug",
+        "link": "https://open.spotify.com/track/7qiEoVlFjb3KaytT2zgK1g",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273bcc43f5065cb2a61215063be"
     }
 }
