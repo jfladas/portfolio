@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Can\u2019t Slow Me, No",
-        "artist": "YEJI",
-        "link": "https://open.spotify.com/track/7JAEbB0pbKm0YBaMWQ0p0A",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27338d7a50443e2a6043d6da247"
+        "name": "Next Level",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/2zrhoHlFKxFTRF5aMyxMoQ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2737a393b04e8ced571618223e8"
     }
 }
