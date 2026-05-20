@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "we don't go to bed tonight",
-        "artist": "YOUNG POSSE",
-        "link": "https://open.spotify.com/track/4YYLKkdYHTiqHLuwLE2Bnl",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27332cd19b110e821eec74f43b8"
+        "name": "CROSSROADS",
+        "artist": "Daniel \u017di\u017eka",
+        "link": "https://open.spotify.com/track/3X6cfvG2xgtx47V03hKxjG",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2737d6cec0891182096b2898b79"
     }
 }
