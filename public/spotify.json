@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "I Miss Us",
-        "artist": "Joost",
-        "link": "https://open.spotify.com/track/4aM0qZIjcEHcHPHhJIlOlf",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273eb47a3b80a4b0ff619b9f230"
+        "name": "TA TA",
+        "artist": "KIIRAS",
+        "link": "https://open.spotify.com/track/6pW5jh7hSuv4rNdmmeovmp",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273aee83cc44c4470497ab8d5ac"
     }
 }
