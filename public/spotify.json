@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "ZAP",
-        "artist": "Billlie",
-        "link": "https://open.spotify.com/track/6PLgpJz0y2xY4Ooa9IhyUq",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ec9ffda683b158a31a83159a"
+        "name": "STARSTRUCK",
+        "artist": "FIFTY FIFTY",
+        "link": "https://open.spotify.com/track/25bsd4PQd6kFL0bE7xqY9M",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273cd70cb45fd957d32bdd4a9b8"
     }
 }
