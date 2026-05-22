@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "IDESERVEIT",
-        "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/2OjpCNosImtUYL3MysvPyN",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d179b01c0b9baac10170d1ad"
+        "name": "BOOMPALA",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/41d2WjuL0ikRKVjxmL7ZFz",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
     }
 }
