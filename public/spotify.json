@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "WAVE",
-        "artist": "IVE",
-        "link": "https://open.spotify.com/track/2FNgoGLkE4AAOtYkQfiVL4",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c94c7870566278801744f848"
+        "name": "Hit the Floor",
+        "artist": "tripleS",
+        "link": "https://open.spotify.com/track/5DQc9DipgMf8sTBmW20rb7",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27360fd0809b590077c0f78b474"
     }
 }
