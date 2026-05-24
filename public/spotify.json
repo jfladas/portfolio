@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "FREESTYLE",
-        "artist": "YOUNG POSSE",
-        "link": "https://open.spotify.com/track/2irWsdZn8v8NEzyr08JTTN",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736f8c557438166423240df9e5"
+        "name": "BOOMPALA",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/41d2WjuL0ikRKVjxmL7ZFz",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
     }
 }
