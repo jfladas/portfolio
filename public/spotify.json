@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Hello Future",
-        "artist": "NCT DREAM",
-        "link": "https://open.spotify.com/track/332GJ8ykVuEt3jOT1sy7j6",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273e6d118f2ad157bf0bbfb83cf"
+        "name": "Bad Girls R Us",
+        "artist": "ITZY",
+        "link": "https://open.spotify.com/track/0mfE7vrtspTMJHCpnrF6UC",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273dd734636e6d28fdc528a839d"
     }
 }
