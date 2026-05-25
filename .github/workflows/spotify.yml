@@ -40,3 +40,4 @@ jobs:
           file_pattern: public/spotify.json
           commit_user_name: GitHub Actions
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_author: "GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com>"
