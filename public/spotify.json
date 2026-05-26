@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Season of Memories",
-        "artist": "GFRIEND",
-        "link": "https://open.spotify.com/track/7LFwi4RolcCPnVEXXXVfQP",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2738a5fae9801e84acb6ec9ea4b"
+        "name": "Viva, Moldova!",
+        "artist": "Satoshi",
+        "link": "https://open.spotify.com/track/3slA6oMqkypLVUkEjk2xfQ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27341daa74e97821c3644687424"
     }
 }
