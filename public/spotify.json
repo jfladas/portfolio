@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Irony",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/49CeyCugXaZV05J82ejVQh",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
+        "name": "Bangaranga - Eurovision",
+        "artist": "DARA",
+        "link": "https://open.spotify.com/track/3OPpCynaIrfUyBIBYRYIvC",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27349beddcf89922f18a4c47e88"
     }
 }
