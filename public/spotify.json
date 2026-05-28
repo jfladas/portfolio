@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "FLU",
-        "artist": "IVE",
-        "link": "https://open.spotify.com/track/52fjXTCvI3aLFojY8GTO2u",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273487f90022857e485ecc685eb"
+        "name": "Supernova",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/5lKnZbdGCBViitE1Ce5TZh",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c60843bafc67821cff6df260"
     }
 }
