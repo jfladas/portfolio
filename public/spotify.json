@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Blue Dot",
-        "artist": "YOUNG POSSE",
-        "link": "https://open.spotify.com/track/3PcowXtn7A3Lh85fnJqkzg",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273a6959ac2facdaeca787faaf4"
+        "name": "GAJA - Eurovision Edit",
+        "artist": "Justyna Steczkowska",
+        "link": "https://open.spotify.com/track/0wNpA89DLOyKlZZVJ7wCac",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27332646a00473cab3213454c97"
     }
 }
