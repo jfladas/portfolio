@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "SNAP (feat. sokodomo)",
-        "artist": "MOON SUA X SIYOON",
-        "link": "https://open.spotify.com/track/0EemrhcBpCPYrtZo2D0Ucm",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273e1d14a75079787686ca537c4"
+        "name": "Bionic Power",
+        "artist": "tripleS",
+        "link": "https://open.spotify.com/track/3QdLoEk1mUKEvdJwsts53z",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27360fd0809b590077c0f78b474"
     }
 }
