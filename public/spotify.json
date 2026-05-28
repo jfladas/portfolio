@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Bionic Power",
-        "artist": "tripleS",
-        "link": "https://open.spotify.com/track/3QdLoEk1mUKEvdJwsts53z",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27360fd0809b590077c0f78b474"
+        "name": "SERVE",
+        "artist": "XLOV",
+        "link": "https://open.spotify.com/track/1hFQ6vxNUsrRBgwb8m5b6s",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27365858fb02c02b6865f589383"
     }
 }
