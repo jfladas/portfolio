@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "JUMP",
-        "artist": "BLACKPINK",
-        "link": "https://open.spotify.com/track/5H1sKFMzDeMtXwND3V6hRY",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736224d1236b0e0a0e1586efbb"
+        "name": "FLU",
+        "artist": "IVE",
+        "link": "https://open.spotify.com/track/52fjXTCvI3aLFojY8GTO2u",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273487f90022857e485ecc685eb"
     }
 }
