@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Hot Mess",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/1SaLI6o5GhfcaxPVAJoD3r",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2735bc3f3c1f88f0eb9a51fa795"
+        "name": "SERVE",
+        "artist": "XLOV",
+        "link": "https://open.spotify.com/track/1hFQ6vxNUsrRBgwb8m5b6s",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27365858fb02c02b6865f589383"
     }
 }
