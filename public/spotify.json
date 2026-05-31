@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Padam Padam",
-        "artist": "ifeye",
-        "link": "https://open.spotify.com/track/79QfS7yjsHIYJQ4JN5PQw1",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273a26f9da060dbad36aef77ffc"
+        "name": "SERVE",
+        "artist": "XLOV",
+        "link": "https://open.spotify.com/track/1hFQ6vxNUsrRBgwb8m5b6s",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27365858fb02c02b6865f589383"
     }
 }
