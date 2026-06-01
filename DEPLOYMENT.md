@@ -22,6 +22,7 @@ This project uses GitHub Actions for automation, with separate workflows for sit
 - To edit a large file later, change it as usual and stage it with `git add`; Git LFS will handle the storage behind the scenes.
 - If you introduce a new large asset type, update [`.gitattributes`](./.gitattributes) with a matching pattern, commit that change, and then re-add the affected files.
 - On other machines, install Git LFS before cloning or pulling so the pointer files are replaced with the real assets automatically.
+- GitHub Pages also needs the workflow to fetch LFS objects during checkout; otherwise the build can end up publishing pointer files instead of the real media.
 
 ---
 
