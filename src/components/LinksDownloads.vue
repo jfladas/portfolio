@@ -9,7 +9,8 @@
             <font-awesome-icon :icon="link.icon" fixed-width />
             {{ link.text }}
         </a>
-        <a v-for="download in downloads" :href="download.url" class="download hoverable" download :key="download.text">
+        <a v-for="download in downloads" :href="download.action || download.url" class="download hoverable" download
+            :key="download.text">
             <font-awesome-icon :icon="download.icon" fixed-width />
             {{ download.text }}
         </a>
