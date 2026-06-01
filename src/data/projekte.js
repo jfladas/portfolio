@@ -61,7 +61,7 @@ export const projekte = [
                     },
                     {
                         text: 'MacOS-App',
-                        url: bachelorFiles['../projects/bachelor/Amorphous Blob.dmg'].default,
+                        action: bachelorFiles['../projects/bachelor/Amorphous Blob.dmg'].default,
                         icon: 'fa-brands fa-apple',
                         color: 'secondary'
                     }
@@ -72,7 +72,7 @@ export const projekte = [
         downloads: [
             {
                 text: 'Windows App',
-                action: bachelorFiles['../projects/bachelor/Amorphous Blob Setup.exe'].default,
+                url: bachelorFiles['../projects/bachelor/Amorphous Blob Setup.exe'].default,
                 icon: 'fa-brands fa-windows'
             },
             {
