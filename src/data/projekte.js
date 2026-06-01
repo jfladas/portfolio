@@ -47,16 +47,20 @@ export const projekte = [
                 text: `Digitale Technologien begleiten unseren Alltag oft als Werkzeuge zur Produktivität, Optimierung oder Unterhaltung. Mit Amorphous Blob untersuche ich, wie eine digitale Präsenz stattdessen emotionale Reflexion und eine persönlichere Beziehung unterstützen kann. Mich interessiert, wie Projektion und Interaktion dazu führen können, dass Menschen durch den Blob einen neuen Zugang zu ihren eigenen Gedanken und Gefühlen entwickeln. Das Medium einer interaktiven digitalen Desktop-Präsenz ermöglicht dabei eine langfristige, persönliche Beziehung statt einer einmaligen Erfahrung.`
             },
             {
+                type: 'heading',
+                text: 'Lade die App herunter'
+            },
+            {
                 type: 'buttons',
                 buttons: [
                     {
-                        text: 'Windows App herunterladen',
+                        text: 'Windows-App',
                         action: bachelorFiles['../projects/bachelor/Amorphous Blob Setup.exe'].default,
                         icon: 'fa-brands fa-windows',
                         color: 'secondary'
                     },
                     {
-                        text: 'MacOS App herunterladen',
+                        text: 'MacOS-App',
                         url: bachelorFiles['../projects/bachelor/Amorphous Blob.dmg'].default,
                         icon: 'fa-brands fa-apple',
                         color: 'secondary'
