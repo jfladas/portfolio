@@ -23,8 +23,8 @@ export const projects = [
     {
         id: 'bachelor',
         cover: bachelorFiles['../projects/bachelor/cover.jpg']?.default,
-        name: 'bachelor',
-        description: 'bachelor project on desktop companions',
+        name: 'amorphous blob',
+        description: 'a desktop presence as self-reflection',
         context: {
             lines: [
                 '2026 @ HSLU, Rotkreuz',
@@ -44,98 +44,38 @@ export const projects = [
         sections: [
             {
                 type: 'quoted',
-                text: `The bachelor project combines a completed written thesis with a practical bachelor project. The thesis builds the theoretical foundation on virtual companions, projection, and calm interaction, while the project translates these insights into a calm desktop prototype that can be experienced in everyday digital life.`
+                text: `Digital technologies often accompany our daily lives as tools for productivity, optimization, or entertainment. With Amorphous Blob, I explore how a digital presence can instead support emotional reflection and foster a more personal relationship. I am interested in how projection and interaction can enable people to gain new access to their own thoughts and feelings through the Blob. The medium of an interactive digital desktop presence allows for a long-term, personal relationship rather than a one-time experience.`
             },
             {
-                type: 'heading',
-                text: 'Completed Written Thesis'
+                type: 'buttons',
+                buttons: [
+                    {
+                        text: 'Download Windows App',
+                        action: bachelorFiles['../projects/bachelor/Amorphous Blob Setup.exe'].default,
+                        icon: 'fa-brands fa-windows',
+                        color: 'secondary'
+                    },
+                    {
+                        text: 'Download MacOS App',
+                        url: bachelorFiles['../projects/bachelor/Amorphous Blob.dmg'].default,
+                        icon: 'fa-brands fa-apple',
+                        color: 'secondary'
+                    }
+                ]
             },
-            {
-                type: 'iconed',
-                text: 'Research Focus',
-                icon: 'book'
-            },
-            {
-                type: 'bullet',
-                text: 'Why companions feel social beyond pure function'
-            },
-            {
-                type: 'bullet',
-                text: 'Compact framework based on CASA, mind perception, parasociality, ambiguity, and calm interaction'
-            },
-            {
-                type: 'iconed',
-                text: 'Key Finding',
-                icon: 'lightbulb'
-            },
-            {
-                type: 'bullet',
-                text: 'Perceived sociality comes mainly from peripheral presence, non-instrumentality, and openness'
-            },
-            {
-                type: 'iconed',
-                text: 'Why This Matters',
-                icon: 'pen-nib'
-            },
-            {
-                type: 'bullet',
-                text: 'Theoretical base for future research and design experiments'
-            },
-            {
-                type: 'heading',
-                text: 'Practical Project Plan'
-            },
-            {
-                type: 'subheading',
-                text: 'Concept',
-            },
-            {
-                type: 'bullet',
-                text: 'Blob shaped by a short onboarding reflection'
-            },
-            {
-                type: 'bullet',
-                text: 'Symbolic counterpart for self-reference without intrusiveness'
-            },
-            {
-                type: 'subheading',
-                text: 'Everyday Interaction',
-            },
-            {
-                type: 'bullet',
-                text: 'Subtle bottom-screen presence reacting to time and interaction'
-            },
-            {
-                type: 'bullet',
-                text: 'Micro-interactions: tap, pet, pick up, release'
-            },
-            {
-                type: 'bullet',
-                text: 'Reflection only on demand, for example via a mini journal'
-            },
-            {
-                type: 'subheading',
-                text: 'Implementation',
-            },
-            {
-                type: 'bullet',
-                text: 'Local offline desktop prototype with Electron and Vue, grounded in the completed thesis'
-            },
-            {
-                type: 'bullet',
-                text: 'Iterative design process with regular user testing and feedback sessions'
-            },
-            {
-                type: 'heading',
-                text: 'Pitch Presentation'
-            },
-            {
-                type: 'presentation',
-                src: bachelorFiles['../projects/bachelor/PITCH.pdf'].default,
-            }
         ],
         links: [],
         downloads: [
+            {
+                text: 'Windows App',
+                action: bachelorFiles['../projects/bachelor/Amorphous Blob Setup.exe'].default,
+                icon: 'fa-brands fa-windows'
+            },
+            {
+                text: 'MacOS App',
+                url: bachelorFiles['../projects/bachelor/Amorphous Blob.dmg'].default,
+                icon: 'fa-brands fa-apple'
+            },
             {
                 text: 'Pitch_Presentation.ppsx',
                 url: bachelorFiles['../projects/bachelor/PITCH.ppsx'].default,
