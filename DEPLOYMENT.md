@@ -15,14 +15,14 @@ This project uses GitHub Actions for automation, with separate workflows for sit
 
 ## Git LFS for Large Assets
 
-- Large project assets are tracked with Git LFS through [`.gitattributes`](./.gitattributes).
-- Install Git LFS once on each machine, then run `git lfs install` inside this repository.
-- To add a new large file, add it normally with `git add`. Git will store it as an LFS pointer if its extension matches the rules in [`.gitattributes`](./.gitattributes).
-- To convert an existing committed file to LFS, run `git add --renormalize "path/to/file"` and commit the result.
-- To edit a large file later, change it as usual and stage it with `git add`; Git LFS will handle the storage behind the scenes.
-- If you introduce a new large asset type, update [`.gitattributes`](./.gitattributes) with a matching pattern, commit that change, and then re-add the affected files.
-- On other machines, install Git LFS before cloning or pulling so the pointer files are replaced with the real assets automatically.
-- GitHub Pages also needs the workflow to fetch LFS objects during checkout; otherwise the build can end up publishing pointer files instead of the real media.
+- For normal work, you can keep using GitHub Desktop the way you always do: edit files, commit, and push.
+- Git LFS is already configured in [`.gitattributes`](./.gitattributes), so large project assets are handled automatically when they match the tracked file types.
+- Install Git LFS once on each machine and run `git lfs install` once per local clone before you start working.
+- If you add a new large file with a tracked extension, just add and commit it normally in GitHub Desktop.
+- If you edit an existing large file, stage and commit it normally as well; Git LFS takes care of the storage.
+- If you introduce a new large file type, update [`.gitattributes`](./.gitattributes) first, then add or re-add the affected files.
+- On a new machine, install Git LFS before cloning or pulling so the real media is downloaded instead of only the pointer files.
+- GitHub Pages now checks out LFS objects during deployment, so the published site should load the real videos and downloads instead of broken placeholders.
 
 ---
 
