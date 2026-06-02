@@ -67,6 +67,11 @@ export const projects = [
                     }
                 ]
             },
+            {
+                type: 'iconed',
+                text: 'Applications are not yet digitally signed. You may see a security warning during download or installation. Select "Keep" or "Open anyway" to proceed.',
+                icon: 'triangle-exclamation'
+            }
         ],
         links: [],
         downloads: [
