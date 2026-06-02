@@ -67,6 +67,11 @@ export const projekte = [
                     }
                 ]
             },
+            {
+                type: 'iconed',
+                text: 'Die Anwendungen sind noch nicht digital signiert. Möglicherweise siehst du eine Sicherheitswarnung während des Downloads oder der Installation. Wähle "Behalten" oder "Trotzdem öffnen", um fortzufahren.',
+                icon: 'triangle-exclamation'
+            }
         ],
         links: [],
         downloads: [
