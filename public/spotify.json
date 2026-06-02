@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Superior",
+        "name": "Caution",
         "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/71OGZTOt5iS4G3jzBJCJwl",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d179b01c0b9baac10170d1ad"
+        "link": "https://open.spotify.com/track/6Rslq7198TpICmKw7sjwae",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f3d3f124c2b8bc2e993b6a84"
     }
 }
