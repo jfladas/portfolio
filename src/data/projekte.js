@@ -69,11 +69,17 @@ export const projekte = [
             },
             {
                 type: 'iconed',
-                text: 'Die Anwendungen sind noch nicht digital signiert. Möglicherweise siehst du eine Sicherheitswarnung während des Downloads oder der Installation. Wähle "Behalten" oder "Trotzdem öffnen", um fortzufahren.',
+                text: 'Die Anwendungen sind noch nicht digital signiert. Möglicherweise siehst du eine Sicherheitswarnung während des Downloads oder der Installation. Wähle "Behalten" oder "Trotzdem öffnen", um fortzufahren. Sicherheitsbericht auf VirusTotal ansehen: <a href="https://www.virustotal.com/gui/file/9b0ee4cb6b9d3b239312fd2c2664f29fb25562e6e8d200882d2a39421cce64c3/" class="bold hoverable" target="_blank">Windows</a> | <a href="https://www.virustotal.com/gui/file/5abe3511701801d408857abdecb543931245e8d597816e88276a2962cd64031c/" class="bold hoverable" target="_blank">MacOS</a>',
                 icon: 'triangle-exclamation'
             }
         ],
-        links: [],
+        links: [
+            {
+                text: 'GitHub Repository',
+                url: 'https://github.com/jfladas/bachelor',
+                icon: 'fa-brands fa-github-alt'
+            }
+        ],
         downloads: [
             {
                 text: 'Windows App',
