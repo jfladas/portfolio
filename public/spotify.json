@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "My System",
-        "artist": "FELICIA",
-        "link": "https://open.spotify.com/track/1XmLPHkuv95o5NUodggzfv",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2734b1a2f16f9054b4a9dd03b06"
+        "name": "Caution",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/6Rslq7198TpICmKw7sjwae",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f3d3f124c2b8bc2e993b6a84"
     }
 }
