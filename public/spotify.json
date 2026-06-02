@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "STARSTRUCK",
-        "artist": "FIFTY FIFTY",
-        "link": "https://open.spotify.com/track/25bsd4PQd6kFL0bE7xqY9M",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2734ce3402af0a5c764a9388262"
+        "name": "BOOMPALA",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/41d2WjuL0ikRKVjxmL7ZFz",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
     }
 }
