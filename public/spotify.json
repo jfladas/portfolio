@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "SERVE",
-        "artist": "XLOV",
-        "link": "https://open.spotify.com/track/1hFQ6vxNUsrRBgwb8m5b6s",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27365858fb02c02b6865f589383"
+        "name": "synth don't go to bed tonight",
+        "artist": "YOUNG POSSE",
+        "link": "https://open.spotify.com/track/2vcctoBky94O9xuLTkUAts",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27332cd19b110e821eec74f43b8"
     }
 }
