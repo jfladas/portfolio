@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "TA TA",
-        "artist": "KIIRAS",
-        "link": "https://open.spotify.com/track/6pW5jh7hSuv4rNdmmeovmp",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273aee83cc44c4470497ab8d5ac"
+        "name": "Slingshot (\uff1c\u2605)",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/3Z70RwHBC0wUyZbH1y1N63",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273e7129d59bb7af19ad185b40e"
     }
 }
