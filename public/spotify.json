@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "ATE!",
-        "artist": "GPP",
-        "link": "https://open.spotify.com/track/0HdBNESSes41LPcJ6gfuty",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273cd3ce5688576d45a71b7a1df"
+        "name": "Sad Girls Schemin'",
+        "artist": "tripleS",
+        "link": "https://open.spotify.com/track/77KugRyFiqskIEg4UsAFxy",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f05f47ba9a6bc689b0ac940f"
     }
 }
