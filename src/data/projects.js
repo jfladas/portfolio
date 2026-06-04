@@ -54,13 +54,13 @@ export const projects = [
                 type: 'buttons',
                 buttons: [
                     {
-                        text: 'Windows App',
-                        action: bachelorFiles['../projects/bachelor/Amorphous Blob Setup.exe'].default,
-                        icon: 'fa-brands fa-windows',
+                        text: 'Microsoft Store',
+                        action: 'https://apps.microsoft.com/detail/9NVDFMX3WKDR',
+                        icon: 'fa-brands fa-microsoft',
                         color: 'secondary'
                     },
                     {
-                        text: 'MacOS App',
+                        text: 'MacOS Download',
                         action: bachelorFiles['../projects/bachelor/Amorphous Blob.dmg'].default,
                         icon: 'fa-brands fa-apple',
                         color: 'secondary'
@@ -69,7 +69,7 @@ export const projects = [
             },
             {
                 type: 'iconed',
-                text: 'Applications are not yet digitally signed. You may see a security warning during download or installation. Select "Keep" or "Open anyway" to proceed. View Safety Report on VirusTotal: <a href="https://www.virustotal.com/gui/file/9b0ee4cb6b9d3b239312fd2c2664f29fb25562e6e8d200882d2a39421cce64c3/" class="bold hoverable" target="_blank">Windows</a> | <a href="https://www.virustotal.com/gui/file/5abe3511701801d408857abdecb543931245e8d597816e88276a2962cd64031c/" class="bold hoverable" target="_blank">MacOS</a>',
+                text: 'The macOS app is digitally signed and notarized by Apple. If your web browser flags the download as "uncommon," simply select "Keep" to proceed.',
                 icon: 'triangle-exclamation'
             }
         ],
@@ -78,14 +78,14 @@ export const projects = [
                 text: 'GitHub Repository',
                 url: 'https://github.com/jfladas/bachelor',
                 icon: 'fa-brands fa-github-alt'
-            }
+            },
+            {
+                text: 'Microsoft Store',
+                url: 'https://apps.microsoft.com/detail/9NVDFMX3WKDR',
+                icon: 'fa-brands fa-microsoft'
+            },
         ],
         downloads: [
-            {
-                text: 'Windows App',
-                url: bachelorFiles['../projects/bachelor/Amorphous Blob Setup.exe'].default,
-                icon: 'fa-brands fa-windows'
-            },
             {
                 text: 'MacOS App',
                 url: bachelorFiles['../projects/bachelor/Amorphous Blob.dmg'].default,
