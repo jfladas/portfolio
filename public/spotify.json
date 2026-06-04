@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Slingshot (\uff1c\u2605)",
-        "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/3Z70RwHBC0wUyZbH1y1N63",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273e7129d59bb7af19ad185b40e"
+        "name": "Bad Girls R Us",
+        "artist": "ITZY",
+        "link": "https://open.spotify.com/track/0mfE7vrtspTMJHCpnrF6UC",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273dd734636e6d28fdc528a839d"
     }
 }
