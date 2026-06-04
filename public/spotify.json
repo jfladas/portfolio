@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "GO",
-        "artist": "BLACKPINK",
-        "link": "https://open.spotify.com/track/3FZPp9lBUvhsxFxKJi3VkB",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d885644b72d5254dd621dc45"
+        "name": "CODE",
+        "artist": "EVERGLOW",
+        "link": "https://open.spotify.com/track/00bnKgDRZxvwpnWDJg7Por",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2739a66d67ab008d92b66e11f5b"
     }
 }
