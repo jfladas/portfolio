@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Best Believe",
-        "artist": "IRENE",
-        "link": "https://open.spotify.com/track/5nrkaejStsFr3bAyWuvdCj",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2739fb7d9bfb68f3c477ee547e1"
+        "name": "Caution",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/6Rslq7198TpICmKw7sjwae",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f3d3f124c2b8bc2e993b6a84"
     }
 }
