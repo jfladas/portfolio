@@ -60,7 +60,7 @@ export const projekte = [
                         color: 'secondary'
                     },
                     {
-                        text: 'MacOS-Download',
+                        text: 'MacOS (arm64)',
                         action: bachelorFiles['../projects/bachelor/Amorphous Blob.dmg'].default,
                         icon: 'fa-brands fa-apple',
                         color: 'secondary'
@@ -69,8 +69,8 @@ export const projekte = [
             },
             {
                 type: 'iconed',
-                text: 'Die macOS-App ist von Apple digital signiert und notarisiert. Wenn der Browser den Download als "unüblich" kennzeichnet, wähle einfach "Behalten", um fortzufahren.',
-                icon: 'triangle-exclamation'
+                text: 'Die macOS-App ist offiziell von Apple signiert und notariell beglaubigt (<a href="https://www.virustotal.com/gui/file/5c9e51ed96d06b687490a847378e8201b5f06a285446fbec87a08ad5447d8d28" class="bold hoverable" target="_blank">Sicherheits-Scan ansehen</a>). Windows-Version direkt über den Microsoft Store verfügbar.',
+                icon: 'certificate'
             }
         ],
         links: [
@@ -84,10 +84,15 @@ export const projekte = [
                 url: 'https://apps.microsoft.com/detail/9NVDFMX3WKDR',
                 icon: 'fa-brands fa-microsoft'
             },
+            {
+                text: 'Sicherheits-Scan macOS App',
+                url: 'https://www.virustotal.com/gui/file/5c9e51ed96d06b687490a847378e8201b5f06a285446fbec87a08ad5447d8d28',
+                icon: 'arrow-up-right-from-square'
+            }
         ],
         downloads: [
             {
-                text: 'MacOS App',
+                text: 'MacOS App (arm64)',
                 url: bachelorFiles['../projects/bachelor/Amorphous Blob.dmg'].default,
                 icon: 'fa-brands fa-apple'
             },
@@ -506,7 +511,7 @@ export const projekte = [
             {
                 text: 'Spiel starten',
                 url: 'https://webxr.jfladas.com/',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             },
         ],
         downloads: [
@@ -655,7 +660,7 @@ export const projekte = [
             {
                 text: 'Projekt-Website',
                 url: 'https://apo11o.jfladas.com',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             },
             {
                 text: 'GitHub-Repository',
@@ -665,12 +670,12 @@ export const projekte = [
             {
                 text: 'Miro Board',
                 url: 'https://miro.com/app/board/uXjVJA4NGBs=/?share_link_id=129935269332',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             },
             {
                 text: 'Raketen-Minigame',
                 url: 'https://apo11o.jfladas.com/play',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             }
         ],
         downloads: [
@@ -793,7 +798,7 @@ export const projekte = [
             {
                 text: 'Website',
                 url: 'https://colabor.jfladas.com/qr/',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             },
             {
                 text: 'GitHub-Repository',
@@ -803,7 +808,7 @@ export const projekte = [
             {
                 text: 'Dokumentations-Website',
                 url: 'https://colabor.jfladas.com/',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             }
         ],
         downloads: [
@@ -1103,7 +1108,7 @@ export const projekte = [
             {
                 text: 'Website',
                 url: 'https://jfladas.github.io/uxweb2/',
-                icon: 'external-link-alt',
+                icon: 'arrow-up-right-from-square',
             },
             {
                 text: 'GitHub Repository',
@@ -1118,7 +1123,7 @@ export const projekte = [
             {
                 text: 'Miro Board',
                 url: 'https://miro.com/app/board/uXjVIZlez1M=/',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             }
         ],
         downloads: [
@@ -2126,7 +2131,7 @@ export const projekte = [
             {
                 text: 'Demo spielen',
                 url: 'https://milo.jfladas.com',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             },
             {
                 text: 'Playthrough Video',
@@ -2338,7 +2343,7 @@ export const projekte = [
             {
                 text: 'Website',
                 url: 'https://matbf.jfladas.com',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             },
             {
                 text: 'GitHub Repository',
@@ -2348,7 +2353,7 @@ export const projekte = [
             {
                 text: 'Beautiful Mathematics',
                 url: 'https://learning.kahlina.ch/Beautiful%20Mathematics/beautiful_mathematics_start.html',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             }
         ],
         downloads: [
@@ -2536,12 +2541,12 @@ export const projekte = [
             {
                 text: 'UN SDG Ziel 9',
                 url: 'https://www.un.org/sustainabledevelopment/infrastructure-industrialization/',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             },
             {
                 text: 'UN SDG Datenportal',
                 url: 'https://unstats.un.org/sdgs/dataportal/database',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             }
         ],
         downloads: [
@@ -3253,7 +3258,7 @@ export const projekte = [
             {
                 text: 'Dev Blog Einträge',
                 url: 'https://blog.hslu.ch/games/?s=HDL+Week',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             }
         ],
         downloads: [
@@ -3465,7 +3470,7 @@ export const projekte = [
             {
                 text: 'The Rodina',
                 url: 'https://www.therodina.com/',
-                icon: 'external-link-alt'
+                icon: 'arrow-up-right-from-square'
             }
         ],
         downloads: [
