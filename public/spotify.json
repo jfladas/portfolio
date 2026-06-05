@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Best Believe",
-        "artist": "IRENE",
-        "link": "https://open.spotify.com/track/5nrkaejStsFr3bAyWuvdCj",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2739fb7d9bfb68f3c477ee547e1"
+        "name": "LEMONADE",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/2oR7jPvWPC08Su4KYmKR3O",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27353ca3f7b64b26001a22ea1c3"
     }
 }
