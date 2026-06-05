@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "BUBBLE GUM",
-        "artist": "Kep1er",
-        "link": "https://open.spotify.com/track/3IUtLSW5FWB0K4RdkvOamG",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f392d085bc632eba08dcfd5c"
+        "name": "Best Believe",
+        "artist": "IRENE",
+        "link": "https://open.spotify.com/track/5nrkaejStsFr3bAyWuvdCj",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2739fb7d9bfb68f3c477ee547e1"
     }
 }
