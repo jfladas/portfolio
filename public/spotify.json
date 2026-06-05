@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Typa Girl",
-        "artist": "BLACKPINK",
-        "link": "https://open.spotify.com/track/0L8LOav65XwLjCLS11gNPD",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2734aeaaeeb0755f1d8a8b51738"
+        "name": "Gold Snafu",
+        "artist": "Sticky Fingers",
+        "link": "https://open.spotify.com/track/01agKeBhkaFQuGJkVzdI2K",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733782d9f9058ef3cc963c09cc"
     }
 }
