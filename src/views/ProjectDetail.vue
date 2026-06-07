@@ -106,7 +106,7 @@ const renderedBannerItems = computed(() => [...cycleBannerItems.value, ...cycleB
 const projects = computed(() => currentLanguage.value === 'en' ? enProjects : deProjects)
 
 const project = computed(() => projects.value.find(p => p.id === props.id))
-const showWipBanner = computed(() => project.value && ['bachelor', 'had'].includes(project.value.id))
+const showWipBanner = computed(() => project.value && ['had'].includes(project.value.id))
 
 const relatedProjects = computed(() => {
     if (!project.value?.categories?.length) {
