@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "RUB-A-DUM",
-        "artist": "TRI.BE",
-        "link": "https://open.spotify.com/track/7rg2OLW7PSFa9OVjjZjYpy",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b490c4977331a3ace04905a3"
+        "name": "TTYL",
+        "artist": "Loossemble",
+        "link": "https://open.spotify.com/track/3AXryyinIY17WLddIcNjwT",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2731de8aec4cb631faf46291f75"
     }
 }
