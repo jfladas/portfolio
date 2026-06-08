@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Girls",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/2WTHLEVjfefbGoW7F3dXIg",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2731cbd221702dc7fe4efaf3b4f"
+        "name": "Caution",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/1eeDDhce3BKYs3McG0J58F",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273fa1840a87e51878c57b10f54"
     }
 }
