@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Whiplash",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/3coRPMnFg2dJcPu5RMloa9",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736eb604294f8f58c9078f58b1"
+        "name": "Gnarly",
+        "artist": "KATSEYE",
+        "link": "https://open.spotify.com/track/1j15Ar0qGDzIR0v3CQv3JL",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2732ca769bb73374b00d09a1c82"
     }
 }
