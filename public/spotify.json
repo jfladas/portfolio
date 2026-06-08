@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "UNCHILD",
-        "artist": "UNCHILD",
-        "link": "https://open.spotify.com/track/4wElGORjS56XtTvOJTPHVb",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2739b446ebaccf2cf94f4f91c35"
+        "name": "Next Level",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/2zrhoHlFKxFTRF5aMyxMoQ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2737a393b04e8ced571618223e8"
     }
 }
