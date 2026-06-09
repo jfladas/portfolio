@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "BOOMPALA",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/41d2WjuL0ikRKVjxmL7ZFz",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
+        "name": "Caution",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/6Rslq7198TpICmKw7sjwae",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f3d3f124c2b8bc2e993b6a84"
     }
 }
