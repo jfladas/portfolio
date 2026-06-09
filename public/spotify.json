@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Hit 'Em",
-        "artist": "MEOVV",
-        "link": "https://open.spotify.com/track/0oFpuvfX2uwcuIGTMJr2kt",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732d594ab39fc01f2200613aaf"
+        "name": "HALO",
+        "artist": "Yves",
+        "link": "https://open.spotify.com/track/4qtFYkuwV9q5O9wgcohRBu",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273d3c43f3e6be5a3a895deb800"
     }
 }
