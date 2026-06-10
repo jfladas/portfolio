@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Smart",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/4lR8sYGMGZPvthF2yUfo7T",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d17ea5fa9f991aa284c862a7"
+        "name": "BOX",
+        "artist": "NCT DREAM",
+        "link": "https://open.spotify.com/track/2IXewVHkYl24e54xaG8Cot",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27367c07f0becfe4e1f0163fa5c"
     }
 }
