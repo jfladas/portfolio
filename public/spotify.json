@@ -1,4 +1,9 @@
 {
     "status": "offline",
-    "item": null
+    "item": {
+        "name": "It's Me",
+        "artist": "ILLIT",
+        "link": "https://open.spotify.com/track/1D5L58KLBbceOynTP4DQnY",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27361eea484e31bca065904f1c6"
+    }
 }
