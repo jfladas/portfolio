@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "GOTCHA (Baddest Eros)",
-        "artist": "IVE",
-        "link": "https://open.spotify.com/track/2Y7IdLEr2vSFN3Fc1BBjwQ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27304886cfb3beb68b17e53f6e9"
+        "name": "Young, Dumb, Stupid",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/09BWOhiJUaYufcOiKCA973",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273afb50d799e2312fafbb8f63b"
     }
 }
