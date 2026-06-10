@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "melodrama",
-        "artist": "Angelina Mango",
-        "link": "https://open.spotify.com/track/5y7dpbKf0E3TW93k5w0JIs",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b788a5dfaca1a1e0da64ac82"
+        "name": "SERVE",
+        "artist": "XLOV",
+        "link": "https://open.spotify.com/track/1hFQ6vxNUsrRBgwb8m5b6s",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27365858fb02c02b6865f589383"
     }
 }
