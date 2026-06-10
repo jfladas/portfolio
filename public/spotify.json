@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "favOriTe",
-        "artist": "LOONA",
-        "link": "https://open.spotify.com/track/0YAHBaodj1YIoK0htcE6k6",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27316caa9e546f536939373fb26"
+        "name": "Model",
+        "artist": "Kyle Alessandro",
+        "link": "https://open.spotify.com/track/1xHWII0YRyiTAzWndE5TVB",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2737bfda0833267b42304e4bcce"
     }
 }
