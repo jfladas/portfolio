@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "TROUBLE",
-        "artist": "EVNNE",
-        "link": "https://open.spotify.com/track/6MSRu5wksC0Esn63XOgmI3",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273569689ef998a192f7809467a"
+        "name": "AiAiA",
+        "artist": "Ado",
+        "link": "https://open.spotify.com/track/10HeYTTDc5jxAnjRwWfwIe",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273320b5fefab404e4f8a0f12bf"
     }
 }
