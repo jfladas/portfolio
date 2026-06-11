@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Bionic Power",
-        "artist": "tripleS",
-        "link": "https://open.spotify.com/track/3QdLoEk1mUKEvdJwsts53z",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27360fd0809b590077c0f78b474"
+        "name": "Giddy Boy",
+        "artist": "VVUP",
+        "link": "https://open.spotify.com/track/1sxMmKPX8bEBP1aFXvKHSM",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c7a6f29fb360555e6107874e"
     }
 }
