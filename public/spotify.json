@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "BOOMPALA",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/41d2WjuL0ikRKVjxmL7ZFz",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
+        "name": "DALLA DALLA",
+        "artist": "ITZY",
+        "link": "https://open.spotify.com/track/38rUIlTX93Aoif3WcY1wv6",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27389a8fc641c956dc899c0b168"
     }
 }
