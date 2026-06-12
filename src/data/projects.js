@@ -85,6 +85,11 @@ export const projects = [
                 icon: 'fa-brands fa-microsoft'
             },
             {
+                text: 'HSLU DFK Catalog',
+                url: 'https://hub.hslu.ch/design-film-kunst/katalog/amorphous-blob/',
+                icon: 'arrow-up-right-from-square'
+            },
+            {
                 text: 'Security Scan macOS App',
                 url: 'https://www.virustotal.com/gui/file/5c9e51ed96d06b687490a847378e8201b5f06a285446fbec87a08ad5447d8d28',
                 icon: 'arrow-up-right-from-square'
