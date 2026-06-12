@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Rich Man",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/2lzb0dgTFAfrHfzlZA9Hxw",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f26e3693011a75c41a1d9697"
+        "name": "BANG BANG",
+        "artist": "IVE",
+        "link": "https://open.spotify.com/track/5VtwUrgljtOyBa773AGSr4",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ad80a9aabc17535c5eeb5317"
     }
 }
