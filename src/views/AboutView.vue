@@ -49,7 +49,7 @@ const aboutContent = computed(() => currentLanguage.value === 'en' ? enAbout : d
 const projectCatalog = computed(() => currentLanguage.value === 'en' ? enProjects : deProjects)
 const { registerTokyoReveal } = useAchievements()
 
-const featuredProjectIds = ['sputify', 'bachelor', 'had']
+const featuredProjectIds = ['bachelor', 'sputify', 'had']
 
 const featuredProjects = computed(() => {
   return featuredProjectIds
