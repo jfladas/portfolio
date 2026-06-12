@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "It's Me",
-        "artist": "ILLIT",
-        "link": "https://open.spotify.com/track/1D5L58KLBbceOynTP4DQnY",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27361eea484e31bca065904f1c6"
+        "name": "CELEBRATION",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/7Cy79KgYPsjOTX7VITI1U1",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2731360594b237bf3e322d5de58"
     }
 }
