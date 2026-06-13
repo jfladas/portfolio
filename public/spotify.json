@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "SERVE",
-        "artist": "XLOV",
-        "link": "https://open.spotify.com/track/1hFQ6vxNUsrRBgwb8m5b6s",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27365858fb02c02b6865f589383"
+        "name": "LA LA LA",
+        "artist": "Bling Bling",
+        "link": "https://open.spotify.com/track/7mfvuLdg6aaBBHB07VJc0V",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273780f71f827d28677a6551a36"
     }
 }
