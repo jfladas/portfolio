@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "REDRED",
-        "artist": "CORTIS",
-        "link": "https://open.spotify.com/track/2fCwv2ppU5nTRTckomIGsd",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27324ace1518851b27e9983f739"
+        "name": "SOMETHING AIN'T RIGHT",
+        "artist": "XG",
+        "link": "https://open.spotify.com/track/3RxL9p66oXKuSdXYeFcJeT",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273fcda1903d978d02fd3f5334b"
     }
 }
