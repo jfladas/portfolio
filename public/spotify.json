@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "BACK 2 BACK",
-        "artist": "XLOV",
-        "link": "https://open.spotify.com/track/4GP35o7G0ujqmUafY3xR5R",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27365858fb02c02b6865f589383"
+        "name": "ICONIC BY MISTAKE",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/6fl4Gu0lJm5hc8FM5JzCZD",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27355886e2f0784a2b7b62b7fe7"
     }
 }
