@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Gladiator",
-        "artist": "Jann",
-        "link": "https://open.spotify.com/track/0vbp3qthXlRVsLXTbPrkX1",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ba6784a08e2f257374b1e056"
+        "name": "lucky girl",
+        "artist": "Yazida",
+        "link": "https://open.spotify.com/track/0wSDdUjCbcVfsBGGCjhf7J",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736dc3f5d1ee07659972f2737c"
     }
 }
