@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "ICONIC BY MISTAKE",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/6fl4Gu0lJm5hc8FM5JzCZD",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27355886e2f0784a2b7b62b7fe7"
+        "name": "Whiplash",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/3coRPMnFg2dJcPu5RMloa9",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736eb604294f8f58c9078f58b1"
     }
 }
