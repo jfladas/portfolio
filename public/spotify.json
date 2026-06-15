@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Yum (KOR ver.)",
-        "artist": "Kep1er",
-        "link": "https://open.spotify.com/track/7q56SoPfEKyIN5LUEstMqO",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f392d085bc632eba08dcfd5c"
+        "name": "BOYtude",
+        "artist": "idntt",
+        "link": "https://open.spotify.com/track/2hv3fzGIWRnUJUa0gkGsIY",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2738c28df2937fd9af634353494"
     }
 }
