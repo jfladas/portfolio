@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "ATTITUDE",
-        "artist": "IVE",
-        "link": "https://open.spotify.com/track/49oOgXKqm6xTavBtekzVHg",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273487f90022857e485ecc685eb"
+        "name": "Flip That",
+        "artist": "LOONA",
+        "link": "https://open.spotify.com/track/7cHXwaBnIBFUPuP376z07E",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2735fe0013ebb4022adc0f042be"
     }
 }
