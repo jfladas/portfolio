@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "I'm not perfect",
-        "artist": "babyMINT",
-        "link": "https://open.spotify.com/track/4fAdTzLcnnIZVhL4E37XvQ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732af034bac9193ee1b8e7cba0"
+        "name": "ICONIC BY MISTAKE",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/6fl4Gu0lJm5hc8FM5JzCZD",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27355886e2f0784a2b7b62b7fe7"
     }
 }
