@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Love Me Like This",
-        "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/6P3CtlzTKLxcNYGOS3es8m",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2734b32002f8a5e4ee2a5db5ace"
+        "name": "Hi High",
+        "artist": "LOONA",
+        "link": "https://open.spotify.com/track/4EMAaWwu2zXTkXIA6YPKkt",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27316caa9e546f536939373fb26"
     }
 }
