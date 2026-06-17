@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Replay",
-        "artist": "OH MY GIRL",
-        "link": "https://open.spotify.com/track/7MhZojnEIfHTJ6vZ9gFOSR",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27325f8b0dfb1d5619234098cad"
+        "name": "MAKE ME GO",
+        "artist": "TWICE",
+        "link": "https://open.spotify.com/track/6caS9LrdquWAfGeAmjqt1t",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27324869424ae632466b839a8a8"
     }
 }
