@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "VAMOS",
+        "name": "Go DJ",
         "artist": "NTX",
-        "link": "https://open.spotify.com/track/6HolO9VG79zfsVbIkR4OEf",
+        "link": "https://open.spotify.com/track/6vuNVFNCy5z9b77A90KJlD",
         "album_art": "https://i.scdn.co/image/ab67616d0000b27310cbee07c970912167b9a1e3"
     }
 }
