@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Replay",
-        "artist": "OH MY GIRL",
-        "link": "https://open.spotify.com/track/7MhZojnEIfHTJ6vZ9gFOSR",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27325f8b0dfb1d5619234098cad"
+        "name": "WDA (Whole Different Animal) (feat. G-DRAGON)",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/59QIYdXAL9XeNtM0j8vN0k",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736d0509aaf81419d11e269096"
     }
 }
