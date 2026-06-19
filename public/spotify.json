@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Replay",
-        "artist": "OH MY GIRL",
-        "link": "https://open.spotify.com/track/7MhZojnEIfHTJ6vZ9gFOSR",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27325f8b0dfb1d5619234098cad"
+        "name": "Goals",
+        "artist": "LISA",
+        "link": "https://open.spotify.com/track/3hdGyxmW0eNskNwTwmXOIQ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27360b3e4ddf88b2b8b750eac54"
     }
 }
