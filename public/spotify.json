@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "UMAMI",
-        "artist": "AleXa",
-        "link": "https://open.spotify.com/track/0JIrvpBOfssYzy4C6T2jNR",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273138badef9926c08722ffef49"
+        "name": "NAIL (feat. Lolo Zoua\u00ef)",
+        "artist": "Yves",
+        "link": "https://open.spotify.com/track/2VdbARHQxe2Oo0PRlXpg4I",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273d3c43f3e6be5a3a895deb800"
     }
 }
