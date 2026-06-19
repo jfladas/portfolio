@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "UNCAPPED",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/3IGXc0vzzYN7ZozstzbVt2",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736f398a4933f4e1bce1686c83"
+        "name": "Do your dance",
+        "artist": "RIIZE",
+        "link": "https://open.spotify.com/track/0BlndWgd48bhj9ui9xiEtS",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273458227e037c0bdb296f481d0"
     }
 }
