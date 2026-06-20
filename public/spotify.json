@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "INFINITY",
-        "artist": "izna",
-        "link": "https://open.spotify.com/track/1MLIAjpqILKHv31eiKp497",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27373bafe90dd0868fbdc3810a9"
+        "name": "BLACKHOLE",
+        "artist": "IVE",
+        "link": "https://open.spotify.com/track/2ytQFMxdreEFPPZTtyDdqM",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2738e82967e1b62eda35ad8416b"
     }
 }
