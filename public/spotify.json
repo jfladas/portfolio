@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Replay",
-        "artist": "OH MY GIRL",
-        "link": "https://open.spotify.com/track/7MhZojnEIfHTJ6vZ9gFOSR",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27325f8b0dfb1d5619234098cad"
+        "name": "Do your dance",
+        "artist": "RIIZE",
+        "link": "https://open.spotify.com/track/0BlndWgd48bhj9ui9xiEtS",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273458227e037c0bdb296f481d0"
     }
 }
