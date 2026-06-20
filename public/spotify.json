@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Replay",
-        "artist": "OH MY GIRL",
-        "link": "https://open.spotify.com/track/7MhZojnEIfHTJ6vZ9gFOSR",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27325f8b0dfb1d5619234098cad"
+        "name": "BANG BANG!",
+        "artist": "KIIRAS",
+        "link": "https://open.spotify.com/track/3slGM2bvDw2tNpsbxOZLPR",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273e8f1ab21c7ce9f93df82207c"
     }
 }
