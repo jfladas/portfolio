@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Crow",
-        "artist": "i-dle",
-        "link": "https://open.spotify.com/track/4mZc0r3NFubFbe9xMOkZGJ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27361704fc49debfb58bfb7e074"
+        "name": "BOOMPALA (KAZUHA ver.)",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/5XQC4Q0BPvSrA25ynYgMmt",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f2161be573b19d8c58ced7ec"
     }
 }
