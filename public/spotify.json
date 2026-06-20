@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "In a Loop",
-        "artist": "RIIZE",
-        "link": "https://open.spotify.com/track/0mi4bBMQ7DzzctZDHw5YjS",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273458227e037c0bdb296f481d0"
+        "name": "Goals",
+        "artist": "LISA",
+        "link": "https://open.spotify.com/track/3hdGyxmW0eNskNwTwmXOIQ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27360b3e4ddf88b2b8b750eac54"
     }
 }
