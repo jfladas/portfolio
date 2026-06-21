@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "TIC TIC (feat. Pabllo Vittar)",
-        "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/2ZBMbueQLQZAUHio2jplVK",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736234fb43ba0408012edf6a9a"
+        "name": "Goals",
+        "artist": "LISA",
+        "link": "https://open.spotify.com/track/3hdGyxmW0eNskNwTwmXOIQ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27360b3e4ddf88b2b8b750eac54"
     }
 }
