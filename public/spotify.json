@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Air Force One",
-        "artist": "ODD EYE CIRCLE (ARTMS)",
-        "link": "https://open.spotify.com/track/7aOdnAhx1zWwtqAaXBOndI",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f556fe5c4ed7ddbc654e12ee"
+        "name": "Day Zero",
+        "artist": "OMEGA X",
+        "link": "https://open.spotify.com/track/4yLQd9sAYs6rvaI7eammrq",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736f398a4933f4e1bce1686c83"
     }
 }
