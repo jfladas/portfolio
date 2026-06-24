@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Pinky Star (RUN)",
-        "artist": "GWSN",
-        "link": "https://open.spotify.com/track/6xCUp0rf0VBKjjgEYFip8v",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27367ac25cb78d330b139bd78a8"
+        "name": "Password",
+        "artist": "tripleS",
+        "link": "https://open.spotify.com/track/2VPrc7tV2InI78CsQWgOoW",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ef88c8625bfc9c6619d0c987"
     }
 }
