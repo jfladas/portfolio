@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "PIPE DOWN",
-        "artist": "STAYC",
-        "link": "https://open.spotify.com/track/1y42u9UuJJvlSS61zv9eux",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2735dd214d6c10c46583974a716"
+        "name": "BEAT BEAT",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/3P8l7sbL5dxKlS4gcJ1qJI",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c9c9aaadb2d6d3d44be06332"
     }
 }
