@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "BUBBLE GUM",
-        "artist": "Kep1er",
-        "link": "https://open.spotify.com/track/3IUtLSW5FWB0K4RdkvOamG",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f392d085bc632eba08dcfd5c"
+        "name": "Fire in the belly",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/05RlBHEZg1RmL9DnPgv9Qq",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27308afa023781dc4841319f3fc"
     }
 }
