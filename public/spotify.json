@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Yum",
-        "artist": "Kep1er",
-        "link": "https://open.spotify.com/track/6KsXEZEbBcH16U31sIyofB",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c4e059ae9bcf2205bade514d"
+        "name": "BEBE",
+        "artist": "STAYC",
+        "link": "https://open.spotify.com/track/5iXD5rOKV99XGtkaiucHpM",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2735dd214d6c10c46583974a716"
     }
 }
