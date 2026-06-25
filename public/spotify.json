@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "I Want Your Soul",
-        "artist": "Mike Hawkins",
-        "link": "https://open.spotify.com/track/2BHaCW8suuDdHWtY4TRj0g",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f95fce40d8acffc6d045fea6"
+        "name": "Bionic Power",
+        "artist": "tripleS",
+        "link": "https://open.spotify.com/track/3QdLoEk1mUKEvdJwsts53z",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27360fd0809b590077c0f78b474"
     }
 }
