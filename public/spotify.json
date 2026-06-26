@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "8 (JANGWONYOUNG Solo)",
-        "artist": "IVE",
-        "link": "https://open.spotify.com/track/62XO0fvwNWnInO9xqxuGCJ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ad80a9aabc17535c5eeb5317"
+        "name": "Can't tie me down",
+        "artist": "ITZY",
+        "link": "https://open.spotify.com/track/35G2DPJgdku9Mr47LqQ1J0",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27332e0f3c99640b098f1b3aef7"
     }
 }
