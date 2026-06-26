@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Supernova",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/5lKnZbdGCBViitE1Ce5TZh",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c60843bafc67821cff6df260"
+        "name": "Goals",
+        "artist": "LISA",
+        "link": "https://open.spotify.com/track/3hdGyxmW0eNskNwTwmXOIQ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27360b3e4ddf88b2b8b750eac54"
     }
 }
