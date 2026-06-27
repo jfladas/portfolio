@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "NOT ME",
-        "artist": "ILLIT",
-        "link": "https://open.spotify.com/track/1zEDtR1s5RwARukQ28PHvT",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733d09075f6c7fabe9a7234cb3"
+        "name": "DYT",
+        "artist": "ITZY",
+        "link": "https://open.spotify.com/track/3VpnU8Wx0DYxsc6qJrDwH8",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2731d516c425839e5f3acb43c3b"
     }
 }
