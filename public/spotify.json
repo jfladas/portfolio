@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Irony",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/49CeyCugXaZV05J82ejVQh",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
+        "name": "SO BAD",
+        "artist": "STAYC",
+        "link": "https://open.spotify.com/track/13KR2yNRDrbKwR3dOKCDl4",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273bc125f40131dd5869b2ec36c"
     }
 }
