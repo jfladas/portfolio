@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "JUMP",
-        "artist": "BLACKPINK",
-        "link": "https://open.spotify.com/track/5H1sKFMzDeMtXwND3V6hRY",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736224d1236b0e0a0e1586efbb"
+        "name": "poppop",
+        "artist": "NCT WISH",
+        "link": "https://open.spotify.com/track/1Y3Z8ZgjFse47Nt2ZR4EFU",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2731bbb691c13c498e1f8925c0e"
     }
 }
