@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "TA TA",
-        "artist": "KIIRAS",
-        "link": "https://open.spotify.com/track/6pW5jh7hSuv4rNdmmeovmp",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273aee83cc44c4470497ab8d5ac"
+        "name": "REDRED",
+        "artist": "CORTIS",
+        "link": "https://open.spotify.com/track/2fCwv2ppU5nTRTckomIGsd",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27324ace1518851b27e9983f739"
     }
 }
