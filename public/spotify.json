@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "UNCAPPED",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/3IGXc0vzzYN7ZozstzbVt2",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733b6c4d0b95d5536238cc864f"
+        "name": "ICONIC BY MISTAKE",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/6fl4Gu0lJm5hc8FM5JzCZD",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27355886e2f0784a2b7b62b7fe7"
     }
 }
