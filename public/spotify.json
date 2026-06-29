@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "CODE",
-        "artist": "EVERGLOW",
-        "link": "https://open.spotify.com/track/00bnKgDRZxvwpnWDJg7Por",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2739a66d67ab008d92b66e11f5b"
+        "name": "METRONOME",
+        "artist": "izna",
+        "link": "https://open.spotify.com/track/0lcaaS20sIJaLeVsAyAiKf",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27373bafe90dd0868fbdc3810a9"
     }
 }
