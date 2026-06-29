@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Day Zero",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/4yLQd9sAYs6rvaI7eammrq",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733b6c4d0b95d5536238cc864f"
+        "name": "8 (JANGWONYOUNG Solo)",
+        "artist": "IVE",
+        "link": "https://open.spotify.com/track/62XO0fvwNWnInO9xqxuGCJ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ad80a9aabc17535c5eeb5317"
     }
 }
