@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Replay",
-        "artist": "OH MY GIRL",
-        "link": "https://open.spotify.com/track/7MhZojnEIfHTJ6vZ9gFOSR",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27325f8b0dfb1d5619234098cad"
+        "name": "Catch My Breath",
+        "artist": "Keyveatz",
+        "link": "https://open.spotify.com/track/4WupTon6A0rwv3XHsC1xTh",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27330edbb54443eb3c3734d76e1"
     }
 }
