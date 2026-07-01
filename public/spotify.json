@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Do your dance",
-        "artist": "RIIZE",
-        "link": "https://open.spotify.com/track/0BlndWgd48bhj9ui9xiEtS",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273458227e037c0bdb296f481d0"
+        "name": "WDA (Whole Different Animal) (feat. G-DRAGON)",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/3sVtFtx8Xis8EZrwHHLGlF",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273e19de393db31cdad2ce36b6c"
     }
 }
