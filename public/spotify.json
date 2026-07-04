@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "UMAMI",
-        "artist": "AleXa",
-        "link": "https://open.spotify.com/track/0JIrvpBOfssYzy4C6T2jNR",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273138badef9926c08722ffef49"
+        "name": "Day Zero",
+        "artist": "OMEGA X",
+        "link": "https://open.spotify.com/track/4yLQd9sAYs6rvaI7eammrq",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733b6c4d0b95d5536238cc864f"
     }
 }
