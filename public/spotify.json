@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "TIC TIC (feat. Pabllo Vittar)",
-        "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/2ZBMbueQLQZAUHio2jplVK",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736234fb43ba0408012edf6a9a"
+        "name": "THAT\u2019S A NO NO",
+        "artist": "ITZY",
+        "link": "https://open.spotify.com/track/0q1NTsO5b93R97JdQxtFGx",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273fc620c06721e90a534cc5dab"
     }
 }
