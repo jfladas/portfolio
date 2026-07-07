@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "loverboy",
-        "artist": "ifeye",
-        "link": "https://open.spotify.com/track/4H7mZef7MeCkU2BgsG0lLh",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27384da99b02d1ed77eb1e764c8"
+        "name": "CLASSY",
+        "artist": "CLASSy",
+        "link": "https://open.spotify.com/track/7LEupZwTQBhbvvHmxttUeP",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f11007b1043239b1b34e4d47"
     }
 }
