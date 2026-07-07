@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "CRAZY",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/4gxEY3Mh5FZZDAJAKPNrCS",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27331cc95b28680b61772da876f"
+        "name": "TKO",
+        "artist": "IVE",
+        "link": "https://open.spotify.com/track/7tNJeoUZeWrVOCfvpAHWT1",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273487f90022857e485ecc685eb"
     }
 }
