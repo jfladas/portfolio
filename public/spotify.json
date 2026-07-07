@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "poppop",
-        "artist": "NCT WISH",
-        "link": "https://open.spotify.com/track/1Y3Z8ZgjFse47Nt2ZR4EFU",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2731bbb691c13c498e1f8925c0e"
+        "name": "Yum (KOR ver.)",
+        "artist": "Kep1er",
+        "link": "https://open.spotify.com/track/7q56SoPfEKyIN5LUEstMqO",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f392d085bc632eba08dcfd5c"
     }
 }
