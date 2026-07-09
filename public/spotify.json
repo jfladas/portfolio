@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "like JENNIE",
-        "artist": "JENNIE",
-        "link": "https://open.spotify.com/track/0fK7ie6XwGxQTIkpFoWkd1",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273dcf27dec5e479b2e39c4c993"
+        "name": "flipp!ng a coin",
+        "artist": "Billlie",
+        "link": "https://open.spotify.com/track/0jMpPkXZHfsIFQ6cOK4zEe",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27308d6a2a01ce8c0a2f5cc1add"
     }
 }
