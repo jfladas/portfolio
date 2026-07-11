@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "LOUD",
-        "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/5rGrtds032AS35wDDyTNN4",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d179b01c0b9baac10170d1ad"
+        "name": "FUSSBALLM\u00c4NNER",
+        "artist": "Ikkimel",
+        "link": "https://open.spotify.com/track/6U5aqDss5uxfK2OONL7ZhS",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2730cdcd63b5bce10ee7a63a697"
     }
 }
