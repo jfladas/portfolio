@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "LaLaLa",
-        "artist": "AWU",
-        "link": "https://open.spotify.com/track/7i100OQmECIOuzKUDdZjzI",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273a954964592b344fecd71b1ef"
+        "name": "Key Beats",
+        "artist": "Keyveatz",
+        "link": "https://open.spotify.com/track/78LggIu7ieohPUuP91SmBI",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2737a8c5cd429772938471ff400"
     }
 }
