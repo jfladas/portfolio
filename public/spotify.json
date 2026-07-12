@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "XIKEY",
-        "artist": "xikers",
-        "link": "https://open.spotify.com/track/4cSe8fDRrmCnYmuG7KvQVe",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273eb555e6d83960e5d082c9d73"
+        "name": "JUMP",
+        "artist": "BLACKPINK",
+        "link": "https://open.spotify.com/track/5H1sKFMzDeMtXwND3V6hRY",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736224d1236b0e0a0e1586efbb"
     }
 }
