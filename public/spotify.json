@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Sonder",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/6dPtt7EhUj8YQQ0IFVCQRm",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
+        "name": "Can\u2019t Slow Me, No",
+        "artist": "YEJI",
+        "link": "https://open.spotify.com/track/7JAEbB0pbKm0YBaMWQ0p0A",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27338d7a50443e2a6043d6da247"
     }
 }
