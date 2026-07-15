@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Crescendo",
-        "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/6U5iImIuGm6HuNJWhEdjYq",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d179b01c0b9baac10170d1ad"
+        "name": "Run It Up",
+        "artist": "idntt",
+        "link": "https://open.spotify.com/track/56XpgdNZFgBS05VKmwfqd6",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273375be5cc78de4ae2e807dccc"
     }
 }
