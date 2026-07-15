@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "PODIUM",
-        "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/2GrvPIXncT6FOlbq4jNhg2",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ee26bd5ae483fc54e6ef9e74"
+        "name": "GO",
+        "artist": "BLACKPINK",
+        "link": "https://open.spotify.com/track/3FZPp9lBUvhsxFxKJi3VkB",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273d885644b72d5254dd621dc45"
     }
 }
