@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "GO",
-        "artist": "BLACKPINK",
-        "link": "https://open.spotify.com/track/3FZPp9lBUvhsxFxKJi3VkB",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d885644b72d5254dd621dc45"
+        "name": "Soap (feat. PinkPantheress)",
+        "artist": "Yves",
+        "link": "https://open.spotify.com/track/18dPA2sF6ghHFmHJA813Jl",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27380b542cffdbfe2282e68b548"
     }
 }
