@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Day Zero",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/4yLQd9sAYs6rvaI7eammrq",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733b6c4d0b95d5536238cc864f"
+        "name": "Lost in Proof",
+        "artist": "HEART OF WOMAN",
+        "link": "https://open.spotify.com/track/0NUab1Hd5VSFickV3HOy9M",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27389aa2e75e20f1aba0855cd0d"
     }
 }
