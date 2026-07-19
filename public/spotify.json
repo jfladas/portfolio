@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Friend",
-        "artist": "THE 8",
-        "link": "https://open.spotify.com/track/3Zha4O3O4pPyO332FhsgUD",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b6e41dbf924b820c20644bf2"
+        "name": "DASH",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/2RoYgkPzUY0vY7lhUuyus1",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27381d97a31253b898bc4149195"
     }
 }
