@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Escape",
-        "artist": "THE BOYZ",
-        "link": "https://open.spotify.com/track/00t6jLC9nXx8GtaagqXeSG",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27366c8e4a0da651253f0a9dcd5"
+        "name": "BOX",
+        "artist": "NCT DREAM",
+        "link": "https://open.spotify.com/track/2IXewVHkYl24e54xaG8Cot",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27367c07f0becfe4e1f0163fa5c"
     }
 }
