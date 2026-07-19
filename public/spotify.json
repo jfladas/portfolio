@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "BOX",
-        "artist": "NCT DREAM",
-        "link": "https://open.spotify.com/track/2IXewVHkYl24e54xaG8Cot",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27367c07f0becfe4e1f0163fa5c"
+        "name": "SPINNIN\u2032 ON IT",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/4pH8rClaLsi6QcDGrw2VgV",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ee26bd5ae483fc54e6ef9e74"
     }
 }
