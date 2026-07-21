@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Fly Up",
-        "artist": "tripleS",
-        "link": "https://open.spotify.com/track/3GiYjd5959ktHZGSxOqmKe",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736a28f9827cac5ad52e1e0d19"
+        "name": "LOOK (RYUJIN)",
+        "artist": "ITZY",
+        "link": "https://open.spotify.com/track/1CeRRE4NIfxyw2DnUrGu67",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273602d784bb4641a66103edec1"
     }
 }
