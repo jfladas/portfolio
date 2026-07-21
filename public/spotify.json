@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "365",
-        "artist": "Charli xcx",
-        "link": "https://open.spotify.com/track/5h68SoVFGleijCtjEja3xG",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f88b43d15fd14e9525338b59"
+        "name": "LA GIRLS",
+        "artist": "The Deep",
+        "link": "https://open.spotify.com/track/6ds6rRwLb0wNYRp76TSpms",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273a39b5cfd57ae0f99723f9215"
     }
 }
