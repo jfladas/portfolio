@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Friend",
-        "artist": "THE 8",
-        "link": "https://open.spotify.com/track/3Zha4O3O4pPyO332FhsgUD",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b6e41dbf924b820c20644bf2"
+        "name": "WOULD YOU RUN - Original Ver.",
+        "artist": "TRI.BE",
+        "link": "https://open.spotify.com/track/2qvAlgfUimLbRLjMuzeB1b",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f120cb333f68365ee0195cb6"
     }
 }
