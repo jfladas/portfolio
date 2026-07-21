@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "HOT",
-        "artist": "ALLDAY PROJECT",
-        "link": "https://open.spotify.com/track/3TaQqpSHkDw3Yox5FobK9E",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ef7020e16bdd8763ff470d20"
+        "name": "Friend",
+        "artist": "THE 8",
+        "link": "https://open.spotify.com/track/3Zha4O3O4pPyO332FhsgUD",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273b6e41dbf924b820c20644bf2"
     }
 }
