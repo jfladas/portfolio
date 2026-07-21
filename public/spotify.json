@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "BAPPI",
-        "artist": "The Deep",
-        "link": "https://open.spotify.com/track/2GdS1a81sOTsW30CXYoOnl",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273dc91abaad98e6c713a7aa24a"
+        "name": "Fast Forward",
+        "artist": "JEON SOMI",
+        "link": "https://open.spotify.com/track/7jzOZuWgZ5gaMet9V5Ix1d",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2737da22ba88dfc26a18122ee2d"
     }
 }
