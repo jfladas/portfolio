@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Speed Love",
-        "artist": "tripleS",
-        "link": "https://open.spotify.com/track/0u44OLsmgPHU56Dq9tsEOD",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27302d520c0cd2e19c2429430e4"
+        "name": "Spicy",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/3gtlthEgyulDfT8dWdKsnv",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273486275044f7c8c8b79f2c7fc"
     }
 }
