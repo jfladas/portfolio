@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Zero",
-        "artist": "NewJeans",
-        "link": "https://open.spotify.com/track/5LMoKDVzW2kDneNu2UbspP",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732e31a8a740f621473d21dc75"
+        "name": "MUNGNYANG",
+        "artist": "KiiiKiii",
+        "link": "https://open.spotify.com/track/1UKebM38VLBglFYxLt9nqX",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2730cc65398388cbc486fa4fff7"
     }
 }
