@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "VELOCIDADE",
-        "artist": "SANTOS BRAVOS",
-        "link": "https://open.spotify.com/track/3J8uUvHttFs8zlYxoiPVe3",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273a02753a8d814fd3185f146cc"
+        "name": "Zero",
+        "artist": "NewJeans",
+        "link": "https://open.spotify.com/track/5LMoKDVzW2kDneNu2UbspP",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2732e31a8a740f621473d21dc75"
     }
 }
