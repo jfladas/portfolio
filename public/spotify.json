@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Che fastidio!",
-        "artist": "Ditonellapiaga",
-        "link": "https://open.spotify.com/track/7FhkA9JPIn1aXFGA6qRysu",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f5b523e73da5963fffedf4e3"
+        "name": "WANNABE",
+        "artist": "ITZY",
+        "link": "https://open.spotify.com/track/4pspYVQGFHLPEFgQPD1J7e",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273fc620c06721e90a534cc5dab"
     }
 }
