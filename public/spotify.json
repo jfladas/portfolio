@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Done with Rules",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/7dxA5gfmM2sPWVFI6mp8Vp",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273304c46fde5f5244a66f7317b"
+        "name": "Shooting Star",
+        "artist": "Kep1er",
+        "link": "https://open.spotify.com/track/0k2JbfyqtVhiLqGgNuwQGX",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2732a9f421eaffac98b470b972d"
     }
 }
