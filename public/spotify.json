@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "SCOOT",
-        "artist": "NTX",
-        "link": "https://open.spotify.com/track/4LXp9qGXVYJKC2oB25ljX5",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2734a91073b963e632f842a8bf8"
+        "name": "BOOMPALA",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/41d2WjuL0ikRKVjxmL7ZFz",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
     }
 }
