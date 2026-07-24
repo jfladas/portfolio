@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "GO",
-        "artist": "BLACKPINK",
-        "link": "https://open.spotify.com/track/0mYa3o6tlUN5HRippmKmwH",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2738db56c674b13b3a4c6a4dbb8"
+        "name": "girlsnboys",
+        "artist": "THE 8",
+        "link": "https://open.spotify.com/track/0Jnh3156FyIz7SHWgKHRmp",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273b6e41dbf924b820c20644bf2"
     }
 }
