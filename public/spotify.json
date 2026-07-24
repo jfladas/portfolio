@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "LOUD",
-        "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/5rGrtds032AS35wDDyTNN4",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d179b01c0b9baac10170d1ad"
+        "name": "Fangirl",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/2363xIXWyc692R4hAAsaHp",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273304c46fde5f5244a66f7317b"
     }
 }
