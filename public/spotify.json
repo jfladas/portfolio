@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Lighthouse",
-        "artist": "Astrolemo",
-        "link": "https://open.spotify.com/track/57v4uEOIeKTQAP7xTzCUYZ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2735154f797585c3ec3a5cbc052"
+        "name": "DDU-DU DDU-DU",
+        "artist": "BLACKPINK",
+        "link": "https://open.spotify.com/track/4lQsB3ERTWSNaAN1IkuNRl",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273bfd46639322b597331d9ecef"
     }
 }
