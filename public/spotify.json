@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Lighthouse",
-        "artist": "Astrolemo",
-        "link": "https://open.spotify.com/track/45vYBH5SaY5qpKuOr9yNlb",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732f780d352adb1c88c2b85438"
+        "name": "VENI VIDI VICI",
+        "artist": "CRAVITY",
+        "link": "https://open.spotify.com/track/2M6O4cSm8UWz0J9BUN8JXT",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f9cc1cf0c9e8a4587c8e28ca"
     }
 }
