@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Discomposure",
-        "artist": "Natalie Claro",
-        "link": "https://open.spotify.com/track/5PMp8cYuBPFAE9RQm5oIIF",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b1f9b52a23fc075ece2c00e6"
+        "name": "Baby, I'm Jealous (feat. Doja Cat)",
+        "artist": "Bebe Rexha",
+        "link": "https://open.spotify.com/track/2fTdRdN73RgIgcUZN33dvt",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c7d3c45c8eca652c1e734fed"
     }
 }
