@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "BAPPI",
-        "artist": "The Deep",
-        "link": "https://open.spotify.com/track/2GdS1a81sOTsW30CXYoOnl",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273dc91abaad98e6c713a7aa24a"
+        "name": "Born Stunner",
+        "artist": "ARTMS",
+        "link": "https://open.spotify.com/track/2XvgkULpvqf4UW4YZIFnRf",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27377e1bbcebb700d2c10dcac96"
     }
 }
