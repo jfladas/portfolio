@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "SAVIOR",
-        "artist": "AB6IX",
-        "link": "https://open.spotify.com/track/4Bk3bszU1CnHq9hS20s2qZ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b072f313658739e98e099ae4"
+        "name": "BAPPI",
+        "artist": "The Deep",
+        "link": "https://open.spotify.com/track/2GdS1a81sOTsW30CXYoOnl",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273dc91abaad98e6c713a7aa24a"
     }
 }
