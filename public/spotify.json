@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Black Mamba",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/6Tj9KfzPp7tmgcDdsaPwGE",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2731cbd221702dc7fe4efaf3b4f"
+        "name": "Why Not?",
+        "artist": "LOONA",
+        "link": "https://open.spotify.com/track/7bSMHoFKBVNNOxbetz1R3T",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273cb702ff12ef351bcc8130d96"
     }
 }
