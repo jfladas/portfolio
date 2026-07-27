@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "I'm a Mess",
-        "artist": "Bebe Rexha",
-        "link": "https://open.spotify.com/track/04ZTP5KsCypmtCmQg5tH9R",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27361fe6d3a50c0beaa3cfe33e9"
+        "name": "Therefore I Am",
+        "artist": "Billie Eilish",
+        "link": "https://open.spotify.com/track/20R4HfKloPKgXDqU7UKk3x",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2732a038d3bf875d23e4aeaa84e"
     }
 }
