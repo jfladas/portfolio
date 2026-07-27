@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "LOLA",
-        "artist": "Marina Satti",
-        "link": "https://open.spotify.com/track/08ZOiOkRA8HPwrz9hsum1n",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273edd2245b5caa50d9d8b1b502"
+        "name": "SloMo",
+        "artist": "Chanel",
+        "link": "https://open.spotify.com/track/0T71AvVXY4RB65tvdIyzdO",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2730e730d9604a6f5c65d7e9c94"
     }
 }
