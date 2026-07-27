@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Therefore I Am",
-        "artist": "Billie Eilish",
-        "link": "https://open.spotify.com/track/20R4HfKloPKgXDqU7UKk3x",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732a038d3bf875d23e4aeaa84e"
+        "name": "LOLA",
+        "artist": "Marina Satti",
+        "link": "https://open.spotify.com/track/08ZOiOkRA8HPwrz9hsum1n",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273edd2245b5caa50d9d8b1b502"
     }
 }
