@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Ditto",
-        "artist": "NewJeans",
-        "link": "https://open.spotify.com/track/3r8RuvgbX9s7ammBn07D3W",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273edf5b257be1d6593e81bb45f"
+        "name": "Black Mamba",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/6Tj9KfzPp7tmgcDdsaPwGE",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2731cbd221702dc7fe4efaf3b4f"
     }
 }
