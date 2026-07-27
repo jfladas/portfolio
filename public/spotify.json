@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "WAVE",
-        "artist": "IVE",
-        "link": "https://open.spotify.com/track/2FNgoGLkE4AAOtYkQfiVL4",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c94c7870566278801744f848"
+        "name": "Limoncello",
+        "artist": "CHUU",
+        "link": "https://open.spotify.com/track/1MzrmkSpQO3z0xBIWkh9s0",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2734c7b2ad91e751924ed7a899f"
     }
 }
