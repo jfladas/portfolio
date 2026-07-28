@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Wild Wild West",
-        "artist": "ITZY",
-        "link": "https://open.spotify.com/track/3mRcVmaJlodmb7eensMMfZ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273131cf6fcb170cda7a7956227"
+        "name": "DADARIDA",
+        "artist": "MADEIN",
+        "link": "https://open.spotify.com/track/57IwiEpmnSWwcKpNATXpCE",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273a434b473b957e9ecd846c9c4"
     }
 }
