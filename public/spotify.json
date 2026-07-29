@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Bad Blood",
-        "artist": "DaHye",
-        "link": "https://open.spotify.com/track/6ifzBjlffUQg5GabxjcWpz",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273a91aa9d5ea44e427667a354e"
+        "name": "I\u2019ll See You There Tomorrow",
+        "artist": "TOMORROW X TOGETHER",
+        "link": "https://open.spotify.com/track/0bMWoFtQIrnW5YyNMc4aKQ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27303c996028737858321d2ffe0"
     }
 }
