@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "OPPA",
-        "artist": "The Deep",
-        "link": "https://open.spotify.com/track/3ig1AIo5jIjnEKsVdz6LeH",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273958c5b0077dd05d6e12df09a"
+        "name": "KISS N TELL",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/3Fse9qXqMNey4TL5mLy8IF",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273304c46fde5f5244a66f7317b"
     }
 }
