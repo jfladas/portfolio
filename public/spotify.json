@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "HOT XXL",
-        "artist": "Iliya",
-        "link": "https://open.spotify.com/track/1123jFMPCovjar25Umf5Lc",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2735d469ecdf83ce8c15de4734c"
+        "name": "Hard Feelings",
+        "artist": "Miquela",
+        "link": "https://open.spotify.com/track/3v0PvxHGaFl2rbLTNLuV61",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2738c5625b012f71ec402589adf"
     }
 }
