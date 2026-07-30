@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Stateside + Zara Larsson",
-        "artist": "PinkPantheress",
-        "link": "https://open.spotify.com/track/1DwscornXpj8fmOmYVlqZt",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273684ecc5bc1b724d0106ad694"
+        "name": "GO!",
+        "artist": "CORTIS",
+        "link": "https://open.spotify.com/track/6OWWZtNQORY1McaZmOrwhc",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2734b56a34b0c2b3798fd46f855"
     }
 }
