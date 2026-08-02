@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "MVSK",
-        "artist": "Kep1er",
-        "link": "https://open.spotify.com/track/0dTEMO9G2uu9Vbu3f8Swto",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732963187314262831fa2baa49"
+        "name": "work",
+        "artist": "no na",
+        "link": "https://open.spotify.com/track/5B7TqWe4sBs9uqUHyKu6Yv",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273105088a491993dd9c59d470b"
     }
 }
