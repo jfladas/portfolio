@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "UP - KARINA Solo",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/5sjnkOfTLCLNfkkchI2re2",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273253096eda3b7826c11c7fab8"
+        "name": "Classic",
+        "artist": "IVE",
+        "link": "https://open.spotify.com/track/6jSnUhuqsXWsmlTxvRDzl3",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733415d4fdecbaaa74ddd93acf"
     }
 }
