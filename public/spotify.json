@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "CUTE BUT PSYCHO",
-        "artist": "Manu Gavassi",
-        "link": "https://open.spotify.com/track/1xV9mUZeSJzVnO0sdvi7UW",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ec091d91c443f6c223a33488"
+        "name": "Golden Recipe",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/6AMbc3k1v4ev0DiTnvdVo9",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273e7129d59bb7af19ad185b40e"
     }
 }
