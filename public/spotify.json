@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Red Flavor",
-        "artist": "Red Velvet",
-        "link": "https://open.spotify.com/track/7nKQ5WAcjnG48knyLuo8gO",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2738164cd1a2e03b7ca2db9ff5e"
+        "name": "Monochrome (Color)",
+        "artist": "ATBO",
+        "link": "https://open.spotify.com/track/2M1kWKx9G2MlVPtwKQjpHp",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273cff885edd79b811f9df0e509"
     }
 }
