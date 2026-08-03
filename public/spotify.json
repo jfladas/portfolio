@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Smoking for the Aesthetic",
-        "artist": "Avery Grey",
-        "link": "https://open.spotify.com/track/7HrWPQ6ISUcLNxhmdGB7bu",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273cdaa81e7cb0987819ca478fe"
+        "name": "Got me in chains",
+        "artist": "MONSTA X",
+        "link": "https://open.spotify.com/track/3pqHfAhXksB03r8jrJuhrl",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27328dc761c50f7c56bea8fa6a4"
     }
 }
