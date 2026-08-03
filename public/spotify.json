@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "r u ok?",
-        "artist": "ifeye",
-        "link": "https://open.spotify.com/track/7LwQfsJ7JzgfFr7ErvcTs6",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27384da99b02d1ed77eb1e764c8"
+        "name": "Surfin' Boy",
+        "artist": "Red Velvet",
+        "link": "https://open.spotify.com/track/3caqaSvtldUKLY5Fd5msk2",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733df160174c379ca0f9bb7c18"
     }
 }
