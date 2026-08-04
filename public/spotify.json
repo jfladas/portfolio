@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Diablo",
-        "artist": "tripleS",
-        "link": "https://open.spotify.com/track/0CWQYYZlYVVpuU81wNlDNQ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2738f233fd369e5a47b637d00c6"
+        "name": "Je Ne Sais Quoi",
+        "artist": "ODD EYE CIRCLE (ARTMS)",
+        "link": "https://open.spotify.com/track/3rL9nFOkiqp3493H1DAFM4",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f556fe5c4ed7ddbc654e12ee"
     }
 }
