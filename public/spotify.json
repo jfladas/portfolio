@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "B-Boy",
-        "artist": "YUNA",
-        "link": "https://open.spotify.com/track/3XghUD604wLMrkwL70JjDf",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2734a257081d66af0cc98d5033a"
+        "name": "CASE 143",
+        "artist": "Stray Kids",
+        "link": "https://open.spotify.com/track/3O8G8eVrhfXTGttyQ1xVuq",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27385bcbbac459056ad6ee9426b"
     }
 }
