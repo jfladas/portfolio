@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Diablo",
-        "artist": "tripleS",
-        "link": "https://open.spotify.com/track/0CWQYYZlYVVpuU81wNlDNQ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2738f233fd369e5a47b637d00c6"
+        "name": "Surfin' Boy",
+        "artist": "Red Velvet",
+        "link": "https://open.spotify.com/track/3caqaSvtldUKLY5Fd5msk2",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733df160174c379ca0f9bb7c18"
     }
 }
