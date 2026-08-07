@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Candy Crush",
-        "artist": "ARTMS",
-        "link": "https://open.spotify.com/track/1TsY0n1qB8s54TtB1pMajQ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733eaf9b3c1c804fec2bb06ac0"
+        "name": "WORK",
+        "artist": "Billlie",
+        "link": "https://open.spotify.com/track/6IIEwumFCSlVrna5cHW7Ac",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ec9ffda683b158a31a83159a"
     }
 }
