@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Villain",
-        "artist": "TRENDZ",
-        "link": "https://open.spotify.com/track/0cJb8ETU06dBISn0La9iTF",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273bf14affd186dca45d6a259d4"
+        "name": "Surfin' Boy",
+        "artist": "Red Velvet",
+        "link": "https://open.spotify.com/track/3caqaSvtldUKLY5Fd5msk2",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733df160174c379ca0f9bb7c18"
     }
 }
