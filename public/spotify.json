@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "DUN DUN",
-        "artist": "EVERGLOW",
-        "link": "https://open.spotify.com/track/3ejAkJLWQSEJDqDXxK3efB",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f5ce366a81c50db19630a140"
+        "name": "Zimzalabim",
+        "artist": "Red Velvet",
+        "link": "https://open.spotify.com/track/2cvi3IRTibXzmAm4f8P2HP",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273df5022bdf1ac4bf52135c4be"
     }
 }
