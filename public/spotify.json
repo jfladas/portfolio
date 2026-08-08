@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Slip Away",
-        "artist": "THE BOYZ",
-        "link": "https://open.spotify.com/track/3fwgJiiE5GdCyJE5KDx4e1",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27302411672db569ef86a3fdb99"
+        "name": "Die Trying",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/4ToOfelAD6oEqbeHyTTKMS",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27311c27127b91e1e4266152362"
     }
 }
