@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Hyper Crush",
-        "artist": "ARTMS",
-        "link": "https://open.spotify.com/track/3J42CAxhwsKP0MGI1E1QjM",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c8ab3416a9421cdaa96dc0ee"
+        "name": "SWEAT",
+        "artist": "KISS OF LIFE",
+        "link": "https://open.spotify.com/track/503e19tHN0QmaraGxAQzt7",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273473b380c12e0b95969a89b9e"
     }
 }
