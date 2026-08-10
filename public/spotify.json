@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Star-Crossed",
-        "artist": "JON VINYL",
-        "link": "https://open.spotify.com/track/5n0EQNpX1HKmkucTV7FPut",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b5b48f2fa9228e9049661b8e"
+        "name": "Make A Wish (Birthday Song)",
+        "artist": "NCT U",
+        "link": "https://open.spotify.com/track/1Q5SpQeocfNXefx76svqkl",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736db6b8f9ddadc7503eaf4ae8"
     }
 }
