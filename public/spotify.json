@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Blue Hour",
-        "artist": "KiiiKiii",
-        "link": "https://open.spotify.com/track/4WKpoSsYsXnStoyiyQxt3F",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732e6090052314604f93f1ebe4"
+        "name": "\u9e22 (Vision Wings)",
+        "artist": "WayV",
+        "link": "https://open.spotify.com/track/52eusU4cqmyZ54z6AC2zDv",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f8b30c48ca3d8e5d8555e031"
     }
 }
