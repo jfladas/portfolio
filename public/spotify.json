@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "GALA",
-        "artist": "XG",
-        "link": "https://open.spotify.com/track/748Uvc654IhPLrmiBGlPhd",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27324272a7f97cf5b5f8fcb60e0"
+        "name": "motive (with Doja Cat)",
+        "artist": "Ariana Grande",
+        "link": "https://open.spotify.com/track/5GkQIP5mWPi4KZLLXeuFTT",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27355b8f4c3458e256eca14f18f"
     }
 }
