@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Raise The Roof",
-        "artist": "NCT U",
-        "link": "https://open.spotify.com/track/35WzC52ftRZmANtQIqEUFu",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ebee70c4f99963127989d85c"
+        "name": "VAMOS",
+        "artist": "OMEGA X",
+        "link": "https://open.spotify.com/track/19kvCoRJQGxnEwyqqJphLA",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273de397b716d2eeb2e70e3b927"
     }
 }
