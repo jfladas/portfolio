@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "SPAGHETTI",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/2N9miXnewVmUrgl6JSK1FI",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736c4a726c271daf4a4b97e35b"
+        "name": "DOMINO",
+        "artist": "Stray Kids",
+        "link": "https://open.spotify.com/track/6Ib6RkvLBMD85bov85apSL",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2731843897a2a72dd5036bbb1fc"
     }
 }
