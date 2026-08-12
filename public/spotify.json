@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Renegade",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/4Xf87cXcNELMjcXlGbUEQV",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273546dfa38ea594b8f78f9fea1"
+        "name": "\u9e22 (Vision Wings)",
+        "artist": "WayV",
+        "link": "https://open.spotify.com/track/52eusU4cqmyZ54z6AC2zDv",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f8b30c48ca3d8e5d8555e031"
     }
 }
