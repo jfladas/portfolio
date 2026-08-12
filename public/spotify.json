@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Signal",
-        "artist": "KARD",
-        "link": "https://open.spotify.com/track/6UXR2R0AEgBMyF66jubcsA",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736a6a130f3a1b6ac2a4b2ad35"
+        "name": "\u4e3b\u573a (Icon)",
+        "artist": "WayV",
+        "link": "https://open.spotify.com/track/1TIM4X5DpV6jRRYRopuwBZ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f8b30c48ca3d8e5d8555e031"
     }
 }
