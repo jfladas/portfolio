@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Renegade",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/4Xf87cXcNELMjcXlGbUEQV",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273546dfa38ea594b8f78f9fea1"
+        "name": "KILLA (Face the other me)",
+        "artist": "Kep1er",
+        "link": "https://open.spotify.com/track/66fjOHg3C0mKJwEckZ875l",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273d3238ed051e3d34d6d0e7a5f"
     }
 }
