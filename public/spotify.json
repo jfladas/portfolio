@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Chk Chk Boom",
-        "artist": "Stray Kids",
-        "link": "https://open.spotify.com/track/09keT5ocFhEd5W5HidiUNq",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27351700837cdbc6adddb88560a"
+        "name": "ICKY",
+        "artist": "KARD",
+        "link": "https://open.spotify.com/track/1OhotmnsJBmsHaKwACYMgJ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27362f8ecdcd1563d9b48a78f9a"
     }
 }
