@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "The BAT",
-        "artist": "NCT U",
-        "link": "https://open.spotify.com/track/1VMbcqhglWyMmwCD8yoqxv",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f88d5c35573d6dd30fb518c1"
+        "name": "Renegade",
+        "artist": "OMEGA X",
+        "link": "https://open.spotify.com/track/4Xf87cXcNELMjcXlGbUEQV",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273546dfa38ea594b8f78f9fea1"
     }
 }
