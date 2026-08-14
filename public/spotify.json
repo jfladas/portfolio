@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "SWEAT",
-        "artist": "KISS OF LIFE",
-        "link": "https://open.spotify.com/track/503e19tHN0QmaraGxAQzt7",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273473b380c12e0b95969a89b9e"
+        "name": "WORK",
+        "artist": "Billlie",
+        "link": "https://open.spotify.com/track/6IIEwumFCSlVrna5cHW7Ac",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ec9ffda683b158a31a83159a"
     }
 }
