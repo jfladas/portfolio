@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "CELEBRATION",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/3OKvpTlnhvj8u6fbV53kqC",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
+        "name": "Cattitude (feat. RuPaul)",
+        "artist": "Miley Cyrus",
+        "link": "https://open.spotify.com/track/7s4xQU7Tz9vyxD5a3golZc",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273cf4b197ffd35a6a0aa3474a6"
     }
 }
