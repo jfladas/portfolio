@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "WANNABE",
-        "artist": "ITZY",
-        "link": "https://open.spotify.com/track/4pspYVQGFHLPEFgQPD1J7e",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273fc620c06721e90a534cc5dab"
+        "name": "Hootie Frutti",
+        "artist": "KATSEYE",
+        "link": "https://open.spotify.com/track/6oUUmBcUbZa5O48V5pjgAD",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2735631546bdc010851494d88ba"
     }
 }
