@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Baggy Jeans",
-        "artist": "NCT U",
-        "link": "https://open.spotify.com/track/7mAZPBCTeQCRqOaq3OPVMN",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f9954d2596e015029dd2b98c"
+        "name": "TOMBOY",
+        "artist": "i-dle",
+        "link": "https://open.spotify.com/track/5L7MoCA875qqRJoKnGCxkE",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273b62f52ff9fa548d7b797e3cc"
     }
 }
