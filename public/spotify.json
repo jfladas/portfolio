@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "BORN TO BE",
-        "artist": "ITZY",
-        "link": "https://open.spotify.com/track/45lXSvtDt6uKiGZIXB4LLF",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273470d0ba5f707b141d1337cf2"
+        "name": "Rich Man",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/2lzb0dgTFAfrHfzlZA9Hxw",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f26e3693011a75c41a1d9697"
     }
 }
