@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "TOMBOY",
-        "artist": "i-dle",
-        "link": "https://open.spotify.com/track/5L7MoCA875qqRJoKnGCxkE",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b62f52ff9fa548d7b797e3cc"
+        "name": "LAW (Prod. Czaer)",
+        "artist": "YOON MIRAE",
+        "link": "https://open.spotify.com/track/0VES0jpNQEdRpD31gYDIMe",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2735c2efa8ce12c99a92b914e20"
     }
 }
