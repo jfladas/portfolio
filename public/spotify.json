@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Serenade (KARINA & WINTER)",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/2h81piRbzIJmjpxR4qnM2o",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737a0e88eef1c0bc3247e03a0f"
+        "name": "Baggy Jeans",
+        "artist": "NCT U",
+        "link": "https://open.spotify.com/track/7mAZPBCTeQCRqOaq3OPVMN",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f9954d2596e015029dd2b98c"
     }
 }
