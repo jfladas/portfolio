@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Superior",
-        "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/71OGZTOt5iS4G3jzBJCJwl",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d179b01c0b9baac10170d1ad"
+        "name": "Hootie Frutti",
+        "artist": "KATSEYE",
+        "link": "https://open.spotify.com/track/6oUUmBcUbZa5O48V5pjgAD",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2735631546bdc010851494d88ba"
     }
 }
