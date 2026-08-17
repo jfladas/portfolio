@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Renegade",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/4Xf87cXcNELMjcXlGbUEQV",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273546dfa38ea594b8f78f9fea1"
+        "name": "GGUM",
+        "artist": "YEONJUN",
+        "link": "https://open.spotify.com/track/1QPV3QoWw3rRKPeYoX8kO8",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273d176bb158a602ab3c666671b"
     }
 }
