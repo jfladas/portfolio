@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "HONEY",
-        "artist": "Solar",
-        "link": "https://open.spotify.com/track/7JDiC68AKimlvMCmZQuA9n",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273e95d9f505f2469cf74727805"
+        "name": "\u7130\u5149\u84dd (Blue Fever)",
+        "artist": "WayV",
+        "link": "https://open.spotify.com/track/3caEMXji7A4E6C0HdpgTlK",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f8b30c48ca3d8e5d8555e031"
     }
 }
