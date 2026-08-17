@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "OMEGA X",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/6Jt4t4qNmD1v7SB8GPz3Zw",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273de397b716d2eeb2e70e3b927"
+        "name": "Surfin' Boy",
+        "artist": "Red Velvet",
+        "link": "https://open.spotify.com/track/3caqaSvtldUKLY5Fd5msk2",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733df160174c379ca0f9bb7c18"
     }
 }
