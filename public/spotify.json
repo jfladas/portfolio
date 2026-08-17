@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "OMEGA X",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/4vXJn1hX223B6DddBm7iBZ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2731761b090dccccd27e0d27b24"
+        "name": "my strange addiction",
+        "artist": "Billie Eilish",
+        "link": "https://open.spotify.com/track/3Tc57t9l2O8FwQZtQOvPXK",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27350a3147b4edd7701a876c6ce"
     }
 }
