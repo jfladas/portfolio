@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "ZARI",
-        "artist": "Marina Satti",
-        "link": "https://open.spotify.com/track/4sDLQ5atDUHhbikD1UQ2mW",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27336a074cead5538e71f070286"
+        "name": "LEMONADE",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/1Hv8KIKhK6Dz02ROKT63lV",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273e19de393db31cdad2ce36b6c"
     }
 }
