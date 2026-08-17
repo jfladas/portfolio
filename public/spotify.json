@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "UNCAPPED",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/6aoYAkdxthgfLjqfdOHCTu",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c6e6374ce9600769f67ad127"
+        "name": "Irony",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/49CeyCugXaZV05J82ejVQh",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
     }
 }
