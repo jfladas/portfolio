@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Lucky Strike",
-        "artist": "Maroon 5",
-        "link": "https://open.spotify.com/track/4rpzPAbwJboZQw2p9T5T3f",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273fc8633e22a7dba6aab817bff"
+        "name": "Talk talk featuring troye sivan",
+        "artist": "Charli xcx",
+        "link": "https://open.spotify.com/track/7CwWhMGWICOl2ICwbk3QTE",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2738ac99f88ebc09b1f1637dc00"
     }
 }
