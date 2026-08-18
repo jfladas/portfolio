@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
         "name": "Log in",
         "artist": "FIFTY FIFTY",
-        "link": "https://open.spotify.com/track/59BaXyr1iY8818laiiZJ8b",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d9a574215d03a7285e62c7e4"
+        "link": "https://open.spotify.com/track/3LBPsKmp0ijKOnH6tbGIsy",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273eb535219dc875690e09dd8f9"
     }
 }
