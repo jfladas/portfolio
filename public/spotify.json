@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Renegade",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/4Xf87cXcNELMjcXlGbUEQV",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273546dfa38ea594b8f78f9fea1"
+        "name": "Hootie Frutti",
+        "artist": "KATSEYE",
+        "link": "https://open.spotify.com/track/6oUUmBcUbZa5O48V5pjgAD",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2735631546bdc010851494d88ba"
     }
 }
