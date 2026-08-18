@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "BINGO",
-        "artist": "HUI",
-        "link": "https://open.spotify.com/track/1yiXsldagCWIRsXQaNjFG5",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2730c1a280338b2f5d0c9db7bbc"
+        "name": "Pearlies (My oyster is the world)",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/2CfVDYfw0B4WUHaWxyjsU3",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736c4a726c271daf4a4b97e35b"
     }
 }
