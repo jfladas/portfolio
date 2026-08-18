@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Renegade",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/4Xf87cXcNELMjcXlGbUEQV",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273546dfa38ea594b8f78f9fea1"
+        "name": "POP",
+        "artist": "bugAboo",
+        "link": "https://open.spotify.com/track/2FzMEX0nP9tFd6phID2tm8",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2734a8555ab264ae2934f0b5128"
     }
 }
