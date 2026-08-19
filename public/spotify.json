@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Crush",
-        "artist": "MCND",
-        "link": "https://open.spotify.com/track/2Gdw7bH1N016pgc6i3JZDR",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736b838a81556fe607f9e871ef"
+        "name": "LA DI DA",
+        "artist": "EVERGLOW",
+        "link": "https://open.spotify.com/track/6mIjJONoUMvGPT9Kzrab3L",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27345e5d4a6ce73279fd5f01b94"
     }
 }
