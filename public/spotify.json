@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Clich\u00e9",
-        "artist": "VIVIZ",
-        "link": "https://open.spotify.com/track/6dpCPillXgu3JhRtKSJBKC",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273daf5a61de8cedeaacb344d3b"
+        "name": "TA TA",
+        "artist": "KIIRAS",
+        "link": "https://open.spotify.com/track/6pW5jh7hSuv4rNdmmeovmp",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273aee83cc44c4470497ab8d5ac"
     }
 }
