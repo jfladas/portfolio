@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Lollipop (GISELLE & NINGNING)",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/1j2fdmjSCJZkfCLFKZTOpd",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737a0e88eef1c0bc3247e03a0f"
+        "name": "heart emoji (\u2661)",
+        "artist": "Hearts2Hearts",
+        "link": "https://open.spotify.com/track/21KvF80vRvdEFNLerMCJLu",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273391fce8d3ef22f778a8c5c54"
     }
 }
