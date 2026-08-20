@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "WICKED GAME",
-        "artist": "USPEER",
-        "link": "https://open.spotify.com/track/2jqlsrh2aNB0hMns2jmuKv",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2730d7e5fc53d1a8674af347467"
+        "name": "Born Stunner",
+        "artist": "ARTMS",
+        "link": "https://open.spotify.com/track/56XBkc19WAq7rZ6bMj9w3p",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c8ab3416a9421cdaa96dc0ee"
     }
 }
