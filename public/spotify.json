@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Girls Like Me",
-        "artist": "The Deep",
-        "link": "https://open.spotify.com/track/1WgAejZVhPjM70beyHcAmL",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273958c5b0077dd05d6e12df09a"
+        "name": "Stars + Yves",
+        "artist": "PinkPantheress",
+        "link": "https://open.spotify.com/track/52vFAalJWVolzGZXmjtPIz",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273684ecc5bc1b724d0106ad694"
     }
 }
