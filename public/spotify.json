@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Checkmate",
-        "artist": "ENHYPEN",
-        "link": "https://open.spotify.com/track/5BPz1bcrWmrTAzzODtQqB9",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27327154ec69768838c6c62f74b"
+        "name": "Girls Like Me",
+        "artist": "The Deep",
+        "link": "https://open.spotify.com/track/1WgAejZVhPjM70beyHcAmL",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273958c5b0077dd05d6e12df09a"
     }
 }
