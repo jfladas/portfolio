@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "overlap (1/1)",
-        "artist": "Billlie",
-        "link": "https://open.spotify.com/track/5T1REmVrjS8cfoCwJ8i4Gg",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2734859a1495ee8beb8b4c2317a"
+        "name": "What's My Name",
+        "artist": "MAVE:",
+        "link": "https://open.spotify.com/track/2Bc9du4VY4XIx79L4XZqug",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273daf71ced186395dc23d1457e"
     }
 }
