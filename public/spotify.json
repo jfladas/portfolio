@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "ICY",
-        "artist": "JO1",
-        "link": "https://open.spotify.com/track/6BeB2dYQXOhwsg3m5MIh3t",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273a3324215564f71f99bb494e5"
+        "name": "Checkmate",
+        "artist": "ENHYPEN",
+        "link": "https://open.spotify.com/track/5BPz1bcrWmrTAzzODtQqB9",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27327154ec69768838c6c62f74b"
     }
 }
