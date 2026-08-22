@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Checkmate",
-        "artist": "ENHYPEN",
-        "link": "https://open.spotify.com/track/5BPz1bcrWmrTAzzODtQqB9",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27327154ec69768838c6c62f74b"
+        "name": "Venom",
+        "artist": "Little Simz",
+        "link": "https://open.spotify.com/track/2tHdQjwO5zN86MLF7ZtU1X",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27308fd43f4ba0708fa58dd2805"
     }
 }
