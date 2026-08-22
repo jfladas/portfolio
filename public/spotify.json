@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Hootie Frutti",
-        "artist": "KATSEYE",
-        "link": "https://open.spotify.com/track/6oUUmBcUbZa5O48V5pjgAD",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2735631546bdc010851494d88ba"
+        "name": "Colors",
+        "artist": "Solar",
+        "link": "https://open.spotify.com/track/6F5nwlaYT0TZatOHVMaBcZ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733da7d11b9a40ccc0edf18961"
     }
 }
