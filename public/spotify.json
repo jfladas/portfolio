@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Hootie Frutti",
-        "artist": "KATSEYE",
-        "link": "https://open.spotify.com/track/6oUUmBcUbZa5O48V5pjgAD",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2735631546bdc010851494d88ba"
+        "name": "Pop Off Pop Off",
+        "artist": "KiiiKiii",
+        "link": "https://open.spotify.com/track/3iHzvU39BS03PD0zpNa19b",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2732e6090052314604f93f1ebe4"
     }
 }
