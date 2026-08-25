@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "SUN KISS",
-        "artist": "TUIDE",
-        "link": "https://open.spotify.com/track/7Jpb9OejYYIwsBIVQwceRy",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2739ee310150eb907c28c40397a"
+        "name": "Chasing Lightning",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/5hfKDfqthxHt6xsgCjimuO",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27313134929dd979f89b8f4f477"
     }
 }
