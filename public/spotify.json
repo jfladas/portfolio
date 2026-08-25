@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "So What",
-        "artist": "LOONA",
-        "link": "https://open.spotify.com/track/1ry2mTVmAJHbNLzl5qww5v",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c985aeaeccb1db38dddf2986"
+        "name": "So Good (Hyunjin)",
+        "artist": "Stray Kids",
+        "link": "https://open.spotify.com/track/18CEEhZoQBHBiGfGANm0zJ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273841695ed5f1525227ac5ddf0"
     }
 }
