@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Renegade",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/4Xf87cXcNELMjcXlGbUEQV",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273546dfa38ea594b8f78f9fea1"
+        "name": "Rise Over",
+        "artist": "RIIZE",
+        "link": "https://open.spotify.com/track/6nUBP5czYLJIBTDfMkPhwd",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273a2ec1c9752322acfd282b4fe"
     }
 }
