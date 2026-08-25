@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "LOCO",
-        "artist": "NEXZ",
-        "link": "https://open.spotify.com/track/5NLhEaFlyG1NJVKuiGzDz2",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733d0d41a7f51bcec08542e00c"
+        "name": "Legacy",
+        "artist": "NCT 127",
+        "link": "https://open.spotify.com/track/6TqOzR5ujdlMfQNlrFNiEq",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273820da6a43295fcb80ac9a1b3"
     }
 }
