@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "SUN KISS",
-        "artist": "TUIDE",
-        "link": "https://open.spotify.com/track/7Jpb9OejYYIwsBIVQwceRy",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2739ee310150eb907c28c40397a"
+        "name": "Glitch",
+        "artist": "KWON EUNBI",
+        "link": "https://open.spotify.com/track/3Xzyta15TXF33ggEjA5FxN",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27342a6d7b8477a1cf06ebce45f"
     }
 }
