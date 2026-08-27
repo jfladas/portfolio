@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "SUN KISS",
-        "artist": "TUIDE",
-        "link": "https://open.spotify.com/track/7Jpb9OejYYIwsBIVQwceRy",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2739ee310150eb907c28c40397a"
+        "name": "LOCO",
+        "artist": "NEXZ",
+        "link": "https://open.spotify.com/track/5NLhEaFlyG1NJVKuiGzDz2",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733d0d41a7f51bcec08542e00c"
     }
 }
