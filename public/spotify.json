@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Checkmate",
-        "artist": "ENHYPEN",
-        "link": "https://open.spotify.com/track/5BPz1bcrWmrTAzzODtQqB9",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27327154ec69768838c6c62f74b"
+        "name": "Hootie Frutti",
+        "artist": "KATSEYE",
+        "link": "https://open.spotify.com/track/6oUUmBcUbZa5O48V5pjgAD",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2735631546bdc010851494d88ba"
     }
 }
