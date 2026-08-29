@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "ANTIFRAGILE",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/0bMoNdAnxNR0OuQbGDovrr",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27308afa023781dc4841319f3fc"
+        "name": "Guess Who's Back",
+        "artist": "AWU",
+        "link": "https://open.spotify.com/track/7e9B2esdvXuV2nfxpKxkr2",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273a954964592b344fecd71b1ef"
     }
 }
