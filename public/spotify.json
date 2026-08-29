@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Renegade",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/4Xf87cXcNELMjcXlGbUEQV",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273546dfa38ea594b8f78f9fea1"
+        "name": "Girls On Fire",
+        "artist": "X:IN",
+        "link": "https://open.spotify.com/track/706QiQYighopljp4kebEkV",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733e7bd66140b6b89d27b57ed3"
     }
 }
