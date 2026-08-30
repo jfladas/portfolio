@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Checkmate",
-        "artist": "ENHYPEN",
-        "link": "https://open.spotify.com/track/5BPz1bcrWmrTAzzODtQqB9",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27327154ec69768838c6c62f74b"
+        "name": "Guess Who's Back",
+        "artist": "AWU",
+        "link": "https://open.spotify.com/track/7e9B2esdvXuV2nfxpKxkr2",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273a954964592b344fecd71b1ef"
     }
 }
