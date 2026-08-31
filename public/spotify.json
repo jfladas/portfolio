@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "GIMME GIMME",
-        "artist": "ALL(H)OURS",
-        "link": "https://open.spotify.com/track/4QTDaL72TntzXCeoHrl6Cx",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273a6e24f7cf4f8a9a97d57ada3"
+        "name": "TIC TIC (feat. Pabllo Vittar)",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/2ZBMbueQLQZAUHio2jplVK",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736234fb43ba0408012edf6a9a"
     }
 }
