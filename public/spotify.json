@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Wonderland (From \u201cAmerican Song Contest\u201d)",
-        "artist": "AleXa",
-        "link": "https://open.spotify.com/track/12gIiC7uS9fvSVTvu66YDO",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ffcf3b0f20bd3ebe23a91616"
+        "name": "GO",
+        "artist": "BLACKPINK",
+        "link": "https://open.spotify.com/track/3FZPp9lBUvhsxFxKJi3VkB",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273d885644b72d5254dd621dc45"
     }
 }
