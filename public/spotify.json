@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "GO",
-        "artist": "BLACKPINK",
-        "link": "https://open.spotify.com/track/3FZPp9lBUvhsxFxKJi3VkB",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d885644b72d5254dd621dc45"
+        "name": "Bada Boom (With MISMOLLY, TURNS)",
+        "artist": "Solar",
+        "link": "https://open.spotify.com/track/7010GzT5bbMuQ4fWTMbpKz",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733091980300243c26b0404b76"
     }
 }
