@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
         "name": "Rich Man",
         "artist": "aespa",
-        "link": "https://open.spotify.com/track/1sUjTLLCJzcxC15GUBrOlg",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27339d071e46c5b8063cbdffe56"
+        "link": "https://open.spotify.com/track/2lzb0dgTFAfrHfzlZA9Hxw",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f26e3693011a75c41a1d9697"
     }
 }
