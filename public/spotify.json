@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "MASCARA",
-        "artist": "XG",
-        "link": "https://open.spotify.com/track/4OelNEcxPGoCOU29fchcsv",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d8bb914644898de5012dedf3"
+        "name": "HOTLINE",
+        "artist": "MASHIRO",
+        "link": "https://open.spotify.com/track/6YwwV7esDxVIYlbLN3C9pD",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27361c2dc1f0403f6d14b29b970"
     }
 }
