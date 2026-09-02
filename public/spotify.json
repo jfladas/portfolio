@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "DNA (Dream N Access)",
-        "artist": "tripleS",
-        "link": "https://open.spotify.com/track/30WFuJJO5FdTc0VkZ1kedR",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27393a1963e19f20cdcfb0738ff"
+        "name": "Do It",
+        "artist": "underscores",
+        "link": "https://open.spotify.com/track/4BBL8YQ1SUhSbcsEguX8kL",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273cab898cdda3ee7d1e9b25646"
     }
 }
