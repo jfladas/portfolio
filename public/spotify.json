@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Checkmate",
-        "artist": "ENHYPEN",
-        "link": "https://open.spotify.com/track/5BPz1bcrWmrTAzzODtQqB9",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27327154ec69768838c6c62f74b"
+        "name": "POSE",
+        "artist": "LOONA",
+        "link": "https://open.spotify.com/track/2BdGXQ4MjeYCZ9JNte85Q4",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2735fe0013ebb4022adc0f042be"
     }
 }
