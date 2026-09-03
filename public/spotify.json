@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "IYKYK",
-        "artist": "XG",
-        "link": "https://open.spotify.com/track/0Gl9pXfGTU8eAnEbcka6AV",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273fcda1903d978d02fd3f5334b"
+        "name": "SUN KISS",
+        "artist": "TUIDE",
+        "link": "https://open.spotify.com/track/7Jpb9OejYYIwsBIVQwceRy",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2739ee310150eb907c28c40397a"
     }
 }
