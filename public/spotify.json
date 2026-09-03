@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Dream Dress",
-        "artist": "tripleS",
-        "link": "https://open.spotify.com/track/0XuaaNwyY1DobqT0uFdlot",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273e815213a5b29a9dde3d08397"
+        "name": "Delulu",
+        "artist": "KiiiKiii",
+        "link": "https://open.spotify.com/track/3BWXNAPGGWhCJwsOFolnBB",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2730cc65398388cbc486fa4fff7"
     }
 }
