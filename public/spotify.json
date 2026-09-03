@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "BOX",
-        "artist": "NCT DREAM",
-        "link": "https://open.spotify.com/track/2IXewVHkYl24e54xaG8Cot",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27367c07f0becfe4e1f0163fa5c"
+        "name": "Cheeky Icy Thang",
+        "artist": "STAYC",
+        "link": "https://open.spotify.com/track/3BhyxulZ13uWZS6LqiYiCj",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2730cac27fa1830d50ff4a7a20d"
     }
 }
