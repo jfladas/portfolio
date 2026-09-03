@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Girls On Fire",
-        "artist": "X:IN",
-        "link": "https://open.spotify.com/track/706QiQYighopljp4kebEkV",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733e7bd66140b6b89d27b57ed3"
+        "name": "Guess Who's Back",
+        "artist": "AWU",
+        "link": "https://open.spotify.com/track/7e9B2esdvXuV2nfxpKxkr2",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273a954964592b344fecd71b1ef"
     }
 }
