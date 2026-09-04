@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Red Sun",
-        "artist": "xikers",
-        "link": "https://open.spotify.com/track/3z3eX1eG1Gj0YFDhYPkTrl",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732eb59f439cfbf8632832ee30"
+        "name": "WAO WAO",
+        "artist": "ALL(H)OURS",
+        "link": "https://open.spotify.com/track/1VEcURw5AJrI4OIqBMO07q",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273b1b036fb921f3347dc7b88cc"
     }
 }
