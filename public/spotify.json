@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Key Beats",
-        "artist": "Keyveatz",
-        "link": "https://open.spotify.com/track/78LggIu7ieohPUuP91SmBI",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737a8c5cd429772938471ff400"
+        "name": "Boys",
+        "artist": "AD\u00c9LA",
+        "link": "https://open.spotify.com/track/5QHdBMFvD4ow4ePzZRNZQB",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2730be0a93ceccc11e0a97eab65"
     }
 }
