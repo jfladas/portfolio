@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "WHAT'S GOIN' ON",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/5RYFLurX0Vg85bgnClS6im",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27309356845841d89c0a456e3f7"
+        "name": "YES",
+        "artist": "HYO",
+        "link": "https://open.spotify.com/track/6fddQOKIPSFKpIz9AaX94Q",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273b8460a5d971ac967f6b21b9e"
     }
 }
