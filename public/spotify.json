@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Gone",
-        "artist": "Noa Kirel",
-        "link": "https://open.spotify.com/track/3shQQApe5KQ6BBr9wy3HCd",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273a6dd3ca04b1c63af9262db87"
+        "name": "Lottery",
+        "artist": "LIZ",
+        "link": "https://open.spotify.com/track/0IONRljAuf94GIkBhNKETP",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2731eae159364e9aacb6fba204a"
     }
 }
