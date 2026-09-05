@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Killing Butterflies",
-        "artist": "Lou Bliss",
-        "link": "https://open.spotify.com/track/3R8PKPTPgHApBhCt3NUJ0q",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737dd68187a9e23318413ba3fd"
+        "name": "Surfin' Boy",
+        "artist": "Red Velvet",
+        "link": "https://open.spotify.com/track/3caqaSvtldUKLY5Fd5msk2",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733df160174c379ca0f9bb7c18"
     }
 }
