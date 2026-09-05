@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Switchblade (feat. Ty Dolla $ign)",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/27Vku9m1VA4ooCpTgJM57e",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c8e473ed553fc89b70d1557b"
+        "name": "BLEEP",
+        "artist": "Stray Kids",
+        "link": "https://open.spotify.com/track/4UP9Dn3u8O4p8oH41EXOai",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2734003b4bfaa44b5fd52b00be2"
     }
 }
