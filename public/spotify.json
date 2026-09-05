@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Surfin' Boy",
-        "artist": "Red Velvet",
-        "link": "https://open.spotify.com/track/3caqaSvtldUKLY5Fd5msk2",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733df160174c379ca0f9bb7c18"
+        "name": "Girls On Fire",
+        "artist": "X:IN",
+        "link": "https://open.spotify.com/track/706QiQYighopljp4kebEkV",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733e7bd66140b6b89d27b57ed3"
     }
 }
