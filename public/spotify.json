@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Spark - WINTER Solo",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/2xoA126GEgFhrYzRaTH7E4",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273253096eda3b7826c11c7fab8"
+        "name": "Skibidi",
+        "artist": "Girls' Generation-HRS",
+        "link": "https://open.spotify.com/track/2L1dsjU3R3U4SX27qIiPrq",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273e9e0a338ea9287ec14a8c177"
     }
 }
