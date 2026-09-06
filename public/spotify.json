@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Ariana",
-        "artist": "dearALICE",
-        "link": "https://open.spotify.com/track/5kDNm2z2Ij6Yjrs3kP8FKi",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273e72f23f8e16aa60f60d71b14"
+        "name": "DNA (Dream N Access)",
+        "artist": "tripleS",
+        "link": "https://open.spotify.com/track/30WFuJJO5FdTc0VkZ1kedR",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27393a1963e19f20cdcfb0738ff"
     }
 }
