@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "That\u2019s It",
-        "artist": "P1Harmony",
-        "link": "https://open.spotify.com/track/2zpo1F34lMZMr3Sc2aCuZm",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ff3d7778726d40d19af4069f"
+        "name": "Supernova",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/5lKnZbdGCBViitE1Ce5TZh",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c60843bafc67821cff6df260"
     }
 }
