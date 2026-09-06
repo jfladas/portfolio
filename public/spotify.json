@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "singasong",
-        "artist": "THE 8",
-        "link": "https://open.spotify.com/track/1uDVTuH0e2XaMPsX3yox1T",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b6e41dbf924b820c20644bf2"
+        "name": "XS",
+        "artist": "Rina Sawayama",
+        "link": "https://open.spotify.com/track/1TWNKyNQOBfNUkWWs7FooF",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2735b131d745dafd8666254fe96"
     }
 }
