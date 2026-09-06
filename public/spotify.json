@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "STRIKE",
-        "artist": "EPEX",
-        "link": "https://open.spotify.com/track/1IMDUgl0YBTEuL2wuTUCDO",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733023fef91d22c291e878e6fb"
+        "name": "I'll Make You Cry",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/6l1dTAhX7P6EKvA11NLNuW",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273d8cc2281fcd4519ca020926b"
     }
 }
