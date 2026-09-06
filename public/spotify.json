@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "STRIKE",
-        "artist": "EPEX",
-        "link": "https://open.spotify.com/track/1IMDUgl0YBTEuL2wuTUCDO",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733023fef91d22c291e878e6fb"
+        "name": "LUCID DREAM",
+        "artist": "IVE",
+        "link": "https://open.spotify.com/track/2fwzvSVJhlMxYnhxGvFQos",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27372e8443d24e3391de59e1db4"
     }
 }
