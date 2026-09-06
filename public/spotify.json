@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Paris",
-        "artist": "Sabrina Carpenter",
-        "link": "https://open.spotify.com/track/359HNzfOXhCMHB1pNKhyfH",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27338b27a27cea311f34bb68eff"
+        "name": "SERVE",
+        "artist": "XLOV",
+        "link": "https://open.spotify.com/track/1hFQ6vxNUsrRBgwb8m5b6s",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27365858fb02c02b6865f589383"
     }
 }
