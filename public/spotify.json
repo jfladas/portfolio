@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Saki (feat. Aliyah's Interlude)",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/7r2SJUMWUwghdXczQDSYST",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
+        "name": "Graffiti",
+        "artist": "ALL(H)OURS",
+        "link": "https://open.spotify.com/track/292feGlH0PLrgyPkqik0kW",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273b3876bd374e177599d06508d"
     }
 }
