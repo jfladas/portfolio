@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "BOOMPALA",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/41d2WjuL0ikRKVjxmL7ZFz",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
+        "name": "Hyper Crush",
+        "artist": "ARTMS",
+        "link": "https://open.spotify.com/track/3J42CAxhwsKP0MGI1E1QjM",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c8ab3416a9421cdaa96dc0ee"
     }
 }
