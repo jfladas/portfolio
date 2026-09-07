@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Secret Story of the Swan",
-        "artist": "IZ*ONE",
-        "link": "https://open.spotify.com/track/7G6WuVZuTbF6JcnA9wOvsD",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273e8132ffe49666c18a1f243b3"
+        "name": "LOW BATTERY",
+        "artist": "RAPH4EL",
+        "link": "https://open.spotify.com/track/20A6CQGkqWrlsrkRLN9AaW",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2737278a7e87ed2acbb41b8fd39"
     }
 }
