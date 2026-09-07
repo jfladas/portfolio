@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "SHOOTING STAR",
-        "artist": "XG",
-        "link": "https://open.spotify.com/track/3IelG5zYpWWCZIH4cqWlPV",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733f40fd20e67b865fca5391a3"
+        "name": "Saki (feat. Aliyah's Interlude)",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/7r2SJUMWUwghdXczQDSYST",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
     }
 }
