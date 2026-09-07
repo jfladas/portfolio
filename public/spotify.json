@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "LOW BATTERY",
-        "artist": "RAPH4EL",
-        "link": "https://open.spotify.com/track/20A6CQGkqWrlsrkRLN9AaW",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737278a7e87ed2acbb41b8fd39"
+        "name": "Alter Ego (with JT)",
+        "artist": "Doechii",
+        "link": "https://open.spotify.com/track/2xaaJcmvMOmpDbTwlWnjFh",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736a3a721d2d9bf4f02bc362c2"
     }
 }
