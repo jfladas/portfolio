@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "YEPPI YEPPI",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/3UKKwGrpWWamc0XNSKXjmz",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d8cc2281fcd4519ca020926b"
+        "name": "SHOOTING STAR",
+        "artist": "XG",
+        "link": "https://open.spotify.com/track/3IelG5zYpWWCZIH4cqWlPV",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733f40fd20e67b865fca5391a3"
     }
 }
