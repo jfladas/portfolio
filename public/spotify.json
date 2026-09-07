@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Don't Panic!",
-        "artist": "VERIVERY",
-        "link": "https://open.spotify.com/track/2iIpjlEWePSLiA1Wa46hM0",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2739c7784ce388f535430e21c12"
+        "name": "BOOMPALA",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/41d2WjuL0ikRKVjxmL7ZFz",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
     }
 }
