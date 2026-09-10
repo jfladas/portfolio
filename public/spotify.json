@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "LOW BATTERY",
-        "artist": "RAPH4EL",
-        "link": "https://open.spotify.com/track/20A6CQGkqWrlsrkRLN9AaW",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737278a7e87ed2acbb41b8fd39"
+        "name": "LOUD",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/73lfEYepfxPGdHnplkgaNl",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273bbecb95942f283598af3bc40"
     }
 }
