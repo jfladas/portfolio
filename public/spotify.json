@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "LOW BATTERY",
-        "artist": "RAPH4EL",
-        "link": "https://open.spotify.com/track/20A6CQGkqWrlsrkRLN9AaW",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737278a7e87ed2acbb41b8fd39"
+        "name": "AEIOU",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/6Ygy2plo12TdF66rUjaMML",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273290ff94ac8607ccd9eb3eb5c"
     }
 }
