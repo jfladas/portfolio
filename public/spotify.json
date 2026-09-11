@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Hootie Frutti",
-        "artist": "KATSEYE",
-        "link": "https://open.spotify.com/track/6oUUmBcUbZa5O48V5pjgAD",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2735631546bdc010851494d88ba"
+        "name": "Made My Night",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/5MOIAV008posdOGmxiJBsi",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273290ff94ac8607ccd9eb3eb5c"
     }
 }
