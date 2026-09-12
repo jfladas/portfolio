@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Reality Hurts",
-        "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/6jmKdEzi3cJRPQDFHJOqJq",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ee26bd5ae483fc54e6ef9e74"
+        "name": "LOW BATTERY",
+        "artist": "RAPH4EL",
+        "link": "https://open.spotify.com/track/20A6CQGkqWrlsrkRLN9AaW",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2737278a7e87ed2acbb41b8fd39"
     }
 }
