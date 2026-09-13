@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "LOW BATTERY",
-        "artist": "RAPH4EL",
-        "link": "https://open.spotify.com/track/20A6CQGkqWrlsrkRLN9AaW",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737278a7e87ed2acbb41b8fd39"
+        "name": "SUN KISS",
+        "artist": "TUIDE",
+        "link": "https://open.spotify.com/track/7Jpb9OejYYIwsBIVQwceRy",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2739ee310150eb907c28c40397a"
     }
 }
