@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Dirty Work",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/4qtdab2DABnEokwupCl8lG",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2735f006dfacaeefeb16a61e0ff"
+        "name": "VELOCIDADE",
+        "artist": "SANTOS BRAVOS",
+        "link": "https://open.spotify.com/track/3J8uUvHttFs8zlYxoiPVe3",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273a02753a8d814fd3185f146cc"
     }
 }
