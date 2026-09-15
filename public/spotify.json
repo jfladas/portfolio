@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Mood",
-        "artist": "RESCENE",
-        "link": "https://open.spotify.com/track/1xj3CoSLzzkyQXeN1jFUtf",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732d3d7a09566b6d612c890824"
+        "name": "Skibidi",
+        "artist": "Girls' Generation-HRS",
+        "link": "https://open.spotify.com/track/2L1dsjU3R3U4SX27qIiPrq",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273e9e0a338ea9287ec14a8c177"
     }
 }
