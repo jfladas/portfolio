@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "LOOK (RYUJIN)",
-        "artist": "ITZY",
-        "link": "https://open.spotify.com/track/1CeRRE4NIfxyw2DnUrGu67",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273602d784bb4641a66103edec1"
+        "name": "ZOOM",
+        "artist": "USPEER",
+        "link": "https://open.spotify.com/track/5koizuWzXgVvvJxeToiU1t",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2731fa6a3f8713a410f00998b37"
     }
 }
