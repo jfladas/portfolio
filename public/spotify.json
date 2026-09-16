@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "ZOOM",
-        "artist": "USPEER",
-        "link": "https://open.spotify.com/track/5koizuWzXgVvvJxeToiU1t",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2731fa6a3f8713a410f00998b37"
+        "name": "THAT GIRL",
+        "artist": "ALICE",
+        "link": "https://open.spotify.com/track/1UcuYM0Sdj4oBSh3a0tQ7X",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27332c2db769b7af2fbcdedbb95"
     }
 }
