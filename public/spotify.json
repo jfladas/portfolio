@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Chasing Lightning",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/5hfKDfqthxHt6xsgCjimuO",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27313134929dd979f89b8f4f477"
+        "name": "OUTWEST",
+        "artist": "TEN",
+        "link": "https://open.spotify.com/track/4Bn4b4N7rWCqPlKfEZi6PB",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c59b4265cad7c51a39c87fcf"
     }
 }
