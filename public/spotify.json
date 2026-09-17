@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "LOW BATTERY",
-        "artist": "RAPH4EL",
-        "link": "https://open.spotify.com/track/20A6CQGkqWrlsrkRLN9AaW",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737278a7e87ed2acbb41b8fd39"
+        "name": "Trick or Trick",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/3EI3OLBeM89B0o0UsIGCOx",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273593abd65e61c72196b887d71"
     }
 }
