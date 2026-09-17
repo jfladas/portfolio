@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "rollerblade",
-        "artist": "no na",
-        "link": "https://open.spotify.com/track/3fL35dqYnnabdEp8Sln0lf",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273211f708536bf8c46dbd2b309"
+        "name": "ANTIFRAGILE",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/0bMoNdAnxNR0OuQbGDovrr",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27308afa023781dc4841319f3fc"
     }
 }
