@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Body On - Boys' Version",
-        "artist": "dearALICE",
-        "link": "https://open.spotify.com/track/2GHyPQSStnFrWFIctan58z",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273a2a9ab254f9f3f3bf1021596"
+        "name": "Party",
+        "artist": "Troye Sivan",
+        "link": "https://open.spotify.com/track/0zbf6dj8GkCdYRRRph7ELk",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27349a03fb4047daf097bb12f5f"
     }
 }
