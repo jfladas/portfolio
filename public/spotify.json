@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "BOYtude",
-        "artist": "idntt",
-        "link": "https://open.spotify.com/track/2hv3fzGIWRnUJUa0gkGsIY",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2738c28df2937fd9af634353494"
+        "name": "soju",
+        "artist": "YOUNG POSSE",
+        "link": "https://open.spotify.com/track/325PIxEhjj4TAZdb6EQ31x",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736f8c557438166423240df9e5"
     }
 }
