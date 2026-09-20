@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "LOW BATTERY",
-        "artist": "RAPH4EL",
-        "link": "https://open.spotify.com/track/20A6CQGkqWrlsrkRLN9AaW",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737278a7e87ed2acbb41b8fd39"
+        "name": "This & That - Festival Version",
+        "artist": "Stray Kids",
+        "link": "https://open.spotify.com/track/5GuQGg2n7UZWPqiXJ6orhj",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27337f636fa384b48481241cbd3"
     }
 }
