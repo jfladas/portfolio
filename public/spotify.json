@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Made My Night",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/5MOIAV008posdOGmxiJBsi",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273290ff94ac8607ccd9eb3eb5c"
+        "name": "Fangirl",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/2363xIXWyc692R4hAAsaHp",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273304c46fde5f5244a66f7317b"
     }
 }
