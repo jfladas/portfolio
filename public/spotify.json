@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Che fastidio!",
-        "artist": "Ditonellapiaga",
-        "link": "https://open.spotify.com/track/7FhkA9JPIn1aXFGA6qRysu",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f5b523e73da5963fffedf4e3"
+        "name": "Go",
+        "artist": "AD\u00c9LA",
+        "link": "https://open.spotify.com/track/45j9TIzFogzy3XEAmB55uV",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2737defa29b13dc40d5a95bc9a0"
     }
 }
