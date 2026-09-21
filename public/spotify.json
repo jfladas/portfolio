@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "bury a friend",
-        "artist": "Billie Eilish",
-        "link": "https://open.spotify.com/track/4SSnFejRGlZikf02HLewEF",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27350a3147b4edd7701a876c6ce"
+        "name": "Klan",
+        "artist": "Mahmood",
+        "link": "https://open.spotify.com/track/7BGJ8ZkdiLsSthNIVDCE9T",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273fcde34db3e8bcb1b70e32ac9"
     }
 }
