@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "DOMINO",
-        "artist": "Stray Kids",
-        "link": "https://open.spotify.com/track/6Ib6RkvLBMD85bov85apSL",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2731843897a2a72dd5036bbb1fc"
+        "name": "Caution",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/1eeDDhce3BKYs3McG0J58F",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273fa1840a87e51878c57b10f54"
     }
 }
