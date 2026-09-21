@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "star",
-        "artist": "no na",
-        "link": "https://open.spotify.com/track/5B2mE1GD2u2DotWHJQilzf",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273abb55c6cfced27f1a78205cf"
+        "name": "ExtraL (feat. Doechii)",
+        "artist": "JENNIE",
+        "link": "https://open.spotify.com/track/4EIFwndJvGpgFjsEbNuYif",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273dcf27dec5e479b2e39c4c993"
     }
 }
