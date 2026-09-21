@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Stunnin' (feat. Harm Franklin)",
-        "artist": "Curtis Waters",
-        "link": "https://open.spotify.com/track/2D0dj3hVkRQJCp63cxCPEx",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c8e201b69f790a7c6e7e1429"
+        "name": "bury a friend",
+        "artist": "Billie Eilish",
+        "link": "https://open.spotify.com/track/4SSnFejRGlZikf02HLewEF",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27350a3147b4edd7701a876c6ce"
     }
 }
