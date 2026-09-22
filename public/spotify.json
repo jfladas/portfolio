@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "FLASH",
-        "artist": "Rocket Punch",
-        "link": "https://open.spotify.com/track/2Purw8ZAANLan4cMqsKVp7",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b84978854335d6da1ab4349f"
+        "name": "Red light sign, but we go",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/7h6zQBXlsrUb9990J8x0vr",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c9c9aaadb2d6d3d44be06332"
     }
 }
