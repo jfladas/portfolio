@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "FOUR",
-        "artist": "TWICE",
-        "link": "https://open.spotify.com/track/42H2fVCykCIgTV7bJ4dzdP",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737f5ac389dbcaf7a8c17371e3"
+        "name": "r u ok?",
+        "artist": "ifeye",
+        "link": "https://open.spotify.com/track/7LwQfsJ7JzgfFr7ErvcTs6",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27384da99b02d1ed77eb1e764c8"
     }
 }
