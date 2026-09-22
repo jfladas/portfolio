@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "SQUEEZY",
-        "artist": "OURBIRTHDAY",
-        "link": "https://open.spotify.com/track/1JE4dvSinnGF5itbfTpywh",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273e56f7fa305a0b39248da4f50"
+        "name": "FOUR",
+        "artist": "TWICE",
+        "link": "https://open.spotify.com/track/42H2fVCykCIgTV7bJ4dzdP",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2737f5ac389dbcaf7a8c17371e3"
     }
 }
