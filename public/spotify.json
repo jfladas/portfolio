@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Che fastidio!",
-        "artist": "Ditonellapiaga",
-        "link": "https://open.spotify.com/track/7FhkA9JPIn1aXFGA6qRysu",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f5b523e73da5963fffedf4e3"
+        "name": "Animal",
+        "artist": "dearALICE",
+        "link": "https://open.spotify.com/track/1mSfEz2ezob3rgxa6sYDcG",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273a2a9ab254f9f3f3bf1021596"
     }
 }
