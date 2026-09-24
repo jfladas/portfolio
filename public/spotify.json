@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Stamp On It",
-        "artist": "GOT the beat",
-        "link": "https://open.spotify.com/track/0mlxHb4jbPr1PUBUv0WHRS",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2738a595377408ac1b91186223b"
+        "name": "Te-Te Gyaru",
+        "artist": "Yukipoyo",
+        "link": "https://open.spotify.com/track/0xEIWt66MvfkY6TwCD3k9K",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27319f0cce91966751cb1e11319"
     }
 }
