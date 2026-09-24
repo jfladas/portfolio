@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "crank 2",
-        "artist": "Slayyyter",
-        "link": "https://open.spotify.com/track/6LMdNshhDtSq5pUSlPjTsE",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733f1b3ae41c6946ad1f98902f"
+        "name": "Adrenaline",
+        "artist": "ATEEZ",
+        "link": "https://open.spotify.com/track/2VKGO4DNyUK5UxCQB3b3DF",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273086a75a16dcda8d0b64f022a"
     }
 }
