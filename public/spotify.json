@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "loverboy",
-        "artist": "ifeye",
-        "link": "https://open.spotify.com/track/4H7mZef7MeCkU2BgsG0lLh",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27384da99b02d1ed77eb1e764c8"
+        "name": "Don\u2032t Be Dumb",
+        "artist": "Kep1er",
+        "link": "https://open.spotify.com/track/1lyBiDdPPYkH0Lzo5WProF",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f392d085bc632eba08dcfd5c"
     }
 }
