@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "LOCO",
-        "artist": "ITZY",
-        "link": "https://open.spotify.com/track/56Yxkm62GtEpnPyG7TvwLY",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273a0df2d59f0ae9426cba3eb36"
+        "name": "Villain",
+        "artist": "TRENDZ",
+        "link": "https://open.spotify.com/track/0cJb8ETU06dBISn0La9iTF",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273bf14affd186dca45d6a259d4"
     }
 }
