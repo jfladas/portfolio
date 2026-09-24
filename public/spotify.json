@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Alter Ego",
-        "artist": "GOT the beat",
-        "link": "https://open.spotify.com/track/08pPhcvPmphUEx3pEBZwGZ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2738a595377408ac1b91186223b"
+        "name": "Bad Girls R Us",
+        "artist": "ITZY",
+        "link": "https://open.spotify.com/track/0mfE7vrtspTMJHCpnrF6UC",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273dd734636e6d28fdc528a839d"
     }
 }
