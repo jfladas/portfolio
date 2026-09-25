@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Dinero",
-        "artist": "MINGI",
-        "link": "https://open.spotify.com/track/7M8d5kcqt7zLDwRQS5Kp2R",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b4a202ee28f508badf1d443f"
+        "name": "BORN DIRE",
+        "artist": "ALPHA DRIVE ONE",
+        "link": "https://open.spotify.com/track/5SCyHMxB5SWZP4EAKI5YRu",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273fbd0e41ffaad4d6be966eb2c"
     }
 }
