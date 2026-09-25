@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Superscar",
-        "artist": "AD\u00c9LA",
-        "link": "https://open.spotify.com/track/1UymCJrYWtsFFg70YUvh6K",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737defa29b13dc40d5a95bc9a0"
+        "name": "Girls",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/2WTHLEVjfefbGoW7F3dXIg",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2731cbd221702dc7fe4efaf3b4f"
     }
 }
