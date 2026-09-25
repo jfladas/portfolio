@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Girls",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/2WTHLEVjfefbGoW7F3dXIg",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2731cbd221702dc7fe4efaf3b4f"
+        "name": "Te-Te Gyaru - Tagalog Remix",
+        "artist": "Yukipoyo",
+        "link": "https://open.spotify.com/track/1n46TSBGykSUpg92Wmp5AA",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2732e4fc89727e814a5083d634e"
     }
 }
