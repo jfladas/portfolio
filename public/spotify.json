@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Northern Lights",
-        "artist": "Kennie",
-        "link": "https://open.spotify.com/track/6xVwzzLxPSO3kbjmRQqWp3",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c5581fe86ee2f13974c54808"
+        "name": "Pureflow",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/0mgbaZyS4BCJjJ3EeG0TXm",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
     }
 }
