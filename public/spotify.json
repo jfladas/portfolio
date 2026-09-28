@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Sour Diesel",
-        "artist": "ZAYN",
-        "link": "https://open.spotify.com/track/3r7bVFHopFj2g8U4yKEpGJ",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732898dd297362decb2ae8b6f4"
+        "name": "Samo mi se spava",
+        "artist": "Luke Black",
+        "link": "https://open.spotify.com/track/7wLxoyWoClSUAlKGjaefQn",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2733c3e2feeb565dd06d45078e1"
     }
 }
