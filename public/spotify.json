@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "REDRED",
-        "artist": "CORTIS",
-        "link": "https://open.spotify.com/track/34YVCoqIm08nbsxFSPL0Uh",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273da2a04ef57dfebfb8946fd49"
+        "name": "Do It",
+        "artist": "underscores",
+        "link": "https://open.spotify.com/track/4BBL8YQ1SUhSbcsEguX8kL",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273cab898cdda3ee7d1e9b25646"
     }
 }
