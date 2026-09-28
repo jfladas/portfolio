@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "First Time",
-        "artist": "Liam Payne",
-        "link": "https://open.spotify.com/track/63MtMwfhxUvM2cyUNb5Iux",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ce4a2d4df1d12b9c85441c33"
+        "name": "There's No Way (feat. Julia Michaels)",
+        "artist": "Lauv",
+        "link": "https://open.spotify.com/track/3F7bhRhNpY4YKrwa4kGeUz",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736925b6f0ede506a132d2563a"
     }
 }
