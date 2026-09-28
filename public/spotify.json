@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Crisis",
-        "artist": "Trevi Moran",
-        "link": "https://open.spotify.com/track/7dlH4Jg6WqJqpeEYVG4rrW",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27328fcaafa8182fc2e8bc3d6a5"
+        "name": "\u05de\u05d4 \u05d0\u05ea\u05d4 \u05e8\u05d5\u05e6\u05d4",
+        "artist": "Ella Lee",
+        "link": "https://open.spotify.com/track/1inqeo4qN7t9nSPiwZtR82",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2738c8efab11e269cc17adcf759"
     }
 }
