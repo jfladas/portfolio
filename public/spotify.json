@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "The Chase",
-        "artist": "Hearts2Hearts",
-        "link": "https://open.spotify.com/track/68UrZQUuO3O6eUiD226xHg",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d346fc1102eb417305b5358b"
+        "name": "LOUD",
+        "artist": "NMIXX",
+        "link": "https://open.spotify.com/track/5rGrtds032AS35wDDyTNN4",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273d179b01c0b9baac10170d1ad"
     }
 }
