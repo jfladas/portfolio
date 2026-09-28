@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "\u05de\u05d4 \u05d0\u05ea\u05d4 \u05e8\u05d5\u05e6\u05d4",
-        "artist": "Ella Lee",
-        "link": "https://open.spotify.com/track/1inqeo4qN7t9nSPiwZtR82",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2738c8efab11e269cc17adcf759"
+        "name": "First Time",
+        "artist": "Liam Payne",
+        "link": "https://open.spotify.com/track/63MtMwfhxUvM2cyUNb5Iux",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ce4a2d4df1d12b9c85441c33"
     }
 }
