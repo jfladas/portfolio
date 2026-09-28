@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "CELEBRATION",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/3OKvpTlnhvj8u6fbV53kqC",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733fba33983638fcf9704c965d"
+        "name": "FXCK UP THE WORLD (feat. Future)",
+        "artist": "LISA",
+        "link": "https://open.spotify.com/track/4rBRRLgdB9DYJhqA9uVcWt",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27395ce3d848f4e452489d4a12c"
     }
 }
