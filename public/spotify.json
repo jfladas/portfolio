@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "dizzy",
-        "artist": "no na",
-        "link": "https://open.spotify.com/track/3gT4AGqJTQrBHcPdqtXf5j",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273abb55c6cfced27f1a78205cf"
+        "name": "Close",
+        "artist": "dearALICE",
+        "link": "https://open.spotify.com/track/3mc2LWQkUX4tscHxdaRlz9",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736da3fb27aacd266c0a199be6"
     }
 }
