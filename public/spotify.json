@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "PANDORA",
-        "artist": "MAVE:",
-        "link": "https://open.spotify.com/track/70yszWsLJvNZuZwaHNMROf",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737eefbb1c849c250e2fdccd16"
+        "name": "Eve, Psyche & The Bluebeard\u2019s wife",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/4QhnNyKDsAkXPwHkSnuc89",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27308afa023781dc4841319f3fc"
     }
 }
