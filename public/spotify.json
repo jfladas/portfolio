@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "VENOM",
-        "artist": "Stray Kids",
-        "link": "https://open.spotify.com/track/4b3rGL8LDSkbARUUA20136",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2733613e1e0d35867a0814005a9"
+        "name": "TNT (Truth&Trust)",
+        "artist": "TRENDZ",
+        "link": "https://open.spotify.com/track/4T30WW01s7L6kVDjJcIjST",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273bf14affd186dca45d6a259d4"
     }
 }
