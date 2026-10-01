@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "PINKY UP - Techno Remix",
-        "artist": "KATSEYE",
-        "link": "https://open.spotify.com/track/6wrGauVZdGnOVcEkNJaDN6",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27302ca636dde0ccf699a4a14c2"
+        "name": "ANIMAL",
+        "artist": "BOYNEXTDOOR",
+        "link": "https://open.spotify.com/track/3U7iIHygNSOcjcL98KwHQg",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2735cf8adfa610ca8898675a749"
     }
 }
