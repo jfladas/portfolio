@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "ARISONG",
-        "artist": "cignature",
-        "link": "https://open.spotify.com/track/0qpCYOgfvMVfjOdaqVbYMY",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273597a7cbc87146fc989cae8b6"
+        "name": "Girls of the Year",
+        "artist": "VCHA",
+        "link": "https://open.spotify.com/track/03grA043a1uECo5Kyw28a0",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736ffd95362da56125cd03a7f9"
     }
 }
