@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Best Believe",
-        "artist": "IRENE",
-        "link": "https://open.spotify.com/track/5nrkaejStsFr3bAyWuvdCj",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2739fb7d9bfb68f3c477ee547e1"
+        "name": "TARGET",
+        "artist": "CLASSy",
+        "link": "https://open.spotify.com/track/3dl3PCd7rie7q7JEzU3eMx",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f1dafc4015508fa70e6ddc0d"
     }
 }
