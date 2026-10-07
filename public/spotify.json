@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "SOMETHING AIN'T RIGHT",
-        "artist": "XG",
-        "link": "https://open.spotify.com/track/3RxL9p66oXKuSdXYeFcJeT",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273fcda1903d978d02fd3f5334b"
+        "name": "GO AHEAD",
+        "artist": "YOUNG POSSE",
+        "link": "https://open.spotify.com/track/3ySdjUjy6RJmd5xDfHruWq",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2737b2a67254f4c6c71a68915c1"
     }
 }
