@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "GO AHEAD",
-        "artist": "YOUNG POSSE",
-        "link": "https://open.spotify.com/track/3ySdjUjy6RJmd5xDfHruWq",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737b2a67254f4c6c71a68915c1"
+        "name": "Bye Bye Inhibitions",
+        "artist": "Alok",
+        "link": "https://open.spotify.com/track/0uI8zAUhinOJDIfWYam8lX",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c993c7006209b7f529199207"
     }
 }
