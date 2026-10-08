@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "HEARTRIS",
-        "artist": "NiziU",
-        "link": "https://open.spotify.com/track/4TBpE4HSPeB6OTqbqqwSon",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b03b6f50bfabb81f6ca1bd71"
+        "name": "Bye Bye Inhibitions",
+        "artist": "Alok",
+        "link": "https://open.spotify.com/track/0uI8zAUhinOJDIfWYam8lX",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c993c7006209b7f529199207"
     }
 }
