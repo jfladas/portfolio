@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Delete Me",
-        "artist": "n\u00e6vis",
-        "link": "https://open.spotify.com/track/2UKmXTbVMtCRgFEq6BR7Aj",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f16d29792fe9ffe390376bcc"
+        "name": "Cheetah",
+        "artist": "Red Velvet - IRENE & SEULGI",
+        "link": "https://open.spotify.com/track/0WMhpKFwel1RuR4wF7wuHa",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2734c21a5f51946ef7784c2892e"
     }
 }
