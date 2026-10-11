@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "MWA!",
-        "artist": "DOLLA",
-        "link": "https://open.spotify.com/track/3IIHUIzolxO8OmFsUkT8w2",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ba2e24e69c5234f910c50cc9"
+        "name": "Do It",
+        "artist": "underscores",
+        "link": "https://open.spotify.com/track/4BBL8YQ1SUhSbcsEguX8kL",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273cab898cdda3ee7d1e9b25646"
     }
 }
