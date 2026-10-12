@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Punk Right Now",
-        "artist": "HYO",
-        "link": "https://open.spotify.com/track/757UjBpT2EkYnrUK9gkDZH",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ce2709a8db65629fb9c7a0a6"
+        "name": "ACCELERANDO",
+        "artist": "Grimes",
+        "link": "https://open.spotify.com/track/3Vv6jWPmzKXlaoKsVwNM0O",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27302c7e82ae51bd0ec43d6a9e0"
     }
 }
