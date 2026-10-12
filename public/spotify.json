@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Day Zero",
-        "artist": "OMEGA X",
-        "link": "https://open.spotify.com/track/2PqbNkTy72MhI6csFxxUSy",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c6e6374ce9600769f67ad127"
+        "name": "The Chase",
+        "artist": "Hearts2Hearts",
+        "link": "https://open.spotify.com/track/68UrZQUuO3O6eUiD226xHg",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273d346fc1102eb417305b5358b"
     }
 }
