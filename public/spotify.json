@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "I DO ME",
-        "artist": "KiiiKiii",
-        "link": "https://open.spotify.com/track/5PclMa9Pxs1OFWSAS6Nid9",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273620ccd1554246ff7d7efbbec"
+        "name": "UPGRADE",
+        "artist": "NCT WISH",
+        "link": "https://open.spotify.com/track/37QXt3MsoMRH272Fbc5dtY",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27365cd6ccb20f03e763ae785d8"
     }
 }
