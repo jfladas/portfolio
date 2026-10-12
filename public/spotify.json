@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Rich Man",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/2lzb0dgTFAfrHfzlZA9Hxw",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f26e3693011a75c41a1d9697"
+        "name": "Punk Right Now",
+        "artist": "HYO",
+        "link": "https://open.spotify.com/track/757UjBpT2EkYnrUK9gkDZH",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ce2709a8db65629fb9c7a0a6"
     }
 }
