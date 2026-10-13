@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Commas",
-        "artist": "GIRLSET",
-        "link": "https://open.spotify.com/track/0S7hKhEMgMKcA1O1ZKmwoE",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273fdbae19e7df07a2c2e7406b5"
+        "name": "NEON",
+        "artist": "A2O",
+        "link": "https://open.spotify.com/track/5PvLNQRNRj61y3CU4SFIY4",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ce51a6c769272c5a8f1fb3f3"
     }
 }
