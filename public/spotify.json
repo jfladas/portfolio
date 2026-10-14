@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Dark Arts",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/2wRXvIGUTRWod4yp1k3bGN",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ec607ab359aa2071ae805c21"
+        "name": "Blue Hour",
+        "artist": "KiiiKiii",
+        "link": "https://open.spotify.com/track/4WKpoSsYsXnStoyiyQxt3F",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2732e6090052314604f93f1ebe4"
     }
 }
