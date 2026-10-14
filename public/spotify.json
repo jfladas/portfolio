@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "I SPY",
-        "artist": "NCT WISH",
-        "link": "https://open.spotify.com/track/3kcGkOmFXtaFjVdz7ge1WL",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27365cd6ccb20f03e763ae785d8"
+        "name": "ACCELERANDO",
+        "artist": "Grimes",
+        "link": "https://open.spotify.com/track/3Vv6jWPmzKXlaoKsVwNM0O",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27302c7e82ae51bd0ec43d6a9e0"
     }
 }
