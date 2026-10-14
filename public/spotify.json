@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Blue Hour",
-        "artist": "KiiiKiii",
-        "link": "https://open.spotify.com/track/4WKpoSsYsXnStoyiyQxt3F",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732e6090052314604f93f1ebe4"
+        "name": "NEON",
+        "artist": "A2O",
+        "link": "https://open.spotify.com/track/5PvLNQRNRj61y3CU4SFIY4",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273b530cdeee0fc5d2d2888e3c2"
     }
 }
