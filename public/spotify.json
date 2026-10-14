@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "ZEALOUS",
-        "artist": "CLASSy",
-        "link": "https://open.spotify.com/track/2bITYP1s2W1BJh9Q0YwBJC",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27346182642d625bb8647e49e78"
+        "name": "Dark Arts",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/2wRXvIGUTRWod4yp1k3bGN",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ec607ab359aa2071ae805c21"
     }
 }
