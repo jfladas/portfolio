@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "ACCELERANDO",
-        "artist": "Grimes",
-        "link": "https://open.spotify.com/track/3Vv6jWPmzKXlaoKsVwNM0O",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27302c7e82ae51bd0ec43d6a9e0"
+        "name": "P.O.W! (Play On the World)",
+        "artist": "Cherry Bullet",
+        "link": "https://open.spotify.com/track/4ReYQP9bbhikRgZ5iGIbQX",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273bfdc8aa8a16dfebc3543a09b"
     }
 }
