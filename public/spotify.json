@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "I SPY",
-        "artist": "NCT WISH",
-        "link": "https://open.spotify.com/track/3kcGkOmFXtaFjVdz7ge1WL",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27365cd6ccb20f03e763ae785d8"
+        "name": "Do It",
+        "artist": "underscores",
+        "link": "https://open.spotify.com/track/4BBL8YQ1SUhSbcsEguX8kL",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273cab898cdda3ee7d1e9b25646"
     }
 }
