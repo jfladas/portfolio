@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "NO LIMIT",
-        "artist": "ALLDAY PROJECT",
-        "link": "https://open.spotify.com/track/3BpyxyV7Jwbm2nbXWHxXxC",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273e7a806163460fa1d4d12a033"
+        "name": "Bad Angel (with LISA)",
+        "artist": "Anyma",
+        "link": "https://open.spotify.com/track/4QR40LqFAbMdabh4AoZJGZ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2730ab7d7830f4e643b6c21296c"
     }
 }
