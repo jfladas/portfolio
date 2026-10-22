@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Kerosene",
-        "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/42jwUTLbBKXTkyQRyxnJxn",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f6d5b4cb596df033b99759ea"
+        "name": "Cobra",
+        "artist": "LISA",
+        "link": "https://open.spotify.com/track/6esE3NNWOh6qiQSo4I62Lv",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ae49c87dcf0b8e27f27303c5"
     }
 }
