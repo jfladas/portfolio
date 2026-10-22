@@ -63,4 +63,11 @@ const router = createRouter({
   }
 })
 
+// GitHub Pages redirects /projects to /projects/ (the folder of prerendered project pages); drop the trailing slash again
+router.beforeEach((to) => {
+  if (to.path.length > 1 && to.path.endsWith('/')) {
+    return { path: to.path.slice(0, -1), query: to.query, hash: to.hash, replace: true }
+  }
+})
+
 export default router

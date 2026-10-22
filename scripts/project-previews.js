@@ -106,6 +106,8 @@ export const projectPreviews = () => {
 
             write('about.html', createPage(html, { url: '/about' }))
             write('achievements.html', createPage(html, { url: '/achievements' }))
+            // with a projects/ folder, GitHub Pages redirects /projects to /projects/, which is served from here
+            write('projects/index.html', createPage(html, { url: '/projects' }))
 
             for (const project of localize(projects, 'en')) {
                 const cover = project.cover && builtFiles.get(path.posix.join('src/data', project.cover))
