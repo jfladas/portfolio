@@ -26,9 +26,30 @@ This project uses GitHub Actions for automation, with separate workflows for sit
 
 ---
 
+## Large Downloads (GitHub Release)
+
+GitHub Pages sites must stay under 1 GB, so big downloads (`.ppsx`, `.zip`, `.dmg`) are not part of the site build.
+They are attached to a GitHub Release with the tag `downloads`, and the site links straight to them, so clicking a download button still starts the download right away.
+
+- Links are built with `releaseFile('name')` from [`src/data/releases.js`](./src/data/releases.js).
+- To add or replace a download:
+  1. On GitHub, open **Releases**, then edit the `downloads` release.
+  2. Drag the file into the assets area (to replace a file, delete the old asset first), then click **Update release**.
+  3. Reference it in `src/data/projects.js` and `src/data/projekte.js` as `releaseFile('FileName.ext')`.
+- GitHub replaces spaces in uploaded file names with dots (`Amorphous Blob.dmg` becomes `Amorphous.Blob.dmg`), so use the name exactly as it shows on the release page.
+- Do not put these files in `src/projects/`; everything in those folders is bundled into the site.
+
+Videos, images and PDFs stay in `src/projects/`. Videos are compressed before adding them (H.264, max 1920px on the long side, `-movflags +faststart` so playback starts before the whole file has loaded):
+
+```
+ffmpeg -i input.mov -c:v libx264 -preset slow -crf 22 -pix_fmt yuv420p -vf "scale='if(gt(iw,ih),min(1920,iw),-2)':'if(gt(iw,ih),-2,min(1920,ih))'" -c:a aac -b:a 128k -movflags +faststart output.mp4
+```
+
+---
+
 ## Spotify Data Update
 
-- Workflow: [`.github/workflows/spotify-data-update.yml`](./.github/workflows/spotify-data-update.yml)
+- Workflow: [`.github/workflows/spotify.yml`](./.github/workflows/spotify.yml)
 - Fetches latest Spotify data and updates `public/spotify.json`.
 - **Triggered by:**
   - Manual dispatch on GitHub

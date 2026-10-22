@@ -1,3 +1,5 @@
+import { releaseFile } from './releases.js';
+
 const bachelorFiles = import.meta.glob('../projects/bachelor/*', { eager: true });
 const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
 const artdFiles = import.meta.glob('../projects/artd/*', { eager: true });
@@ -61,7 +63,7 @@ export const projects = [
                     },
                     {
                         text: 'MacOS (arm64)',
-                        action: bachelorFiles['../projects/bachelor/Amorphous Blob.dmg'].default,
+                        action: releaseFile('Amorphous.Blob.dmg'),
                         icon: 'fa-brands fa-apple',
                         color: 'secondary'
                     }
@@ -98,12 +100,12 @@ export const projects = [
         downloads: [
             {
                 text: 'MacOS App (arm64)',
-                url: bachelorFiles['../projects/bachelor/Amorphous Blob.dmg'].default,
+                url: releaseFile('Amorphous.Blob.dmg'),
                 icon: 'fa-brands fa-apple'
             },
             {
                 text: 'Pitch_Presentation.ppsx',
-                url: bachelorFiles['../projects/bachelor/PITCH.ppsx'].default,
+                url: releaseFile('PITCH.ppsx'),
                 icon: 'file-powerpoint'
             }
         ]
@@ -380,17 +382,17 @@ export const projects = [
         downloads: [
             {
                 text: 'Presentation_MEN3.ppsx',
-                url: hadFiles['../projects/had/MEN3.ppsx'].default,
+                url: releaseFile('MEN3.ppsx'),
                 icon: 'file-powerpoint'
             },
             {
                 text: 'Presentation_MEN4.ppsx',
-                url: hadFiles['../projects/had/MEN4.ppsx'].default,
+                url: releaseFile('MEN4.ppsx'),
                 icon: 'file-powerpoint'
             },
             {
                 text: 'Presentation_MEN5.ppsx',
-                url: hadFiles['../projects/had/MEN5.ppsx'].default,
+                url: releaseFile('MEN5.ppsx'),
                 icon: 'file-powerpoint'
             }
         ]
@@ -1147,7 +1149,7 @@ export const projects = [
         downloads: [
             {
                 text: 'Presentation.ppsx',
-                url: sweetFiles['../projects/sweet/sweet.ppsx'].default,
+                url: releaseFile('sweet.ppsx'),
                 icon: 'file-powerpoint'
             },
             {
@@ -1897,7 +1899,7 @@ export const projects = [
                     },
                     {
                         text: 'Download',
-                        action: miloFiles['../projects/milo/milo.zip'].default,
+                        action: releaseFile('milo.zip'),
                         icon: 'circle-arrow-down',
                         color: 'secondary'
                     }
@@ -2155,7 +2157,7 @@ export const projects = [
         downloads: [
             {
                 text: 'Milo.zip',
-                url: miloFiles['../projects/milo/milo.zip'].default,
+                url: releaseFile('milo.zip'),
                 icon: 'file-archive'
             },
             {
@@ -2798,7 +2800,7 @@ export const projects = [
             },
             {
                 type: 'video',
-                video: hsclFiles['../projects/hscl/IUX_Screencast.mov'].default
+                video: hsclFiles['../projects/hscl/IUX_Screencast.mp4'].default
             },
             {
                 type: 'heading',
@@ -3001,7 +3003,7 @@ export const projects = [
         downloads: [
             {
                 text: 'Presentation.ppsx',
-                url: hsclFiles['../projects/hscl/IUX_Presentation.ppsx'].default,
+                url: releaseFile('IUX_Presentation.ppsx'),
                 icon: 'file-powerpoint'
             },
             {
@@ -3053,7 +3055,7 @@ export const projects = [
                     },
                     {
                         text: 'Download',
-                        action: sweetteethFiles['../projects/sweetteeth/SweetTeeth.zip'].default,
+                        action: releaseFile('SweetTeeth.zip'),
                         icon: 'circle-arrow-down',
                         color: 'secondary'
                     }
@@ -3280,7 +3282,7 @@ export const projects = [
         downloads: [
             {
                 text: 'SweetTeeth.zip (Windows)',
-                url: sweetteethFiles['../projects/sweetteeth/SweetTeeth.zip'].default,
+                url: releaseFile('SweetTeeth.zip'),
                 icon: 'file-archive'
             },
             {
@@ -3498,12 +3500,12 @@ export const projects = [
             },
             {
                 text: 'TheRodina_Presentation.ppsx',
-                url: rodinaFiles['../projects/rodina/The_Rodina_Presentation.ppsx'].default,
+                url: releaseFile('The_Rodina_Presentation.ppsx'),
                 icon: 'file-powerpoint'
             },
             {
                 text: 'KIVIS_Documentation.ppsx',
-                url: rodinaFiles['../projects/rodina/KIVIS_Documentation.ppsx'].default,
+                url: releaseFile('KIVIS_Documentation.ppsx'),
                 icon: 'file-powerpoint'
             }
         ]
@@ -3682,7 +3684,7 @@ export const projects = [
             },
             {
                 text: 'Presentation.ppsx',
-                url: paFiles['../projects/pa/BUL_PA_Chrome_Extension_Presentation.ppsx'].default,
+                url: releaseFile('BUL_PA_Chrome_Extension_Presentation.ppsx'),
                 icon: 'file-powerpoint'
             },
         ],
@@ -3906,7 +3908,7 @@ export const aboutContent = {
         },
         {
             type: 'quoted',
-            text: `I'm currently studying <a href="https://www.hslu.ch/en/lucerne-school-of-information-technology/degree-programs/bachelor/digital-ideation/" class="bold hoverable" target="_blank">Digital Ideation</a> at the Lucerne University of Applied Sciences and Arts, an interdisciplinary program combining design and computer science, ranging from game design & development to media arts. My focus mainly lies in web development, though I love exploring wherever technology and creativity intersect. After attaining my bachelor of science, I aim to work in frontend development, creating unique and interactive user experiences. But who knows what the future may hold?`
+            text: `I'm a Digital Solutions Engineer with a bachelor's degree in <a href="https://www.hslu.ch/en/lucerne-school-of-information-technology/degree-programs/bachelor/digital-ideation/" class="bold hoverable" target="_blank">Digital Ideation</a> from the Lucerne University of Applied Sciences and Arts, an interdisciplinary program combining design and computer science, ranging from game design & development to media arts. My focus mainly lies in web development, though I love exploring wherever technology and creativity intersect. This portfolio collects projects mostly from my time as a student, so feel free to look around!`
         },
         {
             type: 'heading',
@@ -3924,7 +3926,7 @@ export const aboutContent = {
                 },
                 {
                     text: 'E-Mail',
-                    action: 'mailto:lukas.bucherr@gmail.com',
+                    action: 'mailto:lukas@jfladas.com',
                     icon: 'paper-plane',
                     color: 'secondary'
                 }
@@ -4170,11 +4172,11 @@ export const aboutContent = {
         }
     ],
     downloads: [
-        /* {
-            text: 'Resume',
-            url: aboutFiles['../assets/about/Resume.pdf'].default,
-            icon: 'circle-arrow-down'
-        } */
+        {
+            text: 'CV',
+            url: aboutFiles['../assets/about/LukasBucher_CV.pdf'].default,
+            icon: 'file-pdf'
+        }
     ]
 };
 

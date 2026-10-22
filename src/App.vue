@@ -59,7 +59,7 @@
       <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip" tooltip="insta">
         <font-awesome-icon icon="fa-brands fa-instagram" />
       </a>
-      <a href="mailto:lukas.bucherr@gmail.com" class="social hoverable tooltip" tooltip="email">
+      <a href="mailto:lukas@jfladas.com" class="social hoverable tooltip" tooltip="email">
         <font-awesome-icon icon="fa-solid fa-envelope" />
       </a>
     </p>

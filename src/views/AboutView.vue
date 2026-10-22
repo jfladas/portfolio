@@ -252,95 +252,64 @@ onMounted(() => {
 
 .subtitle::before {
   color: var(--aqua);
-  content: 'frontend web developer';
-  animation-name: change;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  content: 'digital solutions engineer';
+  /* change-text holds each title for 4s; change-color fades out and back in around each swap */
+  animation: change-text 24s linear infinite, change-color 4s linear infinite;
 }
 
-@keyframes change {
+@keyframes change-color {
 
   0%,
-  2%,
-  18%,
-  22%,
-  38%,
-  42%,
-  58%,
-  62%,
-  78%,
-  82%,
-  98%,
+  10%,
+  90%,
   100% {
     color: var(--aqua);
   }
 
-  4%,
-  16%,
-  24%,
-  36%,
-  44%,
-  56%,
-  64%,
-  76%,
-  84%,
-  96% {
+  20%,
+  80% {
     color: var(--mint);
   }
 
-  6%,
-  14%,
-  26%,
-  34%,
-  46%,
-  54%,
-  66%,
-  74%,
-  86%,
-  94% {
+  30%,
+  70% {
     color: var(--sky);
   }
 
-  8%,
-  12%,
-  28%,
-  32%,
-  48%,
-  52%,
-  68%,
-  72%,
-  88%,
-  92% {
+  40%,
+  60% {
     color: var(--deep);
   }
 
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
+  50% {
     color: rgba(var(--navy-rgb), 0);
   }
+}
+
+@keyframes change-text {
 
   0%,
   100% {
+    content: "digital solutions engineer";
+  }
+
+  16.667% {
     content: "frontend web developer";
   }
 
-  20% {
-    content: "digital ideation student";
+  33.333% {
+    content: "digital ideator";
   }
 
-  40% {
+  50% {
     content: "creative coder";
   }
 
-  60% {
+  66.667% {
     content: "powerpoint enthusiast";
   }
 
-  80% {
+  83.333% {
     content: "interaction designer";
   }
 }
