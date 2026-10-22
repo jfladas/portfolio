@@ -28,6 +28,11 @@ const router = createRouter({
       props: true
     },
     {
+      // old project URL, still linked from other pages
+      path: '/projects/bachelor',
+      redirect: '/projects/blob'
+    },
+    {
       path: '/projects/:id',
       name: 'project-detail',
       component: ProjectDetail,

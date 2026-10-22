@@ -3,7 +3,7 @@
 // everything else is shared. useContent() picks the current language.
 import { releaseFile } from './releases.js';
 
-const bachelorFiles = import.meta.glob('../projects/bachelor/*', { eager: true });
+const blobFiles = import.meta.glob('../projects/blob/*', { eager: true });
 const hadFiles = import.meta.glob('../projects/had/*', { eager: true });
 const artdFiles = import.meta.glob('../projects/artd/*', { eager: true });
 const apo11oFiles = import.meta.glob('../projects/apo11o/*', { eager: true });
@@ -26,8 +26,8 @@ const aboutFiles = import.meta.glob('../assets/about/*', { eager: true });
 export const projects = [
     // amorphous blob
     {
-        id: 'bachelor',
-        cover: bachelorFiles['../projects/bachelor/cover.jpg']?.default,
+        id: 'blob',
+        cover: blobFiles['../projects/blob/cover.jpg']?.default,
         name: 'amorphous blob',
         description: { en: 'a desktop presence as self-reflection', de: 'eine Desktop-Präsenz als Selbstreflexion' },
         context: {

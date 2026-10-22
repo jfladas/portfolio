@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import { projectPreviews } from './scripts/project-previews.js'
 
 // Keyboard focus (Tab) shows the same styles as mouse hover. For every rule with `X:hover`, adds copies where
 // X is focused itself (X:focus-visible), X contains the focused element (X:has(:focus-visible)),
@@ -66,6 +67,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
+    projectPreviews(),
   ],
   resolve: {
     alias: {

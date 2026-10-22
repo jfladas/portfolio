@@ -138,7 +138,10 @@ const loadViewedProjects = () => {
         if (!Array.isArray(savedState)) {
             return new Set()
         }
-        return new Set(savedState.filter((projectId) => typeof projectId === 'string'))
+        return new Set(savedState
+            .filter((projectId) => typeof projectId === 'string')
+            // the bachelor project was renamed to blob
+            .map((projectId) => projectId === 'bachelor' ? 'blob' : projectId))
     } catch {
         return new Set()
     }

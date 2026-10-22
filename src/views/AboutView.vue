@@ -47,7 +47,7 @@ const currentLanguage = inject('currentLanguage')
 const { aboutContent, projects: projectCatalog } = useContent()
 const { registerTokyoReveal } = useAchievements()
 
-const featuredProjectIds = ['bachelor', 'sputify', 'had']
+const featuredProjectIds = ['blob', 'sputify', 'had']
 
 const featuredProjects = computed(() => {
   return featuredProjectIds
