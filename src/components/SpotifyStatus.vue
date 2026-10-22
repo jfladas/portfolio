@@ -44,7 +44,7 @@ const trackLink = ref('')
 const albumCover = ref('')
 const spotifyDataUrl =
     import.meta.env.VITE_SPOTIFY_DATA_URL ??
-    'https://raw.githubusercontent.com/jfladas/portfolio/main/public/spotify.json'
+    'https://raw.githubusercontent.com/jfladas/portfolio/spotify-data/spotify.json'
 
 const buildCacheBustedUrl = (url) => {
     try {

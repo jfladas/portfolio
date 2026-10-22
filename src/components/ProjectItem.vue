@@ -1,6 +1,6 @@
 <template>
     <router-link :to="`/projects/${project.id}`">
-        <div ref="projectItem" class="project-item hoverable">
+        <div class="project-item hoverable">
             <div :id="project.id" class="anchor"></div>
             <h2>{{ project.name }}</h2>
             <p>{{ project.description }}</p>
@@ -15,50 +15,15 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import { categories } from "@/data/projects.js";
 
+// The .in-view highlight is set by ProjectsView, which tracks scrolling for the whole list.
 const props = defineProps({
     project: {
         type: Object,
         required: true
     }
-});
-
-const projectItem = ref(null);
-
-const handleScroll = () => {
-    const projectItems = document.querySelectorAll('.project-item');
-    let closestItem = null;
-    let closestDistance = Infinity;
-
-    projectItems.forEach(item => {
-        const rect = item.getBoundingClientRect();
-        const distance = Math.abs(rect.top);
-
-        if (distance < closestDistance && rect.top >= window.innerHeight / 6) {
-            closestDistance = distance;
-            closestItem = item;
-        }
-    });
-
-    projectItems.forEach(item => {
-        item.classList.remove('in-view');
-    });
-
-    if (closestItem) {
-        closestItem.classList.add('in-view');
-    }
-};
-
-onMounted(() => {
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-});
-
-onUnmounted(() => {
-    window.removeEventListener('scroll', handleScroll);
 });
 </script>
 

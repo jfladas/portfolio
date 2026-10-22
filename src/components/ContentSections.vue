@@ -4,7 +4,7 @@
             <p v-if="section.type === 'paragraph'" class="paragraph text" v-html="section.text"></p>
             <h3 v-if="section.type === 'heading' && !section.collapsible" class="heading">{{ section.text }}</h3>
             <h3 v-if="section.type === 'heading' && section.collapsible" class="heading collapsible hoverable"
-                @click="toggleGroup(section.group)">
+                role="button" tabindex="0" :aria-expanded="isGroupOpen(section.group)" @click="toggleGroup(section.group)">
                 <span>{{ section.text }}</span>
                 <font-awesome-icon icon="angle-up" class="arrow" :class="{ 'rotated': isGroupOpen(section.group) }" />
             </h3>
@@ -29,7 +29,7 @@
             <div v-if="section.type === 'buttons'" class="buttons">
                 <a v-for="button in section.buttons" :key="button.text" :href="button.action" class="button-container"
                     :target="button.same ? '_self' : '_blank'">
-                    <button class="hoverable" :class="'button-' + button.color">
+                    <button class="hoverable" :class="'button-' + button.color" tabindex="-1">
                         {{ button.text }}
                         <font-awesome-icon :icon="button.icon" />
                     </button>

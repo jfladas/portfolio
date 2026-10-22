@@ -29,10 +29,10 @@
         <button class="replay-button" aria-label="Reload presentation" @click="reloadPresentation">
             <font-awesome-icon icon="rotate-right" />
         </button>
-        <button v-if="!isOverlayVisible" class="expand-button" @click="$emit('toggle-overlay')">
+        <button v-if="!isOverlayVisible" class="expand-button" aria-label="Expand" @click="$emit('toggle-overlay')">
             <font-awesome-icon icon="up-right-and-down-left-from-center" />
         </button>
-        <button v-if="isOverlayVisible" class="unexpand-button" @click="$emit('toggle-overlay')">
+        <button v-if="isOverlayVisible" class="unexpand-button" aria-label="Collapse" @click="$emit('toggle-overlay')">
             <font-awesome-icon icon="down-left-and-up-right-to-center" />
         </button>
     </div>
@@ -126,8 +126,7 @@ export default {
             const loadingTask = pdfjsLib.getDocument(this.src)
             const pdfDocument = await loadingTask.promise
 
-            const renderedPages = []
-
+            // Pages are shown as soon as they are rendered, so the first page appears without waiting for the rest
             for (let i = 1; i <= pdfDocument.numPages; i += 1) {
                 const page = await pdfDocument.getPage(i)
                 const viewport = page.getViewport({ scale: 2 })
@@ -142,16 +141,13 @@ export default {
                     viewport
                 }).promise
 
-                renderedPages.push(canvas.toDataURL('image/png'))
-            }
+                if (currentRunId !== this.renderRunId) {
+                    return
+                }
 
-            if (currentRunId !== this.renderRunId) {
-                return
+                this.pdfPages.push(canvas.toDataURL('image/png'))
+                this.isLoaded = true
             }
-
-            this.pdfPages = renderedPages
-            this.pdfPage = 1
-            this.isLoaded = true
         },
         goToPrevPage() {
             if (this.pdfPage <= 1) {

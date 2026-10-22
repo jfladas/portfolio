@@ -50,7 +50,8 @@ ffmpeg -i input.mov -c:v libx264 -preset slow -crf 22 -pix_fmt yuv420p -vf "scal
 ## Spotify Data Update
 
 - Workflow: [`.github/workflows/spotify.yml`](./.github/workflows/spotify.yml)
-- Fetches latest Spotify data and updates `public/spotify.json`.
+- Fetches latest Spotify data and commits it as `spotify.json` to the separate `spotify-data` branch, so the frequent updates don't fill up the history of `main`.
+- The site reads it from `https://raw.githubusercontent.com/jfladas/portfolio/spotify-data/spotify.json`. If that fails, it falls back to the copy bundled from `public/spotify.json` (not updated anymore).
 - **Triggered by:**
   - Manual dispatch on GitHub
   - **Cronitor**: Periodically triggers a `repository_dispatch` event (`update_spotify`) to automate updates.

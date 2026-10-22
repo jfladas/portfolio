@@ -15,9 +15,9 @@
     <div class="content-right">
       <div class="me-container hoverable">
         <p class="jap overtext" ref="typedtext"></p>
-        <img src="/src/assets/me.jpg" alt="me" class="me" />
-        <img src="/src/assets/me_glitch.jpg" alt="me" class="me-glitch" />
-        <img src="/src/assets/me_dark.jpg" alt="me" class="me-dark" />
+        <img src="/src/assets/me.jpg" alt="Lukas Bucher" class="me" />
+        <img src="/src/assets/me_glitch.jpg" alt="" class="me-glitch" />
+        <img src="/src/assets/me_dark.jpg" alt="" class="me-dark" />
       </div>
       <SpotifyStatus />
       <div class="right-container">
@@ -35,18 +35,16 @@
 
 <script setup>
 import { ref, onMounted, computed, inject } from 'vue'
-import { aboutContent as enAbout, projects as enProjects } from '@/data/projects.js'
-import { ueberContent as deAbout, projekte as deProjects } from '@/data/projekte.js'
 import ContentSections from '@/components/ContentSections.vue'
 import LinksDownloads from '@/components/LinksDownloads.vue'
 import ProjectCard from '@/components/ProjectCard.vue'
 import FullOverlay from '@/components/FullOverlay.vue'
 import SpotifyStatus from '@/components/SpotifyStatus.vue'
 import { useAchievements } from '@/composables/useAchievements.js'
+import { useContent } from '@/composables/useContent.js'
 
 const currentLanguage = inject('currentLanguage')
-const aboutContent = computed(() => currentLanguage.value === 'en' ? enAbout : deAbout)
-const projectCatalog = computed(() => currentLanguage.value === 'en' ? enProjects : deProjects)
+const { aboutContent, projects: projectCatalog } = useContent()
 const { registerTokyoReveal } = useAchievements()
 
 const featuredProjectIds = ['bachelor', 'sputify', 'had']

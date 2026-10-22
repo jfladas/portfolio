@@ -6,7 +6,7 @@
             <video ref="video" :src="video" @ended="handleVideoEnded" @loadeddata="handleVideoLoaded"
                 @loadedmetadata="handleMetadataLoaded" @timeupdate="handleTimeUpdate"
                 :class="{ small: !isOverlayVisible }"></video>
-            <button class="play-pause-button" @click="togglePlayPause" @mouseenter="handleControlMouseEnter"
+            <button class="play-pause-button" :aria-label="isPlaying ? 'Pause' : 'Play'" @click="togglePlayPause" @mouseenter="handleControlMouseEnter"
                 @mouseleave="handleControlMouseLeave" :style="{ opacity: showControls ? 1 : 0 }">
                 <font-awesome-icon
                     :icon="isVideoLoaded ? (isEnded ? 'rotate-left' : (isPlaying ? 'pause' : 'play')) : 'spinner'"
@@ -14,15 +14,15 @@
             </button>
             <div class="progress" :class="{ unexpanded: !isOverlayVisible }" @mouseenter="handleControlMouseEnter"
                 @mouseleave="handleControlMouseLeave" :style="{ opacity: showControls ? 1 : 0 }">
-                <input class="progress-bar" type="range" min="0" max="100" step="0.1" :value="progressPercent"
+                <input class="progress-bar" aria-label="Seek" type="range" min="0" max="100" step="0.1" :value="progressPercent"
                     :disabled="!isVideoLoaded || !duration" @input="handleSeek" />
             </div>
-            <button v-if="!isOverlayVisible" class="expand-button" @click="handleExpand"
+            <button v-if="!isOverlayVisible" class="expand-button" aria-label="Expand" @click="handleExpand"
                 @mouseenter="handleControlMouseEnter" @mouseleave="handleControlMouseLeave"
                 :style="{ opacity: showControls ? 1 : 0 }">
                 <font-awesome-icon icon="up-right-and-down-left-from-center" />
             </button>
-            <button v-if="isOverlayVisible" class="unexpand-button" @click="$emit('toggle-overlay')"
+            <button v-if="isOverlayVisible" class="unexpand-button" aria-label="Collapse" @click="$emit('toggle-overlay')"
                 @mouseenter="handleControlMouseEnter" @mouseleave="handleControlMouseLeave"
                 :style="{ opacity: showControls ? 1 : 0 }">
                 <font-awesome-icon icon="down-left-and-up-right-to-center" />

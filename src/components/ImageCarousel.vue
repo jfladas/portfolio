@@ -9,19 +9,19 @@
             </div>
             <div v-if="images.length != 1" class="carousel-fade prev"></div>
             <div v-if="images.length != 1" class="carousel-fade next"></div>
-            <button v-if="images.length != 1" class="carousel-control prev" @click="$emit('prev-slide')">
+            <button v-if="images.length != 1" class="carousel-control prev" aria-label="Previous image" @click="$emit('prev-slide')">
                 <font-awesome-icon icon="chevron-left" />
             </button>
-            <button v-if="images.length != 1" class="carousel-control next" @click="$emit('next-slide')">
+            <button v-if="images.length != 1" class="carousel-control next" aria-label="Next image" @click="$emit('next-slide')">
                 <font-awesome-icon icon="chevron-right" />
             </button>
             <div v-if="currentCaption" class="caption" :class="{ unexpanded: !isOverlayVisible }">
                 <p>{{ currentCaption }}</p>
             </div>
-            <button v-if="!isOverlayVisible" class="expand-button" @click="$emit('toggle-overlay')">
+            <button v-if="!isOverlayVisible" class="expand-button" aria-label="Expand" @click="$emit('toggle-overlay')">
                 <font-awesome-icon icon="up-right-and-down-left-from-center" />
             </button>
-            <button v-if="isOverlayVisible" class="unexpand-button" @click="$emit('toggle-overlay')">
+            <button v-if="isOverlayVisible" class="unexpand-button" aria-label="Collapse" @click="$emit('toggle-overlay')">
                 <font-awesome-icon icon="down-left-and-up-right-to-center" />
             </button>
         </div>

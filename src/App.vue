@@ -17,19 +17,25 @@
   </header>
   <div class="more hoverable" :class="{ open: moreVisible }">
     <font-awesome-icon icon="caret-left" class="more-icon tooltip" :tooltip="currentLanguage === 'en' ? 'more' : 'mehr'"
+      role="button" tabindex="0" :aria-label="currentLanguage === 'en' ? 'more' : 'mehr'" :aria-expanded="moreVisible"
       @click="moreVisible = !moreVisible" />
     <div class="more-items">
-      <div class="more-item tooltip" tooltip="en/de" @click="toggleLanguage">
+      <div class="more-item tooltip" tooltip="en/de" role="button" :tabindex="moreVisible ? 0 : -1"
+        :aria-label="currentLanguage === 'en' ? 'Auf Deutsch wechseln' : 'Switch to English'" @click="toggleLanguage">
         <font-awesome-icon icon="language" fixed-width />
       </div>
-      <div v-if="!isMobile" class="more-item tooltip" tooltip="cursor" @click="toggleCursor">
+      <div v-if="!isMobile" class="more-item tooltip" tooltip="cursor" role="button" :tabindex="moreVisible ? 0 : -1"
+        :aria-label="currentLanguage === 'en' ? 'Toggle custom cursor' : 'Eigenen Cursor umschalten'"
+        @click="toggleCursor">
         <font-awesome-icon icon="arrow-pointer" fixed-width />
       </div>
-      <div class="more-item tooltip" tooltip="theme" @click="cycleTheme">
+      <div class="more-item tooltip" tooltip="theme" role="button" :tabindex="moreVisible ? 0 : -1"
+        :aria-label="currentLanguage === 'en' ? 'Change theme' : 'Theme wechseln'" @click="cycleTheme">
         <font-awesome-icon icon="palette" fixed-width />
       </div>
       <div class="more-item tooltip" tooltip="achiev.">
-        <router-link to="/achievements" @click="moreVisible = !moreVisible">
+        <router-link to="/achievements" :tabindex="moreVisible ? 0 : -1" aria-label="achievements"
+          @click="moreVisible = !moreVisible">
           <font-awesome-icon icon="trophy" fixed-width />
         </router-link>
       </div>
@@ -42,24 +48,25 @@
     <p>
       {{ currentLanguage === 'en' ? 'made with ' : 'gemacht mit ' }}
       <font-awesome-icon icon="heart" class="heart hoverable tooltip"
-        :tooltip="currentLanguage === 'en' ? 'love' : 'liebe'" @click="handleHeartClick" />
+        :tooltip="currentLanguage === 'en' ? 'love' : 'liebe'" role="button" tabindex="0"
+        :aria-label="currentLanguage === 'en' ? 'love' : 'liebe'" @click="handleHeartClick" />
       {{ currentLanguage === 'en' ? ' by jfladas' : ' von jfladas' }}
     </p>
     <p>
-      <a href="https://github.com/jfladas/" target="_blank" class="social hoverable tooltip" tooltip="github">
+      <a href="https://github.com/jfladas/" target="_blank" class="social hoverable tooltip" tooltip="github" aria-label="GitHub">
         <font-awesome-icon icon="fa-brands fa-github-alt" />
       </a>
-      <a href="https://jfladas.itch.io/" target="_blank" class="social hoverable tooltip" tooltip="itch.io">
+      <a href="https://jfladas.itch.io/" target="_blank" class="social hoverable tooltip" tooltip="itch.io" aria-label="itch.io">
         <font-awesome-icon icon="fa-brands fa-itch-io" />
       </a>
       <a href="https://www.linkedin.com/in/lukas-bucher-0926bb282/" target="_blank" class="social hoverable tooltip"
-        tooltip="linkedin">
+        tooltip="linkedin" aria-label="LinkedIn">
         <font-awesome-icon icon="fa-brands fa-linkedin" />
       </a>
-      <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip" tooltip="insta">
+      <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip" tooltip="insta" aria-label="Instagram">
         <font-awesome-icon icon="fa-brands fa-instagram" />
       </a>
-      <a href="mailto:lukas@jfladas.com" class="social hoverable tooltip" tooltip="email">
+      <a href="mailto:lukas@jfladas.com" class="social hoverable tooltip" tooltip="email" aria-label="E-Mail">
         <font-awesome-icon icon="fa-solid fa-envelope" />
       </a>
     </p>
@@ -77,7 +84,7 @@
       </router-link>
     </p>
     <br>
-    <p class="copyright">&copy; 2026 jfladas</p>
+    <p class="copyright">&copy; {{ currentYear }} jfladas</p>
   </footer>
   <div ref="cursor" class="custom-cursor">
     <span ref="tooltip" class="tooltip-container"></span>
@@ -113,6 +120,12 @@ const isCustomCursor = ref(localStorage.getItem('isCustomCursor') === 'true' || 
 const currentLanguage = ref(localStorage.getItem('language') || 'en')
 
 provide('currentLanguage', currentLanguage)
+
+watch(currentLanguage, (language) => {
+  document.documentElement.lang = language
+}, { immediate: true })
+
+const currentYear = new Date().getFullYear()
 
 const themes = ['default', ...new Set(achievementDefinitions.map((achievement) => achievement.rewardThemeId).filter(Boolean))]
 const themeStorageKey = 'themeId'
@@ -226,37 +239,61 @@ const removeTooltip = () => {
   }
 }
 
-const addHoverListeners = (elements) => {
-  elements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      addCursorHover();
-    })
-    el.addEventListener('mouseleave', () => {
-      removeCursorHover();
-    })
-  })
+// Hover and tooltip state follow whichever .hoverable / .tooltip element is under the pointer.
+// Listening on the document also covers elements added later (route changes, v-html content).
+let hoveredTooltipElement = null
+
+const handlePointerOver = (event) => {
+  const target = event.target instanceof Element ? event.target : null
+
+  if (target?.closest('.hoverable')) {
+    addCursorHover()
+  } else {
+    removeCursorHover()
+  }
+
+  const tooltipElement = target?.closest('.tooltip') ?? null
+
+  if (tooltipElement === hoveredTooltipElement) {
+    return
+  }
+
+  hoveredTooltipElement = tooltipElement
+  removeTooltip()
+
+  if (tooltipElement) {
+    tooltipTimeout = setTimeout(() => {
+      addTooltip(tooltipElement.getAttribute('tooltip'))
+    }, isMobile.value ? 0 : 500)
+  }
 }
 
-const addTooltipListeners = (elements) => {
-  elements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      removeTooltip();
-      tooltipTimeout = setTimeout(() => {
-        addTooltip(el.getAttribute('tooltip'));
-      }, isMobile.value ? 0 : 500);
-    })
-    el.addEventListener('mouseleave', () => {
-      removeTooltip();
-    })
-  })
+const handlePointerLeaveWindow = (event) => {
+  if (!event.relatedTarget) {
+    hoveredTooltipElement = null
+    removeCursorHover()
+    removeTooltip()
+  }
 }
 
-const addCopyListeners = (elements) => {
-  elements.forEach(el => {
-    el.addEventListener('click', () => {
-      toClipboard(el.textContent);
-    });
-  });
+const handleCopyClick = (event) => {
+  const copyElement = event.target.closest?.('.copy')
+
+  if (copyElement) {
+    toClipboard(copyElement.textContent)
+  }
+}
+
+// Lets keyboard users activate elements marked role="button" with Enter or Space, like real buttons.
+const handleButtonKeydown = (event) => {
+  const target = event.target
+
+  if ((event.key !== 'Enter' && event.key !== ' ') || target.getAttribute?.('role') !== 'button' || target.tagName === 'BUTTON') {
+    return
+  }
+
+  event.preventDefault()
+  target.dispatchEvent(new MouseEvent('click', { bubbles: true }))
 }
 
 const toggleLanguage = () => {
@@ -382,46 +419,9 @@ onMounted(() => {
   window.addEventListener('touchstart', handleTouchStart, { passive: false });
   window.addEventListener('touchend', handleTouchEnd, { passive: false });
   window.addEventListener('resize', handleViewportAchievement);
-
-  const hoverElements = document.querySelectorAll('.hoverable')
-  addHoverListeners(hoverElements)
-
-  const tooltipElements = document.querySelectorAll('.tooltip')
-  addTooltipListeners(tooltipElements)
-
-  const copyElements = document.querySelectorAll('.copy')
-  addCopyListeners(copyElements)
-
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach(mutation => {
-      if (mutation.type === 'childList') {
-        mutation.addedNodes.forEach(node => {
-          if (node.nodeType === 1) {
-            if (node.classList.contains('hoverable')) {
-              addHoverListeners([node])
-            } else {
-              const nestedElements = node.querySelectorAll('.hoverable')
-              addHoverListeners(nestedElements)
-            }
-            if (node.classList.contains('tooltip')) {
-              addTooltipListeners([node])
-            } else {
-              const nestedElements = node.querySelectorAll('.tooltip')
-              addTooltipListeners(nestedElements)
-            }
-            if (node.classList.contains('copy')) {
-              addCopyListeners([node])
-            } else {
-              const nestedElements = node.querySelectorAll('.copy')
-              addCopyListeners(nestedElements)
-            }
-          }
-        })
-      }
-    })
-  })
-
-  observer.observe(document.body, { childList: true, subtree: true })
+  document.addEventListener('mouseover', handlePointerOver);
+  document.addEventListener('mouseout', handlePointerLeaveWindow);
+  document.addEventListener('keydown', handleButtonKeydown);
 
   const link = document.createElement('link');
   link.id = 'cursor-style';
@@ -438,6 +438,7 @@ onMounted(() => {
 
   document.addEventListener('click', handleClickOutside);
   document.addEventListener('click', handleAchievementLinkClick);
+  document.addEventListener('click', handleCopyClick);
 
   onUnmounted(() => {
     window.removeEventListener('touchstart', handleTouchStart)
@@ -445,20 +446,12 @@ onMounted(() => {
     window.removeEventListener('touchmove', handleTouchMove)
     window.removeEventListener('mousemove', updateCursor)
     window.removeEventListener('resize', handleViewportAchievement)
-    hoverElements.forEach(el => {
-      el.removeEventListener('mouseenter', addCursorHover)
-      el.removeEventListener('mouseleave', removeCursorHover)
-    })
-    tooltipElements.forEach(el => {
-      el.removeEventListener('mouseenter', () => { })
-      el.removeEventListener('mouseleave', () => { })
-    })
-    copyElements.forEach(el => {
-      el.removeEventListener('click', () => { })
-    })
-    observer.disconnect()
+    document.removeEventListener('mouseover', handlePointerOver)
+    document.removeEventListener('mouseout', handlePointerLeaveWindow)
+    document.removeEventListener('keydown', handleButtonKeydown)
     document.removeEventListener('click', handleClickOutside);
     document.removeEventListener('click', handleAchievementLinkClick);
+    document.removeEventListener('click', handleCopyClick);
   })
 })
 </script>

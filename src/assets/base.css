@@ -216,6 +216,23 @@ a:active {
   color: unset;
 }
 
+/* Keyboard focus (Tab navigation only, not shown on mouse clicks) */
+/* keeps tabbed-to elements clear of the fixed header, WIP banner and bottom fade when the browser scrolls to them */
+html {
+  scroll-padding-top: 8rem;
+  scroll-padding-bottom: 6rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* browsers draw their default ring on clicked focusable icons (SVG) even without keyboard use */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 .disclaimer {
   color: var(--sky);
 }

@@ -3,7 +3,8 @@
     <div class="content">
         <div v-if="project" class="content-left">
             <router-link :to="`/projects#${project.id}`" class="back hoverable tooltip"
-                :tooltip="currentLanguage === 'en' ? 'back' : 'zurück'">
+                :tooltip="currentLanguage === 'en' ? 'back' : 'zurück'"
+                    :aria-label="currentLanguage === 'en' ? 'back' : 'zurück'">
                 <font-awesome-icon icon="arrow-left-long" />
             </router-link>
             <div v-if="showWipBanner" class="banner">
@@ -33,11 +34,12 @@
                 @next-slide="nextSlide" @prev-slide="prevSlide" />
             <div class="left-bottom">
                 <router-link :to="`/projects#${project.id}`" class="back hoverable tooltip"
-                    :tooltip="currentLanguage === 'en' ? 'back' : 'zurück'">
+                    :tooltip="currentLanguage === 'en' ? 'back' : 'zurück'"
+                    :aria-label="currentLanguage === 'en' ? 'back' : 'zurück'">
                     <font-awesome-icon icon="arrow-left-long" />
                 </router-link>
                 <router-link to="#" class="to-top hoverable tooltip"
-                    :tooltip="currentLanguage === 'en' ? 'to top' : 'rauf'" @click.prevent="scrollToTop">
+                    :tooltip="currentLanguage === 'en' ? 'to top' : 'rauf'" :aria-label="currentLanguage === 'en' ? 'to top' : 'rauf'" @click.prevent="scrollToTop">
                     <font-awesome-icon icon="angle-up" />
                 </router-link>
             </div>
@@ -51,7 +53,8 @@
             <p>please check the project id or try again later</p>
             <div class="left-bottom">
                 <router-link :to="`/projects`" class="back hoverable tooltip"
-                    :tooltip="currentLanguage === 'en' ? 'back' : 'zurück'">
+                    :tooltip="currentLanguage === 'en' ? 'back' : 'zurück'"
+                    :aria-label="currentLanguage === 'en' ? 'back' : 'zurück'">
                     <font-awesome-icon icon="arrow-left-long" />
                 </router-link>
             </div>
@@ -74,13 +77,13 @@
 
 <script setup>
 import { computed, ref, onMounted, onBeforeUnmount, nextTick, inject, watch } from 'vue'
-import { projects as enProjects, categories } from '@/data/projects.js'
-import { projekte as deProjects } from '@/data/projekte.js'
+import { categories } from '@/data/projects.js'
 import ContentSections from '@/components/ContentSections.vue'
 import ProjectCard from '@/components/ProjectCard.vue'
 import LinksDownloads from '@/components/LinksDownloads.vue'
 import FullOverlay from '@/components/FullOverlay.vue'
 import { useAchievements } from '@/composables/useAchievements.js'
+import { useContent } from '@/composables/useContent.js'
 
 const props = defineProps(['id'])
 const currentLanguage = inject('currentLanguage')
@@ -103,7 +106,7 @@ let bannerCycleWidth = 0
 
 const renderedBannerItems = computed(() => [...cycleBannerItems.value, ...cycleBannerItems.value])
 
-const projects = computed(() => currentLanguage.value === 'en' ? enProjects : deProjects)
+const { projects } = useContent()
 
 const project = computed(() => projects.value.find(p => p.id === props.id))
 const showWipBanner = computed(() => project.value && ['had'].includes(project.value.id))
@@ -137,7 +140,7 @@ watch(
     (projectId) => {
         if (projectId) {
             unlockAchievement('curious')
-            registerProjectView(projectId, enProjects.length)
+            registerProjectView(projectId, projects.value.length)
         } else if (props.id) {
             registerInvalidProject()
         }

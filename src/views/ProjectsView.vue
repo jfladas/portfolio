@@ -6,23 +6,28 @@
     <div class="toggle-bar hoverable" :class="{ expanded: filterMode }">
       <div class="filter-container">
         <div class="toggle-container tooltip" tooltip="filter">
-          <p class="filter toggle" @click="toggleFilter('all')" :class="{ selected: allSelected && !filterMode }">
+          <p class="filter toggle" role="button" tabindex="0" :aria-pressed="allSelected && !filterMode"
+            @click="toggleFilter('all')" :class="{ selected: allSelected && !filterMode }">
             {{ currentLanguage === 'en' ? 'all' : 'alle' }}
           </p>
           <font-awesome-icon icon="filter" class="filter toggle funnel" :class="{ selected: filterMode }"
-            @click="toggleFilter('filter')" />
+            role="button" tabindex="0" :aria-pressed="filterMode" aria-label="filter" @click="toggleFilter('filter')" />
         </div>
 
         <div class="filters" :class="{ expanded: filterMode }">
           <font-awesome-icon v-for="(icon, key) in categories" :icon="icon" :key="key" class="filter tooltip"
-            :tooltip="key" :class="{ selected: selectedFilters.includes(key) }" @click="toggleFilter(key)" />
+            :tooltip="key" :class="{ selected: selectedFilters.includes(key) }" role="button"
+            :tabindex="filterMode ? 0 : -1" :aria-pressed="selectedFilters.includes(key)" :aria-label="key"
+            @click="toggleFilter(key)" />
         </div>
       </div>
       <div class="view-container toggle-container">
         <font-awesome-icon icon="grip-lines" class="filter toggle view" :class="{ selected: viewMode === 'list' }"
-          @click="toggleViewMode()" />
+          role="button" tabindex="0" :aria-pressed="viewMode === 'list'"
+          :aria-label="currentLanguage === 'en' ? 'list view' : 'Listenansicht'" @click="toggleViewMode()" />
         <font-awesome-icon icon="grip" class="filter toggle view" :class="{ selected: viewMode === 'grid' }"
-          @click="toggleViewMode()" />
+          role="button" tabindex="0" :aria-pressed="viewMode === 'grid'"
+          :aria-label="currentLanguage === 'en' ? 'grid view' : 'Rasteransicht'" @click="toggleViewMode()" />
       </div>
     </div>
     <div :class="viewMode === 'grid' ? 'projects-grid' : 'projects-list'">
@@ -35,7 +40,7 @@
         <font-awesome-icon icon="filter" />
         {{ currentLanguage === 'en' ? 'showing' : 'zeige' }} {{ filteredProjects.length }} {{ currentLanguage === 'en' ?
         'of' : 'von' }} {{ projects.length }} {{ currentLanguage === 'en' ? 'projects' : 'Projekte' }} |
-        <span class="a hoverable" @click="() => { toggleFilter('all'); scrollToTop() }">{{ currentLanguage === 'en' ?
+        <span class="a hoverable" role="button" tabindex="0" @click="() => { toggleFilter('all'); scrollToTop() }">{{ currentLanguage === 'en' ?
           'see all' : 'alle anzeigen' }}</span>
       </p>
     </div>
@@ -46,13 +51,13 @@
       </h3>
       <p>
         {{ currentLanguage === 'en' ? 'try adjusting the filters or' : 'Versuche die Filter anzupassen oder' }}
-        <span class="a hoverable" @click="() => { toggleFilter('all'); scrollToTop() }">
+        <span class="a hoverable" role="button" tabindex="0" @click="() => { toggleFilter('all'); scrollToTop() }">
           {{ currentLanguage === 'en' ? 'see all' : 'alle anzeigen' }}
         </span>
       </p>
     </div>
     <router-link v-else to="#" class="to-top hoverable tooltip" :tooltip="currentLanguage === 'en' ? 'to top' : 'rauf'"
-      @click.prevent="scrollToTop">
+      :aria-label="currentLanguage === 'en' ? 'to top' : 'rauf'" @click.prevent="scrollToTop">
       <font-awesome-icon icon="angle-up" />
     </router-link>
     <div class="bottom-spacer"></div>
@@ -60,12 +65,12 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted, inject } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted, nextTick, inject } from 'vue'
 import ProjectItem from '@/components/ProjectItem.vue'
 import ProjectCard from '@/components/ProjectCard.vue'
-import { projects as enProjects, categories } from '@/data/projects.js'
-import { projekte as deProjects } from '@/data/projekte.js'
+import { categories } from '@/data/projects.js'
 import { useAchievements } from '@/composables/useAchievements.js'
+import { useContent } from '@/composables/useContent.js'
 
 const selectedFilters = ref(['solo', 'team'])
 const filterMode = ref(false)
@@ -134,7 +139,7 @@ watch(
   { immediate: true }
 )
 
-const projects = computed(() => currentLanguage.value === 'en' ? enProjects : deProjects)
+const { projects } = useContent()
 
 const filteredProjects = computed(() => {
   if (
@@ -165,8 +170,37 @@ const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Highlights the list item nearest the top of the viewport (below the top sixth).
+const highlightProjectInView = () => {
+  const projectItems = document.querySelectorAll('.project-item')
+  let closestItem = null
+  let closestDistance = Infinity
+
+  projectItems.forEach(item => {
+    const rect = item.getBoundingClientRect()
+    const distance = Math.abs(rect.top)
+
+    if (distance < closestDistance && rect.top >= window.innerHeight / 6) {
+      closestDistance = distance
+      closestItem = item
+    }
+  })
+
+  projectItems.forEach(item => {
+    item.classList.toggle('in-view', item === closestItem)
+  })
+}
+
+watch([filteredProjects, viewMode], () => nextTick(highlightProjectInView))
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', highlightProjectInView)
+})
+
 onMounted(() => {
-  preloadProjectCovers([...enProjects, ...deProjects])
+  window.addEventListener('scroll', highlightProjectInView, { passive: true })
+  highlightProjectInView()
+  preloadProjectCovers(projects.value)
 
   const savedFilters = JSON.parse(localStorage.getItem('selectedFilters'))
   const savedFilterMode = JSON.parse(localStorage.getItem('filterMode'))
