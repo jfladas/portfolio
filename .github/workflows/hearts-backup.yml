@@ -1,0 +1,47 @@
+name: Back Up Heart Counts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 4 * * 1" # every Monday, 04:00 UTC
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hearts-backup
+  cancel-in-progress: true
+
+jobs:
+  backup-hearts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Read heart counts
+        run: node scripts/backup-hearts.mjs hearts.json
+
+      # hearts.json lives on its own branch so these commits don't pile up on main; the branch is created on the first run
+      - name: Commit to the reactions-data branch
+        env:
+          REPO_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
+        run: |
+          mkdir data && cd data
+          git init -q
+          git remote add origin "$REPO_URL"
+          if git fetch -q --depth 1 origin reactions-data; then
+            git checkout -q -b reactions-data FETCH_HEAD
+          else
+            git checkout -q --orphan reactions-data
+          fi
+          cp ../hearts.json .
+          git add hearts.json
+          git -c user.name="GitHub Actions" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Back up heart counts" || { echo "nothing changed"; exit 0; }
+          git push -q origin reactions-data

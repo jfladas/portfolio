@@ -17,8 +17,8 @@
   </header>
   <div class="more hoverable" :class="{ open: moreVisible }">
     <font-awesome-icon icon="caret-left" class="more-icon tooltip" :tooltip="currentLanguage === 'en' ? 'more' : 'mehr'"
-      role="button" tabindex="0" aria-hidden="false" :aria-label="currentLanguage === 'en' ? 'more' : 'mehr'" :aria-expanded="moreVisible"
-      @click="moreVisible = !moreVisible" />
+      role="button" tabindex="0" aria-hidden="false" :aria-label="currentLanguage === 'en' ? 'more' : 'mehr'"
+      :aria-expanded="moreVisible" @click="moreVisible = !moreVisible" />
     <div class="more-items">
       <div class="more-item tooltip" tooltip="en/de" role="button" :tabindex="moreVisible ? 0 : -1"
         :aria-label="currentLanguage === 'en' ? 'Auf Deutsch wechseln' : 'Switch to English'" @click="toggleLanguage">
@@ -29,8 +29,9 @@
         @click="toggleCursor">
         <font-awesome-icon icon="arrow-pointer" fixed-width />
       </div>
-      <div v-if="availableThemes.length > 1" class="more-item tooltip" tooltip="theme" role="button" :tabindex="moreVisible ? 0 : -1"
-        :aria-label="currentLanguage === 'en' ? 'Change theme' : 'Theme wechseln'" @click="cycleTheme">
+      <div v-if="availableThemes.length > 1" class="more-item tooltip" tooltip="theme" role="button"
+        :tabindex="moreVisible ? 0 : -1" :aria-label="currentLanguage === 'en' ? 'Change theme' : 'Theme wechseln'"
+        @click="cycleTheme">
         <font-awesome-icon icon="palette" fixed-width />
       </div>
       <div class="more-item tooltip" tooltip="achiev.">
@@ -65,17 +66,20 @@
       {{ currentLanguage === 'en' ? ' by jfladas' : ' von jfladas' }}
     </p>
     <p>
-      <a href="https://github.com/jfladas/" target="_blank" class="social hoverable tooltip" tooltip="github" aria-label="GitHub">
+      <a href="https://github.com/jfladas/" target="_blank" class="social hoverable tooltip" tooltip="github"
+        aria-label="GitHub">
         <font-awesome-icon icon="fa-brands fa-github-alt" />
       </a>
-      <a href="https://jfladas.itch.io/" target="_blank" class="social hoverable tooltip" tooltip="itch.io" aria-label="itch.io">
+      <a href="https://jfladas.itch.io/" target="_blank" class="social hoverable tooltip" tooltip="itch.io"
+        aria-label="itch.io">
         <font-awesome-icon icon="fa-brands fa-itch-io" />
       </a>
       <a href="https://www.linkedin.com/in/lukas-bucher-0926bb282/" target="_blank" class="social hoverable tooltip"
         tooltip="linkedin" aria-label="LinkedIn">
         <font-awesome-icon icon="fa-brands fa-linkedin" />
       </a>
-      <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip" tooltip="insta" aria-label="Instagram">
+      <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip" tooltip="insta"
+        aria-label="Instagram">
         <font-awesome-icon icon="fa-brands fa-instagram" />
       </a>
       <a href="mailto:lukas@jfladas.com" class="social hoverable tooltip" tooltip="email" aria-label="E-Mail">
@@ -768,7 +772,6 @@ nav {
 }
 
 .toast-heading {
-  font-size: 0.8rem;
   color: var(--aqua);
 }
 
@@ -783,15 +786,19 @@ nav {
   font-weight: 700;
   color: var(--mint);
   white-space: nowrap;
+
+  svg {
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+  }
 }
 
-.toast-action svg {
-  font-size: 1.2rem;
-  transition: transform 0.3s;
-}
+#toast.action:hover .toast-action {
+  color: var(--white);
 
-#toast.action:hover .toast-action svg {
-  transform: translateX(0.25rem);
+  svg {
+    transform: translateX(0.2rem);
+  }
 }
 
 .fade-out {
@@ -822,12 +829,15 @@ footer {
 
 .heart {
   color: var(--pink);
-  transition: color 0.5s ease;
-  cursor: pointer;
+  transition: color 0.5s ease, transform 0.05s ease-out;
 }
 
 .heart:hover {
   color: var(--white);
+}
+
+.heart:active {
+  transform: scale(1.2);
 }
 
 .social {

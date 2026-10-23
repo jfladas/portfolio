@@ -35,13 +35,16 @@ Ideas:
 
 ## Anonymous reactions on projects
 
-- [ ] a row of a few emoji under each project, with counts, no login
-  - counts stored with a free counter API, no account or setup needed:
-    [CounterAPI](https://counterapi.dev) v1 (`GET https://api.counterapi.dev/v1/jfladas/<project>-<emoji>/up` adds one)
-    or [Abacus](https://github.com/JasonLovesDoggo/abacus) (`/hit/<namespace>/<key>`)
-  - remember in localStorage which emoji a visitor already clicked, so each browser counts once per emoji
-  - catch: counts are public URLs, so someone determined could inflate them; the free service could also go away
-    (Abacus is open source and can be self-hosted if needed)
+- [ ] reactions above Links & Downloads (compact under the title on phones), no login
+  - candidates (mock-ups: https://claude.ai/artifact/Hy3xpPid34v29841r19XvR): vibe tags, multi-tap heart,
+    one-sticker-per-person board, 5x5 mood map revealed after voting
+  - storage options (checked 2026-10-23):
+    - [CounterAPI](https://docs.counterapi.dev) v2: v1 shut down 2026-08-07. Needs an account + workspace; 600 req/min per counter path;
+      free plan: 1,000 increments/day (reads free), only 5 public counters; private counters need a key, which must not be in browser code
+    - [Abacus](https://github.com/JasonLovesDoggo/abacus): no account, but 30 requests per 10 s per visitor IP, no decrement
+      without an admin key (so no "remove my reaction"), keys expire after 6 months without access, hobby project
+    - Supabase free tier: one request for all counts, decrement possible, but more setup and idle projects pause after 7 days
+  - remember in localStorage what a visitor picked (that's the only "once per visitor" protection)
   - maybe an achievement for reacting
 
 ## Integrations (like Spotify)

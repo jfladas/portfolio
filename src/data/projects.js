@@ -553,7 +553,7 @@ export const projects = [
                 icon: 'fa-brands fa-youtube'
             },
             {
-                text: 'Mr. Horse Sneak Peek (Ch. 13)',
+                text: 'Mr. Horse Sneak Peek',
                 url: 'https://youtu.be/BE8KeC9lxp4?si=fmQz8nVdiz7C7HEE',
                 icon: 'fa-brands fa-youtube'
             }

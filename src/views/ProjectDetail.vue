@@ -5,7 +5,7 @@
         <div v-if="project" class="content-left">
             <router-link :to="`/projects#${project.id}`" class="back hoverable tooltip"
                 :tooltip="currentLanguage === 'en' ? 'back' : 'zurück'"
-                    :aria-label="currentLanguage === 'en' ? 'back' : 'zurück'">
+                :aria-label="currentLanguage === 'en' ? 'back' : 'zurück'">
                 <font-awesome-icon icon="arrow-left-long" />
             </router-link>
             <div v-if="showWipBanner" class="banner">
@@ -30,6 +30,8 @@
                     <p v-for="c in project.context.lines">{{ c }}</p>
                 </a>
             </div>
+            <!-- below 1200px the right column moves under all the content, so the heart sits here instead -->
+            <HeartButton :projectId="project.id" class="heart-compact" />
             <ContentSections :sections="project.sections" :currentIndexes="currentIndexes"
                 :isOverlayVisible="isOverlayVisible" :overlayIndex="overlayIndex" @toggle-overlay="toggleOverlay"
                 @next-slide="nextSlide" @prev-slide="prevSlide" />
@@ -40,7 +42,8 @@
                     <font-awesome-icon icon="arrow-left-long" />
                 </router-link>
                 <router-link to="#" class="to-top hoverable tooltip"
-                    :tooltip="currentLanguage === 'en' ? 'to top' : 'rauf'" :aria-label="currentLanguage === 'en' ? 'to top' : 'rauf'" @click.prevent="scrollToTop">
+                    :tooltip="currentLanguage === 'en' ? 'to top' : 'rauf'"
+                    :aria-label="currentLanguage === 'en' ? 'to top' : 'rauf'" @click.prevent="scrollToTop">
                     <font-awesome-icon icon="angle-up" />
                 </router-link>
             </div>
@@ -62,6 +65,7 @@
         </div>
         <div v-if="project" class="content-right">
             <div class="right-container">
+                <HeartButton :projectId="project.id" class="heart-wide" />
                 <LinksDownloads :links="project.links" :downloads="project.downloads" />
             </div>
         </div>
@@ -83,6 +87,7 @@ import ContentSections from '@/components/ContentSections.vue'
 import ProjectCard from '@/components/ProjectCard.vue'
 import LinksDownloads from '@/components/LinksDownloads.vue'
 import FullOverlay from '@/components/FullOverlay.vue'
+import HeartButton from '@/components/HeartButton.vue'
 import { useAchievements } from '@/composables/useAchievements.js'
 import { useContent } from '@/composables/useContent.js'
 
@@ -320,6 +325,16 @@ const setupBannerTicker = async () => {
     margin-right: 0.75rem;
 }
 
+/* one heart per layout: above Links & Downloads in the sticky sidebar on wide screens, under the context lines below 1200px */
+.heart-compact {
+    display: none;
+    margin: -2rem 0 2rem;
+}
+
+.heart-wide {
+    margin: 0 0 1rem 1rem;
+}
+
 .related-section {
     width: 80%;
     margin: 4rem 0 4rem 10%;
@@ -380,6 +395,14 @@ const setupBannerTicker = async () => {
 }
 
 @media (max-width: 1200px) {
+
+    .heart-compact {
+        display: flex;
+    }
+
+    .heart-wide {
+        display: none;
+    }
 
     .categories {
         font-size: 1.2rem;

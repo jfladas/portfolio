@@ -103,6 +103,7 @@ onMounted(() => {
 .spotify {
     display: block;
     padding: 1rem;
+    margin-bottom: 2rem;
     width: calc(100% - 2rem);
     color: var(--white);
     background: linear-gradient(to right, rgba(var(--deep-rgb), 0.5), var(--navy));

@@ -47,6 +47,21 @@ ffmpeg -i input.mov -c:v libx264 -preset slow -crf 22 -pix_fmt yuv420p -vf "scal
 
 ---
 
+## Project Hearts
+
+- The heart on each project page counts on [Abacus](https://jasoncameron.dev/abacus), a free counter service without an account. Settings are in [`src/data/hearts.js`](./src/data/hearts.js), the queue and sending in [`src/composables/useHearts.js`](./src/composables/useHearts.js).
+- Two namespaces: `jfladas-hearts` for the live site and `jfladas-hearts-dev` for `npm run dev`, so testing never changes the live counts.
+- Every counter was created with an admin key. The keys are **not** in the repo (they're secret); keep the keys file somewhere private. With it:
+  ```
+  node scripts/hearts-admin.mjs <keys.json> list dev
+  node scripts/hearts-admin.mjs <keys.json> reset dev all
+  node scripts/hearts-admin.mjs <keys.json> set live blob 12
+  ```
+  `create live|dev` creates the counters for new projects (existing ones are skipped).
+- Backup: [`.github/workflows/hearts-backup.yml`](./.github/workflows/hearts-backup.yml) saves all live counts every Monday to `hearts.json` on the `reactions-data` branch (also runnable by hand). The site shows that backup when Abacus can't be reached, and the weekly read keeps counters from expiring (Abacus deletes counters nobody reads for 6 months).
+
+---
+
 ## Spotify Data Update
 
 - Workflow: [`.github/workflows/spotify.yml`](./.github/workflows/spotify.yml)

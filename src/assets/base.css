@@ -372,8 +372,12 @@ button {
 
 .right-container {
   position: sticky;
-  top: 6rem;
+  top: 8rem;
   width: 100%;
+
+  h3 {
+    margin-top: 0;
+  }
 }
 
 .jap {
