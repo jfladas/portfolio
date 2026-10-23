@@ -6,7 +6,12 @@
         <p class="jap thatsme" ref="typedtext2"></p>
         {{ aboutContent.title }}
       </h1>
-      <h2 class="subtitle"></h2>
+      <h2 class="subtitle">
+        <!-- the visible text is animated CSS content, which screen readers and checkers can't see -->
+        <span class="sr-only">digital solutions engineer, frontend web developer, digital ideator, creative coder,
+          powerpoint enthusiast, interaction designer</span>
+        <span class="subtitle-text" aria-hidden="true"></span>
+      </h2>
       <div id="contact"></div>
       <ContentSections :sections="aboutContent.sections" :currentIndexes="currentIndexes"
         :isOverlayVisible="isOverlayVisible" :overlayIndex="overlayIndex" @toggle-overlay="toggleOverlay"
@@ -248,7 +253,16 @@ onMounted(() => {
   margin-bottom: 3rem;
 }
 
-.subtitle::before {
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.subtitle-text::before {
   color: var(--aqua);
   content: 'digital solutions engineer';
   /* change-text holds each title for 4s; change-color fades out and back in around each swap */

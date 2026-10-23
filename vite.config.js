@@ -3,7 +3,16 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import { imagetools } from 'vite-imagetools'
 import { projectPreviews } from './scripts/project-previews.js'
+
+// Shrinks the photos on the about page and the project covers at build time; the source files keep full size.
+// Covers stay 1200px wide since they double as link-preview images (og:image).
+// The photos can be WebP; covers stay JPEG/PNG for link-preview support.
+const resizedImages = /\/src\/(assets\/me(_\w+)?\.jpg|projects\/[^/]+\/cover\.(jpg|png))$/
+const resizedImageDirectives = (url) => url.pathname.includes('/projects/')
+  ? new URLSearchParams({ w: '1200', quality: '80', progressive: 'true' })
+  : new URLSearchParams({ w: '1000', quality: '80', format: 'webp' })
 
 // Keyboard focus (Tab) shows the same styles as mouse hover. For every rule with `X:hover`, adds copies where
 // X is focused itself (X:focus-visible), X contains the focused element (X:has(:focus-visible)),
@@ -67,6 +76,10 @@ export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
+    imagetools({
+      include: resizedImages,
+      defaultDirectives: resizedImageDirectives,
+    }),
     projectPreviews(),
   ],
   resolve: {

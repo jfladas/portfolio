@@ -1,5 +1,8 @@
 /* Colors */
+/* "only" also opts out of forced dark modes (browser auto-dark, see also the meta tags in index.html) */
 :root {
+  color-scheme: only dark;
+
   --white: #ffffff;
   --aqua: #b9fff3;
   --mint: #5dfbff;
@@ -80,6 +83,8 @@
 }
 
 [data-theme='light'] {
+  color-scheme: only light;
+
   --white: #050028;
   --aqua: #050028;
   --mint: #2e00c0;

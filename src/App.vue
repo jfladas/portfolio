@@ -17,7 +17,7 @@
   </header>
   <div class="more hoverable" :class="{ open: moreVisible }">
     <font-awesome-icon icon="caret-left" class="more-icon tooltip" :tooltip="currentLanguage === 'en' ? 'more' : 'mehr'"
-      role="button" tabindex="0" :aria-label="currentLanguage === 'en' ? 'more' : 'mehr'" :aria-expanded="moreVisible"
+      role="button" tabindex="0" aria-hidden="false" :aria-label="currentLanguage === 'en' ? 'more' : 'mehr'" :aria-expanded="moreVisible"
       @click="moreVisible = !moreVisible" />
     <div class="more-items">
       <div class="more-item tooltip" tooltip="en/de" role="button" :tabindex="moreVisible ? 0 : -1"
@@ -48,7 +48,7 @@
     <p>
       {{ currentLanguage === 'en' ? 'made with ' : 'gemacht mit ' }}
       <font-awesome-icon icon="heart" class="heart hoverable tooltip"
-        :tooltip="currentLanguage === 'en' ? 'love' : 'liebe'" role="button" tabindex="0"
+        :tooltip="currentLanguage === 'en' ? 'love' : 'liebe'" role="button" tabindex="0" aria-hidden="false"
         :aria-label="currentLanguage === 'en' ? 'love' : 'liebe'" @click="handleHeartClick" />
       {{ currentLanguage === 'en' ? ' by jfladas' : ' von jfladas' }}
     </p>
@@ -92,10 +92,13 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted, onUnmounted, watch, provide } from 'vue'
+import { computed, ref, onMounted, onUnmounted, watch, watchEffect, provide } from 'vue'
 import { useRoute } from 'vue-router'
 import { useAchievements, registerAchievementToast } from '@/composables/useAchievements.js'
 import { achievementDefinitions } from '@/data/achievements.js'
+import { projects } from '@/data/projects.js'
+import { localize } from '@/data/localize.js'
+import { pageTitle } from '@/data/titles.js'
 const route = useRoute()
 const {
   unlockAchievement,
@@ -117,9 +120,26 @@ const checkIsMobile = () => {
 
 const moreVisible = ref(false)
 const isCustomCursor = ref(localStorage.getItem('isCustomCursor') === 'true' || false)
+// written out in full so Vite bundles only these two files (a path built from a variable bundles all of src/assets)
+const customCursorStyle = new URL('/src/assets/custom-cursor.css', import.meta.url).href
+const defaultCursorStyle = new URL('/src/assets/default-cursor.css', import.meta.url).href
 const currentLanguage = ref(localStorage.getItem('language') || 'en')
 
 provide('currentLanguage', currentLanguage)
+
+const pageNames = {
+  about: { en: 'about', de: 'über' },
+  projects: { en: 'projects', de: 'projekte' },
+  achievements: 'achievements'
+}
+
+watchEffect(() => {
+  const name = route.name === 'project-detail'
+    ? projects.find((project) => project.id === route.params.id)?.name
+    : pageNames[route.name]
+
+  document.title = pageTitle(localize(name, currentLanguage.value))
+})
 
 watch(currentLanguage, (language) => {
   document.documentElement.lang = language
@@ -320,7 +340,7 @@ const toggleCursor = () => {
   const link = document.createElement('link');
   link.id = 'cursor-style';
   link.rel = 'stylesheet';
-  link.href = new URL(`/src/assets/${isCustomCursor.value ? 'custom-cursor.css' : 'default-cursor.css'}`, import.meta.url).href;
+  link.href = isCustomCursor.value ? customCursorStyle : defaultCursorStyle;
   document.head.appendChild(link);
 
   let newCursor = isCustomCursor.value;
@@ -426,7 +446,7 @@ onMounted(() => {
   const link = document.createElement('link');
   link.id = 'cursor-style';
   link.rel = 'stylesheet';
-  link.href = new URL(`/src/assets/${isCustomCursor.value ? 'custom-cursor.css' : 'default-cursor.css'}`, import.meta.url).href;
+  link.href = isCustomCursor.value ? customCursorStyle : defaultCursorStyle;
   document.head.appendChild(link);
 
   const handleClickOutside = (event) => {

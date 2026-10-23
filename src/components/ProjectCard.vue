@@ -3,7 +3,8 @@
         <div :id="project.id" class="anchor"></div>
         <router-link :to="`/projects/${project.id}`">
             <div class="cover-wrap">
-                <img v-if="project.cover" :src="project.cover" :alt="project.name" class="cover" loading="lazy" />
+                <img v-if="project.cover" :src="project.cover" :alt="project.name" class="cover"
+                    :loading="lazy ? 'lazy' : 'eager'" />
                 <div v-else class="cover placeholder"></div>
             </div>
             <div class="card-body">
@@ -27,6 +28,11 @@ const props = defineProps({
     project: {
         type: Object,
         required: true
+    },
+    // off where the covers are preloaded anyway (projects page), so they show without a lazy-loading delay
+    lazy: {
+        type: Boolean,
+        default: true
     }
 });
 </script>

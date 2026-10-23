@@ -33,7 +33,8 @@
     <div :class="viewMode === 'grid' ? 'projects-grid' : 'projects-list'">
       <ProjectItem v-if="viewMode === 'list'" v-for="project in filteredProjects" :key="`list-${project.id}`"
         :project="project" />
-      <ProjectCard v-else v-for="project in filteredProjects" :key="`grid-${project.id}`" :project="project" />
+      <ProjectCard v-else v-for="project in filteredProjects" :key="`grid-${project.id}`" :project="project"
+        :lazy="false" />
     </div>
     <div v-if="filteredProjects.length > 0 && filteredProjects.length < projects.length" class="disclaimer">
       <p>
@@ -77,7 +78,9 @@ const filterMode = ref(false)
 const viewMode = ref('list')
 const currentLanguage = inject('currentLanguage')
 const { registerGameFilter } = useAchievements()
-const preloadedCovers = new Set()
+// Holds the decoded covers while the page is open, so switching between list and grid view
+// shows the cards' images right away instead of loading and decoding them again
+const preloadedCovers = new Map()
 
 const preloadProjectCovers = (projectList) => {
   if (typeof window === 'undefined') {
@@ -89,10 +92,10 @@ const preloadProjectCovers = (projectList) => {
       return
     }
 
-    preloadedCovers.add(cover)
     const image = new Image()
-    image.decoding = 'async'
     image.src = cover
+    image.decode().catch(() => {})
+    preloadedCovers.set(cover, image)
   })
 }
 
