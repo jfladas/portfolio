@@ -1,10 +1,11 @@
 <template>
     <teleport to="#video-teleport" :disabled="!isOverlayVisible">
         <div ref="videoPlayerRef" class="video-player hoverable"
-            :class="{ notplaying: !isPlaying, 'loading-placeholder': !isVideoLoaded }"
+            :class="{ notplaying: !isPlaying, 'loading-placeholder': !isVideoLoaded, expanded: isOverlayVisible }"
             @mousemove="showControlsTemporarily" @touchstart="showControlsTemporarily">
             <video ref="video" :src="video" @ended="handleVideoEnded" @loadeddata="handleVideoLoaded"
-                @loadedmetadata="handleMetadataLoaded" @timeupdate="handleTimeUpdate"
+                @loadedmetadata="handleMetadataLoaded" @timeupdate="handleTimeUpdate" @click="handleVideoClick"
+                @play="startProgressLoop" @pause="stopProgressLoop"
                 :class="{ small: !isOverlayVisible }"></video>
             <button class="play-pause-button" :aria-label="isPlaying ? 'Pause' : 'Play'" @click="togglePlayPause" @mouseenter="handleControlMouseEnter"
                 @mouseleave="handleControlMouseLeave" :style="{ opacity: showControls ? 1 : 0 }">
@@ -12,8 +13,10 @@
                     :icon="isVideoLoaded ? (isEnded ? 'rotate-left' : (isPlaying ? 'pause' : 'play')) : 'spinner'"
                     :spin="!isVideoLoaded" />
             </button>
-            <div class="progress" :class="{ unexpanded: !isOverlayVisible }" @mouseenter="handleControlMouseEnter"
+            <div class="progress" @mouseenter="handleControlMouseEnter"
                 @mouseleave="handleControlMouseLeave" :style="{ opacity: showControls ? 1 : 0 }">
+                <div class="progress-fill" :style="{ width: `${progressPercent}%` }"></div>
+                <div class="progress-rest" :style="{ left: `${progressPercent}%` }"></div>
                 <input class="progress-bar" aria-label="Seek" type="range" min="0" max="100" step="0.1" :value="progressPercent"
                     :disabled="!isVideoLoaded || !duration" @input="handleSeek" />
             </div>
@@ -32,6 +35,8 @@
 </template>
 
 <script>
+import { isOnMedia } from '@/composables/fullscreenMedia.js';
+
 export default {
     props: {
         video: {
@@ -59,7 +64,8 @@ export default {
             isMobileInteractionMode: false,
             hoverMediaQuery: null,
             showControls: true,
-            boundClickOutside: null
+            boundClickOutside: null,
+            progressFrame: null
         };
     },
     emits: ['toggle-overlay'],
@@ -85,6 +91,15 @@ export default {
         }
     },
     methods: {
+        // a click on the video plays/pauses it; in fullscreen, a click beside the picture closes fullscreen instead
+        handleVideoClick(event) {
+            if (this.isOverlayVisible && !isOnMedia(event)) {
+                this.$emit('toggle-overlay');
+                return;
+            }
+
+            this.togglePlayPause();
+        },
         togglePlayPause() {
             if (!this.isVideoLoaded) {
                 return;
@@ -102,7 +117,20 @@ export default {
                 this.showControls = true;
             }
         },
+        // timeupdate only fires a few times per second, so while playing the progress is read every frame instead
+        startProgressLoop() {
+            this.stopProgressLoop();
+            const update = () => {
+                this.currentTime = this.$refs.video.currentTime;
+                this.progressFrame = requestAnimationFrame(update);
+            };
+            this.progressFrame = requestAnimationFrame(update);
+        },
+        stopProgressLoop() {
+            cancelAnimationFrame(this.progressFrame);
+        },
         handleVideoEnded() {
+            this.stopProgressLoop();
             this.isPlaying = false;
             this.isEnded = true;
             this.currentTime = this.duration;
@@ -172,8 +200,7 @@ export default {
             this.clearHideControlsTimer();
             this.showControls = true;
             this.hideControlsTimer = setTimeout(() => {
-                if ((this.isPlaying || this.isMobileInteractionMode) &&
-                    (this.isMobileInteractionMode || !this.isHoveringControls)) {
+                if (this.isPlaying && (this.isMobileInteractionMode || !this.isHoveringControls)) {
                     this.showControls = false;
                 }
                 this.hideControlsTimer = null;
@@ -186,6 +213,11 @@ export default {
             }
         },
         handleClickOutside(event) {
+            // on touch screens a paused video keeps its controls
+            if (this.isMobileInteractionMode && !this.isPlaying) {
+                return;
+            }
+
             if (this.$refs.videoPlayerRef && !this.$refs.videoPlayerRef.contains(event.target)) {
                 this.showControls = false;
                 this.clearHideControlsTimer();
@@ -205,6 +237,7 @@ export default {
             this.hoverMediaQuery.removeEventListener('change', this.updateInteractionMode);
         }
         this.clearHideControlsTimer();
+        this.stopProgressLoop();
 
         if (this.boundClickOutside) {
             document.removeEventListener('click', this.boundClickOutside);
@@ -240,24 +273,51 @@ export default {
     max-height: 30rem;
 }
 
+/* expanded: fills the screen, so the bottom bar runs along the screen's bottom edge */
+.video-player.expanded {
+    height: 100%;
+    background: none;
+}
+
+.video-player.expanded video {
+    height: 100%;
+    object-fit: contain;
+}
+
 .progress {
     position: absolute;
     left: 0;
-    right: 0;
+    /* room for the expand/collapse button */
+    right: 2.5rem;
     bottom: 0;
     height: 2.5rem;
     display: flex;
     align-items: center;
-    background-color: rgba(var(--navy-rgb), 0.5);
-    backdrop-filter: blur(0.5rem) saturate(2);
     transition: opacity 0.5s;
 }
 
-.progress.unexpanded {
-    right: 2.5rem;
+/* played part looks like a hovered control, unplayed part like a normal one. The range input on top only handles seeking */
+.progress-fill,
+.progress-rest {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    backdrop-filter: blur(0.5rem) saturate(2);
+    pointer-events: none;
+}
+
+.progress-fill {
+    left: 0;
+    background-color: rgba(var(--deep-rgb), 0.3);
+}
+
+.progress-rest {
+    right: 0;
+    background-color: rgba(var(--navy-rgb), 0.5);
 }
 
 .progress-bar {
+    position: relative;
     width: 100%;
     margin: 0;
     appearance: none;
@@ -267,22 +327,22 @@ export default {
     cursor: pointer;
 }
 
+/* no handle: the thumb stays (for dragging) but is invisible */
 .progress-bar::-webkit-slider-thumb {
     appearance: none;
     -webkit-appearance: none !important;
-    width: 1.5rem;
-    height: 1.5rem;
-    background: rgba(var(--white-rgb), 0.8);
-    border-radius: 0.5rem;
+    width: 1px;
+    height: 2.5rem;
+    background: transparent;
     cursor: pointer;
 }
 
-.progress-bar:hover {
-    background: rgba(var(--deep-rgb), 0.3);
-}
-
-.progress-bar::-webkit-slider-thumb:hover {
-    background: rgba(var(--white-rgb), 1);
+.progress-bar::-moz-range-thumb {
+    width: 1px;
+    height: 2.5rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
 }
 
 .progress-bar:disabled {
@@ -329,10 +389,6 @@ export default {
     background-color: rgba(var(--navy-rgb), 0.5);
     backdrop-filter: blur(0.5rem) saturate(2);
     transition: opacity 0.5s;
-}
-
-.unexpand-button {
-    top: 0;
 }
 
 .expand-button:hover,

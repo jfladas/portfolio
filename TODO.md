@@ -23,11 +23,11 @@ Ideas:
   - a "credits roll" with confetti, ending on a hidden page or easter-egg project
   - a generated certificate/badge (canvas → PNG download) with name and date
   - a hidden achievement that only appears in the list after the rest are done
-- [ ] tapping/clicking an achievement toast opens `/achievements`
+- [x] tapping/clicking an achievement toast opens `/achievements`
 
 ## Fixes / polish
 
-- [ ] fullscreen should be real fullscreen (Fullscreen API) and block page scrolling behind it
+- [x] expanded images/videos/presentations fill the screen and block page scrolling behind them
 - [ ] update the blob project with more info
 - [ ] make all projects carry about the same amount of info (consistent structure, less overfilled)
 - [ ] rework the quote text design

@@ -1,9 +1,11 @@
 <template>
     <teleport to="#images-teleport" :disabled="!isOverlayVisible">
-        <div class="carousel hoverable" @touchstart="onTouchStart" @touchmove="onTouchMove" @touchend="onTouchEnd">
+        <div class="carousel hoverable" :class="{ expanded: isOverlayVisible }" @touchstart="onTouchStart"
+            @touchmove="onTouchMove" @touchend="onTouchEnd">
             <div class="carousel-inner" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
                 <div class="carousel-item" v-for="(image, index) in images" :key="index"
-                    :class="{ small: !isOverlayVisible }">
+                    :class="{ small: !isOverlayVisible }" role="button" :tabindex="index === currentIndex ? 0 : -1"
+                    :aria-label="isOverlayVisible ? 'Exit fullscreen' : 'Show fullscreen'" @click="onImageClick">
                     <img :src="image.src" :alt="image.caption" />
                 </div>
             </div>
@@ -15,7 +17,7 @@
             <button v-if="images.length != 1" class="carousel-control next" aria-label="Next image" @click="$emit('next-slide')">
                 <font-awesome-icon icon="chevron-right" />
             </button>
-            <div v-if="currentCaption" class="caption" :class="{ unexpanded: !isOverlayVisible }">
+            <div v-if="currentCaption" class="caption">
                 <p>{{ currentCaption }}</p>
             </div>
             <button v-if="!isOverlayVisible" class="expand-button" aria-label="Expand" @click="$emit('toggle-overlay')">
@@ -29,6 +31,8 @@
 </template>
 
 <script>
+import { isTouchScreen, isOnMedia } from '@/composables/fullscreenMedia.js';
+
 export default {
     props: {
         images: {
@@ -51,6 +55,22 @@ export default {
             touchEndX: 0
         };
     },
+    watch: {
+        // expanded, the arrow keys switch images
+        isOverlayVisible: {
+            handler(visible) {
+                if (visible) {
+                    window.addEventListener('keydown', this.onKeydown);
+                } else {
+                    window.removeEventListener('keydown', this.onKeydown);
+                }
+            },
+            immediate: true
+        }
+    },
+    beforeUnmount() {
+        window.removeEventListener('keydown', this.onKeydown);
+    },
     computed: {
         currentCaption() {
             const currentImage = this.images[this.currentIndex];
@@ -58,6 +78,21 @@ export default {
         }
     },
     methods: {
+        // opens fullscreen; closes it again, except for a tap on the image on touch screens (only shows the controls)
+        onImageClick(event) {
+            if (this.isOverlayVisible && isTouchScreen() && isOnMedia(event)) {
+                return;
+            }
+
+            this.$emit('toggle-overlay');
+        },
+        onKeydown(event) {
+            if (event.key === 'ArrowLeft') {
+                this.$emit('prev-slide');
+            } else if (event.key === 'ArrowRight') {
+                this.$emit('next-slide');
+            }
+        },
         onTouchStart(event) {
             this.touchStartX = event.changedTouches[0].screenX;
             this.touchEndX = event.changedTouches[0].screenX;
@@ -114,10 +149,32 @@ export default {
     background: linear-gradient(to top, rgba(var(--deep-rgb), 0.2), rgba(var(--deep-rgb), 0));
 }
 
+/* expanded: fills the screen, so the arrows sit at its edges and the caption bar at its bottom */
+.carousel.expanded {
+    height: 100%;
+}
+
+.carousel.expanded .carousel-item {
+    max-height: none;
+    height: 100%;
+}
+
+/* clicking the image opens/closes fullscreen */
+.carousel-item {
+    cursor: pointer;
+}
+
+.carousel.expanded img {
+    height: 100%;
+    margin-top: 0;
+    background: none;
+}
+
 .caption {
     position: absolute;
     left: 0;
-    right: 0;
+    /* room for the expand/collapse button */
+    right: 2.5rem;
     bottom: 0;
     height: 2.5rem;
     display: flex;
@@ -127,10 +184,6 @@ export default {
     backdrop-filter: blur(0.5rem) saturate(2);
     opacity: 0;
     transition: opacity 0.5s;
-}
-
-.caption.unexpanded {
-    right: 2.5rem;
 }
 
 .caption p {
@@ -149,6 +202,7 @@ export default {
     backdrop-filter: blur(1rem);
     opacity: 0;
     transition: opacity 0.5s;
+    pointer-events: none;
 }
 
 .carousel-fade.prev {
@@ -210,10 +264,6 @@ export default {
     transition: opacity 0.5s;
 }
 
-.unexpand-button {
-    top: 0;
-}
-
 .expand-button:hover,
 .unexpand-button:hover {
     background-color: rgba(var(--deep-rgb), 0.3);
@@ -230,5 +280,13 @@ export default {
 .carousel:hover .expand-button,
 .carousel:hover .unexpand-button {
     opacity: 1;
+}
+
+/* no hover on touch screens: the expand/collapse button is always shown */
+@media (hover: none), (pointer: coarse) {
+    .expand-button,
+    .unexpand-button {
+        opacity: 1;
+    }
 }
 </style>

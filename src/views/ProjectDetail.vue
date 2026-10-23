@@ -1,5 +1,6 @@
 <template>
-    <FullOverlay :isOverlayVisible="isOverlayVisible" :overlayType="overlayType" />
+    <FullOverlay :isOverlayVisible="isOverlayVisible" :overlayType="overlayType"
+        @close="toggleOverlay(overlayType, overlayIndex)" />
     <div class="content">
         <div v-if="project" class="content-left">
             <router-link :to="`/projects#${project.id}`" class="back hoverable tooltip"

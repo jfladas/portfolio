@@ -1,5 +1,5 @@
 <template>
-    <div v-show="isOverlayVisible" class="overlay">
+    <div v-show="isOverlayVisible" class="overlay" @click="handleClick">
         <div class="overlay-content">
             <div v-show="overlayType === 'images'" id="images-teleport"></div>
             <div v-show="overlayType === 'video'" id="video-teleport"></div>
@@ -19,9 +19,40 @@ export default {
             type: String,
             required: true
         }
+    },
+    emits: ['close'],
+    methods: {
+        // a click on the empty space around the media closes the overlay (the players handle clicks on themselves).
+        // Checks for the overlay's own elements: by the time a click on a player's close button gets here, the
+        // player may already have left the overlay, so "not inside a player" would wrongly reopen it.
+        handleClick(event) {
+            const emptyAreas = [this.$el, ...this.$el.querySelectorAll('.overlay-content, .overlay-content > div')]
+
+            if (emptyAreas.includes(event.target)) {
+                this.$emit('close')
+            }
+        }
+    },
+    watch: {
+        // the page behind the overlay must not scroll
+        isOverlayVisible: {
+            handler(visible) {
+                document.documentElement.classList.toggle('overlay-open', visible)
+            },
+            immediate: true
+        }
+    },
+    beforeUnmount() {
+        document.documentElement.classList.remove('overlay-open')
     }
 }
 </script>
+
+<style>
+html.overlay-open {
+    overflow: hidden;
+}
+</style>
 
 <style scoped>
 .overlay {
@@ -36,28 +67,25 @@ export default {
     justify-content: center;
     align-items: center;
     z-index: 100;
+    overscroll-behavior: contain;
 }
 
+/* media fills the whole screen; images and videos keep their aspect ratio inside it */
 .overlay-content {
     position: relative;
-    width: fit-content;
-    max-width: 90vw;
-    height: fit-content;
-    max-height: 90vh;
-    background-color: var(--navy);
-    overflow: auto;
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-#video-teleport {
-    display: flex;
-    align-items: stretch;
-}
-
+/* the players fill this area */
+#images-teleport,
+#video-teleport,
 #presentation-teleport {
+    width: 100%;
+    height: 100%;
     display: flex;
-    align-items: stretch;
+    align-items: center;
+    justify-content: center;
 }
 </style>

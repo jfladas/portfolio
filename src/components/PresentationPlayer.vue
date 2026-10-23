@@ -6,6 +6,7 @@
             </button>
         </div>
         <div v-if="isPdf" class="pdf-image-frame" :class="{ hidden: !isLoaded, 'loading-placeholder': !isLoaded }"
+            role="button" tabindex="0" :aria-label="isOverlayVisible ? 'Exit fullscreen' : 'Show fullscreen'"
             @click="handlePdfFrameClick" @touchstart="onPdfTouchStart" @touchmove="onPdfTouchMove"
             @touchend="onPdfTouchEnd">
             <img v-if="currentPdfPageImage" class="pdf-page-image" :src="currentPdfPageImage"
@@ -39,6 +40,8 @@
 </template>
 
 <script>
+import { isTouchScreen, isOnMedia } from '@/composables/fullscreenMedia.js'
+
 export default {
     props: {
         src: {
@@ -90,12 +93,33 @@ export default {
     watch: {
         src() {
             this.initializeContent()
+        },
+        // expanded, the arrow keys turn PDF pages
+        isOverlayVisible: {
+            handler(visible) {
+                if (visible && this.isPdf) {
+                    window.addEventListener('keydown', this.onKeydown)
+                } else {
+                    window.removeEventListener('keydown', this.onKeydown)
+                }
+            },
+            immediate: true
         }
     },
     mounted() {
         this.initializeContent()
     },
+    beforeUnmount() {
+        window.removeEventListener('keydown', this.onKeydown)
+    },
     methods: {
+        onKeydown(event) {
+            if (event.key === 'ArrowLeft') {
+                this.goToPrevPage()
+            } else if (event.key === 'ArrowRight') {
+                this.goToNextPage()
+            }
+        },
         async initializeContent() {
             this.pdfPage = 1
 
@@ -163,13 +187,18 @@ export default {
 
             this.pdfPage += 1
         },
-        handlePdfFrameClick() {
+        // opens fullscreen; closes it again, except for a tap on the page on touch screens (only shows the controls)
+        handlePdfFrameClick(event) {
             if (this.suppressNextTap) {
                 this.suppressNextTap = false
                 return
             }
 
-            this.goToNextPage()
+            if (this.isOverlayVisible && isTouchScreen() && isOnMedia(event)) {
+                return
+            }
+
+            this.$emit('toggle-overlay')
         },
         onPdfTouchStart(event) {
             this.touchStartX = event.changedTouches[0].screenX
@@ -212,14 +241,35 @@ export default {
     background: var(--navy);
 }
 
+/* the clip-path above cuts the embed's border (1.5rem left/right, 1.6rem bottom); sized and shifted so that
+   the visible part reaches the screen edges */
 .presentation-player.overlayed {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: min(88vw, 1600px);
-    max-height: 90vh;
+    transform: translate(-50%, calc(-50% + 0.8rem));
+    width: min(100vw + 3rem, (100dvh + 1.6rem) * 16 / 9);
     z-index: 101;
+}
+
+/* expanded PDF fills the screen: page arrows at its edges, reload and close in its bottom corners */
+.presentation-player.overlayed:has(.pdf-image-frame) {
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100vw;
+    height: 100dvh;
+    background: none;
+}
+
+.presentation-player.overlayed .pdf-image-frame {
+    height: 100%;
+    background: none;
+}
+
+.presentation-player.overlayed .pdf-page-image {
+    height: 100%;
+    object-fit: contain;
 }
 
 .presentation-player:has(.pdf-image-frame) {
@@ -245,6 +295,8 @@ export default {
     width: 100%;
     height: auto;
     background: linear-gradient(to top, rgba(var(--deep-rgb), 0.2), rgba(var(--deep-rgb), 0));
+    /* clicking the page opens/closes fullscreen */
+    cursor: pointer;
 }
 
 .pdf-image-frame.loading-placeholder {
@@ -294,6 +346,7 @@ export default {
     backdrop-filter: blur(1rem);
     opacity: 0;
     transition: opacity 0.5s;
+    pointer-events: none;
 }
 
 .pdf-fade.prev {
@@ -361,26 +414,14 @@ export default {
     left: 1.5rem;
 }
 
-.unexpand-button {
-    top: 0;
-}
-
 .presentation-player:has(.pdf-image-frame) {
 
-    .expand-button {
-        right: 0;
-        bottom: 0;
-    }
-
+    .expand-button,
     .unexpand-button {
-        top: 0;
         right: 0;
-    }
-
-    .replay-button {
-        left: 0;
         bottom: 0;
     }
+
 
     .replay-button {
         left: 0;
@@ -406,5 +447,13 @@ export default {
 .presentation-player:hover .pdf-control,
 .presentation-player:hover .pdf-fade {
     opacity: 1;
+}
+
+/* no hover on touch screens: the expand/collapse button is always shown (the only way to open embedded presentations) */
+@media (hover: none), (pointer: coarse) {
+    .expand-button,
+    .unexpand-button {
+        opacity: 1;
+    }
 }
 </style>

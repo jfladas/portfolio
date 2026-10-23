@@ -29,7 +29,7 @@
         @click="toggleCursor">
         <font-awesome-icon icon="arrow-pointer" fixed-width />
       </div>
-      <div class="more-item tooltip" tooltip="theme" role="button" :tabindex="moreVisible ? 0 : -1"
+      <div v-if="availableThemes.length > 1" class="more-item tooltip" tooltip="theme" role="button" :tabindex="moreVisible ? 0 : -1"
         :aria-label="currentLanguage === 'en' ? 'Change theme' : 'Theme wechseln'" @click="cycleTheme">
         <font-awesome-icon icon="palette" fixed-width />
       </div>
@@ -42,7 +42,15 @@
     </div>
   </div>
   <router-view />
-  <div id="toast"></div>
+  <component :is="toast.action?.link ? 'router-link' : 'div'" id="toast"
+    v-bind="toast.action?.link ? { to: toast.action.link } : toast.action ? { role: 'button', tabindex: 0 } : { role: 'status' }"
+    :class="{ visible: toast.visible, action: toast.action, hoverable: toast.action }" @click="handleToastClick">
+    {{ toast.message }}
+    <span v-if="toast.action" class="toast-action">
+      {{ toast.action.label }}
+      <font-awesome-icon icon="chevron-right" />
+    </span>
+  </component>
   <div class="fade-out"></div>
   <footer>
     <p>
@@ -204,7 +212,11 @@ const cycleTheme = () => {
   const currentThemeIndex = claimableThemes.findIndex((themeId) => themeId === currentThemeId.value)
   const nextThemeIndex = currentThemeIndex < 0 ? 0 : (currentThemeIndex + 1) % claimableThemes.length
 
-  currentThemeId.value = claimableThemes[nextThemeIndex]
+  setTheme(claimableThemes[nextThemeIndex])
+}
+
+const setTheme = (themeId) => {
+  currentThemeId.value = themeId
   applyTheme(currentThemeId.value)
   localStorage.removeItem(themeIndexStorageKey)
   showToast(currentLanguage.value === 'en' ? 'Theme set to ' + currentThemeId.value : 'Theme auf ' + currentThemeId.value + ' gesetzt')
@@ -354,18 +366,29 @@ const toggleCursor = () => {
   moreVisible.value = false;
 }
 
-const showToast = (message) => {
-  const toast = document.getElementById('toast');
-  toast.textContent = message;
+const toast = ref({ message: '', action: null, visible: false })
+
+// action: optional { label, link } (opens a route) or { label, run } (calls run); the whole toast becomes tappable,
+// shows the label with a chevron and stays a bit longer
+const showToast = (message, action = null) => {
+  toast.value = { message, action, visible: toast.value.visible };
   if (toastTimeout) {
     clearTimeout(toastTimeout);
   }
   setTimeout(() => {
-    toast.classList.add('visible');
+    toast.value.visible = true;
   }, 100);
-  toastTimeout = setTimeout(() => {
-    toast.classList.remove('visible');
-  }, 3000);
+  toastTimeout = setTimeout(hideToast, action ? 5000 : 3000);
+};
+
+const hideToast = () => {
+  toast.value.visible = false;
+};
+
+const handleToastClick = () => {
+  const run = toast.value.action?.run
+  hideToast()
+  run?.()
 };
 
 registerAchievementToast((achievement) => {
@@ -374,11 +397,18 @@ registerAchievementToast((achievement) => {
     showToast(message)
   } else if (achievement?.isThemeClaimed) {
     const prefix = currentLanguage.value === 'en' ? 'Theme unlocked: ' : 'Theme freigeschaltet: '
-    showToast(prefix + (achievement?.themeId || ''))
+    const themeId = achievement?.themeId || ''
+    showToast(prefix + themeId, {
+      label: currentLanguage.value === 'en' ? 'apply' : 'anwenden',
+      run: () => setTheme(themeId)
+    })
   } else {
     const prefix = currentLanguage.value === 'en' ? 'Achievement unlocked: ' : 'Achievement freigeschaltet: '
     const title = achievement?.title || ''
-    showToast(prefix + title)
+    showToast(prefix + title, route.path === '/achievements' ? null : {
+      label: currentLanguage.value === 'en' ? 'view' : 'ansehen',
+      link: '/achievements'
+    })
   }
 })
 
@@ -696,6 +726,42 @@ nav {
   transform: translate(-50%, 0) translateY(0);
 }
 
+#toast.action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 1.25rem;
+  text-decoration: none;
+}
+
+#toast.action.visible {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* same idea as .button-secondary:hover, kept see-through like the toast */
+#toast.action:hover {
+  background: linear-gradient(to right, rgba(var(--deep-rgb), 0.5), rgba(var(--sky-rgb), 0.5) 150%);
+}
+
+.toast-action {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: var(--mint);
+  white-space: nowrap;
+}
+
+.toast-action svg {
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+#toast.action:hover .toast-action svg {
+  transform: translateX(0.25rem);
+}
+
 .fade-out {
   position: fixed;
   bottom: 0;
@@ -748,6 +814,16 @@ footer {
 .copyright {
   font-weight: 700;
   color: var(--deep);
+}
+
+/* where a toast could run into the "more" menu (bottom right), it sits just above the menu instead */
+@media (max-width: 1000px) {
+  #toast {
+    bottom: 6.25rem;
+    width: max-content;
+    max-width: calc(100vw - 2rem);
+    box-sizing: border-box;
+  }
 }
 
 @media (max-width: 600px) {
