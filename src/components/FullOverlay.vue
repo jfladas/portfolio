@@ -31,19 +31,31 @@ export default {
             if (emptyAreas.includes(event.target)) {
                 this.$emit('close')
             }
+        },
+        handleKeydown(event) {
+            if (event.key === 'Escape') {
+                this.$emit('close')
+            }
         }
     },
     watch: {
-        // the page behind the overlay must not scroll
+        // the page behind the overlay must not scroll; Esc closes it
         isOverlayVisible: {
             handler(visible) {
                 document.documentElement.classList.toggle('overlay-open', visible)
+
+                if (visible) {
+                    window.addEventListener('keydown', this.handleKeydown)
+                } else {
+                    window.removeEventListener('keydown', this.handleKeydown)
+                }
             },
             immediate: true
         }
     },
     beforeUnmount() {
         document.documentElement.classList.remove('overlay-open')
+        window.removeEventListener('keydown', this.handleKeydown)
     }
 }
 </script>

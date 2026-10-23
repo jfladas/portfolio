@@ -28,8 +28,8 @@ Ideas:
 ## Fixes / polish
 
 - [x] expanded images/videos/presentations fill the screen and block page scrolling behind them
-- [ ] update the blob project with more info
-- [ ] make all projects carry about the same amount of info (consistent structure, less overfilled)
+- [x] update the blob project with more info
+- [x] make all projects carry about the same amount of info (consistent structure, less overfilled)
 - [ ] rework the quote text design
 - [ ] maybe switch to an icon set that fits the style better (e.g. a pixel icon set to match DotGothic16)
 

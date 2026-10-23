@@ -6,13 +6,24 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import { imagetools } from 'vite-imagetools'
 import { projectPreviews } from './scripts/project-previews.js'
 
-// Shrinks the photos on the about page and the project covers at build time; the source files keep full size.
-// Covers stay 1200px wide since they double as link-preview images (og:image).
-// The photos can be WebP; covers stay JPEG/PNG for link-preview support.
-const resizedImages = /\/src\/(assets\/me(_\w+)?\.jpg|projects\/[^/]+\/cover\.(jpg|png))$/
-const resizedImageDirectives = (url) => url.pathname.includes('/projects/')
-  ? new URLSearchParams({ w: '1200', quality: '80', progressive: 'true' })
-  : new URLSearchParams({ w: '1000', quality: '80', format: 'webp' })
+// Shrinks images at build time; the source files keep full size.
+// - project covers: 1200px wide, since they double as link-preview images (og:image), so they stay JPEG/PNG
+// - the photos of me on the about page: 1000px wide, WebP
+// - gallery images of projects and the about page: at most 2000px wide (still sharp in fullscreen), WebP
+//   (PNG screenshots barely shrink otherwise)
+// Not touched: GIFs (animated) and the solarsystem renders, which are also offered as full-size downloads.
+const resizedImages = /\/src\/(assets\/me(_\w+)?\.jpg|assets\/about\/[^/]+\.(jpe?g|png)|projects\/(?!solarsystem\/)[^/]+\/[^/]+\.(jpe?g|png))$/i
+const resizedImageDirectives = (url) => {
+  if (/\/projects\/[^/]+\/cover\.\w+$/.test(url.pathname)) {
+    return new URLSearchParams({ w: '1200', quality: '80', progressive: 'true' })
+  }
+
+  if (/\/assets\/me(_\w+)?\.jpg$/.test(url.pathname)) {
+    return new URLSearchParams({ w: '1000', quality: '80', format: 'webp' })
+  }
+
+  return new URLSearchParams({ w: '2000', quality: '82', format: 'webp' })
+}
 
 // Keyboard focus (Tab) shows the same styles as mouse hover. For every rule with `X:hover`, adds copies where
 // X is focused itself (X:focus-visible), X contains the focused element (X:has(:focus-visible)),

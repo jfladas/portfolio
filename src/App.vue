@@ -45,7 +45,11 @@
   <component :is="toast.action?.link ? 'router-link' : 'div'" id="toast"
     v-bind="toast.action?.link ? { to: toast.action.link } : toast.action ? { role: 'button', tabindex: 0 } : { role: 'status' }"
     :class="{ visible: toast.visible, action: toast.action, hoverable: toast.action }" @click="handleToastClick">
-    {{ toast.message }}
+    <span v-if="toast.heading" class="toast-text">
+      <span class="toast-heading">{{ toast.heading }}</span>
+      <span class="toast-message">{{ toast.message }}</span>
+    </span>
+    <template v-else>{{ toast.message }}</template>
     <span v-if="toast.action" class="toast-action">
       {{ toast.action.label }}
       <font-awesome-icon icon="chevron-right" />
@@ -219,7 +223,7 @@ const setTheme = (themeId) => {
   currentThemeId.value = themeId
   applyTheme(currentThemeId.value)
   localStorage.removeItem(themeIndexStorageKey)
-  showToast(currentLanguage.value === 'en' ? 'Theme set to ' + currentThemeId.value : 'Theme auf ' + currentThemeId.value + ' gesetzt')
+  showToast(currentThemeId.value, null, currentLanguage.value === 'en' ? 'Theme changed' : 'Theme gewechselt')
 }
 
 const handleViewportAchievement = () => {
@@ -337,7 +341,8 @@ const toggleLanguage = () => {
       registerLanguageSwitch()
     }
   }, 5000);
-  showToast(currentLanguage.value === 'en' ? 'Language set to English' : 'Sprache auf Deutsch gesetzt');
+  showToast(currentLanguage.value === 'en' ? 'English' : 'Deutsch', null,
+    currentLanguage.value === 'en' ? 'Language switched' : 'Sprache gewechselt');
   moreVisible.value = false;
 }
 
@@ -362,16 +367,18 @@ const toggleCursor = () => {
     }
   }, 5000);
 
-  showToast(currentLanguage.value === 'en' ? isCustomCursor.value ? 'Custom cursor enabled' : 'Default cursor enabled' : isCustomCursor.value ? 'Custom Cursor aktiviert' : 'Standard-Cursor aktiviert');
+  showToast(currentLanguage.value === 'en' ? (isCustomCursor.value ? 'custom' : 'default') : (isCustomCursor.value ? 'eigener' : 'Standard'),
+    null, currentLanguage.value === 'en' ? 'Cursor changed' : 'Cursor gewechselt');
   moreVisible.value = false;
 }
 
-const toast = ref({ message: '', action: null, visible: false })
+const toast = ref({ message: '', heading: null, action: null, visible: false })
 
 // action: optional { label, link } (opens a route) or { label, run } (calls run); the whole toast becomes tappable,
-// shows the label with a chevron and stays a bit longer
-const showToast = (message, action = null) => {
-  toast.value = { message, action, visible: toast.value.visible };
+// shows the label with a chevron and stays a bit longer.
+// heading: optional small line above the message (the message is then shown bold)
+const showToast = (message, action = null, heading = null) => {
+  toast.value = { message, heading, action, visible: toast.value.visible };
   if (toastTimeout) {
     clearTimeout(toastTimeout);
   }
@@ -396,19 +403,16 @@ registerAchievementToast((achievement) => {
     const message = currentLanguage.value === 'en' ? 'All achievements reset' : 'Alle Achievements zurückgesetzt'
     showToast(message)
   } else if (achievement?.isThemeClaimed) {
-    const prefix = currentLanguage.value === 'en' ? 'Theme unlocked: ' : 'Theme freigeschaltet: '
     const themeId = achievement?.themeId || ''
-    showToast(prefix + themeId, {
+    showToast(themeId, {
       label: currentLanguage.value === 'en' ? 'apply' : 'anwenden',
       run: () => setTheme(themeId)
-    })
+    }, currentLanguage.value === 'en' ? 'Theme unlocked' : 'Theme freigeschaltet')
   } else {
-    const prefix = currentLanguage.value === 'en' ? 'Achievement unlocked: ' : 'Achievement freigeschaltet: '
-    const title = achievement?.title || ''
-    showToast(prefix + title, route.path === '/achievements' ? null : {
+    showToast(achievement?.title || '', route.path === '/achievements' ? null : {
       label: currentLanguage.value === 'en' ? 'view' : 'ansehen',
       link: '/achievements'
-    })
+    }, currentLanguage.value === 'en' ? 'Achievement unlocked' : 'Achievement freigeschaltet')
   }
 })
 
@@ -726,9 +730,10 @@ nav {
   transform: translate(-50%, 0) translateY(0);
 }
 
+/* "view"/"apply" lines up with the last line of the message */
 #toast.action {
   display: flex;
-  align-items: center;
+  align-items: last baseline;
   gap: 1rem;
   padding-right: 1.25rem;
   text-decoration: none;
@@ -739,9 +744,36 @@ nav {
   cursor: pointer;
 }
 
-/* same idea as .button-secondary:hover, kept see-through like the toast */
-#toast.action:hover {
-  background: linear-gradient(to right, rgba(var(--deep-rgb), 0.5), rgba(var(--sky-rgb), 0.5) 150%);
+/* hover: same idea as .button-secondary:hover, kept see-through like the toast. A gradient can't be animated,
+   so it sits on its own layer that fades in */
+#toast.action::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to right, transparent, rgba(var(--sky-rgb), 0.5) 150%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#toast.action:hover::before {
+  opacity: 1;
+}
+
+/* two lines: small heading ("Achievement unlocked") above the name */
+.toast-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.toast-heading {
+  font-size: 0.8rem;
+  color: var(--aqua);
+}
+
+.toast-message {
+  font-weight: 700;
 }
 
 .toast-action {

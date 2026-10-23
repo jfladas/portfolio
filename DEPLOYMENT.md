@@ -35,7 +35,7 @@ They are attached to a GitHub Release with the tag `downloads`, and the site lin
 - To add or replace a download:
   1. On GitHub, open **Releases**, then edit the `downloads` release.
   2. Drag the file into the assets area (to replace a file, delete the old asset first), then click **Update release**.
-  3. Reference it in `src/data/projects.js` and `src/data/projekte.js` as `releaseFile('FileName.ext')`.
+  3. Reference it in `src/data/projects.js` as `releaseFile('FileName.ext')`.
 - GitHub replaces spaces in uploaded file names with dots (`Amorphous Blob.dmg` becomes `Amorphous.Blob.dmg`), so use the name exactly as it shows on the release page.
 - Do not put these files in `src/projects/`; everything in those folders is bundled into the site.
 

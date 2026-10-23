@@ -293,6 +293,8 @@ export default {
     height: 2.5rem;
     display: flex;
     align-items: center;
+    /* the blur sits here, on the element that fades: a blur on its children only appears once the fade is done */
+    backdrop-filter: blur(0.5rem) saturate(2);
     transition: opacity 0.5s;
 }
 
@@ -302,7 +304,6 @@ export default {
     position: absolute;
     top: 0;
     bottom: 0;
-    backdrop-filter: blur(0.5rem) saturate(2);
     pointer-events: none;
 }
 
