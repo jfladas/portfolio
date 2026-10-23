@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "New Look",
-        "artist": "IS:SUE",
-        "link": "https://open.spotify.com/track/6vtBsAv6slegvZ2lleiu5L",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2739b51da8f80e24733d9f6dc53"
+        "name": "In my lotion",
+        "artist": "RESCENE",
+        "link": "https://open.spotify.com/track/0I4qJamLijYkfEzsxNmmYb",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2739538990ec50c597ab78adfcf"
     }
 }
