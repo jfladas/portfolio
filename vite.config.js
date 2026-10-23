@@ -25,6 +25,24 @@ const resizedImageDirectives = (url) => {
   return new URLSearchParams({ w: '2000', quality: '82', format: 'webp' })
 }
 
+// Preloads the two main fonts (Latin, the only part the site text needs). The page's text only appears once Vue has
+// rendered, and browsers only fetch a font once text uses it, so without this the text first shows in a fallback
+// font and then jumps when the real one arrives.
+const preloadedFonts = /\/funnel-(sans|display)-latin-wght-normal\.woff2$/
+const preloadFonts = () => ({
+  name: 'preload-fonts',
+  apply: 'build',
+  transformIndexHtml(html, { bundle }) {
+    return Object.values(bundle)
+      .filter((file) => preloadedFonts.test(`/${file.fileName}`))
+      .map((file) => ({
+        tag: 'link',
+        attrs: { rel: 'preload', as: 'font', type: 'font/woff2', href: `/${file.fileName}`, crossorigin: '' },
+        injectTo: 'head-prepend',
+      }))
+  },
+})
+
 // Keyboard focus (Tab) shows the same styles as mouse hover. For every rule with `X:hover`, adds copies where
 // X is focused itself (X:focus-visible), X contains the focused element (X:has(:focus-visible)),
 // or X sits directly inside the focused element (:focus-visible > X, e.g. a styled <button> inside a link).
@@ -91,6 +109,7 @@ export default defineConfig({
       include: resizedImages,
       defaultDirectives: resizedImageDirectives,
     }),
+    preloadFonts(),
     projectPreviews(),
   ],
   resolve: {

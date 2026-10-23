@@ -59,7 +59,7 @@ const props = defineProps({
     }
 
     h2 {
-        font-family: "Funnel Display", sans-serif;
+        font-family: "Funnel Display Variable", sans-serif;
         font-weight: 800;
         font-size: 1.8rem;
         line-height: 1;

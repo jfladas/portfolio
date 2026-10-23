@@ -68,7 +68,7 @@ const progressPercent = computed(() => {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: baseline;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono Variable', monospace;
     font-size: 0.95rem;
     font-weight: 400;
     color: var(--white);

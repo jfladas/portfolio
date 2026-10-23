@@ -89,7 +89,7 @@ const localizedDescription = computed(() => {
 
 .achievement-title {
     position: relative;
-    font-family: 'Funnel Display', sans-serif;
+    font-family: 'Funnel Display Variable', sans-serif;
     font-size: 1.5rem;
     line-height: 1.5rem;
     font-weight: 800;

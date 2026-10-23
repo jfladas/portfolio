@@ -533,7 +533,7 @@ nav {
 
 .nav-item {
   width: 50vw;
-  font-family: 'Funnel Sans', sans-serif;
+  font-family: 'Funnel Sans Variable', sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
   color: var(--sky);
@@ -608,7 +608,7 @@ nav {
 }
 
 .logo {
-  font-family: 'Funnel Display', sans-serif;
+  font-family: 'Funnel Display Variable', sans-serif;
   font-weight: 800;
   font-size: 2.5rem;
   background: linear-gradient(to right, var(--aqua), var(--mint), var(--sky), var(--deep));

@@ -262,7 +262,7 @@ onMounted(() => {
 }
 
 .filter {
-  font-family: "Funnel Display", sans-serif;
+  font-family: "Funnel Display Variable", sans-serif;
   font-weight: 800;
   font-size: 1.5rem;
   color: var(--deep);

@@ -185,7 +185,7 @@ onMounted(() => {
 }
 
 .spotify-track {
-    font-family: "Funnel Display", sans-serif;
+    font-family: "Funnel Display Variable", sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
     line-height: 1.2;

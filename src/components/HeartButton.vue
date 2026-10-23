@@ -150,7 +150,7 @@ watch(cracked, (now, before) => {
 }
 
 .heart-count {
-    font-family: "Funnel Display", sans-serif;
+    font-family: "Funnel Display Variable", sans-serif;
     font-size: 1.5rem;
     color: var(--heat-color);
     font-variant-numeric: tabular-nums;
