@@ -3392,10 +3392,6 @@ export const aboutContent = {
     title: "Lukas Bucher",
     sections: [
         {
-            type: 'heading',
-            text: { en: 'Hi there!', de: 'Hey!' }
-        },
-        {
             type: 'quoted',
             text: {
                 en: `I'm a Digital Solutions Engineer with a bachelor's degree in <a href="https://www.hslu.ch/en/lucerne-school-of-information-technology/degree-programs/bachelor/digital-ideation/" class="bold hoverable" target="_blank">Digital Ideation</a> from the Lucerne University of Applied Sciences and Arts, an interdisciplinary program combining design and computer science, ranging from game design & development to media arts. My focus mainly lies in web development, though I love exploring wherever technology and creativity intersect. This portfolio collects projects mostly from my time as a student, so feel free to look around!`,

@@ -9,7 +9,7 @@ import {
     faFireFlameCurved, faFlagCheckered, faFont, faGamepad, faGears, faGenderless, faGhost, faGlobe,
     faGraduationCap, faGrip, faGripLines, faHeart, faHeartCrack, faHouse, faHouseChimneyWindow, faI, faK, faLanguage,
     faMagnifyingGlass, faMinus, faMountain, faMusic, faP, faPaintbrush, faPalette, faPaperPlane, faPause,
-    faPenNib, faPlay, faQrcode, faQuestion, faQuoteLeft, faQuoteRight, faR, faRecycle, faRobot, faRocket,
+    faPenNib, faPlay, faQrcode, faQuestion, faR, faRecycle, faRobot, faRocket,
     faRotateLeft, faRotateRight, faScroll, faServer, faSitemap, faSpa, faSpinner, faSpiral, faSplotch,
     faStar, faTag, faTooth, faTrash, faTree, faTriangleExclamation, faTrophy,
     faUpRightAndDownLeftFromCenter, faUser, faUserNinja, faUsers, faUtensils, faVial, faVideo
@@ -31,7 +31,7 @@ library.add(
     faFireFlameCurved, faFlagCheckered, faFont, faGamepad, faGears, faGenderless, faGhost, faGlobe,
     faGraduationCap, faGrip, faGripLines, faHeart, faHeartCrack, faHouse, faHouseChimneyWindow, faI, faK, faLanguage,
     faMagnifyingGlass, faMinus, faMountain, faMusic, faP, faPaintbrush, faPalette, faPaperPlane, faPause,
-    faPenNib, faPlay, faQrcode, faQuestion, faQuoteLeft, faQuoteRight, faR, faRecycle, faRobot, faRocket,
+    faPenNib, faPlay, faQrcode, faQuestion, faR, faRecycle, faRobot, faRocket,
     faRotateLeft, faRotateRight, faScroll, faServer, faSitemap, faSpa, faSpinner, faSpiral, faSplotch,
     faStar, faTag, faTooth, faTrash, faTree, faTriangleExclamation, faTrophy,
     faUpRightAndDownLeftFromCenter, faUser, faUserNinja, faUsers, faUtensils, faVial, faVideo,

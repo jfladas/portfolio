@@ -4,7 +4,8 @@
             <p v-if="section.type === 'paragraph'" class="paragraph text" v-html="section.text"></p>
             <h3 v-if="section.type === 'heading' && !section.collapsible" class="heading">{{ section.text }}</h3>
             <h3 v-if="section.type === 'heading' && section.collapsible" class="heading collapsible hoverable"
-                role="button" tabindex="0" :aria-expanded="isGroupOpen(section.group)" @click="toggleGroup(section.group)">
+                role="button" tabindex="0" :aria-expanded="isGroupOpen(section.group)"
+                @click="toggleGroup(section.group)">
                 <span>{{ section.text }}</span>
                 <font-awesome-icon icon="angle-up" class="arrow" :class="{ 'rotated': isGroupOpen(section.group) }" />
             </h3>
@@ -19,10 +20,16 @@
             </div>
             <div v-if="section.type === 'quoted'" class="quoted-container">
                 <div class="text quoted">
-                    <font-awesome-icon icon="quote-left" class="quote-left" />
-                    <span class="bottom-corner">
-                        <font-awesome-icon icon="quote-right" class="quote-right" />
-                    </span>
+                    <svg v-for="mark in quoteMarks" :key="mark.kind" :class="['quote-mark', `quote-${mark.kind}`]"
+                        viewBox="2 4 10 8" aria-hidden="true">
+                        <defs>
+                            <linearGradient :id="`${uid}-${index}-${mark.kind}`" x1="0" x2="0" y1="0" y2="1">
+                                <stop offset="0" class="quote-fade-start" />
+                                <stop offset="1" class="quote-fade-end" />
+                            </linearGradient>
+                        </defs>
+                        <path :d="mark.path" :fill="`url(#${uid}-${index}-${mark.kind})`" />
+                    </svg>
                     <p v-html="section.text"></p>
                 </div>
             </div>
@@ -55,10 +62,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, useId } from 'vue'
 import ImageCarousel from '@/components/ImageCarousel.vue'
 import PresentationPlayer from '@/components/PresentationPlayer.vue'
 import VideoPlayer from '@/components/VideoPlayer.vue'
+
+// big pixel quote marks behind the quote text, cut out of pixelarticons' quote-text-inline (the closing one turned
+// around); both fade out from top to bottom
+const uid = useId()
+const quoteMarks = [
+    { kind: 'open', path: 'M2 8h4v4H2zm6 0h4v4H8zM2 6h2v2H2zm6 0h2v2H8zM4 4h2v2H4zm6 0h2v2h-2z' },
+    { kind: 'close', path: 'M8 4h4v4H8zM2 4h4v4H2zm8 4h2v2h-2zM4 8h2v2H4zm4 2h2v2H8zM2 10h2v2H2z' }
+]
 
 const props = defineProps({
     sections: {
@@ -80,7 +95,9 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['toggle-overlay', 'next-slide', 'prev-slide'])
-const openGroups = ref({})
+// collapsible groups start open, except on narrower screens where the side content moves below the text
+const startOpen = !window.matchMedia('(max-width: 1200px)').matches
+const openGroups = ref(Object.fromEntries(props.sections.filter((section) => section.collapsible).map((section) => [section.group, startOpen])))
 
 const isGroupOpen = (group) => Boolean(openGroups.value[group])
 
@@ -177,28 +194,45 @@ const prevSlide = (index) => {
 }
 
 .quoted {
+    position: relative;
+    isolation: isolate;
+    padding: 1rem 0;
+}
+
+.quoted p {
+    position: relative;
+    font-family: 'Funnel Display Variable', sans-serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    line-height: 1.55;
+}
+
+.quote-mark {
+    position: absolute;
+    z-index: -1;
+    width: 7.5rem;
     height: auto;
+    shape-rendering: crispEdges;
 }
 
-.quote-left {
-    font-size: 2.5rem;
-    color: var(--sky);
-    margin: 0 0.5rem 0 -0.5rem;
-    float: left;
+/* the text lines up with the other text, the opening mark sticks out to the left */
+.quote-open {
+    left: -2rem;
+    top: -0.5rem;
 }
 
-.quote-right {
-    font-size: 2.5rem;
-    color: var(--sky);
-    margin: 0 0 0 0.5rem;
+.quote-close {
+    right: -0.25rem;
+    bottom: -0.5rem;
 }
 
-.bottom-corner {
-    float: right;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    shape-outside: inset(calc(100% - 2.5rem) 0 0);
+.quote-fade-start {
+    stop-color: var(--deep);
+}
+
+.quote-fade-end {
+    stop-color: var(--deep);
+    stop-opacity: 0;
 }
 
 .paragraph,
@@ -261,9 +295,12 @@ const prevSlide = (index) => {
         margin-right: 0;
     }
 
-    .quote-left,
-    .quote-right {
-        font-size: 2rem;
+    .quote-mark {
+        width: 5.5rem;
+    }
+
+    .quote-open {
+        left: -1.25rem;
     }
 
     .presentation {
