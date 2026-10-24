@@ -27,6 +27,7 @@
       </div>
       <SpotifyStatus />
       <DuolingoStreak />
+      <SwitchStatus />
       <div class="right-container">
         <LinksDownloads :links="aboutContent.links" :downloads="aboutContent.downloads" />
       </div>
@@ -48,6 +49,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
 import FullOverlay from '@/components/FullOverlay.vue'
 import SpotifyStatus from '@/components/SpotifyStatus.vue'
 import DuolingoStreak from '@/components/DuolingoStreak.vue'
+import SwitchStatus from '@/components/SwitchStatus.vue'
 import { useAchievements } from '@/composables/useAchievements.js'
 import { useContent } from '@/composables/useContent.js'
 

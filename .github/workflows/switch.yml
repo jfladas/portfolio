@@ -1,0 +1,66 @@
+name: Update Switch Status
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [update_switch]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: switch-data-update
+  cancel-in-progress: true
+
+jobs:
+  update-switch:
+    runs-on: ubuntu-latest
+    env:
+      NXAPI_DATA_PATH: ${{ github.workspace }}/nxapi-data
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # 1.6.1 can't log in anymore since Nintendo's app update to 3.5.0; this prerelease can
+      - name: Install nxapi
+        run: npm install --global nxapi@1.6.1-next.257
+
+      # nxapi's login stays valid for about two hours; keeping it between runs avoids a full login every time
+      - name: Restore nxapi login
+        uses: actions/cache@v4
+        with:
+          path: nxapi-data
+          key: nxapi-${{ github.run_id }}
+          restore-keys: nxapi-
+
+      # switch.json lives on its own branch so these commits don't pile up on main; the branch is created on the first run
+      - name: Checkout the switch-data branch
+        env:
+          REPO_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
+        run: |
+          mkdir data && cd data
+          git init -q
+          git remote add origin "$REPO_URL"
+          if git fetch -q --depth 1 origin switch-data; then
+            git checkout -q -b switch-data FETCH_HEAD
+          else
+            git checkout -q --orphan switch-data
+          fi
+
+      - name: Fetch Switch status
+        env:
+          NA_SESSION_TOKEN: ${{ secrets.NA_SESSION_TOKEN }}
+        run: node scripts/fetch-switch.mjs 83023ef2b3ab9ab9 data/switch.json # NSA ID of my main account
+
+      - name: Commit to the switch-data branch
+        working-directory: data
+        run: |
+          git add switch.json
+          git -c user.name="GitHub Actions" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Update Switch status" || { echo "nothing changed"; exit 0; }
+          git push -q origin switch-data

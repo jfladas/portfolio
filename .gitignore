@@ -29,5 +29,6 @@ coverage
 
 *.tsbuildinfo
 
-# local copy of the Duolingo streak for npm run dev (npm run duolingo), the live one is on the duolingo-data branch
+# local copies for npm run dev (npm run duolingo / npm run switch), the live ones are on the *-data branches
 /public/duolingo.json
+/public/switch.json

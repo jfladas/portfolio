@@ -18,11 +18,7 @@ Same pattern as Spotify: an Action (triggered from outside like `update_spotify`
 and writes a JSON file on a data branch that the site reads.
 
 - [x] Duolingo streak on the about page (hourly Action, see "Duolingo Streak" in DEPLOYMENT.md)
-- [ ] Nintendo Switch now playing / recently played (try it, might not work out):
-  - no official API; [nxapi](https://www.npmjs.com/package/@jigsaw/nxapi) reads friend presence through the
-    Nintendo Switch Online app API (usually via a second Nintendo account that is friends with the main one)
-  - the Action would run nxapi with the stored login token (as a secret) and save the game + time it was last seen
-  - imitates Nintendo's app: against their terms, can break on app updates, only sees the Switch while it's online
+- [x] Nintendo Switch now playing / last played on the about page (nxapi with a second account, see "Switch Status" in DEPLOYMENT.md)
 
 ## 3. Homepage at `/`
 

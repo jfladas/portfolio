@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "duolingo": "node scripts/fetch-duolingo.mjs jfladas public/duolingo.json"
+    "duolingo": "node scripts/fetch-duolingo.mjs jfladas public/duolingo.json",
+    "switch": "node scripts/fetch-switch.mjs 83023ef2b3ab9ab9 public/switch.json"
   },
   "dependencies": {
     "@fontsource-variable/funnel-display": "^5.3.0",

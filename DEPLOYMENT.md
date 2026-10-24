@@ -84,4 +84,16 @@ ffmpeg -i input.mov -c:v libx264 -preset slow -crf 22 -pix_fmt yuv420p -vf "scal
 
 ---
 
+## Switch Status
+
+- Workflow: [`.github/workflows/switch.yml`](./.github/workflows/switch.yml), triggered by **Cronitor** with a `repository_dispatch` of type `update_switch` (every 15 minutes), or by hand.
+- [`scripts/fetch-switch.mjs`](./scripts/fetch-switch.mjs) uses [nxapi](https://github.com/samuelthomas2774/nxapi) to log in to the Nintendo Switch Online app API as a **second Nintendo account** that is friends with mine, and reads my presence from its friend list. It saves `switch.json` (current game, plus the last game seen being played) to the `switch-data` branch, created on the first run. If anything fails, the last file stays.
+- Needs the repository secret `NA_SESSION_TOKEN`: the session token of the second account, printed by `nxapi nso auth` (log in with the second account). It stays valid for a long time; if the workflow starts failing at login, log in again and replace the secret.
+- nxapi is pinned to `1.6.1-next.257`: the maintainer switched off login in older versions when Nintendo updated the app. If it breaks again after an app update, look for a newer nxapi version. The login data is kept between runs with `actions/cache`, so it doesn't log in from scratch every time.
+- Unofficial, against Nintendo's terms, and can break with app updates; only the second account logs in, never the main one.
+- The card on the about page ([`src/components/SwitchStatus.vue`](./src/components/SwitchStatus.vue)) shows "now playing" while a game is open, otherwise "last played". If the last update is over an hour old, "now playing" turns into "last played". `lastPlayed` in the file on the branch can also be edited by hand.
+- Locally, `npm run switch` writes `public/switch.json` (not committed) using the nxapi login on this computer, and `npm run dev` reads that file.
+
+---
+
 For scheduling with Cronitor, configure it to POST a `repository_dispatch` event with type `update_spotify` to this repository.
