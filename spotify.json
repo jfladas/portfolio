@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "MASCARA",
-        "artist": "XG",
-        "link": "https://open.spotify.com/track/4OelNEcxPGoCOU29fchcsv",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d8bb914644898de5012dedf3"
+        "name": "Trick or Trick",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/3EI3OLBeM89B0o0UsIGCOx",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273593abd65e61c72196b887d71"
     }
 }
