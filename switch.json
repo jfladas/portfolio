@@ -1,6 +1,15 @@
 {
-  "checked": "2026-10-24T02:53:58.898Z",
-  "status": "online",
-  "game": null,
-  "lastPlayed": null
+  "checked": "2026-10-24T02:56:51.937Z",
+  "status": "playing",
+  "game": {
+    "name": "Nintendo Switch Sports Resort",
+    "image": "https://atum-img-lp1.cdn.nintendo.net/i/c/5d265b09c4ab4f9a93c8827cf9dd14f9_1024",
+    "link": "https://ec.nintendo.com/apps/04008e001f098000/CH?acdIndex=0"
+  },
+  "lastPlayed": {
+    "name": "Nintendo Switch Sports Resort",
+    "image": "https://atum-img-lp1.cdn.nintendo.net/i/c/5d265b09c4ab4f9a93c8827cf9dd14f9_1024",
+    "link": "https://ec.nintendo.com/apps/04008e001f098000/CH?acdIndex=0",
+    "at": "2026-10-24T02:56:51.937Z"
+  }
 }
