@@ -2,7 +2,7 @@
     <div class="heart-counter" :style="{ '--heat-color': heatColor }">
         <!-- the +1s sit next to the button, not in it, so they don't scale with the heart -->
         <div class="heart-slot">
-            <button type="button" class="heart-button hoverable" :class="{ cracked, healed, grown }" :aria-label="label"
+            <button type="button" class="heart-tap hoverable" :class="{ cracked, healed, grown }" :aria-label="label"
                 :aria-disabled="cracked" @click="onTap">
                 <font-awesome-icon :icon="cracked ? 'heart-crack' : 'heart'" />
             </button>
@@ -114,7 +114,7 @@ watch(cracked, (now, before) => {
     display: grid;
 }
 
-.heart-button {
+.heart-tap {
     padding: 0;
     font-size: 1.5rem;
     color: var(--heat-color);
@@ -123,16 +123,16 @@ watch(cracked, (now, before) => {
     touch-action: manipulation;
 }
 
-.heart-button.grown {
+.heart-tap.grown {
     transform: scale(1.2);
 }
 
-.heart-button.cracked {
+.heart-tap.cracked {
     cursor: default;
     animation: shiver 0.4s ease-in-out;
 }
 
-.heart-button.healed {
+.heart-tap.healed {
     animation: heal 0.6s ease-out;
 }
 
@@ -182,8 +182,8 @@ watch(cracked, (now, before) => {
 
 @media (prefers-reduced-motion: reduce) {
 
-    .heart-button.cracked,
-    .heart-button.healed {
+    .heart-tap.cracked,
+    .heart-tap.healed {
         animation: none;
     }
 }
