@@ -17,8 +17,7 @@ Order: 1. quote design & icon set, 2. Duolingo streak & Switch now playing, 3. n
 Same pattern as Spotify: an Action (triggered from outside like `update_spotify`) fetches the data
 and writes a JSON file on a data branch that the site reads.
 
-- [ ] Duolingo streak (and language): Duolingo's unofficial public profile endpoint, by username, no login.
-      Unofficial, so it can break without notice; keep showing the last known streak if a fetch fails.
+- [x] Duolingo streak on the about page (hourly Action, see "Duolingo Streak" in DEPLOYMENT.md)
 - [ ] Nintendo Switch now playing / recently played (try it, might not work out):
   - no official API; [nxapi](https://www.npmjs.com/package/@jigsaw/nxapi) reads friend presence through the
     Nintendo Switch Online app API (usually via a second Nintendo account that is friends with the main one)

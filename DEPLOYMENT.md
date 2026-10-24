@@ -74,4 +74,14 @@ ffmpeg -i input.mov -c:v libx264 -preset slow -crf 22 -pix_fmt yuv420p -vf "scal
 
 ---
 
+## Duolingo Streak
+
+- Workflow: [`.github/workflows/duolingo.yml`](./.github/workflows/duolingo.yml), runs every hour (GitHub's schedule, which can run late) and by hand. Can also be triggered like Spotify with a `repository_dispatch` of type `update_duolingo`.
+- [`scripts/fetch-duolingo.mjs`](./scripts/fetch-duolingo.mjs) reads the streak from Duolingo's public profile endpoint (unofficial, no login, so it can break without notice) and saves `duolingo.json` to the `duolingo-data` branch, created on the first run. It only commits when something changed, about once a day. If a fetch fails, the last file stays.
+- The card on the about page ([`src/components/DuolingoStreak.vue`](./src/components/DuolingoStreak.vue)) shows the streak with a lit flame once today's lesson is done ("today" in Swiss time). It hides itself when the file is missing, the streak is 0, or the last practice is two or more days ago (outdated data).
+- Locally, `npm run dev` reads `public/duolingo.json` instead (not committed). `npm run duolingo` fills it with the current streak; edit `lastPracticed` in it to try the other states.
+- GitHub pauses scheduled workflows after 60 days without activity in the repo; it can be switched back on in the Actions tab.
+
+---
+
 For scheduling with Cronitor, configure it to POST a `repository_dispatch` event with type `update_spotify` to this repository.

@@ -1,0 +1,50 @@
+name: Update Duolingo Streak
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [update_duolingo]
+  schedule:
+    - cron: "17 * * * *" # every hour
+
+permissions:
+  contents: write
+
+concurrency:
+  group: duolingo-data-update
+  cancel-in-progress: true
+
+jobs:
+  update-duolingo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch Duolingo streak
+        run: node scripts/fetch-duolingo.mjs jfladas duolingo.json
+
+      # duolingo.json lives on its own branch so these commits don't pile up on main; the branch is created on the
+      # first run, and a commit only happens when the streak changed (about once a day)
+      - name: Commit to the duolingo-data branch
+        env:
+          REPO_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
+        run: |
+          mkdir data && cd data
+          git init -q
+          git remote add origin "$REPO_URL"
+          if git fetch -q --depth 1 origin duolingo-data; then
+            git checkout -q -b duolingo-data FETCH_HEAD
+          else
+            git checkout -q --orphan duolingo-data
+          fi
+          cp ../duolingo.json .
+          git add duolingo.json
+          git -c user.name="GitHub Actions" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Update Duolingo streak" || { echo "nothing changed"; exit 0; }
+          git push -q origin duolingo-data

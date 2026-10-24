@@ -28,3 +28,6 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# local copy of the Duolingo streak for npm run dev (npm run duolingo), the live one is on the duolingo-data branch
+/public/duolingo.json

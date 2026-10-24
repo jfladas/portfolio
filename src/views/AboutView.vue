@@ -26,6 +26,7 @@
         <img src="/src/assets/me_dark.jpg" alt="" class="me-dark" />
       </div>
       <SpotifyStatus />
+      <DuolingoStreak />
       <div class="right-container">
         <LinksDownloads :links="aboutContent.links" :downloads="aboutContent.downloads" />
       </div>
@@ -46,6 +47,7 @@ import LinksDownloads from '@/components/LinksDownloads.vue'
 import ProjectCard from '@/components/ProjectCard.vue'
 import FullOverlay from '@/components/FullOverlay.vue'
 import SpotifyStatus from '@/components/SpotifyStatus.vue'
+import DuolingoStreak from '@/components/DuolingoStreak.vue'
 import { useAchievements } from '@/composables/useAchievements.js'
 import { useContent } from '@/composables/useContent.js'
 
