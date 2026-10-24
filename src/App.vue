@@ -114,7 +114,7 @@ import { useAchievements, registerAchievementToast } from '@/composables/useAchi
 import { achievementDefinitions } from '@/data/achievements.js'
 import { projects } from '@/data/projects.js'
 import { localize } from '@/data/localize.js'
-import { pageTitle } from '@/data/titles.js'
+import { pageTitle, siteTitle } from '@/data/titles.js'
 const route = useRoute()
 const {
   unlockAchievement,
@@ -154,7 +154,8 @@ watchEffect(() => {
     ? projects.find((project) => project.id === route.params.id)?.name
     : pageNames[route.name]
 
-  document.title = pageTitle(localize(name, currentLanguage.value))
+  // about stands in for the homepage for now (/ redirects there), so it carries the site title (same in project-previews.js)
+  document.title = route.name === 'about' ? siteTitle : pageTitle(localize(name, currentLanguage.value))
 })
 
 watch(currentLanguage, (language) => {

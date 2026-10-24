@@ -27,7 +27,8 @@ Right now `/` redirects to `/about`. When the homepage is built:
 - [ ] remove the `/` redirect in `src/router/index.js` (and decide where unknown URLs should go: home or about)
 - [ ] set the canonical in `index.html` to `https://www.jfladas.com/` (currently `/about`)
 - [ ] add `/` to the sitemap URLs in `scripts/project-previews.js`
-- [ ] give it a title (`siteTitle` in `src/data/titles.js`) and update the logo/nav highlighting in `App.vue`
+- [ ] give it a title (`siteTitle` in `src/data/titles.js`) and update the logo/nav highlighting in `App.vue`; about
+  currently uses `siteTitle` as the stand-in homepage (App.vue + scripts/project-previews.js), switch it back to `pageTitle('about')`
 
 Ideas:
 

@@ -7,7 +7,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { localize } from '../src/data/localize.js'
-import { pageTitle } from '../src/data/titles.js'
+import { pageTitle, siteTitle } from '../src/data/titles.js'
 
 const siteUrl = 'https://www.jfladas.com'
 
@@ -124,12 +124,13 @@ export const projectPreviews = () => {
 
             const { projects } = await loadProjects(root)
 
-            const sitemapUrls = ['/about', '/projects', '/achievements']
+            // with a projects/ folder, GitHub Pages redirects /projects to /projects/, so /projects/ is the real address
+            const sitemapUrls = ['/about', '/projects/', '/achievements']
 
-            write('about.html', createPage(html, { url: '/about', title: pageTitle('about') }))
+            // about stands in for the homepage for now (/ redirects there), so it carries the site title
+            write('about.html', createPage(html, { url: '/about', title: siteTitle }))
             write('achievements.html', createPage(html, { url: '/achievements', title: pageTitle('achievements') }))
-            // with a projects/ folder, GitHub Pages redirects /projects to /projects/, which is served from here
-            write('projects/index.html', createPage(html, { url: '/projects', title: pageTitle('projects') }))
+            write('projects/index.html', createPage(html, { url: '/projects/', title: pageTitle('projects') }))
 
             for (const project of localize(projects, 'en')) {
                 const cover = project.cover && builtFiles.get(path.posix.join('src/data', project.cover))
