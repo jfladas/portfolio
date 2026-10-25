@@ -17,7 +17,7 @@ Order: 1. quote design & icon set, 2. Duolingo streak & Switch now playing, 3. n
 Same pattern as Spotify: an Action (triggered from outside like `update_spotify`) fetches the data
 and writes a JSON file on a data branch that the site reads.
 
-- [x] Duolingo streak on the about page (hourly Action, see "Duolingo Streak" in DEPLOYMENT.md)
+- [x] Duolingo streak on the about page (Action every 30 min via Cronitor, see "Duolingo Streak" in DEPLOYMENT.md)
 - [x] Nintendo Switch now playing / last played on the about page (nxapi with a second account, see "Switch Status" in DEPLOYMENT.md)
 
 ## 3. Homepage at `/`

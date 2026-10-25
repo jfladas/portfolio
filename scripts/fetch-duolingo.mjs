@@ -1,6 +1,6 @@
 // Saves the Duolingo streak to a JSON file: node scripts/fetch-duolingo.mjs <username> <output.json>
-// Run every hour by .github/workflows/duolingo.yml. Uses Duolingo's public profile endpoint (unofficial, no login),
-// which doesn't allow requests from other websites, so the site reads this file instead.
+// Run every 30 minutes by .github/workflows/duolingo.yml (Cronitor). Uses Duolingo's public profile endpoint
+// (unofficial, no login), which doesn't allow requests from other websites, so the site reads this file instead.
 import fs from 'node:fs'
 
 const [username, output] = process.argv.slice(2)

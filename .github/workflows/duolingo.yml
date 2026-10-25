@@ -5,7 +5,7 @@ on:
   repository_dispatch:
     types: [update_duolingo]
   schedule:
-    - cron: "17 * * * *" # every hour
+    - cron: "17 * * * *" # backup for Cronitor (every 30 min); GitHub only runs this every few hours in practice
 
 permissions:
   contents: write

@@ -26,7 +26,8 @@ import LiveCard from '@/components/LiveCard.vue'
 // preview: sample data instead of the live file, for the dev-only preview page (src/views/LiveCardsPreview.vue)
 const props = defineProps({ preview: { type: Object, default: null } })
 
-// written every hour by .github/workflows/duolingo.yml; `npm run dev` reads a local copy instead (`npm run duolingo`)
+// written every 30 minutes by .github/workflows/duolingo.yml (Cronitor);
+// `npm run dev` reads a local copy instead (`npm run duolingo`)
 const DATA_URL = import.meta.env.DEV
     ? '/duolingo.json'
     : 'https://raw.githubusercontent.com/jfladas/portfolio/duolingo-data/duolingo.json'
@@ -76,7 +77,6 @@ onMounted(async () => {
 
 <style scoped>
 .duolingo-flame {
-
     flex: none;
     height: 100%;
     aspect-ratio: 1;
@@ -88,7 +88,7 @@ onMounted(async () => {
     transform: scale(1);
 }
 
-/* not practiced yet: the cool colors of the inactive card */
+/* not practiced yet: unlit, navy */
 .flame-bottom {
     stop-color: var(--navy);
 }
