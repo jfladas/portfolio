@@ -15,7 +15,7 @@ import {
     faUpRightAndDownLeftFromCenter, faUser, faUserNinja, faUsers, faUtensils, faVial, faVideo
 } from '@fortawesome/free-solid-svg-icons'
 import {
-    faAndroid, faApple, faBehance, faDuolingo, faFigma, faGithubAlt, faInstagram, faItchIo, faLinkedin,
+    faAndroid, faApple, faBehance, faDiscord, faDuolingo, faFigma, faGithubAlt, faInstagram, faItchIo, faLinkedin,
     faMicrosoft, faSpotify, faWindows, faYoutube
 } from '@fortawesome/free-brands-svg-icons'
 
@@ -35,6 +35,6 @@ library.add(
     faRotateLeft, faRotateRight, faScroll, faServer, faSitemap, faSpa, faSpinner, faSpiral, faSplotch,
     faStar, faTag, faTooth, faTrash, faTree, faTriangleExclamation, faTrophy,
     faUpRightAndDownLeftFromCenter, faUser, faUserNinja, faUsers, faUtensils, faVial, faVideo,
-    faAndroid, faApple, faBehance, faDuolingo, faFigma, faGithubAlt, faInstagram, faItchIo, faLinkedin,
+    faAndroid, faApple, faBehance, faDiscord, faDuolingo, faFigma, faGithubAlt, faInstagram, faItchIo, faLinkedin,
     faMicrosoft, faSpotify, faWindows, faYoutube
 )

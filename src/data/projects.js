@@ -3655,6 +3655,11 @@ export const aboutContent = {
             icon: 'fa-brands fa-instagram'
         },
         {
+            text: 'Discord',
+            url: 'https://discord.com/users/564743229824696361',
+            icon: 'fa-brands fa-discord'
+        },
+        {
             text: 'Spotify',
             url: 'https://open.spotify.com/user/rn16ees9l59zxvg9zzptiuwb7?si=86fff52ccafd4d0d',
             icon: 'fa-brands fa-spotify'
