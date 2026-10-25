@@ -185,7 +185,10 @@ export const useHeart = (projectId) => {
         if (!loading.has(current)) {
             loading.add(current)
             state.counts[current] ??= null
-            fetchCount(current).then((count) => raise(current, count))
+            // remembered for the next visit, so the number shows right away instead of after loading
+            fetchCount(current).then((count) => typeof count === 'number' && save(({ counts }) => {
+                if (counts[current] == null || count > counts[current]) counts[current] = count
+            }))
         }
     })
 

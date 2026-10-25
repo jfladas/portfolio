@@ -1,17 +1,30 @@
 <template>
-    <a v-if="visible" class="duolingo hoverable" :href="`https://www.duolingo.com/profile/${username}`" target="_blank"
-        rel="noopener noreferrer">
-        <font-awesome-icon icon="fire-flame-curved" class="duolingo-flame" :class="{ lit: practicedToday }" />
-        <div class="duolingo-info">
-            <p class="duolingo-state">{{ stateLabel }}</p>
-            <p class="duolingo-streak">{{ streakLabel }}</p>
-            <p class="duolingo-source">{{ currentLanguage === 'en' ? 'on Duolingo' : 'auf Duolingo' }}</p>
-        </div>
-    </a>
+    <LiveCard v-if="visible" :href="`https://www.duolingo.com/profile/${username}`" :active="practicedToday"
+        :state="stateLabel" :title="streakLabel" :detail="currentLanguage === 'en' ? 'on Duolingo' : 'auf Duolingo'">
+        <template #media>
+            <!-- drawn here instead of with <font-awesome-icon> so the flame can have a gradient -->
+            <svg class="duolingo-flame" :class="{ lit: practicedToday }" :viewBox="`0 0 ${flame[0]} ${flame[1]}`"
+                aria-hidden="true">
+                <defs>
+                    <linearGradient :id="gradientId" x1="0" x2="0" y1="1" y2="0">
+                        <stop offset="0" class="flame-bottom" />
+                        <stop offset="0.5" class="flame-middle" />
+                        <stop offset="1" class="flame-top" />
+                    </linearGradient>
+                </defs>
+                <path :d="flame[4]" :fill="`url(#${gradientId})`" />
+            </svg>
+        </template>
+    </LiveCard>
 </template>
 
 <script setup>
-import { computed, inject, onMounted, ref } from 'vue'
+import { computed, inject, onMounted, ref, useId } from 'vue'
+import { faFireFlameCurved } from '@fortawesome/free-solid-svg-icons'
+import LiveCard from '@/components/LiveCard.vue'
+
+// preview: sample data instead of the live file, for the dev-only preview page (src/views/LiveCardsPreview.vue)
+const props = defineProps({ preview: { type: Object, default: null } })
 
 // written every hour by .github/workflows/duolingo.yml; `npm run dev` reads a local copy instead (`npm run duolingo`)
 const DATA_URL = import.meta.env.DEV
@@ -19,6 +32,8 @@ const DATA_URL = import.meta.env.DEV
     : 'https://raw.githubusercontent.com/jfladas/portfolio/duolingo-data/duolingo.json'
 const DAY = 24 * 60 * 60 * 1000
 
+const flame = faFireFlameCurved.icon // [width, height, ligatures, unicode, path]
+const gradientId = `${useId()}-flame`
 const currentLanguage = inject('currentLanguage')
 const username = ref('jfladas')
 const streak = ref(0)
@@ -41,14 +56,18 @@ const streakLabel = computed(() =>
     currentLanguage.value === 'en' ? `${streak.value} day streak` : `${streak.value} Tage in Folge`
 )
 
+const apply = (data) => {
+    username.value = data.username || username.value
+    streak.value = data.streak ?? 0
+    lastPracticed.value = data.lastPracticed ?? null
+}
+
 onMounted(async () => {
+    if (props.preview) return apply(props.preview)
+
     try {
         const response = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: 'no-store' })
-        if (!response.ok) return
-        const data = await response.json()
-        username.value = data.username || username.value
-        streak.value = data.streak ?? 0
-        lastPracticed.value = data.lastPracticed ?? null
+        if (response.ok) apply(await response.json())
     } catch {
         // no data, no card
     }
@@ -56,58 +75,42 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.duolingo {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    width: calc(100% - 2rem);
-    color: var(--white);
-    background: linear-gradient(to right, rgba(var(--deep-rgb), 0.5), var(--navy));
-    text-decoration: none;
-    transition: all 0.5s ease;
-}
-
-.duolingo:hover {
-    gap: 1.2rem;
-    background: linear-gradient(to right, rgba(var(--deep-rgb), 1), var(--navy));
-
-    .duolingo-flame {
-        transform: scale(1.2);
-    }
-}
-
 .duolingo-flame {
-    width: 4rem;
-    height: 3rem;
-    color: rgba(var(--white-rgb), 0.25);
-    transition: all 0.5s ease;
+
+    flex: none;
+    height: 100%;
+    aspect-ratio: 1;
+    transform: scale(0.8);
+    transition: transform 0.5s ease;
 }
 
-.duolingo-flame.lit {
-    color: var(--pink);
+.live-card.hoverable:hover .duolingo-flame {
+    transform: scale(1);
 }
 
-.duolingo-info {
-    min-width: 0;
+/* not practiced yet: the cool colors of the inactive card */
+.flame-bottom {
+    stop-color: var(--navy);
 }
 
-.duolingo-state {
-    color: var(--pink);
-    font-size: 1rem;
-    margin-bottom: 0.1rem;
+.flame-middle {
+    stop-color: var(--navy);
 }
 
-.duolingo-streak {
-    font-family: "Funnel Display Variable", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.2;
+.flame-top {
+    stop-color: var(--navy);
 }
 
-.duolingo-source {
-    font-size: 1rem;
-    color: var(--aqua);
+/* practiced today: lit */
+.lit .flame-bottom {
+    stop-color: var(--aqua);
+}
+
+.lit .flame-middle {
+    stop-color: var(--white);
+}
+
+.lit .flame-top {
+    stop-color: var(--pink);
 }
 </style>

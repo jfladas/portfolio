@@ -44,6 +44,10 @@ const router = createRouter({
       component: Achievements,
       props: true
     },
+    // only in `npm run dev`: every live card on the about page in every state
+    ...(import.meta.env.DEV
+      ? [{ path: '/dev/live-cards', component: () => import('@/views/LiveCardsPreview.vue') }]
+      : []),
     {
       path: '/:pathMatch(.*)*',
       redirect: { name: 'about' }

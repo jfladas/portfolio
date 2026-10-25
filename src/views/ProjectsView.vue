@@ -189,6 +189,12 @@ const highlightProjectInView = () => {
     }
   })
 
+  // scrolled past the whole list: keep the last item open, otherwise it collapses, the page gets shorter,
+  // it moves back below the line and opens again (twitching at the bottom)
+  if (!closestItem && projectItems.length) {
+    closestItem = projectItems[projectItems.length - 1]
+  }
+
   projectItems.forEach(item => {
     item.classList.toggle('in-view', item === closestItem)
   })

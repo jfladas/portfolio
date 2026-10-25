@@ -1,32 +1,22 @@
 <template>
-    <component :is="trackLink ? 'a' : 'section'" class="spotify hoverable" :class="{ clickable: !!trackLink }"
-        :href="trackLink || undefined" target="_blank" rel="noopener noreferrer">
-
-        <p v-if="loading" class="spotify-message">
-            {{ currentLanguage === 'en' ? 'Loading Spotify...' : 'Spotify wird geladen...' }}</p>
-
-        <p v-else-if="error" class="spotify-message">
-            {{ currentLanguage === 'en' ? 'Spotify data unavailable.' : 'Spotify-Daten nicht verfügbar.' }}</p>
-
-        <div v-else-if="trackName && artistName" class="spotify-track-wrap">
+    <LiveCard v-if="loading" :message="currentLanguage === 'en' ? 'Loading Spotify...' : 'Spotify wird geladen...'" />
+    <LiveCard v-else-if="error" :message="currentLanguage === 'en' ? 'Spotify data unavailable.' : 'Spotify-Daten nicht verfügbar.'" />
+    <LiveCard v-else-if="trackName && artistName" :href="trackLink" :active="isOnline" pulse :state="statusLabel"
+        :title="trackName" :detail="`${currentLanguage === 'en' ? 'by' : 'von'} ${artistName}`">
+        <template #media>
             <img v-if="albumCover" :src="albumCover" alt="Album cover" class="spotify-cover" loading="lazy" />
-            <div class="spotify-info">
-                <div class="spotify-state-row">
-                    <span class="spotify-indicator" :class="{ online: isOnline }"></span>
-                    <p class="spotify-state">{{ statusLabel }}</p>
-                </div>
-                <p class="spotify-track">{{ trackName }}</p>
-                <p class="spotify-artist">{{ currentLanguage === 'en' ? 'by' : 'von' }} {{ artistName }}</p>
-            </div>
-        </div>
-
-        <p v-else class="spotify-message">
-            {{ currentLanguage === 'en' ? 'No Spotify track data yet.' : 'Noch keine Spotify-Trackdaten.' }}</p>
-    </component>
+        </template>
+    </LiveCard>
+    <LiveCard v-else :message="currentLanguage === 'en' ? 'No Spotify track data yet.' : 'Noch keine Spotify-Trackdaten.'" />
 </template>
 
 <script setup>
 import { onMounted, ref, inject, computed } from 'vue'
+import LiveCard from '@/components/LiveCard.vue'
+
+// preview: sample data instead of the live file, for the dev-only preview page (src/views/LiveCardsPreview.vue);
+// besides the file's contents it can be 'loading' or 'error'
+const props = defineProps({ preview: { type: [Object, String], default: null } })
 
 const currentLanguage = inject('currentLanguage')
 const loading = ref(true)
@@ -95,112 +85,26 @@ const loadSpotifyData = async () => {
 }
 
 onMounted(() => {
-    loadSpotifyData()
+    if (!props.preview) {
+        loadSpotifyData()
+    } else if (props.preview !== 'loading') {
+        loading.value = false
+        error.value = props.preview === 'error'
+        if (!error.value) applySpotifyData(props.preview)
+    }
 })
 </script>
 
 <style scoped>
-.spotify {
-    display: block;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    width: calc(100% - 2rem);
-    color: var(--white);
-    background: linear-gradient(to right, rgba(var(--deep-rgb), 0.5), var(--navy));
-    transition: all 0.5s ease;
-    text-decoration: none;
-}
-
-.spotify.clickable {
-    cursor: pointer;
-}
-
-.spotify.clickable:hover {
-    background: linear-gradient(to right, rgba(var(--deep-rgb), 1), var(--navy));
-
-    .spotify-cover {
-        transform: scale(1.2);
-    }
-
-    .spotify-track-wrap {
-        gap: 1.2rem;
-    }
-}
-
-.spotify-state-row {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.spotify-track-wrap {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    height: 4rem;
-    transition: all 0.5s ease;
-}
-
-.spotify-info {
-    min-width: 0;
-}
-
 .spotify-cover {
     height: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     transform: scale(1.5);
-    transition: all 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
-.spotify-indicator {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background: rgba(var(--white-rgb), 0.25);
-}
-
-.spotify-indicator.online {
-    background: var(--pink);
-    animation: blink 2s infinite;
-}
-
-@keyframes blink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-}
-
-.spotify-state {
-    color: var(--pink);
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 0.1rem;
-}
-
-.spotify-track {
-    font-family: "Funnel Display Variable", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--white);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.spotify-artist,
-.spotify-message {
-    font-size: 1rem;
-    color: var(--aqua);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.live-card.hoverable:hover .spotify-cover {
+    transform: scale(1.2);
 }
 </style>

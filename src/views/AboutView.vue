@@ -9,8 +9,8 @@
       </h1>
       <h2 class="subtitle">
         <!-- the visible text is animated CSS content, which screen readers and checkers can't see -->
-        <span class="sr-only">digital solutions engineer, frontend web developer, digital ideator, creative coder,
-          powerpoint enthusiast, interaction designer</span>
+        <span class="sr-only">digital ideator, frontend developer, creative coder, powerpoint enthusiast,
+          interaction designer</span>
         <span class="subtitle-text" aria-hidden="true"></span>
       </h2>
       <div id="contact"></div>
@@ -269,9 +269,10 @@ onMounted(() => {
 
 .subtitle-text::before {
   color: var(--aqua);
-  content: 'digital solutions engineer';
-  /* change-text holds each title for 4s; change-color fades out and back in around each swap */
-  animation: change-text 24s linear infinite, change-color 4s linear infinite;
+  content: 'digital ideator';
+  /* change-text holds each title for 4s; change-color fades out and back in around each swap.
+     Every title has to fit on one line on phones, the quote below starts right after it */
+  animation: change-text 20s linear infinite, change-color 4s linear infinite;
 }
 
 @keyframes change-color {
@@ -307,26 +308,22 @@ onMounted(() => {
 
   0%,
   100% {
-    content: "digital solutions engineer";
-  }
-
-  16.667% {
-    content: "frontend web developer";
-  }
-
-  33.333% {
     content: "digital ideator";
   }
 
-  50% {
+  20% {
+    content: "frontend developer";
+  }
+
+  40% {
     content: "creative coder";
   }
 
-  66.667% {
+  60% {
     content: "powerpoint enthusiast";
   }
 
-  83.333% {
+  80% {
     content: "interaction designer";
   }
 }

@@ -8,7 +8,10 @@
             </button>
             <span v-for="pop in pops" :key="pop.id" class="pop" :style="{ '--dx': pop.dx }" aria-hidden="true">+1</span>
         </div>
-        <span class="heart-count" aria-live="polite">{{ total ?? '' }}</span>
+        <!-- fades in when the count arrives after the page (not when it's already known from the last visit) -->
+        <span class="heart-count" aria-live="polite">
+            <Transition name="count-in"><span v-if="total != null">{{ total }}</span></Transition>
+        </span>
     </div>
 </template>
 
@@ -155,6 +158,14 @@ watch(cracked, (now, before) => {
     color: var(--heat-color);
     font-variant-numeric: tabular-nums;
     transition: color 0.3s ease;
+}
+
+.count-in-enter-active {
+    transition: opacity 0.3s ease;
+}
+
+.count-in-enter-from {
+    opacity: 0;
 }
 
 @keyframes rise {

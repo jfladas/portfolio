@@ -92,11 +92,6 @@ const props = defineProps({
         max-width: 0vw;
     }
 
-    .project-item h2 {
-        line-height: 1.5rem;
-        margin: 0.2rem 2rem 0.5rem 0;
-    }
-
     .project-item:hover {
         background: linear-gradient(to right,
                 var(--sky),
@@ -123,14 +118,15 @@ const props = defineProps({
                 var(--deep),
                 rgba(var(--navy-rgb), 0));
 
+        /* same sizes as the hover state on wide screens */
         h2 {
-            font-size: 2rem;
-            line-height: 2rem;
+            font-size: 2.5rem;
+            line-height: 2.5rem;
             max-width: 60vw;
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--deep);
             opacity: 1;
             max-width: 60vw;
@@ -139,12 +135,19 @@ const props = defineProps({
         }
 
         .project-icons {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--deep);
-            margin-top: 0.8rem;
-            gap: 0.8rem;
+            margin-top: 0.5rem;
+            gap: 0.75rem;
             max-width: 60vw;
         }
+    }
+}
+
+@media (max-width: 600px) {
+    .project-item.in-view h2 {
+        font-size: 2rem;
+        line-height: 2rem;
     }
 }
 
@@ -160,11 +163,12 @@ const props = defineProps({
 
         h2 {
             font-size: 2.5rem;
+            line-height: 2.5rem;
             max-width: 60vw;
         }
 
         p {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--deep);
             opacity: 1;
             max-width: 50vw;
@@ -173,10 +177,10 @@ const props = defineProps({
         }
 
         .project-icons {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--deep);
-            margin-top: 1rem;
-            gap: 1rem;
+            margin-top: 0.5rem;
+            gap: 0.75rem;
             max-width: 50vw;
         }
     }

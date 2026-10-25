@@ -50,7 +50,6 @@ const props = defineProps({
 .link:hover,
 .download:hover {
     color: var(--white);
-    font-weight: 700;
 }
 
 .link::before,
