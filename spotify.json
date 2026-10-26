@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Hot 'n Unbothered (SULLYOON, BAE)",
-        "artist": "NMIXX",
-        "link": "https://open.spotify.com/track/1RMcCdYxkB7V1a2AuFu3B8",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f6d5b4cb596df033b99759ea"
+        "name": "ZAP",
+        "artist": "Billlie",
+        "link": "https://open.spotify.com/track/6PLgpJz0y2xY4Ooa9IhyUq",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ec9ffda683b158a31a83159a"
     }
 }
