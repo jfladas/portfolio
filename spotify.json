@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "4 Walls",
-        "artist": "f(x)",
-        "link": "https://open.spotify.com/track/2YkjXEab4USTV9uuAgC90E",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b6baf420e67f45971ca0d216"
+        "name": "DUET",
+        "artist": "ZICO",
+        "link": "https://open.spotify.com/track/0M4O6UEu4F9SxImTsBuX9n",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27376b859d6874da8750df6608a"
     }
 }
