@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Holy Grail",
-        "artist": "NTX",
-        "link": "https://open.spotify.com/track/5ivhVLYdtpnCBUJKkeVuTq",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27379aa9b7a4e0da34fd6faa425"
+        "name": "Accendio",
+        "artist": "IVE",
+        "link": "https://open.spotify.com/track/1BAtAtx0VgWgAMROWK9WYf",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27326cc1062ed475f238d244141"
     }
 }
