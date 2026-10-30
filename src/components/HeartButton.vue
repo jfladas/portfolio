@@ -144,6 +144,7 @@ watch(cracked, (now, before) => {
     top: -0.5rem;
     left: 50%;
     transform: translateX(-50%);
+    font-family: "DotGothic16", sans-serif;
     font-size: 0.9rem;
     font-weight: 400;
     color: var(--heat-color);
@@ -153,8 +154,9 @@ watch(cracked, (now, before) => {
 }
 
 .heart-count {
-    font-family: "Funnel Display Variable", sans-serif;
+    font-family: "DotGothic16", sans-serif;
     font-size: 1.5rem;
+    padding-bottom: 0.1rem;
     color: var(--heat-color);
     font-variant-numeric: tabular-nums;
     transition: color 0.3s ease;

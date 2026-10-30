@@ -27,10 +27,10 @@ const resizedImageDirectives = (url) => {
   return new URLSearchParams({ w: '2000', quality: '82', format: 'webp' })
 }
 
-// Preloads the two main fonts (Latin, the only part the site text needs). The page's text only appears once Vue has
-// rendered, and browsers only fetch a font once text uses it, so without this the text first shows in a fallback
-// font and then jumps when the real one arrives.
-const preloadedFonts = /\/funnel-(sans|display)-latin-wght-normal\.woff2$/
+// Preloads the two main fonts and DotGothic16 for the heart counts (Latin only, the part that text needs). The page's
+// text only appears once Vue has rendered, and browsers only fetch a font once text uses it, so without this the text
+// first shows in a fallback font and then jumps when the real one arrives.
+const preloadedFonts = /\/(funnel-(sans|display)-latin-wght|dotgothic16-latin-400)-normal\.woff2$/
 const preloadFonts = () => ({
   name: 'preload-fonts',
   apply: 'build',
