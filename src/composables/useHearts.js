@@ -1,4 +1,4 @@
-import { reactive, computed, watchEffect, toValue } from 'vue'
+import { reactive, computed, watch, toValue } from 'vue'
 import { HEARTS_API as API, HEARTS_NAMESPACE as NAMESPACE, HEARTS_BACKUP_URL as BACKUP_URL, heartKey } from '@/data/hearts.js'
 
 // Heart counts per project. Everything that talks to the counter service is in this file, so the service can be
@@ -11,8 +11,8 @@ import { HEARTS_API as API, HEARTS_NAMESPACE as NAMESPACE, HEARTS_BACKUP_URL as 
 // until that project's queue is empty.
 // A weekly GitHub Action (.github/workflows/hearts-backup.yml) saves all counts to the reactions-data branch; that
 // backup is shown when Abacus can't be reached.
-// ms between sent taps: at most 20 per 10 s, leaving room for loading counts on other pages and tabs (the browser
-// can't read Abacus's "remaining requests" header, so the pace has to be safe on its own)
+// ms between sent taps: at most 20 per 10 s, leaving room for loading and streaming counts on other pages and tabs
+// (the browser can't read Abacus's "remaining requests" header, so the pace has to be safe on its own)
 const SEND_INTERVAL = 500
 const RETRY_DELAY = 10000 // ms to wait after "too many requests" or a network error
 // per namespace, so cached counts never carry over to a different set of counters
@@ -173,14 +173,81 @@ if (Object.keys(state.queue).length) {
     startSending()
 }
 
+// Live counts: while a project's heart is on screen, Abacus streams its count (server-sent events, one request per
+// connection instead of polling), so taps of other visitors show up. Closed while the tab is hidden.
+const streams = new Map() // projectId → { source, users, retry }
+
+const openStream = (projectId) => {
+    const stream = streams.get(projectId)
+    const source = new EventSource(`${API}/stream/${NAMESPACE}/${heartKey(projectId)}`)
+
+    source.onmessage = (event) => {
+        // while own taps are being sent, their replies carry the count (including others' taps); a streamed count
+        // could arrive before the reply and count the own tap twice for a moment
+        if (state.queue[projectId]?.pending) {
+            return
+        }
+
+        const value = JSON.parse(event.data)?.value
+        typeof value === 'number' && save(({ counts }) => {
+            if (counts[projectId] == null || value > counts[projectId]) counts[projectId] = value
+        })
+    }
+
+    // dropped connections reconnect by themselves; an error response (e.g. too many requests) closes the stream
+    source.onerror = () => {
+        if (source.readyState === EventSource.CLOSED) {
+            stream.retry = setTimeout(() => openStream(projectId), RETRY_DELAY)
+        }
+    }
+
+    stream.source = source
+}
+
+const closeStream = (stream) => {
+    clearTimeout(stream.retry)
+    stream.source?.close()
+    stream.source = null
+}
+
+const watchLive = (projectId) => {
+    if (typeof EventSource === 'undefined') {
+        return () => {}
+    }
+
+    const stream = streams.get(projectId) ?? { source: null, users: 0, retry: null }
+    streams.set(projectId, stream)
+
+    if (stream.users++ === 0 && !document.hidden) {
+        openStream(projectId)
+    }
+
+    return () => {
+        if (--stream.users === 0) {
+            closeStream(stream)
+            streams.delete(projectId)
+        }
+    }
+}
+
+document.addEventListener('visibilitychange', () => {
+    streams.forEach((stream, projectId) => {
+        if (document.hidden) {
+            closeStream(stream)
+        } else if (!stream.source) {
+            openStream(projectId)
+        }
+    })
+})
+
 const loading = new Set()
 
 // projectId: a plain id, a ref or a getter (the project page is reused when switching projects)
 export const useHeart = (projectId) => {
     const id = computed(() => toValue(projectId))
 
-    watchEffect(() => {
-        const current = id.value
+    watch(id, (current, previous, onCleanup) => {
+        onCleanup(watchLive(current))
 
         if (!loading.has(current)) {
             loading.add(current)
@@ -190,7 +257,7 @@ export const useHeart = (projectId) => {
                 if (counts[current] == null || count > counts[current]) counts[current] = count
             }))
         }
-    })
+    }, { immediate: true })
 
     const pending = computed(() => state.queue[id.value]?.pending ?? 0)
     const cracked = computed(() => state.queue[id.value]?.cracked ?? false)
