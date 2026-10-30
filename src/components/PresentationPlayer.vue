@@ -1,10 +1,6 @@
 <template>
     <div class="presentation-player hoverable" :class="{ overlayed: isOverlayVisible }">
-        <div v-if="!isLoaded" class="loading-overlay">
-            <button class="loading-spinner" aria-label="Loading presentation" disabled>
-                <AppIcon icon="spinner" spin />
-            </button>
-        </div>
+        <LoadingOverlay v-if="!isLoaded" label="Loading presentation" />
         <div v-if="isPdf" class="pdf-image-frame" :class="{ hidden: !isLoaded, 'loading-placeholder': !isLoaded }"
             role="button" tabindex="0" :aria-label="isOverlayVisible ? 'Exit fullscreen' : 'Show fullscreen'"
             @click="handlePdfFrameClick" @touchstart="onPdfTouchStart" @touchmove="onPdfTouchMove"
@@ -41,8 +37,10 @@
 
 <script>
 import { isTouchScreen, isOnMedia } from '@/composables/fullscreenMedia.js'
+import LoadingOverlay from '@/components/LoadingOverlay.vue'
 
 export default {
+    components: { LoadingOverlay },
     props: {
         src: {
             type: String,
@@ -319,30 +317,6 @@ export default {
 
 .presentation-frame.hidden {
     visibility: hidden;
-}
-
-.loading-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 3;
-    pointer-events: none;
-    background: linear-gradient(to top, rgba(var(--deep-rgb), 0.2), rgba(var(--deep-rgb), 0));
-}
-
-.loading-spinner {
-    width: 4rem;
-    height: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: var(--white);
-    background-color: rgba(var(--navy-rgb), 0.5);
-    backdrop-filter: blur(0.5rem) saturate(2);
-    cursor: default;
 }
 
 .pdf-fade {

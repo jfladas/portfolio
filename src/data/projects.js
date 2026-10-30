@@ -3656,7 +3656,7 @@ export const aboutContent = {
         },
         {
             text: 'LinkedIn',
-            url: 'https://www.linkedin.com/in/lukas-bucher-0926bb282/',
+            url: 'https://www.linkedin.com/in/jfladas/',
             icon: 'linkedin'
         },
         {

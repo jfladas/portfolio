@@ -272,11 +272,9 @@ const prevSlide = (index) => {
     transform: none;
 }
 
-.section:has(.video) {
-    width: 100%;
-}
-
-.section:has(.presentation) {
+.section:has(.video),
+.section:has(.presentation),
+.section:has(.carousel.loading-placeholder) {
     width: 100%;
 }
 

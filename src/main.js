@@ -1,4 +1,5 @@
-// fonts are served from the site itself; the two main ones are also preloaded in index.html (see vite.config.js)
+// fonts are served from the site itself; the two main ones and DotGothic16 (Latin only) are also preloaded in
+// index.html (see vite.config.js)
 import '@fontsource-variable/funnel-sans'
 import '@fontsource-variable/funnel-display'
 import '@fontsource-variable/jetbrains-mono'

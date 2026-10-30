@@ -1,14 +1,17 @@
 <template>
     <teleport to="#images-teleport" :disabled="!isOverlayVisible">
-        <div class="carousel hoverable" :class="{ expanded: isOverlayVisible }" @touchstart="onTouchStart"
+        <div class="carousel hoverable" :class="{ expanded: isOverlayVisible, 'loading-placeholder': !currentLoaded && !isOverlayVisible }"
+            @touchstart="onTouchStart"
             @touchmove="onTouchMove" @touchend="onTouchEnd">
             <div class="carousel-inner" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
                 <div class="carousel-item" v-for="(image, index) in images" :key="index"
                     :class="{ small: !isOverlayVisible }" role="button" :tabindex="index === currentIndex ? 0 : -1"
                     :aria-label="isOverlayVisible ? 'Exit fullscreen' : 'Show fullscreen'" @click="onImageClick">
-                    <img :src="image.src" :alt="image.caption" />
+                    <img ref="images" :src="image.src" :alt="image.caption" @load="markLoaded(image.src)"
+                        @error="markLoaded(image.src)" />
                 </div>
             </div>
+            <LoadingOverlay v-if="!currentLoaded" label="Loading image" />
             <div v-if="images.length != 1" class="carousel-fade prev"></div>
             <div v-if="images.length != 1" class="carousel-fade next"></div>
             <button v-if="images.length != 1" class="carousel-control prev" aria-label="Previous image" @click="$emit('prev-slide')">
@@ -32,8 +35,10 @@
 
 <script>
 import { isTouchScreen, isOnMedia } from '@/composables/fullscreenMedia.js';
+import LoadingOverlay from '@/components/LoadingOverlay.vue';
 
 export default {
+    components: { LoadingOverlay },
     props: {
         images: {
             type: Array,
@@ -52,7 +57,9 @@ export default {
     data() {
         return {
             touchStartX: 0,
-            touchEndX: 0
+            touchEndX: 0,
+            // by src, so a new set of images (another project) starts out loading again
+            loadedSources: {}
         };
     },
     watch: {
@@ -68,16 +75,31 @@ export default {
             immediate: true
         }
     },
+    mounted() {
+        // images from the browser cache can be complete before the load listener runs
+        (this.$refs.images || []).forEach((img) => {
+            if (img.complete) {
+                this.markLoaded(img.getAttribute('src'));
+            }
+        });
+    },
     beforeUnmount() {
         window.removeEventListener('keydown', this.onKeydown);
     },
     computed: {
+        currentLoaded() {
+            const currentImage = this.images[this.currentIndex];
+            return !currentImage || Boolean(this.loadedSources[currentImage.src]);
+        },
         currentCaption() {
             const currentImage = this.images[this.currentIndex];
             return currentImage && currentImage.caption ? currentImage.caption : '';
         }
     },
     methods: {
+        markLoaded(src) {
+            this.loadedSources[src] = true;
+        },
         // opens fullscreen; closes it again, except for a tap on the image on touch screens (only shows the controls)
         onImageClick(event) {
             if (this.isOverlayVisible && isTouchScreen() && isOnMedia(event)) {
@@ -146,6 +168,11 @@ export default {
 }
 
 .carousel-item.small {
+    max-height: 30rem;
+}
+
+.carousel.loading-placeholder {
+    aspect-ratio: 16 / 9;
     max-height: 30rem;
 }
 

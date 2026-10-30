@@ -10,7 +10,8 @@
             <router-link to="/about" class="nav-item left" :class="{ selected: $route.path === '/about' }">
                 {{ currentLanguage === 'en' ? 'about' : 'über' }}
             </router-link>
-            <router-link to="/projects" class="nav-item right" :class="{ selected: $route.path.startsWith('/projects') }">
+            <router-link to="/projects" class="nav-item right"
+                :class="{ selected: $route.path.startsWith('/projects') }">
                 {{ currentLanguage === 'en' ? 'projects' : 'projekte' }}
             </router-link>
         </nav>
@@ -21,17 +22,19 @@
             :aria-expanded="moreVisible" @click="moreVisible = !moreVisible" />
         <div class="more-items">
             <div class="more-item tooltip" tooltip="en/de" role="button" :tabindex="moreVisible ? 0 : -1"
-                :aria-label="currentLanguage === 'en' ? 'Auf Deutsch wechseln' : 'Switch to English'" @click="toggleLanguage">
+                :aria-label="currentLanguage === 'en' ? 'Auf Deutsch wechseln' : 'Switch to English'"
+                @click="toggleLanguage">
                 <AppIcon icon="language" fixed-width />
             </div>
-            <div v-if="!isMobile" class="more-item tooltip" tooltip="cursor" role="button" :tabindex="moreVisible ? 0 : -1"
+            <div v-if="!isMobile" class="more-item tooltip" tooltip="cursor" role="button"
+                :tabindex="moreVisible ? 0 : -1"
                 :aria-label="currentLanguage === 'en' ? 'Toggle custom cursor' : 'Eigenen Cursor umschalten'"
                 @click="toggleCursor">
                 <AppIcon icon="arrow-pointer" fixed-width />
             </div>
             <div v-if="availableThemes.length > 1" class="more-item tooltip" tooltip="theme" role="button"
-                :tabindex="moreVisible ? 0 : -1" :aria-label="currentLanguage === 'en' ? 'Change theme' : 'Theme wechseln'"
-                @click="cycleTheme">
+                :tabindex="moreVisible ? 0 : -1"
+                :aria-label="currentLanguage === 'en' ? 'Change theme' : 'Theme wechseln'" @click="cycleTheme">
                 <AppIcon icon="palette" fixed-width />
             </div>
             <div class="more-item tooltip" tooltip="achiev.">
@@ -45,7 +48,11 @@
     <router-view />
     <component :is="toast.action?.link ? 'router-link' : 'div'" id="toast"
         v-bind="toast.action?.link ? { to: toast.action.link } : toast.action ? { role: 'button', tabindex: 0 } : { role: 'status' }"
-        :class="{ visible: toast.visible, action: toast.action, hoverable: toast.action }" @click="handleToastClick">
+        :class="{ visible: toast.visible, action: toast.action, hoverable: toast.action, 'has-icon': toast.icon }"
+        @click="handleToastClick">
+        <svg v-if="toast.icon" class="toast-icon" viewBox="0 0 24 24" shape-rendering="crispEdges" aria-hidden="true">
+            <path :d="toast.icon" />
+        </svg>
         <span v-if="toast.heading" class="toast-text">
             <span class="toast-heading">{{ toast.heading }}</span>
             <span class="toast-message">{{ toast.message }}</span>
@@ -74,12 +81,12 @@
                 aria-label="itch.io">
                 <AppIcon icon="itch-io" />
             </a>
-            <a href="https://www.linkedin.com/in/lukas-bucher-0926bb282/" target="_blank" class="social hoverable tooltip"
+            <a href="https://www.linkedin.com/in/jfladas/" target="_blank" class="social hoverable tooltip"
                 tooltip="linkedin" aria-label="LinkedIn">
                 <AppIcon icon="linkedin" />
             </a>
-            <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip" tooltip="insta"
-                aria-label="Instagram">
+            <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip"
+                tooltip="insta" aria-label="Instagram">
                 <AppIcon icon="instagram" />
             </a>
             <a href="mailto:lukas@jfladas.com" class="social hoverable tooltip" tooltip="email" aria-label="E-Mail">
@@ -102,10 +109,16 @@
         <br>
         <!-- icon credit: Font Awesome's logos are CC BY 4.0, which asks for it (see src/icons.js) -->
         <p class="copyright">
-            &copy; {{ currentYear }} jfladas ⬝ icons:
-            <a href="https://remixicon.com" target="_blank" rel="noopener" class="hoverable">Remix Icon</a>,
-            <a href="https://fontawesome.com" target="_blank" rel="noopener" class="hoverable">Font Awesome</a>,
-            <a href="https://pixelarticons.com" target="_blank" rel="noopener" class="hoverable">pixelarticons</a>
+            &copy; {{ currentYear }} jfladas
+            <br>
+            <span class="credit">
+                icons:
+                <a href="https://remixicon.com" target="_blank" rel="noopener" class="hoverable">Remix Icon</a>,
+                <a href="https://fontawesome.com" target="_blank" rel="noopener" class="hoverable">Font Awesome</a>,
+                <a href="https://pixelarticons.com" target="_blank" rel="noopener" class="hoverable">pixelarticons</a>
+                ⬝
+                xxx
+            </span>
         </p>
     </footer>
     <div ref="cursor" class="custom-cursor">
@@ -383,13 +396,14 @@ const toggleCursor = () => {
     moreVisible.value = false;
 }
 
-const toast = ref({ message: '', heading: null, action: null, visible: false })
+const toast = ref({ message: '', heading: null, action: null, icon: null, visible: false })
 
 // action: optional { label, link } (opens a route) or { label, run } (calls run); the whole toast becomes tappable,
 // shows the label with a chevron and stays a bit longer.
 // heading: optional small line above the message (the message is then shown bold)
-const showToast = (message, action = null, heading = null) => {
-    toast.value = { message, heading, action, visible: toast.value.visible };
+// icon: optional pixel icon path (24×24 grid, like the achievement icons) shown left of the text
+const showToast = (message, action = null, heading = null, icon = null) => {
+    toast.value = { message, heading, action, icon, visible: toast.value.visible };
     if (toastTimeout) {
         clearTimeout(toastTimeout);
     }
@@ -423,7 +437,7 @@ registerAchievementToast((achievement) => {
         showToast(achievement?.title || '', route.path === '/achievements' ? null : {
             label: currentLanguage.value === 'en' ? 'view' : 'ansehen',
             link: '/achievements'
-        }, currentLanguage.value === 'en' ? 'Achievement unlocked' : 'Achievement freigeschaltet')
+        }, currentLanguage.value === 'en' ? 'Achievement unlocked' : 'Achievement freigeschaltet', achievement?.svg)
     }
 })
 
@@ -741,6 +755,13 @@ nav {
     transform: translate(-50%, 0) translateY(0);
 }
 
+#toast.has-icon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 1.25rem;
+}
+
 #toast.action {
     display: flex;
     align-items: last baseline;
@@ -766,6 +787,14 @@ nav {
 
 #toast.action:hover::before {
     opacity: 1;
+}
+
+.toast-icon {
+    flex: none;
+    align-self: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--aqua);
 }
 
 .toast-text {
@@ -862,6 +891,10 @@ footer {
 .copyright {
     font-weight: 700;
     color: var(--deep);
+
+    .credit {
+        font-weight: 400;
+    }
 }
 
 /* keeps the toast above the "more" menu where they would overlap */
