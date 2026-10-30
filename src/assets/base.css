@@ -131,7 +131,7 @@ h1 {
     font-size: 3.5rem;
     line-height: 3.2rem;
     color: var(--white);
-    margin: 3.2rem 0 0.5rem 0;
+    margin: 2.5rem 0 0.5rem 0;
     overflow-x: clip;
     text-overflow: ellipsis;
     max-width: 55vw;
@@ -170,7 +170,7 @@ p {
 }
 
 .bold {
-    font-weight: 700;
+    font-weight: 500;
     color: var(--mint);
     text-shadow: none;
     cursor: pointer;
@@ -379,7 +379,7 @@ button {
 
 .content-right {
     width: 30vw;
-    margin-top: 10rem;
+    margin-top: 9rem;
 }
 
 .right-container {

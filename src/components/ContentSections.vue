@@ -203,8 +203,8 @@ const prevSlide = (index) => {
         position: relative;
         font-family: 'Funnel Display Variable', sans-serif;
         font-weight: 500;
-        font-size: 1.15rem;
-        line-height: 1.55;
+        font-size: 1rem;
+        line-height: 1.5;
     }
 }
 

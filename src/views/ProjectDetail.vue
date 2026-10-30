@@ -24,8 +24,7 @@
                     class="category tooltip" :tooltip="category" />
             </div>
             <div class="context hoverable">
-                <AppIcon :icon="project.context.icon" class="context-icon tooltip"
-                    :tooltip="project.context.tooltip" />
+                <AppIcon :icon="project.context.icon" class="context-icon tooltip" :tooltip="project.context.tooltip" />
                 <a :href="project.context.url" class="bold" target="_blank">
                     <p v-for="c in project.context.lines">{{ c }}</p>
                 </a>
@@ -357,7 +356,7 @@ const setupBannerTicker = async () => {
 
 .back {
     position: absolute;
-    transform: translate(-2rem, 1rem);
+    transform: translate(-2rem, 0.5rem);
     color: var(--deep);
     transition: all 0.5s;
     display: flex;
@@ -369,7 +368,7 @@ const setupBannerTicker = async () => {
 }
 
 .back:hover {
-    transform: translate(-3rem, 1rem);
+    transform: translate(-3rem, 0.5rem);
     color: var(--sky);
 }
 

@@ -15,14 +15,15 @@
                 </div>
 
                 <div class="filters" :class="{ expanded: filterMode }">
-                    <AppIcon v-for="(icon, key) in categories" :icon="icon" :key="key" class="filter tooltip" :tooltip="key"
-                        :class="{ selected: selectedFilters.includes(key) }" role="button" :tabindex="filterMode ? 0 : -1"
-                        :aria-pressed="selectedFilters.includes(key)" :aria-label="key" @click="toggleFilter(key)" />
+                    <AppIcon v-for="(icon, key) in categories" :icon="icon" :key="key" class="filter tooltip"
+                        :tooltip="key" :class="{ selected: selectedFilters.includes(key) }" role="button"
+                        :tabindex="filterMode ? 0 : -1" :aria-pressed="selectedFilters.includes(key)" :aria-label="key"
+                        @click="toggleFilter(key)" />
                 </div>
             </div>
             <div class="view-container toggle-container">
-                <AppIcon icon="grip-lines" class="filter toggle view" :class="{ selected: viewMode === 'list' }" role="button"
-                    tabindex="0" :aria-pressed="viewMode === 'list'"
+                <AppIcon icon="grip-lines" class="filter toggle view" :class="{ selected: viewMode === 'list' }"
+                    role="button" tabindex="0" :aria-pressed="viewMode === 'list'"
                     :aria-label="currentLanguage === 'en' ? 'list view' : 'Listenansicht'" @click="toggleViewMode()" />
                 <AppIcon icon="grip" class="filter toggle view" :class="{ selected: viewMode === 'grid' }" role="button"
                     tabindex="0" :aria-pressed="viewMode === 'grid'"
@@ -38,9 +39,11 @@
         <div v-if="filteredProjects.length > 0 && filteredProjects.length < projects.length" class="disclaimer">
             <p>
                 <AppIcon icon="filter" />
-                {{ currentLanguage === 'en' ? 'showing' : 'zeige' }} {{ filteredProjects.length }} {{ currentLanguage === 'en' ?
+                {{ currentLanguage === 'en' ? 'showing' : 'zeige' }} {{ filteredProjects.length }} {{ currentLanguage
+                === 'en' ?
                 'of' : 'von' }} {{ projects.length }} {{ currentLanguage === 'en' ? 'projects' : 'Projekte' }} |
-                <span class="a hoverable" role="button" tabindex="0" @click="() => { toggleFilter('all'); scrollToTop() }">{{
+                <span class="bold hoverable" role="button" tabindex="0"
+                    @click="() => { toggleFilter('all'); scrollToTop() }">{{
                     currentLanguage === 'en' ?
                     'see all' : 'alle anzeigen' }}</span>
             </p>
@@ -52,12 +55,14 @@
             </h3>
             <p>
                 {{ currentLanguage === 'en' ? 'try adjusting the filters or' : 'Versuche die Filter anzupassen oder' }}
-                <span class="a hoverable" role="button" tabindex="0" @click="() => { toggleFilter('all'); scrollToTop() }">
+                <span class="a hoverable" role="button" tabindex="0"
+                    @click="() => { toggleFilter('all'); scrollToTop() }">
                     {{ currentLanguage === 'en' ? 'see all' : 'alle anzeigen' }}
                 </span>
             </p>
         </div>
-        <router-link v-else to="#" class="to-top hoverable tooltip" :tooltip="currentLanguage === 'en' ? 'to top' : 'rauf'"
+        <router-link v-else to="#" class="to-top hoverable tooltip"
+            :tooltip="currentLanguage === 'en' ? 'to top' : 'rauf'"
             :aria-label="currentLanguage === 'en' ? 'to top' : 'rauf'" @click.prevent="scrollToTop">
             <AppIcon icon="angle-up" />
         </router-link>
@@ -309,20 +314,6 @@ onMounted(() => {
 
 .filter:active {
     color: var(--mint);
-}
-
-.a {
-    color: var(--aqua);
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.a:hover {
-    color: var(--mint);
-}
-
-.a:active {
-    color: var(--white);
 }
 
 .bottom-spacer {
