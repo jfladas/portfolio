@@ -11,7 +11,7 @@
             </div>
             <div class="project-icons">
                 <div v-for="category in project.categories" class="tooltip" :tooltip="category" :key="category">
-                    <font-awesome-icon :icon="categories[category]" />
+                    <AppIcon :icon="categories[category]" />
                 </div>
             </div>
         </div>
@@ -49,6 +49,7 @@ const props = defineProps({
         font-family: "Funnel Display Variable", sans-serif;
         font-weight: 800;
         font-size: 1.5rem;
+        line-height: 1;
         margin-bottom: 0.25rem;
         color: var(--navy);
         transition: all 0.5s;
@@ -153,7 +154,6 @@ const props = defineProps({
         /* same sizes as the hover state on wide screens */
         h2 {
             font-size: 2.5rem;
-            line-height: 2.5rem;
             max-width: 60vw;
         }
 
@@ -188,7 +188,6 @@ const props = defineProps({
 
     .project-item.in-view h2 {
         font-size: 2rem;
-        line-height: 2rem;
     }
 }
 
@@ -204,7 +203,6 @@ const props = defineProps({
 
         h2 {
             font-size: 2.5rem;
-            line-height: 2.5rem;
             max-width: 60vw;
         }
 

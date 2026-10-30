@@ -2,8 +2,8 @@
     <LiveCard v-if="visible" :href="`https://www.duolingo.com/profile/${username}`" :active="practicedToday"
         :state="stateLabel" :title="streakLabel" :detail="currentLanguage === 'en' ? 'on Duolingo' : 'auf Duolingo'">
         <template #media>
-            <!-- drawn here instead of with <font-awesome-icon> so the flame can have a gradient -->
-            <svg class="duolingo-flame" :class="{ lit: practicedToday }" :viewBox="`0 0 ${flame[0]} ${flame[1]}`"
+            <!-- drawn here instead of with <AppIcon> so the flame can have a gradient -->
+            <svg class="duolingo-flame" :class="{ lit: practicedToday }" :viewBox="flame.viewBox" shape-rendering="crispEdges"
                 aria-hidden="true">
                 <defs>
                     <linearGradient :id="gradientId" x1="0" x2="0" y1="1" y2="0">
@@ -12,7 +12,7 @@
                         <stop offset="1" class="flame-top" />
                     </linearGradient>
                 </defs>
-                <path :d="flame[4]" :fill="`url(#${gradientId})`" />
+                <path :d="flame.d" :fill="`url(#${gradientId})`" />
             </svg>
         </template>
     </LiveCard>
@@ -20,7 +20,7 @@
 
 <script setup>
 import { computed, inject, onMounted, ref, useId } from 'vue'
-import { faFireFlameCurved } from '@fortawesome/free-solid-svg-icons'
+import fireSvg from '~icons/pixelarticons/fire?raw'
 import LiveCard from '@/components/LiveCard.vue'
 
 // preview: sample data instead of the live file, for the dev-only preview page (src/views/LiveCardsPreview.vue)
@@ -33,7 +33,11 @@ const DATA_URL = import.meta.env.DEV
     : 'https://raw.githubusercontent.com/jfladas/portfolio/duolingo-data/duolingo.json'
 const DAY = 24 * 60 * 60 * 1000
 
-const flame = faFireFlameCurved.icon // [width, height, ligatures, unicode, path]
+// pixelarticons' fire, like the achievement icons, as shape data for the gradient-filled path
+const flame = {
+    viewBox: fireSvg.match(/viewBox="([^"]+)"/)[1],
+    d: [...fireSvg.matchAll(/ d="([^"]+)"/g)].map((match) => match[1]).join(' ')
+}
 const gradientId = `${useId()}-flame`
 const currentLanguage = inject('currentLanguage')
 const username = ref('jfladas')

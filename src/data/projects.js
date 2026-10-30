@@ -64,13 +64,13 @@ export const projects = [
                     {
                         text: 'Microsoft Store',
                         action: 'https://apps.microsoft.com/detail/9NVDFMX3WKDR',
-                        icon: 'fa-brands fa-microsoft',
+                        icon: 'microsoft',
                         color: 'secondary'
                     },
                     {
                         text: 'MacOS (arm64)',
                         action: releaseFile('Amorphous.Blob.dmg'),
-                        icon: 'fa-brands fa-apple',
+                        icon: 'apple',
                         color: 'secondary'
                     }
                 ]
@@ -245,34 +245,34 @@ export const projects = [
             {
                 text: 'GitHub Repository',
                 url: 'https://github.com/jfladas/bachelor',
-                icon: 'fa-brands fa-github-alt'
+                icon: 'github'
             },
             {
                 text: 'Microsoft Store',
                 url: 'https://apps.microsoft.com/detail/9NVDFMX3WKDR',
-                icon: 'fa-brands fa-microsoft'
+                icon: 'microsoft'
             },
             {
                 text: { en: 'Project Video', de: 'Projektvideo' },
                 url: 'https://youtu.be/5lft64c_r9c',
-                icon: 'fa-brands fa-youtube'
+                icon: 'youtube'
             },
             {
                 text: { en: 'HSLU DFK Catalog', de: 'HSLU DFK Katalog' },
                 url: 'https://hub.hslu.ch/design-film-kunst/katalog/amorphous-blob/',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             },
             {
                 text: { en: 'Security Scan macOS App', de: 'Sicherheits-Scan macOS App' },
                 url: 'https://www.virustotal.com/gui/file/5c9e51ed96d06b687490a847378e8201b5f06a285446fbec87a08ad5447d8d28',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             }
         ],
         downloads: [
             {
                 text: 'MacOS App (arm64)',
                 url: releaseFile('Amorphous.Blob.dmg'),
-                icon: 'fa-brands fa-apple'
+                icon: 'apple'
             },
             {
                 text: { en: 'Documentation.pdf', de: 'Dokumentation.pdf' },
@@ -391,7 +391,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Angelika Gort',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -540,22 +540,22 @@ export const projects = [
             {
                 text: 'GitHub Repository',
                 url: 'https://github.com/jfladas/had',
-                icon: 'fa-brands fa-github-alt'
+                icon: 'github'
             },
             {
                 text: { en: 'itch.io Page', de: 'itch.io Seite' },
                 url: 'https://jfladas.itch.io/hearts-across-dimensions',
-                icon: 'fa-brands fa-itch-io'
+                icon: 'itch-io'
             },
             {
                 text: 'Demo Playthrough Video',
                 url: 'https://youtu.be/HwepdSLpjcE',
-                icon: 'fa-brands fa-youtube'
+                icon: 'youtube'
             },
             {
                 text: 'Mr. Horse Sneak Peek',
                 url: 'https://youtu.be/BE8KeC9lxp4?si=fmQz8nVdiz7C7HEE',
-                icon: 'fa-brands fa-youtube'
+                icon: 'youtube'
             }
         ],
         downloads: [
@@ -744,17 +744,17 @@ export const projects = [
             {
                 text: { en: 'GitHub Repository', de: 'GitHub-Repository' },
                 url: 'https://github.com/jfladas/webxr',
-                icon: 'fa-brands fa-github-alt'
+                icon: 'github'
             },
             {
                 text: { en: 'itch.io Page', de: 'itch.io Seite' },
                 url: 'https://jfladas.itch.io/artd',
-                icon: 'fa-brands fa-itch-io'
+                icon: 'itch-io'
             },
             {
                 text: { en: 'Play Game', de: 'Spiel starten' },
                 url: 'https://webxr.jfladas.com/',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             }
         ],
         downloads: [
@@ -814,11 +814,12 @@ export const projects = [
                     {
                         text: { en: 'Project Website', de: 'Projekt-Website' },
                         action: 'https://apo11o.jfladas.com',
-                        icon: 'arrow-right',
+                        icon: 'external-link',
                         color: 'primary'
                     },
                     {
                         text: '',
+                        label: { en: 'Launch apo11o', de: 'apo11o starten' },
                         action: 'https://apo11o.jfladas.com/play',
                         icon: 'rocket',
                         color: 'secondary'
@@ -827,7 +828,8 @@ export const projects = [
             },
             {
                 type: 'video',
-                video: apo11oFiles['../projects/apo11o/Screencast.mp4'].default
+                video: apo11oFiles['../projects/apo11o/Screencast.mp4'].default,
+                sound: true
             },
             {
                 type: 'heading',
@@ -879,22 +881,22 @@ export const projects = [
             {
                 text: { en: 'Project Website', de: 'Projekt-Website' },
                 url: 'https://apo11o.jfladas.com',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             },
             {
                 text: { en: 'GitHub Repository', de: 'GitHub-Repository' },
                 url: 'https://github.com/jfladas/apo11o',
-                icon: 'fa-brands fa-github-alt'
+                icon: 'github'
             },
             {
                 text: 'Miro Board',
                 url: 'https://miro.com/app/board/uXjVJA4NGBs=/?share_link_id=129935269332',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             },
             {
                 text: { en: 'Rocket Minigame', de: 'Raketen-Minigame' },
                 url: 'https://apo11o.jfladas.com/play',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             }
         ],
         downloads: [
@@ -962,6 +964,7 @@ export const projects = [
                     {
                         text: { en: 'Documentation Website', de: 'Dokumentations-Website' },
                         action: 'https://colabor.jfladas.com/sprint3/',
+                        icon: 'external-link',
                         color: 'secondary'
                     }
                 ]
@@ -1090,24 +1093,25 @@ export const projects = [
             },
             {
                 type: 'video',
-                video: qrFiles['../projects/qr/bestof.mp4'].default
+                video: qrFiles['../projects/qr/bestof.mp4'].default,
+                sound: true
             }
         ],
         links: [
             {
                 text: 'Website',
                 url: 'https://colabor.jfladas.com/qr/',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             },
             {
                 text: { en: 'GitHub Repository', de: 'GitHub-Repository' },
                 url: 'https://github.com/jfladas/colabor',
-                icon: 'fa-brands fa-github-alt'
+                icon: 'github'
             },
             {
                 text: { en: 'Documentation Website', de: 'Dokumentations-Website' },
                 url: 'https://colabor.jfladas.com/',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             }
         ],
         downloads: [
@@ -1158,7 +1162,7 @@ export const projects = [
                     {
                         text: { en: 'View Figma Prototype', de: 'Figma-Prototyp ansehen' },
                         action: 'https://www.figma.com/proto/H39FzuTJQZOMxcQzrEDcp0/UX-Web-Styleguide?node-id=0-1&t=4RZi44A5r09E112U-1',
-                        icon: 'fa-brands fa-figma',
+                        icon: 'figma',
                         color: 'secondary'
                     }
                 ]
@@ -1193,7 +1197,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Dario Stocker',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -1206,7 +1210,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Michelle Studtmann',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -1215,7 +1219,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Laura Giaimo',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -1224,7 +1228,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Dominika Degtyareva',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -1233,7 +1237,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Lisa Landolt',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -1251,7 +1255,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Arwen Bättig',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -1264,7 +1268,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Jennifer Beeler',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -1311,17 +1315,17 @@ export const projects = [
             {
                 text: 'GitHub Repository',
                 url: 'https://github.com/jfladas/uxweb2',
-                icon: 'fa-brands fa-github-alt'
+                icon: 'github'
             },
             {
                 text: { en: 'Figma Prototype', de: 'Figma-Prototyp' },
                 url: 'https://www.figma.com/proto/H39FzuTJQZOMxcQzrEDcp0/UX-Web-Styleguide?node-id=0-1&t=4RZi44A5r09E112U-1',
-                icon: 'fa-brands fa-figma'
+                icon: 'figma'
             },
             {
                 text: 'Miro Board',
                 url: 'https://miro.com/app/board/uXjVIZlez1M=/',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             }
         ],
         downloads: [
@@ -1376,7 +1380,8 @@ export const projects = [
             },
             {
                 type: 'video',
-                video: sputifyFiles['../projects/sputify/Desktop.mp4'].default
+                video: sputifyFiles['../projects/sputify/Desktop.mp4'].default,
+                sound: true
             },
             {
                 type: 'heading',
@@ -1407,7 +1412,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Laura Giaimo',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -1416,7 +1421,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Lisa Landolt',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -1442,7 +1447,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Marin Hirschi',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -1549,7 +1554,8 @@ export const projects = [
             },
             {
                 type: 'video',
-                video: sputifyFiles['../projects/sputify/Mobile.mp4'].default
+                video: sputifyFiles['../projects/sputify/Mobile.mp4'].default,
+                sound: true
             },
             {
                 type: 'heading',
@@ -1564,17 +1570,17 @@ export const projects = [
             {
                 text: 'GitHub Repository',
                 url: 'https://github.com/iahirsch/sputify',
-                icon: 'fa-brands fa-github-alt'
+                icon: 'github'
             },
             {
                 text: { en: 'Figma Prototype Desktop', de: 'Figma Prototyp Desktop' },
                 url: 'https://www.figma.com/proto/pS7n7HHNk0weXyXnUbWt2r/Design-Library?page-id=694%3A5979&node-id=694-7596&p=f&viewport=-336%2C352%2C0.08&t=icFqiCaQGxwdGQyL-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=694%3A7596',
-                icon: 'fa-brands fa-figma'
+                icon: 'figma'
             },
             {
                 text: { en: 'Figma Prototype Mobile', de: 'Figma Prototyp Mobil' },
                 url: 'https://www.figma.com/proto/pS7n7HHNk0weXyXnUbWt2r/Design-Library?page-id=838%3A8681&node-id=838-9683&p=f&viewport=-781%2C374%2C0.08&t=I6fzqdYEK93WZXZn-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=838%3A9683',
-                icon: 'fa-brands fa-figma'
+                icon: 'figma'
             }
         ],
         downloads: [
@@ -1898,29 +1904,29 @@ export const projects = [
             {
                 text: 'GitHub Repository',
                 url: 'https://github.com/jfladas/milo',
-                icon: 'fa-brands fa-github-alt'
+                icon: 'github'
             },
             {
                 text: { en: 'itch.io Page', de: 'itch.io Seite' },
                 url: 'https://jfladas.itch.io/milos-forest-adventure',
-                icon: 'fa-brands fa-itch-io'
+                icon: 'itch-io'
             },
             {
                 text: { en: 'Play Demo', de: 'Demo spielen' },
                 url: 'https://milo.jfladas.com',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             },
             {
                 text: { en: 'Playthrough Video', de: 'Playthrough-Video' },
                 url: 'https://youtu.be/_kuLURwhBGY',
-                icon: 'fa-brands fa-youtube'
+                icon: 'youtube'
             }
         ],
         downloads: [
             {
                 text: 'Milo.zip',
                 url: releaseFile('milo.zip'),
-                icon: 'file-archive'
+                icon: 'file-zipper'
             },
             {
                 text: { en: 'Documentation.pdf', de: 'Dokumentation.pdf' },
@@ -1972,7 +1978,7 @@ export const projects = [
                     {
                         text: { en: 'Go to Page', de: 'Zur Seite' },
                         action: 'https://matbf.jfladas.com',
-                        icon: 'arrow-right',
+                        icon: 'external-link',
                         color: 'primary'
                     }
                 ]
@@ -2086,17 +2092,17 @@ export const projects = [
             {
                 text: 'Website',
                 url: 'https://matbf.jfladas.com',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             },
             {
                 text: 'GitHub Repository',
                 url: 'https://github.com/jfladas/matbf',
-                icon: 'fa-brands fa-github-alt'
+                icon: 'github'
             },
             {
                 text: 'Beautiful Mathematics',
                 url: 'https://learning.kahlina.ch/Beautiful%20Mathematics/beautiful_mathematics_start.html',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             }
         ],
         downloads: [
@@ -2265,12 +2271,12 @@ export const projects = [
             {
                 text: { en: 'UN SDG Goal 9', de: 'UN SDG Ziel 9' },
                 url: 'https://www.un.org/sustainabledevelopment/infrastructure-industrialization/',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             },
             {
                 text: { en: 'UN SDG Data Portal', de: 'UN SDG Datenportal' },
                 url: 'https://unstats.un.org/sdgs/dataportal/database',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             }
         ],
         downloads: [
@@ -2328,7 +2334,8 @@ export const projects = [
             },
             {
                 type: 'video',
-                video: saladFiles['../projects/salad/SaladNinja.mp4'].default
+                video: saladFiles['../projects/salad/SaladNinja.mp4'].default,
+                sound: true
             },
             {
                 type: 'heading',
@@ -2388,7 +2395,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Remo Hösli',
-                icon: 'user-ninja'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -2648,12 +2655,12 @@ export const projects = [
             {
                 text: { en: 'Behance Project', de: 'Behance Projekt' },
                 url: 'https://www.behance.net/gallery/194721225/HSCL-UX',
-                icon: 'fa-brands fa-behance'
+                icon: 'behance'
             },
             {
                 text: { en: 'Figma Prototype', de: 'Figma Prototyp' },
                 url: 'https://www.figma.com/proto/ZQ7E5M9gXRIQyZ30bm113Q/HSCL?page-id=210%3A203&node-id=351-1042&p=f&viewport=151%2C580%2C0.11&t=rBFIgp854gtlzYAE-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=351%3A1042',
-                icon: 'fa-brands fa-figma'
+                icon: 'figma'
             }
         ],
         downloads: [
@@ -2755,7 +2762,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Chiara Tremml',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -2768,7 +2775,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Michelle Studtmann',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -2781,7 +2788,7 @@ export const projects = [
             {
                 type: 'iconed',
                 text: 'Dario Stocker',
-                icon: 'user'
+                icon: 'teammate'
             },
             {
                 type: 'bullet',
@@ -2870,22 +2877,22 @@ export const projects = [
             {
                 text: 'GitHub Repository',
                 url: 'https://github.com/jfladas/SweetTeeth',
-                icon: 'fa-brands fa-github-alt'
+                icon: 'github'
             },
             {
                 text: { en: 'itch.io Page', de: 'itch.io Seite' },
                 url: 'https://jfladas.itch.io/sweet-teeth',
-                icon: 'fa-brands fa-itch-io'
+                icon: 'itch-io'
             },
             {
                 text: 'Gameplay Video',
                 url: 'https://youtu.be/04TWBzgvl34',
-                icon: 'fa-brands fa-youtube'
+                icon: 'youtube'
             },
             {
                 text: { en: 'Dev Blog Entries', de: 'Dev Blog Einträge' },
                 url: 'https://blog.hslu.ch/games/?s=HDL+Week',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             }
         ],
         downloads: [
@@ -2944,7 +2951,8 @@ export const projects = [
             },
             {
                 type: 'video',
-                video: rodinaFiles['../projects/rodina/The_Rodina.mp4'].default
+                video: rodinaFiles['../projects/rodina/The_Rodina.mp4'].default,
+                sound: true
             },
             {
                 type: 'heading',
@@ -3050,7 +3058,7 @@ export const projects = [
             {
                 text: 'The Rodina',
                 url: 'https://www.therodina.com/',
-                icon: 'arrow-up-right-from-square'
+                icon: 'external-link'
             }
         ],
         downloads: [
@@ -3105,7 +3113,8 @@ export const projects = [
             },
             {
                 type: 'video',
-                video: solarsystemFiles['../projects/solarsystem/solarsystemc4d.mp4'].default
+                video: solarsystemFiles['../projects/solarsystem/solarsystemc4d.mp4'].default,
+                sound: true
             },
             {
                 type: 'heading',
@@ -3408,14 +3417,15 @@ export const aboutContent = {
                 {
                     text: { en: 'My Projects', de: 'Meine Projekte' },
                     action: 'projects',
-                    icon: 'rocket',
+                    icon: 'arrow-right',
                     color: 'primary',
                     same: true
                 },
                 {
-                    text: 'E-Mail',
+                    text: '',
+                    label: 'E-Mail',
                     action: 'mailto:lukas@jfladas.com',
-                    icon: 'paper-plane',
+                    icon: 'envelope',
                     color: 'secondary'
                 }
             ]
@@ -3637,37 +3647,37 @@ export const aboutContent = {
         {
             text: 'GitHub',
             url: 'https://github.com/jfladas/',
-            icon: 'fa-brands fa-github-alt'
+            icon: 'github'
         },
         {
             text: 'itch.io',
             url: 'https://jfladas.itch.io/',
-            icon: 'fa-brands fa-itch-io'
+            icon: 'itch-io'
         },
         {
             text: 'LinkedIn',
             url: 'https://www.linkedin.com/in/lukas-bucher-0926bb282/',
-            icon: 'fa-brands fa-linkedin'
+            icon: 'linkedin'
         },
         {
             text: 'Instagram',
             url: 'https://www.instagram.com/jfla.das/',
-            icon: 'fa-brands fa-instagram'
+            icon: 'instagram'
         },
         {
             text: 'Discord',
             url: 'https://discord.com/users/564743229824696361',
-            icon: 'fa-brands fa-discord'
+            icon: 'discord'
         },
         {
             text: 'Spotify',
             url: 'https://open.spotify.com/user/rn16ees9l59zxvg9zzptiuwb7?si=86fff52ccafd4d0d',
-            icon: 'fa-brands fa-spotify'
+            icon: 'spotify'
         },
         {
             text: 'Duolingo',
             url: 'https://www.duolingo.com/profile/jfladas',
-            icon: 'fa-brands fa-duolingo'
+            icon: 'duolingo'
         }
     ],
     downloads: [

@@ -38,15 +38,15 @@ const game = {
 }
 
 const cards = [
-    { label: 'Spotify · now playing', component: SpotifyStatus, preview: { status: 'online', item: track } },
-    { label: 'Spotify · last played', component: SpotifyStatus, preview: { status: 'offline', item: track } },
-    { label: 'Spotify · loading', component: SpotifyStatus, preview: 'loading' },
-    { label: 'Spotify · data unavailable', component: SpotifyStatus, preview: 'error' },
-    { label: 'Spotify · no track yet', component: SpotifyStatus, preview: { status: 'offline', item: {} } },
-    { label: 'Duolingo · practiced today', component: DuolingoStreak, preview: { username: 'jfladas', streak: 2017, lastPracticed: today } },
-    { label: 'Duolingo · not practiced yet today', component: DuolingoStreak, preview: { username: 'jfladas', streak: 2016, lastPracticed: yesterday } },
-    { label: 'Switch · now playing', component: SwitchStatus, preview: { checked: now, status: 'playing', game, lastPlayed: { ...game, at: now } } },
-    { label: 'Switch · last played', component: SwitchStatus, preview: { checked: now, status: 'offline', game: null, lastPlayed: { ...game, at: now } } }
+    { label: 'Spotify ⬝ now playing', component: SpotifyStatus, preview: { status: 'online', item: track } },
+    { label: 'Spotify ⬝ last played', component: SpotifyStatus, preview: { status: 'offline', item: track } },
+    { label: 'Spotify ⬝ loading', component: SpotifyStatus, preview: 'loading' },
+    { label: 'Spotify ⬝ data unavailable', component: SpotifyStatus, preview: 'error' },
+    { label: 'Spotify ⬝ no track yet', component: SpotifyStatus, preview: { status: 'offline', item: {} } },
+    { label: 'Duolingo ⬝ practiced today', component: DuolingoStreak, preview: { username: 'jfladas', streak: 2017, lastPracticed: today } },
+    { label: 'Duolingo ⬝ not practiced yet today', component: DuolingoStreak, preview: { username: 'jfladas', streak: 2016, lastPracticed: yesterday } },
+    { label: 'Switch ⬝ now playing', component: SwitchStatus, preview: { checked: now, status: 'playing', game, lastPlayed: { ...game, at: now } } },
+    { label: 'Switch ⬝ last played', component: SwitchStatus, preview: { checked: now, status: 'offline', game: null, lastPlayed: { ...game, at: now } } }
 ]
 
 // the about page's right column on wide screens, and a phone

@@ -7,15 +7,15 @@
                 role="button" tabindex="0" :aria-expanded="isGroupOpen(section.group)"
                 @click="toggleGroup(section.group)">
                 <span>{{ section.text }}</span>
-                <font-awesome-icon icon="angle-up" class="arrow" :class="{ 'rotated': isGroupOpen(section.group) }" />
+                <AppIcon icon="angle-up" class="arrow" :class="{ 'rotated': isGroupOpen(section.group) }" />
             </h3>
             <h4 v-if="section.type === 'subheading'" class="subheading">{{ section.text }}</h4>
             <div v-if="section.type === 'bullet'" class="bullet-container">
-                <font-awesome-icon icon="minus" class="bullet" />
+                <AppIcon icon="minus" class="bullet" />
                 <p v-html="section.text"></p>
             </div>
             <div v-if="section.type === 'iconed'" class="iconed-container">
-                <font-awesome-icon :icon="section.icon" fixed-width class="iconed" />
+                <AppIcon :icon="section.icon" fixed-width class="iconed" />
                 <p class="text" v-html="section.text"></p>
             </div>
             <div v-if="section.type === 'quoted'" class="quoted-container">
@@ -34,11 +34,12 @@
                 </div>
             </div>
             <div v-if="section.type === 'buttons'" class="buttons">
-                <a v-for="button in section.buttons" :key="button.text" :href="button.action" class="button-container"
-                    :target="button.same ? '_self' : '_blank'">
+                <!-- icon-only buttons (empty text) name themselves through `label` -->
+                <a v-for="button in section.buttons" :key="button.action" :href="button.action" class="button-container"
+                    :target="button.same ? '_self' : '_blank'" :aria-label="button.label || undefined">
                     <button class="hoverable" :class="'button-' + button.color" tabindex="-1">
                         {{ button.text }}
-                        <font-awesome-icon :icon="button.icon" />
+                        <AppIcon v-if="button.icon" :icon="button.icon" />
                     </button>
                 </a>
             </div>
@@ -49,7 +50,8 @@
                     @prev-slide="prevSlide(index)" />
             </div>
             <div v-if="section.type === 'video'" class="video">
-                <VideoPlayer :video="section.video" :isOverlayVisible="isOverlayVisible && overlayIndex === index"
+                <VideoPlayer :video="section.video" :sound="section.sound"
+                    :isOverlayVisible="isOverlayVisible && overlayIndex === index"
                     @toggle-overlay="toggleOverlay('video', index)" />
             </div>
             <div v-if="section.type === 'presentation'" class="presentation">

@@ -22,7 +22,7 @@
         <a class="button-container">
             <button class="hoverable button-secondary reset-button" @click.prevent="resetAchievements">
                 {{currentLanguage === 'en' ? 'Reset Achievements' : 'Achievements zurücksetzen'}}
-                <font-awesome-icon icon="trash" />
+                <AppIcon icon="trash" />
             </button>
         </a>
     </div>

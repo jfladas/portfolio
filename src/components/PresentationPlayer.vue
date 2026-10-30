@@ -2,7 +2,7 @@
     <div class="presentation-player hoverable" :class="{ overlayed: isOverlayVisible }">
         <div v-if="!isLoaded" class="loading-overlay">
             <button class="loading-spinner" aria-label="Loading presentation" disabled>
-                <font-awesome-icon icon="spinner" spin />
+                <AppIcon icon="spinner" spin />
             </button>
         </div>
         <div v-if="isPdf" class="pdf-image-frame" :class="{ hidden: !isLoaded, 'loading-placeholder': !isLoaded }"
@@ -21,20 +21,20 @@
         <div v-if="isPdf && hasMultiplePdfPages && canGoNext" class="pdf-fade next"></div>
         <button v-if="isPdf && hasMultiplePdfPages && canGoPrev" class="pdf-control prev" aria-label="Previous PDF page"
             @click="goToPrevPage">
-            <font-awesome-icon icon="chevron-left" />
+            <AppIcon icon="chevron-left" />
         </button>
         <button v-if="isPdf && hasMultiplePdfPages && canGoNext" class="pdf-control next" aria-label="Next PDF page"
             @click="goToNextPage">
-            <font-awesome-icon icon="chevron-right" />
+            <AppIcon icon="chevron-right" />
         </button>
         <button class="replay-button" aria-label="Reload presentation" @click="reloadPresentation">
-            <font-awesome-icon icon="rotate-right" />
+            <AppIcon icon="rotate-right" />
         </button>
         <button v-if="!isOverlayVisible" class="expand-button" aria-label="Expand" @click="$emit('toggle-overlay')">
-            <font-awesome-icon icon="up-right-and-down-left-from-center" />
+            <AppIcon icon="up-right-and-down-left-from-center" />
         </button>
         <button v-if="isOverlayVisible" class="unexpand-button" aria-label="Collapse" @click="$emit('toggle-overlay')">
-            <font-awesome-icon icon="down-left-and-up-right-to-center" />
+            <AppIcon icon="down-left-and-up-right-to-center" />
         </button>
     </div>
 </template>

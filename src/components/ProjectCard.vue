@@ -8,7 +8,7 @@
                 <div class="title">{{ project.name }}</div>
                 <div class="project-icons">
                     <div v-for="category in project.categories" :key="category">
-                        <font-awesome-icon :icon="categories[category]" />
+                        <AppIcon :icon="categories[category]" />
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                 <p class="description">{{ project.description }}</p>
                 <div class="project-icons">
                     <div v-for="category in project.categories" :key="category" class="tooltip" :tooltip="category">
-                        <font-awesome-icon :icon="categories[category]" />
+                        <AppIcon :icon="categories[category]" />
                     </div>
                 </div>
             </div>
@@ -121,7 +121,7 @@ const props = defineProps({
     .project-icons {
         color: var(--navy);
         display: flex;
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-top: 0.5rem;
         gap: 0.5rem;
         transition: all 0.5s;
@@ -215,7 +215,6 @@ const props = defineProps({
         .project-icons {
             color: var(--deep);
             max-width: 50vw;
-            font-size: 1rem;
         }
 
         .cover-wrap {

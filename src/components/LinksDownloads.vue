@@ -6,12 +6,12 @@
             <span v-if="downloads.length != 0">Downloads</span>
         </h3>
         <a v-for="link in links" :href="link.url" class="link hoverable" target="_blank" :key="link.text">
-            <font-awesome-icon :icon="link.icon" fixed-width />
+            <AppIcon :icon="link.icon" fixed-width />
             {{ link.text }}
         </a>
         <a v-for="download in downloads" :href="download.action || download.url" class="download hoverable" download
             :key="download.text">
-            <font-awesome-icon :icon="download.icon" fixed-width />
+            <AppIcon :icon="download.icon" fixed-width />
             {{ download.text }}
         </a>
     </div>

@@ -6,7 +6,7 @@
             <router-link :to="`/projects#${project.id}`" class="back hoverable tooltip"
                 :tooltip="currentLanguage === 'en' ? 'back' : 'zurück'"
                 :aria-label="currentLanguage === 'en' ? 'back' : 'zurück'">
-                <font-awesome-icon icon="arrow-left-long" />
+                <AppIcon icon="arrow-left-long" />
             </router-link>
             <div v-if="showWipBanner" class="banner">
                 <div ref="bannerViewportRef" class="banner-viewport">
@@ -20,11 +20,11 @@
             <h1>{{ project.name }}</h1>
             <h2>{{ project.description }}</h2>
             <div class="categories hoverable">
-                <font-awesome-icon v-for="category in project.categories" :icon="categories[category]" :key="category"
+                <AppIcon v-for="category in project.categories" :icon="categories[category]" :key="category"
                     class="category tooltip" :tooltip="category" />
             </div>
             <div class="context hoverable">
-                <font-awesome-icon :icon="project.context.icon" class="context-icon tooltip"
+                <AppIcon :icon="project.context.icon" class="context-icon tooltip"
                     :tooltip="project.context.tooltip" />
                 <a :href="project.context.url" class="bold" target="_blank">
                     <p v-for="c in project.context.lines">{{ c }}</p>
@@ -39,12 +39,12 @@
                 <router-link :to="`/projects#${project.id}`" class="back hoverable tooltip"
                     :tooltip="currentLanguage === 'en' ? 'back' : 'zurück'"
                     :aria-label="currentLanguage === 'en' ? 'back' : 'zurück'">
-                    <font-awesome-icon icon="arrow-left-long" />
+                    <AppIcon icon="arrow-left-long" />
                 </router-link>
                 <router-link to="#" class="to-top hoverable tooltip"
                     :tooltip="currentLanguage === 'en' ? 'to top' : 'rauf'"
                     :aria-label="currentLanguage === 'en' ? 'to top' : 'rauf'" @click.prevent="scrollToTop">
-                    <font-awesome-icon icon="angle-up" />
+                    <AppIcon icon="angle-up" />
                 </router-link>
             </div>
 
@@ -52,14 +52,14 @@
         <div v-else class="disclaimer">
             <h3>
                 project not found
-                <font-awesome-icon icon="face-frown-open" />
+                <AppIcon icon="face-frown-open" />
             </h3>
             <p>please check the project id or try again later</p>
             <div class="left-bottom">
                 <router-link :to="`/projects`" class="back hoverable tooltip"
                     :tooltip="currentLanguage === 'en' ? 'back' : 'zurück'"
                     :aria-label="currentLanguage === 'en' ? 'back' : 'zurück'">
-                    <font-awesome-icon icon="arrow-left-long" />
+                    <AppIcon icon="arrow-left-long" />
                 </router-link>
             </div>
         </div>

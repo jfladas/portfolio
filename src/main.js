@@ -9,12 +9,12 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-import './icons.js'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import AppIcon from './components/AppIcon.vue'
 
 const app = createApp(App)
 
-app.component('font-awesome-icon', FontAwesomeIcon)
+// <AppIcon icon="name" />, names from src/icons.js
+app.component('AppIcon', AppIcon)
 
 app.use(router)
 

@@ -4,6 +4,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import { imagetools } from 'vite-imagetools'
+import Icons from 'unplugin-icons/vite'
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import { projectPreviews } from './scripts/project-previews.js'
 
 // Shrinks images at build time; the source files keep full size.
@@ -111,6 +113,15 @@ export default defineConfig({
     }),
     preloadFonts(),
     projectPreviews(),
+    // icons are compiled into the bundle at build time, so nothing loads from Iconify at runtime (map: src/icons.js)
+    Icons({
+      compiler: 'vue3',
+      scale: 1,
+      customCollections: {
+        // the pixel hearts in src/assets/icons/pixel, drawn on the pixelarticons grid
+        pixel: FileSystemIconLoader('./src/assets/icons/pixel'),
+      },
+    }),
   ],
   resolve: {
     alias: {

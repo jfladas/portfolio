@@ -16,28 +16,28 @@
     </nav>
   </header>
   <div class="more hoverable" :class="{ open: moreVisible }">
-    <font-awesome-icon icon="caret-left" class="more-icon tooltip" :tooltip="currentLanguage === 'en' ? 'more' : 'mehr'"
+    <AppIcon icon="caret-left" class="more-icon tooltip" :tooltip="currentLanguage === 'en' ? 'more' : 'mehr'"
       role="button" tabindex="0" aria-hidden="false" :aria-label="currentLanguage === 'en' ? 'more' : 'mehr'"
       :aria-expanded="moreVisible" @click="moreVisible = !moreVisible" />
     <div class="more-items">
       <div class="more-item tooltip" tooltip="en/de" role="button" :tabindex="moreVisible ? 0 : -1"
         :aria-label="currentLanguage === 'en' ? 'Auf Deutsch wechseln' : 'Switch to English'" @click="toggleLanguage">
-        <font-awesome-icon icon="language" fixed-width />
+        <AppIcon icon="language" fixed-width />
       </div>
       <div v-if="!isMobile" class="more-item tooltip" tooltip="cursor" role="button" :tabindex="moreVisible ? 0 : -1"
         :aria-label="currentLanguage === 'en' ? 'Toggle custom cursor' : 'Eigenen Cursor umschalten'"
         @click="toggleCursor">
-        <font-awesome-icon icon="arrow-pointer" fixed-width />
+        <AppIcon icon="arrow-pointer" fixed-width />
       </div>
       <div v-if="availableThemes.length > 1" class="more-item tooltip" tooltip="theme" role="button"
         :tabindex="moreVisible ? 0 : -1" :aria-label="currentLanguage === 'en' ? 'Change theme' : 'Theme wechseln'"
         @click="cycleTheme">
-        <font-awesome-icon icon="palette" fixed-width />
+        <AppIcon icon="palette" fixed-width />
       </div>
       <div class="more-item tooltip" tooltip="achiev.">
         <router-link to="/achievements" :tabindex="moreVisible ? 0 : -1" aria-label="achievements"
           @click="moreVisible = !moreVisible">
-          <font-awesome-icon icon="trophy" fixed-width />
+          <AppIcon icon="trophy" fixed-width />
         </router-link>
       </div>
     </div>
@@ -53,54 +53,60 @@
     <template v-else>{{ toast.message }}</template>
     <span v-if="toast.action" class="toast-action">
       {{ toast.action.label }}
-      <font-awesome-icon icon="chevron-right" />
+      <AppIcon icon="chevron-right" />
     </span>
   </component>
   <div class="fade-out"></div>
   <footer>
     <p>
       {{ currentLanguage === 'en' ? 'made with ' : 'gemacht mit ' }}
-      <font-awesome-icon icon="heart" class="heart hoverable tooltip"
-        :tooltip="currentLanguage === 'en' ? 'love' : 'liebe'" role="button" tabindex="0" aria-hidden="false"
-        :aria-label="currentLanguage === 'en' ? 'love' : 'liebe'" @click="handleHeartClick" />
+      <AppIcon icon="heart" class="heart hoverable tooltip" :tooltip="currentLanguage === 'en' ? 'love' : 'liebe'"
+        role="button" tabindex="0" aria-hidden="false" :aria-label="currentLanguage === 'en' ? 'love' : 'liebe'"
+        @click="handleHeartClick" />
       {{ currentLanguage === 'en' ? ' by jfladas' : ' von jfladas' }}
     </p>
     <p>
       <a href="https://github.com/jfladas/" target="_blank" class="social hoverable tooltip" tooltip="github"
         aria-label="GitHub">
-        <font-awesome-icon icon="fa-brands fa-github-alt" />
+        <AppIcon icon="github" />
       </a>
       <a href="https://jfladas.itch.io/" target="_blank" class="social hoverable tooltip" tooltip="itch.io"
         aria-label="itch.io">
-        <font-awesome-icon icon="fa-brands fa-itch-io" />
+        <AppIcon icon="itch-io" />
       </a>
       <a href="https://www.linkedin.com/in/lukas-bucher-0926bb282/" target="_blank" class="social hoverable tooltip"
         tooltip="linkedin" aria-label="LinkedIn">
-        <font-awesome-icon icon="fa-brands fa-linkedin" />
+        <AppIcon icon="linkedin" />
       </a>
       <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip" tooltip="insta"
         aria-label="Instagram">
-        <font-awesome-icon icon="fa-brands fa-instagram" />
+        <AppIcon icon="instagram" />
       </a>
       <a href="mailto:lukas@jfladas.com" class="social hoverable tooltip" tooltip="email" aria-label="E-Mail">
-        <font-awesome-icon icon="fa-solid fa-envelope" />
+        <AppIcon icon="envelope" />
       </a>
     </p>
     <p>
       <router-link to="/about" class="bold hoverable">
         {{ currentLanguage === 'en' ? 'about' : 'über' }}
       </router-link>
-      <font-awesome-icon icon="minus" rotation="90" />
+      <AppIcon icon="minus" class="rotate-90" />
       <router-link to="/achievements" class="bold hoverable">
         {{'achievements'}}
       </router-link>
-      <font-awesome-icon icon="minus" rotation="90" />
+      <AppIcon icon="minus" class="rotate-90" />
       <router-link to="/projects" class="bold hoverable">
         {{ currentLanguage === 'en' ? 'projects' : 'projekte' }}
       </router-link>
     </p>
     <br>
-    <p class="copyright">&copy; {{ currentYear }} jfladas</p>
+    <!-- icon credit: Font Awesome's logos are CC BY 4.0, which asks for it (see src/icons.js) -->
+    <p class="copyright">
+      &copy; {{ currentYear }} jfladas ⬝ icons:
+      <a href="https://remixicon.com" target="_blank" rel="noopener" class="hoverable">Remix Icon</a>,
+      <a href="https://fontawesome.com" target="_blank" rel="noopener" class="hoverable">Font Awesome</a>,
+      <a href="https://pixelarticons.com" target="_blank" rel="noopener" class="hoverable">pixelarticons</a>
+    </p>
   </footer>
   <div ref="cursor" class="custom-cursor">
     <span ref="tooltip" class="tooltip-container"></span>

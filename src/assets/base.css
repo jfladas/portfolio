@@ -242,6 +242,27 @@ html {
   color: var(--sky);
 }
 
+/* Icons (<AppIcon>, see src/icons.js) */
+/* all sets used here (Remix Icon, Font Awesome 7 Brands, SVG Spinners, pixel icons) draw with a margin inside their box,
+   so a 1.2em box makes the shape itself about 1em tall, the size the old Font Awesome 6 icons had; the box stays
+   centered where a 1em icon would sit on the text */
+.app-icon {
+  display: inline-block;
+  flex: none;
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: -0.225em;
+}
+
+/* for icons in a column (link lists), like Font Awesome's fixed-width */
+.app-icon-fw {
+  width: 1.25em;
+}
+
+.app-icon.rotate-90 {
+  transform: rotate(90deg);
+}
+
 /* Buttons */
 button {
   font-family: "Funnel Sans Variable", sans-serif;

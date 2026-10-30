@@ -45,6 +45,20 @@ Videos, images and PDFs stay in `src/projects/`. Videos are compressed before ad
 ffmpeg -i input.mov -c:v libx264 -preset slow -crf 22 -pix_fmt yuv420p -vf "scale='if(gt(iw,ih),min(1920,iw),-2)':'if(gt(iw,ih),-2,min(1920,ih))'" -c:a aac -b:a 128k -movflags +faststart output.mp4
 ```
 
+Videos with real sound get a mute button: add `sound: true` to their `video` section in `src/data/projects.js`.
+
+---
+
+## Icons
+
+- Icons come from [Iconify](https://icones.js.org) sets: mainly [Remix Icon](https://remixicon.com), plus Font Awesome 7 Brands for the GitHub, itch.io and Duolingo logos, SVG Spinners for the loading spinner, and [pixelarticons](https://pixelarticons.com) for the achievements.
+- [`unplugin-icons`](https://github.com/unplugin/unplugin-icons) compiles every used icon into the bundle at build time, so nothing loads from Iconify when the site runs.
+- [`src/icons.js`](./src/icons.js) maps the site's own icon names (`file-pdf`, `teammate`, `github`, …) to icons. Templates use `<AppIcon icon="name" />`, and `src/data/projects.js` uses the same names.
+- To add or swap an icon: find it on icones.js.org, add an import and a name in `src/icons.js`. A name that isn't in the map renders nothing and logs a console warning.
+- Achievement icons are imported as raw SVG from `~icons/pixelarticons/<name>?raw` in `src/data/achievements.js`.
+- The pixel hearts in `src/assets/icons/pixel/` are drawn on the pixelarticons grid and load as the `pixel` set (`~icons/pixel/heart`).
+- Font Awesome's logos are CC BY 4.0, so the footer credits the icon sets; keep that line when changing the footer.
+
 ---
 
 ## Project Hearts

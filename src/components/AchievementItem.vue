@@ -24,12 +24,13 @@
             <a v-if="canClaimReward" class="button-container">
                 <button class="hoverable button-primary reward-button" @click="emit('claim-theme')">
                     Claim
+                    <AppIcon icon="gift" />
                 </button>
             </a>
             <a v-else-if="rewardClaimed" class="button-container disabled">
                 <button class="button-primary reward-button">
                     Claimed
-                    <font-awesome-icon icon="check" />
+                    <AppIcon icon="check" />
                 </button>
             </a>
         </div>

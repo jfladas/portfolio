@@ -10,23 +10,22 @@
             @click="toggleFilter('all')" :class="{ selected: allSelected && !filterMode }">
             {{ currentLanguage === 'en' ? 'all' : 'alle' }}
           </p>
-          <font-awesome-icon icon="filter" class="filter toggle funnel" :class="{ selected: filterMode }"
-            role="button" tabindex="0" :aria-pressed="filterMode" aria-label="filter" @click="toggleFilter('filter')" />
+          <AppIcon icon="filter" class="filter toggle funnel" :class="{ selected: filterMode }" role="button"
+            tabindex="0" :aria-pressed="filterMode" aria-label="filter" @click="toggleFilter('filter')" />
         </div>
 
         <div class="filters" :class="{ expanded: filterMode }">
-          <font-awesome-icon v-for="(icon, key) in categories" :icon="icon" :key="key" class="filter tooltip"
-            :tooltip="key" :class="{ selected: selectedFilters.includes(key) }" role="button"
-            :tabindex="filterMode ? 0 : -1" :aria-pressed="selectedFilters.includes(key)" :aria-label="key"
-            @click="toggleFilter(key)" />
+          <AppIcon v-for="(icon, key) in categories" :icon="icon" :key="key" class="filter tooltip" :tooltip="key"
+            :class="{ selected: selectedFilters.includes(key) }" role="button" :tabindex="filterMode ? 0 : -1"
+            :aria-pressed="selectedFilters.includes(key)" :aria-label="key" @click="toggleFilter(key)" />
         </div>
       </div>
       <div class="view-container toggle-container">
-        <font-awesome-icon icon="grip-lines" class="filter toggle view" :class="{ selected: viewMode === 'list' }"
-          role="button" tabindex="0" :aria-pressed="viewMode === 'list'"
+        <AppIcon icon="grip-lines" class="filter toggle view" :class="{ selected: viewMode === 'list' }" role="button"
+          tabindex="0" :aria-pressed="viewMode === 'list'"
           :aria-label="currentLanguage === 'en' ? 'list view' : 'Listenansicht'" @click="toggleViewMode()" />
-        <font-awesome-icon icon="grip" class="filter toggle view" :class="{ selected: viewMode === 'grid' }"
-          role="button" tabindex="0" :aria-pressed="viewMode === 'grid'"
+        <AppIcon icon="grip" class="filter toggle view" :class="{ selected: viewMode === 'grid' }" role="button"
+          tabindex="0" :aria-pressed="viewMode === 'grid'"
           :aria-label="currentLanguage === 'en' ? 'grid view' : 'Rasteransicht'" @click="toggleViewMode()" />
       </div>
     </div>
@@ -38,17 +37,18 @@
     </div>
     <div v-if="filteredProjects.length > 0 && filteredProjects.length < projects.length" class="disclaimer">
       <p>
-        <font-awesome-icon icon="filter" />
+        <AppIcon icon="filter" />
         {{ currentLanguage === 'en' ? 'showing' : 'zeige' }} {{ filteredProjects.length }} {{ currentLanguage === 'en' ?
         'of' : 'von' }} {{ projects.length }} {{ currentLanguage === 'en' ? 'projects' : 'Projekte' }} |
-        <span class="a hoverable" role="button" tabindex="0" @click="() => { toggleFilter('all'); scrollToTop() }">{{ currentLanguage === 'en' ?
+        <span class="a hoverable" role="button" tabindex="0" @click="() => { toggleFilter('all'); scrollToTop() }">{{
+          currentLanguage === 'en' ?
           'see all' : 'alle anzeigen' }}</span>
       </p>
     </div>
     <div v-if="filteredProjects.length === 0" class="disclaimer">
       <h3>
         {{ currentLanguage === 'en' ? 'no matching projects found' : 'keine passenden Projekte gefunden' }}
-        <font-awesome-icon icon="face-frown-open" />
+        <AppIcon icon="face-frown-open" />
       </h3>
       <p>
         {{ currentLanguage === 'en' ? 'try adjusting the filters or' : 'Versuche die Filter anzupassen oder' }}
@@ -59,7 +59,7 @@
     </div>
     <router-link v-else to="#" class="to-top hoverable tooltip" :tooltip="currentLanguage === 'en' ? 'to top' : 'rauf'"
       :aria-label="currentLanguage === 'en' ? 'to top' : 'rauf'" @click.prevent="scrollToTop">
-      <font-awesome-icon icon="angle-up" />
+      <AppIcon icon="angle-up" />
     </router-link>
     <div class="bottom-spacer"></div>
   </div>
@@ -94,7 +94,7 @@ const preloadProjectCovers = (projectList) => {
 
     const image = new Image()
     image.src = cover
-    image.decode().catch(() => {})
+    image.decode().catch(() => { })
     preloadedCovers.set(cover, image)
   })
 }
@@ -273,9 +273,8 @@ onMounted(() => {
   font-size: 1.5rem;
   color: var(--deep);
   margin: 0;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem;
   height: 1.5rem;
-  min-width: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -350,10 +349,6 @@ onMounted(() => {
     padding-top: 3.5rem;
   }
 
-  .filter {
-    padding: 0.6rem 1rem;
-  }
-
   .filters.expanded {
     min-width: calc(100% - 8rem);
     flex-wrap: wrap;
@@ -385,7 +380,7 @@ onMounted(() => {
 
   .filter {
     font-size: 1.2rem;
-    padding: 0.4rem 0.4rem;
+    padding: 0.4rem;
     height: 1.2rem;
   }
 

@@ -1,21 +1,22 @@
-// Icons are pixelarticons (https://pixelarticons.com/docs/), imported by name from the npm package.
-// To use another one, import pixelarticons/svg/<name>.svg?raw and pass it through pixels().
-import balloonIcon from 'pixelarticons/svg/balloon.svg?raw'
-import eyeIcon from 'pixelarticons/svg/eye.svg?raw'
-import crownIcon from 'pixelarticons/svg/crown.svg?raw'
-import atSignIcon from 'pixelarticons/svg/at-sign.svg?raw'
-import languagesIcon from 'pixelarticons/svg/languages.svg?raw'
-import cursorMinimalIcon from 'pixelarticons/svg/cursor-minimal.svg?raw'
-import smileIcon from 'pixelarticons/svg/smile.svg?raw'
-import sparkleIcon from 'pixelarticons/svg/sparkle.svg?raw'
-import moonIcon from 'pixelarticons/svg/moon.svg?raw'
-import gamepadIcon from 'pixelarticons/svg/gamepad.svg?raw'
-import fireIcon from 'pixelarticons/svg/fire.svg?raw'
-import featherIcon from 'pixelarticons/svg/feather.svg?raw'
-import skullIcon from 'pixelarticons/svg/skull.svg?raw'
-import smartphoneIcon from 'pixelarticons/svg/smartphone.svg?raw'
-import heartIcon from 'pixelarticons/svg/heart.svg?raw'
-import zapIcon from 'pixelarticons/svg/zap.svg?raw'
+// Icons are pixelarticons (https://pixelarticons.com/docs/), compiled in through unplugin-icons like the site's other
+// icons (see src/icons.js). To use another one, import ~icons/pixelarticons/<name>?raw and pass it through pixels().
+import balloonIcon from '~icons/pixelarticons/balloon?raw'
+import eyeIcon from '~icons/pixelarticons/eye?raw'
+import crownIcon from '~icons/pixelarticons/crown?raw'
+import atSignIcon from '~icons/pixelarticons/at-sign?raw'
+import languagesIcon from '~icons/pixelarticons/languages?raw'
+import cursorMinimalIcon from '~icons/pixelarticons/cursor-minimal?raw'
+import smileIcon from '~icons/pixelarticons/smile?raw'
+import sparkleIcon from '~icons/pixelarticons/sparkle?raw'
+import moonIcon from '~icons/pixelarticons/moon?raw'
+import gamepadIcon from '~icons/pixelarticons/gamepad?raw'
+import fireIcon from '~icons/pixelarticons/fire?raw'
+import featherIcon from '~icons/pixelarticons/feather?raw'
+import skullIcon from '~icons/pixelarticons/skull?raw'
+import smartphoneIcon from '~icons/pixelarticons/smartphone?raw'
+import heartIcon from '~icons/pixelarticons/heart?raw'
+// pixelarticons has no broken heart; this one is drawn on its grid (src/assets/icons/pixel)
+import heartCrackIcon from '~icons/pixel/heart-outline-crack?raw'
 
 // path data of an icon file, for the <path> in AchievementItem.vue
 const pixels = (svg) => [...svg.matchAll(/ d="([^"]+)"/g)].map((match) => match[1]).join('')
@@ -135,6 +136,6 @@ export const achievementDefinitions = [
         title: 'heartbreaker',
         description: 'Cracked a project heart with too much love.',
         descriptionDe: 'Ein Projekt-Herz mit zu viel Liebe zum Brechen gebracht.',
-        svg: pixels(zapIcon)
+        svg: pixels(heartCrackIcon)
     }
 ]

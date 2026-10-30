@@ -4,7 +4,7 @@
         <div class="heart-slot">
             <button type="button" class="heart-tap hoverable" :class="{ cracked, healed, grown }" :aria-label="label"
                 :aria-disabled="cracked" @click="onTap">
-                <font-awesome-icon :icon="cracked ? 'heart-crack' : 'heart'" />
+                <AppIcon :icon="cracked ? 'heart-crack' : 'heart'" />
             </button>
             <span v-for="pop in pops" :key="pop.id" class="pop" :style="{ '--dx': pop.dx }" aria-hidden="true">+1</span>
         </div>

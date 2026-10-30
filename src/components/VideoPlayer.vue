@@ -1,17 +1,16 @@
 <template>
     <teleport to="#video-teleport" :disabled="!isOverlayVisible">
         <div ref="videoPlayerRef" class="video-player hoverable"
-            :class="{ notplaying: !isPlaying, 'loading-placeholder': !isVideoLoaded, expanded: isOverlayVisible }"
+            :class="{ notplaying: !isPlaying, 'loading-placeholder': !isVideoLoaded, expanded: isOverlayVisible, 'has-sound': sound }"
             @mousemove="showControlsTemporarily" @touchstart="showControlsTemporarily">
-            <video ref="video" :src="video" @ended="handleVideoEnded" @loadeddata="handleVideoLoaded"
+            <video ref="video" :src="video" :muted="muted" @ended="handleVideoEnded" @loadeddata="handleVideoLoaded"
                 @loadedmetadata="handleMetadataLoaded" @timeupdate="handleTimeUpdate" @click="handleVideoClick"
                 @play="startProgressLoop" @pause="stopProgressLoop"
                 :class="{ small: !isOverlayVisible }"></video>
             <button class="play-pause-button" :aria-label="isPlaying ? 'Pause' : 'Play'" @click="togglePlayPause" @mouseenter="handleControlMouseEnter"
                 @mouseleave="handleControlMouseLeave" :style="{ opacity: showControls ? 1 : 0 }">
-                <font-awesome-icon
-                    :icon="isVideoLoaded ? (isEnded ? 'rotate-left' : (isPlaying ? 'pause' : 'play')) : 'spinner'"
-                    :spin="!isVideoLoaded" />
+                <AppIcon
+                    :icon="isVideoLoaded ? (isEnded ? 'rotate-left' : (isPlaying ? 'pause' : 'play')) : 'spinner'" />
             </button>
             <div class="progress" @mouseenter="handleControlMouseEnter"
                 @mouseleave="handleControlMouseLeave" :style="{ opacity: showControls ? 1 : 0 }">
@@ -20,15 +19,21 @@
                 <input class="progress-bar" aria-label="Seek" type="range" min="0" max="100" step="0.1" :value="progressPercent"
                     :disabled="!isVideoLoaded || !duration" @input="handleSeek" />
             </div>
+            <!-- only on videos with real sound (sound: true in src/data/projects.js); they start with sound on -->
+            <button v-if="sound" class="sound-button" aria-label="Mute" :aria-pressed="muted" @click="toggleMute"
+                @mouseenter="handleControlMouseEnter" @mouseleave="handleControlMouseLeave"
+                :style="{ opacity: showControls ? 1 : 0 }">
+                <AppIcon :icon="muted ? 'volume-mute' : 'volume-up'" />
+            </button>
             <button v-if="!isOverlayVisible" class="expand-button" aria-label="Expand" @click="handleExpand"
                 @mouseenter="handleControlMouseEnter" @mouseleave="handleControlMouseLeave"
                 :style="{ opacity: showControls ? 1 : 0 }">
-                <font-awesome-icon icon="up-right-and-down-left-from-center" />
+                <AppIcon icon="up-right-and-down-left-from-center" />
             </button>
             <button v-if="isOverlayVisible" class="unexpand-button" aria-label="Collapse" @click="$emit('toggle-overlay')"
                 @mouseenter="handleControlMouseEnter" @mouseleave="handleControlMouseLeave"
                 :style="{ opacity: showControls ? 1 : 0 }">
-                <font-awesome-icon icon="down-left-and-up-right-to-center" />
+                <AppIcon icon="down-left-and-up-right-to-center" />
             </button>
         </div>
     </teleport>
@@ -44,6 +49,11 @@ export default {
             required: true
         },
         isOverlayVisible: {
+            type: Boolean,
+            default: false
+        },
+        // shows the mute button
+        sound: {
             type: Boolean,
             default: false
         },
@@ -65,7 +75,8 @@ export default {
             hoverMediaQuery: null,
             showControls: true,
             boundClickOutside: null,
-            progressFrame: null
+            progressFrame: null,
+            muted: false
         };
     },
     emits: ['toggle-overlay'],
@@ -91,6 +102,10 @@ export default {
         }
     },
     methods: {
+        toggleMute() {
+            this.muted = !this.muted;
+            this.showControlsTemporarily();
+        },
         // a click on the video plays/pauses it; in fullscreen, a click beside the picture closes fullscreen instead
         handleVideoClick(event) {
             if (this.isOverlayVisible && !isOnMedia(event)) {
@@ -392,22 +407,47 @@ export default {
     transition: opacity 0.5s;
 }
 
+/* same square as expand/collapse, just left of it */
+.sound-button {
+    position: absolute;
+    bottom: 0;
+    right: 2.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: rgba(var(--white-rgb), 0.8);
+    background-color: rgba(var(--navy-rgb), 0.5);
+    backdrop-filter: blur(0.5rem) saturate(2);
+    transition: opacity 0.5s;
+}
+
+.has-sound .progress {
+    right: 5rem;
+}
+
 .expand-button:hover,
-.unexpand-button:hover {
+.unexpand-button:hover,
+.sound-button:hover {
     background-color: rgba(var(--deep-rgb), 0.3);
 }
 
 .expand-button:active,
-.unexpand-button:active {
+.unexpand-button:active,
+.sound-button:active {
     background-color: rgba(var(--deep-rgb), 0.5);
 }
 
 .video-player:hover .expand-button,
 .video-player:hover .unexpand-button,
+.video-player:hover .sound-button,
 .video-player:hover .play-pause-button,
 .video-player.notplaying .play-pause-button,
 .video-player.notplaying .expand-button,
-.video-player.notplaying .unexpand-button {
+.video-player.notplaying .unexpand-button,
+.video-player.notplaying .sound-button {
     opacity: 1;
 }
 </style>
