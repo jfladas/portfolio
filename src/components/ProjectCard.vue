@@ -22,9 +22,12 @@
             <div class="card-body">
                 <h2>{{ project.name }}</h2>
                 <p class="description">{{ project.description }}</p>
-                <div class="project-icons">
-                    <div v-for="category in project.categories" :key="category" class="tooltip" :tooltip="category">
+                <div ref="iconRow" class="project-icons">
+                    <div v-for="category in shownCategories" :key="category" class="tooltip" :tooltip="category">
                         <AppIcon :icon="categories[category]" />
+                    </div>
+                    <div v-if="hiddenCategories.length" class="tooltip" :tooltip="hiddenCategories.join(', ')">
+                        <AppIcon icon="ellipsis" />
                     </div>
                 </div>
             </div>
@@ -33,6 +36,7 @@
 </template>
 
 <script setup>
+import { ref, computed, nextTick, onMounted, onUnmounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import { categories } from "@/data/projects.js";
 
@@ -47,6 +51,44 @@ const props = defineProps({
         default: true
     }
 });
+
+// Category icons that don't fully fit on one line are swapped for a "more" icon (listing them in its tooltip).
+// It takes the place of the first icon that doesn't fit, or the one before if it doesn't fit there either.
+const iconRow = ref(null)
+const shownIconCount = ref(props.project.categories.length)
+const shownCategories = computed(() => props.project.categories.slice(0, shownIconCount.value))
+const hiddenCategories = computed(() => props.project.categories.slice(shownIconCount.value))
+
+const fitIcons = async () => {
+    const row = iconRow.value
+
+    // not laid out (e.g. hidden): nothing to measure, it runs again once the row gets a size
+    if (!row?.clientWidth) {
+        return
+    }
+
+    const lastIconOverflows = () => row.lastElementChild.getBoundingClientRect().right > row.getBoundingClientRect().right + 0.5
+
+    // all of this runs before the next paint, so the steps in between never show
+    shownIconCount.value = props.project.categories.length
+    await nextTick()
+
+    while (shownIconCount.value > 0 && lastIconOverflows()) {
+        shownIconCount.value--
+        await nextTick()
+    }
+}
+
+// fires once right away and again whenever the card's width changes
+const iconRowObserver = new ResizeObserver(fitIcons)
+
+onMounted(() => {
+    iconRowObserver.observe(iconRow.value)
+})
+
+onUnmounted(() => {
+    iconRowObserver.disconnect()
+})
 </script>
 
 <style scoped>

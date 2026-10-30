@@ -49,6 +49,7 @@ import RiLayoutGridFill from '~icons/ri/layout-grid-fill'
 import RiLinkedinFill from '~icons/ri/linkedin-fill'
 import RiMenuFill from '~icons/ri/menu-fill'
 import RiMicrosoftFill from '~icons/ri/microsoft-fill'
+import RiMoreFill from '~icons/ri/more-fill'
 import RiMusic2Fill from '~icons/ri/music-2-fill'
 import RiPaletteFill from '~icons/ri/palette-fill'
 import RiPauseFill from '~icons/ri/pause-fill'
@@ -87,6 +88,7 @@ export const icons = {
     'angle-up': RiArrowUpSLine,
     'arrow-left-long': RiArrowLeftLongLine,
     minus: RiSubtractFill,
+    ellipsis: RiMoreFill,
     filter: RiFilterFill,
     grip: RiLayoutGridFill,
     'grip-lines': RiMenuFill,
