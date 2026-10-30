@@ -97,29 +97,56 @@
             <router-link to="/about" class="bold hoverable">
                 {{ currentLanguage === 'en' ? 'about' : 'über' }}
             </router-link>
-            <AppIcon icon="minus" class="rotate-90" />
+            ⬝
             <router-link to="/achievements" class="bold hoverable">
                 {{'achievements'}}
             </router-link>
-            <AppIcon icon="minus" class="rotate-90" />
+            ⬝
             <router-link to="/projects" class="bold hoverable">
                 {{ currentLanguage === 'en' ? 'projects' : 'projekte' }}
             </router-link>
         </p>
-        <br>
         <!-- icon credit: Font Awesome's logos are CC BY 4.0, which asks for it (see src/icons.js) -->
-        <p class="copyright">
-            &copy; {{ currentYear }} jfladas
-            <br>
-            <span class="credit">
-                icons:
-                <a href="https://remixicon.com" target="_blank" rel="noopener" class="hoverable">Remix Icon</a>,
-                <a href="https://fontawesome.com" target="_blank" rel="noopener" class="hoverable">Font Awesome</a>,
-                <a href="https://pixelarticons.com" target="_blank" rel="noopener" class="hoverable">pixelarticons</a>
+        <div class="copyright">
+            <p>
+                &copy; {{ currentYear }} jfladas
                 ⬝
-                xxx
-            </span>
-        </p>
+                <button class="credits-toggle hoverable" :aria-expanded="creditsOpen" aria-controls="credits"
+                    @click="creditsOpen = !creditsOpen">credits</button>
+            </p>
+            <div id="credits" ref="credits" class="credits" :class="{ open: creditsOpen }" :inert="!creditsOpen"
+                @transitionend="revealCredits">
+                <p class="credits-inner">
+                    icons:
+                    <a href="https://remixicon.com" target="_blank" rel="noopener" class="hoverable">Remix Icon</a>,
+                    <a href="https://fontawesome.com" target="_blank" rel="noopener" class="hoverable">Font Awesome</a>,
+                    <a href="https://pixelarticons.com" target="_blank" rel="noopener"
+                        class="hoverable">pixelarticons</a>
+                    ⬝
+                    fonts:
+                    <a href="https://github.com/Dicotype/Funnel" target="_blank" rel="noopener"
+                        class="hoverable">Funnel</a>,
+                    <a href="https://www.jetbrains.com/lp/mono/" target="_blank" rel="noopener"
+                        class="hoverable">JetBrains
+                        Mono</a>,
+                    <a href="https://fonts.google.com/specimen/DotGothic16" target="_blank" rel="noopener"
+                        class="hoverable">DotGothic16</a>
+                    ⬝
+                    hearts:
+                    <a href="https://jasoncameron.dev/abacus" target="_blank" rel="noopener"
+                        class="hoverable">Abacus</a>
+                    <br>
+                    <span v-if="currentLanguage === 'en'">
+                        Spotify, Duolingo, Nintendo Switch and other names and logos are trademarks of their owners;
+                        this site isn't affiliated with them.
+                    </span>
+                    <span v-else>
+                        Spotify, Duolingo, Nintendo Switch und andere Namen und Logos sind Marken ihrer Inhaber;
+                        diese Seite steht in keiner Verbindung zu ihnen.
+                    </span>
+                </p>
+            </div>
+        </div>
     </footer>
     <div ref="cursor" class="custom-cursor">
         <span ref="tooltip" class="tooltip-container"></span>
@@ -147,6 +174,16 @@ const {
 } = useAchievements()
 
 const isMobile = ref(false)
+
+const creditsOpen = ref(false)
+const credits = ref(null)
+
+// once the credits have finished opening, scroll so they're fully on screen
+const revealCredits = (event) => {
+    if (creditsOpen.value && event.target === credits.value) {
+        credits.value.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    }
+}
 
 const checkIsMobile = () => {
     const userAgent = navigator.userAgent || window.opera
@@ -892,8 +929,42 @@ footer {
     font-weight: 700;
     color: var(--deep);
 
-    .credit {
+    .credits-toggle {
+        display: inline;
+        width: auto;
+        height: auto;
+        padding: 0;
+        font: inherit;
+        color: inherit;
+        background: none;
+        transition: color 0.5s;
+    }
+
+    .credits-toggle:hover,
+    .credits a:hover {
+        color: var(--sky);
+    }
+
+    .credits {
+        display: grid;
+        grid-template-rows: 0fr;
         font-weight: 400;
+        transition: grid-template-rows 0.5s;
+    }
+
+    .credits.open {
+        grid-template-rows: 1fr;
+    }
+
+    .credits-inner {
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .credits-inner::before {
+        content: '';
+        display: block;
+        height: 0.6rem;
     }
 }
 

@@ -135,7 +135,7 @@ const prevSlide = (index) => {
 
     .arrow {
         color: var(--deep);
-        font-size: 3rem;
+        font-size: 2.5rem;
         transform: rotate(90deg);
         transition: all 0.3s ease;
     }
