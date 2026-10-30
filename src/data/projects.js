@@ -3661,7 +3661,7 @@ export const aboutContent = {
         },
         {
             text: 'Instagram',
-            url: 'https://www.instagram.com/jfla.das/',
+            url: 'https://www.instagram.com/jfladas.exe/',
             icon: 'instagram'
         },
         {

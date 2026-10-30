@@ -86,7 +86,7 @@
                 tooltip="linkedin" aria-label="LinkedIn" data-umami-event="social" data-umami-event-name="linkedin">
                 <AppIcon icon="linkedin" />
             </a>
-            <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip"
+            <a href="https://www.instagram.com/jfladas.exe/" target="_blank" class="social hoverable tooltip"
                 tooltip="insta" aria-label="Instagram" data-umami-event="social" data-umami-event-name="instagram">
                 <AppIcon icon="instagram" />
             </a>
@@ -113,11 +113,11 @@
             <p>
                 &copy; {{ currentYear }} jfladas
                 ⬝
-                <button class="footer-toggle hoverable" :aria-expanded="openPanel === 'credits'"
-                    aria-controls="credits" @click="togglePanel('credits')">credits</button>
+                <button class="footer-toggle hoverable" :aria-expanded="openPanel === 'credits'" aria-controls="credits"
+                    @click="togglePanel('credits')">credits</button>
                 ⬝
-                <button class="footer-toggle hoverable" :aria-expanded="openPanel === 'privacy'"
-                    aria-controls="privacy" @click="togglePanel('privacy')">
+                <button class="footer-toggle hoverable" :aria-expanded="openPanel === 'privacy'" aria-controls="privacy"
+                    @click="togglePanel('privacy')">
                     {{ currentLanguage === 'en' ? 'privacy' : 'datenschutz' }}
                 </button>
             </p>
@@ -160,8 +160,9 @@
                     No cookies. Settings and achievements stay in your browser.
                     <br>
                     Anonymous stats with
-                    <a href="https://umami.is/privacy" target="_blank" rel="noopener"
-                        class="hoverable">Umami</a>: pages, where you came from, device, country and clicks,
+                    <a href="https://umami.is/privacy" target="_blank" rel="noopener" class="hoverable">Umami</a>:
+                    pages,
+                    where you came from, device, country and clicks,
                     no IP addresses stored.
                     <br>
                     Also loads from GitHub, Abacus, Spotify, Nintendo and OneDrive.
@@ -170,8 +171,9 @@
                     Keine Cookies. Einstellungen und Achievements bleiben in deinem Browser.
                     <br>
                     Anonyme Statistik mit
-                    <a href="https://umami.is/privacy" target="_blank" rel="noopener"
-                        class="hoverable">Umami</a>: Seiten, woher du kommst, Gerät, Land und Klicks,
+                    <a href="https://umami.is/privacy" target="_blank" rel="noopener" class="hoverable">Umami</a>:
+                    Seiten,
+                    woher du kommst, Gerät, Land und Klicks,
                     keine IP-Adressen gespeichert.
                     <br>
                     Lädt auch von GitHub, Abacus, Spotify, Nintendo und OneDrive.
