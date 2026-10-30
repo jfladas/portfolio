@@ -802,15 +802,17 @@ nav {
   }
 }
 
+/* reaches 10rem below the screen: Safari on iOS 26 shows the page behind its see-through toolbar, below where
+   bottom: 0 ends, and that part should be blurred too */
 .fade-out {
   position: fixed;
-  bottom: 0;
+  bottom: -10rem;
   left: 0;
   width: 100%;
-  height: 6rem;
+  height: 16rem;
   pointer-events: none;
   backdrop-filter: blur(1rem);
-  mask: linear-gradient(to bottom, transparent, var(--white));
+  mask: linear-gradient(to bottom, transparent, var(--white) 6rem);
   z-index: 10;
 }
 

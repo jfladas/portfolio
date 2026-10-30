@@ -1,6 +1,18 @@
 <template>
     <article class="project-card hoverable">
         <div :id="project.id" class="anchor"></div>
+        <!-- invisible copy of the closed card that sets its height, so opening it on hover doesn't make it taller -->
+        <div class="card-sizer" aria-hidden="true">
+            <div class="cover-wrap"></div>
+            <div class="card-body">
+                <div class="title">{{ project.name }}</div>
+                <div class="project-icons">
+                    <div v-for="category in project.categories" :key="category">
+                        <font-awesome-icon :icon="categories[category]" />
+                    </div>
+                </div>
+            </div>
+        </div>
         <router-link :to="`/projects/${project.id}`">
             <div class="cover-wrap">
                 <img v-if="project.cover" :src="project.cover" :alt="project.name" class="cover"
@@ -58,7 +70,8 @@ const props = defineProps({
         height: 100%;
     }
 
-    h2 {
+    h2,
+    .title {
         font-family: "Funnel Display Variable", sans-serif;
         font-weight: 800;
         font-size: 1.8rem;
@@ -113,9 +126,37 @@ const props = defineProps({
         gap: 0.5rem;
         transition: all 0.5s;
     }
+
+    .card-sizer {
+        display: none;
+    }
 }
 
 @media (min-width: 600px) {
+
+    /* the card lies over its invisible closed copy and the cover takes whatever height the text leaves,
+       so the cover shrinks as the description opens instead of the card growing */
+    .project-card {
+        position: relative;
+
+        .card-sizer {
+            display: block;
+            visibility: hidden;
+        }
+
+        a {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a .cover-wrap {
+            flex: 1 1 0;
+            min-height: 0;
+            aspect-ratio: auto;
+        }
+    }
 
     .project-card:hover {
         background: linear-gradient(to right,
@@ -123,10 +164,6 @@ const props = defineProps({
                 var(--mint),
                 var(--sky),
                 var(--deep));
-
-        .cover-wrap {
-            aspect-ratio: 16 / 10;
-        }
 
         p {
             font-size: 1.2rem;

@@ -33,7 +33,7 @@ export const projects = [
         context: {
             lines: [
                 '2026 @ HSLU, Rotkreuz',
-                { en: 'Bachelor Thesis & Project', de: 'Bachelorarbeit' }
+                { en: 'Bachelor Project', de: 'Bachelorarbeit' }
             ],
             url: 'https://www.hslu.ch/it',
             icon: 'graduation-cap',

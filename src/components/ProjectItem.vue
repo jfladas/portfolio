@@ -3,8 +3,12 @@
         <div class="project-item hoverable">
             <div :id="project.id" class="anchor"></div>
             <h2>{{ project.name }}</h2>
-            <p>{{ project.description }}</p>
-            <p v-for="c in project.context.lines">{{ c }}</p>
+            <div class="details">
+                <div class="details-inner">
+                    <p>{{ project.description }}</p>
+                    <p v-for="c in project.context.lines">{{ c }}</p>
+                </div>
+            </div>
             <div class="project-icons">
                 <div v-for="category in project.categories" class="tooltip" :tooltip="category" :key="category">
                     <font-awesome-icon :icon="categories[category]" />
@@ -88,8 +92,36 @@ const props = defineProps({
 }
 
 @media (max-width: 1200px) {
+
+    /* the text is laid out at its final size the whole time and scaled up from the top left, which looks like the
+       growing font size and width on wide screens: growing the text itself made some phones wrap it differently
+       mid-way, then jump at the end. The box grows at the same pace as the scale, so nothing gets cut off */
+    .project-item .details {
+        display: grid;
+        grid-template-rows: 0fr;
+        overflow: hidden;
+        transition: grid-template-rows 0.5s;
+    }
+
+    .project-item .details-inner {
+        min-height: 0;
+        transform: scale(0);
+        transform-origin: top left;
+        transition: transform 0.5s;
+    }
+
     .project-item p {
-        max-width: 0vw;
+        font-size: 1.25rem;
+        color: var(--deep);
+        max-width: 60vw;
+        max-height: none;
+        transition: opacity 0.5s;
+    }
+
+    /* the title's width grows in step with its font size (1.5rem to 2.5rem, up to 60vw), so it wraps the same
+       way the whole time instead of breaking differently mid-way */
+    .project-item h2 {
+        max-width: calc(60vw * 1.5 / 2.5);
     }
 
     .project-item:hover {
@@ -125,13 +157,16 @@ const props = defineProps({
             max-width: 60vw;
         }
 
+        .details {
+            grid-template-rows: 1fr;
+        }
+
+        .details-inner {
+            transform: none;
+        }
+
         p {
-            font-size: 1.25rem;
-            color: var(--deep);
             opacity: 1;
-            max-width: 60vw;
-            max-height: 10rem;
-            height: fit-content;
         }
 
         .project-icons {
@@ -145,6 +180,12 @@ const props = defineProps({
 }
 
 @media (max-width: 600px) {
+
+    /* same as above for the smaller expanded title (2rem) */
+    .project-item h2 {
+        max-width: calc(60vw * 1.5 / 2);
+    }
+
     .project-item.in-view h2 {
         font-size: 2rem;
         line-height: 2rem;
@@ -191,6 +232,8 @@ const props = defineProps({
     .project-item,
     .project-item h2,
     .project-item p,
+    .project-item .details,
+    .project-item .details-inner,
     .project-item .project-icons,
     .project-icons,
     .project-item:hover,

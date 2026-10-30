@@ -215,14 +215,14 @@ const prevSlide = (index) => {
     shape-rendering: crispEdges;
 }
 
-/* the text lines up with the other text, the opening mark sticks out to the left */
+/* the text lines up with the other text, the marks stick out on both sides by the same amount */
 .quote-open {
     left: -2rem;
     top: -0.5rem;
 }
 
 .quote-close {
-    right: -0.25rem;
+    right: -2rem;
     bottom: -0.5rem;
 }
 
@@ -301,6 +301,10 @@ const prevSlide = (index) => {
 
     .quote-open {
         left: -1.25rem;
+    }
+
+    .quote-close {
+        right: -1.25rem;
     }
 
     .presentation {
