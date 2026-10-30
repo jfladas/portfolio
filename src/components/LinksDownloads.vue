@@ -5,12 +5,14 @@
             <span v-if="links.length != 0 && downloads.length != 0"> & </span>
             <span v-if="downloads.length != 0">Downloads</span>
         </h3>
-        <a v-for="link in links" :href="link.url" class="link hoverable" target="_blank" :key="link.text">
+        <!-- data-umami-event: counted in the visitor stats (Umami, see index.html) -->
+        <a v-for="link in links" :href="link.url" class="link hoverable" target="_blank" :key="link.text"
+            data-umami-event="link" :data-umami-event-name="link.text">
             <AppIcon :icon="link.icon" fixed-width />
             {{ link.text }}
         </a>
         <a v-for="download in downloads" :href="download.action || download.url" class="download hoverable" download
-            :key="download.text">
+            :key="download.text" data-umami-event="download" :data-umami-event-name="download.text">
             <AppIcon :icon="download.icon" fixed-width />
             {{ download.text }}
         </a>

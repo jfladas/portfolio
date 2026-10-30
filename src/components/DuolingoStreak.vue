@@ -1,5 +1,5 @@
 <template>
-    <LiveCard v-if="visible" :href="`https://www.duolingo.com/profile/${username}`" :active="practicedToday"
+    <LiveCard v-if="visible" data-umami-event="live card" data-umami-event-name="duolingo" :href="`https://www.duolingo.com/profile/${username}`" :active="practicedToday"
         :state="stateLabel" :title="streakLabel" :detail="currentLanguage === 'en' ? 'on Duolingo' : 'auf Duolingo'">
         <template #media>
             <!-- drawn here instead of with <AppIcon> so the flame can have a gradient -->

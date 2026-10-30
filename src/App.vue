@@ -73,23 +73,25 @@
             {{ currentLanguage === 'en' ? ' by jfladas' : ' von jfladas' }}
         </p>
         <p>
+            <!-- data-umami-event: counted in the visitor stats (Umami, see index.html) -->
             <a href="https://github.com/jfladas/" target="_blank" class="social hoverable tooltip" tooltip="github"
-                aria-label="GitHub">
+                aria-label="GitHub" data-umami-event="social" data-umami-event-name="github">
                 <AppIcon icon="github" />
             </a>
             <a href="https://jfladas.itch.io/" target="_blank" class="social hoverable tooltip" tooltip="itch.io"
-                aria-label="itch.io">
+                aria-label="itch.io" data-umami-event="social" data-umami-event-name="itch.io">
                 <AppIcon icon="itch-io" />
             </a>
             <a href="https://www.linkedin.com/in/jfladas/" target="_blank" class="social hoverable tooltip"
-                tooltip="linkedin" aria-label="LinkedIn">
+                tooltip="linkedin" aria-label="LinkedIn" data-umami-event="social" data-umami-event-name="linkedin">
                 <AppIcon icon="linkedin" />
             </a>
             <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip"
-                tooltip="insta" aria-label="Instagram">
+                tooltip="insta" aria-label="Instagram" data-umami-event="social" data-umami-event-name="instagram">
                 <AppIcon icon="instagram" />
             </a>
-            <a href="mailto:lukas@jfladas.com" class="social hoverable tooltip" tooltip="email" aria-label="E-Mail">
+            <a href="mailto:lukas@jfladas.com" class="social hoverable tooltip" tooltip="email" aria-label="E-Mail"
+                data-umami-event="social" data-umami-event-name="email">
                 <AppIcon icon="envelope" />
             </a>
         </p>
@@ -111,12 +113,17 @@
             <p>
                 &copy; {{ currentYear }} jfladas
                 ⬝
-                <button class="credits-toggle hoverable" :aria-expanded="creditsOpen" aria-controls="credits"
-                    @click="creditsOpen = !creditsOpen">credits</button>
+                <button class="footer-toggle hoverable" :aria-expanded="openPanel === 'credits'"
+                    aria-controls="credits" @click="togglePanel('credits')">credits</button>
+                ⬝
+                <button class="footer-toggle hoverable" :aria-expanded="openPanel === 'privacy'"
+                    aria-controls="privacy" @click="togglePanel('privacy')">
+                    {{ currentLanguage === 'en' ? 'privacy' : 'datenschutz' }}
+                </button>
             </p>
-            <div id="credits" ref="credits" class="credits" :class="{ open: creditsOpen }" :inert="!creditsOpen"
-                @transitionend="revealCredits">
-                <p class="credits-inner">
+            <div id="credits" class="footer-panel" :class="{ open: openPanel === 'credits' }"
+                :inert="openPanel !== 'credits'" @transitionend="revealPanel">
+                <p class="footer-panel-inner">
                     icons:
                     <a href="https://remixicon.com" target="_blank" rel="noopener" class="hoverable">Remix Icon</a>,
                     <a href="https://fontawesome.com" target="_blank" rel="noopener" class="hoverable">Font Awesome</a>,
@@ -144,6 +151,30 @@
                         Spotify, Duolingo, Nintendo Switch und andere Namen und Logos sind Marken ihrer Inhaber;
                         diese Seite steht in keiner Verbindung zu ihnen.
                     </span>
+                </p>
+            </div>
+            <!-- what the site stores and which other servers it talks to; keep up to date when adding services -->
+            <div id="privacy" class="footer-panel" :class="{ open: openPanel === 'privacy' }"
+                :inert="openPanel !== 'privacy'" @transitionend="revealPanel">
+                <p v-if="currentLanguage === 'en'" class="footer-panel-inner">
+                    No cookies. Settings and achievements stay in your browser.
+                    <br>
+                    Anonymous stats with
+                    <a href="https://umami.is/privacy" target="_blank" rel="noopener"
+                        class="hoverable">Umami</a>: pages, where you came from, device, country and clicks,
+                    no IP addresses stored.
+                    <br>
+                    Also loads from GitHub, Abacus, Spotify, Nintendo and OneDrive.
+                </p>
+                <p v-else class="footer-panel-inner">
+                    Keine Cookies. Einstellungen und Achievements bleiben in deinem Browser.
+                    <br>
+                    Anonyme Statistik mit
+                    <a href="https://umami.is/privacy" target="_blank" rel="noopener"
+                        class="hoverable">Umami</a>: Seiten, woher du kommst, Gerät, Land und Klicks,
+                    keine IP-Adressen gespeichert.
+                    <br>
+                    Lädt auch von GitHub, Abacus, Spotify, Nintendo und OneDrive.
                 </p>
             </div>
         </div>
@@ -175,13 +206,16 @@ const {
 
 const isMobile = ref(false)
 
-const creditsOpen = ref(false)
-const credits = ref(null)
+// footer panels (credits, privacy): one open at a time
+const openPanel = ref(null)
+const togglePanel = (panel) => {
+    openPanel.value = openPanel.value === panel ? null : panel
+}
 
-// once the credits have finished opening, scroll so they're fully on screen
-const revealCredits = (event) => {
-    if (creditsOpen.value && event.target === credits.value) {
-        credits.value.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+// once a panel has finished opening, scroll so it's fully on screen
+const revealPanel = (event) => {
+    if (event.target === event.currentTarget && event.target.classList.contains('open')) {
+        event.target.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
     }
 }
 
@@ -929,7 +963,7 @@ footer {
     font-weight: 700;
     color: var(--deep);
 
-    .credits-toggle {
+    .footer-toggle {
         display: inline;
         width: auto;
         height: auto;
@@ -940,28 +974,29 @@ footer {
         transition: color 0.5s;
     }
 
-    .credits-toggle:hover,
-    .credits a:hover {
+    .footer-toggle:hover,
+    .footer-panel a:hover {
         color: var(--sky);
     }
 
-    .credits {
+    .footer-panel {
         display: grid;
         grid-template-rows: 0fr;
         font-weight: 400;
         transition: grid-template-rows 0.5s;
     }
 
-    .credits.open {
+    .footer-panel.open {
         grid-template-rows: 1fr;
     }
 
-    .credits-inner {
+    .footer-panel-inner {
         min-height: 0;
         overflow: hidden;
+        padding: 0 1rem;
     }
 
-    .credits-inner::before {
+    .footer-panel-inner::before {
         content: '';
         display: block;
         height: 0.6rem;

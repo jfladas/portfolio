@@ -1,5 +1,5 @@
 <template>
-    <LiveCard v-if="game" :href="game.link" :active="playingNow" pulse :state="stateLabel" :title="game.name"
+    <LiveCard v-if="game" data-umami-event="live card" data-umami-event-name="switch" :href="game.link" :active="playingNow" pulse :state="stateLabel" :title="game.name"
         :detail="currentLanguage === 'en' ? 'on Nintendo Switch 2' : 'auf der Nintendo Switch 2'">
         <template #media>
             <img v-if="game.image" :src="game.image" alt="" class="switch-cover" loading="lazy" />

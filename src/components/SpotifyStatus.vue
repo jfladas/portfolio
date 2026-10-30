@@ -1,7 +1,7 @@
 <template>
     <LiveCard v-if="loading" :message="currentLanguage === 'en' ? 'Loading Spotify...' : 'Spotify wird geladen...'" />
     <LiveCard v-else-if="error" :message="currentLanguage === 'en' ? 'Spotify data unavailable.' : 'Spotify-Daten nicht verfügbar.'" />
-    <LiveCard v-else-if="trackName && artistName" :href="trackLink" :active="isOnline" pulse :state="statusLabel"
+    <LiveCard v-else-if="trackName && artistName" :href="trackLink" data-umami-event="live card" data-umami-event-name="spotify" :active="isOnline" pulse :state="statusLabel"
         :title="trackName" :detail="`${currentLanguage === 'en' ? 'by' : 'von'} ${artistName}`">
         <template #media>
             <img v-if="albumCover" :src="albumCover" alt="Album cover" class="spotify-cover" loading="lazy" />

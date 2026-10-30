@@ -36,7 +36,8 @@
             <div v-if="section.type === 'buttons'" class="buttons">
                 <!-- icon-only buttons (empty text) name themselves through `label` -->
                 <a v-for="button in section.buttons" :key="button.action" :href="button.action" class="button-container"
-                    :target="button.same ? '_self' : '_blank'" :aria-label="button.label || undefined">
+                    :target="button.same ? '_self' : '_blank'" :aria-label="button.label || undefined"
+                    data-umami-event="button" :data-umami-event-name="button.text || button.label">
                     <button class="hoverable" :class="'button-' + button.color" tabindex="-1">
                         {{ button.text }}
                         <AppIcon v-if="button.icon" :icon="button.icon" />

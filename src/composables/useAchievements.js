@@ -200,6 +200,8 @@ const unlockAchievement = (achievementId) => {
         unlocked: true
     }
     saveAchievements()
+    // counted in the visitor stats (Umami, see index.html), once per visitor and achievement
+    window.umami?.track('achievement', { id: achievementId })
 
     if (typeof achievementToast === 'function' && achievement) {
         achievementToast(achievement)
