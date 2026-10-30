@@ -1,116 +1,116 @@
 <template>
-  <header class="hoverable">
-    <router-link to="/">
-      <div class="logo"
-        :class="{ reverse: $route.path !== '/about', center: $route.path === '/achievements' || $route.path === '/' }">
-        jfladas
-      </div>
-    </router-link>
-    <nav>
-      <router-link to="/about" class="nav-item left" :class="{ selected: $route.path === '/about' }">
-        {{ currentLanguage === 'en' ? 'about' : 'über' }}
-      </router-link>
-      <router-link to="/projects" class="nav-item right" :class="{ selected: $route.path.startsWith('/projects') }">
-        {{ currentLanguage === 'en' ? 'projects' : 'projekte' }}
-      </router-link>
-    </nav>
-  </header>
-  <div class="more hoverable" :class="{ open: moreVisible }">
-    <AppIcon icon="caret-left" class="more-icon tooltip" :tooltip="currentLanguage === 'en' ? 'more' : 'mehr'"
-      role="button" tabindex="0" aria-hidden="false" :aria-label="currentLanguage === 'en' ? 'more' : 'mehr'"
-      :aria-expanded="moreVisible" @click="moreVisible = !moreVisible" />
-    <div class="more-items">
-      <div class="more-item tooltip" tooltip="en/de" role="button" :tabindex="moreVisible ? 0 : -1"
-        :aria-label="currentLanguage === 'en' ? 'Auf Deutsch wechseln' : 'Switch to English'" @click="toggleLanguage">
-        <AppIcon icon="language" fixed-width />
-      </div>
-      <div v-if="!isMobile" class="more-item tooltip" tooltip="cursor" role="button" :tabindex="moreVisible ? 0 : -1"
-        :aria-label="currentLanguage === 'en' ? 'Toggle custom cursor' : 'Eigenen Cursor umschalten'"
-        @click="toggleCursor">
-        <AppIcon icon="arrow-pointer" fixed-width />
-      </div>
-      <div v-if="availableThemes.length > 1" class="more-item tooltip" tooltip="theme" role="button"
-        :tabindex="moreVisible ? 0 : -1" :aria-label="currentLanguage === 'en' ? 'Change theme' : 'Theme wechseln'"
-        @click="cycleTheme">
-        <AppIcon icon="palette" fixed-width />
-      </div>
-      <div class="more-item tooltip" tooltip="achiev.">
-        <router-link to="/achievements" :tabindex="moreVisible ? 0 : -1" aria-label="achievements"
-          @click="moreVisible = !moreVisible">
-          <AppIcon icon="trophy" fixed-width />
+    <header class="hoverable">
+        <router-link to="/">
+            <div class="logo"
+                :class="{ reverse: $route.path !== '/about', center: $route.path === '/achievements' || $route.path === '/' }">
+                jfladas
+            </div>
         </router-link>
-      </div>
+        <nav>
+            <router-link to="/about" class="nav-item left" :class="{ selected: $route.path === '/about' }">
+                {{ currentLanguage === 'en' ? 'about' : 'über' }}
+            </router-link>
+            <router-link to="/projects" class="nav-item right" :class="{ selected: $route.path.startsWith('/projects') }">
+                {{ currentLanguage === 'en' ? 'projects' : 'projekte' }}
+            </router-link>
+        </nav>
+    </header>
+    <div class="more hoverable" :class="{ open: moreVisible }">
+        <AppIcon icon="caret-left" class="more-icon tooltip" :tooltip="currentLanguage === 'en' ? 'more' : 'mehr'"
+            role="button" tabindex="0" aria-hidden="false" :aria-label="currentLanguage === 'en' ? 'more' : 'mehr'"
+            :aria-expanded="moreVisible" @click="moreVisible = !moreVisible" />
+        <div class="more-items">
+            <div class="more-item tooltip" tooltip="en/de" role="button" :tabindex="moreVisible ? 0 : -1"
+                :aria-label="currentLanguage === 'en' ? 'Auf Deutsch wechseln' : 'Switch to English'" @click="toggleLanguage">
+                <AppIcon icon="language" fixed-width />
+            </div>
+            <div v-if="!isMobile" class="more-item tooltip" tooltip="cursor" role="button" :tabindex="moreVisible ? 0 : -1"
+                :aria-label="currentLanguage === 'en' ? 'Toggle custom cursor' : 'Eigenen Cursor umschalten'"
+                @click="toggleCursor">
+                <AppIcon icon="arrow-pointer" fixed-width />
+            </div>
+            <div v-if="availableThemes.length > 1" class="more-item tooltip" tooltip="theme" role="button"
+                :tabindex="moreVisible ? 0 : -1" :aria-label="currentLanguage === 'en' ? 'Change theme' : 'Theme wechseln'"
+                @click="cycleTheme">
+                <AppIcon icon="palette" fixed-width />
+            </div>
+            <div class="more-item tooltip" tooltip="achiev.">
+                <router-link to="/achievements" :tabindex="moreVisible ? 0 : -1" aria-label="achievements"
+                    @click="moreVisible = !moreVisible">
+                    <AppIcon icon="trophy" fixed-width />
+                </router-link>
+            </div>
+        </div>
     </div>
-  </div>
-  <router-view />
-  <component :is="toast.action?.link ? 'router-link' : 'div'" id="toast"
-    v-bind="toast.action?.link ? { to: toast.action.link } : toast.action ? { role: 'button', tabindex: 0 } : { role: 'status' }"
-    :class="{ visible: toast.visible, action: toast.action, hoverable: toast.action }" @click="handleToastClick">
-    <span v-if="toast.heading" class="toast-text">
-      <span class="toast-heading">{{ toast.heading }}</span>
-      <span class="toast-message">{{ toast.message }}</span>
-    </span>
-    <template v-else>{{ toast.message }}</template>
-    <span v-if="toast.action" class="toast-action">
-      {{ toast.action.label }}
-      <AppIcon icon="chevron-right" />
-    </span>
-  </component>
-  <div class="fade-out"></div>
-  <footer>
-    <p>
-      {{ currentLanguage === 'en' ? 'made with ' : 'gemacht mit ' }}
-      <AppIcon icon="heart" class="heart hoverable tooltip" :tooltip="currentLanguage === 'en' ? 'love' : 'liebe'"
-        role="button" tabindex="0" aria-hidden="false" :aria-label="currentLanguage === 'en' ? 'love' : 'liebe'"
-        @click="handleHeartClick" />
-      {{ currentLanguage === 'en' ? ' by jfladas' : ' von jfladas' }}
-    </p>
-    <p>
-      <a href="https://github.com/jfladas/" target="_blank" class="social hoverable tooltip" tooltip="github"
-        aria-label="GitHub">
-        <AppIcon icon="github" />
-      </a>
-      <a href="https://jfladas.itch.io/" target="_blank" class="social hoverable tooltip" tooltip="itch.io"
-        aria-label="itch.io">
-        <AppIcon icon="itch-io" />
-      </a>
-      <a href="https://www.linkedin.com/in/lukas-bucher-0926bb282/" target="_blank" class="social hoverable tooltip"
-        tooltip="linkedin" aria-label="LinkedIn">
-        <AppIcon icon="linkedin" />
-      </a>
-      <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip" tooltip="insta"
-        aria-label="Instagram">
-        <AppIcon icon="instagram" />
-      </a>
-      <a href="mailto:lukas@jfladas.com" class="social hoverable tooltip" tooltip="email" aria-label="E-Mail">
-        <AppIcon icon="envelope" />
-      </a>
-    </p>
-    <p>
-      <router-link to="/about" class="bold hoverable">
-        {{ currentLanguage === 'en' ? 'about' : 'über' }}
-      </router-link>
-      <AppIcon icon="minus" class="rotate-90" />
-      <router-link to="/achievements" class="bold hoverable">
-        {{'achievements'}}
-      </router-link>
-      <AppIcon icon="minus" class="rotate-90" />
-      <router-link to="/projects" class="bold hoverable">
-        {{ currentLanguage === 'en' ? 'projects' : 'projekte' }}
-      </router-link>
-    </p>
-    <br>
-    <!-- icon credit: Font Awesome's logos are CC BY 4.0, which asks for it (see src/icons.js) -->
-    <p class="copyright">
-      &copy; {{ currentYear }} jfladas ⬝ icons:
-      <a href="https://remixicon.com" target="_blank" rel="noopener" class="hoverable">Remix Icon</a>,
-      <a href="https://fontawesome.com" target="_blank" rel="noopener" class="hoverable">Font Awesome</a>,
-      <a href="https://pixelarticons.com" target="_blank" rel="noopener" class="hoverable">pixelarticons</a>
-    </p>
-  </footer>
-  <div ref="cursor" class="custom-cursor">
-    <span ref="tooltip" class="tooltip-container"></span>
-  </div>
+    <router-view />
+    <component :is="toast.action?.link ? 'router-link' : 'div'" id="toast"
+        v-bind="toast.action?.link ? { to: toast.action.link } : toast.action ? { role: 'button', tabindex: 0 } : { role: 'status' }"
+        :class="{ visible: toast.visible, action: toast.action, hoverable: toast.action }" @click="handleToastClick">
+        <span v-if="toast.heading" class="toast-text">
+            <span class="toast-heading">{{ toast.heading }}</span>
+            <span class="toast-message">{{ toast.message }}</span>
+        </span>
+        <template v-else>{{ toast.message }}</template>
+        <span v-if="toast.action" class="toast-action">
+            {{ toast.action.label }}
+            <AppIcon icon="chevron-right" />
+        </span>
+    </component>
+    <div class="fade-out"></div>
+    <footer>
+        <p>
+            {{ currentLanguage === 'en' ? 'made with ' : 'gemacht mit ' }}
+            <AppIcon icon="heart" class="heart hoverable tooltip" :tooltip="currentLanguage === 'en' ? 'love' : 'liebe'"
+                role="button" tabindex="0" aria-hidden="false" :aria-label="currentLanguage === 'en' ? 'love' : 'liebe'"
+                @click="handleHeartClick" />
+            {{ currentLanguage === 'en' ? ' by jfladas' : ' von jfladas' }}
+        </p>
+        <p>
+            <a href="https://github.com/jfladas/" target="_blank" class="social hoverable tooltip" tooltip="github"
+                aria-label="GitHub">
+                <AppIcon icon="github" />
+            </a>
+            <a href="https://jfladas.itch.io/" target="_blank" class="social hoverable tooltip" tooltip="itch.io"
+                aria-label="itch.io">
+                <AppIcon icon="itch-io" />
+            </a>
+            <a href="https://www.linkedin.com/in/lukas-bucher-0926bb282/" target="_blank" class="social hoverable tooltip"
+                tooltip="linkedin" aria-label="LinkedIn">
+                <AppIcon icon="linkedin" />
+            </a>
+            <a href="https://www.instagram.com/jfla.das/" target="_blank" class="social hoverable tooltip" tooltip="insta"
+                aria-label="Instagram">
+                <AppIcon icon="instagram" />
+            </a>
+            <a href="mailto:lukas@jfladas.com" class="social hoverable tooltip" tooltip="email" aria-label="E-Mail">
+                <AppIcon icon="envelope" />
+            </a>
+        </p>
+        <p>
+            <router-link to="/about" class="bold hoverable">
+                {{ currentLanguage === 'en' ? 'about' : 'über' }}
+            </router-link>
+            <AppIcon icon="minus" class="rotate-90" />
+            <router-link to="/achievements" class="bold hoverable">
+                {{'achievements'}}
+            </router-link>
+            <AppIcon icon="minus" class="rotate-90" />
+            <router-link to="/projects" class="bold hoverable">
+                {{ currentLanguage === 'en' ? 'projects' : 'projekte' }}
+            </router-link>
+        </p>
+        <br>
+        <!-- icon credit: Font Awesome's logos are CC BY 4.0, which asks for it (see src/icons.js) -->
+        <p class="copyright">
+            &copy; {{ currentYear }} jfladas ⬝ icons:
+            <a href="https://remixicon.com" target="_blank" rel="noopener" class="hoverable">Remix Icon</a>,
+            <a href="https://fontawesome.com" target="_blank" rel="noopener" class="hoverable">Font Awesome</a>,
+            <a href="https://pixelarticons.com" target="_blank" rel="noopener" class="hoverable">pixelarticons</a>
+        </p>
+    </footer>
+    <div ref="cursor" class="custom-cursor">
+        <span ref="tooltip" class="tooltip-container"></span>
+    </div>
 </template>
 
 <script setup>
@@ -123,21 +123,21 @@ import { localize } from '@/data/localize.js'
 import { pageTitle, siteTitle } from '@/data/titles.js'
 const route = useRoute()
 const {
-  unlockAchievement,
-  registerSiteVisit,
-  registerResponsiveView,
-  registerNocturnalVisit,
-  registerLanguageSwitch,
-  registerCursorTrial,
-  registerLinkClick,
-  isThemeClaimed
+    unlockAchievement,
+    registerSiteVisit,
+    registerResponsiveView,
+    registerNocturnalVisit,
+    registerLanguageSwitch,
+    registerCursorTrial,
+    registerLinkClick,
+    isThemeClaimed
 } = useAchievements()
 
 const isMobile = ref(false)
 
 const checkIsMobile = () => {
-  const userAgent = navigator.userAgent || window.opera
-  isMobile.value = /android|iPad|iPhone|iPod/i.test(userAgent) && !window.MSStream
+    const userAgent = navigator.userAgent || window.opera
+    isMobile.value = /android|iPad|iPhone|iPod/i.test(userAgent) && !window.MSStream
 }
 
 const moreVisible = ref(false)
@@ -150,22 +150,22 @@ const currentLanguage = ref(localStorage.getItem('language') || 'en')
 provide('currentLanguage', currentLanguage)
 
 const pageNames = {
-  about: { en: 'about', de: 'über' },
-  projects: { en: 'projects', de: 'projekte' },
-  achievements: 'achievements'
+    about: { en: 'about', de: 'über' },
+    projects: { en: 'projects', de: 'projekte' },
+    achievements: 'achievements'
 }
 
 watchEffect(() => {
-  const name = route.name === 'project-detail'
-    ? projects.find((project) => project.id === route.params.id)?.name
-    : pageNames[route.name]
+    const name = route.name === 'project-detail'
+        ? projects.find((project) => project.id === route.params.id)?.name
+        : pageNames[route.name]
 
-  // about stands in for the homepage for now (/ redirects there), so it carries the site title (same in project-previews.js)
-  document.title = route.name === 'about' ? siteTitle : pageTitle(localize(name, currentLanguage.value))
+    // about stands in for the homepage for now (/ redirects there), so it carries the site title (same in project-previews.js)
+    document.title = route.name === 'about' ? siteTitle : pageTitle(localize(name, currentLanguage.value))
 })
 
 watch(currentLanguage, (language) => {
-  document.documentElement.lang = language
+    document.documentElement.lang = language
 }, { immediate: true })
 
 const currentYear = new Date().getFullYear()
@@ -175,115 +175,115 @@ const themeStorageKey = 'themeId'
 const themeIndexStorageKey = 'themeIndex'
 
 const availableThemes = computed(() => {
-  return themes.filter((themeId) => themeId === 'default' || isThemeClaimed(themeId))
+    return themes.filter((themeId) => themeId === 'default' || isThemeClaimed(themeId))
 })
 
 const getInitialThemeId = () => {
-  const storedThemeId = localStorage.getItem(themeStorageKey)
+    const storedThemeId = localStorage.getItem(themeStorageKey)
 
-  if (storedThemeId && availableThemes.value.includes(storedThemeId)) {
-    return storedThemeId
-  }
-
-  const legacyThemeIndex = Number.parseInt(localStorage.getItem(themeIndexStorageKey) ?? '', 10)
-
-  if (Number.isInteger(legacyThemeIndex) && legacyThemeIndex >= 0 && legacyThemeIndex < themes.length) {
-    const legacyThemeId = themes[legacyThemeIndex]
-
-    if (legacyThemeId && availableThemes.value.includes(legacyThemeId)) {
-      return legacyThemeId
+    if (storedThemeId && availableThemes.value.includes(storedThemeId)) {
+        return storedThemeId
     }
-  }
 
-  return availableThemes.value[0] || 'default'
+    const legacyThemeIndex = Number.parseInt(localStorage.getItem(themeIndexStorageKey) ?? '', 10)
+
+    if (Number.isInteger(legacyThemeIndex) && legacyThemeIndex >= 0 && legacyThemeIndex < themes.length) {
+        const legacyThemeId = themes[legacyThemeIndex]
+
+        if (legacyThemeId && availableThemes.value.includes(legacyThemeId)) {
+            return legacyThemeId
+        }
+    }
+
+    return availableThemes.value[0] || 'default'
 }
 
 const applyTheme = (themeId) => {
-  document.documentElement.setAttribute('data-theme', themeId)
-  localStorage.setItem(themeStorageKey, themeId)
+    document.documentElement.setAttribute('data-theme', themeId)
+    localStorage.setItem(themeStorageKey, themeId)
 }
 
 const currentThemeId = ref(getInitialThemeId())
 applyTheme(currentThemeId.value)
 
 watch(
-  availableThemes,
-  () => {
-    if (!availableThemes.value.includes(currentThemeId.value)) {
-      currentThemeId.value = availableThemes.value[0] || 'default'
-      applyTheme(currentThemeId.value)
-    }
-  },
-  { immediate: true }
+    availableThemes,
+    () => {
+        if (!availableThemes.value.includes(currentThemeId.value)) {
+            currentThemeId.value = availableThemes.value[0] || 'default'
+            applyTheme(currentThemeId.value)
+        }
+    },
+    { immediate: true }
 )
 
 const cycleTheme = () => {
-  const claimableThemes = availableThemes.value
+    const claimableThemes = availableThemes.value
 
-  if (!claimableThemes.length) {
-    return
-  }
+    if (!claimableThemes.length) {
+        return
+    }
 
-  const currentThemeIndex = claimableThemes.findIndex((themeId) => themeId === currentThemeId.value)
-  const nextThemeIndex = currentThemeIndex < 0 ? 0 : (currentThemeIndex + 1) % claimableThemes.length
+    const currentThemeIndex = claimableThemes.findIndex((themeId) => themeId === currentThemeId.value)
+    const nextThemeIndex = currentThemeIndex < 0 ? 0 : (currentThemeIndex + 1) % claimableThemes.length
 
-  setTheme(claimableThemes[nextThemeIndex])
+    setTheme(claimableThemes[nextThemeIndex])
 }
 
 const setTheme = (themeId) => {
-  currentThemeId.value = themeId
-  applyTheme(currentThemeId.value)
-  localStorage.removeItem(themeIndexStorageKey)
-  showToast(currentThemeId.value, null, currentLanguage.value === 'en' ? 'Theme changed' : 'Theme gewechselt')
+    currentThemeId.value = themeId
+    applyTheme(currentThemeId.value)
+    localStorage.removeItem(themeIndexStorageKey)
+    showToast(currentThemeId.value, null, currentLanguage.value === 'en' ? 'Theme changed' : 'Theme gewechselt')
 }
 
 const handleViewportAchievement = () => {
-  registerResponsiveView(window.innerWidth)
+    registerResponsiveView(window.innerWidth)
 }
 
 watch(() => route.path, (to, from) => {
-  removeCursorHover();
-  removeTooltip();
+    removeCursorHover();
+    removeTooltip();
 })
 
 const cursor = ref(null)
 const tooltip = ref(null)
 
 const updateCursor = (e) => {
-  if (cursor.value) {
-    cursor.value.style.display = 'block'
-    cursor.value.style.left = `${e.clientX}px`
-    cursor.value.style.top = `${e.clientY}px`
-  }
+    if (cursor.value) {
+        cursor.value.style.display = 'block'
+        cursor.value.style.left = `${e.clientX}px`
+        cursor.value.style.top = `${e.clientY}px`
+    }
 }
 
 const addCursorHover = () => {
-  if (cursor.value) {
-    cursor.value.classList.add('hover')
-  }
+    if (cursor.value) {
+        cursor.value.classList.add('hover')
+    }
 }
 
 const removeCursorHover = () => {
-  if (cursor.value) {
-    cursor.value.classList.remove('hover')
-  }
+    if (cursor.value) {
+        cursor.value.classList.remove('hover')
+    }
 }
 
 let tooltipTimeout = null;
 let toastTimeout = null;
 
 const addTooltip = (text) => {
-  if (tooltip.value) {
-    tooltip.value.textContent = text
-    tooltip.value.style.opacity = 1
-  }
+    if (tooltip.value) {
+        tooltip.value.textContent = text
+        tooltip.value.style.opacity = 1
+    }
 }
 
 const removeTooltip = () => {
-  clearTimeout(tooltipTimeout);
-  if (tooltip.value) {
-    tooltip.value.style.opacity = 0
-  }
+    clearTimeout(tooltipTimeout);
+    if (tooltip.value) {
+        tooltip.value.style.opacity = 0
+    }
 }
 
 // Hover and tooltip state follow whichever .hoverable / .tooltip element is under the pointer.
@@ -291,96 +291,96 @@ const removeTooltip = () => {
 let hoveredTooltipElement = null
 
 const handlePointerOver = (event) => {
-  const target = event.target instanceof Element ? event.target : null
+    const target = event.target instanceof Element ? event.target : null
 
-  if (target?.closest('.hoverable')) {
-    addCursorHover()
-  } else {
-    removeCursorHover()
-  }
+    if (target?.closest('.hoverable')) {
+        addCursorHover()
+    } else {
+        removeCursorHover()
+    }
 
-  const tooltipElement = target?.closest('.tooltip') ?? null
+    const tooltipElement = target?.closest('.tooltip') ?? null
 
-  if (tooltipElement === hoveredTooltipElement) {
-    return
-  }
+    if (tooltipElement === hoveredTooltipElement) {
+        return
+    }
 
-  hoveredTooltipElement = tooltipElement
-  removeTooltip()
+    hoveredTooltipElement = tooltipElement
+    removeTooltip()
 
-  if (tooltipElement) {
-    tooltipTimeout = setTimeout(() => {
-      addTooltip(tooltipElement.getAttribute('tooltip'))
-    }, isMobile.value ? 0 : 500)
-  }
+    if (tooltipElement) {
+        tooltipTimeout = setTimeout(() => {
+            addTooltip(tooltipElement.getAttribute('tooltip'))
+        }, isMobile.value ? 0 : 500)
+    }
 }
 
 const handlePointerLeaveWindow = (event) => {
-  if (!event.relatedTarget) {
-    hoveredTooltipElement = null
-    removeCursorHover()
-    removeTooltip()
-  }
+    if (!event.relatedTarget) {
+        hoveredTooltipElement = null
+        removeCursorHover()
+        removeTooltip()
+    }
 }
 
 const handleCopyClick = (event) => {
-  const copyElement = event.target.closest?.('.copy')
+    const copyElement = event.target.closest?.('.copy')
 
-  if (copyElement) {
-    toClipboard(copyElement.textContent)
-  }
+    if (copyElement) {
+        toClipboard(copyElement.textContent)
+    }
 }
 
 // Lets keyboard users activate elements marked role="button" with Enter or Space, like real buttons.
 const handleButtonKeydown = (event) => {
-  const target = event.target
+    const target = event.target
 
-  if ((event.key !== 'Enter' && event.key !== ' ') || target.getAttribute?.('role') !== 'button' || target.tagName === 'BUTTON') {
-    return
-  }
+    if ((event.key !== 'Enter' && event.key !== ' ') || target.getAttribute?.('role') !== 'button' || target.tagName === 'BUTTON') {
+        return
+    }
 
-  event.preventDefault()
-  target.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    event.preventDefault()
+    target.dispatchEvent(new MouseEvent('click', { bubbles: true }))
 }
 
 const toggleLanguage = () => {
-  currentLanguage.value = currentLanguage.value === 'en' ? 'de' : 'en';
-  localStorage.setItem('language', currentLanguage.value);
-  let newLanguage = currentLanguage.value;
-  setTimeout(() => {
-    if (currentLanguage.value === newLanguage) {
-      registerLanguageSwitch()
-    }
-  }, 5000);
-  showToast(currentLanguage.value === 'en' ? 'English' : 'Deutsch', null,
-    currentLanguage.value === 'en' ? 'Language switched' : 'Sprache gewechselt');
-  moreVisible.value = false;
+    currentLanguage.value = currentLanguage.value === 'en' ? 'de' : 'en';
+    localStorage.setItem('language', currentLanguage.value);
+    let newLanguage = currentLanguage.value;
+    setTimeout(() => {
+        if (currentLanguage.value === newLanguage) {
+            registerLanguageSwitch()
+        }
+    }, 5000);
+    showToast(currentLanguage.value === 'en' ? 'English' : 'Deutsch', null,
+        currentLanguage.value === 'en' ? 'Language switched' : 'Sprache gewechselt');
+    moreVisible.value = false;
 }
 
 const toggleCursor = () => {
-  removeTooltip();
-  isCustomCursor.value = !isCustomCursor.value;
-  localStorage.setItem('isCustomCursor', isCustomCursor.value);
-  const existingLink = document.getElementById('cursor-style');
-  if (existingLink) {
-    existingLink.remove();
-  }
-  const link = document.createElement('link');
-  link.id = 'cursor-style';
-  link.rel = 'stylesheet';
-  link.href = isCustomCursor.value ? customCursorStyle : defaultCursorStyle;
-  document.head.appendChild(link);
-
-  let newCursor = isCustomCursor.value;
-  setTimeout(() => {
-    if (isCustomCursor.value === newCursor) {
-      registerCursorTrial(isCustomCursor.value)
+    removeTooltip();
+    isCustomCursor.value = !isCustomCursor.value;
+    localStorage.setItem('isCustomCursor', isCustomCursor.value);
+    const existingLink = document.getElementById('cursor-style');
+    if (existingLink) {
+        existingLink.remove();
     }
-  }, 5000);
+    const link = document.createElement('link');
+    link.id = 'cursor-style';
+    link.rel = 'stylesheet';
+    link.href = isCustomCursor.value ? customCursorStyle : defaultCursorStyle;
+    document.head.appendChild(link);
 
-  showToast(currentLanguage.value === 'en' ? (isCustomCursor.value ? 'custom' : 'default') : (isCustomCursor.value ? 'eigener' : 'Standard'),
-    null, currentLanguage.value === 'en' ? 'Cursor changed' : 'Cursor gewechselt');
-  moreVisible.value = false;
+    let newCursor = isCustomCursor.value;
+    setTimeout(() => {
+        if (isCustomCursor.value === newCursor) {
+            registerCursorTrial(isCustomCursor.value)
+        }
+    }, 5000);
+
+    showToast(currentLanguage.value === 'en' ? (isCustomCursor.value ? 'custom' : 'default') : (isCustomCursor.value ? 'eigener' : 'Standard'),
+        null, currentLanguage.value === 'en' ? 'Cursor changed' : 'Cursor gewechselt');
+    moreVisible.value = false;
 }
 
 const toast = ref({ message: '', heading: null, action: null, visible: false })
@@ -389,510 +389,507 @@ const toast = ref({ message: '', heading: null, action: null, visible: false })
 // shows the label with a chevron and stays a bit longer.
 // heading: optional small line above the message (the message is then shown bold)
 const showToast = (message, action = null, heading = null) => {
-  toast.value = { message, heading, action, visible: toast.value.visible };
-  if (toastTimeout) {
-    clearTimeout(toastTimeout);
-  }
-  setTimeout(() => {
-    toast.value.visible = true;
-  }, 100);
-  toastTimeout = setTimeout(hideToast, action ? 5000 : 3000);
+    toast.value = { message, heading, action, visible: toast.value.visible };
+    if (toastTimeout) {
+        clearTimeout(toastTimeout);
+    }
+    setTimeout(() => {
+        toast.value.visible = true;
+    }, 100);
+    toastTimeout = setTimeout(hideToast, action ? 5000 : 3000);
 };
 
 const hideToast = () => {
-  toast.value.visible = false;
+    toast.value.visible = false;
 };
 
 const handleToastClick = () => {
-  const run = toast.value.action?.run
-  hideToast()
-  run?.()
+    const run = toast.value.action?.run
+    hideToast()
+    run?.()
 };
 
 registerAchievementToast((achievement) => {
-  if (achievement?.isReset) {
-    const message = currentLanguage.value === 'en' ? 'All achievements reset' : 'Alle Achievements zurückgesetzt'
-    showToast(message)
-  } else if (achievement?.isThemeClaimed) {
-    const themeId = achievement?.themeId || ''
-    showToast(themeId, {
-      label: currentLanguage.value === 'en' ? 'apply' : 'anwenden',
-      run: () => setTheme(themeId)
-    }, currentLanguage.value === 'en' ? 'Theme unlocked' : 'Theme freigeschaltet')
-  } else {
-    showToast(achievement?.title || '', route.path === '/achievements' ? null : {
-      label: currentLanguage.value === 'en' ? 'view' : 'ansehen',
-      link: '/achievements'
-    }, currentLanguage.value === 'en' ? 'Achievement unlocked' : 'Achievement freigeschaltet')
-  }
+    if (achievement?.isReset) {
+        const message = currentLanguage.value === 'en' ? 'All achievements reset' : 'Alle Achievements zurückgesetzt'
+        showToast(message)
+    } else if (achievement?.isThemeClaimed) {
+        const themeId = achievement?.themeId || ''
+        showToast(themeId, {
+            label: currentLanguage.value === 'en' ? 'apply' : 'anwenden',
+            run: () => setTheme(themeId)
+        }, currentLanguage.value === 'en' ? 'Theme unlocked' : 'Theme freigeschaltet')
+    } else {
+        showToast(achievement?.title || '', route.path === '/achievements' ? null : {
+            label: currentLanguage.value === 'en' ? 'view' : 'ansehen',
+            link: '/achievements'
+        }, currentLanguage.value === 'en' ? 'Achievement unlocked' : 'Achievement freigeschaltet')
+    }
 })
 
 const toClipboard = (text) => {
-  navigator.clipboard.writeText(text);
-  showToast(currentLanguage.value === 'en' ? 'Copied to clipboard' : 'In die Zwischenablage kopiert');
+    navigator.clipboard.writeText(text);
+    showToast(currentLanguage.value === 'en' ? 'Copied to clipboard' : 'In die Zwischenablage kopiert');
 }
 
 const handleAchievementLinkClick = (event) => {
-  const link = event.target.closest?.('a')
+    const link = event.target.closest?.('a')
 
-  if (!link) {
-    return
-  }
+    if (!link) {
+        return
+    }
 
-  registerLinkClick(link.getAttribute('href') || '')
+    registerLinkClick(link.getAttribute('href') || '')
 }
 
 const handleHeartClick = () => {
-  unlockAchievement('i-love-love')
+    unlockAchievement('i-love-love')
 }
 
 const handleTouchMove = (e) => {
-  if (cursor.value) {
-    cursor.value.style.display = 'none';
-  }
+    if (cursor.value) {
+        cursor.value.style.display = 'none';
+    }
 }
 
 let cursorTimeout = null;
 
 const handleTouchStart = (e) => {
-  clearTimeout(cursorTimeout);
-  removeTooltip();
-  if (cursor.value) {
-    cursor.value.style.animation = '';
-    cursor.value.style.opacity = 1;
-  }
+    clearTimeout(cursorTimeout);
+    removeTooltip();
+    if (cursor.value) {
+        cursor.value.style.animation = '';
+        cursor.value.style.opacity = 1;
+    }
 }
 
 const handleTouchEnd = (e) => {
-  if (cursor.value) {
-    cursorTimeout = setTimeout(() => {
-      removeTooltip();
-      cursor.value.style.animation = 'fadeout 0.5s forwards';
-    }, 1000);
-  }
+    if (cursor.value) {
+        cursorTimeout = setTimeout(() => {
+            removeTooltip();
+            cursor.value.style.animation = 'fadeout 0.5s forwards';
+        }, 1000);
+    }
 }
 
 onMounted(() => {
 
-  checkIsMobile()
-  registerSiteVisit()
-  registerNocturnalVisit()
-  handleViewportAchievement()
+    checkIsMobile()
+    registerSiteVisit()
+    registerNocturnalVisit()
+    handleViewportAchievement()
 
-  window.addEventListener('mousemove', updateCursor);
-  window.addEventListener('touchmove', handleTouchMove, { passive: false });
-  window.addEventListener('touchstart', handleTouchStart, { passive: false });
-  window.addEventListener('touchend', handleTouchEnd, { passive: false });
-  window.addEventListener('resize', handleViewportAchievement);
-  document.addEventListener('mouseover', handlePointerOver);
-  document.addEventListener('mouseout', handlePointerLeaveWindow);
-  document.addEventListener('keydown', handleButtonKeydown);
+    window.addEventListener('mousemove', updateCursor);
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchend', handleTouchEnd, { passive: false });
+    window.addEventListener('resize', handleViewportAchievement);
+    document.addEventListener('mouseover', handlePointerOver);
+    document.addEventListener('mouseout', handlePointerLeaveWindow);
+    document.addEventListener('keydown', handleButtonKeydown);
 
-  const link = document.createElement('link');
-  link.id = 'cursor-style';
-  link.rel = 'stylesheet';
-  link.href = isCustomCursor.value ? customCursorStyle : defaultCursorStyle;
-  document.head.appendChild(link);
+    const link = document.createElement('link');
+    link.id = 'cursor-style';
+    link.rel = 'stylesheet';
+    link.href = isCustomCursor.value ? customCursorStyle : defaultCursorStyle;
+    document.head.appendChild(link);
 
-  const handleClickOutside = (event) => {
-    const moreMenu = document.querySelector('.more');
-    if (moreMenu && !moreMenu.contains(event.target)) {
-      moreVisible.value = false;
-    }
-  };
+    const handleClickOutside = (event) => {
+        const moreMenu = document.querySelector('.more');
+        if (moreMenu && !moreMenu.contains(event.target)) {
+            moreVisible.value = false;
+        }
+    };
 
-  document.addEventListener('click', handleClickOutside);
-  document.addEventListener('click', handleAchievementLinkClick);
-  document.addEventListener('click', handleCopyClick);
+    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('click', handleAchievementLinkClick);
+    document.addEventListener('click', handleCopyClick);
 
-  onUnmounted(() => {
-    window.removeEventListener('touchstart', handleTouchStart)
-    window.removeEventListener('touchend', handleTouchEnd)
-    window.removeEventListener('touchmove', handleTouchMove)
-    window.removeEventListener('mousemove', updateCursor)
-    window.removeEventListener('resize', handleViewportAchievement)
-    document.removeEventListener('mouseover', handlePointerOver)
-    document.removeEventListener('mouseout', handlePointerLeaveWindow)
-    document.removeEventListener('keydown', handleButtonKeydown)
-    document.removeEventListener('click', handleClickOutside);
-    document.removeEventListener('click', handleAchievementLinkClick);
-    document.removeEventListener('click', handleCopyClick);
-  })
+    onUnmounted(() => {
+        window.removeEventListener('touchstart', handleTouchStart)
+        window.removeEventListener('touchend', handleTouchEnd)
+        window.removeEventListener('touchmove', handleTouchMove)
+        window.removeEventListener('mousemove', updateCursor)
+        window.removeEventListener('resize', handleViewportAchievement)
+        document.removeEventListener('mouseover', handlePointerOver)
+        document.removeEventListener('mouseout', handlePointerLeaveWindow)
+        document.removeEventListener('keydown', handleButtonKeydown)
+        document.removeEventListener('click', handleClickOutside);
+        document.removeEventListener('click', handleAchievementLinkClick);
+        document.removeEventListener('click', handleCopyClick);
+    })
 })
 </script>
 
 <style scoped>
 header {
-  background-color: rgba(var(--navy-rgb), 0.7);
-  backdrop-filter: blur(1rem) saturate(2);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 10;
+    background-color: rgba(var(--navy-rgb), 0.7);
+    backdrop-filter: blur(1rem) saturate(2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 10;
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-item {
-  width: 50vw;
-  font-family: 'Funnel Sans Variable', sans-serif;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--sky);
-  text-align: center;
-  padding: 1.5rem 0;
+    width: 50vw;
+    font-family: 'Funnel Sans Variable', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--sky);
+    text-align: center;
+    padding: 1.5rem 0;
 }
 
 .nav-item.left {
-  margin-right: 6rem;
+    margin-right: 6rem;
 }
 
 .nav-item.right {
-  margin-left: 6rem;
+    margin-left: 6rem;
 }
 
 .nav-item:hover {
-  color: var(--aqua);
+    color: var(--aqua);
 }
 
 .nav-item.left:hover {
-  background: linear-gradient(to right, var(--deep) 0%, rgba(var(--navy-rgb), 0) 50%);
+    background: linear-gradient(to right, var(--deep) 0%, rgba(var(--navy-rgb), 0) 50%);
 }
 
 .nav-item.right:hover {
-  background: linear-gradient(to left, var(--deep) 0%, rgba(var(--navy-rgb), 0) 50%);
+    background: linear-gradient(to left, var(--deep) 0%, rgba(var(--navy-rgb), 0) 50%);
 }
 
 .nav-item.selected {
-  color: var(--white);
+    color: var(--white);
 }
 
 .nav-item.left.selected {
-  background: linear-gradient(to right,
-      var(--aqua) 0%,
-      var(--mint) 10%,
-      var(--sky) 20%,
-      var(--deep) 35%,
-      rgba(var(--navy-rgb), 0));
+    background: linear-gradient(to right,
+            var(--aqua) 0%,
+            var(--mint) 10%,
+            var(--sky) 20%,
+            var(--deep) 35%,
+            rgba(var(--navy-rgb), 0));
 }
 
 .nav-item.right.selected {
-  background: linear-gradient(to left,
-      var(--aqua) 0%,
-      var(--mint) 10%,
-      var(--sky) 20%,
-      var(--deep) 35%,
-      rgba(var(--navy-rgb), 0) 100%);
+    background: linear-gradient(to left,
+            var(--aqua) 0%,
+            var(--mint) 10%,
+            var(--sky) 20%,
+            var(--deep) 35%,
+            rgba(var(--navy-rgb), 0) 100%);
 }
 
 .nav-item:active {
-  color: var(--white);
+    color: var(--white);
 }
 
 .nav-item.left:active {
-  background: linear-gradient(to right,
-      var(--white),
-      var(--aqua) 10%,
-      var(--mint) 20%,
-      var(--sky) 30%,
-      var(--deep) 45%,
-      rgba(var(--navy-rgb), 0));
+    background: linear-gradient(to right,
+            var(--white),
+            var(--aqua) 10%,
+            var(--mint) 20%,
+            var(--sky) 30%,
+            var(--deep) 45%,
+            rgba(var(--navy-rgb), 0));
 }
 
 .nav-item.right:active {
-  background: linear-gradient(to left,
-      var(--white),
-      var(--aqua) 10%,
-      var(--mint) 20%,
-      var(--sky) 30%,
-      var(--deep) 45%,
-      rgba(var(--navy-rgb), 0) 100%);
+    background: linear-gradient(to left,
+            var(--white),
+            var(--aqua) 10%,
+            var(--mint) 20%,
+            var(--sky) 30%,
+            var(--deep) 45%,
+            rgba(var(--navy-rgb), 0) 100%);
 }
 
 .logo {
-  font-family: 'Funnel Display Variable', sans-serif;
-  font-weight: 800;
-  font-size: 2.5rem;
-  background: linear-gradient(to right, var(--aqua), var(--mint), var(--sky), var(--deep));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.5s;
+    font-family: 'Funnel Display Variable', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    background: linear-gradient(to right, var(--aqua), var(--mint), var(--sky), var(--deep));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s;
 }
 
 .logo.reverse {
-  background: linear-gradient(to left, var(--aqua), var(--mint), var(--sky), var(--deep));
-  background-clip: text;
-  -webkit-background-clip: text;
+    background: linear-gradient(to left, var(--aqua), var(--mint), var(--sky), var(--deep));
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 .logo.center {
-  background: linear-gradient(to left, var(--deep), var(--sky), var(--mint), var(--sky), var(--deep));
-  background-clip: text;
-  -webkit-background-clip: text;
+    background: linear-gradient(to left, var(--deep), var(--sky), var(--mint), var(--sky), var(--deep));
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 .logo:hover {
-  transform: translate(-50%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .more {
-  position: fixed;
-  bottom: 2rem;
-  right: 0;
-  width: fit-content;
-  transform: translate(calc(100% - 4rem), 0);
-  height: 2.5rem;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 0.5rem 5rem 0.5rem 0.5rem;
-  font-size: 2rem;
-  background-color: rgba(var(--deep-rgb), 0.5);
-  backdrop-filter: blur(1rem) saturate(2);
-  color: var(--sky);
-  z-index: 10;
-  transition: all 0.5s;
+    position: fixed;
+    bottom: 2rem;
+    right: 0;
+    width: fit-content;
+    transform: translate(calc(100% - 4rem), 0);
+    height: 2.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.5rem 5rem 0.5rem 0.5rem;
+    font-size: 2rem;
+    background-color: rgba(var(--deep-rgb), 0.5);
+    backdrop-filter: blur(1rem) saturate(2);
+    color: var(--sky);
+    z-index: 10;
+    transition: all 0.5s;
 }
 
 .more-icon {
-  padding: 0.5rem;
-  transform: rotate(0);
-  cursor: pointer;
-  transition: transform 0.5s;
+    padding: 0.5rem;
+    transform: rotate(0);
+    cursor: pointer;
+    transition: transform 0.5s;
 }
 
 .more.open {
-  transform: translate(2rem, 0);
-  background-color: rgba(var(--deep-rgb), 0.5);
-}
+    transform: translate(2rem, 0);
+    background-color: rgba(var(--deep-rgb), 0.5);
 
-.more.open .more-icon {
-  transform: rotate(-180deg);
+    .more-icon {
+        transform: rotate(-180deg);
+    }
+
+    .more-item {
+        opacity: 1;
+    }
 }
 
 .more:hover {
-  background-color: rgba(var(--deep-rgb), 0.7);
+    background-color: rgba(var(--deep-rgb), 0.7);
 }
 
 .more:has(.more-icon:nth-of-type(1):hover) {
-  transform: translate(calc(100% - 5rem), 0);
+    transform: translate(calc(100% - 5rem), 0);
 }
 
 .more.open:has(.more-icon:nth-of-type(1):hover) {
-  transform: translate(3rem, 0);
+    transform: translate(3rem, 0);
 }
 
 .more-items {
-  display: flex;
-  gap: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
 }
 
 .more-item {
-  font-size: 1.5rem;
-  color: var(--sky);
-  opacity: 0;
-  cursor: pointer;
-  transition: opacity 0.5s;
+    font-size: 1.5rem;
+    color: var(--sky);
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.5s;
 }
 
 .more-icon:hover,
 .more-item:hover {
-  color: var(--aqua);
+    color: var(--aqua);
 }
 
 .more-icon:active,
 .more-item:active {
-  color: var(--mint);
-}
-
-.more.open .more-item {
-  opacity: 1;
+    color: var(--mint);
 }
 
 #toast {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translate(-50%, 0) translateY(2rem);
-  padding: 1rem 2rem;
-  text-align: center;
-  background: rgba(var(--deep-rgb), 0.5);
-  backdrop-filter: blur(1rem) saturate(2);
-  color: var(--white);
-  z-index: 1000;
-  pointer-events: none;
-  opacity: 0;
-  transition: all 0.5s ease;
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%, 0) translateY(2rem);
+    padding: 1rem 2rem;
+    text-align: center;
+    background: rgba(var(--deep-rgb), 0.5);
+    backdrop-filter: blur(1rem) saturate(2);
+    color: var(--white);
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.5s ease;
 }
 
 #toast.visible {
-  opacity: 1;
-  transform: translate(-50%, 0) translateY(0);
+    opacity: 1;
+    transform: translate(-50%, 0) translateY(0);
 }
 
-/* "view"/"apply" lines up with the last line of the message */
 #toast.action {
-  display: flex;
-  align-items: last baseline;
-  gap: 1rem;
-  padding-right: 1.25rem;
-  text-decoration: none;
+    display: flex;
+    align-items: last baseline;
+    gap: 1rem;
+    padding-right: 1.25rem;
+    text-decoration: none;
 }
 
 #toast.action.visible {
-  pointer-events: auto;
-  cursor: pointer;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
-/* hover: same idea as .button-secondary:hover, kept see-through like the toast. A gradient can't be animated,
-   so it sits on its own layer that fades in */
 #toast.action::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(to right, transparent, rgba(var(--sky-rgb), 0.5) 150%);
-  opacity: 0;
-  transition: opacity 0.3s;
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to right, transparent, rgba(var(--sky-rgb), 0.5) 150%);
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 #toast.action:hover::before {
-  opacity: 1;
+    opacity: 1;
 }
 
-/* two lines: small heading ("Achievement unlocked") above the name */
 .toast-text {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }
 
 .toast-heading {
-  color: var(--aqua);
+    color: var(--aqua);
 }
 
 .toast-message {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .toast-action {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: 700;
-  color: var(--mint);
-  white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 700;
+    color: var(--mint);
+    white-space: nowrap;
 
-  svg {
-    font-size: 1.2rem;
-    transition: transform 0.3s;
-  }
+    svg {
+        font-size: 1.2rem;
+        transition: transform 0.3s;
+    }
 }
 
-#toast.action:hover .toast-action {
-  color: var(--white);
+#toast.action:hover {
+    .toast-action {
+        color: var(--white);
 
-  svg {
-    transform: translateX(0.2rem);
-  }
+        svg {
+            transform: translateX(0.2rem);
+        }
+    }
 }
 
-/* reaches 10rem below the screen: Safari on iOS 26 shows the page behind its see-through toolbar, below where
-   bottom: 0 ends, and that part should be blurred too */
+/* reaches below the screen: Safari on iOS 26 shows the page behind its see-through toolbar */
 .fade-out {
-  position: fixed;
-  bottom: -10rem;
-  left: 0;
-  width: 100%;
-  height: 16rem;
-  pointer-events: none;
-  backdrop-filter: blur(1rem);
-  mask: linear-gradient(to bottom, transparent, var(--white) 6rem);
-  z-index: 10;
+    position: fixed;
+    bottom: -10rem;
+    left: 0;
+    width: 100%;
+    height: 16rem;
+    pointer-events: none;
+    backdrop-filter: blur(1rem);
+    mask: linear-gradient(to bottom, transparent, var(--white) 6rem);
+    z-index: 10;
 }
 
 footer {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  color: var(--mint);
-  background: linear-gradient(to bottom, var(--deep), transparent 75%);
-  padding-top: 1.2rem;
-  padding-bottom: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: var(--mint);
+    background: linear-gradient(to bottom, var(--deep), transparent 75%);
+    padding-top: 1.2rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
 }
 
 .heart {
-  color: var(--pink);
-  transition: color 0.5s ease, transform 0.05s ease-out;
+    color: var(--pink);
+    transition: color 0.5s ease, transform 0.05s ease-out;
 }
 
 .heart:hover {
-  color: var(--white);
+    color: var(--white);
 }
 
 .heart:active {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .social {
-  font-size: 1.2rem;
-  color: var(--mint);
-  margin: 1rem 0.5rem;
-  filter: drop-shadow(0 0 0 var(--navy));
-  transition: all 0.5s ease;
+    font-size: 1.2rem;
+    color: var(--mint);
+    margin: 1rem 0.5rem;
+    filter: drop-shadow(0 0 0 var(--navy));
+    transition: all 0.5s ease;
 }
 
 .social:hover {
-  color: var(--white);
-  filter: drop-shadow(0 0 0.5rem var(--mint));
+    color: var(--white);
+    filter: drop-shadow(0 0 0.5rem var(--mint));
 }
 
 .copyright {
-  font-weight: 700;
-  color: var(--deep);
+    font-weight: 700;
+    color: var(--deep);
 }
 
-/* where a toast could run into the "more" menu (bottom right), it sits just above the menu instead */
+/* keeps the toast above the "more" menu where they would overlap */
 @media (max-width: 1000px) {
-  #toast {
-    bottom: 6.25rem;
-    width: max-content;
-    max-width: calc(100vw - 2rem);
-    box-sizing: border-box;
-  }
+    #toast {
+        bottom: 6.25rem;
+        width: max-content;
+        max-width: calc(100vw - 2rem);
+        box-sizing: border-box;
+    }
 }
 
 @media (max-width: 600px) {
-  .nav-item {
-    font-size: 1rem;
-    padding: 1.2rem 0;
-  }
+    .nav-item {
+        font-size: 1rem;
+        padding: 1.2rem 0;
+    }
 
-  .nav-item.left {
-    margin-right: 2rem;
-  }
+    .nav-item.left {
+        margin-right: 2rem;
+    }
 
-  .nav-item.right {
-    margin-left: 2rem;
-  }
+    .nav-item.right {
+        margin-left: 2rem;
+    }
 
-  .logo {
-    font-size: 2rem;
-  }
+    .logo {
+        font-size: 2rem;
+    }
 }
 </style>

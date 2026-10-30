@@ -104,7 +104,9 @@ onMounted(() => {
     transition: transform 0.5s ease;
 }
 
-.live-card.hoverable:hover .spotify-cover {
-    transform: scale(1.2);
+.live-card.hoverable:hover {
+    .spotify-cover {
+        transform: scale(1.2);
+    }
 }
 </style>

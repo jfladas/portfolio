@@ -3,8 +3,6 @@ name: Build and Deploy Portfolio
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - "public/spotify.json"
   workflow_dispatch:
 
 permissions:

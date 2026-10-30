@@ -88,11 +88,12 @@ onMounted(async () => {
     transition: transform 0.5s ease;
 }
 
-.live-card.hoverable:hover .duolingo-flame {
-    transform: scale(1);
+.live-card.hoverable:hover {
+    .duolingo-flame {
+        transform: scale(1);
+    }
 }
 
-/* not practiced yet: unlit, navy */
 .flame-bottom {
     stop-color: var(--navy);
 }
@@ -105,16 +106,17 @@ onMounted(async () => {
     stop-color: var(--navy);
 }
 
-/* practiced today: lit */
-.lit .flame-bottom {
-    stop-color: var(--aqua);
-}
+.lit {
+    .flame-bottom {
+        stop-color: var(--aqua);
+    }
 
-.lit .flame-middle {
-    stop-color: var(--white);
-}
+    .flame-middle {
+        stop-color: var(--white);
+    }
 
-.lit .flame-top {
-    stop-color: var(--pink);
+    .flame-top {
+        stop-color: var(--pink);
+    }
 }
 </style>

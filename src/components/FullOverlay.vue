@@ -82,7 +82,6 @@ html.overlay-open {
     overscroll-behavior: contain;
 }
 
-/* media fills the whole screen; images and videos keep their aspect ratio inside it */
 .overlay-content {
     position: relative;
     width: 100%;
@@ -90,7 +89,6 @@ html.overlay-open {
     overflow: hidden;
 }
 
-/* the players fill this area */
 #images-teleport,
 #video-teleport,
 #presentation-teleport {

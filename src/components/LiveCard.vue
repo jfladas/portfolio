@@ -29,7 +29,6 @@ defineProps({
 </script>
 
 <style scoped>
-/* registered so the gradient's strength can be animated and transitioned */
 @property --live-alpha {
     syntax: '<number>';
     inherits: false;
@@ -83,8 +82,10 @@ defineProps({
     font-weight: 500;
 }
 
-.active .live-state {
-    color: var(--pink);
+.active {
+    .live-state {
+        color: var(--pink);
+    }
 }
 
 .live-title {

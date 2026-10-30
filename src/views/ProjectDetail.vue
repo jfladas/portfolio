@@ -325,7 +325,6 @@ const setupBannerTicker = async () => {
     margin-right: 0.75rem;
 }
 
-/* one heart per layout: above Links & Downloads in the sticky sidebar on wide screens, under the context lines below 1200px */
 .heart-compact {
     display: none;
     margin: -2rem 0 2rem;

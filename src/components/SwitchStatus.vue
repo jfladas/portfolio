@@ -58,7 +58,9 @@ onMounted(async () => {
     transition: transform 0.5s ease;
 }
 
-.live-card.hoverable:hover .switch-cover {
-    transform: scale(1.2);
+.live-card.hoverable:hover {
+    .switch-cover {
+        transform: scale(1.2);
+    }
 }
 </style>

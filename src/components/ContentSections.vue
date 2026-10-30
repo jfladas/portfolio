@@ -145,7 +145,6 @@ const prevSlide = (index) => {
     }
 }
 
-
 .collapsible:hover {
     .arrow {
         color: var(--sky);
@@ -175,10 +174,10 @@ const prevSlide = (index) => {
     display: flex;
     margin-top: 0.5rem;
     color: var(--sky);
-}
 
-.iconed-container .text {
-    font-weight: 700;
+    .text {
+        font-weight: 700;
+    }
 }
 
 .bullet {
@@ -199,14 +198,14 @@ const prevSlide = (index) => {
     position: relative;
     isolation: isolate;
     padding: 1rem 0;
-}
 
-.quoted p {
-    position: relative;
-    font-family: 'Funnel Display Variable', sans-serif;
-    font-weight: 500;
-    font-size: 1.15rem;
-    line-height: 1.55;
+    p {
+        position: relative;
+        font-family: 'Funnel Display Variable', sans-serif;
+        font-weight: 500;
+        font-size: 1.15rem;
+        line-height: 1.55;
+    }
 }
 
 .quote-mark {
@@ -217,7 +216,6 @@ const prevSlide = (index) => {
     shape-rendering: crispEdges;
 }
 
-/* the text lines up with the other text, the marks stick out on both sides by the same amount */
 .quote-open {
     left: -2rem;
     top: -0.5rem;

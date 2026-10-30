@@ -1,476 +1,467 @@
-/* Colors */
-/* "only" also opts out of forced dark modes (browser auto-dark, see also the meta tags in index.html) */
+/* "only" also opts out of forced dark modes (browser auto-dark) */
 :root {
-  color-scheme: only dark;
+    color-scheme: only dark;
 
-  --white: #ffffff;
-  --aqua: #b9fff3;
-  --mint: #5dfbff;
-  --sky: #15abff;
-  --deep: #2e00c0;
-  --navy: #050028;
-  --purple: #a200ea;
-  --pink: #ff57eb;
+    --white: #ffffff;
+    --aqua: #b9fff3;
+    --mint: #5dfbff;
+    --sky: #15abff;
+    --deep: #2e00c0;
+    --navy: #050028;
+    --purple: #a200ea;
+    --pink: #ff57eb;
 
-  --white-rgb: 255, 255, 255;
-  --aqua-rgb: 185, 255, 243;
-  --mint-rgb: 93, 251, 255;
-  --sky-rgb: 21, 171, 255;
-  --deep-rgb: 46, 0, 192;
-  --navy-rgb: 5, 0, 40;
-  --purple-rgb: 162, 0, 234;
-  --pink-rgb: 255, 87, 235;
+    --white-rgb: 255, 255, 255;
+    --aqua-rgb: 185, 255, 243;
+    --mint-rgb: 93, 251, 255;
+    --sky-rgb: 21, 171, 255;
+    --deep-rgb: 46, 0, 192;
+    --navy-rgb: 5, 0, 40;
+    --purple-rgb: 162, 0, 234;
+    --pink-rgb: 255, 87, 235;
 }
 
 [data-theme='had'] {
-  --white: #FFFFFF;
-  --aqua: #FFFFFF;
-  --mint: #E1A6B6;
-  --sky: #E16DA0;
-  --deep: #734555;
-  --navy: #1B1008;
-  --purple: #632f7b;
-  --pink: #E6E09A;
+    --white: #FFFFFF;
+    --aqua: #FFFFFF;
+    --mint: #E1A6B6;
+    --sky: #E16DA0;
+    --deep: #734555;
+    --navy: #1B1008;
+    --purple: #632f7b;
+    --pink: #E6E09A;
 
-  --white-rgb: 255, 255, 255;
-  --aqua-rgb: 255, 255, 255;
-  --mint-rgb: 225, 166, 182;
-  --sky-rgb: 225, 109, 160;
-  --deep-rgb: 115, 69, 85;
-  --navy-rgb: 27, 16, 8;
-  --purple-rgb: 99, 47, 123;
-  --pink-rgb: 230, 224, 154;
+    --white-rgb: 255, 255, 255;
+    --aqua-rgb: 255, 255, 255;
+    --mint-rgb: 225, 166, 182;
+    --sky-rgb: 225, 109, 160;
+    --deep-rgb: 115, 69, 85;
+    --navy-rgb: 27, 16, 8;
+    --purple-rgb: 99, 47, 123;
+    --pink-rgb: 230, 224, 154;
 }
 
 [data-theme='milo'] {
-  --white: #C5AE43;
-  --aqua: #D7CFCC;
-  --mint: #487178;
-  --sky: #354E57;
-  --deep: #141F28;
-  --navy: #000A12;
-  --purple: #292322;
-  --pink: #C04C09;
+    --white: #C5AE43;
+    --aqua: #D7CFCC;
+    --mint: #487178;
+    --sky: #354E57;
+    --deep: #141F28;
+    --navy: #000A12;
+    --purple: #292322;
+    --pink: #C04C09;
 
-  --white-rgb: 197, 174, 67;
-  --aqua-rgb: 215, 207, 204;
-  --mint-rgb: 72, 113, 120;
-  --sky-rgb: 53, 78, 87;
-  --deep-rgb: 20, 31, 40;
-  --navy-rgb: 0, 10, 18;
-  --purple-rgb: 41, 35, 34;
-  --pink-rgb: 192, 76, 9;
+    --white-rgb: 197, 174, 67;
+    --aqua-rgb: 215, 207, 204;
+    --mint-rgb: 72, 113, 120;
+    --sky-rgb: 53, 78, 87;
+    --deep-rgb: 20, 31, 40;
+    --navy-rgb: 0, 10, 18;
+    --purple-rgb: 41, 35, 34;
+    --pink-rgb: 192, 76, 9;
 }
 
 [data-theme='sweet'] {
-  --white: #A4FEFE;
-  --aqua: #E0E0E0;
-  --mint: #F59CDE;
-  --sky: #D343AB;
-  --deep: #632353;
-  --navy: #1D0115;
-  --purple: #293D35;
-  --pink: #37782A;
+    --white: #A4FEFE;
+    --aqua: #E0E0E0;
+    --mint: #F59CDE;
+    --sky: #D343AB;
+    --deep: #632353;
+    --navy: #1D0115;
+    --purple: #293D35;
+    --pink: #37782A;
 
-  --white-rgb: 164, 254, 254;
-  --aqua-rgb: 224, 224, 224;
-  --mint-rgb: 245, 156, 222;
-  --sky-rgb: 211, 67, 171;
-  --deep-rgb: 99, 35, 83;
-  --navy-rgb: 29, 1, 21;
-  --purple-rgb: 41, 61, 53;
-  --pink-rgb: 55, 120, 42;
+    --white-rgb: 164, 254, 254;
+    --aqua-rgb: 224, 224, 224;
+    --mint-rgb: 245, 156, 222;
+    --sky-rgb: 211, 67, 171;
+    --deep-rgb: 99, 35, 83;
+    --navy-rgb: 29, 1, 21;
+    --purple-rgb: 41, 61, 53;
+    --pink-rgb: 55, 120, 42;
 }
 
 [data-theme='light'] {
-  color-scheme: only light;
+    color-scheme: only light;
 
-  --white: #050028;
-  --aqua: #050028;
-  --mint: #2e00c0;
-  --sky: #2e00c0;
-  --deep: #15abff;
-  --navy: #ffffff;
-  --purple: #ff57eb;
-  --pink: #a200ea;
+    --white: #050028;
+    --aqua: #050028;
+    --mint: #2e00c0;
+    --sky: #2e00c0;
+    --deep: #15abff;
+    --navy: #ffffff;
+    --purple: #ff57eb;
+    --pink: #a200ea;
 
-  --white-rgb: 46, 0, 192;
-  --aqua-rgb: 5, 0, 40;
-  --mint-rgb: 46, 0, 192;
-  --sky-rgb: 21, 171, 255;
-  --deep-rgb: 93, 251, 255;
-  --navy-rgb: 255, 255, 255;
-  --purple-rgb: 255, 87, 235;
-  --pink-rgb: 162, 0, 234;
+    --white-rgb: 46, 0, 192;
+    --aqua-rgb: 5, 0, 40;
+    --mint-rgb: 46, 0, 192;
+    --sky-rgb: 21, 171, 255;
+    --deep-rgb: 93, 251, 255;
+    --navy-rgb: 255, 255, 255;
+    --purple-rgb: 255, 87, 235;
+    --pink-rgb: 162, 0, 234;
 }
 
-/* Base */
 * {
-  -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  font-family: "Funnel Sans Variable", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1rem;
-  color: var(--white);
-  background-color: var(--navy);
-  overflow-x: hidden;
-  margin: 0;
-  transition: margin 0.5s;
+    font-family: "Funnel Sans Variable", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--navy);
+    overflow-x: hidden;
+    margin: 0;
+    transition: margin 0.5s;
 }
 
 ::selection {
-  background-color: var(--deep);
-  color: var(--white);
+    background-color: var(--deep);
+    color: var(--white);
 }
 
 h1 {
-  font-family: "Funnel Display Variable", sans-serif;
-  font-weight: 800;
-  font-size: 3.5rem;
-  line-height: 3.2rem;
-  color: var(--white);
-  margin: 3.2rem 0 0.5rem 0;
-  overflow-x: clip;
-  text-overflow: ellipsis;
-  max-width: 55vw;
+    font-family: "Funnel Display Variable", sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+    line-height: 3.2rem;
+    color: var(--white);
+    margin: 3.2rem 0 0.5rem 0;
+    overflow-x: clip;
+    text-overflow: ellipsis;
+    max-width: 55vw;
 }
 
 h2 {
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 2rem;
-  color: var(--aqua);
-  margin-top: 0;
-  margin-bottom: -0.5rem;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2rem;
+    color: var(--aqua);
+    margin-top: 0;
+    margin-bottom: -0.5rem;
 }
 
 h3 {
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 2rem;
-  color: var(--sky);
-  margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2rem;
+    color: var(--sky);
+    margin-bottom: 1rem;
 }
 
 h4 {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  margin-bottom: 0;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
 }
 
 p {
-  margin: 0;
+    margin: 0;
 }
 
 .text-title {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .bold {
-  font-weight: 700;
-  color: var(--mint);
-  text-shadow: none;
-  cursor: pointer;
-  transition: color 0.5s, text-shadow 0.5s;
+    font-weight: 700;
+    color: var(--mint);
+    text-shadow: none;
+    cursor: pointer;
+    transition: color 0.5s, text-shadow 0.5s;
 }
 
 .bold:hover {
-  color: var(--white);
-  text-shadow: var(--mint) 0 0 1rem;
+    color: var(--white);
+    text-shadow: var(--mint) 0 0 1rem;
 }
 
 .snippet {
-  font-family: "JetBrains Mono Variable", monospace;
-  font-weight: 400;
-  font-size: 0.95rem;
-  color: var(--white);
-  background: linear-gradient(to top, rgba(var(--deep-rgb), 0.5), transparent);
-  margin: 0;
-  padding: 0 0.3rem;
+    font-family: "JetBrains Mono Variable", monospace;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--white);
+    background: linear-gradient(to top, rgba(var(--deep-rgb), 0.5), transparent);
+    margin: 0;
+    padding: 0 0.3rem;
 }
 
 .snippet.copy {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .snippet.copy:hover {
-  font-weight: 700;
-  background: linear-gradient(to top, var(--deep), transparent);
+    font-weight: 700;
+    background: linear-gradient(to top, var(--deep), transparent);
 }
 
 .snippet.copy:active {
-  background: linear-gradient(to top, var(--sky), var(--deep));
+    background: linear-gradient(to top, var(--sky), var(--deep));
 }
 
 a {
-  color: unset;
-  cursor: pointer;
-  text-decoration: none;
+    color: unset;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 a:hover {
-  color: unset;
+    color: unset;
 }
 
 a:active {
-  color: unset;
+    color: unset;
 }
 
-/* Keyboard focus (Tab navigation only, not shown on mouse clicks) */
-/* keeps tabbed-to elements clear of the fixed header, WIP banner and bottom fade when the browser scrolls to them */
+/* keeps tabbed-to elements clear of the fixed header, WIP banner and bottom fade */
 html {
-  scroll-padding-top: 8rem;
-  scroll-padding-bottom: 6rem;
+    scroll-padding-top: 8rem;
+    scroll-padding-bottom: 6rem;
 }
 
 :focus-visible {
-  outline: 2px solid var(--white);
-  outline-offset: 2px;
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
 }
 
 /* browsers draw their default ring on clicked focusable icons (SVG) even without keyboard use */
 :focus:not(:focus-visible) {
-  outline: none;
+    outline: none;
 }
 
 .disclaimer {
-  color: var(--sky);
+    color: var(--sky);
 }
 
-/* Icons (<AppIcon>, see src/icons.js) */
-/* all sets used here (Remix Icon, Font Awesome 7 Brands, SVG Spinners, pixel icons) draw with a margin inside their box,
-   so a 1.2em box makes the shape itself about 1em tall, the size the old Font Awesome 6 icons had; the box stays
-   centered where a 1em icon would sit on the text */
+/* the icons draw with a margin inside their box, so a 1.2em box makes the shape itself about 1em */
 .app-icon {
-  display: inline-block;
-  flex: none;
-  width: 1.2em;
-  height: 1.2em;
-  vertical-align: -0.225em;
+    display: inline-block;
+    flex: none;
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: -0.225em;
 }
 
-/* for icons in a column (link lists), like Font Awesome's fixed-width */
 .app-icon-fw {
-  width: 1.25em;
+    width: 1.25em;
 }
 
 .app-icon.rotate-90 {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
-/* Buttons */
 button {
-  font-family: "Funnel Sans Variable", sans-serif;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--navy);
-  border: none;
-  padding: 0.5rem 1rem;
-  pointer-events: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 0.5rem;
-  white-space: nowrap;
-  height: 2.5rem;
-  width: 100%;
-  cursor: pointer;
-  transition: width 0.5s;
+    font-family: "Funnel Sans Variable", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--navy);
+    border: none;
+    padding: 0.5rem 1rem;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+    white-space: nowrap;
+    height: 2.5rem;
+    width: 100%;
+    cursor: pointer;
+    transition: width 0.5s;
 }
 
 .button-primary {
-  background: var(--mint);
+    background: var(--mint);
 }
 
 .button-primary:hover {
-  background: linear-gradient(to right, var(--mint), var(--aqua));
+    background: linear-gradient(to right, var(--mint), var(--aqua));
 }
 
 .button-primary:active {
-  background: linear-gradient(to right, var(--aqua), var(--white));
+    background: linear-gradient(to right, var(--aqua), var(--white));
 }
 
 .button-secondary {
-  background: var(--deep);
-  color: var(--aqua);
+    background: var(--deep);
+    color: var(--aqua);
 }
 
 .button-secondary:hover {
-  background: linear-gradient(to right, var(--deep), var(--sky) 150%);
+    background: linear-gradient(to right, var(--deep), var(--sky) 150%);
 }
 
 .button-secondary:active {
-  background: linear-gradient(to right, var(--deep) -50%, var(--sky));
-  color: var(--white);
+    background: linear-gradient(to right, var(--deep) -50%, var(--sky));
+    color: var(--white);
 }
 
 .button-tertiary {
-  background: var(--pink);
+    background: var(--pink);
 }
 
 .button-tertiary:hover {
-  background: linear-gradient(to right, var(--purple), var(--pink));
+    background: linear-gradient(to right, var(--purple), var(--pink));
 }
 
 .button-tertiary:active {
-  background: linear-gradient(to right, var(--pink), var(--white));
+    background: linear-gradient(to right, var(--pink), var(--white));
 }
 
 .button-container {
-  margin-top: 1rem;
-  padding-bottom: 0rem;
-  margin-bottom: 1rem;
-  pointer-events: none;
-  background: linear-gradient(to top, transparent, var(--deep) 50%);
-  transform: scale(1);
-  transition: all 0.5s;
+    margin-top: 1rem;
+    padding-bottom: 0rem;
+    margin-bottom: 1rem;
+    pointer-events: none;
+    background: linear-gradient(to top, transparent, var(--deep) 50%);
+    transform: scale(1);
+    transition: all 0.5s;
 }
 
 .button-container:hover {
-  padding-bottom: 1rem;
-  margin-bottom: 0rem;
-  transform: scale(1.1);
+    padding-bottom: 1rem;
+    margin-bottom: 0rem;
+    transform: scale(1.1);
 }
 
 .button-container:active {
-  background: linear-gradient(to top, transparent, var(--deep), var(--sky) 50%);
+    background: linear-gradient(to top, transparent, var(--deep), var(--sky) 50%);
 }
 
 .button-container.disabled {
-  pointer-events: none;
-  background: none;
-  transform: scale(1);
+    pointer-events: none;
+    background: none;
+    transform: scale(1);
 
-  button {
-    background: var(--purple);
-    color: var(--white);
-    cursor: default;
-  }
+    button {
+        background: var(--purple);
+        color: var(--white);
+        cursor: default;
+    }
 }
 
 .buttons {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 
-  .button-container {
-    margin-top: 0;
-  }
+    .button-container {
+        margin-top: 0;
+    }
 }
 
-/* Layout */
 .content {
-  position: relative;
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  margin: 4rem 0 4rem 10%;
-  gap: 4rem;
+    position: relative;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin: 4rem 0 4rem 10%;
+    gap: 4rem;
 }
 
 .content-left,
 .content-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .content-left {
-  width: 50vw;
-  margin-top: 6rem;
+    width: 50vw;
+    margin-top: 6rem;
 }
 
 .content-right {
-  width: 30vw;
-  margin-top: 10rem;
+    width: 30vw;
+    margin-top: 10rem;
 }
 
 .right-container {
-  position: sticky;
-  top: 8rem;
-  width: 100%;
+    position: sticky;
+    top: 8rem;
+    width: 100%;
 
-  h3 {
-    margin-top: 0;
-  }
+    h3 {
+        margin-top: 0;
+    }
 }
 
 .jap {
-  font-family: "DotGothic16", sans-serif;
-  font-weight: 400;
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
 }
 
 @media (max-width: 1200px) {
-  .content {
-    flex-direction: column;
-    width: 84vw;
-    margin-left: 8%;
-    gap: 2rem;
-  }
+    .content {
+        flex-direction: column;
+        width: 84vw;
+        margin-left: 8%;
+        gap: 2rem;
+    }
 
-  .content-left,
-  .content-right {
-    width: 100%;
-    margin-top: 0;
-  }
+    .content-left,
+    .content-right {
+        width: 100%;
+        margin-top: 0;
+    }
 
-  .content-left {
-    margin-top: 3.5rem;
-  }
+    .content-left {
+        margin-top: 3.5rem;
+    }
 
-  h1 {
-    margin-top: 2.5rem;
-    max-width: 84vw;
-  }
+    h1 {
+        margin-top: 2.5rem;
+        max-width: 84vw;
+    }
 
-  h2 {
-    font-size: 2rem;
-    line-height: 2rem;
-  }
+    h2 {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
 
-  h3 {
-    font-size: 1.8rem;
-    line-height: 1.8rem;
-    margin-bottom: 0.8rem;
-  }
+    h3 {
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
 
-  h4 {
-    font-size: 1.2rem;
-  }
+    h4 {
+        font-size: 1.2rem;
+    }
 
-  .buttons {
-    gap: 1rem;
-  }
+    .buttons {
+        gap: 1rem;
+    }
 
-  button {
-    font-size: 1rem;
-    height: 2rem;
-  }
+    button {
+        font-size: 1rem;
+        height: 2rem;
+    }
 }
 
 @media (max-width: 600px) {
-  .content-left {
-    margin-top: 2rem;
-  }
+    .content-left {
+        margin-top: 2rem;
+    }
 
-  h1 {
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-    margin-bottom: 0;
-  }
+    h1 {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        margin-bottom: 0;
+    }
 
-  h2 {
-    font-size: 1.8rem;
-  }
+    h2 {
+        font-size: 1.8rem;
+    }
 
-  h3 {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-  }
+    h3 {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
 }

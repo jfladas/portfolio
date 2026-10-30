@@ -2681,7 +2681,7 @@ export const projects = [
         id: 'sweetteeth',
         cover: sweetteethFiles['../projects/sweetteeth/cover.jpg']?.default,
         name: 'sweet teeth',
-        description: `2d auto-runner game`,
+        description: { en: '2d auto-scrolling platforming game', de: '2D auto-scrolling Platformspiel' },
         context: {
             lines: [
                 '2023 @ HSLU, Rotkreuz',

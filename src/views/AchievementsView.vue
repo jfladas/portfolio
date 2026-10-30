@@ -96,7 +96,6 @@ const progressPercent = computed(() => {
 }
 
 .stats.all-unlocked {
-
     .stats-header {
         color: var(--pink);
         font-weight: 700;
@@ -109,7 +108,6 @@ const progressPercent = computed(() => {
                 var(--pink) 55%);
         background-size: 400% 400%;
     }
-
 }
 
 @keyframes shine {

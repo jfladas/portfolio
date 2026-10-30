@@ -133,9 +133,6 @@ const props = defineProps({
 }
 
 @media (min-width: 600px) {
-
-    /* the card lies over its invisible closed copy and the cover takes whatever height the text leaves,
-       so the cover shrinks as the description opens instead of the card growing */
     .project-card {
         position: relative;
 
@@ -149,12 +146,12 @@ const props = defineProps({
             inset: 0;
             display: flex;
             flex-direction: column;
-        }
 
-        a .cover-wrap {
-            flex: 1 1 0;
-            min-height: 0;
-            aspect-ratio: auto;
+            .cover-wrap {
+                flex: 1 1 0;
+                min-height: 0;
+                aspect-ratio: auto;
+            }
         }
     }
 
@@ -198,10 +195,6 @@ const props = defineProps({
                 var(--mint),
                 var(--sky),
                 var(--deep));
-
-        .cover-wrap {
-            aspect-ratio: 16 / 10;
-        }
 
         p {
             font-size: 1.2rem;

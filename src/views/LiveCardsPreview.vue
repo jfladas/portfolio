@@ -77,10 +77,10 @@ const columns = [
 .column {
     flex: none;
     max-width: 100%;
-}
 
-.column h2 {
-    margin-bottom: 2rem;
+    h2 {
+        margin-bottom: 2rem;
+    }
 }
 
 .label {

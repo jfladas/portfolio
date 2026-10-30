@@ -26,19 +26,17 @@ jobs:
           ref: spotify-data
           path: spotify-data
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: "3.12"
+          node-version: 22
 
       - name: Fetch Spotify data
         env:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
           SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
-        run: |
-          pip install requests
-          python fetch_spotify.py spotify-data/spotify.json
+        run: node scripts/fetch-spotify.mjs spotify-data/spotify.json
 
       - name: Commit and push updated Spotify data
         uses: stefanzweifel/git-auto-commit-action@v5

@@ -1,44 +1,44 @@
 <template>
-  <FullOverlay :isOverlayVisible="isOverlayVisible" :overlayType="overlayType"
-    @close="toggleOverlay(overlayType, overlayIndex)" />
-  <div class="content">
-    <div class="content-left">
-      <h1 class="title hoverable">
-        <p class="jap thatsme" ref="typedtext2"></p>
-        {{ aboutContent.title }}
-      </h1>
-      <h2 class="subtitle">
-        <!-- the visible text is animated CSS content, which screen readers and checkers can't see -->
-        <span class="sr-only">digital ideator, frontend developer, creative coder, powerpoint enthusiast,
-          interaction designer</span>
-        <span class="subtitle-text" aria-hidden="true"></span>
-      </h2>
-      <div id="contact"></div>
-      <ContentSections :sections="aboutContent.sections" :currentIndexes="currentIndexes"
-        :isOverlayVisible="isOverlayVisible" :overlayIndex="overlayIndex" @toggle-overlay="toggleOverlay"
-        @next-slide="nextSlide" @prev-slide="prevSlide" />
+    <FullOverlay :isOverlayVisible="isOverlayVisible" :overlayType="overlayType"
+        @close="toggleOverlay(overlayType, overlayIndex)" />
+    <div class="content">
+        <div class="content-left">
+            <h1 class="title hoverable">
+                <p class="jap thatsme" ref="typedtext2"></p>
+                {{ aboutContent.title }}
+            </h1>
+            <h2 class="subtitle">
+                <!-- the visible text is animated CSS content, which screen readers and checkers can't see -->
+                <span class="sr-only">digital ideator, frontend developer, creative coder, powerpoint enthusiast,
+                    interaction designer</span>
+                <span class="subtitle-text" aria-hidden="true"></span>
+            </h2>
+            <div id="contact"></div>
+            <ContentSections :sections="aboutContent.sections" :currentIndexes="currentIndexes"
+                :isOverlayVisible="isOverlayVisible" :overlayIndex="overlayIndex" @toggle-overlay="toggleOverlay"
+                @next-slide="nextSlide" @prev-slide="prevSlide" />
+        </div>
+        <div class="content-right">
+            <div class="me-container hoverable">
+                <p class="jap overtext" ref="typedtext"></p>
+                <img src="/src/assets/me.jpg" alt="Lukas Bucher" class="me" />
+                <img src="/src/assets/me_glitch.jpg" alt="" class="me-glitch" />
+                <img src="/src/assets/me_dark.jpg" alt="" class="me-dark" />
+            </div>
+            <SpotifyStatus />
+            <DuolingoStreak />
+            <SwitchStatus />
+            <div class="right-container">
+                <LinksDownloads :links="aboutContent.links" :downloads="aboutContent.downloads" />
+            </div>
+        </div>
     </div>
-    <div class="content-right">
-      <div class="me-container hoverable">
-        <p class="jap overtext" ref="typedtext"></p>
-        <img src="/src/assets/me.jpg" alt="Lukas Bucher" class="me" />
-        <img src="/src/assets/me_glitch.jpg" alt="" class="me-glitch" />
-        <img src="/src/assets/me_dark.jpg" alt="" class="me-dark" />
-      </div>
-      <SpotifyStatus />
-      <DuolingoStreak />
-      <SwitchStatus />
-      <div class="right-container">
-        <LinksDownloads :links="aboutContent.links" :downloads="aboutContent.downloads" />
-      </div>
-    </div>
-  </div>
-  <section v-if="featuredProjects.length" class="related-section">
-    <h3 class="related-title">{{ featuredTitle }}</h3>
-    <div class="related-grid">
-      <ProjectCard v-for="project in featuredProjects" :key="`featured-${project.id}`" :project="project" />
-    </div>
-  </section>
+    <section v-if="featuredProjects.length" class="related-section">
+        <h3 class="related-title">{{ featuredTitle }}</h3>
+        <div class="related-grid">
+            <ProjectCard v-for="project in featuredProjects" :key="`featured-${project.id}`" :project="project" />
+        </div>
+    </section>
 </template>
 
 <script setup>
@@ -60,9 +60,9 @@ const { registerTokyoReveal } = useAchievements()
 const featuredProjectIds = ['blob', 'sputify', 'had']
 
 const featuredProjects = computed(() => {
-  return featuredProjectIds
-    .map((projectId) => projectCatalog.value.find((project) => project.id === projectId))
-    .filter(Boolean)
+    return featuredProjectIds
+        .map((projectId) => projectCatalog.value.find((project) => project.id === projectId))
+        .filter(Boolean)
 })
 
 const featuredTitle = computed(() => currentLanguage.value === 'en' ? 'Featured Projects' : 'Ausgewählte Projekte')
@@ -73,17 +73,17 @@ const overlayIndex = ref(null)
 const currentIndexes = ref([])
 
 const nextSlide = (index) => {
-  currentIndexes.value[index] = (currentIndexes.value[index] + 1) % aboutContent.value.sections[index].images.length
+    currentIndexes.value[index] = (currentIndexes.value[index] + 1) % aboutContent.value.sections[index].images.length
 }
 
 const prevSlide = (index) => {
-  currentIndexes.value[index] = (currentIndexes.value[index] - 1 + aboutContent.value.sections[index].images.length) % aboutContent.value.sections[index].images.length
+    currentIndexes.value[index] = (currentIndexes.value[index] - 1 + aboutContent.value.sections[index].images.length) % aboutContent.value.sections[index].images.length
 }
 
 const toggleOverlay = (type, index) => {
-  overlayType.value = type
-  overlayIndex.value = index
-  isOverlayVisible.value = !isOverlayVisible.value
+    overlayType.value = type
+    overlayIndex.value = index
+    isOverlayVisible.value = !isOverlayVisible.value
 }
 
 
@@ -92,17 +92,17 @@ const typedtext2 = ref(null)
 const speed = ref(100);
 
 const text = ref([
-  "東京にいる私",
-  "雨上がりの光が踊る街",
-  "静かな夜に漂うネオンの輝き",
-  "見知らぬ道を歩く私",
-  "ビルの隙間にのぞく赤い灯",
-  "透明な傘に映る街の色",
-  "光と影が交差する夜",
-  "ひとりの旅が描く物語",
-  "足元で流れる雨のリズム",
-  "",
-  ""
+    "東京にいる私",
+    "雨上がりの光が踊る街",
+    "静かな夜に漂うネオンの輝き",
+    "見知らぬ道を歩く私",
+    "ビルの隙間にのぞく赤い灯",
+    "透明な傘に映る街の色",
+    "光と影が交差する夜",
+    "ひとりの旅が描く物語",
+    "足元で流れる雨のリズム",
+    "",
+    ""
 ]);
 
 const index = ref(0);
@@ -121,387 +121,387 @@ const blinkTimeout2 = ref(null);
 const isBlinking2 = ref(false);
 
 const resetTypewriter = () => {
-  if (timeout.value) {
-    clearTimeout(timeout.value);
-  }
-  if (blinkTimeout.value) {
-    clearTimeout(blinkTimeout.value);
-  }
-  content.value = '';
-  index.value = 0;
-  pos.value = 0;
-  length.value = text.value[0].length;
-  isBlinking.value = false;
+    if (timeout.value) {
+        clearTimeout(timeout.value);
+    }
+    if (blinkTimeout.value) {
+        clearTimeout(blinkTimeout.value);
+    }
+    content.value = '';
+    index.value = 0;
+    pos.value = 0;
+    length.value = text.value[0].length;
+    isBlinking.value = false;
 };
 const typewriter = () => {
-  content.value = '';
-  row.value = 0;
-  const destination = typedtext.value;
-  row.value = 0;
+    content.value = '';
+    row.value = 0;
+    const destination = typedtext.value;
+    row.value = 0;
 
-  while (row.value < index.value) {
-    content.value += text.value[row.value++] + '<br />';
-  }
-  if (index.value < text.value.length - 1) {
-    destination.innerHTML = content.value + text.value[index.value].substring(0, pos.value) + "★";
-  }
-  if (pos.value++ === length.value) {
-    pos.value = 0;
-    index.value++;
-    if (index.value !== text.value.length - 1) {
-      if (text.value[index.value]) {
-        length.value = text.value[index.value].length;
-      }
-      timeout.value = setTimeout(typewriter, speed.value * 4);
-    } else {
-      blinkStar();
+    while (row.value < index.value) {
+        content.value += text.value[row.value++] + '<br />';
     }
-  } else {
-    timeout.value = setTimeout(typewriter, speed.value);
-  }
+    if (index.value < text.value.length - 1) {
+        destination.innerHTML = content.value + text.value[index.value].substring(0, pos.value) + "★";
+    }
+    if (pos.value++ === length.value) {
+        pos.value = 0;
+        index.value++;
+        if (index.value !== text.value.length - 1) {
+            if (text.value[index.value]) {
+                length.value = text.value[index.value].length;
+            }
+            timeout.value = setTimeout(typewriter, speed.value * 4);
+        } else {
+            blinkStar();
+        }
+    } else {
+        timeout.value = setTimeout(typewriter, speed.value);
+    }
 };
 const blinkStar = () => {
-  const destination = typedtext.value;
-  registerTokyoReveal()
-  if (isBlinking.value) {
-    destination.innerHTML = content.value + "★";
-  } else {
-    destination.innerHTML = content.value;
-  }
-  isBlinking.value = !isBlinking.value;
-  blinkTimeout.value = setTimeout(blinkStar, speed.value * 4);
+    const destination = typedtext.value;
+    registerTokyoReveal()
+    if (isBlinking.value) {
+        destination.innerHTML = content.value + "★";
+    } else {
+        destination.innerHTML = content.value;
+    }
+    isBlinking.value = !isBlinking.value;
+    blinkTimeout.value = setTimeout(blinkStar, speed.value * 4);
 };
 
 const resetTypewriter2 = () => {
-  if (timeout2.value) {
-    clearTimeout(timeout2.value);
-  }
-  if (blinkTimeout2.value) {
-    clearTimeout(blinkTimeout2.value);
-  }
-  pos2.value = 0;
-  isBlinking2.value = false;
+    if (timeout2.value) {
+        clearTimeout(timeout2.value);
+    }
+    if (blinkTimeout2.value) {
+        clearTimeout(blinkTimeout2.value);
+    }
+    pos2.value = 0;
+    isBlinking2.value = false;
 };
 
 const blinkHand = () => {
-  const destination = typedtext2.value;
-  if (isBlinking2.value) {
-    destination.innerHTML = text2.value;
-  } else {
-    destination.innerHTML = "☞" + text2.value;
-  }
-  isBlinking2.value = !isBlinking2.value;
-  blinkTimeout2.value = setTimeout(blinkHand, speed.value * 4);
+    const destination = typedtext2.value;
+    if (isBlinking2.value) {
+        destination.innerHTML = text2.value;
+    } else {
+        destination.innerHTML = "☞" + text2.value;
+    }
+    isBlinking2.value = !isBlinking2.value;
+    blinkTimeout2.value = setTimeout(blinkHand, speed.value * 4);
 };
 
 const typewriter2 = () => {
-  const destination = typedtext2.value;
+    const destination = typedtext2.value;
 
-  pos2.value++;
-  if (pos2.value < text2.value.length + 1) {
-    destination.innerHTML = "☞" + text2.value.substring(0, pos2.value);
-  } else {
-    blinkHand();
-    return;
-  }
-  timeout2.value = setTimeout(typewriter2, speed.value);
+    pos2.value++;
+    if (pos2.value < text2.value.length + 1) {
+        destination.innerHTML = "☞" + text2.value.substring(0, pos2.value);
+    } else {
+        blinkHand();
+        return;
+    }
+    timeout2.value = setTimeout(typewriter2, speed.value);
 };
 
 onMounted(() => {
-  if (aboutContent.value) {
-    aboutContent.value.sections.forEach((section, index) => {
-      if (section.type === 'images') {
-        currentIndexes.value[index] = 0
-      }
-    })
-  }
-  length.value = text.value[0].length;
-  const meContainer = document.querySelector('.me-container');
-  meContainer.addEventListener('mouseover', () => {
-    resetTypewriter();
-    typewriter();
-  });
-  meContainer.addEventListener('mouseleave', resetTypewriter);
+    if (aboutContent.value) {
+        aboutContent.value.sections.forEach((section, index) => {
+            if (section.type === 'images') {
+                currentIndexes.value[index] = 0
+            }
+        })
+    }
+    length.value = text.value[0].length;
+    const meContainer = document.querySelector('.me-container');
+    meContainer.addEventListener('mouseover', () => {
+        resetTypewriter();
+        typewriter();
+    });
+    meContainer.addEventListener('mouseleave', resetTypewriter);
 
-  const title = document.querySelector('.title');
-  title.addEventListener('mouseover', () => {
-    resetTypewriter2();
-    typewriter2();
-  });
-  title.addEventListener('mouseleave', resetTypewriter2);
+    const title = document.querySelector('.title');
+    title.addEventListener('mouseover', () => {
+        resetTypewriter2();
+        typewriter2();
+    });
+    title.addEventListener('mouseleave', resetTypewriter2);
 });
 </script>
 
 <style scoped>
 .related-section {
-  width: 80%;
-  margin: 4rem 0 4rem 10%;
+    width: 80%;
+    margin: 4rem 0 4rem 10%;
 }
 
 .related-title {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .related-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
 }
 
 #contact {
-  position: relative;
-  transform: translate(0, 6rem);
+    position: relative;
+    transform: translate(0, 6rem);
 }
 
 .subtitle {
-  height: 2rem;
-  margin-bottom: 3rem;
+    height: 2rem;
+    margin-bottom: 3rem;
 }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 
 .subtitle-text::before {
-  color: var(--aqua);
-  content: 'digital ideator';
-  /* change-text holds each title for 4s; change-color fades out and back in around each swap.
-     Every title has to fit on one line on phones, the quote below starts right after it */
-  animation: change-text 20s linear infinite, change-color 4s linear infinite;
+    color: var(--aqua);
+    content: 'digital ideator';
+    /* every title has to fit on one line on phones */
+    animation: change-text 20s linear infinite, change-color 4s linear infinite;
 }
 
 @keyframes change-color {
 
-  0%,
-  10%,
-  90%,
-  100% {
-    color: var(--aqua);
-  }
+    0%,
+    10%,
+    90%,
+    100% {
+        color: var(--aqua);
+    }
 
-  20%,
-  80% {
-    color: var(--mint);
-  }
+    20%,
+    80% {
+        color: var(--mint);
+    }
 
-  30%,
-  70% {
-    color: var(--sky);
-  }
+    30%,
+    70% {
+        color: var(--sky);
+    }
 
-  40%,
-  60% {
-    color: var(--deep);
-  }
+    40%,
+    60% {
+        color: var(--deep);
+    }
 
-  50% {
-    color: rgba(var(--navy-rgb), 0);
-  }
+    50% {
+        color: rgba(var(--navy-rgb), 0);
+    }
 }
 
 @keyframes change-text {
 
-  0%,
-  100% {
-    content: "digital ideator";
-  }
+    0%,
+    100% {
+        content: "digital ideator";
+    }
 
-  20% {
-    content: "frontend developer";
-  }
+    20% {
+        content: "frontend developer";
+    }
 
-  40% {
-    content: "creative coder";
-  }
+    40% {
+        content: "creative coder";
+    }
 
-  60% {
-    content: "powerpoint enthusiast";
-  }
+    60% {
+        content: "powerpoint enthusiast";
+    }
 
-  80% {
-    content: "interaction designer";
-  }
+    80% {
+        content: "interaction designer";
+    }
 }
 
 .me-container {
-  position: relative;
-  width: 100%;
-  margin-bottom: 2rem;
-  height: 40vw;
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    height: 40vw;
 }
 
-.me-container:hover .me-dark {
-  animation-play-state: running;
+.me-container:hover {
+    .me-dark {
+        animation-play-state: running;
+    }
+
+    .overtext {
+        opacity: 1;
+    }
 }
 
 .me {
-  position: relative;
-  width: 30vw;
-  height: 40vw;
-  opacity: 1;
-  transition: opacity 0.3s linear;
-  z-index: 3;
+    position: relative;
+    width: 30vw;
+    height: 40vw;
+    opacity: 1;
+    transition: opacity 0.3s linear;
+    z-index: 3;
 }
 
 .me:hover {
-  opacity: 0;
+    opacity: 0;
 }
 
 .me-glitch {
-  position: absolute;
-  left: 0;
-  width: 30vw;
-  z-index: 2;
+    position: absolute;
+    left: 0;
+    width: 30vw;
+    z-index: 2;
 }
 
 .me-dark {
-  position: absolute;
-  left: 0;
-  width: 30vw;
-  height: auto;
-  z-index: 1;
-  animation: stretch 4s infinite ease-in-out;
-  animation-play-state: paused;
+    position: absolute;
+    left: 0;
+    width: 30vw;
+    height: auto;
+    z-index: 1;
+    animation: stretch 4s infinite ease-in-out;
+    animation-play-state: paused;
 }
 
 @keyframes stretch {
-  0% {
-    transform: translate(0, 0) scale(1, 1);
-  }
+    0% {
+        transform: translate(0, 0) scale(1, 1);
+    }
 
-  50% {
-    transform: translate(50%, 0) scale(0.75, 1);
-  }
+    50% {
+        transform: translate(50%, 0) scale(0.75, 1);
+    }
 
-  100% {
-    transform: translate(0, 0) scale(1, 1);
-  }
+    100% {
+        transform: translate(0, 0) scale(1, 1);
+    }
 }
 
 .overtext,
 .thatsme {
-  position: absolute;
-  padding: 1rem;
-  width: 35vw;
-  font-size: 2vw;
-  background: linear-gradient(to right, var(--white), var(--pink), var(--purple) 80%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  opacity: 0;
-  white-space: nowrap;
-  z-index: 4;
-  pointer-events: none;
+    position: absolute;
+    padding: 1rem;
+    width: 35vw;
+    font-size: 2vw;
+    background: linear-gradient(to right, var(--white), var(--pink), var(--purple) 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+    white-space: nowrap;
+    z-index: 4;
+    pointer-events: none;
 }
 
 .title {
-  position: relative;
-  background: linear-gradient(to left, var(--white) 50%, var(--aqua));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: transform 1s;
+    position: relative;
+    background: linear-gradient(to left, var(--white) 50%, var(--aqua));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: transform 1s;
 }
 
 .title:hover {
-  transform: translate(-5vw, 0);
+    transform: translate(-5vw, 0);
+
+    .thatsme {
+        opacity: 1;
+        transform: translate(-1vw, calc(-2.5rem - 2vw));
+    }
 }
 
 .title::before {
-  position: absolute;
-  content: "Lukas Bucher";
-  inset: 0;
-  color: var(--white);
-  background-color: var(--navy);
-  opacity: 1;
-  z-index: 1;
-  transition: opacity 1s;
+    position: absolute;
+    content: "Lukas Bucher";
+    inset: 0;
+    color: var(--white);
+    background-color: var(--navy);
+    opacity: 1;
+    z-index: 1;
+    transition: opacity 1s;
 }
 
 .title:hover::before {
-  opacity: 0;
-}
-
-.title:hover .thatsme {
-  opacity: 1;
-  transform: translate(-1vw, calc(-2.5rem - 2vw));
-}
-
-.me-container:hover .overtext {
-  opacity: 1;
+    opacity: 0;
 }
 
 @media (max-width: 1200px) {
 
-  .me-container {
-    width: 85vw;
-    overflow: hidden;
-    height: 53vw;
-  }
+    .me-container {
+        width: 85vw;
+        overflow: hidden;
+        height: 53vw;
+    }
 
-  .me,
-  .me-glitch,
-  .me-dark {
-    width: 40vw;
-    height: 53vw;
-  }
+    .me,
+    .me-glitch,
+    .me-dark {
+        width: 40vw;
+        height: 53vw;
+    }
 
-  .overtext,
-  .thatsme {
-    width: 100%;
-    font-size: 3vw;
-  }
+    .overtext,
+    .thatsme {
+        width: 100%;
+        font-size: 3vw;
+    }
 
-  .overtext {
-    margin-left: 40vw;
-    padding-top: 0;
-  }
+    .overtext {
+        margin-left: 40vw;
+        padding-top: 0;
+    }
 
-  .subtitle {
-    margin-bottom: 1.5rem;
-  }
+    .subtitle {
+        margin-bottom: 1.5rem;
+    }
 
-  .related-section {
-    width: 84vw;
-    margin-left: 8%;
-  }
+    .related-section {
+        width: 84vw;
+        margin-left: 8%;
+    }
 
-  .related-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+    .related-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
-  .related-grid> :nth-child(n + 3) {
-    display: none;
-  }
+    .related-grid> :nth-child(n + 3) {
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
 
-  .me-container {
-    width: 100%;
-    height: 100vw;
-  }
+    .me-container {
+        width: 100%;
+        height: 100vw;
+    }
 
-  .me,
-  .me-glitch,
-  .me-dark {
-    width: 75vw;
-    height: 100vw;
-  }
+    .me,
+    .me-glitch,
+    .me-dark {
+        width: 75vw;
+        height: 100vw;
+    }
 
-  .overtext,
-  .thatsme {
-    font-size: 5vw;
-  }
+    .overtext,
+    .thatsme {
+        font-size: 5vw;
+    }
 
-  .overtext {
-    margin-left: 0;
-  }
-
+    .overtext {
+        margin-left: 0;
+    }
 }
 </style>

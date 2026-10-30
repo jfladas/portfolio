@@ -268,52 +268,49 @@ export default {
     width: 100%;
     display: flex;
     background: linear-gradient(to top, rgba(var(--deep-rgb), 0.2), rgba(var(--deep-rgb), 0));
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+    video.small {
+        max-height: 30rem;
+    }
 }
 
 .video-player.loading-placeholder {
     aspect-ratio: 16 / 9;
+
+    video {
+        height: 100%;
+        object-fit: contain;
+    }
 }
 
-.video-player video {
-    width: 100%;
-    height: auto;
-}
-
-.video-player.loading-placeholder video {
-    height: 100%;
-    object-fit: contain;
-}
-
-.video-player video.small {
-    max-height: 30rem;
-}
-
-/* expanded: fills the screen, so the bottom bar runs along the screen's bottom edge */
 .video-player.expanded {
     height: 100%;
     background: none;
-}
 
-.video-player.expanded video {
-    height: 100%;
-    object-fit: contain;
+    video {
+        height: 100%;
+        object-fit: contain;
+    }
 }
 
 .progress {
     position: absolute;
     left: 0;
-    /* room for the expand/collapse button */
     right: 2.5rem;
     bottom: 0;
     height: 2.5rem;
     display: flex;
     align-items: center;
-    /* the blur sits here, on the element that fades: a blur on its children only appears once the fade is done */
+    /* on the element that fades: a blur on its children only appears once the fade is done */
     backdrop-filter: blur(0.5rem) saturate(2);
     transition: opacity 0.5s;
 }
 
-/* played part looks like a hovered control, unplayed part like a normal one. The range input on top only handles seeking */
 .progress-fill,
 .progress-rest {
     position: absolute;
@@ -343,7 +340,6 @@ export default {
     cursor: pointer;
 }
 
-/* no handle: the thumb stays (for dragging) but is invisible */
 .progress-bar::-webkit-slider-thumb {
     appearance: none;
     -webkit-appearance: none !important;
@@ -391,7 +387,8 @@ export default {
 }
 
 .expand-button,
-.unexpand-button {
+.unexpand-button,
+.sound-button {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -407,25 +404,14 @@ export default {
     transition: opacity 0.5s;
 }
 
-/* same square as expand/collapse, just left of it */
 .sound-button {
-    position: absolute;
-    bottom: 0;
     right: 2.5rem;
-    height: 2.5rem;
-    width: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    color: rgba(var(--white-rgb), 0.8);
-    background-color: rgba(var(--navy-rgb), 0.5);
-    backdrop-filter: blur(0.5rem) saturate(2);
-    transition: opacity 0.5s;
 }
 
-.has-sound .progress {
-    right: 5rem;
+.has-sound {
+    .progress {
+        right: 5rem;
+    }
 }
 
 .expand-button:hover,
@@ -440,14 +426,14 @@ export default {
     background-color: rgba(var(--deep-rgb), 0.5);
 }
 
-.video-player:hover .expand-button,
-.video-player:hover .unexpand-button,
-.video-player:hover .sound-button,
-.video-player:hover .play-pause-button,
-.video-player.notplaying .play-pause-button,
-.video-player.notplaying .expand-button,
-.video-player.notplaying .unexpand-button,
-.video-player.notplaying .sound-button {
-    opacity: 1;
+.video-player:hover,
+.video-player.notplaying {
+
+    .expand-button,
+    .unexpand-button,
+    .sound-button,
+    .play-pause-button {
+        opacity: 1;
+    }
 }
 </style>

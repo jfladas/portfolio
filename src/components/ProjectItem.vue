@@ -93,36 +93,34 @@ const props = defineProps({
 }
 
 @media (max-width: 1200px) {
+    .project-item {
+        /* scaled instead of growing the font size, which made some phones rewrap the text mid-way */
+        .details {
+            display: grid;
+            grid-template-rows: 0fr;
+            overflow: hidden;
+            transition: grid-template-rows 0.5s;
+        }
 
-    /* the text is laid out at its final size the whole time and scaled up from the top left, which looks like the
-       growing font size and width on wide screens: growing the text itself made some phones wrap it differently
-       mid-way, then jump at the end. The box grows at the same pace as the scale, so nothing gets cut off */
-    .project-item .details {
-        display: grid;
-        grid-template-rows: 0fr;
-        overflow: hidden;
-        transition: grid-template-rows 0.5s;
-    }
+        .details-inner {
+            min-height: 0;
+            transform: scale(0);
+            transform-origin: top left;
+            transition: transform 0.5s;
+        }
 
-    .project-item .details-inner {
-        min-height: 0;
-        transform: scale(0);
-        transform-origin: top left;
-        transition: transform 0.5s;
-    }
+        p {
+            font-size: 1.25rem;
+            color: var(--deep);
+            max-width: 60vw;
+            max-height: none;
+            transition: opacity 0.5s;
+        }
 
-    .project-item p {
-        font-size: 1.25rem;
-        color: var(--deep);
-        max-width: 60vw;
-        max-height: none;
-        transition: opacity 0.5s;
-    }
-
-    /* the title's width grows in step with its font size (1.5rem to 2.5rem, up to 60vw), so it wraps the same
-       way the whole time instead of breaking differently mid-way */
-    .project-item h2 {
-        max-width: calc(60vw * 1.5 / 2.5);
+        /* grows in step with the font size (1.5rem to 2.5rem), so the title wraps the same way the whole time */
+        h2 {
+            max-width: calc(60vw * 1.5 / 2.5);
+        }
     }
 
     .project-item:hover {
@@ -151,7 +149,6 @@ const props = defineProps({
                 var(--deep),
                 rgba(var(--navy-rgb), 0));
 
-        /* same sizes as the hover state on wide screens */
         h2 {
             font-size: 2.5rem;
             max-width: 60vw;
@@ -180,14 +177,16 @@ const props = defineProps({
 }
 
 @media (max-width: 600px) {
-
-    /* same as above for the smaller expanded title (2rem) */
-    .project-item h2 {
-        max-width: calc(60vw * 1.5 / 2);
+    .project-item {
+        h2 {
+            max-width: calc(60vw * 1.5 / 2);
+        }
     }
 
-    .project-item.in-view h2 {
-        font-size: 2rem;
+    .project-item.in-view {
+        h2 {
+            font-size: 2rem;
+        }
     }
 }
 
@@ -226,18 +225,16 @@ const props = defineProps({
 }
 
 @media (prefers-reduced-motion: reduce) {
-
-    .project-item,
-    .project-item h2,
-    .project-item p,
-    .project-item .details,
-    .project-item .details-inner,
-    .project-item .project-icons,
-    .project-icons,
-    .project-item:hover,
-    .project-item:active,
-    .project-item.in-view {
+    .project-item {
         transition: none;
+
+        h2,
+        p,
+        .details,
+        .details-inner,
+        .project-icons {
+            transition: none;
+        }
     }
 }
 </style>

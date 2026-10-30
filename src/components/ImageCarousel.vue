@@ -117,6 +117,16 @@ export default {
     position: relative;
     overflow: hidden;
     width: 100%;
+
+    img {
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+        margin-top: 0.5rem;
+        object-fit: contain;
+        display: block;
+        background: linear-gradient(to top, rgba(var(--deep-rgb), 0.2), rgba(var(--deep-rgb), 0));
+    }
 }
 
 .carousel-inner {
@@ -128,52 +138,35 @@ export default {
 .carousel-item {
     min-width: 100%;
     max-height: 90vh;
-    background: linear-gradient(to top, rgba(var(--navy-rgb), 0), var(--deep), rgba(var(--navy-rgb), 0));
     background: transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
 }
 
 .carousel-item.small {
     max-height: 30rem;
 }
 
-.carousel img {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
-    margin-top: 0.5rem;
-    object-fit: contain;
-    display: block;
-    background: linear-gradient(to top, rgba(var(--deep-rgb), 0.2), rgba(var(--deep-rgb), 0));
-}
-
-/* expanded: fills the screen, so the arrows sit at its edges and the caption bar at its bottom */
 .carousel.expanded {
     height: 100%;
-}
 
-.carousel.expanded .carousel-item {
-    max-height: none;
-    height: 100%;
-}
+    .carousel-item {
+        max-height: none;
+        height: 100%;
+    }
 
-/* clicking the image opens/closes fullscreen */
-.carousel-item {
-    cursor: pointer;
-}
-
-.carousel.expanded img {
-    height: 100%;
-    margin-top: 0;
-    background: none;
+    img {
+        height: 100%;
+        margin-top: 0;
+        background: none;
+    }
 }
 
 .caption {
     position: absolute;
     left: 0;
-    /* room for the expand/collapse button */
     right: 2.5rem;
     bottom: 0;
     height: 2.5rem;
@@ -184,12 +177,12 @@ export default {
     backdrop-filter: blur(0.5rem) saturate(2);
     opacity: 0;
     transition: opacity 0.5s;
-}
 
-.caption p {
-    margin: 0;
-    padding: 0 0.75rem;
-    color: var(--white);
+    p {
+        margin: 0;
+        padding: 0 0.75rem;
+        color: var(--white);
+    }
 }
 
 .carousel-fade {
@@ -274,15 +267,17 @@ export default {
     background-color: rgba(var(--deep-rgb), 0.5);
 }
 
-.carousel:hover .carousel-control,
-.carousel:hover .carousel-fade,
-.carousel:hover .caption,
-.carousel:hover .expand-button,
-.carousel:hover .unexpand-button {
-    opacity: 1;
+.carousel:hover {
+
+    .carousel-control,
+    .carousel-fade,
+    .caption,
+    .expand-button,
+    .unexpand-button {
+        opacity: 1;
+    }
 }
 
-/* no hover on touch screens: the expand/collapse button is always shown */
 @media (hover: none), (pointer: coarse) {
     .expand-button,
     .unexpand-button {

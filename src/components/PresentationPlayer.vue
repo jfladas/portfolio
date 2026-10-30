@@ -241,8 +241,8 @@ export default {
     background: var(--navy);
 }
 
-/* the clip-path above cuts the embed's border (1.5rem left/right, 1.6rem bottom); sized and shifted so that
-   the visible part reaches the screen edges */
+/* sized and shifted so that the part the clip-path leaves (1.5rem off left/right, 1.6rem off the bottom)
+   reaches the screen edges */
 .presentation-player.overlayed {
     position: fixed;
     top: 50%;
@@ -250,9 +250,18 @@ export default {
     transform: translate(-50%, calc(-50% + 0.8rem));
     width: min(100vw + 3rem, (100dvh + 1.6rem) * 16 / 9);
     z-index: 101;
+
+    .pdf-image-frame {
+        height: 100%;
+        background: none;
+    }
+
+    .pdf-page-image {
+        height: 100%;
+        object-fit: contain;
+    }
 }
 
-/* expanded PDF fills the screen: page arrows at its edges, reload and close in its bottom corners */
 .presentation-player.overlayed:has(.pdf-image-frame) {
     top: 0;
     left: 0;
@@ -262,20 +271,20 @@ export default {
     background: none;
 }
 
-.presentation-player.overlayed .pdf-image-frame {
-    height: 100%;
-    background: none;
-}
-
-.presentation-player.overlayed .pdf-page-image {
-    height: 100%;
-    object-fit: contain;
-}
-
 .presentation-player:has(.pdf-image-frame) {
     clip-path: none;
-}
 
+    .expand-button,
+    .unexpand-button {
+        right: 0;
+        bottom: 0;
+    }
+
+    .replay-button {
+        left: 0;
+        bottom: 0;
+    }
+}
 
 .presentation-frame {
     display: block;
@@ -295,7 +304,6 @@ export default {
     width: 100%;
     height: auto;
     background: linear-gradient(to top, rgba(var(--deep-rgb), 0.2), rgba(var(--deep-rgb), 0));
-    /* clicking the page opens/closes fullscreen */
     cursor: pointer;
 }
 
@@ -414,21 +422,6 @@ export default {
     left: 1.5rem;
 }
 
-.presentation-player:has(.pdf-image-frame) {
-
-    .expand-button,
-    .unexpand-button {
-        right: 0;
-        bottom: 0;
-    }
-
-
-    .replay-button {
-        left: 0;
-        bottom: 0;
-    }
-}
-
 .expand-button:hover,
 .replay-button:hover,
 .unexpand-button:hover {
@@ -441,15 +434,17 @@ export default {
     background-color: rgba(var(--deep-rgb), 0.5);
 }
 
-.presentation-player:hover .expand-button,
-.presentation-player:hover .replay-button,
-.presentation-player:hover .unexpand-button,
-.presentation-player:hover .pdf-control,
-.presentation-player:hover .pdf-fade {
-    opacity: 1;
+.presentation-player:hover {
+
+    .expand-button,
+    .replay-button,
+    .unexpand-button,
+    .pdf-control,
+    .pdf-fade {
+        opacity: 1;
+    }
 }
 
-/* no hover on touch screens: the expand/collapse button is always shown (the only way to open embedded presentations) */
 @media (hover: none), (pointer: coarse) {
     .expand-button,
     .unexpand-button {
