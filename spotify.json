@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Party time",
-        "artist": "JUSTB",
-        "link": "https://open.spotify.com/track/4i6EOayNXDsoz7D7jYutWX",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732b92fc94c1706946d700f629"
+        "name": "Pop",
+        "artist": "ILLIT",
+        "link": "https://open.spotify.com/track/1mre3HoVD50XwY02NvxKZZ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273df9518845a9897da168eb9df"
     }
 }
