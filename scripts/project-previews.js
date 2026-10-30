@@ -82,6 +82,27 @@ const createPage = (html, { url, title, ogTitle, description, image, imageAlt })
     return page
 }
 
+// Tells search engines the about page is Lukas Bucher's profile (structured data, https://schema.org/ProfilePage),
+// so searching the name leads here; sameAs lists the profiles elsewhere that belong to the same person.
+const addProfile = (html, links) => {
+    const profile = {
+        '@context': 'https://schema.org',
+        '@type': 'ProfilePage',
+        url: `${siteUrl}/about`,
+        mainEntity: {
+            '@type': 'Person',
+            name: 'Lukas Bucher',
+            alternateName: 'jfladas',
+            url: `${siteUrl}/about`,
+            jobTitle: 'Digital Solutions Engineer',
+            sameAs: links.map((link) => link.url)
+        }
+    }
+    const script = `<script type="application/ld+json">${JSON.stringify(profile).replace(/</g, '\\u003c')}</script>`
+
+    return replaceOnce(html, /<\/head>/, `  ${script}\n</head>`, '</head>')
+}
+
 export const projectPreviews = () => {
     let root
 
@@ -122,13 +143,13 @@ export const projectPreviews = () => {
                 }
             }
 
-            const { projects } = await loadProjects(root)
+            const { projects, aboutContent } = await loadProjects(root)
 
             // with a projects/ folder, GitHub Pages redirects /projects to /projects/, so /projects/ is the real address
             const sitemapUrls = ['/about', '/projects/', '/achievements']
 
             // about stands in for the homepage for now (/ redirects there), so it carries the site title
-            write('about.html', createPage(html, { url: '/about', title: siteTitle }))
+            write('about.html', addProfile(createPage(html, { url: '/about', title: siteTitle }), aboutContent.links))
             write('achievements.html', createPage(html, { url: '/achievements', title: pageTitle('achievements') }))
             write('projects/index.html', createPage(html, { url: '/projects/', title: pageTitle('projects') }))
 

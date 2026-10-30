@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+# PDFs (CV, documentations, presentations) shouldn't show up in search on their own, the pages linking them should
+Disallow: /*.pdf$
 
 Sitemap: https://www.jfladas.com/sitemap.xml
