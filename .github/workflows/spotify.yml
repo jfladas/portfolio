@@ -19,13 +19,6 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      # spotify.json lives on its own branch so these commits don't pile up on main
-      - name: Checkout Spotify data branch
-        uses: actions/checkout@v4
-        with:
-          ref: spotify-data
-          path: spotify-data
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -36,15 +29,24 @@ jobs:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
           SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
-        run: node scripts/fetch-spotify.mjs spotify-data/spotify.json
+        run: node scripts/fetch-spotify.mjs spotify.json
 
-      - name: Commit and push updated Spotify data
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          repository: spotify-data
-          branch: spotify-data
-          commit_message: Update Spotify data
-          file_pattern: spotify.json
-          commit_user_name: GitHub Actions
-          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
-          commit_author: "GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com>"
+      # spotify.json lives on its own branch so these commits don't pile up on main; the branch is created on the
+      # first run, and a commit only happens when the data changed
+      - name: Commit to the spotify-data branch
+        env:
+          REPO_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
+        run: |
+          mkdir data && cd data
+          git init -q
+          git remote add origin "$REPO_URL"
+          if git fetch -q --depth 1 origin spotify-data; then
+            git checkout -q -b spotify-data FETCH_HEAD
+          else
+            git checkout -q --orphan spotify-data
+          fi
+          cp ../spotify.json .
+          git add spotify.json
+          git -c user.name="GitHub Actions" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Update Spotify data" || { echo "nothing changed"; exit 0; }
+          git push -q origin spotify-data
