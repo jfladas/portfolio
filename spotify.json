@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "CROWN",
-        "artist": "EVNNE",
-        "link": "https://open.spotify.com/track/0X2OWdRUvvA18HLITY2Qx5",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273dd99c590a164889f6ab0e200"
+        "name": "Whiplash",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/3coRPMnFg2dJcPu5RMloa9",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2736eb604294f8f58c9078f58b1"
     }
 }
