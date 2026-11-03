@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Party time",
-        "artist": "JUSTB",
-        "link": "https://open.spotify.com/track/4i6EOayNXDsoz7D7jYutWX",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732b92fc94c1706946d700f629"
+        "name": "MY TAG",
+        "artist": "IS:SUE",
+        "link": "https://open.spotify.com/track/5HXdfH0KmaZoEULLKLS1dl",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2735ccd725ac259cb513c60a7c7"
     }
 }
