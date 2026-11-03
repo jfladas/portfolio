@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "METRONOME",
-        "artist": "izna",
-        "link": "https://open.spotify.com/track/0lcaaS20sIJaLeVsAyAiKf",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27373bafe90dd0868fbdc3810a9"
+        "name": "Tooth Gem Chiwawa",
+        "artist": "XLOV",
+        "link": "https://open.spotify.com/track/3ORyuJ5pT1kgFZwzvfkvhV",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27369d2a7a8280649b3aa86b075"
     }
 }
