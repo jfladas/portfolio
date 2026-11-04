@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Give Me Love",
-        "artist": "cosmosy",
-        "link": "https://open.spotify.com/track/35kYQZFtDqi3BMlny6fgLG",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273b0bde7c20349f82fdd842a0c"
+        "name": "Spicy",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/3gtlthEgyulDfT8dWdKsnv",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273486275044f7c8c8b79f2c7fc"
     }
 }
