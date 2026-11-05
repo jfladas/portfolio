@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Hey Hi",
-        "artist": "KiiiKiii",
-        "link": "https://open.spotify.com/track/12Ww30JHxcKwaTzE3Ozaar",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732e6090052314604f93f1ebe4"
+        "name": "BOOMPALA - HUH YUNJIN ver.",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/6Rh57nydhtGY7iBQTj3kGF",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f2161be573b19d8c58ced7ec"
     }
 }
