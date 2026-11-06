@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "FEARLESS",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/296nXCOv97WJNRWzIBQnoj",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2739ae8d973353277c7dec2c27d"
+        "name": "TRICKY GRLS",
+        "artist": "UNCHILD",
+        "link": "https://open.spotify.com/track/2xHZS7fyVqzB2GclbXHIdD",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273d47f93da52abf3b4cc1fea11"
     }
 }
