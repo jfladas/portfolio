@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "SPAGHETTI",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/2N9miXnewVmUrgl6JSK1FI",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2736c4a726c271daf4a4b97e35b"
+        "name": "That Way",
+        "artist": "KATSEYE",
+        "link": "https://open.spotify.com/track/5JyfNKZoaNEQPzv4s3TiD3",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273e343d0844383b6fb91db9598"
     }
 }
