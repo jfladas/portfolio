@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Know About Me",
-        "artist": "LEE CHAEYEON",
-        "link": "https://open.spotify.com/track/5uA5Ty4KSS6AMnknGjYlLt",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27341f100855deda90d5ff0a00f"
+        "name": "Tick Tick Boom",
+        "artist": "CLASSy",
+        "link": "https://open.spotify.com/track/5CGu1xKXdFIScS9gHiVosM",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27346182642d625bb8647e49e78"
     }
 }
