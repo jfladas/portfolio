@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Born Fire",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/2FktPXK8yLMFyx6ZTQtRSm",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2731fc0f4faafaa183cc70297e5"
+        "name": "FAMOUS",
+        "artist": "ALLDAY PROJECT",
+        "link": "https://open.spotify.com/track/40UVUuyy5RfpO0awclCttA",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273a4856db749b2c84758a7680e"
     }
 }
