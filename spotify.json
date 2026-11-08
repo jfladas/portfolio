@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Melt",
-        "artist": "HEART OF WOMAN",
-        "link": "https://open.spotify.com/track/2RnL9nkj9gWpimZGAtvGNx",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737cba2a21640f2157b900f3b4"
+        "name": "Born Fire",
+        "artist": "LE SSERAFIM",
+        "link": "https://open.spotify.com/track/2FktPXK8yLMFyx6ZTQtRSm",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2731fc0f4faafaa183cc70297e5"
     }
 }
