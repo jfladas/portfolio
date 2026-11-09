@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Hysteric",
-        "artist": "Yves",
-        "link": "https://open.spotify.com/track/5cCiqtYFbUNVknlcnjyk8V",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27380f37cbb3be2e85287bb67da"
+        "name": "WORK",
+        "artist": "Billlie",
+        "link": "https://open.spotify.com/track/6IIEwumFCSlVrna5cHW7Ac",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ec9ffda683b158a31a83159a"
     }
 }
