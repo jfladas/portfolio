@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "POP GIRL",
-        "artist": "Lexie Liu",
-        "link": "https://open.spotify.com/track/1diiLBOnInnwZjMnRyKWQT",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273146cfc442839cd40f22a5972"
+        "name": "Pressure",
+        "artist": "NCT DREAM",
+        "link": "https://open.spotify.com/track/6DhQ4VDUDTgy4xcW4vkAfj",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c4ed63d770ce49a173ba328d"
     }
 }
