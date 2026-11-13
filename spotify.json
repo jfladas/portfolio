@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Bangaranga",
-        "artist": "DARA",
-        "link": "https://open.spotify.com/track/6SvlfrQYzUsW5UQUpUpy26",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273ee6ff14d338a2af1edc2f5d2"
+        "name": "REDRED",
+        "artist": "CORTIS",
+        "link": "https://open.spotify.com/track/34YVCoqIm08nbsxFSPL0Uh",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273da2a04ef57dfebfb8946fd49"
     }
 }
