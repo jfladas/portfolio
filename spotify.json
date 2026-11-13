@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "HUNGRY (Side A)",
-        "artist": "OURBIRTHDAY",
-        "link": "https://open.spotify.com/track/2VtyGQFxbJMOF6MRU07ild",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273467399a7c9d4f432a65bdff5"
+        "name": "GPT",
+        "artist": "STAYC",
+        "link": "https://open.spotify.com/track/36qXU2yyq1JtGp05omV7bu",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27358afcbf545a0c569d6164af2"
     }
 }
