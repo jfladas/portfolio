@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "GRATATA",
-        "artist": "HOT ISSUE",
-        "link": "https://open.spotify.com/track/5r5DHrJRw6q06N2aeHNczb",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2734b8cbc6123cddb2beca2e788"
+        "name": "Pressure",
+        "artist": "NCT DREAM",
+        "link": "https://open.spotify.com/track/6DhQ4VDUDTgy4xcW4vkAfj",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c4ed63d770ce49a173ba328d"
     }
 }
