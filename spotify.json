@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "TiNG TiNG",
-        "artist": "UNCHILD",
-        "link": "https://open.spotify.com/track/7KqEWQkQfeDg0hjqml0WL8",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d47f93da52abf3b4cc1fea11"
+        "name": "EM TIÊN",
+        "artist": "Tóc Tiên",
+        "link": "https://open.spotify.com/track/5tW4COxFvEnTwCJuNWeoJC",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2737b8fc600b00f96fec939c809"
     }
 }
