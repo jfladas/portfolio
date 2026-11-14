@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "MODO TURBO",
-        "artist": "Luísa Sonza",
-        "link": "https://open.spotify.com/track/2ip4hxYupn3CSsHjn4l2a8",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27397376a1a61dd87e8d998cd9c"
+        "name": "Eyes Wide Closed",
+        "artist": "2hollis",
+        "link": "https://open.spotify.com/track/3noXOoZYdwocJKxGLClron",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273db3c4c37735a6bd7fcadbc33"
     }
 }
