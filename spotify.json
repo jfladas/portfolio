@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Pressure",
-        "artist": "NCT DREAM",
-        "link": "https://open.spotify.com/track/6DhQ4VDUDTgy4xcW4vkAfj",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c4ed63d770ce49a173ba328d"
+        "name": "EM TIÊN",
+        "artist": "Tóc Tiên",
+        "link": "https://open.spotify.com/track/5tW4COxFvEnTwCJuNWeoJC",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2737b8fc600b00f96fec939c809"
     }
 }
