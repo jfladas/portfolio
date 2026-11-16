@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "UGLY",
+        "name": "XO",
         "artist": "EVNNE",
-        "link": "https://open.spotify.com/track/3p5SJW1Jb4EvSEXrpShQzm",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273e1fc016971a6cf7366794b0f"
+        "link": "https://open.spotify.com/track/4kPD4LhK775GhxjWK5o27r",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273b8f2641d5a6c89ab87dbee97"
     }
 }
