@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Skydive",
-        "artist": "NCT DREAM",
-        "link": "https://open.spotify.com/track/5eVXIVMB9HaGu7pdXhGiBW",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c4ed63d770ce49a173ba328d"
+        "name": "Waschesalon",
+        "artist": "Rebecca Black",
+        "link": "https://open.spotify.com/track/1GnOfC2wWHGiui18OH0Mig",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2730de2fb7fcc6d57fb60f58b9a"
     }
 }
