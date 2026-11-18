@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "In my lotion",
-        "artist": "RESCENE",
-        "link": "https://open.spotify.com/track/0I4qJamLijYkfEzsxNmmYb",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2739538990ec50c597ab78adfcf"
+        "name": "BAD IDEA",
+        "artist": "DARA",
+        "link": "https://open.spotify.com/track/7FfG4gnPZfM5ksxl1WvF1w",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27312102a9dd420e7b0bdd1fb39"
     }
 }
