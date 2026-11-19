@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Hush",
-        "artist": "XLOV",
-        "link": "https://open.spotify.com/track/7xw31hi22TUofZ2Q2R8V5L",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27369d2a7a8280649b3aa86b075"
+        "name": "BAD IDEA",
+        "artist": "DARA",
+        "link": "https://open.spotify.com/track/7FfG4gnPZfM5ksxl1WvF1w",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27312102a9dd420e7b0bdd1fb39"
     }
 }
