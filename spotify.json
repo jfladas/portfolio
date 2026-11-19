@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Sobra-Sobra",
-        "artist": "CARMELLE",
-        "link": "https://open.spotify.com/track/7KNUx9w65RNMMTDUdTaBcF",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2737b8fc600b00f96fec939c809"
+        "name": "BAD IDEA",
+        "artist": "DARA",
+        "link": "https://open.spotify.com/track/7FfG4gnPZfM5ksxl1WvF1w",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27312102a9dd420e7b0bdd1fb39"
     }
 }
