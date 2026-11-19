@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Looks Can Kill",
-        "artist": "IVE",
-        "link": "https://open.spotify.com/track/79kqYxIkS29va2I9AeL9ak",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273e9ba6f2900e344f17c05a9aa"
+        "name": "BAD IDEA",
+        "artist": "DARA",
+        "link": "https://open.spotify.com/track/7FfG4gnPZfM5ksxl1WvF1w",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27312102a9dd420e7b0bdd1fb39"
     }
 }
