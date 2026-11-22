@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "ZARI",
-        "artist": "Marina Satti",
-        "link": "https://open.spotify.com/track/4sDLQ5atDUHhbikD1UQ2mW",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27336a074cead5538e71f070286"
+        "name": "My World",
+        "artist": "ILLIT",
+        "link": "https://open.spotify.com/track/2Xiaplc23BureS4EDeE8xa",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273f037c5fb9de6c78726cb8e2c"
     }
 }
