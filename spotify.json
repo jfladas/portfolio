@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "Supernova",
-        "artist": "aespa",
-        "link": "https://open.spotify.com/track/5lKnZbdGCBViitE1Ce5TZh",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c60843bafc67821cff6df260"
+        "name": "ZARI",
+        "artist": "Marina Satti",
+        "link": "https://open.spotify.com/track/4sDLQ5atDUHhbikD1UQ2mW",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27336a074cead5538e71f070286"
     }
 }
