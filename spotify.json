@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "RESET",
-        "artist": "IVE",
-        "link": "https://open.spotify.com/track/4hoBqEeOJbrmakqA2Oe4xs",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27326cc1062ed475f238d244141"
+        "name": "EM TIÊN (Grand Final version)",
+        "artist": "Tóc Tiên",
+        "link": "https://open.spotify.com/track/7F0QtFVWh6Fau5asLAl2jQ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2738c7b05e8ff1f2ae36f4c688f"
     }
 }
