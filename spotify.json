@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Magnetic",
-        "artist": "ILLIT",
-        "link": "https://open.spotify.com/track/1aKvZDoLGkNMxoRYgkckZG",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f037c5fb9de6c78726cb8e2c"
+        "name": "EM TIÊN (Grand Final version)",
+        "artist": "Tóc Tiên",
+        "link": "https://open.spotify.com/track/7F0QtFVWh6Fau5asLAl2jQ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2738c7b05e8ff1f2ae36f4c688f"
     }
 }
