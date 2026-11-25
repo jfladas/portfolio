@@ -1,11 +1,15 @@
 {
-  "checked": "2026-11-25T11:40:34.804Z",
-  "status": "offline",
-  "game": null,
+  "checked": "2026-11-25T11:55:36.191Z",
+  "status": "playing",
+  "game": {
+    "name": "Mario Kart World",
+    "image": "https://atum-img-lp1.cdn.nintendo.net/i/c/80d69094899f494c86a8b6a35c3d63ef_1024",
+    "link": "https://ec.nintendo.com/apps/0400c3f00006e000/CH?acdIndex=0"
+  },
   "lastPlayed": {
     "name": "Mario Kart World",
-    "image": "https://atum-img-lp1.cdn.nintendo.net/i/c/e1def375c7254d669bcd65ff10170151_1024",
+    "image": "https://atum-img-lp1.cdn.nintendo.net/i/c/80d69094899f494c86a8b6a35c3d63ef_1024",
     "link": "https://ec.nintendo.com/apps/0400c3f00006e000/CH?acdIndex=0",
-    "at": "2026-10-24T03:04:45.076Z"
+    "at": "2026-11-25T11:55:36.191Z"
   }
 }
