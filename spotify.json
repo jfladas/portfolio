@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "소방차 Fire Truck",
-        "artist": "NCT 127",
-        "link": "https://open.spotify.com/track/5hHlmrSV6d9LFMsDA1lamE",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2732d10195d8d9abd1357fff450"
+        "name": "YEPPI YEPPI",
+        "artist": "aespa",
+        "link": "https://open.spotify.com/track/3UKKwGrpWWamc0XNSKXjmz",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273d8cc2281fcd4519ca020926b"
     }
 }
