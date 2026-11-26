@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "PTT (Paint The Town)",
-        "artist": "LOONA",
-        "link": "https://open.spotify.com/track/2bfCp4G40OsM1mvNi6ufwU",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273f0f22b06444fce291092dfcc"
+        "name": "Atlantis",
+        "artist": "SHINee",
+        "link": "https://open.spotify.com/track/0BBUGRUURDjwcXmDS3kQkN",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273e710984b2c4b88f609f6a218"
     }
 }
