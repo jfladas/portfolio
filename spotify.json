@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "EASY",
-        "artist": "LE SSERAFIM",
-        "link": "https://open.spotify.com/track/2O4Bb2WCkjlTPO827OnBMI",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273d17ea5fa9f991aa284c862a7"
+        "name": "Rockstar - Extended",
+        "artist": "LISA",
+        "link": "https://open.spotify.com/track/01prGWjCTxKBxJc400zwvQ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27383b619e9b866341866fb13e3"
     }
 }
