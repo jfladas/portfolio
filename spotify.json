@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "None of My Business",
-        "artist": "ITZY",
-        "link": "https://open.spotify.com/track/6iYfUvWNdKulAgX2TOhk5u",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2734c2fcea217112b13312f8fb2"
+        "name": "행복 (Happiness)",
+        "artist": "Red Velvet",
+        "link": "https://open.spotify.com/track/6XP9L7di5JnOc9WaeAW8oe",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273ccd9a8fe25e9ae6039ac6ce6"
     }
 }
