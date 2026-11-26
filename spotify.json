@@ -1,9 +1,9 @@
 {
-    "status": "online",
+    "status": "offline",
     "item": {
-        "name": "ExtraL (feat. Doechii)",
-        "artist": "JENNIE",
-        "link": "https://open.spotify.com/track/4EIFwndJvGpgFjsEbNuYif",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273dcf27dec5e479b2e39c4c993"
+        "name": "New Woman (feat. ROSALÍA)",
+        "artist": "LISA",
+        "link": "https://open.spotify.com/track/5UmfBGfRJgjZ8CdhgffabQ",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27395ce3d848f4e452489d4a12c"
     }
 }
