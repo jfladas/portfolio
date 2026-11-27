@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "MODO TURBO",
-        "artist": "Luísa Sonza",
-        "link": "https://open.spotify.com/track/2ip4hxYupn3CSsHjn4l2a8",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b27397376a1a61dd87e8d998cd9c"
+        "name": "PONPONPON",
+        "artist": "Kyary Pamyu Pamyu",
+        "link": "https://open.spotify.com/track/6W0h3ULsrzmD6C8B4cG57A",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b2738f0ab0b7de325ddc29680bd8"
     }
 }
