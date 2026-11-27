@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Everyday",
-        "artist": "MAVE:",
-        "link": "https://open.spotify.com/track/5fCi0gzEqwcfDpk3GFMvkP",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273daf71ced186395dc23d1457e"
+        "name": "Pang Pang Pang",
+        "artist": "Kyary Pamyu Pamyu",
+        "link": "https://open.spotify.com/track/17upXStU80To2HOMpCdn8t",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273c3071acf17709f8759e63f84"
     }
 }
