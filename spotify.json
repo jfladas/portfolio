@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "DEEP DIVE",
-        "artist": "JUNHEE",
-        "link": "https://open.spotify.com/track/6uDECSLMm2o2FpRAVDarE0",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b2731dda443531118db3737eac38"
+        "name": "Andless",
+        "artist": "tripleS",
+        "link": "https://open.spotify.com/track/54E6zLaoW4ofXKaXhLVu3G",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b27321d169265aa46e9b18c095d9"
     }
 }
