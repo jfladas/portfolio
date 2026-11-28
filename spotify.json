@@ -1,9 +1,9 @@
 {
-    "status": "offline",
+    "status": "online",
     "item": {
-        "name": "Pang Pang Pang",
-        "artist": "Kyary Pamyu Pamyu",
-        "link": "https://open.spotify.com/track/17upXStU80To2HOMpCdn8t",
-        "album_art": "https://i.scdn.co/image/ab67616d0000b273c3071acf17709f8759e63f84"
+        "name": "Blue Dot",
+        "artist": "YOUNG POSSE",
+        "link": "https://open.spotify.com/track/3PcowXtn7A3Lh85fnJqkzg",
+        "album_art": "https://i.scdn.co/image/ab67616d0000b273a6959ac2facdaeca787faaf4"
     }
 }
